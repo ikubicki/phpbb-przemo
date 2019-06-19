@@ -9,3 +9,4 @@ The goals i have on my mind is to:
 2. Replace old template engine with Twig and it's syntax (who uses that quasi HTML today?)
 3. Go towards Symfony framework
 4. Make new cool stuff
+5. Disaggregate frontend from backend.
