@@ -1,0 +1,14 @@
+{% extends "install/layout.html" %}
+
+{% block content %}
+
+<p>{{ messages.content|raw }}</p>
+
+<form action="{{ form.action }}" method="{{ form.method }}" name="{{ form.name }}">
+<div class="section">
+	<div class="submit">
+		 {% include 'forms/submit.html' with {'value': l10n.Finish_Install} %}
+	</div>
+</div>
+</form>
+{% endblock %}

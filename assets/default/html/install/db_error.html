@@ -1,0 +1,14 @@
+{% extends "install/layout.html" %}
+
+{% block content %}
+
+<p>{{ l10n.Install_db_error }}</p>
+<ul class="wrong-queries">
+{% for error in errors %}
+	<li>
+		<span class="query">{{ error.query }}</span>
+		<span class="error">{{ error.error }}</span>
+	</li>
+{% endfor %}
+</ul>
+{% endblock %}

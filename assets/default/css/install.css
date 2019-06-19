@@ -1,0 +1,27 @@
+body > div.content ul.wrong-files li {
+	clear: both;
+}
+
+body > div.content ul.wrong-files li span.filename {
+	color: #333;
+}
+
+body > div.content ul.wrong-files li span.summary {
+	color: #f53;	
+}
+
+
+body > div.content ul.wrong-queries li {
+	clear: both;
+}
+
+body > div.content ul.wrong-queries li span.query {
+	white-space: pre;
+	color: #333;
+}
+
+body > div.content ul.wrong-queries li span.error {
+	color: #f53;
+	display: block;
+	margin: 5px 0 15px;
+}

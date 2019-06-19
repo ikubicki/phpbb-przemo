@@ -1,0 +1,35 @@
+version: "3.5"
+services:
+  przemo:
+    container_name: przemo
+    build:
+      context: ./ 
+      dockerfile: Dockerfile
+    image: phpbb-przemo:latest
+    networks:
+      - public
+      - private
+    ports:
+      - 82:80
+      - 441:443
+    volumes:
+      - .:/var/www/app/htdocs # jesli chcesz edytowac pliki na zywo w dockerze odkomentuj ta linie i zrob up'a raz jeszcze
+#      - przemo-cache:/var/www/app/htdocs/cache
+  przemo-mysql:
+    container_name: przemo-mysql
+    image: mysql:5.6
+    command: --innodb_use_native_aio=0
+    networks:
+      - private
+    volumes:
+      - przemo-mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+volumes:
+  przemo-cache:
+  przemo-mysql-data:
+networks:
+  public:
+    name: przemo-public
+  private:
+    name: przemo-private

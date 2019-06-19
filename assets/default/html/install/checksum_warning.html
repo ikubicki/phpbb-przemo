@@ -1,0 +1,14 @@
+{% extends "install/layout.html" %}
+
+{% block content %}
+
+<p>{{ messages.content|raw }}</p>
+<ul class="wrong-files">
+{% for file in files %}
+	<li>
+		<span class="filename">{{ file.name }}</span>
+		<span class="summary">{{ file.summary }}</span>
+	</li>
+{% endfor %}
+</ul>
+{% endblock %}
