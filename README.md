@@ -1,4 +1,4 @@
-# phpBB by przemo oop
+# phpBB by przemo v.3.½
 
 Just having fun refactoring very old php4 based script that no one wants to touch. 
 Perhaps someone will be inspired and will continue the work that I have started, because this will not be finished on my side.
