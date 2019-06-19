@@ -1,0 +1,33 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
+	<style type="text/css">
+	<!--
+		font,td { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; }
+	-->
+	</style>
+</head>
+<body leftmargin="5" topmargin="5" marginheight="5" marginwidth="5" style="background-color: #EFEFEF;">
+<table cellpadding="3" cellspacing="3" border="0" align="left">
+<tr><td align="left">
+<b>Zamienniki:</b><br />
+au_tpl -> subSilver (aktualny styl)<br />
+au_lng -> polish (aktualny język)<br />
+au_username -> Admin (aktualna nazwa użytkownika)<br />
+au_id -> 2 (aktualny numer ID użytkownika)<br />
+au_sid -> dd46fa160685820f596a1d2745e339cf (aktualny numer ID sesji użytkownika)<br /><br />
+<b>Przykłady użycia:</b><br /><br />
+<b>begin_logged_in</b> JESTES ZALOGOWANY <b>end_logged_in</b><br />
+<b>begin_logged_out</b> NIE JESTES ZALOGOWANY <b>end_logged_out</b><br /><br />
+Obrazek z aktualnego stylu użytkownika i jego wersji językowej:<br />
+&lt;img src=&quot;templates/images/<b>au_tpl</b>/lang_<b>au_lng</b>/banner.jpg&quot;&gt;
+<br /><br />
+Link do widoku profilu użytkownika z jego nazwą jako anchor:<br />
+<b>begin_logged_in</b>&lt;a href=&quot;profile.php?mode=viewprofile&u=<b>au_id</b>&quot;&gt;<b>au_username</b>&lt;/a&gt;<b>end_logged_in</b>
+<br /><br />
+Link do wylogowania się<br />
+<b>begin_logged_in</b>&lt;a href=&quot;login.php?logout=true&sid=<b>au_sid</b>&quot;&gt;Wyloguj [<b>au_username</b>]&lt;/a&gt;<b>end_logged_in</b>
+</td></tr>
+</table>
+</body>
+</html>

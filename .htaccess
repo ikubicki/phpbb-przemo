@@ -1,0 +1,13 @@
+<ifModule mod_headers.c>
+	<filesMatch ".(gif|png|bmp|jpg|jpeg|css|js|txt)$">
+		Header set Cache-Control "max-age=961200, public, must-revalidate"
+	</filesMatch>
+</ifModule>
+
+<IfModule mod_deflate.c>
+	AddOutputFilterByType DEFLATE text/plain
+	AddOutputFilterByType DEFLATE text/html
+	AddOutputFilterByType DEFLATE text/css
+	AddOutputFilterByType DEFLATE application/javascript
+	AddOutputFilterByType DEFLATE application/x-javascript
+</IfModule>

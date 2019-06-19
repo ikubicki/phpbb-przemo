@@ -1,0 +1,29 @@
+# This file will contain the information about your module
+# for the statistics parser to use.
+#
+# You can make comments by using #
+# Note that the text must be on a single line for the parser
+# to read it!  Excluding the extra install info area.
+#
+
+# Module Name
+[name] Used system and browsers
+
+# your name
+[author] Przemo
+
+# your email
+[email] przemo@przemo.org
+
+# your webpage url
+[url] http://www.przemo.org/phpBB2/
+
+# module version
+[version] 1.0.0
+
+[update_time] 64
+
+# extra info for the user, everything below
+# this block will be included, regardless if
+# you use a # even.
+[extra_info]

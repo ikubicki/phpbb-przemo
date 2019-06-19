@@ -1,0 +1,9 @@
+<IfModule mime_module> 
+        RemoveHandler .php .phtml .php3 .php4 .php5 .php6 
+        RemoveType .php .phtml .php3 .php4 .php5 .php6 
+</IfModule> 
+<IfModule !mime_module> 
+        <Files ~ "\.(php[3456]?|phtml)$"> 
+                Require all denied 
+        </Files> 
+</IfModule>

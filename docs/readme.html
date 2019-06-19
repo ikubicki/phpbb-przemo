@@ -1,0 +1,266 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
+<title>Informacje dotyczące phpBB modified by Przemo</title>
+<style type="text/css">
+<!--
+body {
+	scrollbar-face-color: #dee3e7;
+	scrollbar-highlight-color: #ffffff;
+	scrollbar-shadow-color: #dee3e7;
+	scrollbar-3dlight-color: #d1d7dc;
+	scrollbar-arrow-color: #006699;
+	scrollbar-track-color: #efefef;
+	scrollbar-darkshadow-color: #98aab1;
+}
+
+font, th, td, p, a, #body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+}
+
+a:link, a:active, a:visited {
+	color: #006699;
+	text-decoration: underline;
+}
+
+a:hover {
+	color: #dd6900;
+}
+
+hr {
+	border: 0px;
+	border-top: #d1d7dc 1px solid;
+	height: 0px;
+}
+
+.gen {
+	font-size: 12px;
+}
+
+.genmed {
+	font-size: 11px;
+}
+
+.gensmall {
+	font-size: 10px;
+}
+
+.gen, .genmed, .gensmall {
+	color: #000000;
+}
+
+.title {
+	font-weight: bold;
+	font-size: 18px;
+	line-height: normal;
+	color: #000000;
+}
+
+.postbody {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+a.postlink:link {
+	color: #006699;
+	text-decoration: none;
+}
+
+a.postlink:visited {
+	color: #5493b4;
+	text-decoration: none;
+}
+
+a.postlink:hover {
+	color: #dd6900;
+	text-decoration: underline;
+}
+
+.code {
+	border: #d1d7dc 1px solid;
+	font-size: 11px;
+	color: #006600;
+	font-family: Courier, 'Courier New', sans-serif;
+	background-color: #fafafa;
+	text-align: left;
+}
+</style>
+</head>
+
+<body>
+<div id="body">
+<span class="postbody">
+<span class="title">Informacje dotyczące phpBB modified by Przemo</span><br />
+<br />
+Forum phpBB w wersji modified by Przemo zbudowane jest na podstawie phpBB2 które jest najlepszym darmowym skryptem forum dyskusyjnego.
+<br />
+Zasada działania jest bardzo podobna, jednak zawiera <a href="http://www.przemo.org/phpBB2?page=list" target="_blank" class="gen"><span style="text-decoration: underline">mnóstwo nowych możliwości</span></a> które nie są widoczne na pierwszy rzut oka. Głównym celem podczas tworzenia było uzyskanie jak największej funkcjonalności z zachowaniem prostoty wyglądu i obsługi z dużymi możliwościami rozbudowywania przy zachowaniu  możliwie największej wydajności oraz zgodności ze standartami.
+<br />
+Jest to najlepsza istniejąca modyfikacja phpBB2
+<br />
+Zawiera system automatycznej instalacji, konfiguracji oraz możliwość deinstalacji, czyli łatwego powrotu do oryginalnej postaci phpBB2
+<br />
+Panel Administracyjny jest bardzo rozbudowany i trzeba poświęcić wiele czasu aby zapoznać się ze wszystkimi możliwościami. Niestety jeszcze nie powstała dokładna instrukcja obsługi od strony administracyjnej jak i od strony użytkownika (FAQ) Jednak tworzenie rozbudowanej instrukcji jest w trakcie realizacji.
+<br />
+Na <a href="http://www.przemo.org/phpBB2/" target="_blank" class="gen">stronie modyfikacji</a> znajduje się forum dyskusyjne, na którym można znaleźć mnóstwo informacji dotyczących obsługi forum oraz, jeżeli nie znajdziesz interesujących Cię kwestii, możesz napisać nowy post lub temat ze swoim pytaniem.
+<br />
+Wszystkie dodatkowe funkcje można wyłączyć w Panelu Administracyjnym.
+<br />
+Dostępnych jest 14 oficjalnych stylów, oraz duży zbiór nieoficjalnych stylów.
+<br />
+
+<br />
+<span style="font-weight: bold"><span style="font-size: 17px; line-height: normal">Najważniejsze i podstawowe informacje</span></span>
+<br />
+
+<br />
+Do działania forum potrzebny jest serwer www z obsługą PHP nie mniejszą niż 4.0* oraz bazą MySQL w wersji nie mniejszej niż 3.2* Skrypt działa również z PHP 5.1.2 oraz MySQL 5.1.4
+<br />
+
+<br />
+&bull; <a href="#instalacja" class="gen">Instalacja</a>
+<br />
+&bull; <a href="#konfiguracja" class="gen">Konfiguracja i użytkowanie</a>
+<br />
+&bull; <a href="#aktualizacje" class="gen">Aktualizacje i zamiana zwykłego phpBB</a>
+<br />
+&bull; <a href="#deinstalacja" class="gen">Deinstalacja</a>
+<br />
+
+<br />
+<a name="instalacja"></a><span style="font-weight: bold"><span style="font-size: 17px; line-height: normal">&#8226; Instalacja</span></span>
+<br />
+Wyślij pliki skryptu do katalogu, w którym ma się znajdować forum (lub do katalogu głównego, jeśli forum ma działać bezpośrednio pod domeną)
+<br />
+Po wysłaniu wszystkich plików, wpisz w przeglądarce <span style="font-weight: bold">http://adres.pl/forum/</span> gdzie "adres.pl" to twoja domena a "forum" to katalog w którym jest forum.
+<br />
+Pojawi się formularz do wpisania danych instalacyjnych.
+<br />
+Część danych zostanie wypełniona automatycznie, nie musisz ich zmieniać.
+<br />
+
+<br />
+<span style="font-weight: bold">Podstawowa Konfiguracja</span>:
+<br />
+<span style="color: brown">"Nazwa Domeny"</span> -<span style="font-size: 9px; line-height: normal"> (wykrywane automatycznie) w tym miejscu podaj tylko nazwę domeny (wpisz razem z www. lub bez, natomiast nie wpisuj http:// oraz katalogu)</span>
+<br />
+<span style="color: brown">"Port Serwera"</span> - <span style="font-size: 9px; line-height: normal">(wykrywane automatycznie) domyślnie 80 wpisz inny tylko w sytuacji, kiedy serwer www działa na innym porcie.</span>
+<br />
+<span style="color: brown">"Ścieżka skryptu"</span> - <span style="font-size: 9px; line-height: normal">(wykrywane automatycznie) nazwa katalogu (lub kilku katalogów) w którym znajduje sie forum, jeżeli nazwa katalogu to: <span style="font-weight: bold">forum</span> wpisz: <span style="font-weight: bold">/forum</span></span>
+<br />
+
+<br />
+<span style="font-weight: bold">Konfiguracja Bazy Danych</span>
+<br />
+<span style="color: brown">"Typ Bazy Danych"</span> - <span style="font-size: 9px; line-height: normal">(wykrywane automatycznie) Do wyboru mamy MySQL 3 lub 4 i 5, zapytaj administratora jaka wersja bazy MySQL jest na serwerze</span>
+<br />
+<span style="color: brown">"Server Bazy Danych / DSN"</span> - <span style="font-size: 9px; line-height: normal">Adres serwera MySQL, koniecznie zapytaj administratora o prawidłowy adres serwera SQL, z reguły jest to <span style="font-weight: bold">localhost</span></span>
+<br />
+<span style="color: brown">"Nazwa Bazy Danych", "Użytkownik Bazy Danych", "Hasło Bazy Danych"</span> - <span style="font-size: 9px; line-height: normal">Te dane są dostępne gdy administrator utworzy dla twojego konta bazę danych oraz użytkownika z hasłem, uzyskaj te dane od administratora.</span>
+<br />
+<span style="color: brown">"Prefiks dla tabel w bazie danych"</span> - <span style="font-size: 9px; line-height: normal">Przedrostek nazw tabel które zostaną utworzone w bazie danych, jeżeli chcesz zainstalować drugie forum w tej samej bazie danych możesz podać inny prefix.</span>
+<br />
+
+<br />
+W sekcji <span style="font-weight: bold">Konfiguracja Admina</span> jest miejsce na podanie wyświetlanej nazwy Administratora na forum, oraz hasło i adres e-mail
+<br />
+
+<br />
+Przed rozpoczęciem procesu instalacji skrypt samoczynnie sprawdzi zgodność plików, jeżeli któryś z plików będzie uszkodzony/nieprawidłowy, zostaną wyświetlone szczegółowe informacje.
+<br />
+
+<br />
+Po prawidłowym wypełnieniu i wysłaniu formularza, rozpoczyna się automatyczny proces instalacji, który składa się ze stworzenia struktury tabel i wpisów w bazie danych oraz utworzenia pliku konfiguracyjnego (config.php) zawierającego dane dostępowe do bazy danych (adres, nazwę i hasło bazy danych).
+<br />
+W bazie danych zostaje zapisana podstawowa konfiguracja systemu oraz są tworzone testowe działy oraz tematy i posty, tworzony jest również jeden użytkownik - Administrator, z nazwą, hasłem i adresem e-mail podanym w formularzu instalacji.
+<br />
+Po zakończeniu instalacji, do bazy danych, generowany jest plik config.php. Jeżeli serwer zezwala na zapisywanie plików przez PHP, plik ten jest automatycznie zapisywany, w przeciwnym razie zostaje wyświetlona informacja z możliwością pobrania i ręcznego wysłania pliku na serwer.
+<br />
+
+<br />
+<a name="konfiguracja"></a><span style="font-weight: bold"><span style="font-size: 17px; line-height: normal">&#8226; Konfiguracja i użytkowanie</span></span>
+<br />
+Po zakończeniu instalacji podstawowa automatyczna konfiguracja umożliwia prawidłowe działanie forum, jednak istnieje wiele możliwości dostosowania forum do własnych potrzeb. Panel Administracyjny w każdym miejscu posiada skrócone informacje objaśniające każdą funkcję, jednak gdy nie będą one wystarczające, można skorzystać z informacji zawartych na <a href="http://www.przemo.org/phpBB2/" target="_blank" class="gen">stronie i forum modyfikacji</a>
+<br />
+System przechowuje dane w bazie danych oraz w postaci plików w swoim katalogu. Jako pliki zapisywane są: avatary (/images/avatars/), załączniki (/files/), zdjęcia profilu (/images/photos/), zdjęcia podpisów (/images/signatures/), uśmieszki (/images/smiles/), style kolorystyczne (/templates/) oraz wersje językowe (/language/) - (wszystkie statyczne opisy elementów forum)
+<br />
+Ważnym elementem jest "<span style="font-weight: bold">Kontrola Systemu</span>" w Panelu Administracyjnym zwana również <span style="font-weight: bold">CheckFiles</span>, służy do kontrolowania poprawności plików, odpowiednich praw do zapisu dla katalogów i plików oraz poprawności struktury w bazie danych. 
+<br />
+Aby wykorzystać wszystkie funkcje forum jak: wysyłanie avatarów, załączników, zdjęć profilu i podpisów oraz edycję schematów kolorystycznych forum i cache SQL, konieczne są zezwolenia serwera do zapisu niektórych plików i katalogów forum. Kontrola Systemu wskaże nam w jaki sposób ustawić pliki i katalogi.
+<br />
+Bardzo często pliki wysyłane na serwer zostają uszkodzone, lub nieprawidłowo zmienione (nazwa lub zawartość) Kontrola Systemu lokalizuje i wyświetla potrzebne informacje ułatwiając korektę nieprawidłowości.
+<br />
+Sprawdzane są tylko pliki z rozszerzeniem .php Jeżeli zajdzie potrzeba zmiany zawartości jakiegoś pliku .php (np. zmiana opisów forum w plikach językowych z katalogu /language/) możemy stworzyć specialny plik informacyjny dla Kontroli Systemu, aby nie uznawała wprowadzonych przez nas zmian jako błąd, lecz jako modyfikację. Opis czynności znajduje się w pliku /includes/mods_info/info
+<br />
+
+<br />
+<span style="text-decoration: underline">Ważnym elementem</span> (różnicą w stosunku do zwykłego phpBB2) jest miejsce dla ikon rang użytkowników, obrazki należy umieścić osobno dla każdego stylu w jego katalogu /templates/NaszStyl/images/ranks/ Ma to na celu możliwość dostosowania obrazków rang do różnych stylów. W w/w katalogu znajduje się też katalog dla ikon tematów (/icon/)
+<br />
+
+<br />
+Zachęcam do zapoznania się z informacjami zawartymi w Panelu Administracyjnym, oraz odkrywanie we własnym zakresie wszystkich możliwości, których jest bardzo dużo, może nam sie przydać trochę fantazji :-) Niektóre funkcje posiadają więcej możliwości niż to widać na pierwszy rzut oka.
+<br />
+Polecam też odwiedzać co jakiś czas <a href="http://www.przemo.org/phpBB2?page=list" target="_blank" class="gen">stronę projektu</a> w celu zapoznania się ze wszystkimi możliwościami, opisanymi na forum dyskusyjnym oraz szczegółowym FAQ, które jest w trakcie realizacji.
+<br />
+
+<br />
+System wyposażony jest w kontrolę uaktualnień, co jakiś czas należy odwiedzac Panel Administracyjny, gdy pojawi się aktualizacja, informacja ta zostanie pobrana i wyświetlona.
+<br />
+
+<br />
+Skryptu możemy używać za darmo i bez ograniczeń za wyjątkiem ograniczenia nałożonego na jego stopkę, której nie można usuwać oraz zmieniać. Skrypt wyposażony jest w funkcje kontrolujące i gdy zostanie ona zmieniona lub usunięta, pojawią się problemy w działaniu forum.
+<br />
+
+<br />
+<a name="aktualizacje"></a><span style="font-weight: bold"><span style="font-size: 17px; line-height: normal">&#8226; Aktualizacje i zamiana oryginalnego phpBB</span></span>
+<br />
+System wyposażony jest w uniwersalny aktualizator służący do aktualizacji (z wersji 1.5 - 1.9.5 by Przemo) oraz zamiany zwykłego phpBB2 przy zachowaniu dotychczasowego dorobku forum: tematy, posty, użytkownicy, ustawienia.
+<br />
+Aby go wywołać kopiujemy do katologu głównego naszego forum katalog <span style="font-weight: bold">/scripts/</span> z pakietu "phpBB modified by Przemo"
+<br />
+Będąc zalogowanym jako Administrator i po wcześniejszym wykonaniu kopii zapasowej plików oraz bazy danych naszego forum, wywołujemy aktualizator poprzez wpisanie w przeglądarce <u>http://adresforum.pl/forum/scripts/update.php</u>
+<br />
+Następnie należy nadpisać wszystkie pliki naszego forum, plikami z wersji "phpBB modified by Przemo" za wyjątkiem pliku <span style="font-weight: bold">config.php</span>
+<br />
+Po zakończeniu kopiowania plików możemy w pełni korzystać z nowego forum.
+<br />
+
+<br />
+<a name="deinstalacja"></a><span style="font-weight: bold"><span style="font-size: 17px; line-height: normal">&#8226; Deinstalacja</span></span>
+<br />
+System wyposażony jest w deinstalator, służący do całkowitego odinstalowania wersji "by Przemo" i powrotu do oryginalnego phpBB2 przy zachowaniu tematów, postów, użytkowników, ustawień.
+<br />
+Deinstalacja polega na uruchomieniu deinstalatora znajdującego się w Panelu Administracyjnym w sekcji SQL. Należy w nim podać wersję phpBB2 do jakiej chcemy powrócić (np. 2.0.19) i zaakceptować chęć deinstalacji (może to wykonać tylko główny "zapisany" Administrator)
+<br />
+Następnie należy usunąć wszystkie pliki forum z serwera z wyjątkiem pliku config.php oraz katalogu /images/ (w którym znajdują się avatary użytkowników) i wysłać pliki oryginalnego phpBB2 (nadpisać pliki z katalogu /images/)
+<br />
+
+<br />
+
+<br />
+Przy tworzeniu <span style="font-weight: bold">phpBB modified by Przemo</span> pomagają:
+<br />
+<a href="http://www.przemo.org/phpBB2/forum/profile.php?mode=viewprofile&amp;u=3652" target="_blank" class="gen" style="text-decoration: none">chelloPL</a>,
+<a href="http://www.przemo.org/phpBB2/forum/profile.php?mode=viewprofile&amp;u=977" target="_blank" class="gen" style="text-decoration: none">Crack</a>,
+<a href="http://www.przemo.org/phpBB2/forum/profile.php?mode=viewprofile&amp;u=10158" target="_blank" class="gen" style="text-decoration: none">FanFataL</a>,
+<a href="http://www.przemo.org/phpBB2/forum/profile.php?mode=viewprofile&amp;u=121" target="_blank" class="gen" style="text-decoration: none">Widmo</a> 
+oraz osoby z grupy 
+<a href="http://www.przemo.org/phpBB2/forum/groupcp.php?g=4769" target="_blank" class="gen" style="text-decoration: none">ModTeam</a> 
+i 
+<a href="http://www.przemo.org/phpBB2/forum/groupcp.php?g=1249" target="_blank" class="gen" style="text-decoration: none">SupportTeam</a>
+<br />
+
+<br />
+Bardzo wam dziękuję za pomoc.
+<br />
+Dziękuję również osobom, które postanowiły wesprzeć projekt finansowo oraz tym, którzy wspierają mnie "dobrym słowem", wasza przychylność i zadowolenie jest dla mnie największą motywacją w tworzeniu i dalszym rozwijaniu projektu.
+<br />
+
+<br />
+<a href="http://www.przemo.org/phpBB2/forum/profile.php?mode=viewprofile&amp;u=2" target="_blank" class="gen" style="text-decoration: none">Przemo</a></span>
+</div>
+</body>
+</html>
