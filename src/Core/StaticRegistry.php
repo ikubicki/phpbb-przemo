@@ -2,24 +2,24 @@
 
 namespace PHPBB\Przemo\Core;
 
-final class Registry
+final class StaticRegistry
 {
     
     /**
      * 
      * @var array
      */
-    protected $registry = [];
+    protected static $registry = [];
     
     /**
      * 
      * @author ikubicki
      * @param array $import
      */
-    public function import(array $import)
+    public static function import(array $import)
     {
         foreach($import as $property => $value) {
-            $this->registry[$property] = $value;
+            self::$registry[$property] = $value;
         }
     }
     
@@ -28,9 +28,9 @@ final class Registry
      * @author ikubicki
      * @return array
      */
-    public function export()
+    public static function export()
     {
-        return $this->registry;
+        return self::$registry;
     }
     
     /**
@@ -39,9 +39,9 @@ final class Registry
      * @param string $property
      * @return boolean
      */
-    public function has($property)
+    public static function has($property)
     {
-        return array_key_exists($property, $this->registry);
+        return array_key_exists($property, self::$registry);
     }
     
     /**
@@ -51,10 +51,10 @@ final class Registry
      * @param mixed $alternative
      * @return mixed
      */
-    public function get($property, $alternative = null)
+    public static function get($property, $alternative = null)
     {
-        if ($this->has($property)) {
-            return $this->registry[$property];
+        if (self::has($property)) {
+            return self::$registry[$property];
         }
         return $alternative;
     }
@@ -65,8 +65,8 @@ final class Registry
      * @param string $property
      * @param string $value
      */
-    public function set($property, $value)
+    public static function set($property, $value)
     {
-        $this->registry[$property] = $value;
+        self::$registry[$property] = $value;
     }
 }

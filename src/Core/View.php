@@ -10,21 +10,6 @@ class View
 {
     
     /**
-     * @var string
-     */
-    protected static $templatesDirectory;
-    
-    /**
-     * @var string
-     */
-    protected static $cacheDirectory;
-    
-    /**
-     * @var string
-     */
-    protected static $theme;
-    
-    /**
      * @var LoaderInterface
      */
     protected $twigLoader;
@@ -47,33 +32,13 @@ class View
     }
     
     /**
-     *
-     * @author ikubicki
-     * @param string $templatesDirectory
-     */
-    public function setTemplatesDirectory($templatesDirectory)
-    {
-        self::$templatesDirectory = $templatesDirectory;
-    }
-    
-    /**
-     *
-     * @author ikubicki
-     * @param string $cacheDirectory
-     */
-    public function setCacheDirectory($cacheDirectory)
-    {
-        self::$cacheDirectory = $cacheDirectory;
-    }
-    
-    /**
      * 
      * @author ikubicki
      * @param string $theme
      */
     public function setTheme($theme)
     {
-        self::$theme = $theme;
+        $this->getConfig()->get('view')->set('theme', $theme);
     }
     
     /**
@@ -97,7 +62,10 @@ class View
     protected function getTwigLoader()
     {
         if (!$this->twigLoader) {
-            $this->twigLoader = new FilesystemLoader(sprintf(self::$templatesDirectory, self::$theme));
+            $this->twigLoader = new FilesystemLoader(sprintf(
+                $this->getTemplatesDirectory(),
+                $this->getTheme()
+            ));
         }
         return $this->twigLoader;
     }
@@ -111,9 +79,49 @@ class View
     {
         return [
             'charset' => 'utf-8',
-            'cache' => self::$cacheDirectory,
+            'cache' => $this->getCacheDirectory(),
             'debug' => ini_get('display_errors') > 0,
             'strict_variables ' => ini_get('display_errors') > 0,
         ];
+    }
+    
+    /**
+     *
+     * @author ikubicki
+     * @return Config
+     */
+    protected function getConfig()
+    {
+        return StaticRegistry::get('configuration');
+    }
+    
+    /**
+     *
+     * @author ikubicki
+     * @return array
+     */
+    protected function getCacheDirectory()
+    {
+        return $this->getConfig()->view->cache->get('dir', '');
+    }
+    
+    /**
+     *
+     * @author ikubicki
+     * @return array
+     */
+    protected function getTemplatesDirectory()
+    {
+        return $this->getConfig()->view->templates->get('dir', '');
+    }
+    
+    /**
+     *
+     * @author ikubicki
+     * @return array
+     */
+    protected function getTheme()
+    {
+        return $this->getConfig()->view->get('theme', 'default');
     }
 }

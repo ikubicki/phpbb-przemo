@@ -2,26 +2,8 @@
 
 namespace PHPBB\Przemo\Core;
 
-final class Registry
+final class NullRegistry
 {
-    
-    /**
-     * 
-     * @var array
-     */
-    protected $registry = [];
-    
-    /**
-     * 
-     * @author ikubicki
-     * @param array $import
-     */
-    public function import(array $import)
-    {
-        foreach($import as $property => $value) {
-            $this->registry[$property] = $value;
-        }
-    }
     
     /**
      * 
@@ -30,7 +12,7 @@ final class Registry
      */
     public function export()
     {
-        return $this->registry;
+        return [];
     }
     
     /**
@@ -41,7 +23,7 @@ final class Registry
      */
     public function has($property)
     {
-        return array_key_exists($property, $this->registry);
+        return false;
     }
     
     /**
@@ -53,10 +35,7 @@ final class Registry
      */
     public function get($property, $alternative = null)
     {
-        if ($this->has($property)) {
-            return $this->registry[$property];
-        }
-        return $alternative;
+        return $alternative === null ? $alternative : $this;
     }
     
     /**
@@ -67,6 +46,6 @@ final class Registry
      */
     public function set($property, $value)
     {
-        $this->registry[$property] = $value;
+        // do nothing
     }
 }

@@ -2,6 +2,9 @@
 
 namespace PHPBB\Applications\Install;
 
+use PHPBB\Przemo\Core\Config;
+use PHPBB\Przemo\Core\StaticRegistry;
+
 class Migration
 {
     
@@ -38,28 +41,63 @@ class Migration
     
     public function config()
     {
-        $payload = [
-            'dbms' => 'pdo',
-            'dbhost' => $this->getFormParameter('dbhost'),
-            'dbname' => $this->getFormParameter('dbname'),
-            'dbuser' => $this->getFormParameter('dbuser'),
-            'dbpasswd' => $this->getFormParameter('dbpasswd'),
-            'table_prefix' => $this->getFormParameter('table_prefix'),
-            'pdo' => [
+        
+        $item = '_' . base_convert(crc32(microtime()), 10, 36);
+        
+        $contents = "<?php " . PHP_EOL;
+        $contents .= PHP_EOL;
+        $contents .= 'use PHPBB\Przemo\Core\StaticRegistry;' . PHP_EOL;
+        $contents .= PHP_EOL;
+        $contents .= '$' . $item . ' = StaticRegistry::get("configuration");' . PHP_EOL;
+        
+        foreach ($this->getConfigProperties() as $property => $value) {
+            $this->appendSetter($contents, $property, $value, $item);
+        }
+        
+        $phpbb_dir = StaticRegistry::get('phpbb_dir');
+        
+        $filename = $phpbb_dir . '/config/config.php';
+        file_put_contents($filename, $contents);
+        
+        if (!file_exists($filename)) {
+            return $contents;
+        }
+        if (filesize($filename) != strlen($contents)) {
+            return $contents;
+        }
+        return $contents;
+    }
+    
+    public function appendSetter(&$contents, $property, $value, $item)
+    {
+        if (is_array($value)) {
+            $subitem = '_' . base_convert(crc32("{$item}_{$property}"), 10, 36);
+            $contents .= '$' . $subitem . ' = $' . $item . '->create(' . var_export($property, true) . ');' . PHP_EOL;
+            foreach($value as $subproperty => $subvalue) {
+                $this->appendSetter($contents, $subproperty, $subvalue, $subitem);
+            }
+            return;
+        }
+        $contents .= '$' . $item . '->set(' . var_export($property, true) . ', ' . var_export($value, true) . ');' . PHP_EOL;
+    }
+    
+    /**
+     * 
+     * @author ikubicki
+     * @return array
+     */
+    protected function getConfigProperties()
+    {
+        return [
+            'installed' => true,
+            'key' => substr(base64_encode(md5(microtime())), 2, 24),
+            'database' => [
                 'dsn' => "mysql:host={$this->getFormParameter('dbhost')};dbname={$this->getFormParameter('dbname')};charset=utf8",
                 'user' => $this->getFormParameter('dbuser'),
                 'pass' => $this->getFormParameter('dbpasswd'),
+                'prefix' => $this->getFormParameter('prefix'),
             ],
         ];
-        
-        $contents = "<?php " . PHP_EOL;
-        $contents .= "extract(".var_export($payload, true).");" . PHP_EOL;
-        $contents .= "define('PHPBB_INSTALLED', true);" . PHP_EOL;
-        
-        return $contents;
-        
-        $filename = $phpbb_root_path . '/config.php';
-        file_put_contents($filename, $contents);
     }
     
     /**

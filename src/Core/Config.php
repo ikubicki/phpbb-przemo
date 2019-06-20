@@ -19,6 +19,21 @@ class Config
      * 
      * @author ikubicki
      * @param string $property
+     * @return mixed
+     */
+    public function __get($property)
+    {
+        $value = $this->get($property, null);
+        if ($value === null) {
+            return new NullRegistry;
+        }
+        return $value;
+    }
+    
+    /**
+     * 
+     * @author ikubicki
+     * @param string $property
      * @return Config
      */
     public function create($property)
@@ -31,15 +46,17 @@ class Config
      * 
      * @author ikubicki
      * @param array $rawConfiguration
+     * @return Config
      */
     public function import($rawConfiguration)
     {
         if (!is_array($rawConfiguration)) {
-            return;
+            return $this;
         }
         foreach($rawConfiguration as $property => $value) {
             $this->set($property, $value);
         }
+        return $this;
     }
     
     /**
@@ -79,19 +96,14 @@ class Config
      * @author ikubicki
      * @param string $property
      * @param mixed $value
+     * @return Config
      */
     public function set($property, $value)
     {
         if (!$this->registry) {
             $this->registry = new Registry;
         }
-        if (is_array($value)) {
-            $registry = new Registry;
-            $registry->import($value);
-            $this->registry->set($property, $value);
-        }
-        else {
-            $this->registry->set($property, $value);
-        }
+        $this->registry->set($property, $value);
+        return $this;
     }
 }

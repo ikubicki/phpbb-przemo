@@ -16,18 +16,6 @@ class L10n
     protected $registry;
     
     /**
-     * @var array
-     */
-    protected static $available = [
-        'en',
-    ];
-    
-    /**
-     * @var string
-     */
-    protected static $phrasesDirectory;
-    
-    /**
      * 
      * @author ikubicki
      * @param string $language
@@ -75,26 +63,6 @@ class L10n
     }
     
     /**
-     *
-     * @author ikubicki
-     * @param string $language
-     */
-    public function addAvailableLanguage($language)
-    {
-        self::$available[] = $language;
-    }
-    
-    /**
-     *
-     * @author ikubicki
-     * @param string $language
-     */
-    public function setPhrasesDirectory($phrasesDirectory)
-    {
-        self::$phrasesDirectory = $phrasesDirectory;
-    }
-    
-    /**
      * 
      * @author ikubicki
      * @param string $namespace
@@ -125,7 +93,7 @@ class L10n
      */
     protected function getFilename($namespace)
     {
-        return self::$phrasesDirectory . "/lang_{$this->language}/lang_{$namespace}.php";
+        return $this->getPhrasesDirectory() . "/lang_{$this->language}/lang_{$namespace}.php";
     }
     
     /**
@@ -137,7 +105,7 @@ class L10n
     {
         $languages = explode(',', $this->getHeader());
         foreach ($languages as $language) {
-            if (array_search(substr($language, 0, 2), self::$available)) {
+            if (array_search(substr($language, 0, 2), $this->getAvailableLanguages())) {
                 return $language;
             }
         }
@@ -155,5 +123,35 @@ class L10n
             return $_SERVER['HTTP_ACCEPT_LANGUAGE'];
         }
         return 'en';
+    }
+    
+    /**
+     * 
+     * @author ikubicki
+     * @return Config
+     */
+    protected function getConfig()
+    {
+        return StaticRegistry::get('configuration');
+    }
+    
+    /**
+     * 
+     * @author ikubicki
+     * @return array
+     */
+    protected function getAvailableLanguages()
+    {
+        return (array) $this->getConfig()->l10n->get('languages', ['en']);
+    }
+    
+    /**
+     * 
+     * @author ikubicki
+     * @return string
+     */
+    protected function getPhrasesDirectory()
+    {
+        return (string) $this->getConfig()->l10n->get('dir', '');
     }
 }

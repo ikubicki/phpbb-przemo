@@ -8,6 +8,8 @@ use PHPBB\Przemo\Core\View;
 use PHPBB\Przemo\Core\L10n;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use PHPBB\Przemo\Core\StaticRegistry;
+use PHPBB\Przemo\Core\Config;
 
 class RichController extends Controller
 {
@@ -38,6 +40,16 @@ class RichController extends Controller
             self::$i10n = new L10n;
         }
         return self::$i10n;
+    }
+    
+    /**
+     * 
+     * @author ikubicki
+     * @return Config
+     */
+    protected function config()
+    {
+        return StaticRegistry::get('configuration');
     }
     
     /**
