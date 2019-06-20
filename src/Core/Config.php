@@ -91,6 +91,14 @@ class Config
         return $alternative;
     }
     
+    public function array($property, array $alternative = [])
+    {
+        if ($this->registry->has($property)) {
+            return $this->registry->get($property)->export();
+        }
+        return $alternative;
+    }
+    
     /**
      * 
      * @author ikubicki

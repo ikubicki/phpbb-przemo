@@ -10,14 +10,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use PHPBB\Przemo\Core\StaticRegistry;
 use PHPBB\Przemo\Core\Config;
+use PHPBB\Przemo\Core\Store\SQL;
 
 class RichController extends Controller
 {
-    
-    /**
-     * @var L10n`
-     */
-    protected static $i10n;
     
     /**
      * 
@@ -30,16 +26,29 @@ class RichController extends Controller
     }
     
     /**
-     * 
+     *
      * @author ikubicki
      * @return L10n
      */
     protected function l10n()
     {
-        if (!self::$i10n) {
-            self::$i10n = new L10n;
+        if (!StaticRegistry::has('i10n')) {
+            StaticRegistry::set('i10n', new L10n);
         }
-        return self::$i10n;
+        return StaticRegistry::get('i10n');
+    }
+    
+    /**
+     *
+     * @author ikubicki
+     * @return SQL
+     */
+    protected function sql()
+    {
+        if (!StaticRegistry::has('sql')) {
+            StaticRegistry::set('sql', new SQL());
+        }
+        return StaticRegistry::get('sql');
     }
     
     /**

@@ -53,7 +53,13 @@ class Step1 extends RichController
         if (count($databaseErrors)) {
             return $this->handleDatabaseErrors($databaseErrors);
         }
-        $databaseErrors = $migration->schema();
+        try {
+            $databaseErrors = $migration->schema();
+        }
+        catch (\Exception $exception) {
+            $this->validation = ['prefix' => $l10n->get('Change_prefix')];
+            return $this->get('index');
+        }
         if (count($databaseErrors)) {
             return $this->handleDatabaseErrors($databaseErrors);
         }

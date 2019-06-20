@@ -4,33 +4,85 @@ namespace PHPBB\Applications\Install;
 
 use PHPBB\Przemo\Core\Config;
 use PHPBB\Przemo\Core\StaticRegistry;
+use PHPBB\Przemo\Core\Store\SQL;
 
 class Migration
 {
     
+    protected $sql;
     protected $formData = [];
     
-    public function setFormData($formData)
+    /**
+     * 
+     * @author ikubicki
+     * @param array $formData
+     */
+    public function setFormData(array $formData)
     {
         $this->formData = $formData;
     }
     
+    /**
+     * 
+     * @author ikubicki
+     * @return array
+     */
     public function database()
     {
-//         print 'database';
-        return [];
-        return [
-            ['query' => md5(microtime()), 'error' => md5(microtime())],
-            ['query' => md5(microtime()), 'error' => md5(microtime())],
-            ['query' => md5(microtime()), 'error' => md5(microtime())],
-            ['query' => md5(microtime()), 'error' => md5(microtime())],
-        ];
+        $check = $this->sql()
+            ->query("SHOW DATABASES LIKE ?")
+            ->rows([$this->getFormParameter('dbname')]);
+        
+        if (count($check)) {
+            $this->sql->exec('USE `' . $this->getFormParameter('dbname') . '`;');
+            return [];
+        }
+        
+        $dbms = $this->getFormParameter('dbms');
+        $phpbb_dir = StaticRegistry::get('phpbb_dir');
+        $sqlFilename = $phpbb_dir . '/install/migrations/' . $dbms . '/create_database.sql';
+        $sql = file_get_contents($sqlFilename);
+        $sql = str_replace('`phpbb`', '`' . $this->getFormParameter('dbname') . '`', $sql);
+        
+        $queries = $this->splitSql($sql);
+        return $this->runQueries($queries);
+    }
+    
+    /**
+     * 
+     * @author ikubicki
+     * @param array $queries
+     * @return array
+     */
+    protected function runQueries(array $queries)
+    {
+        $errors = [];
+        foreach($queries as $query)
+        {
+            try {
+                $this->sql()->exec($query);
+            }
+            catch(\Throwable $throwable) {
+                $errors[] = [
+                    'query' => $query,
+                    'error' => $throwable->getMessage()
+                ];
+            }
+        }
+        return $errors;
     }
     
     public function schema()
     {
-//         print 'schema';
-        return [];
+        
+        $check = $this->sql()
+            ->query("SHOW TABLES LIKE ?")
+            ->rows([$this->getFormParameter('prefix') . '%']);
+        
+        if (count($check)) {
+            throw new \Exception('TABLES_EXISTS');
+        }
+        
     }
     
     public function data()
@@ -39,46 +91,83 @@ class Migration
         return [];
     }
     
+    /**
+     * 
+     * @author ikubicki
+     * @return string|null
+     */
     public function config()
     {
         
+        // build content
         $item = '_' . base_convert(crc32(microtime()), 10, 36);
-        
-        $contents = "<?php " . PHP_EOL;
-        $contents .= PHP_EOL;
-        $contents .= 'use PHPBB\Przemo\Core\StaticRegistry;' . PHP_EOL;
-        $contents .= PHP_EOL;
-        $contents .= '$' . $item . ' = StaticRegistry::get("configuration");' . PHP_EOL;
-        
+        $content = '';
+        $this->appendConfigHeader($content, $item);
         foreach ($this->getConfigProperties() as $property => $value) {
-            $this->appendSetter($contents, $property, $value, $item);
+            $this->appendConfigSetter($content, $property, $value, $item);
         }
         
         $phpbb_dir = StaticRegistry::get('phpbb_dir');
         
         $filename = $phpbb_dir . '/config/config.php';
-        file_put_contents($filename, $contents);
+        file_put_contents($filename, $content);
         
         if (!file_exists($filename)) {
-            return $contents;
+            return $content;
         }
-        if (filesize($filename) != strlen($contents)) {
-            return $contents;
+        if (filesize($filename) != strlen($content)) {
+            return $content;
         }
-        return $contents;
+        return null;
     }
     
-    public function appendSetter(&$contents, $property, $value, $item)
+    protected function sql()
+    {
+        if (!$this->sql) {
+            
+            $dsn = "mysql:host={$this->getFormParameter('dbhost')};charset=utf8";
+            $this->sql = new SQL;
+            $this->sql->setDsn($dsn);
+            $this->sql->setPass($this->getFormParameter('dbuser'));
+            $this->sql->setPrefix($this->getFormParameter('prefix'));
+        }
+        return $this->sql;
+    }
+    
+    /**
+     * 
+     * @author ikubicki
+     * @param string $content
+     * @param string $item
+     */
+    protected function appendConfigHeader(&$content, $item)
+    {
+        $content .= "<?php " . PHP_EOL;
+        $content .= PHP_EOL;
+        $content .= 'use PHPBB\Przemo\Core\StaticRegistry;' . PHP_EOL;
+        $content .= PHP_EOL;
+        $content .= '$' . $item . ' = StaticRegistry::get("configuration");' . PHP_EOL;
+    }
+    
+    /**
+     * 
+     * @author ikubicki
+     * @param string $content
+     * @param string $property
+     * @param mixed $value
+     * @param string $item
+     */
+    protected function appendConfigSetter(&$content, $property, $value, $item)
     {
         if (is_array($value)) {
             $subitem = '_' . base_convert(crc32("{$item}_{$property}"), 10, 36);
-            $contents .= '$' . $subitem . ' = $' . $item . '->create(' . var_export($property, true) . ');' . PHP_EOL;
+            $content .= '$' . $subitem . ' = $' . $item . '->create(' . var_export($property, true) . ');' . PHP_EOL;
             foreach($value as $subproperty => $subvalue) {
-                $this->appendSetter($contents, $subproperty, $subvalue, $subitem);
+                $this->appendConfigSetter($content, $subproperty, $subvalue, $subitem);
             }
             return;
         }
-        $contents .= '$' . $item . '->set(' . var_export($property, true) . ', ' . var_export($value, true) . ');' . PHP_EOL;
+        $content .= '$' . $item . '->set(' . var_export($property, true) . ', ' . var_export($value, true) . ');' . PHP_EOL;
     }
     
     /**
@@ -89,12 +178,15 @@ class Migration
     protected function getConfigProperties()
     {
         return [
-            'installed' => true,
+            'installed' => time(),
             'key' => substr(base64_encode(md5(microtime())), 2, 24),
             'database' => [
                 'dsn' => "mysql:host={$this->getFormParameter('dbhost')};dbname={$this->getFormParameter('dbname')};charset=utf8",
                 'user' => $this->getFormParameter('dbuser'),
                 'pass' => $this->getFormParameter('dbpasswd'),
+                'options' => [
+                    \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION
+                ],
                 'prefix' => $this->getFormParameter('prefix'),
             ],
         ];
@@ -113,9 +205,11 @@ class Migration
     /**
      *
      * @author ridgerunner
+     * @param string $sqlQuery
+     * @return array
      * @see https://stackoverflow.com/questions/4747808/split-mysql-queries-in-array-each-queries-separated-by
      */
-    protected function SplitSQL($sqlQuery)
+    protected function splitSql($sqlQuery)
     {
         $regex = '%\s*((?:\'[^\'\\\\]*(?:\\\\.[^\'\\\\]*)*\'|"[^"\\\\]*(?:\\\\.[^"\\\\]*)*"|/\*[^*]*\*+(?:[^*/][^*]*\*+)*/|\#.*|--.*|[^"\';#])+(?:;|$))%x';
         if (preg_match_all($regex, trim($sqlQuery), $queries)) {
