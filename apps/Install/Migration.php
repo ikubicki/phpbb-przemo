@@ -9,7 +9,14 @@ use PHPBB\Przemo\Core\Store\SQL;
 class Migration
 {
     
+    /**
+     * @var SQL
+     */
     protected $sql;
+    
+    /**
+     * @var array
+     */
     protected $formData = [];
     
     /**
@@ -41,15 +48,62 @@ class Migration
         $dbms = $this->getFormParameter('dbms');
         $phpbb_dir = StaticRegistry::get('phpbb_dir');
         $sqlFilename = $phpbb_dir . '/install/migrations/' . $dbms . '/create_database.sql';
+        return $this->executeSqlFile($sqlFilename);
+    }
+    
+    /**
+     * 
+     * @author ikubicki
+     * @throws \Exception
+     * @return array
+     */
+    public function schema()
+    {
+        $check = $this->sql()
+            ->query("SHOW TABLES LIKE ?")
+            ->rows([$this->getFormParameter('prefix') . '%']);
+        
+        if (count($check)) {
+            throw new \Exception('TABLES_EXISTS');
+        }
+        
+        $dbms = $this->getFormParameter('dbms');
+        $phpbb_dir = StaticRegistry::get('phpbb_dir');
+        $sqlFilename = $phpbb_dir . '/install/migrations/' . $dbms . '/create_tables.sql';
+        return $this->executeSqlFile($sqlFilename);
+    }
+    
+    /**
+     * 
+     * @author ikubicki
+     * @return array
+     */
+    public function data()
+    {
+        $dbms = $this->getFormParameter('dbms');
+        $phpbb_dir = StaticRegistry::get('phpbb_dir');
+        $sqlFilename = $phpbb_dir . '/install/migrations/' . $dbms . '/import_data.sql';
+        return $this->executeSqlFile($sqlFilename);
+    }
+    
+    /**
+     *
+     * @author ikubicki
+     * @param string $sqlFilename
+     * @return array
+     */
+    protected function executeSqlFile($sqlFilename)
+    {
         $sql = file_get_contents($sqlFilename);
         $sql = str_replace('`phpbb`', '`' . $this->getFormParameter('dbname') . '`', $sql);
+        $sql = str_replace('`phpbb_', '`' . $this->getFormParameter('prefix') . '_', $sql);
         
         $queries = $this->splitSql($sql);
         return $this->runQueries($queries);
     }
     
     /**
-     * 
+     *
      * @author ikubicki
      * @param array $queries
      * @return array
@@ -70,25 +124,6 @@ class Migration
             }
         }
         return $errors;
-    }
-    
-    public function schema()
-    {
-        
-        $check = $this->sql()
-            ->query("SHOW TABLES LIKE ?")
-            ->rows([$this->getFormParameter('prefix') . '%']);
-        
-        if (count($check)) {
-            throw new \Exception('TABLES_EXISTS');
-        }
-        
-    }
-    
-    public function data()
-    {
-//         print 'data';
-        return [];
     }
     
     /**
@@ -121,6 +156,11 @@ class Migration
         return null;
     }
     
+    /**
+     * 
+     * @author ikubicki
+     * @return SQL
+     */
     protected function sql()
     {
         if (!$this->sql) {

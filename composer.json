@@ -16,7 +16,7 @@
         "psr-4": {
             "PHPBB\\Przemo\\": "src/",
             "PHPBB\\Applications\\": "apps/",
-            "PHPBB\\Extra\\": "apps/extra/"
+            "PHPBB\\Applications\\Library\\": "apps/lib/"
         }
     }
 }

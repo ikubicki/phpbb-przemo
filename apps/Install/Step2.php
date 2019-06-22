@@ -2,7 +2,7 @@
 
 namespace PHPBB\Applications\Install;
 
-use PHPBB\Extra\RichController;
+use PHPBB\Applications\Library\RichController;
 use PHPBB\Przemo\Core\Routing\Route;
 
 class Step2 extends RichController

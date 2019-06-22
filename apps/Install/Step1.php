@@ -1,7 +1,7 @@
 <?php
 namespace PHPBB\Applications\Install;
 
-use PHPBB\Extra\RichController;
+use PHPBB\Applications\Library\RichController;
 use PHPBB\Przemo\Core\Form;
 use PHPBB\Przemo\Core\Routing\Route;
 
@@ -71,7 +71,7 @@ class Step1 extends RichController
         if ($configurationDump) {
             return $this->handleConfigurationError($configurationDump);
         }
-        print '00000';
+        return $this->redirect('step2');
     }
     
     public function postDownload($request)
@@ -130,8 +130,11 @@ class Step1 extends RichController
         $request = $this->request;
         
         // language
-        $language = $this->l10n()->getLanguage();
-        $request->request->set('lang', $language);
+        
+        if (!$request->request->has('lang')) {
+            $language = $this->l10n()->getLanguage();
+            $request->request->set('lang', $language);
+        }
         
         // server name
         if (!$request->request->has('server_name'))
@@ -165,16 +168,22 @@ class Step1 extends RichController
         }
         
         // script path
-        $PHP_SELF = $request->server->get('PHP_SELF');
-        $board_email = $request->request->get('board_email');
-        $script_path = $request->request->get('script_path') ?: str_replace('install', '', dirname($PHP_SELF));
-        $request->request->set('script_path', $script_path);
+        if (!$request->request->has('script_path')) {
+            $PHP_SELF = $request->server->get('PHP_SELF');
+            $board_email = $request->request->get('board_email');
+            $script_path = $request->request->get('script_path') ?: str_replace('install', '', dirname($PHP_SELF));
+            $request->request->set('script_path', $script_path);
+        }
         
         //dbms
-        $request->request->set('dbms', 'mysql');
+        if (!$request->request->has('dbms')) {
+            $request->request->set('dbms', 'mysql');
+        }
         
         //prefix
-        $request->request->set('prefix', 'phpbb_');
+        if (!$request->request->has('prefix')) {
+            $request->request->set('prefix', 'phpbb_');
+        }
     }
 
     /**

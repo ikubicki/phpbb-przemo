@@ -2,7 +2,7 @@
 
 namespace PHPBB\Applications\Install;
 
-use PHPBB\Extra\RichController;
+use PHPBB\Applications\Library\RichController;
 
 class ChecksumWarning extends RichController
 {

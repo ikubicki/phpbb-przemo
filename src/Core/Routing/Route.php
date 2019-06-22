@@ -55,6 +55,16 @@ class Route
      */
     public function __toString()
     {
+        return $this->getUrl(true);
+    }
+    
+    /**
+     *
+     * @author ikubicki
+     * @return string
+     */
+    public function getUrl($absolute = false)
+    {
         $query = $this->parameters;
         if ($this->module != 'index') {
             $query['module'] = $this->module;
@@ -63,7 +73,55 @@ class Route
             unset($query['action']);
         }
         $query = http_build_query($query);
-        return "{$this->application}.php" . ($query ? "?$query" : '');  
+        $path = $this->getPath();
+        if ($absolute) {
+            $protocol = $this->isSecured() ? 'https' : 'http';
+            $host = $this->getHostname();
+            $path = "{$protocol}://{$host}{$path}";
+        }
+        return "{$path}{$this->application}.php" . ($query ? "?$query" : '');
+    }
+    
+    /**
+     * 
+     * @author ikubicki
+     * @return string
+     */
+    public function getPath()
+    {
+        // @TODO support paths, especially with mod rewrite
+        return '/';
+    }
+    
+    /**
+     *
+     * @author ikubicki
+     * @return boolean
+     */
+    public function isSecured()
+    {
+        if (empty($_SERVER['HTTPS']) && empty($_SERVER['HTTP_X_FORWARDED_SSL'])) {
+            return false;
+        }
+        return true;
+    }
+    
+    /**
+     *
+     * @author ikubicki
+     * @return string
+     */
+    public function getHostname()
+    {
+        if (empty($_SERVER['HTTP_HOST'])) {
+            $ip = $_SERVER['SERVER_ADDR'];
+            $port = $_SERVER['SERVER_PORT'];
+            if ($port == 80 || $port == 443) {
+                return $ip;
+            }
+            return "$ip:$port";
+        }
+        return $_SERVER['HTTP_HOST'];
     }
 }
 

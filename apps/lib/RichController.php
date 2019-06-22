@@ -1,6 +1,6 @@
 <?php
 
-namespace PHPBB\Extra;
+namespace PHPBB\Applications\Library;
 
 use PHPBB\Przemo\Core\Controller;
 use PHPBB\Przemo\Core\Form;
@@ -14,6 +14,48 @@ use PHPBB\Przemo\Core\Store\SQL;
 
 class RichController extends Controller
 {
+    
+    /**
+     *
+     * @author ikubicki
+     * @param string $action
+     * @param string $module
+     * @param array $parameters
+     * @return Response
+     */
+    public function get($action, $module = null, array $parameters = [])
+    {
+        return $this->go($action, $module, $parameters, Request::METHOD_GET);
+    }
+    
+    /**
+     *
+     * @author ikubicki
+     * @param string $action
+     * @param string $module
+     * @param array $parameters
+     * @return Response
+     */
+    public function post($action, $module = null, array $parameters = [])
+    {
+        return $this->go($action, $module, $parameters, Request::METHOD_POST);
+    }
+    
+    /**
+     *
+     * @author ikubicki
+     * @param string $module
+     * @param string $action
+     * @param array $parameters
+     * @return Response
+     */
+    public function redirect($module, $action = null, array $parameters = [])
+    {
+        $route = $this->getApplicationRoute($module, $action, $parameters);
+        $this->response->headers->set('Location', (string) $route);
+        $this->response->setContent(sprintf('<meta http-equiv="refresh" content="0; url=%s">', (string) $route));
+        return $this->response;
+    }
     
     /**
      * 
@@ -64,7 +106,7 @@ class RichController extends Controller
     /**
      *
      * @author ikubicki
-     * @param steing $template
+     * @param string $template
      * @param array $parameters
      */
     protected function html($template = null, array $parameters = null)
@@ -101,31 +143,5 @@ class RichController extends Controller
     protected function getView()
     {
         return new View;
-    }
-    
-    /**
-     *
-     * @author ikubicki
-     * @param string $action
-     * @param string $module
-     * @param array $parameters
-     * @return Response
-     */
-    protected function get($action, $module = null, array $parameters = [])
-    {
-        return $this->go($action, $module, $parameters, Request::METHOD_GET);
-    }
-    
-    /**
-     * 
-     * @author ikubicki
-     * @param string $action
-     * @param string $module
-     * @param array $parameters
-     * @return Response
-     */
-    protected function post($action, $module = null, array $parameters = [])
-    {
-        return $this->go($action, $module, $parameters, Request::METHOD_POST);
     }
 }

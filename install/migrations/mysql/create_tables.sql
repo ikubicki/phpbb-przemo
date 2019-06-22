@@ -1,6 +1,6 @@
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET NAMES utf8 */;
-/*!50503 SET NAMES utf8mb4 */;
+/*!50503 SET NAMES utf8 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
@@ -17,21 +17,21 @@ CREATE TABLE IF NOT EXISTS `phpbb_advertisement` (
   `notify` tinyint(1) NOT NULL DEFAULT '0',
   `type` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_adv_person` (
   `user_id` mediumint(9) NOT NULL DEFAULT '0',
   `person_id` mediumint(9) NOT NULL DEFAULT '0',
   `person_ip` char(8) DEFAULT '',
   PRIMARY KEY (`user_id`,`person_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_anti_robotic_reg` (
   `session_id` char(32) NOT NULL DEFAULT '',
   `reg_key` char(4) NOT NULL DEFAULT '',
   `timestamp` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`session_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_attachments` (
   `attach_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -43,13 +43,13 @@ CREATE TABLE IF NOT EXISTS `phpbb_attachments` (
   KEY `attach_id_privmsgs_id` (`attach_id`,`privmsgs_id`),
   KEY `user_id_1` (`user_id_1`),
   KEY `user_id_2` (`user_id_2`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_attachments_config` (
   `config_name` varchar(191) NOT NULL DEFAULT '',
   `config_value` varchar(191) NOT NULL DEFAULT '',
   PRIMARY KEY (`config_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_attachments_desc` (
   `attach_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_attachments_desc` (
   KEY `filetime` (`filetime`),
   KEY `physical_filename` (`physical_filename`(10)),
   KEY `filesize` (`filesize`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_attach_quota` (
   `user_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_attach_quota` (
   `quota_type` smallint(2) NOT NULL DEFAULT '0',
   `quota_limit_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   KEY `quota_type` (`quota_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_auth_access` (
   `group_id` mediumint(8) NOT NULL DEFAULT '0',
@@ -95,7 +95,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_auth_access` (
   `auth_download` tinyint(1) NOT NULL DEFAULT '0',
   KEY `group_id` (`group_id`),
   KEY `forum_id` (`forum_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_banlist` (
   `ban_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
@@ -111,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_banlist` (
   `ban_host` varchar(255) DEFAULT '',
   PRIMARY KEY (`ban_id`),
   KEY `ban_ip_user_id` (`ban_ip`,`ban_userid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_categories` (
   `cat_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
@@ -122,19 +122,19 @@ CREATE TABLE IF NOT EXISTS `phpbb_categories` (
   `cat_desc` text NOT NULL,
   PRIMARY KEY (`cat_id`),
   KEY `cat_order` (`cat_order`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_config` (
   `config_name` varchar(191) NOT NULL DEFAULT '',
   `config_value` text NOT NULL,
   PRIMARY KEY (`config_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_disallow` (
   `disallow_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `disallow_username` varchar(25) NOT NULL DEFAULT '',
   PRIMARY KEY (`disallow_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_extensions` (
   `ext_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
@@ -142,7 +142,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_extensions` (
   `extension` varchar(100) NOT NULL DEFAULT '',
   `comment` varchar(100) DEFAULT '',
   PRIMARY KEY (`ext_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_extension_groups` (
   `group_id` mediumint(8) NOT NULL AUTO_INCREMENT,
@@ -154,13 +154,13 @@ CREATE TABLE IF NOT EXISTS `phpbb_extension_groups` (
   `max_filesize` int(20) NOT NULL DEFAULT '0',
   `forum_permissions` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`group_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_forbidden_extensions` (
   `ext_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `extension` varchar(100) NOT NULL DEFAULT '',
   PRIMARY KEY (`ext_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_forums` (
   `forum_id` smallint(5) unsigned NOT NULL DEFAULT '0',
@@ -211,7 +211,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_forums` (
   KEY `cat_id` (`cat_id`),
   KEY `forum_last_post_id` (`forum_last_post_id`),
   KEY `no_count` (`no_count`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_forum_prune` (
   `prune_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
@@ -220,7 +220,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_forum_prune` (
   `prune_freq` smallint(5) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`prune_id`),
   KEY `forum_id` (`forum_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_groups` (
   `group_id` mediumint(8) NOT NULL AUTO_INCREMENT,
@@ -240,19 +240,19 @@ CREATE TABLE IF NOT EXISTS `phpbb_groups` (
   PRIMARY KEY (`group_id`),
   KEY `group_single_user` (`group_single_user`),
   KEY `group_type` (`group_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_ignores` (
   `user_id` mediumint(8) NOT NULL DEFAULT '0',
   `user_ignore` mediumint(8) NOT NULL DEFAULT '0',
   PRIMARY KEY (`user_id`,`user_ignore`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_jr_admin_users` (
   `user_id` mediumint(9) NOT NULL DEFAULT '0',
   `user_jr_admin` varchar(254) NOT NULL DEFAULT '',
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_logs` (
   `id_log` mediumint(10) NOT NULL AUTO_INCREMENT,
@@ -263,7 +263,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_logs` (
   `user_ip` char(8) NOT NULL DEFAULT '0',
   `time` int(11) DEFAULT '0',
   PRIMARY KEY (`id_log`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_mass_email` (
   `mass_email_user_id` mediumint(8) NOT NULL DEFAULT '0',
@@ -273,7 +273,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_mass_email` (
   `mass_email_html` tinyint(1) NOT NULL DEFAULT '0',
   `mass_email_to` varchar(128) DEFAULT '',
   PRIMARY KEY (`mass_email_user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_posts` (
   `post_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
@@ -309,7 +309,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_posts` (
   KEY `reporter_id` (`reporter_id`),
   KEY `post_parent` (`post_parent`),
   KEY `post_approve` (`post_approve`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_posts_text` (
   `post_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -317,7 +317,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_posts_text` (
   `post_subject` char(60) NOT NULL DEFAULT '',
   `post_text` text,
   PRIMARY KEY (`post_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_posts_text_history` (
   `th_id` mediumint(9) NOT NULL AUTO_INCREMENT,
@@ -327,7 +327,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_posts_text_history` (
   `th_time` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`th_id`),
   KEY `th_post_id` (`th_post_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_privmsgs` (
   `privmsgs_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
@@ -346,21 +346,21 @@ CREATE TABLE IF NOT EXISTS `phpbb_privmsgs` (
   KEY `privmsgs_from_userid` (`privmsgs_from_userid`),
   KEY `privmsgs_to_userid` (`privmsgs_to_userid`),
   KEY `privmsgs_type` (`privmsgs_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_privmsgs_text` (
   `privmsgs_text_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `privmsgs_bbcode_uid` char(10) NOT NULL DEFAULT '0',
   `privmsgs_text` text,
   PRIMARY KEY (`privmsgs_text_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_quota_limits` (
   `quota_limit_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `quota_desc` varchar(20) NOT NULL DEFAULT '',
   `quota_limit` bigint(20) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`quota_limit_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_ranks` (
   `rank_id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
@@ -370,7 +370,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_ranks` (
   `rank_image` varchar(255) DEFAULT '',
   `rank_group` mediumint(8) NOT NULL DEFAULT '0',
   PRIMARY KEY (`rank_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_read_history` (
   `user_id` mediumint(8) NOT NULL DEFAULT '0',
@@ -381,7 +381,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_read_history` (
   KEY `post_id` (`post_id`),
   KEY `topic_id` (`topic_id`),
   KEY `forum_id` (`forum_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_search_results` (
   `search_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
@@ -390,15 +390,15 @@ CREATE TABLE IF NOT EXISTS `phpbb_search_results` (
   `search_time` int(11) NOT NULL,
   PRIMARY KEY (`search_id`),
   KEY `session_id` (`session_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_search_wordlist` (
-  `word_text` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '',
+  `word_text` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL DEFAULT '',
   `word_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `word_common` tinyint(1) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`word_text`),
   KEY `word_id` (`word_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_search_wordmatch` (
   `post_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -406,7 +406,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_search_wordmatch` (
   `title_match` tinyint(1) NOT NULL DEFAULT '0',
   KEY `post_id` (`post_id`),
   KEY `word_id` (`word_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_sessions` (
   `session_id` char(32) NOT NULL DEFAULT '',
@@ -421,7 +421,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_sessions` (
   KEY `session_user_id` (`session_user_id`),
   KEY `session_id_ip_user_id` (`session_id`,`session_ip`,`session_user_id`),
   KEY `session_time` (`session_time`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_sessions_keys` (
   `key_id` varchar(32) NOT NULL DEFAULT '0',
@@ -430,7 +430,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_sessions_keys` (
   `last_login` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`key_id`,`user_id`),
   KEY `last_login` (`last_login`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_shoutbox` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -440,13 +440,13 @@ CREATE TABLE IF NOT EXISTS `phpbb_shoutbox` (
   PRIMARY KEY (`id`),
   KEY `sb_user_id` (`sb_user_id`),
   KEY `timestamp` (`timestamp`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_shoutbox_config` (
   `config_name` varchar(191) NOT NULL DEFAULT '',
   `config_value` varchar(191) NOT NULL DEFAULT '',
   PRIMARY KEY (`config_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_smilies` (
   `smilies_id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
@@ -455,13 +455,13 @@ CREATE TABLE IF NOT EXISTS `phpbb_smilies` (
   `emoticon` varchar(75) DEFAULT '',
   `smile_order` mediumint(8) unsigned NOT NULL DEFAULT '1',
   PRIMARY KEY (`smilies_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_stats_config` (
   `config_name` varchar(50) NOT NULL DEFAULT '',
   `config_value` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`config_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_stats_modules` (
   `module_id` tinyint(8) NOT NULL DEFAULT '0',
@@ -477,7 +477,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_stats_modules` (
   `module_info_time` int(10) unsigned NOT NULL DEFAULT '0',
   `module_cache_time` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`module_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_themes` (
   `themes_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
@@ -531,7 +531,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_themes` (
   `img_size_poll` smallint(5) unsigned DEFAULT NULL,
   `img_size_privmsg` smallint(5) unsigned DEFAULT NULL,
   PRIMARY KEY (`themes_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_themes_name` (
   `themes_id` smallint(5) unsigned NOT NULL DEFAULT '0',
@@ -566,7 +566,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_themes_name` (
   `span_class2_name` char(50) DEFAULT NULL,
   `span_class3_name` char(50) DEFAULT NULL,
   PRIMARY KEY (`themes_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_topics` (
   `topic_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
@@ -601,13 +601,13 @@ CREATE TABLE IF NOT EXISTS `phpbb_topics` (
   KEY `topic_last_post_id` (`topic_last_post_id`),
   KEY `topic_first_post_id` (`topic_first_post_id`),
   KEY `topic_vote` (`topic_vote`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_topics_ignore` (
   `topic_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` mediumint(8) NOT NULL DEFAULT '0',
   PRIMARY KEY (`topic_id`,`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_topics_watch` (
   `topic_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -616,7 +616,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_topics_watch` (
   KEY `topic_id` (`topic_id`),
   KEY `user_id` (`user_id`),
   KEY `notify_status` (`notify_status`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_topic_view` (
   `topic_id` mediumint(8) NOT NULL DEFAULT '0',
@@ -624,7 +624,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_topic_view` (
   `view_time` int(11) NOT NULL DEFAULT '0',
   `view_count` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`topic_id`,`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_users` (
   `user_id` mediumint(8) NOT NULL AUTO_INCREMENT,
@@ -707,7 +707,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_users` (
   KEY `user_level` (`user_level`),
   KEY `user_lastvisit` (`user_lastvisit`),
   KEY `user_active` (`user_active`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_users_warnings` (
   `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
@@ -724,7 +724,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_users_warnings` (
   KEY `date` (`date`),
   KEY `userid` (`userid`),
   KEY `modid` (`modid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_user_group` (
   `group_id` mediumint(8) NOT NULL DEFAULT '0',
@@ -733,7 +733,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_user_group` (
   KEY `group_id` (`group_id`),
   KEY `user_id` (`user_id`),
   KEY `user_pending` (`user_pending`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_vote_desc` (
   `vote_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
@@ -747,7 +747,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_vote_desc` (
   `vote_tothide` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`vote_id`),
   KEY `topic_id` (`topic_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_vote_results` (
   `vote_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -756,7 +756,7 @@ CREATE TABLE IF NOT EXISTS `phpbb_vote_results` (
   `vote_result` int(11) NOT NULL DEFAULT '0',
   KEY `vote_option_id` (`vote_option_id`),
   KEY `vote_id` (`vote_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_vote_voters` (
   `vote_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -766,14 +766,14 @@ CREATE TABLE IF NOT EXISTS `phpbb_vote_voters` (
   KEY `vote_id` (`vote_id`),
   KEY `vote_user_id` (`vote_user_id`),
   KEY `vote_user_ip` (`vote_user_ip`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `phpbb_words` (
   `word_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `word` char(100) NOT NULL DEFAULT '',
   `replacement` text NOT NULL,
   PRIMARY KEY (`word_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
