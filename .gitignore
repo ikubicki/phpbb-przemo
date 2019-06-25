@@ -1,3 +1,4 @@
 vendor/
 legacy/cache/
 cache/
+config/

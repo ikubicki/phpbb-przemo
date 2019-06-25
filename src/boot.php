@@ -1,15 +1,13 @@
 <?php
 
-use PHPBB\Przemo\Core\Config;
-use PHPBB\Przemo\Core\L10n;
-use PHPBB\Przemo\Core\StaticRegistry;
-use PHPBB\Przemo\Core\View;
+use PHPBB\Przemo\Core;
+use PHPBB\Przemo\Sources;
 
 require __DIR__ . '/../vendor/autoload.php';
 
 $phpbb_dir = realpath(__DIR__ . '/..');
 
-$configuration = new Config();
+$configuration = new Core\Config();
 $configuration->create('phpbb')->import([
     'dir' => $phpbb_dir
 ]);
@@ -27,8 +25,11 @@ $configuration->create('l10n')->import([
     'dir' => $phpbb_dir . '/language'
 ]);
 
-StaticRegistry::set('phpbb_dir', $phpbb_dir);
-StaticRegistry::set('configuration', $configuration);
+$sources = new Sources\Registry(new Sources\Redis(new Sources\SQL));
+
+Core\StaticRegistry::set('phpbb_dir', $phpbb_dir);
+Core\StaticRegistry::set('configuration', $configuration);
+Core\StaticRegistry::set('sources', $sources);
 
 if (file_exists("$phpbb_dir/config/config.php")) {
     require "$phpbb_dir/config/config.php";
