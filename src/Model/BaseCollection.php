@@ -16,19 +16,30 @@ class BaseCollection
     protected $reflection;
     
     /**
-     * 
+     *
      * @author ikubicki
      * @param integer|string|array $ids
      * @return array|BaseEntity
      */
-    public function retrieve($ids)
+    public function get($ids)
     {
         if (!is_array($ids)) {
             return $this->retrieve([$ids])[$ids];
         }
+        return $this->search(['id' => $ids]);
+    }
+    
+    /**
+     *
+     * @author ikubicki
+     * @param array $criteria
+     * @return array|BaseEntity
+     */
+    public function search(array $criteria)
+    {
         $entities = [];
         $query = $this->createGetQuery();
-        $query->ids = $ids;
+        $query->criteria = $criteria;
         $records = $this->getSources()->handle($query);
         foreach ($records as $record) {
             $entity = $this->createEntity($query);
@@ -50,7 +61,7 @@ class BaseCollection
             $entities = [$entities];
         }
         $query = $this->createSetQuery();
-        $query->entities = $entities;
+        $query->addItems($entities);
         return $this->getSources()->handle($query);
     }
     
@@ -66,7 +77,7 @@ class BaseCollection
             $entities = [$entities];
         }
         $query = $this->createDeletetQuery();
-        $query->entities = $entities;
+        $query->values = $this->entitiesToArray($entities);
         return $this->getSources()->handle($query);
     }
     
@@ -104,6 +115,21 @@ class BaseCollection
         $query = new Query\Delete;
         $query->collection = $this->getCollectionName();
         return $query;
+    }
+    
+    /**
+     * 
+     * @author ikubicki
+     * @param array $entities
+     * @return array
+     */
+    protected function entitiesToArray(array $entities)
+    {
+        $items = [];
+        foreach($entities as $entity) {
+            $items = $entity->toArray();
+        }
+        return $items;
     }
     
     /**
