@@ -44,6 +44,7 @@ class SQL extends AbstractSource
      */
     protected function delete(AbstractQuery $query)
     {
+        print_r((new Builders\SQL($query))->getStatement());
         print __METHOD__ . '<br>';
         return false;
     }

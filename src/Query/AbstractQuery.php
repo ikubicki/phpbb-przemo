@@ -35,6 +35,14 @@ abstract class AbstractQuery
     /**
      * @var array
      */
+    public $fields = [
+        'id',
+        'created_at',
+    ];
+    
+    /**
+     * @var array
+     */
     public $criteria = [];
     
     /**
@@ -60,7 +68,7 @@ abstract class AbstractQuery
     /**
      * @var boolean
      */
-    public $errors = false;
+    public $errors = true;
     
     /**
      * 
@@ -86,6 +94,7 @@ abstract class AbstractQuery
             $itemFields = $itemFields->toArray();
         }
         $this->items[] = $itemFields;
+        $this->fields = array_unique($this->fields + array_keys($itemFields));
         if (!empty($itemFields['id'])) {
             $this->ids[] = $itemFields['id'];
         }
@@ -106,7 +115,8 @@ abstract class AbstractQuery
             $values = array_merge(array_values($values) + $this->criteria[$field]);
         }
         $this->criteria[$field] = $values;
-        
+        $this->fields[] = $field;
+        $this->fields = array_unique($this->fields);
         if ($field == 'id') {
             $this->ids = array_merge($this->ids, $values);
             $this->ids = array_unique($this->ids);
@@ -123,6 +133,8 @@ abstract class AbstractQuery
     public function addOrder($field, $direction = self::ORDER_ASCENDING)
     {
         $this->order[] = [$field, $direction];
+        $this->fields[] = $field;
+        $this->fields = array_unique($this->fields);
         return $this;
     }
 }

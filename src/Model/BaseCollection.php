@@ -76,7 +76,7 @@ class BaseCollection
         if ($entities instanceof BaseEntity) {
             $entities = [$entities];
         }
-        $query = $this->createDeletetQuery();
+        $query = $this->createDeleteQuery();
         $query->values = $this->entitiesToArray($entities);
         return $this->getSources()->handle($query);
     }
