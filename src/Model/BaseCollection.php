@@ -23,10 +23,13 @@ class BaseCollection
      */
     public function get($ids)
     {
+        $entity = $this->createEntity();
+        $primaryKey = $entity->primaryKeyName();
+        unset($entity);
         if (!is_array($ids)) {
             return $this->retrieve([$ids])[$ids];
         }
-        return $this->search(['id' => $ids]);
+        return $this->search([$primaryKey => $ids]);
     }
     
     /**
@@ -60,9 +63,22 @@ class BaseCollection
         if ($entities instanceof BaseEntity) {
             $entities = [$entities];
         }
-        $query = $this->createSetQuery();
-        $query->addItems($entities);
-        return $this->getSources()->handle($query);
+        $result = true;
+        $insertQuery = $this->createSetQuery();
+        foreach ($entities as $entity) {
+            if ($entity->primaryKey()) {
+                $updateQuery = $this->createSetQuery()->addItem($entity);
+                $updateQuery->removeField($entity->primaryKeyName());
+                $updateQuery->addCriteria($entity->primaryKeyName(), $entity->primaryKey());
+                $this->getSources()->handle($updateQuery);
+                continue;
+            }
+            $result = $insertQuery->addItem($entity) && $result;
+        }
+        if (count($insertQuery->items)) {
+            return $this->getSources()->handle($insertQuery);
+        }
+        return $result;
     }
     
     /**
@@ -76,9 +92,16 @@ class BaseCollection
         if ($entities instanceof BaseEntity) {
             $entities = [$entities];
         }
-        $query = $this->createDeleteQuery();
-        $query->values = $this->entitiesToArray($entities);
-        return $this->getSources()->handle($query);
+        $ids = [];
+        foreach ($entities as $entity) {
+            $ids[] = $entity->primaryKey();
+        }
+        $ids = array_filter($ids);
+        if (count($ids)) {
+            $query = $this->createDeleteQuery();
+            $query->addCriteria($entity->primaryKeyName(), $ids);
+            return $this->getSources()->handle($query);
+        }
     }
     
     /**

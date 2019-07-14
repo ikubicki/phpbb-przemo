@@ -28,6 +28,11 @@ abstract class AbstractQuery
     public $collection;
     
     /**
+     * @var string
+     */
+    public $primaryKey;
+    
+    /**
      * @var array
      */
     public $items = [];
@@ -35,10 +40,7 @@ abstract class AbstractQuery
     /**
      * @var array
      */
-    public $fields = [
-        'id',
-        'created_at',
-    ];
+    public $fields = [];
     
     /**
      * @var array
@@ -48,12 +50,12 @@ abstract class AbstractQuery
     /**
      * @var integer
      */
-    public $limit = -1;
+    public $limit = null;
     
     /**
      * @var integer
      */
-    public $offset = 0;
+    public $offset = null;
     
     /**
      * @var array
@@ -68,7 +70,7 @@ abstract class AbstractQuery
     /**
      * @var boolean
      */
-    public $errors = true;
+    public $errors = false;
     
     /**
      * 
@@ -86,19 +88,30 @@ abstract class AbstractQuery
     /**
      * 
      * @author ikubicki
-     * @param array|BaseEntity $itemFields
+     * @param BaseEntity $item
      */
-    public function addItem($itemFields)
+    public function addItem(BaseEntity $item)
     {
-        if ($itemFields instanceof BaseEntity) {
-            $itemFields = $itemFields->toArray();
-        }
+        $itemFields = $item->toArray();
+        $this->primaryKey = $item->primaryKeyName();
         $this->items[] = $itemFields;
         $this->fields = array_unique($this->fields + array_keys($itemFields));
-        if (!empty($itemFields['id'])) {
-            $this->ids[] = $itemFields['id'];
+        if (!empty($itemFields[$this->primaryKey])) {
+            $this->ids[] = $itemFields[$this->primaryKey];
         }
         return $this;
+    }
+    
+    /**
+     * 
+     * @author ikubicki
+     * @param string $field
+     */
+    public function removeField($field)
+    {
+        foreach ($this->items as $item) {
+            unset($item[$field]);
+        }
     }
     
     /**
@@ -117,7 +130,7 @@ abstract class AbstractQuery
         $this->criteria[$field] = $values;
         $this->fields[] = $field;
         $this->fields = array_unique($this->fields);
-        if ($field == 'id') {
+        if ($field == $this->primaryKey) {
             $this->ids = array_merge($this->ids, $values);
             $this->ids = array_unique($this->ids);
         }

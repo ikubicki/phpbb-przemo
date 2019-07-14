@@ -13,12 +13,13 @@ class Index extends RichController
     {
         echo 'hello world';
         $post1 = new Post();
-        $post1->id = 41231234;
-        $post1->text = md5(microtime());
+        $post1->post_id = 41231234;
+        $post1->post_text = md5(microtime());
         $post2 = new Post();
-        $post2->id = 4;
-        $post2->text = md5(microtime());
+        $post2->post_id = 4;
+        $post2->post_text = md5(microtime());
         (new Posts())->store([$post1, $post2]);
+        (new Posts())->get([123, 456]);
         (new Posts())->search(['forum_id' => 123]);
         $post2->delete();
     }

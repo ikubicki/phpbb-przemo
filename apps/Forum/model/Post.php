@@ -7,4 +7,5 @@ use PHPBB\Przemo\Model\BaseEntity;
 class Post extends BaseEntity
 {
     
+    protected $primaryKey = 'post_id';
 }

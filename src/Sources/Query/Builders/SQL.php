@@ -30,6 +30,11 @@ class SQL
         $this->query = $query;
     }
     
+    /**
+     *
+     * @author ikubicki
+     * @return string
+     */
     public function getStatement()
     {
         switch (get_class($this->query))
@@ -44,16 +49,11 @@ class SQL
         }
     }
     
-    public function getSelectStatement()
-    {
-        $statement = "SELECT * " . 
-            "FROM {$this->getTableName()} " . 
-            "WHERE {$this->getConditionFields()} " . 
-            "LIMIT {$this->getLimit()} " .
-            "OFFSET {$this->getOffset()};";
-        return [$statement, $this->getConditionValues()];
-    }
-    
+    /**
+     *
+     * @author ikubicki
+     * @return string
+     */
     public function getInsertOrUpdateStatement()
     {
         if ($this->containsIds()) {
@@ -62,45 +62,133 @@ class SQL
         return $this->getInsertStatement();
     }
     
+    /**
+     *
+     * @author ikubicki
+     * @return string
+     */
+    public function getSelectStatement()
+    {
+        list ($where, $values) = $this->getWhere();
+        $where = $where ? "WHERE $where" : '';
+        
+        $statement = "SELECT * " . 
+            "FROM {$this->getTableName()} " . 
+            "{$where} " . 
+            "{$this->getLimit()} " .
+            "{$this->getOffset()};";
+        return [$statement, $values];
+    }
+    
+    /**
+     *
+     * @author ikubicki
+     * @return string
+     */
     public function getInsertStatement()
     {
-        $statement = "INSERT {$this->getInsertIgnore()} INTO {$this->getTableName()} ({$this->getFields()}) " .
-            "VALUES {$this->getPlaceholderGroups()};";
-        return [$statement, $this->getItemsValues() + $this->getConditionValues()];
+        list ($placeholders, $values) = $this->getBatches();
+        $statement = "INSERT {$this->getInsertIgnore()} " . 
+            "INTO {$this->getTableName()} " . 
+            "({$this->getFields()}) " .
+            "VALUES $placeholders;";
+        return [$statement, $values];
     }
     
+    /**
+     *
+     * @author ikubicki
+     * @return string
+     */
     public function getUpdateStatement()
     {
-        $statements = '';
-        $statement = "UPDATE {$this->getTableName()} " .
-            "SET {$this->getItemsFields()} " .
-            "WHERE {$this->getConditionFields()};";
-        $itemsCount = count($this->query->items);
-        for ($i = 0; $i < $itemsCount; $i++) {
-            $statements .= "$statement\r\n";
+        if (count($this->query->items) > 1) {
+            throw new \Exception('Too many updates! Use multiple updates and transactions instead.');
         }
-        return [$statements, $this->getItemsValues() + $this->getConditionValues()];
+        list ($setters, $values1) = $this->getSetters();
+        list ($where, $values2) = $this->getWhere();
+        $where = $where ? "WHERE $where" : '';
+        
+        $statement = "UPDATE {$this->getTableName()} " .
+            "SET $setters " .
+            "$where;";
+        return [$statement, array_merge($values1, $values2)];
     }
     
+    /**
+     *
+     * @author ikubicki
+     * @return string
+     */
     public function getDeleteStatement()
     {
+        list ($where, $values) = $this->getWhere();
+        $where = $where ? "WHERE $where" : '';
+        
         $statement = "DELETE FROM {$this->getTableName()} " .
-            "WHERE {$this->getConditionFields()} " .
-            "LIMIT {$this->getLimit()} " .
-            "OFFSET {$this->getOffset()};";
-        return [$statement, $this->getConditionValues()];
+            "$where " .
+            "{$this->getLimit()} " .
+            "{$this->getOffset()};";
+        return [$statement, $values];
     }
     
+    /**
+     * 
+     * @author ikubicki
+     * @return string
+     */
+    protected function getWhere()
+    {
+        $criteria = '';
+        $values = [];
+        if (count($this->query->criteria)) {
+            foreach ($this->query->criteria as $field => $value) {
+                $criteria .= ($criteria ? ' AND ' : '');
+                if (is_array($value)) {
+                    $placeholders = '';
+                    $iteration = 0;
+                    foreach ($value as $valueItem) {
+                        $placeholders .= $iteration ? ', ' : '';
+                        $placeholders .= ":$field$iteration";
+                        $values[":$field$iteration"] = $valueItem;
+                        $iteration++;
+                    }
+                    $criteria .= "`$field` IN ($placeholders)";
+                }
+                else {
+                    $criteria .= "`$field` = :$field";
+                    $values[":$field"] = $value;
+                }
+            }
+        }
+        return [$criteria, $values];
+    }
+    
+    /**
+     * 
+     * @author ikubicki
+     * @return boolean
+     */
     protected function containsIds()
     {
-        return count($this->query->ids);
+        return count($this->query->ids) > 0;
     }
     
+    /**
+     * 
+     * @author ikubicki
+     * @return string
+     */
     protected function getInsertIgnore()
     {
         return $this->query->errors ? '' :  'IGNORE';
     }
     
+    /**
+     * 
+     * @author ikubicki
+     * @return string
+     */
     protected function getTableName()
     {
         if (empty($this->table)) {
@@ -110,21 +198,70 @@ class SQL
         return $this->table;
     }
     
+    /**
+     *
+     * @author ikubicki
+     * @return string
+     */
     protected function getFields()
     {
         return '`' . implode('`, `', $this->query->fields) . '`';
     }
     
-    protected function getPlaceholderGroups()
+    /**
+     *
+     * @author ikubicki
+     * @return string
+     */
+    protected function getBatches()
     {
-        $fieldsCount = count($this->query->fields);
-        $itemsCount = count($this->query->items);
-        $group = '(' . implode(', ', array_fill(0, $fieldsCount, '?')) . ')';
-        return implode(', ', array_fill(0, $itemsCount, $group));
+        $batches = '';
+        $group = 0;
+        foreach ($this->query->items as $item) {
+            $batches .= $group ? ', ' : '';
+            $batches .= '(';
+            $iteration = 0;
+            foreach ($this->query->fields as $field) {
+                $batches .= $iteration ? ', ' : '';
+                $batches .= ":$field$group";
+                $values[":$field$group"] = $item[$field];
+                $iteration++;
+            }
+            $batches .= ')';
+            $group++;
+        }
+        return [$batches, $values];
     }
     
-    protected function getItemsFields()
+    /**
+     * 
+     * @author ikubicki
+     * @return string
+     */
+    protected function getSetters()
     {
+        $fields = '';
+        $values = [];
+        $item = $this->query->items[0];
+        unset($item[$this->query->primaryKey]);
+        foreach ($item as $field => $value) {
+            $fields .= ($fields ? ', ' : '');
+            $fields .= "`$field` = :$field";
+            $values[":$field"] = $value;
+        }
+        return [$fields, $values];
+    }
+    
+    /**
+     * 
+     * @author ikubicki
+     * @return string
+     */
+    protected function getLimit()
+    {
+        if ($this->query->limit !== null) {
+            return 'LIMIT ' . $this->query->limit;
+        }
         return '';
     }
     
@@ -133,51 +270,12 @@ class SQL
      * @author ikubicki
      * @return string
      */
-    protected function getConditionFields()
-    {
-        if (count($this->query->criteria)) {
-            $criteria = '';
-            foreach ($this->query->criteria as $field => $value) {
-                $criteria .= ($criteria ? ' AND ' : '');
-                $criteria .= "`$field` = ?";
-            }
-            return $criteria;
-        }
-        return '1';
-    }
-    
-    /**
-     * 
-     * @author ikubicki
-     * @return array
-     */
-    protected function getItemsValues()
-    {
-        $values = [];
-        foreach ($this->query->items as $item) {
-            $values = array_merge($values, array_values($item));
-        }
-        return $values;
-    }
-    
-    /**
-     * 
-     * @author ikubicki
-     * @return array
-     */
-    protected function getConditionValues()
-    {
-        return array_values($this->query->criteria);
-    }
-    
-    protected function getLimit()
-    {
-        return $this->query->limit;
-    }
-    
     protected function getOffset()
     {
-        return $this->query->offset;
+        if ($this->query->offset !== null) {
+            return 'OFFSET ' . $this->query->offset;
+        }
+        return '';
     }
     
     /**
