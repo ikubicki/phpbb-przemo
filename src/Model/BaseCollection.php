@@ -183,7 +183,7 @@ class BaseCollection
     protected function getReflection()
     {
         if (!$this->reflection) {
-            $this->reflection = new \ReflectionClass($this);
+            $this->reflection = new ReflectionClass($this);
         }
         return $this->reflection;
     }

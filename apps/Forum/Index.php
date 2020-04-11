@@ -2,11 +2,11 @@
 
 namespace PHPBB\Applications\Forum;
 
-use PHPBB\Applications\Library\RichController;
+use PHPBB\Applications\Library\FrontController;
 use PHPBB\Applications\Forum\Model\Post;
 use PHPBB\Applications\Forum\Model\Posts;
 
-class Index extends RichController
+class Index extends FrontController
 {
     
     public function getIndex($request)

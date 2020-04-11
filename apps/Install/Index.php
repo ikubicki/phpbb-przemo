@@ -2,9 +2,9 @@
 
 namespace PHPBB\Applications\Install;
 
-use PHPBB\Applications\Library\RichController;
+use PHPBB\Applications\Library\FrontController;
 
-class Index extends RichController
+class Index extends FrontController
 {
     
     public function getIndex($request, $route)

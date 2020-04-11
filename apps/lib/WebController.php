@@ -12,7 +12,7 @@ use PHPBB\Przemo\Core\StaticRegistry;
 use PHPBB\Przemo\Core\Config;
 use PHPBB\Przemo\Core\Store\SQL;
 
-class RichController extends Controller
+class FrontController extends Controller
 {
     
     /**

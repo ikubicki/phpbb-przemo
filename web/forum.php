@@ -1,15 +1,14 @@
 <?php
 
 use Symfony\Component\HttpFoundation\Request;
-use PHPBB\Applications\Library\RichController;
+use PHPBB\Applications\Library\FrontController;
 use PHPBB\Przemo\Core\Routing;
 use PHPBB\Przemo\Core\StaticRegistry;
 
-include '../src/dev.php';
 include '../src/boot.php';
 
 if (!StaticRegistry::get('configuration')->get('installed', 0)) {
-    $controller = new RichController;
+    $controller = new FrontController;
     $controller->application = 'install';
     $controller->redirect('index')->send();
     exit;

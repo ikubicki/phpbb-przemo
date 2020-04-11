@@ -2,9 +2,9 @@
 
 namespace PHPBB\Applications\Install;
 
-use PHPBB\Applications\Library\RichController;
+use PHPBB\Applications\Library\FrontController;
 
-class ChecksumWarning extends RichController
+class ChecksumWarning extends FrontController
 {
     
     public function getIndex($request, $route)

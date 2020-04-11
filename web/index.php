@@ -1,6 +1,6 @@
 <?php
 
-use PHPBB\Applications\Library\RichController;
+use PHPBB\Applications\Library\FrontController;
 use PHPBB\Przemo\Core\StaticRegistry;
 
 include '../src/boot.php';
@@ -12,6 +12,6 @@ if (!$configuration->get('installed', 0)) {
     exit;
 }
 
-$controller = new RichController;
+$controller = new FrontController;
 $controller->application = $configuration->get('start', 'forum');
 $controller->redirect('index')->send();

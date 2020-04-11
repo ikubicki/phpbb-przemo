@@ -1,11 +1,11 @@
 <?php
 namespace PHPBB\Applications\Install;
 
-use PHPBB\Applications\Library\RichController;
+use PHPBB\Applications\Library\FrontController;
 use PHPBB\Przemo\Core\Form;
 use PHPBB\Przemo\Core\Routing\Route;
 
-class Step1 extends RichController
+class Step1 extends FrontController
 {
 
     public function getIndex($request, $route)
