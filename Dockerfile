@@ -1,5 +1,8 @@
-FROM irekk/centos:0.11
+FROM php:7.4-apache
 LABEL maintainer="irek@ixdude.com"
-ADD .  /var/www/app/htdocs
-RUN echo "" > /var/www/app/htdocs/config.php
-CMD ["/usr/sbin/httpd", "-DFOREGROUND"]
+ADD .  /var/php
+RUN echo "" > /var/php/config.php && \
+    rm -rf /var/php/cache && \
+    mkdir 0777 /var/php/cache && \
+    rm -rf /var/www/html && \
+    ln -sf /var/php/web /var/www/html

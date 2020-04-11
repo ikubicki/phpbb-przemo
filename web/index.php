@@ -1,9 +1,9 @@
 <?php
 
-use PHPBB\Przemo\Core\StaticRegistry;
 use PHPBB\Applications\Library\RichController;
+use PHPBB\Przemo\Core\StaticRegistry;
 
-include 'src/boot.php';
+include '../src/boot.php';
 
 $configuration = StaticRegistry::get('configuration');
 
