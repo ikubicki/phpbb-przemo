@@ -851,6 +851,9 @@ if( $total_topics )
 		$get_unread_posts = '';
 		if ( $userdata['session_logged_in'] && $board_config['newest'] && $topic_rowset[$i]['topic_status'] != TOPIC_MOVED )
 		{
+			if (empty($userdata['unread_data'][$topic_rowset[$i]['forum_id']][$topic_id])) {
+				$userdata['unread_data'][$topic_rowset[$i]['forum_id']][$topic_id] = [];
+			}
 			$view_topic_url = (count($userdata['unread_data'][$topic_rowset[$i]['forum_id']][$topic_id])) ? append_sid("viewtopic.$phpEx?" . POST_TOPIC_URL . "=$topic_id&amp;view=newest") . '"' : append_sid("viewtopic.$phpEx?" . POST_TOPIC_URL . "=$topic_id");
 		} 
 		else

@@ -184,22 +184,28 @@ function build_tree(&$cats, &$forums, &$new_topic_data, &$tracking_topics, &$tra
 	$tree_level = array();
 
 	// get the forums of the level
-	for($i=0; $i < count($parents[POST_FORUM_URL][$main]); $i++)
-	{
-		$idx = $parents[POST_FORUM_URL][$main][$i];
-		$tree_level['type'][] = POST_FORUM_URL;
-		$tree_level['id'][]	= $forums[$idx]['forum_id'];
-		$tree_level['sort'][] = $forums[$idx]['forum_order'];
-		$tree_level['data'][] = $forums[$idx];
+	$items = $parents[POST_FORUM_URL][$main];
+	if ($items) {
+		for($i=0; $i < count($items); $i++)
+		{
+			$idx = $items[$i];
+			$tree_level['type'][] = POST_FORUM_URL;
+			$tree_level['id'][]	= $forums[$idx]['forum_id'];
+			$tree_level['sort'][] = $forums[$idx]['forum_order'];
+			$tree_level['data'][] = $forums[$idx];
+		}
 	}
 	// add the categories of this level
-	for($i=0; $i < count($parents[POST_CAT_URL][$main]); $i++)
-	{
-		$idx = $parents[POST_CAT_URL][$main][$i];
-		$tree_level['type'][] = POST_CAT_URL;
-		$tree_level['id'][]	= $cats[$idx]['cat_id'];
-		$tree_level['sort'][] = $cats[$idx]['cat_order'];
-		$tree_level['data'][] = $cats[$idx];
+	$items = $parents[POST_CAT_URL][$main];
+	if ($items) {
+		for($i=0; $i < count($items); $i++)
+		{
+			$idx = $items[$i];
+			$tree_level['type'][] = POST_CAT_URL;
+			$tree_level['id'][]	= $cats[$idx]['cat_id'];
+			$tree_level['sort'][] = $cats[$idx]['cat_order'];
+			$tree_level['data'][] = $cats[$idx];
+		}
 	}
 
 	// sort both
@@ -211,23 +217,25 @@ function build_tree(&$cats, &$forums, &$new_topic_data, &$tracking_topics, &$tra
 	// add the tree_level to the tree
 	$level++;
 	$order = 0;
-	for($i=0; $i < count($tree_level['data']); $i++)
-	{
-		$athis = count($tree['data']);
-		$key = $tree_level['type'][$i] . $tree_level['id'][$i];
-		$order = $order + 10;
-		$tree['keys'][$key] = $athis;
-		$tree['main'][]	= $main;
-		$tree['type'][]	= $tree_level['type'][$i];
-		$tree['id'][] = $tree_level['id'][$i];
-		$tree['data'][]	= $tree_level['data'][$i];
+	$items = $tree_level['data'];
+	if ($items) {
+		for($i=0; $i < count($items); $i++)
+		{
+			$athis = empty($tree['data']) ? 0 : count($tree['data']);
+			$key = $tree_level['type'][$i] . $tree_level['id'][$i];
+			$order = $order + 10;
+			$tree['keys'][$key] = $athis;
+			$tree['main'][]	= $main;
+			$tree['type'][]	= $tree_level['type'][$i];
+			$tree['id'][] = $tree_level['id'][$i];
+			$tree['data'][]	= $items[$i];
 
-		$tree['sub'][$main][] = $key;
+			$tree['sub'][$main][] = $key;
 
-		// add sub levels
-		build_tree($cats, $forums, $new_topic_data, $tracking_topics, $tracking_forums, $tracking_all, $parents, $level, $tree_level['type'][$i] . $tree_level['id'][$i]);
+			// add sub levels
+			build_tree($cats, $forums, $new_topic_data, $tracking_topics, $tracking_forums, $tracking_all, $parents, $level, $tree_level['type'][$i] . $tree_level['id'][$i]);
+		}
 	}
-
 	return;
 }
 
@@ -523,20 +531,26 @@ function get_auth_keys($cur = 'Root', $all = false, $level = -1, $max = -1, $aut
 			$keys['idx'][$last_i] = (isset($tree['keys'][$cur]) ? $tree['keys'][$cur] : -1);
 
 			// get sub-levels
-			for($i=0; $i < count($tree['sub'][$cur]); $i++)
-			{
-				$tkeys = array();
-				$tkeys = get_auth_keys($tree['sub'][$cur][$i], $all, $orig_level+1, $max, $auth_key);
-
-				// add sub-levels
-				for($j=0; $j < count($tkeys['id']); $j++)
+			$items = $tree['sub'][$cur];
+			if ($items) {
+				for($i=0; $i < count($items); $i++)
 				{
-					$last_i++;
-					$keys['keys'][$tkeys['id'][$j]] = $last_i;
-					$keys['id'][$last_i] = $tkeys['id'][$j];
-					$keys['real_level'][$last_i] = $tkeys['real_level'][$j];
-					$keys['level'][$last_i]	= $tkeys['level'][$j];
-					$keys['idx'][$last_i] = $tkeys['idx'][$j];
+					$tkeys = array();
+					$tkeys = get_auth_keys($tree['sub'][$cur][$i], $all, $orig_level+1, $max, $auth_key);
+
+					// add sub-levels
+					$subitems = $tkeys['id'];
+					if ($subitems) {
+						for($j=0; $j < count($subitems); $j++)
+						{
+							$last_i++;
+							$keys['keys'][$tkeys['id'][$j]] = $last_i;
+							$keys['id'][$last_i] = $tkeys['id'][$j];
+							$keys['real_level'][$last_i] = $tkeys['real_level'][$j];
+							$keys['level'][$last_i]	= $tkeys['level'][$j];
+							$keys['idx'][$last_i] = $tkeys['idx'][$j];
+						}
+					}
 				}
 			}
 		}
@@ -1093,11 +1107,14 @@ function setup_style($style)
 		$sql = "SELECT *
 			FROM " . THEMES_TABLE . "
 			LIMIT 1";
+			var_dump($sql);
 		if ( !($result = $db->sql_query($sql)) )
 		{
 			message_die(CRITICAL_ERROR, 'Could not query database for theme info<br />' . $sql);
 		}
-		if ( !($row = $db->sql_fetchrow($result)) )
+		$row = $db->sql_fetchrow($result);
+		var_dump($db->sql_error(), $result, $row);
+		if ( !$row )
 		{
 			message_die(CRITICAL_ERROR, 'Could not get theme data for themes_id [' . $style . ']');
 		}
@@ -2081,6 +2098,9 @@ function custom_fields($check = '', $view = false, $forum_id = '')
 			sql_cache('write', $cache_name, $row_f);
 		}
 
+		if (empty($row_f)) {
+			$row_f = [];
+		}
 		for($i=0; $i < count($row_f); $i++)
 		{
 			$row = $row_f[$i];
@@ -2150,7 +2170,7 @@ function replace_encoded($text)
 {
 	global $lang;
 	return ($lang['ENCODING'] == 'iso-8859-2') ? $text : str_replace(
-		array('ê', 'ó', '±', '¶', '³', '¿', '¼', 'æ', 'ñ', 'Ê', 'Ó', '¡', '¦', '£', '¯', '¬', 'Æ', 'Ñ'),
+		array('ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½'),
 		array('e', 'o', 'a', 's', 'l', 'z', 'z', 'c', 'n', 'E', 'O', 'A', 'S', 'L', 'Z', 'Z', 'C', 'N'), $text
 	);
 }
@@ -2642,16 +2662,19 @@ function moderarots_list($forum_id, $mode)
 	if ( $mode == 'groups' )
 	{
 		$return_groups = array();
-		for($i=0; $i < count($moderators_list[$forum_id]['group_list']); $i++)
-		{
-			$dat = $moderators_list[$forum_id]['group_list'][$i];
-			if ( $dat[2] == 0 )
+		$items = $moderators_list[$forum_id]['group_list'];
+		if ($items) {
+			for($i=0; $i < count($items); $i++)
 			{
-				$return_groups[] = '<a href="' . append_sid("groupcp.$phpEx?" . POST_GROUPS_URL . "=" . $dat[0]) . '" class="gensmall" style="' . (($dat[3]) ? 'color: #' . $dat[3] . ';' : '') . (($dat[5]) ? $dat[5] . ';' : '') . '">' . $dat[4] . $dat[1] . '</a>';
-			}
-			else
-			{
-				$return_groups[] = '<a href="' . append_sid("profile.$phpEx?mode=viewprofile&amp;" . POST_USERS_URL . "=" . $dat[0]) . '" class="gensmall">' . $dat[1] . '</a>';
+				$dat = $moderators_list[$forum_id]['group_list'][$i];
+				if ( $dat[2] == 0 )
+				{
+					$return_groups[] = '<a href="' . append_sid("groupcp.$phpEx?" . POST_GROUPS_URL . "=" . $dat[0]) . '" class="gensmall" style="' . (($dat[3]) ? 'color: #' . $dat[3] . ';' : '') . (($dat[5]) ? $dat[5] . ';' : '') . '">' . $dat[4] . $dat[1] . '</a>';
+				}
+				else
+				{
+					$return_groups[] = '<a href="' . append_sid("profile.$phpEx?mode=viewprofile&amp;" . POST_USERS_URL . "=" . $dat[0]) . '" class="gensmall">' . $dat[1] . '</a>';
+				}
 			}
 		}
 		return $return_groups;

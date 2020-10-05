@@ -790,6 +790,11 @@ $sgv .= ($board_config['allow_avatar_remote']) ? ', u.user_avatar_width, u.user_
 
 $custom_fields = custom_fields('', 'viewtopic', $forum_id);
 $fields_to_get = '';
+
+if (empty($custom_fields[0])) {
+	$custom_fields[0] = [];
+}
+
 for($i = 0; $i < count($custom_fields[0]); $i++)
 {
 	$split_field = 'u.user_field_' . $custom_fields[0][$i] . ', u.user_allow_field_' . $custom_fields[0][$i];
@@ -936,6 +941,10 @@ if (!isset($list_ranks))
 	}
 	$db->sql_freeresult($result);
 	sql_cache('write', 'list_ranks', $list_ranks);
+}
+
+if (empty($list_ranks)) {
+	$list_ranks = [];
 }
 
 for($i=0; $i < count($list_ranks); $i++)
@@ -1834,6 +1843,9 @@ for($i = 0; $i < $total_posts; $i++)
 		// Define the little post icon
 		if ( $session_logged_in )
 		{
+			if (empty($userdata['unread_data'][$forum_id][$topic_id])) {
+				$userdata['unread_data'][$forum_id][$topic_id] = [];
+			}
 			if ( count($userdata['unread_data'][$forum_id][$topic_id]) && in_array($postrow_post_id, $userdata['unread_data'][$forum_id][$topic_id]) )
 			{
 				$mini_post_img = $images['icon_minipost_new'];

@@ -1,7 +1,7 @@
 <?php
 
 // Here you can add other reasons
-$lang['del_notify_reasons'] = '';
+$lang['del_notify_reasons'] = [];
 $lang['del_notify_reasons'][] = 'No reason';
 $lang['del_notify_reasons'][] = 'Reason 1';
 $lang['del_notify_reasons'][] = 'You can set your reasons';

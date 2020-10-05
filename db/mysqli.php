@@ -118,7 +118,7 @@ if(!defined("SQL_LAYER")) {
                 $query_id = $this->query_result;
             }
 
-            return ($query_id) ? @mysqli_fetch_array($query_id, MYSQL_ASSOC) : false;
+            return ($query_id) ? @mysqli_fetch_array($query_id, MYSQLI_ASSOC) : false;
         }
 
         // Free sql result
@@ -197,7 +197,7 @@ if(!defined("SQL_LAYER")) {
 
             if($query_id) {
                 $result = array();
-                while($fetchrowset = @mysqli_fetch_array($query_id, MYSQL_ASSOC)) {
+                while($fetchrowset = @mysqli_fetch_array($query_id, MYSQLI_ASSOC)) {
                     $result[] = $fetchrowset;
                 }
                 return $result;

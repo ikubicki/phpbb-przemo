@@ -3,7 +3,7 @@
 $he = ($userdata['user_gender'] != 2) ? true : false;
 
 // Poni¿ej mo¿esz w analogiczny sposób dodaæ inne powody
-$lang['del_notify_reasons'] = '';
+$lang['del_notify_reasons'] = [];
 $lang['del_notify_reasons'][] = 'Bez powodu';
 $lang['del_notify_reasons'][] = 'Post nie na temat';
 $lang['del_notify_reasons'][] = 'Post sprzeczny z regulaminem';

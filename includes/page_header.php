@@ -432,7 +432,7 @@ if ( !$advert_hide )
 		sql_cache('write', 'advertising', $advertising);
 	}
 
-	$count_advertising = count($advertising);
+	$count_advertising = empty($advertising) ? 0 : count($advertising);
 
 	if ( $count_advertising )
 	{
