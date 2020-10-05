@@ -1,7 +1,0 @@
-<span class="label">{{ label }}</span>
-<select name="{{ field.name }}" class="{% if field.error %}error{% endif %}">
-{% for key, label in field.options %} 
-	<option value="{{ key }}" {% if field.value == key %}selected="selected"{% endif %}>{{ label }}</option>
-{% endfor %}
-</select>
-{% if field.error %}<span class="error">{{ field.error }}</span>{% endif %}
