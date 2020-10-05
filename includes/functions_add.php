@@ -251,90 +251,45 @@ function user_agent($agent)
 
 	if (strpos($agent_tst, 'windows') || strpos($agent_tst, 'win9') || strpos($agent_tst, 'win32') || strpos($agent_tst, 'nt 5.') || strpos($agent_tst, 'nt 6.') || strpos($agent_tst, 'nt 4') )
 	{
-		$sa = (strpos($agent_tst, 'windows 9') || strpos($agent_tst, 'nt 4') || strpos($agent_tst, 'windows') || strpos($agent_tst, 'win32')) ? 'windows_98_nt_2000' : $sa;
-		$sa = (strpos($agent_tst, 'nt 5.') || strpos($agent_tst, 'nt 7.') || strpos($agent_tst, 'nt 8.') ) ? 'windows_xp_2003' : $sa;
-		$sa = (strpos($agent_tst, 'nt 6.0')) ? 'windows_vista' : $sa; // Dodano dla Visty
-		$sa = (strpos($agent_tst, 'nt 6.1')) ? 'windows_7' : $sa; // Dodano 7
-		$sa = (strpos($agent_tst, 'nt 6.2')) ? 'windows_8' : $sa; // win 8
-		$sa = (strpos($agent_tst, 'nt 6.3')) ? 'windows_8' : $sa; // win 8.1
-		$sa = (strpos($agent_tst, 'nt 6.4')) ? 'windows_8' : $sa; // win 8.1
-		$sa = (strpos($agent_tst, 'nt 5.0')) ? 'windows_98_nt_2000' : $sa;
-		$sa = (strpos($agent_tst, 'windows ce') || strpos($agent_tst, 'pda') || strpos($agent_tst, 'PPC') || strpos($agent_tst, 'Windows Mobile')) ? 'windows_ce' : $sa; // Win CE 1+2
+		$sa = 'windows';
 	}
 	else
 	{
 		$sa = (strpos($agent_tst, 'linux')) ? 'linux' : $sa;
-		$sa = (strpos($agent_tst, 'suse')) ? 'linux_suse' : $sa;
-		$sa = (strpos($agent_tst, 'knoppix')) ? 'linux_knoppix' : $sa;
-		$sa = (strpos($agent_tst, 'turbolinux')) ? 'linux_turbolinux' : $sa;
-		$sa = (strpos($agent_tst, 'slackware')) ? 'linux_slackware' : $sa;
-		$sa = (strpos($agent_tst, 'gentoo')) ? 'linux_gentoo' : $sa;
-		$sa = (strpos($agent_tst, 'lycoris')) ? 'linux_lycoris' : $sa;
-		$sa = (strpos($agent_tst, 'debian')) ? 'linux_debian' : $sa;
-		$sa = (strpos($agent_tst, 'redhat')) ? 'linux_redhat' : $sa;
-		$sa = (strpos($agent_tst, 'archlinux')) ? 'linux_arch' : $sa;
-		$sa = (strpos($agent_tst, 'ubuntu')) ? 'linux_ubuntu' : $sa;
-		$sa = (strpos($agent_tst, 'kubuntu')) ? 'linux_kubuntu' : $sa; // dodano Kubuntu
-		$sa = (strpos($agent_tst, 'bsd')) ? 'linux_freebsd' : $sa; // I know, sorry :)
-		$sa = (strpos($agent_tst, 'openbsd')) ? 'linux_openbsd' : $sa; // dodano OpenDsd
-		$sa = (strpos($agent_tst, 'mandriva')) ? 'linux_mandriva' : $sa; // dodano Mandrive
+		$sa = (strpos($agent_tst, 'suse')) ? 'suse' : $sa;
+		$sa = (strpos($agent_tst, 'debian')) ? 'debian' : $sa;
+		$sa = (strpos($agent_tst, 'redhat')) ? 'redhat' : $sa;
+		$sa = (strpos($agent_tst, 'ubuntu')) ? 'ubuntu' : $sa;
+		$sa = (strpos($agent_tst, 'bsd')) ? 'freebsd' : $sa; // I know, sorry :)
 		$sa = (strpos($agent_tst, 'android')) ? 'android' : $sa;
 	}
 	if ( $sa == '')
 	{
-		$sa = (strpos($agent_tst, 'mac')) ? 'macos' : $sa;
-		$sa = (strpos($agent_tst, 'aix')) ? 'aix' : $sa;
-		$sa = (strpos($agent_tst, 'lindows')) ? 'lindows' : $sa;
-		$sa = (strpos($agent_tst, 'amiga')) ? 'amiga' : $sa;
-		$sa = (strpos($agent_tst, 'athe')) ? 'athe' : $sa;
-		$sa = (strpos($agent_tst, 'beos')) ? 'beos' : $sa;
-		$sa = (strpos($agent_tst, 'zeta')) ? 'beos' : $sa;
-		$sa = (strpos($agent_tst, 'BlueEyed')) ? 'beos' : $sa;
-		$sa = (strpos($agent_tst, 'nextstep')) ? 'nextstep' : $sa;
-		$sa = (strpos($agent_tst, 'warp')) ? 'warp' : $sa;
-		$sa = (strpos($agent_tst, 'qnx')) ? 'qnx' : $sa;
-		$sa = (strpos($agent_tst, 'risc')) ? 'risc' : $sa;
-		$sa = (strpos($agent_tst, 'solaris') || strpos($agent_tst, 'sunos')) ? 'solaris' : $sa; // Dodano SunOS
+		$sa = (strpos($agent_tst, 'mac')) ? 'apple' : $sa;
 		$sa = (strpos($agent_tst, 'unix')) ? 'unix' : $sa;
-		$sa = (strpos($agent_tst, 'macos')) ? 'macos' : $sa;
-		$sa = (strpos($agent_tst, 'mac os')) ? 'macos' : $sa;
+		$sa = (strpos($agent_tst, 'macos')) ? 'apple' : $sa;
+		$sa = (strpos($agent_tst, 'mac os')) ? 'apple' : $sa;
 		$sa = (strpos($agent_tst, 'playstation')) ? 'playstation' : $sa;
 		$sa = (strpos($agent_tst, 'symbian')) ? 'symbian' : $sa;
-		$sa = (strpos($agent_tst, 'j2me') || strpos($agent_tst, 'midp')) ? 'symbian' : $sa; // Dodano dla Symbiana
-		$sa = ($sa == '' && strpos($agent_tst, 'win9') || strpos($agent_tst, 'win3') || strpos($agent_tst, 'windows') ) ? 'windows_98_nt_2000' : $sa;
+		$sa = ($sa == '' && strpos($agent_tst, 'win9') || strpos($agent_tst, 'win3') || strpos($agent_tst, 'windows') ) ? 'windows' : $sa;
 	}
 
-	$ba = (strpos($agent_tst, 'mozilla')) ? 'mozilla' : $ba;
+	$ba = (strpos($agent_tst, 'mozilla')) ? 'firefox' : $ba;
 	$ba = (strpos($agent_tst, 'msie')) ? 'ie' : $ba;
-	$ba = (strpos($agent_tst, 'msie 7.0')) ? 'ie7' : $ba; // IE7
-	$ba = (strpos($agent_tst, 'msie 8.0')) ? 'ie8' : $ba; // IE8
-	$ba = (strpos($agent_tst, 'iemobile')) ? 'iem' : $ba; // IE Mobile
-	$ba = (strpos($agent_tst, 'netscape')) ? 'netscape' : $ba;
+	$ba = (strpos($agent_tst, 'msie 7.0')) ? 'ie' : $ba; // IE7
+	$ba = (strpos($agent_tst, 'msie 8.0')) ? 'ie' : $ba; // IE8
+	$ba = (strpos($agent_tst, 'iemobile')) ? 'ie' : $ba; // IE Mobile
+	$ba = (strpos($agent_tst, 'edge')) ? 'ie' : $ba; // Edge
 	$ba = (strpos($agent_tst, 'opera')) ? 'opera' : $ba;
-	$ba = (strpos($agent_tst, 'opera mobi')) ? 'operam' : $ba; // Opera Mobi
-	$ba = (strpos($agent_tst, 'kameleon')) ? 'kameleon' : $ba; // kameleon
-	$ba = (strpos($agent_tst, 'konqueror')) ? 'konqueror' : $ba;
-	$ba = (strpos($agent_tst, 'galeon')) ? 'galeon' : $ba;
+	$ba = (strpos($agent_tst, 'opera mobi')) ? 'opera' : $ba; // Opera Mobi
 	$ba = (strpos($agent_tst, 'firefox')) ? 'firefox' : $ba;
-	$ba = (strpos($agent_tst, 'netsprint')) ? 'netsprint' : $ba;
-	$ba = (strpos($agent_tst, 'firebird')) ? 'firebird' : $ba;
-	$ba = (strpos($agent_tst, 'links')) ? 'links' : $ba;
-	$ba = (strpos($agent_tst, 'lynx')) ? 'lynx' : $ba; // Dodano Lynx
-	$ba = (strpos($agent_tst, 'dillo')) ? 'dillo' : $ba;
-	$ba = (strpos($agent_tst, 'omniweb')) ? 'omniweb' : $ba;
-	$ba = (strpos($agent_tst, 'avant')) ? 'avant' : $ba;
-	$ba = (strpos($agent_tst, 'myie2')) ? 'myie2' : $ba;
-	$ba = (strpos($agent_tst, 'seamonkey')) ? 'seamonkey' : $ba;
-	$ba = (strpos($agent_tst, 'maxthon')) ? 'maxthon' : $ba;
-	$ba = (strpos($agent_tst, 'netfront')) ? 'nf35' : $ba; // NetFront
 	$ba = (strpos($agent_tst, 'chrome')) ? 'chrome' : $ba; // Chrome Google
-	$ba = (strpos($agent_tst, 'minefield')) ? 'minefield' : $ba; // minefield
-	$ba = (strpos($agent_tst, 'shiretoko')) ? 'shiretoko' : $ba; // shiretoko
+	$ba = (strpos($agent_tst, 'safari')) ? 'apple' : $ba; // Safari
 
 	$ba = ($ba == '') ? 'unknown' : $ba;
 	$sa = ($sa == '') ? 'unknown' : $sa;
 
-	return array('icon_' . $sa . '.gif', 'icon_' . $ba . '.gif', $agent);
+	return array('icon_' . $sa . '.png', 'icon_' . $ba . '.png', $agent);
 }
 
 function bbencode_strip($text, $uid)
