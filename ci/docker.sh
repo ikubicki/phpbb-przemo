@@ -4,6 +4,11 @@ set -e
 if [ "$DIR" == "" ]; then
     DIR=$(pwd)
 fi
+CONFIG=''
+
+if [[ "$@" == *"-config"* ]]; then 
+    CONFIG="-v $DIR/ci/config.php:/var/www/html/config.php"
+fi
 
 network_exists=$(docker network ls | grep przemo | xargs)
 if [ "$network_exists" == "" ]; then
@@ -36,7 +41,7 @@ if [ "$db_exists" == "" ]; then
         -e MYSQL_PASSWORD=przemodbpass \
         -e MYSQL_DATABASE=przemo \
         -p 3306:3306 \
-        mysql:5.7 \
+        mysql:8.0 \
             --character-set-server=utf8mb4 \
             --collation-server=utf8mb4_unicode_ci
 fi
@@ -52,6 +57,7 @@ set -x
         --network przemo \
         --name przemo_app \
         -v $DIR:/var/www/html \
+        $CONFIG \
         -v przemo_cache_volume:/var/www/html/cache \
         -p 80:80 \
         -p 443:443 \

@@ -51,10 +51,10 @@ if (!$statistics->result_cache_used)
 	// Init Cache -- tells the Stats Mod that we want to use the result cache
 	$result_cache->init_result_cache();
 
-	$sql = 'SELECT YEAR(FROM_UNIXTIME(post_time)) as aar, MONTH(FROM_UNIXTIME(post_time)) as mnd, COUNT(*) AS ant
-	FROM ' . POSTS_TABLE . ' 
-	GROUP BY YEAR(FROM_UNIXTIME(post_time)),MONTH(FROM_UNIXTIME(post_time)) 
-	ORDER BY post_time';
+	$sql = "SELECT FROM_UNIXTIME(post_time, '%Y') as aar, FROM_UNIXTIME(post_time, '%M') as mnd, COUNT(*) AS ant
+	FROM " . POSTS_TABLE . "
+	GROUP BY FROM_UNIXTIME(post_time, '%Y'), FROM_UNIXTIME(post_time, '%M')
+	ORDER BY aar, mnd";
 		
 	if ( !($result = $db->sql_query($sql)) )
 	{

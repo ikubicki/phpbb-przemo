@@ -495,8 +495,12 @@ class Results
 		{
 			return;
 		}
+
+		if (empty($this->var_data[$blockname . '.'])) {
+			$this->var_data[$blockname . '.'] = [];
+		}
 	
-		return (count($this->var_data[$blockname . '.']));
+		return count($this->var_data[$blockname . '.']);
 	}
 
 	// Get Variable Array from cached Block

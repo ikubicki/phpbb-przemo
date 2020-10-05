@@ -51,11 +51,11 @@ if (!$statistics->result_cache_used)
 	// Init Cache -- tells the Stats Mod that we want to use the result cache
 	$result_cache->init_result_cache();
 
-	$sql = "SELECT YEAR(FROM_UNIXTIME(user_regdate)) as aar, MONTH(FROM_UNIXTIME(user_regdate)) as mnd, COUNT(*) AS ant 
+	$sql = "SELECT FROM_UNIXTIME(user_regdate, '%Y') as aar, FROM_UNIXTIME(user_regdate, '%M') as mnd, COUNT(*) AS ant 
 	FROM " . USERS_TABLE . " 
 	WHERE (user_id <> " . ANONYMOUS . " )
-	GROUP BY YEAR(FROM_UNIXTIME(user_regdate)), MONTH(FROM_UNIXTIME(user_regdate)) 
-	ORDER BY user_regdate";
+	GROUP BY FROM_UNIXTIME(user_regdate, '%Y'), FROM_UNIXTIME(user_regdate, '%M') 
+	ORDER BY aar, mnd";
 
 	if ( !($result = $db->sql_query($sql)) )
 	{

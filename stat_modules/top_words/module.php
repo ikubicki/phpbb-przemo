@@ -98,8 +98,9 @@ if (!$statistics->result_cache_used)
 	$sql = "SELECT COUNT( swm.word_id ) word_count, swm.word_id word_id, swl.word_text word_text
 		FROM (" . SEARCH_MATCH_TABLE . " swm, " . SEARCH_WORD_TABLE . " swl)
 		WHERE swm.word_id = swl.word_id
-		GROUP BY swm.word_id
-		ORDER BY word_count DESC LIMIT ".$return_limit*10;
+		GROUP BY swm.word_id, swl.word_text
+		ORDER BY word_count DESC 
+		LIMIT " . $return_limit * 10;
 	if (!$result = $db->sql_query($sql))
 	{
 		message_die(GENERAL_ERROR, "Couldn't retrieve words data", "", __LINE__, get_module_fd_name(__FILE__), $sql);
