@@ -70,6 +70,18 @@
 <td align="center">
 <!-- END forum_thin -->
 <a name="top"></a>{ROTATE_BANNER_1}
+<table width="100%" border="0" align="center">
+	<tr>
+		<td width="10%" valign="middle">
+			<a href="{U_INDEX}"><img src="templates/subSilver/images/przemo.png" border="0" alt="{L_INDEX}" vspace="1" height="100"></a>
+		</td>
+		<td width="90%" valign="middle" align="center">
+			<span class="maintitle">{SITENAME_COLOR}</span>
+			<br>
+			<span class="gen">{SITE_DESCRIPTION}<br><br></span>
+		</td>
+	</tr>
+</table>
 <table width="100%" cellspacing="0" cellpadding="7" border="0" align="center">
    <tr>
       <td class="bodyline">
@@ -78,49 +90,37 @@
          <!-- BEGIN header -->
          <table width="100%" cellspacing="0" cellpadding="8" border="0" align="center">
             <tr>
-               <td><a href="{U_INDEX}"><img src="templates/subSilver/images/logo_phpBB.gif" border="0" alt="{L_INDEX}" vspace="1"></a></td>
                <td align="center" width="100%" valign="middle">
-                  <span class="maintitle">{SITENAME_COLOR}</span>
-                  <br>
-                  <span class="gen">{SITE_DESCRIPTION}<br><br></span>
-                  <table cellspacing="0" cellpadding="2" border="0">
-                     <tr>
-                        <td align="center" valign="top" nowrap="nowrap"><span class="mainmenu">
-                           <a href="{U_FAQ}" class="mainmenu"><img src="templates/subSilver/images/icon_mini_faq.gif" width="12" height="13" border="0" alt="{L_FAQ}" hspace="3">{L_FAQ}</a>
-                           &nbsp;<a href="{U_SEARCH}" class="mainmenu"><img src="templates/subSilver/images/icon_mini_search.gif" width="12" height="13" border="0" alt="{L_SEARCH}" hspace="3">{L_SEARCH}</a>
-                           &nbsp;<a href="{U_MEMBERLIST}" class="mainmenu"><img src="templates/subSilver/images/icon_mini_members.gif" width="12" height="13" border="0" alt="{L_MEMBERLIST}" hspace="3">{L_MEMBERLIST}</a>
-                           &nbsp;<a href="{U_GROUP_CP}" class="mainmenu"><img src="templates/subSilver/images/icon_mini_groups.gif" width="12" height="13" border="0" alt="{L_USERGROUPS}" hspace="3">{L_USERGROUPS}</a>
+                  <span class="mainmenu">
+						<a href="{U_FAQ}" class="mainmenu"><img src="templates/subSilver/images/icon_mini_faq.gif" width="12" height="13" border="0" alt="{L_FAQ}" hspace="3">{L_FAQ}</a>
+						&nbsp;<a href="{U_SEARCH}" class="mainmenu"><img src="templates/subSilver/images/icon_mini_search.gif" width="12" height="13" border="0" alt="{L_SEARCH}" hspace="3">{L_SEARCH}</a>
+						&nbsp;<a href="{U_MEMBERLIST}" class="mainmenu"><img src="templates/subSilver/images/icon_mini_members.gif" width="12" height="13" border="0" alt="{L_MEMBERLIST}" hspace="3">{L_MEMBERLIST}</a>
+						&nbsp;<a href="{U_GROUP_CP}" class="mainmenu"><img src="templates/subSilver/images/icon_mini_groups.gif" width="12" height="13" border="0" alt="{L_USERGROUPS}" hspace="3">{L_USERGROUPS}</a>
 
-                           <!-- BEGIN switch_user_logged_in -->
-						   <!-- BEGIN statistics -->
-                           &nbsp;<a href="{U_STAT}" class="mainmenu"><img src="templates/subSilver/images/icon_mini_statistics.gif" width="12" height="13" border="0" alt="{L_STATISTICS}" hspace="3">{L_STATISTICS}</a>
-                           <!-- END statistics -->
-                           </span></td>
-                     </tr>
-                     <tr>
-                        <td height="25" align="center" valign="top" nowrap="nowrap"><span class="mainmenu">
-                           <a href="{U_PROFILE}" class="mainmenu"><img src="templates/subSilver/images/icon_mini_profile.gif" width="12" height="13" border="0" alt="{L_PROFILE}" hspace="3">{L_PROFILE}</a>
-                           &nbsp;<a href="{U_PRIVATEMSGS}" class="mainmenu"><img src="templates/subSilver/images/icon_mini_message.gif" width="12" height="13" border="0" alt="{PRIVATE_MESSAGE_INFO}" hspace="3">{PRIVATE_MESSAGE_INFO}</a>
-                           &nbsp;<a href="{U_LOGIN_LOGOUT}" class="mainmenu"><img src="templates/subSilver/images/icon_mini_login.gif" width="12" height="13" border="0" alt="{L_LOGIN_LOGOUT}" hspace="3">{L_LOGIN_LOGOUT}</a>
-                           <!-- END switch_user_logged_in -->
+						<!-- BEGIN switch_user_logged_in -->
+						<!-- BEGIN statistics -->
+						&nbsp;<a href="{U_STAT}" class="mainmenu"><img src="templates/subSilver/images/icon_mini_statistics.gif" width="12" height="13" border="0" alt="{L_STATISTICS}" hspace="3">{L_STATISTICS}</a>
+						<!-- END statistics -->
+					</span>
+					<span class="mainmenu">
+						<a href="{U_PROFILE}" class="mainmenu"><img src="templates/subSilver/images/icon_mini_profile.gif" width="12" height="13" border="0" alt="{L_PROFILE}" hspace="3">{L_PROFILE}</a>
+						&nbsp;<a href="{U_PRIVATEMSGS}" class="mainmenu"><img src="templates/subSilver/images/icon_mini_message.gif" width="12" height="13" border="0" alt="{PRIVATE_MESSAGE_INFO}" hspace="3">{PRIVATE_MESSAGE_INFO}</a>
+						&nbsp;<a href="{U_LOGIN_LOGOUT}" class="mainmenu"><img src="templates/subSilver/images/icon_mini_login.gif" width="12" height="13" border="0" alt="{L_LOGIN_LOGOUT}" hspace="3">{L_LOGIN_LOGOUT}</a>
+						<!-- END switch_user_logged_in -->
 
-                           <!-- BEGIN switch_user_logged_out -->
-                           <!-- BEGIN statistics -->
-                           &nbsp;<a href="{U_STAT}" class="mainmenu"><img src="templates/subSilver/images/icon_mini_statistics.gif" width="12" height="13" border="0" alt="{L_STATISTICS}" hspace="3">{L_STATISTICS}</a>
-                           <!-- END statistics -->
-                           </span></td>
-                     </tr>
-                     <tr>
-                        <td height="25" align="center" valign="top" nowrap="nowrap"><span class="mainmenu">
-                           <a href="{U_REGISTER}" class="mainmenu"><img src="templates/subSilver/images/icon_mini_register.gif" width="12" height="13" border="0" alt="{L_REGISTER}" hspace="3">{L_REGISTER}</a>
-                           &nbsp;<a href="{U_LOGIN_LOGOUT}" class="mainmenu"><img src="templates/subSilver/images/icon_mini_login.gif" width="12" height="13" border="0" alt="{L_LOGIN_LOGOUT}" hspace="3">{L_LOGIN_LOGOUT}</a>
-                           <!-- END switch_user_logged_out -->
-                           <!-- BEGIN switch_report_list -->
-                           &nbsp;<a href="{switch_report_list.U_REPORT_LIST}" class="mainmenu"><img src="templates/subSilver/images/icon_mini_report_list.gif" width="12" height="13" border="0" alt="{switch_report_list.L_REPORT_LIST}" hspace="3">{switch_report_list.L_REPORT_LIST}</a></span>&nbsp;
-                           <!-- END switch_report_list -->
-                        </span></td>
-                     </tr>
-                  </table>
+						<!-- BEGIN switch_user_logged_out -->
+						<!-- BEGIN statistics -->
+						&nbsp;<a href="{U_STAT}" class="mainmenu"><img src="templates/subSilver/images/icon_mini_statistics.gif" width="12" height="13" border="0" alt="{L_STATISTICS}" hspace="3">{L_STATISTICS}</a>
+						<!-- END statistics -->
+					</span>
+					<span class="mainmenu">
+						<a href="{U_REGISTER}" class="mainmenu"><img src="templates/subSilver/images/icon_mini_register.gif" width="12" height="13" border="0" alt="{L_REGISTER}" hspace="3">{L_REGISTER}</a>
+						&nbsp;<a href="{U_LOGIN_LOGOUT}" class="mainmenu"><img src="templates/subSilver/images/icon_mini_login.gif" width="12" height="13" border="0" alt="{L_LOGIN_LOGOUT}" hspace="3">{L_LOGIN_LOGOUT}</a>
+						<!-- END switch_user_logged_out -->
+						<!-- BEGIN switch_report_list -->
+						&nbsp;<a href="{switch_report_list.U_REPORT_LIST}" class="mainmenu"><img src="templates/subSilver/images/icon_mini_report_list.gif" width="12" height="13" border="0" alt="{switch_report_list.L_REPORT_LIST}" hspace="3">{switch_report_list.L_REPORT_LIST}</a></span>&nbsp;
+						<!-- END switch_report_list -->
+					</span>
                </td>
                <!-- BEGIN switch_page_avatar -->
                <td align="center" nowrap="nowrap">{MY_AVATAR_IMG}</td>
