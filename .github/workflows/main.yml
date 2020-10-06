@@ -1,0 +1,17 @@
+name: CI
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - name: ZIP release
+        uses: TheDoctor0/zip-release@0.4.1
+        with:
+          filename: 'release.zip'
+          exclusions: '*/ci* *.git*'
