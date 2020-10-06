@@ -60,7 +60,7 @@ if ( !function_exists('file_get_contents') )
 
 $config_content = @file_get_contents($phpbb_root_path . 'config.'.$phpEx);
 
-if ( strpos($config_content, 'dbuser') && (substr($config_content, 0, 5) != '<?php' || substr($config_content, -2) != '?>') )
+if ( strpos($config_content, 'dbuser') && (substr($config_content, 0, 5) != '<?php') )
 {
 	print('&bull; You have <u>damaged</u>: <b>config.'.$phpEx.'</b> file !<br />&bull; File must begin with: <b>&lt;?php</b> and finish with <b>?&gt;</b> with any other chars (spaces, tabs or new line) before &lt;?php and after ?&gt;<br />&bull; You must correct the file !<br />&bull; Remember <u>it is not mistake</u>, if your text editor can not see this space, tab or new line, use other editor with operating multi (CR/LF) format or create new file with clean content.<br />&bull; Forum will not work correctly with damaged config.php file.<hr /><br />');
 }

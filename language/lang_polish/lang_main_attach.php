@@ -27,111 +27,111 @@ $he = ($userdata['user_gender'] != 2) ? true : false;
 //
 
 // Auth Related Entries
-$lang['Rules_attach_can'] = '<b>Mo¿esz</b> za³±czaæ pliki na tym forum';
-$lang['Rules_attach_cannot'] = '<b>Nie mo¿esz</b> za³±czaæ plików na tym forum';
-$lang['Rules_download_can'] = '<b>Mo¿esz</b> ¶ci±gaæ za³±czniki na tym forum';
-$lang['Rules_download_cannot'] = '<b>Nie mo¿esz</b> ¶ci±gaæ za³±czników na tym forum';
-$lang['Sorry_auth_view_attach'] = 'Nie masz zezwolenia na ¶ci±ganie lub przegl±danie za³±czników na tym forum.';
+$lang['Rules_attach_can'] = '<b>MoÅ¼esz</b> zaÅ‚Ä…czaÄ‡ pliki na tym forum';
+$lang['Rules_attach_cannot'] = '<b>Nie moÅ¼esz</b> zaÅ‚Ä…czaÄ‡ plikÃ³w na tym forum';
+$lang['Rules_download_can'] = '<b>MoÅ¼esz</b> Å›ciÄ…gaÄ‡ zaÅ‚Ä…czniki na tym forum';
+$lang['Rules_download_cannot'] = '<b>Nie moÅ¼esz</b> Å›ciÄ…gaÄ‡ zaÅ‚Ä…cznikÃ³w na tym forum';
+$lang['Sorry_auth_view_attach'] = 'Nie masz zezwolenia na Å›ciÄ…ganie lub przeglÄ…danie zaÅ‚Ä…cznikÃ³w na tym forum.';
 
 // Viewtopic -> Display of Attachments
 $lang['Description'] = 'Opis'; // used in Administration Panel too...
-$lang['Downloaded'] = 'Pobrañ';
+$lang['Downloaded'] = 'PobraÅ„';
 $lang['Download'] = 'Pobierz'; // this Language Variable is defined in lang_admin.php too, but we are unable to access it from the main Language File
 $lang['Filesize'] = 'Rozmiar';
-$lang['Viewed'] = 'Wy¶wietleñ';
-$lang['Download_number'] = 'Plik ¶ci±gniêto %d raz(y)'; // replace %d with count
-$lang['Extension_disabled_after_posting'] = 'Rozszerzenie \'%s\' usuniête z forum przez admina, dlatego za³±cznik nie bêdzie pokazany.'; // used in Posts and PM's, replace %s with mime type
+$lang['Viewed'] = 'WyÅ›wietleÅ„';
+$lang['Download_number'] = 'Plik Å›ciÄ…gniÄ™to %d raz(y)'; // replace %d with count
+$lang['Extension_disabled_after_posting'] = 'Rozszerzenie \'%s\' usuniÄ™te z forum przez admina, dlatego zaÅ‚Ä…cznik nie bÄ™dzie pokazany.'; // used in Posts and PM's, replace %s with mime type
 
 // Posting/PM -> Initial Display
-$lang['Attach_posting_cp'] = 'Panel kontrolny za³±czania plików';
-$lang['Attach_posting_cp_explain'] = 'Je¶li klikniesz na "Za³±cz plik", zobaczysz pole na dodanie za³±cznika.<br />Je¶li klikniesz na za³±czony plik, zobaczysz liste za³±czonych plików, bêdzie mo¿na j± zmieniæ.<br />Je¶li chcesz "nadpisaæ" (Wys³aæ nowsz± wersjê pliku) na istniej±cy juz za³±cznik, musisz klikn±æ na linku, nie dodawaj pliku drugi raz.';
+$lang['Attach_posting_cp'] = 'Panel kontrolny zaÅ‚Ä…czania plikÃ³w';
+$lang['Attach_posting_cp_explain'] = 'JeÅ›li klikniesz na "ZaÅ‚Ä…cz plik", zobaczysz pole na dodanie zaÅ‚Ä…cznika.<br />JeÅ›li klikniesz na zaÅ‚Ä…czony plik, zobaczysz liste zaÅ‚Ä…czonych plikÃ³w, bÄ™dzie moÅ¼na jÄ… zmieniÄ‡.<br />JeÅ›li chcesz "nadpisaÄ‡" (WysÅ‚aÄ‡ nowszÄ… wersjÄ™ pliku) na istniejÄ…cy juz zaÅ‚Ä…cznik, musisz kliknÄ…Ä‡ na linku, nie dodawaj pliku drugi raz.';
 
 // Posting/PM -> Posting Attachments
-$lang['Add_attachment'] = 'Dodaj za³±cznik';
-$lang['Add_attachment_title'] = 'Za³±cz plik';
-$lang['Add_attachment_explain'] = 'Je¶li nie chcesz za³±czaæ pliku do tego postu, pozostaw to pole puste';
-$lang['File_name'] = 'Nazwa za³±cznika';
-$lang['File_comment'] = 'Komentarz za³±cznika';
+$lang['Add_attachment'] = 'Dodaj zaÅ‚Ä…cznik';
+$lang['Add_attachment_title'] = 'ZaÅ‚Ä…cz plik';
+$lang['Add_attachment_explain'] = 'JeÅ›li nie chcesz zaÅ‚Ä…czaÄ‡ pliku do tego postu, pozostaw to pole puste';
+$lang['File_name'] = 'Nazwa zaÅ‚Ä…cznika';
+$lang['File_comment'] = 'Komentarz zaÅ‚Ä…cznika';
 
 // Posting/PM -> Posted Attachments
-$lang['Posted_attachments'] = 'Za³±czony plik';
+$lang['Posted_attachments'] = 'ZaÅ‚Ä…czony plik';
 $lang['Options'] = 'Opcje';
-$lang['Update_comment'] = 'Zmieñ komentarz';
-$lang['Delete_attachments'] = 'Usuñ za³±czniki';
-$lang['Delete_attachment'] = 'Usuñ za³±cznik';
-$lang['Delete_thumbnail'] = 'Usuñ miniaturê';
-$lang['Upload_new_version'] = 'Wy¶lij uaktualniony plik';
+$lang['Update_comment'] = 'ZmieÅ„ komentarz';
+$lang['Delete_attachments'] = 'UsuÅ„ zaÅ‚Ä…czniki';
+$lang['Delete_attachment'] = 'UsuÅ„ zaÅ‚Ä…cznik';
+$lang['Delete_thumbnail'] = 'UsuÅ„ miniaturÄ™';
+$lang['Upload_new_version'] = 'WyÅ›lij uaktualniony plik';
 
 // Errors -> Posting Attachments
-$lang['Invalid_filename'] = '%s jest nieprawid³ow± nazw±'; // replace %s with given filename
-$lang['Attachment_php_size_na'] = 'Plik ma za du¿y rozmiar.<br />Nie mo¿na pobraæ wielko¶ci pliku zdefiniowanej w PHP.';
-$lang['Attachment_php_size_overrun'] = 'Plik ma za du¿y rozmiar.<br />Maksymalny dozwolony rozmiar to: %d MB.'; // replace %d with ini_get('upload_max_filesize')
+$lang['Invalid_filename'] = '%s jest nieprawidÅ‚owÄ… nazwÄ…'; // replace %s with given filename
+$lang['Attachment_php_size_na'] = 'Plik ma za duÅ¼y rozmiar.<br />Nie moÅ¼na pobraÄ‡ wielkoÅ›ci pliku zdefiniowanej w PHP.';
+$lang['Attachment_php_size_overrun'] = 'Plik ma za duÅ¼y rozmiar.<br />Maksymalny dozwolony rozmiar to: %d MB.'; // replace %d with ini_get('upload_max_filesize')
 $lang['Disallowed_extension'] = 'Rozszerzenie %s jest niedozwolone'; // replace %s with extension (e.g. .php) 
-$lang['Disallowed_extension_within_forum'] = 'Nie masz uprawnieñ do za³±czania plików z rozszerzeniem %s na tym forum'; // replace %s with the Extension
-$lang['Attachment_too_big'] = 'Plik ma za du¿y rozmiar.<br />Maksymalny dozwolony rozmiar to: %d %s'; // replace %d with maximum file size, %s with size var
-$lang['Attach_quota_reached'] = 'Niestety Limit na wszystkie za³±czniki na tym forum zosta³ przekroczony. Prosze skontaktowaæ siê z administratorem forum.';
-$lang['Too_many_attachments'] = 'Plik nie mo¿e byæ za³±czony, limit %d w tym po¶cie zosta³ przekroczony'; // replace %d with maximum number of attachments
-$lang['Error_imagesize'] = 'Za³±cznik-obraz musi byæ mniejszy ni¿ %d pixeli szeroko¶ci i %d pixeli wysoko¶ci'; 
-$lang['General_upload_error'] = 'B³±d wysy³ania za³±cznika (nie mo¿na skopiowaæ do okre¶lonego katalogu: %s, skontaktuj siê z administratorem forum.'; // replace %s with local path
+$lang['Disallowed_extension_within_forum'] = 'Nie masz uprawnieÅ„ do zaÅ‚Ä…czania plikÃ³w z rozszerzeniem %s na tym forum'; // replace %s with the Extension
+$lang['Attachment_too_big'] = 'Plik ma za duÅ¼y rozmiar.<br />Maksymalny dozwolony rozmiar to: %d %s'; // replace %d with maximum file size, %s with size var
+$lang['Attach_quota_reached'] = 'Niestety Limit na wszystkie zaÅ‚Ä…czniki na tym forum zostaÅ‚ przekroczony. Prosze skontaktowaÄ‡ siÄ™ z administratorem forum.';
+$lang['Too_many_attachments'] = 'Plik nie moÅ¼e byÄ‡ zaÅ‚Ä…czony, limit %d w tym poÅ›cie zostaÅ‚ przekroczony'; // replace %d with maximum number of attachments
+$lang['Error_imagesize'] = 'ZaÅ‚Ä…cznik-obraz musi byÄ‡ mniejszy niÅ¼ %d pixeli szerokoÅ›ci i %d pixeli wysokoÅ›ci'; 
+$lang['General_upload_error'] = 'BÅ‚Ä…d wysyÅ‚ania zaÅ‚Ä…cznika (nie moÅ¼na skopiowaÄ‡ do okreÅ›lonego katalogu: %s, skontaktuj siÄ™ z administratorem forum.'; // replace %s with local path
 
-$lang['Error_empty_add_attachbox'] = 'Musisz podaæ warto¶æ w polu \'Dodaj za³±cznik\'.';
-$lang['Error_missing_old_entry'] = 'Nie mo¿na uaktualniæ pliku, nie znaleziono starego za³±cznika';
+$lang['Error_empty_add_attachbox'] = 'Musisz podaÄ‡ wartoÅ›Ä‡ w polu \'Dodaj zaÅ‚Ä…cznik\'.';
+$lang['Error_missing_old_entry'] = 'Nie moÅ¼na uaktualniÄ‡ pliku, nie znaleziono starego zaÅ‚Ä…cznika';
 
 // Errors -> PM Related
-$lang['Attach_quota_sender_pm_reached'] = 'Pojemno¶æ twojej prywatnej skrzynki na za³±czniki zosta³a przekroczona. Usuñ kilka starych plików i spróbuj ponownie.';
-$lang['Attach_quota_receiver_pm_reached'] = 'Maksymalna dozwolona ilo¶æ plików w skrzynce odbiorcy, zosta³a przekroczona. Poinformuj go o tym, lub poczekaj a¿ miejsce zostanie zwolnione.';
+$lang['Attach_quota_sender_pm_reached'] = 'PojemnoÅ›Ä‡ twojej prywatnej skrzynki na zaÅ‚Ä…czniki zostaÅ‚a przekroczona. UsuÅ„ kilka starych plikÃ³w i sprÃ³buj ponownie.';
+$lang['Attach_quota_receiver_pm_reached'] = 'Maksymalna dozwolona iloÅ›Ä‡ plikÃ³w w skrzynce odbiorcy, zostaÅ‚a przekroczona. Poinformuj go o tym, lub poczekaj aÅ¼ miejsce zostanie zwolnione.';
 
 // Errors -> Download
-$lang['No_attachment_selected'] = 'Nie ma zaznaczonego za³±cznika do ¶ci±gniêcia lub pokazania.';
-$lang['Error_no_attachment'] = 'Wybrany za³±cznik ju¿ nie istnieje';
+$lang['No_attachment_selected'] = 'Nie ma zaznaczonego zaÅ‚Ä…cznika do Å›ciÄ…gniÄ™cia lub pokazania.';
+$lang['Error_no_attachment'] = 'Wybrany zaÅ‚Ä…cznik juÅ¼ nie istnieje';
 
 // Delete Attachments
-$lang['Confirm_delete_attachments'] = 'Czy na pewno skasowaæ wybrane za³±czniki?';
+$lang['Confirm_delete_attachments'] = 'Czy na pewno skasowaÄ‡ wybrane zaÅ‚Ä…czniki?';
 $lang['Error_deleted_attachments'] = 'Could not delete Attachments.';
 
 // General Error Messages
-$lang['file_not_delete'] = 'Nie mo¿esz usun±æ tego pliku.';
-$lang['Attachment_feature_disabled'] = 'Ta cecha pliku jest wy³±czona.';
+$lang['file_not_delete'] = 'Nie moÅ¼esz usunÄ…Ä‡ tego pliku.';
+$lang['Attachment_feature_disabled'] = 'Ta cecha pliku jest wyÅ‚Ä…czona.';
 
-$lang['Directory_does_not_exist'] = 'Katalog \'%s\' nie istnieje lub nie zosta³ znaleziony.'; // replace %s with directory
+$lang['Directory_does_not_exist'] = 'Katalog \'%s\' nie istnieje lub nie zostaÅ‚ znaleziony.'; // replace %s with directory
 $lang['Directory_is_not_a_dir'] = 'Sprawdz czy \'%s\' jest katalogiem.'; // replace %s with directory
-$lang['Directory_not_writeable'] = 'Katalog \'%s\' nie ma praw do zapisu. Musisz utworzyæ ¶cie¿kê i katalog z prawami do zapisu (chmod -R nazwa_katalogu 777) (lub sprawdz w³a¶ciciela katalogu).<br />If you have only plain ftp-access change the \'Attribute\' of the directory to rwxrwxrwx.'; // replace %s with directory
+$lang['Directory_not_writeable'] = 'Katalog \'%s\' nie ma praw do zapisu. Musisz utworzyÄ‡ Å›cieÅ¼kÄ™ i katalog z prawami do zapisu (chmod -R nazwa_katalogu 777) (lub sprawdz wÅ‚aÅ›ciciela katalogu).<br />If you have only plain ftp-access change the \'Attribute\' of the directory to rwxrwxrwx.'; // replace %s with directory
 
-$lang['Ftp_error_connect'] = 'Nie moge siê po³±czyæ z serwerem FTP: \'%s\'. Sprawdz ustawienia serwera.';
-$lang['Ftp_error_login'] = 'Nie mogê siê zalogowaæ na serwer FTP. U¿ytkownik \'%s\' lub has³o nieprawidlowe. Sprawdz ustawienia serwera FTP.';
-$lang['Ftp_error_path'] = 'Brak dostêpu do serwera FTP: \'%s\'. Sprawdz ustawienia FTP.';
-$lang['Ftp_error_upload'] = 'Nie moge skopiowaæ pliku do katalogu: \'%s\'. Sprawdz ustawienia FTP.';
-$lang['Ftp_error_delete'] = 'Nie mogê usun±æ pliku z katalogu: \'%s\'. Sprawdz ustawienia FTP.';
-$lang['Ftp_error_pasv_mode'] = 'B³±d w³±czenia/wy³±czenia Trybu pasywnego';
+$lang['Ftp_error_connect'] = 'Nie moge siÄ™ poÅ‚Ä…czyÄ‡ z serwerem FTP: \'%s\'. Sprawdz ustawienia serwera.';
+$lang['Ftp_error_login'] = 'Nie mogÄ™ siÄ™ zalogowaÄ‡ na serwer FTP. UÅ¼ytkownik \'%s\' lub hasÅ‚o nieprawidlowe. Sprawdz ustawienia serwera FTP.';
+$lang['Ftp_error_path'] = 'Brak dostÄ™pu do serwera FTP: \'%s\'. Sprawdz ustawienia FTP.';
+$lang['Ftp_error_upload'] = 'Nie moge skopiowaÄ‡ pliku do katalogu: \'%s\'. Sprawdz ustawienia FTP.';
+$lang['Ftp_error_delete'] = 'Nie mogÄ™ usunÄ…Ä‡ pliku z katalogu: \'%s\'. Sprawdz ustawienia FTP.';
+$lang['Ftp_error_pasv_mode'] = 'BÅ‚Ä…d wÅ‚Ä…czenia/wyÅ‚Ä…czenia Trybu pasywnego';
 
 // Attach Rules Window
-$lang['Rules_page'] = 'Ustawienia za³±czników';
-$lang['Attach_rules_title'] = 'Dozwolone rozszerzenia i rozmiary za³±czników dla grup';
+$lang['Rules_page'] = 'Ustawienia zaÅ‚Ä…cznikÃ³w';
+$lang['Attach_rules_title'] = 'Dozwolone rozszerzenia i rozmiary zaÅ‚Ä…cznikÃ³w dla grup';
 $lang['Group_rule_header'] = 'Maksymalny rozmiar %s to: %s'; // Replace first %s with Extension Group, second one with the Size STRING
 $lang['Allowed_extensions_and_sizes'] = 'Dozwolone rozszerzenia i rozmiary';
 $lang['Note_user_empty_group_permissions'] = 'NOTKA:<br />You are normally allowed to attach files within this Forum, <br />but since no Extension Group is allowed to be attached here, <br />you are unable to attach anything. If you try, <br />you will receive an Error Message.<br />';
 
 // Quota Variables
 $lang['Upload_quota'] = 'Quota Uploadu';
-$lang['Pm_quota'] = 'Quota w prywatnych wiadomo¶ciach';
-$lang['User_upload_quota_reached'] = 'Przekroczy³' .  (($he) ? 'e' : 'a') . '¶ maksymalny limit uploadu (%d %s)'; // replace %d with Size, %s with Size Lang (MB for example)
+$lang['Pm_quota'] = 'Quota w prywatnych wiadomoÅ›ciach';
+$lang['User_upload_quota_reached'] = 'PrzekroczyÅ‚' .  (($he) ? 'e' : 'a') . 'Å› maksymalny limit uploadu (%d %s)'; // replace %d with Size, %s with Size Lang (MB for example)
 
 // User Attachment Control Panel
-$lang['User_acp_title'] = 'Panel U¿ytkowników';
-$lang['UACP'] = 'Panel kontrolny za³±czników';
-$lang['User_uploaded_profile'] = 'Upload ca³kowity: %s';
+$lang['User_acp_title'] = 'Panel UÅ¼ytkownikÃ³w';
+$lang['UACP'] = 'Panel kontrolny zaÅ‚Ä…cznikÃ³w';
+$lang['User_uploaded_profile'] = 'Upload caÅ‚kowity: %s';
 $lang['User_quota_profile'] = 'Quota: %s';
-$lang['Upload_percent_profile'] = '%d%% ca³o¶ci';
+$lang['Upload_percent_profile'] = '%d%% caÅ‚oÅ›ci';
 
 // Common Variables
-$lang['Bytes'] = 'Bajtów';
+$lang['Bytes'] = 'BajtÃ³w';
 $lang['KB'] = 'KB';
 $lang['MB'] = 'MB';
-$lang['Attach_search_query'] = 'Szukaj za³±czników';
-$lang['Test_settings'] = 'Test ustawieñ';
+$lang['Attach_search_query'] = 'Szukaj zaÅ‚Ä…cznikÃ³w';
+$lang['Test_settings'] = 'Test ustawieÅ„';
 $lang['Not_assigned'] = 'Nie skojarzone';
-$lang['No_file_comment_available'] = 'Brak komentarza do za³±cznika';
-$lang['Attachbox_limit'] = 'Wykorzystanie za³±czników w skrzynce: ';
+$lang['No_file_comment_available'] = 'Brak komentarza do zaÅ‚Ä…cznika';
+$lang['Attachbox_limit'] = 'Wykorzystanie zaÅ‚Ä…cznikÃ³w w skrzynce: ';
 $lang['No_quota_limit'] = 'Brak limitu Quoty';
 $lang['Unlimited'] = 'Bez limitu';
 

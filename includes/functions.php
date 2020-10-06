@@ -92,6 +92,7 @@ function get_vars($name, $empty = false, $methods = 'POST,GET', $int = false, $a
 
 function space_clean(&$s)
 {
+	return; // this destroys utf8 encoding
     $c = array(chr(0xC2), chr(0xA0), chr(0x90), chr(0x9D), chr(0x81), chr(0x8D), chr(0x8F), chr(0xAD), chr(0x83));
     $s = str_replace($c, '', $s);
 }
@@ -121,7 +122,7 @@ function var_adds(&$arr, $allowed_array, $space_clean = 'false')
 
 function xhtmlspecialchars($s)
 {
-    return htmlspecialchars($s, ENT_COMPAT | ENT_HTML401, "ISO-8859-1");
+    return htmlspecialchars($s, ENT_COMPAT | ENT_HTML401, "UTF-8");
 }
 
 function get_object_lang($cur, $field)
@@ -1586,7 +1587,7 @@ function message_die($msg_code, $msg_text = '', $msg_title = '', $err_line = '',
 			}
 		}
 		echo $custom_error_message . '<hr /><br clear="all">';
-		die("</body>\n</html>");
+		// die("</body>\n</html>");
 	}
 	
 	define('HAS_DIED', 1);

@@ -1236,6 +1236,7 @@ else if ( $submit || $confirm )
         $subject_e    = trim(get_vars('subject_e', '', 'POST'));
         $message      = get_vars('message',   '', 'POST');
         $bbcode_uid   = '';
+		var_dump($_POST['message'], $message);
         if( $is_auth['auth_pollcreate'] )
         {
             $poll_title    = get_vars('poll_title',       '', 'POST');
@@ -1284,7 +1285,7 @@ else if ( $submit || $confirm )
 			{
 				$subject = $submit_topic_tag . ' ' . $subject;
 			}
-
+			
 			$str_replace_username = str_replace("\'", "''", $username);
 			$str_replace_subject = str_replace("\'", "''", $subject);
 			$str_replace_subject_e = str_replace("\'", "''", $subject_e);

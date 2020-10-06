@@ -20,19 +20,19 @@
  ***************************************************************************/
 
 // Admin Voting MOD
-$lang['Admin_Vote_Explain'] = 'Wyniki g³osowania (kto i jak g³osowa³).';
-$lang['Admin_Vote_Title'] = 'Administracja g³osowañ';
+$lang['Admin_Vote_Explain'] = 'Wyniki gÅ‚osowania (kto i jak gÅ‚osowaÅ‚).';
+$lang['Admin_Vote_Title'] = 'Administracja gÅ‚osowaÅ„';
 $lang['Vote_id'] = '#';
 $lang['Poll_topic'] = 'Temat sondy';
-$lang['Vote_username'] = 'G³osowali';
+$lang['Vote_username'] = 'GÅ‚osowali';
 $lang['Vote_end_date'] = 'Czas trwania sondy';
 $lang['Sort_vote_id'] = 'Numer sondy';
 $lang['Sort_poll_topic'] = 'Temat sondy';
-$lang['Sort_vote_start'] = 'Data za³o¿enia';
+$lang['Sort_vote_start'] = 'Data zaÅ‚oÅ¼enia';
 $lang['Submit'] = 'Sortuj';
 $lang['Select_sort_field'] = 'Wybierz rodzaj sortowania';
 $lang['Sort_order'] = 'Sortuj';
-$lang['Sort_ascending'] = 'Rosn±co';
-$lang['Sort_descending'] = 'Malej±co';
+$lang['Sort_ascending'] = 'RosnÄ…co';
+$lang['Sort_descending'] = 'MalejÄ…co';
 
 ?>

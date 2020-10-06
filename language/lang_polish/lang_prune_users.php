@@ -24,38 +24,38 @@
 // Check for user gender
 $he = ($userdata['user_gender'] != 2) ? true : false;
 
-$lang['Page_title'] = 'Usuñ posty u¿ytkownika';
-$lang['Page_desc'] = 'Mo¿esz u¿yæ tego narzêdzia do skasowania postów danego u¿ytkownika ze wszystkich forów lub tylko z wybranego.<br /><b>Przed u¿yciem tego narzêdzia powin' .  (($he) ? 'iene¶' : 'na¶') . ' zrobiæ kopiê bazy danych.</b>';
+$lang['Page_title'] = 'UsuÅ„ posty uÅ¼ytkownika';
+$lang['Page_desc'] = 'MoÅ¼esz uÅ¼yÄ‡ tego narzÄ™dzia do skasowania postÃ³w danego uÅ¼ytkownika ze wszystkich forÃ³w lub tylko z wybranego.<br /><b>Przed uÅ¼yciem tego narzÄ™dzia powin' .  (($he) ? 'ieneÅ›' : 'naÅ›') . ' zrobiÄ‡ kopiÄ™ bazy danych.</b>';
 $lang['Forum'] = 'Forum';
-$lang['Prune_result_n'] = '%d Postów usuniêtych.';
-$lang['Prune_result_s'] = 'Usuniêto %d post.';
-$lang['Prune_result_p'] = 'Usuniêto %d postów.';
+$lang['Prune_result_n'] = '%d PostÃ³w usuniÄ™tych.';
+$lang['Prune_result_s'] = 'UsuniÄ™to %d post.';
+$lang['Prune_result_p'] = 'UsuniÄ™to %d postÃ³w.';
 
 $lang['X_Days'] = '%d Dni';
 $lang['X_Weeks'] = '%d Tygodni';
-$lang['X_Months'] = '%d Miesiêcy';
+$lang['X_Months'] = '%d MiesiÄ™cy';
 $lang['X_Years'] = '%d Lat';
 
-$lang['Prune_no_users'] = 'Nie wybrano u¿ytkowników';
-$lang['Prune_users_number'] = 'Usuniêtych u¿ytkowników: <b>%d</b>';
+$lang['Prune_no_users'] = 'Nie wybrano uÅ¼ytkownikÃ³w';
+$lang['Prune_users_number'] = 'UsuniÄ™tych uÅ¼ytkownikÃ³w: <b>%d</b>';
 
-$lang['Prune_user_list'] = 'U¿ytkownicy którzy zostan± usuniêci';
-$lang['Prune_on_click'] = 'Czy jeste¶ pew' .  (($he) ? 'ien' : 'na') . ', ¿e chcesz usun±æ %d u¿ytkowników?';
-$lang['Prune_Action'] = 'Schematy usuwania u¿ytkowników';
-$lang['Prune_users_explain'] = 'W tym miejscu masz mo¿liwo¶æ masowo usun±æ u¿ytkowników, masz do wyboru u¿ytkowników którzy nie napisali ¿adnych postów, u¿ytkowników którzy nigdy siê nie logowali, nie aktywowali konta, ma³oaktywnych i ma³opisz±cych<br /><b>UWAGA</b> nie mo¿na cofn±æ tej operacji, powiniene¶ zrobiæ kopiê bazy danych przed jej wykonaniem !<br />Jednorazowo jest kasowanych maksymalnie 200 u¿ytkowników.';
+$lang['Prune_user_list'] = 'UÅ¼ytkownicy ktÃ³rzy zostanÄ… usuniÄ™ci';
+$lang['Prune_on_click'] = 'Czy jesteÅ› pew' .  (($he) ? 'ien' : 'na') . ', Å¼e chcesz usunÄ…Ä‡ %d uÅ¼ytkownikÃ³w?';
+$lang['Prune_Action'] = 'Schematy usuwania uÅ¼ytkownikÃ³w';
+$lang['Prune_users_explain'] = 'W tym miejscu masz moÅ¼liwoÅ›Ä‡ masowo usunÄ…Ä‡ uÅ¼ytkownikÃ³w, masz do wyboru uÅ¼ytkownikÃ³w ktÃ³rzy nie napisali Å¼adnych postÃ³w, uÅ¼ytkownikÃ³w ktÃ³rzy nigdy siÄ™ nie logowali, nie aktywowali konta, maÅ‚oaktywnych i maÅ‚opiszÄ…cych<br /><b>UWAGA</b> nie moÅ¼na cofnÄ…Ä‡ tej operacji, powinieneÅ› zrobiÄ‡ kopiÄ™ bazy danych przed jej wykonaniem !<br />Jednorazowo jest kasowanych maksymalnie 200 uÅ¼ytkownikÃ³w.';
 $lang['Prune_commands'] = $lang['Prune_explain'] = array();
-$lang['Prune_commands'][0] = 'Usuñ u¿ytkowników bez postów';
-$lang['Prune_explain'][0] = '%sZ wyj±tkiem u¿ytkowników zarejestrowanych przez ostatnie <b>%d</b> dni';
+$lang['Prune_commands'][0] = 'UsuÅ„ uÅ¼ytkownikÃ³w bez postÃ³w';
+$lang['Prune_explain'][0] = '%sZ wyjÄ…tkiem uÅ¼ytkownikÃ³w zarejestrowanych przez ostatnie <b>%d</b> dni';
 $lang['Prune_commands'][1] = 'Nieaktywnych';
-$lang['Prune_explain'][1] = '%sNigdy nie zalogowanych, z wyj±tkiem u¿ytkowników zarejestrowanych przez ostatnie <b>%d</b> dni';
+$lang['Prune_explain'][1] = '%sNigdy nie zalogowanych, z wyjÄ…tkiem uÅ¼ytkownikÃ³w zarejestrowanych przez ostatnie <b>%d</b> dni';
 $lang['Prune_commands'][2] = 'Nieaktywowanych';
-$lang['Prune_explain'][2] = '%sKtórzy nie dokonali aktywacji konta, z wyj±tkiem u¿ytkowników zarejestrowanych przez ostatnie <b>%d</b> dni';
-$lang['Prune_commands'][3] = 'Ma³oaktywnych';
-$lang['Prune_explain'][3] = 'Którzy nie odwiedzili forum przez ostatnie <b>%s</b> dni, z wyj±tkiem u¿ytkowników zarejestrowanych przez ostatnie <b>%d</b> dni';
-$lang['Prune_commands'][4] = 'Ma³opisz±cych';
-$lang['Prune_explain'][4] = 'Którzy pisz± mniej ni¿ 1 post na <b>%s</b> dni, z wyj±tkiem u¿ytkowników zarejestrowanych przez ostatnie <b>%d</b> dni'; 
-$lang['Prune_commands'][5] = 'Ma³oaktywnych, bez postów';
-$lang['Prune_explain'][5] = 'Którzy nie napisali ¿adnego postu i nie logowali sie przez ostatnie <b>%s</b> dni, z wyj±tkiem u¿ytkowników zarejestrowanych przez ostatnie <b>%d</b> dni'; 
+$lang['Prune_explain'][2] = '%sKtÃ³rzy nie dokonali aktywacji konta, z wyjÄ…tkiem uÅ¼ytkownikÃ³w zarejestrowanych przez ostatnie <b>%d</b> dni';
+$lang['Prune_commands'][3] = 'MaÅ‚oaktywnych';
+$lang['Prune_explain'][3] = 'KtÃ³rzy nie odwiedzili forum przez ostatnie <b>%s</b> dni, z wyjÄ…tkiem uÅ¼ytkownikÃ³w zarejestrowanych przez ostatnie <b>%d</b> dni';
+$lang['Prune_commands'][4] = 'MaÅ‚opiszÄ…cych';
+$lang['Prune_explain'][4] = 'KtÃ³rzy piszÄ… mniej niÅ¼ 1 post na <b>%s</b> dni, z wyjÄ…tkiem uÅ¼ytkownikÃ³w zarejestrowanych przez ostatnie <b>%d</b> dni'; 
+$lang['Prune_commands'][5] = 'MaÅ‚oaktywnych, bez postÃ³w';
+$lang['Prune_explain'][5] = 'KtÃ³rzy nie napisali Å¼adnego postu i nie logowali sie przez ostatnie <b>%s</b> dni, z wyjÄ…tkiem uÅ¼ytkownikÃ³w zarejestrowanych przez ostatnie <b>%d</b> dni'; 
 
 //
 // That's all Folks!

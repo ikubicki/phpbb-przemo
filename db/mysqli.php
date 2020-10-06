@@ -13,15 +13,15 @@ if(!defined("SQL_LAYER")) {
 
     class sql_db
     {
-        var $db_connect_id;
-        var $query_result;
-        var $num_queries = 0;
-        var $in_transaction = 0;
+        public $db_connect_id;
+        public $query_result;
+        public $num_queries = 0;
+        public $in_transaction = 0;
 
         // Connect to server
-        function sql_db($sqlserver, $sqluser, $sqlpassword, $database, $persistency = true)
+        function __construct($sqlserver, $sqluser, $sqlpassword, $database, $persistency = false, $charset = 'latin2')
         {
-            $this->persistency = (version_compare(PHP_VERSION, '5.3.0', '>=')) ? $persistency : false;
+            $this->persistency = $persistency;
             $this->user        = $sqluser;
             $this->password    = $sqlpassword;
             $this->dbname      = $database;
@@ -33,7 +33,7 @@ if(!defined("SQL_LAYER")) {
             $this->db_connect_id = @mysqli_connect($this->server, $this->user, $this->password, $this->dbname);
 
             if($this->db_connect_id && $this->dbname != '') {
-                mysqli_set_charset($this->db_connect_id, 'latin2');
+                mysqli_set_charset($this->db_connect_id, $charset);
                 return $this->db_connect_id;
             }
 

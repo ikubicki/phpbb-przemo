@@ -36,21 +36,21 @@ $he = ($userdata['user_gender'] != 2) ? true : false;
 
 $lang['Groups'] = 'Grupy';
 $lang['Styles'] = 'Style';
-$lang['General'] = 'Ogólne';
-$lang['Users'] = 'U¿ytkownicy';
+$lang['General'] = 'OgÃ³lne';
+$lang['Users'] = 'UÅ¼ytkownicy';
 $lang['Forums'] = 'Fora';
 
 $lang['Configuration'] = 'Konfiguracja';
-$lang['Manage'] = 'Zarz±dzaj';
-$lang['Disallow'] = 'Zabroñ nazwy';
+$lang['Manage'] = 'ZarzÄ…dzaj';
+$lang['Disallow'] = 'ZabroÅ„ nazwy';
 $lang['Prune'] = 'Czyszczenie';
 $lang['Mass_Email'] = 'Mas. Korespondencja';
 $lang['Ranks'] = 'Rangi';
-$lang['Smilies'] = 'U¶mieszki';
+$lang['Smilies'] = 'UÅ›mieszki';
 $lang['Ban_Management'] = 'Banlista';
-$lang['Word_Censor'] = 'Cenzura S³ów';
+$lang['Word_Censor'] = 'Cenzura SÅ‚Ã³w';
 $lang['Export'] = 'Eksport';
-$lang['Create_new'] = 'Utwórz';
+$lang['Create_new'] = 'UtwÃ³rz';
 $lang['Add_new'] = 'Dodaj';
 $lang['Backup_DB'] = 'Kopia Zapasowa';
 $lang['Restore_DB'] = 'Odtwarzanie';
@@ -61,71 +61,71 @@ $lang['Restore_DB'] = 'Odtwarzanie';
 
 $lang['Admin'] = 'Administracja';
 $lang['Welcome_phpBB'] = 'Witamy w phpBB';
-$lang['Admin_intro'] = 'Dziêkujemy, ¿e wybra³' .  (($he) ? 'e' : 'a') . '¶ phpBB by Przemo do obs³ugi Twojego forum. Ten ekran przedstawia krótki przegl±d ró¿norodnych danych statystycznych, dotycz±cych forum. Mo¿esz wróciæ do tej strony klikaj±c odno¶nik <u>Indeks Administracji</u> na lewym panelu. Aby powróciæ do strony g³ównej forum kliknij <u>Str. G³ówna Forum</u> lewym panelu. Inne odno¶niki po lewej stronie ekranu daj± dostêp do narzêdzi kontroluj±cych ka¿dy aspekt zachowania forum. Ka¿de z nich zawiera osobne instrukcje u¿ycia.';
-$lang['Main_index'] = 'Str. G³ówna Forum';
+$lang['Admin_intro'] = 'DziÄ™kujemy, Å¼e wybraÅ‚' .  (($he) ? 'e' : 'a') . 'Å› phpBB by Przemo do obsÅ‚ugi Twojego forum. Ten ekran przedstawia krÃ³tki przeglÄ…d rÃ³Å¼norodnych danych statystycznych, dotyczÄ…cych forum. MoÅ¼esz wrÃ³ciÄ‡ do tej strony klikajÄ…c odnoÅ›nik <u>Indeks Administracji</u> na lewym panelu. Aby powrÃ³ciÄ‡ do strony gÅ‚Ã³wnej forum kliknij <u>Str. GÅ‚Ã³wna Forum</u> lewym panelu. Inne odnoÅ›niki po lewej stronie ekranu dajÄ… dostÄ™p do narzÄ™dzi kontrolujÄ…cych kaÅ¼dy aspekt zachowania forum. KaÅ¼de z nich zawiera osobne instrukcje uÅ¼ycia.';
+$lang['Main_index'] = 'Str. GÅ‚Ã³wna Forum';
 $lang['Forum_stats'] = 'Statystyki Forum';
 $lang['Admin_Index'] = 'Indeks Administracji';
-$lang['Preview_forum'] = 'Podgl±d Forum';
+$lang['Preview_forum'] = 'PodglÄ…d Forum';
 
-$lang['Click_return_admin_index'] = 'Kliknij %sTutaj%s aby powróciæ do Indeksu Administracji';
+$lang['Click_return_admin_index'] = 'Kliknij %sTutaj%s aby powrÃ³ciÄ‡ do Indeksu Administracji';
 
 $lang['Statistic'] = 'Statystyki';
-$lang['Value'] = 'Warto¶æ';
-$lang['Number_posts'] = 'Liczba postów';
-$lang['Posts_per_day'] = 'Postów dziennie';
-$lang['Number_topics'] = 'Liczba tematów';
-$lang['Topics_per_day'] = 'Tematów dziennie';
-$lang['Number_users'] = 'Liczba u¿ytkowników';
-$lang['Users_per_day'] = 'U¿ytkowników dziennie';
+$lang['Value'] = 'WartoÅ›Ä‡';
+$lang['Number_posts'] = 'Liczba postÃ³w';
+$lang['Posts_per_day'] = 'PostÃ³w dziennie';
+$lang['Number_topics'] = 'Liczba tematÃ³w';
+$lang['Topics_per_day'] = 'TematÃ³w dziennie';
+$lang['Number_users'] = 'Liczba uÅ¼ytkownikÃ³w';
+$lang['Users_per_day'] = 'UÅ¼ytkownikÃ³w dziennie';
 $lang['Board_started'] = 'Start Forum';
-$lang['Avatar_dir_size'] = 'U¿ycie dysku';
+$lang['Avatar_dir_size'] = 'UÅ¼ycie dysku';
 $lang['Database_size'] = 'Baza Danych';
 $lang['Gzip_compression'] = 'Kompresja Gzip';
-$lang['Not_available'] = 'Niedostêpne';
-$lang['f_mail'] = 'Obs³uga funkcji <b>mail</b> na serwerze';
-$lang['search_keywords_max'] = 'Maksymalna liczba s³ów, jak± u¿ytkownik mo¿e wykorzystaæ, u¿ywaj±c wyszukiwarki.';
-$lang['languages_list'] = 'Dostêpne jêzyki: %s';
-$lang['files_list'] = 'Dostêpne pliki: %s';
+$lang['Not_available'] = 'NiedostÄ™pne';
+$lang['f_mail'] = 'ObsÅ‚uga funkcji <b>mail</b> na serwerze';
+$lang['search_keywords_max'] = 'Maksymalna liczba sÅ‚Ã³w, jakÄ… uÅ¼ytkownik moÅ¼e wykorzystaÄ‡, uÅ¼ywajÄ…c wyszukiwarki.';
+$lang['languages_list'] = 'DostÄ™pne jÄ™zyki: %s';
+$lang['files_list'] = 'DostÄ™pne pliki: %s';
 
 
 //
 // DB Utils
 //
-$lang['Database_Utilities'] = 'Narzêdzia Bazy Danych';
+$lang['Database_Utilities'] = 'NarzÄ™dzia Bazy Danych';
 $lang['Restore'] = 'Przywracanie';
 $lang['Backup'] = 'Kopia Zapasowa';
-$lang['Backup_explain'] = 'W tym miejscu mo¿esz w³±czyæ automatyczne tworzenie kopii zapasowej bazy danych, która bêdzie tworzona co 24 godziny (podczas tworzenia kopii, forum jest wy³±czone)<br />Masz mo¿liwo¶æ wyboru ile kopii zapasowych ma byæ przechowywane na serwerze. Bêd± one przetrzymywane w katalogu /db/db_backup/ katalog <b>db_backup</b> powinien mieæ prawa do zapisu ( chmod 777 ).<br />W tym miejscu masz te¿ mo¿liwo¶æ wykonania kopii zapasowej "na ¿±danie" po klikniêciu na link.<br />Plik kopii zapasowej ma nazwê np. db_backup_phpbb_psmdowhx_date-30-05-2005.sql.gz znaki psmdowhx s± losowe a wiêc nie ma mo¿liwo¶ci aby plik dosta³ sie w niepowo³ane rêce. Katalogu /db_backup/ nie mo¿na "wylistowaæ" gdy¿ znajduje siê tam plik index.html.<br />Masz mo¿liwo¶æ ustawienia aby kopia nie obejmowa³a danych z tabel: search i read_history. Tabele search mo¿na odbudowaæ narzêdziem do odbudowywania search w panelu admina. Tabele search i read_history zajmuj± najwiêcej miejsca w bazie danych, tabeli read_history nie mo¿na przywróciæ tak jak tabel search.<br />Na celeronie 1,4 256 ram baza danych o wielko¶ci 80MB jest kopiowana w oko³o 40 sekund, bez tabel search i read_history, rozpakowany plik zajmuje 42MB. Przy d³u¿szym czasie tworzenia kopii mog± wyst±piæ nieprzewidziane problemy.<br />Je¿eli masz dostêp do Cpanel\'u lub innego narzêdzia administracyjnego, sprawd¼, czy nie tworzy on automatycznych kopii zapasowych bazy SQL, je¶li tworzy nie musisz w³±czaæ automatycznego tworzenia przez forum.';
-$lang['db_backup_enable'] = 'W³±cz automatyczne tworzenie kopii';
-$lang['db_backup_copies'] = 'Ilo¶æ przetrzymywanych kopii';
-$lang['db_backup_tables_search'] = 'Kopiuj zawarto¶æ tabel search';
-$lang['db_backup_tables_rh'] = 'Kopiuj zawarto¶æ tabeli read_history';
-$lang['db_backup_link'] = 'Wykonaj kopiê teraz';
-$lang['db_backup_done'] = 'Kopia zosta³a wykonana.';
+$lang['Backup_explain'] = 'W tym miejscu moÅ¼esz wÅ‚Ä…czyÄ‡ automatyczne tworzenie kopii zapasowej bazy danych, ktÃ³ra bÄ™dzie tworzona co 24 godziny (podczas tworzenia kopii, forum jest wyÅ‚Ä…czone)<br />Masz moÅ¼liwoÅ›Ä‡ wyboru ile kopii zapasowych ma byÄ‡ przechowywane na serwerze. BÄ™dÄ… one przetrzymywane w katalogu /db/db_backup/ katalog <b>db_backup</b> powinien mieÄ‡ prawa do zapisu ( chmod 777 ).<br />W tym miejscu masz teÅ¼ moÅ¼liwoÅ›Ä‡ wykonania kopii zapasowej "na Å¼Ä…danie" po klikniÄ™ciu na link.<br />Plik kopii zapasowej ma nazwÄ™ np. db_backup_phpbb_psmdowhx_date-30-05-2005.sql.gz znaki psmdowhx sÄ… losowe a wiÄ™c nie ma moÅ¼liwoÅ›ci aby plik dostaÅ‚ sie w niepowoÅ‚ane rÄ™ce. Katalogu /db_backup/ nie moÅ¼na "wylistowaÄ‡" gdyÅ¼ znajduje siÄ™ tam plik index.html.<br />Masz moÅ¼liwoÅ›Ä‡ ustawienia aby kopia nie obejmowaÅ‚a danych z tabel: search i read_history. Tabele search moÅ¼na odbudowaÄ‡ narzÄ™dziem do odbudowywania search w panelu admina. Tabele search i read_history zajmujÄ… najwiÄ™cej miejsca w bazie danych, tabeli read_history nie moÅ¼na przywrÃ³ciÄ‡ tak jak tabel search.<br />Na celeronie 1,4 256 ram baza danych o wielkoÅ›ci 80MB jest kopiowana w okoÅ‚o 40 sekund, bez tabel search i read_history, rozpakowany plik zajmuje 42MB. Przy dÅ‚uÅ¼szym czasie tworzenia kopii mogÄ… wystÄ…piÄ‡ nieprzewidziane problemy.<br />JeÅ¼eli masz dostÄ™p do Cpanel\'u lub innego narzÄ™dzia administracyjnego, sprawdÅº, czy nie tworzy on automatycznych kopii zapasowych bazy SQL, jeÅ›li tworzy nie musisz wÅ‚Ä…czaÄ‡ automatycznego tworzenia przez forum.';
+$lang['db_backup_enable'] = 'WÅ‚Ä…cz automatyczne tworzenie kopii';
+$lang['db_backup_copies'] = 'IloÅ›Ä‡ przetrzymywanych kopii';
+$lang['db_backup_tables_search'] = 'Kopiuj zawartoÅ›Ä‡ tabel search';
+$lang['db_backup_tables_rh'] = 'Kopiuj zawartoÅ›Ä‡ tabeli read_history';
+$lang['db_backup_link'] = 'Wykonaj kopiÄ™ teraz';
+$lang['db_backup_done'] = 'Kopia zostaÅ‚a wykonana.';
 $lang['db_backup_last'] = 'Ostatnia kopia: ';
 
 //
 // Auth pages
 //
-$lang['Select_a_User'] = 'Wybierz U¿ytkownika';
-$lang['Select_a_Group'] = 'Wybierz Grupê';
+$lang['Select_a_User'] = 'Wybierz UÅ¼ytkownika';
+$lang['Select_a_Group'] = 'Wybierz GrupÄ™';
 $lang['Select_a_Forum'] = 'Wybierz Forum';
-$lang['Auth_Control_User'] = 'Kontrola Zezwoleñ U¿ytkowników';
-$lang['Auth_Control_Group'] = 'Kontrola Zezwoleñ Grup';
-$lang['Auth_Control_Forum'] = 'Kontrola Zezwoleñ Forów';
-$lang['Look_up_User'] = 'Wybierz U¿ytkownika';
+$lang['Auth_Control_User'] = 'Kontrola ZezwoleÅ„ UÅ¼ytkownikÃ³w';
+$lang['Auth_Control_Group'] = 'Kontrola ZezwoleÅ„ Grup';
+$lang['Auth_Control_Forum'] = 'Kontrola ZezwoleÅ„ ForÃ³w';
+$lang['Look_up_User'] = 'Wybierz UÅ¼ytkownika';
 $lang['Look_up_Group'] = 'Wybierz Grupy';
 $lang['Look_up_Forum'] = 'Wybierz Forum';
 
-$lang['Group_auth_explain'] = 'Tutaj mo¿esz zmieniaæ zezwolenia i status moderatora przydzielony ka¿dej grupie u¿ytkowników. Nie zapomnij zmieniaj±c ustawienia, ¿e indywidualne uprawnienia mog± nadal zezwalaæ u¿ytkownikowi na dostêp do forów itp.';
-$lang['User_auth_explain'] = 'Tutaj mo¿esz zmieniaæ zezwolenia i status moderatora dla ka¿dego u¿ytkownika. Nie zapomnij zmieniaj±c ustawienia, ¿e uprawnienia grupowe mog± nadal zezwalaæ u¿ytkownikowi na dostêp do forów itp.';
-$lang['Forum_auth_explain'] = 'Tutaj mo¿esz zmieniæ poziomy autoryzacji dla ka¿dego forum. Masz do dyspozycji metodê prost± i zaawansowan±, z których druga oferuje wiêksze mo¿liwo¶ci kontroli ustawieñ. Pamiêtaj, ¿e zmiana ustawieñ dotycz±cych forów zadecyduje o tym, co u¿ytkownicy bêd± mogli na nich robiæ.';
+$lang['Group_auth_explain'] = 'Tutaj moÅ¼esz zmieniaÄ‡ zezwolenia i status moderatora przydzielony kaÅ¼dej grupie uÅ¼ytkownikÃ³w. Nie zapomnij zmieniajÄ…c ustawienia, Å¼e indywidualne uprawnienia mogÄ… nadal zezwalaÄ‡ uÅ¼ytkownikowi na dostÄ™p do forÃ³w itp.';
+$lang['User_auth_explain'] = 'Tutaj moÅ¼esz zmieniaÄ‡ zezwolenia i status moderatora dla kaÅ¼dego uÅ¼ytkownika. Nie zapomnij zmieniajÄ…c ustawienia, Å¼e uprawnienia grupowe mogÄ… nadal zezwalaÄ‡ uÅ¼ytkownikowi na dostÄ™p do forÃ³w itp.';
+$lang['Forum_auth_explain'] = 'Tutaj moÅ¼esz zmieniÄ‡ poziomy autoryzacji dla kaÅ¼dego forum. Masz do dyspozycji metodÄ™ prostÄ… i zaawansowanÄ…, z ktÃ³rych druga oferuje wiÄ™ksze moÅ¼liwoÅ›ci kontroli ustawieÅ„. PamiÄ™taj, Å¼e zmiana ustawieÅ„ dotyczÄ…cych forÃ³w zadecyduje o tym, co uÅ¼ytkownicy bÄ™dÄ… mogli na nich robiÄ‡.';
 
 $lang['Simple_mode'] = 'Tryb Prosty';
 $lang['Advanced_mode'] = 'Tryb Zaawansowany';
 $lang['Moderator_status'] = 'Status Moderatora';
 
-$lang['Allowed_Access'] = 'Dostêp Zezwolony';
-$lang['Disallowed_Access'] = 'Dostêp Zabroniony';
+$lang['Allowed_Access'] = 'DostÄ™p Zezwolony';
+$lang['Disallowed_Access'] = 'DostÄ™p Zabroniony';
 $lang['Is_Moderator'] = 'Moderator';
 $lang['Not_auth_Moderator'] = 'Nie Moderator';
 
@@ -148,54 +148,54 @@ $lang['Post'] = 'Pisanie';
 $lang['Reply'] = 'Odpowiedzi';
 $lang['Edit'] = 'Edycja';
 $lang['Sticky'] = 'Przyklejone';
-$lang['Announce'] = 'Og³oszenia';
-$lang['Vote'] = 'G³osowanie';
+$lang['Announce'] = 'OgÅ‚oszenia';
+$lang['Vote'] = 'GÅ‚osowanie';
 $lang['Pollcreate'] = 'Tworzenie ankiet';
 
 $lang['Simple_Permission'] = 'Proste Zezwolenia';
 
-$lang['User_Level'] = 'Poziom u¿ytkownika';
+$lang['User_Level'] = 'Poziom uÅ¼ytkownika';
 $lang['Auth_Admin'] = 'Administrator';
-$lang['Group_memberships'] = 'Cz³onkostwo w grupach (Wszystkich: %d )';
-$lang['Usergroup_members'] = 'Tak grupa ma nastêpuj±cych cz³onków (Wszystkich: %d )';
+$lang['Group_memberships'] = 'CzÅ‚onkostwo w grupach (Wszystkich: %d )';
+$lang['Usergroup_members'] = 'Tak grupa ma nastÄ™pujÄ…cych czÅ‚onkÃ³w (Wszystkich: %d )';
 
-$lang['Forum_auth_updated'] = 'Zezwolenia Forów zosta³y zaktualizowane';
-$lang['Auth_updated'] = 'Zezwolenia zosta³y zmienione';
-$lang['Click_return_userauth'] = 'Kliknij %sTutaj%s aby powróciæ do Zezwoleñ U¿ytkowników';
-$lang['Click_return_groupauth'] = 'Kliknij %sTutaj%s aby powróciæ do Zezwoleñ Grup';
-$lang['Click_return_forumauth'] = 'Kliknij %sTutaj%s aby powróciæ do Zezwoleñ Forów';
+$lang['Forum_auth_updated'] = 'Zezwolenia ForÃ³w zostaÅ‚y zaktualizowane';
+$lang['Auth_updated'] = 'Zezwolenia zostaÅ‚y zmienione';
+$lang['Click_return_userauth'] = 'Kliknij %sTutaj%s aby powrÃ³ciÄ‡ do ZezwoleÅ„ UÅ¼ytkownikÃ³w';
+$lang['Click_return_groupauth'] = 'Kliknij %sTutaj%s aby powrÃ³ciÄ‡ do ZezwoleÅ„ Grup';
+$lang['Click_return_forumauth'] = 'Kliknij %sTutaj%s aby powrÃ³ciÄ‡ do ZezwoleÅ„ ForÃ³w';
 
 
 //
 // Banning
 //
-$lang['Ban_explain'] = 'Tutaj mo¿esz kontrolowaæ banlistê u¿ytkowników. Uzyskasz to przez banowanie danego u¿ytkownika, zakresu numerów IP lub hostów. Dziêki tym metodom u¿ytkownik nie dostanie siê nawet na stronê g³ówn±. Aby zapobiec rejestracji pod innymi nazwami mo¿esz tak¿e zbanowaæ konkretny adres e-mail.';
-$lang['Select_username'] = 'Wybierz Nazwê U¿ytkownika';
-$lang['Ban_IP'] = 'Zbanuj jeden lub wiêcej adresów IP lub hostów';
+$lang['Ban_explain'] = 'Tutaj moÅ¼esz kontrolowaÄ‡ banlistÄ™ uÅ¼ytkownikÃ³w. Uzyskasz to przez banowanie danego uÅ¼ytkownika, zakresu numerÃ³w IP lub hostÃ³w. DziÄ™ki tym metodom uÅ¼ytkownik nie dostanie siÄ™ nawet na stronÄ™ gÅ‚Ã³wnÄ…. Aby zapobiec rejestracji pod innymi nazwami moÅ¼esz takÅ¼e zbanowaÄ‡ konkretny adres e-mail.';
+$lang['Select_username'] = 'Wybierz NazwÄ™ UÅ¼ytkownika';
+$lang['Ban_IP'] = 'Zbanuj jeden lub wiÄ™cej adresÃ³w IP lub hostÃ³w';
 $lang['IP_hostname'] = 'Adresy IP lub hosty';
-$lang['Ban_IP_explain'] = 'Aby podaæ kilka adresów IP lub hostów oddziel je przecinkami. Kiedy podajesz adres IP znak <b>*</b> zastêpuje dowolny ci±g cyfr. Aby okre¶liæ zakres tylko kilku adresów IP oddziel pocz±tkowy i koñcowy my¶lnikiem (-) Nie stosuj bardzo du¿ych zakresów IP, na przyk³ad zakres 20-80 doda do bazy a¿ 60 wpisów. Je¿eli podajesz host, mo¿esz u¿yæ znaku <b>*</b> który zast±pi dowolny ci±g znaków, oraz znaku <b>?</b> który zastêpuje dowolny jeden znak - przyk³ady: IP: <b>80.53.12.*</b> lub host: <b>*.neoplus.adsl.tpnet.pl</b> lub host: <b>host2?.firma.pl</b>';
+$lang['Ban_IP_explain'] = 'Aby podaÄ‡ kilka adresÃ³w IP lub hostÃ³w oddziel je przecinkami. Kiedy podajesz adres IP znak <b>*</b> zastÄ™puje dowolny ciÄ…g cyfr. Aby okreÅ›liÄ‡ zakres tylko kilku adresÃ³w IP oddziel poczÄ…tkowy i koÅ„cowy myÅ›lnikiem (-) Nie stosuj bardzo duÅ¼ych zakresÃ³w IP, na przykÅ‚ad zakres 20-80 doda do bazy aÅ¼ 60 wpisÃ³w. JeÅ¼eli podajesz host, moÅ¼esz uÅ¼yÄ‡ znaku <b>*</b> ktÃ³ry zastÄ…pi dowolny ciÄ…g znakÃ³w, oraz znaku <b>?</b> ktÃ³ry zastÄ™puje dowolny jeden znak - przykÅ‚ady: IP: <b>80.53.12.*</b> lub host: <b>*.neoplus.adsl.tpnet.pl</b> lub host: <b>host2?.firma.pl</b>';
 
-$lang['Ban_email'] = 'Zbanuj jeden lub wiêcej adresów e-mail';
-$lang['Ban_email_explain'] = 'Aby podaæ wiêcej ni¿ jeden adres e-mail, oddziel je przecinkami. Znakiem zamiennym jest *, np. *@hotmail.com.';
+$lang['Ban_email'] = 'Zbanuj jeden lub wiÄ™cej adresÃ³w e-mail';
+$lang['Ban_email_explain'] = 'Aby podaÄ‡ wiÄ™cej niÅ¼ jeden adres e-mail, oddziel je przecinkami. Znakiem zamiennym jest *, np. *@hotmail.com.';
 
-$lang['Ban_update_sucessful'] = 'Banlista zosta³a zaktualizowana';
-$lang['Click_return_banadmin'] = 'Kliknij %sTutaj%s aby powróciæ do Kontroli banlisty';
+$lang['Ban_update_sucessful'] = 'Banlista zostaÅ‚a zaktualizowana';
+$lang['Click_return_banadmin'] = 'Kliknij %sTutaj%s aby powrÃ³ciÄ‡ do Kontroli banlisty';
 
 
 //
 // Configuration
 //
-$lang['General_Config'] = 'Ustawienia G³ówne';
-$lang['Click_return_config'] = 'Kliknij %sTutaj%s aby powróciæ do Ustawieñ G³ównych';
+$lang['General_Config'] = 'Ustawienia GÅ‚Ã³wne';
+$lang['Click_return_config'] = 'Kliknij %sTutaj%s aby powrÃ³ciÄ‡ do UstawieÅ„ GÅ‚Ã³wnych';
 
 $lang['Server_name'] = 'Nazwa Domeny';
-$lang['Script_path'] = '¦cie¿ka skryptu';
+$lang['Script_path'] = 'ÅšcieÅ¼ka skryptu';
 $lang['Server_port'] = 'Port Serwera';
-$lang['Acct_activation'] = 'W³±cz aktywacjê kont';
+$lang['Acct_activation'] = 'WÅ‚Ä…cz aktywacjÄ™ kont';
 $lang['Acc_Admin'] = 'Admin';
 
-$lang['Allow_BBCode'] = 'Zezwól na BBCode';
-$lang['Allow_smilies'] = 'Zezwól na U¶mieszki';
+$lang['Allow_BBCode'] = 'ZezwÃ³l na BBCode';
+$lang['Allow_smilies'] = 'ZezwÃ³l na UÅ›mieszki';
 $lang['Admin_email'] = 'Adres E-mail Administratora';
 
 //
@@ -203,20 +203,20 @@ $lang['Admin_email'] = 'Adres E-mail Administratora';
 //
 
 $lang['Forum_admin'] = 'Administracja Forum';
-$lang['Forum_admin_explain'] = 'W tym miejscu mo¿esz dodawaæ, usuwaæ, modyfikowaæ, zmieniaæ kolejno¶æ i ponownie synchronizowaæ kategorie i fora.<br />Pamiêtaj ¿e aby utworzyæ drzewo, czyli "forum w forum" musisz najpierw utworzyæ kategoriê w jakim¶ istniej±cym forum i dopiero pó¼niej w tej kategorii utworzyæ forum.<br />Mo¿esz równie¿ przesuwaæ istniej±ce fora do kategorii utworzonej w wybranym forum.';
+$lang['Forum_admin_explain'] = 'W tym miejscu moÅ¼esz dodawaÄ‡, usuwaÄ‡, modyfikowaÄ‡, zmieniaÄ‡ kolejnoÅ›Ä‡ i ponownie synchronizowaÄ‡ kategorie i fora.<br />PamiÄ™taj Å¼e aby utworzyÄ‡ drzewo, czyli "forum w forum" musisz najpierw utworzyÄ‡ kategoriÄ™ w jakimÅ› istniejÄ…cym forum i dopiero pÃ³Åºniej w tej kategorii utworzyÄ‡ forum.<br />MoÅ¼esz rÃ³wnieÅ¼ przesuwaÄ‡ istniejÄ…ce fora do kategorii utworzonej w wybranym forum.';
 $lang['Edit_forum'] = 'Edytuj forum';
 $lang['Create_forum'] = 'Nowe Forum';
 $lang['Create_category'] = 'Nowa Kategoria';
-$lang['Config_updated'] = 'Konfiguracja Forum Zosta³a Zaktualizowana';
-$lang['Move_up'] = 'W górê';
-$lang['Move_down'] = 'W dó³';
+$lang['Config_updated'] = 'Konfiguracja Forum ZostaÅ‚a Zaktualizowana';
+$lang['Move_up'] = 'W gÃ³rÄ™';
+$lang['Move_down'] = 'W dÃ³Å‚';
 $lang['Resync'] = 'Synch.';
-$lang['No_mode'] = 'Nie okre¶lono trybu';
-$lang['Forum_edit_delete_explain'] = 'Poni¿szy formularz pozwoli zmieniæ wszystkie podstawowe opcje forum. Aby zmieniæ szczegó³owe ustawienia U¿ytkowników i Forów skorzystaj z odno¶ników po lewej.';
+$lang['No_mode'] = 'Nie okreÅ›lono trybu';
+$lang['Forum_edit_delete_explain'] = 'PoniÅ¼szy formularz pozwoli zmieniÄ‡ wszystkie podstawowe opcje forum. Aby zmieniÄ‡ szczegÃ³Å‚owe ustawienia UÅ¼ytkownikÃ³w i ForÃ³w skorzystaj z odnoÅ›nikÃ³w po lewej.';
 
-$lang['Move_contents'] = 'Przenie¶ ca³± zawarto¶æ';
-$lang['Forum_delete'] = 'Usuñ Forum';
-$lang['Forum_delete_explain'] = 'Poni¿szy formularz pozwoli na usuniêcie forum (lub dzia³ów) i zdecydowanie co zrobiæ z tematami (lub forami), które by³y w nim zawarte.';
+$lang['Move_contents'] = 'PrzenieÅ› caÅ‚Ä… zawartoÅ›Ä‡';
+$lang['Forum_delete'] = 'UsuÅ„ Forum';
+$lang['Forum_delete_explain'] = 'PoniÅ¼szy formularz pozwoli na usuniÄ™cie forum (lub dziaÅ‚Ã³w) i zdecydowanie co zrobiÄ‡ z tematami (lub forami), ktÃ³re byÅ‚y w nim zawarte.';
 
 $lang['Forum_settings'] = 'Generalne Ustawienia Forum';
 $lang['Forum_name'] = 'Nazwa Forum';
@@ -224,222 +224,222 @@ $lang['Forum_desc'] = 'Opis';
 $lang['Forum_status'] = 'Status Forum';
 $lang['Forum_pruning'] = 'Automatyczne Czyszczenie';
 
-$lang['prune_freq'] = 'Sprawd¼ wiek tematu co';
-$lang['prune_days'] = 'Usuñ tematy, w których nie pisano nic przez';
-$lang['Set_prune_data'] = 'W³±czy³' .  (($he) ? 'e' : 'a') . '¶ automatyczne czyszczenie dla tego forum ale nie okre¶li³' .  (($he) ? 'e' : 'a') . '¶ jego parametrów. Wróæ i wpisz wszystkie dane.';
+$lang['prune_freq'] = 'SprawdÅº wiek tematu co';
+$lang['prune_days'] = 'UsuÅ„ tematy, w ktÃ³rych nie pisano nic przez';
+$lang['Set_prune_data'] = 'WÅ‚Ä…czyÅ‚' .  (($he) ? 'e' : 'a') . 'Å› automatyczne czyszczenie dla tego forum ale nie okreÅ›liÅ‚' .  (($he) ? 'e' : 'a') . 'Å› jego parametrÃ³w. WrÃ³Ä‡ i wpisz wszystkie dane.';
 
-$lang['Move_and_Delete'] = 'Przenie¶ i Usuñ';
+$lang['Move_and_Delete'] = 'PrzenieÅ› i UsuÅ„';
 
-$lang['Delete_all_posts'] = 'Usuñ wszystkie posty';
-$lang['Edit_Category'] = 'Edytuj Kategoriê';
-$lang['Edit_Category_explain'] = 'U¿yj tego formularza do zmiany nazwy kategorii.';
+$lang['Delete_all_posts'] = 'UsuÅ„ wszystkie posty';
+$lang['Edit_Category'] = 'Edytuj KategoriÄ™';
+$lang['Edit_Category_explain'] = 'UÅ¼yj tego formularza do zmiany nazwy kategorii.';
 
-$lang['Forums_updated'] = 'Dane dotycz±ce Forów i Kategorii zosta³y zaktualizowane';
+$lang['Forums_updated'] = 'Dane dotyczÄ…ce ForÃ³w i Kategorii zostaÅ‚y zaktualizowane';
 
-$lang['Must_delete_forums'] = 'Musisz usun±æ wszystkie fora przed usuniêciem tej kategorii';
+$lang['Must_delete_forums'] = 'Musisz usunÄ…Ä‡ wszystkie fora przed usuniÄ™ciem tej kategorii';
 
-$lang['Click_return_forumadmin'] = 'Kliknij %sTutaj%s aby powróciæ do Administracji Forum';
+$lang['Click_return_forumadmin'] = 'Kliknij %sTutaj%s aby powrÃ³ciÄ‡ do Administracji Forum';
 
 
 //
 // Smiley Management
 //
-$lang['smiley_title'] = 'Edycja U¶mieszków';
-$lang['smile_desc'] = 'Na tej stronie mo¿esz dodawaæ, usuwaæ i zmieniaæ ikony emocji lub u¶mieszki, które u¿ytkownicy mog± u¿ywaæ w swoich postach i prywatnych wiadomo¶ciach.';
+$lang['smiley_title'] = 'Edycja UÅ›mieszkÃ³w';
+$lang['smile_desc'] = 'Na tej stronie moÅ¼esz dodawaÄ‡, usuwaÄ‡ i zmieniaÄ‡ ikony emocji lub uÅ›mieszki, ktÃ³re uÅ¼ytkownicy mogÄ… uÅ¼ywaÄ‡ w swoich postach i prywatnych wiadomoÅ›ciach.';
 
-$lang['smiley_config'] = 'Dodaj U¶mieszki';
-$lang['smiley_code'] = 'Kod U¶mieszku';
-$lang['smiley_url'] = 'Plik Obrazka U¶mieszku';
-$lang['smile_add'] = 'Nowy U¶mieszek';
-$lang['Smile'] = 'U¶miech';
+$lang['smiley_config'] = 'Dodaj UÅ›mieszki';
+$lang['smiley_code'] = 'Kod UÅ›mieszku';
+$lang['smiley_url'] = 'Plik Obrazka UÅ›mieszku';
+$lang['smile_add'] = 'Nowy UÅ›mieszek';
+$lang['Smile'] = 'UÅ›miech';
 
 $lang['Select_pak'] = 'Wybierz Plik Paczki (.pak)';
-$lang['replace_existing'] = 'Zamieñ Istniej±cy U¶miech';
-$lang['keep_existing'] = 'Zachowaj Istniej±cy U¶miech';
-$lang['smiley_import_inst'] = 'Powin' .  (($he) ? 'iene¶' : 'na¶') . ' rozpakowaæ paczkê u¶mieszków i wys³aæ pliki do odpowiedniego katalogu U¶mieszków. Potem ustaw odpowiednio poni¿szy formularz i importuj paczkê.';
-$lang['smiley_import'] = 'Import Paczki U¶mieszków';
-$lang['choose_smile_pak'] = 'Wybierz Plik .pak Paczki U¶mieszków';
-$lang['import'] = 'Importuj U¶mieszki';
-$lang['smile_conflicts'] = 'Co zrobiæ w przypadku konfliktów';
-$lang['del_existing_smileys'] = 'Usuñ istniej±ce u¶mieszki przed importem';
-$lang['import_smile_pack'] = 'Importuj Paczkê';
-$lang['export_smile_pack'] = 'Utwórz Paczkê';
-$lang['export_smiles'] = 'Aby utworzyæ paczkê u¶mieszków z obecnie zainstalowanych kliknij %sTutaj%s aby ¶ci±gn±æ plik .pak u¶mieszków. Nazwij go odpowiednio zachowuj±c rozszerzenie .pak. Potem spakuj ten plik razem z obrazkami u¶mieszków w archiwum zip.';
+$lang['replace_existing'] = 'ZamieÅ„ IstniejÄ…cy UÅ›miech';
+$lang['keep_existing'] = 'Zachowaj IstniejÄ…cy UÅ›miech';
+$lang['smiley_import_inst'] = 'Powin' .  (($he) ? 'ieneÅ›' : 'naÅ›') . ' rozpakowaÄ‡ paczkÄ™ uÅ›mieszkÃ³w i wysÅ‚aÄ‡ pliki do odpowiedniego katalogu UÅ›mieszkÃ³w. Potem ustaw odpowiednio poniÅ¼szy formularz i importuj paczkÄ™.';
+$lang['smiley_import'] = 'Import Paczki UÅ›mieszkÃ³w';
+$lang['choose_smile_pak'] = 'Wybierz Plik .pak Paczki UÅ›mieszkÃ³w';
+$lang['import'] = 'Importuj UÅ›mieszki';
+$lang['smile_conflicts'] = 'Co zrobiÄ‡ w przypadku konfliktÃ³w';
+$lang['del_existing_smileys'] = 'UsuÅ„ istniejÄ…ce uÅ›mieszki przed importem';
+$lang['import_smile_pack'] = 'Importuj PaczkÄ™';
+$lang['export_smile_pack'] = 'UtwÃ³rz PaczkÄ™';
+$lang['export_smiles'] = 'Aby utworzyÄ‡ paczkÄ™ uÅ›mieszkÃ³w z obecnie zainstalowanych kliknij %sTutaj%s aby Å›ciÄ…gnÄ…Ä‡ plik .pak uÅ›mieszkÃ³w. Nazwij go odpowiednio zachowujÄ…c rozszerzenie .pak. Potem spakuj ten plik razem z obrazkami uÅ›mieszkÃ³w w archiwum zip.';
 
-$lang['smiley_add_success'] = 'U¶mieszek zosta³ dodany';
-$lang['smiley_edit_success'] = 'U¶mieszek zosta³ zaktualizowany';
-$lang['smiley_import_success'] = 'Paczka U¶mieszków zosta³a zaimportowana!';
-$lang['smiley_del_success'] = 'U¶mieszek zosta³ usuniêty';
-$lang['Click_return_smileadmin'] = 'Kliknij %sTutaj%s aby powróciæ do Administracji U¶mieszkami';
+$lang['smiley_add_success'] = 'UÅ›mieszek zostaÅ‚ dodany';
+$lang['smiley_edit_success'] = 'UÅ›mieszek zostaÅ‚ zaktualizowany';
+$lang['smiley_import_success'] = 'Paczka UÅ›mieszkÃ³w zostaÅ‚a zaimportowana!';
+$lang['smiley_del_success'] = 'UÅ›mieszek zostaÅ‚ usuniÄ™ty';
+$lang['Click_return_smileadmin'] = 'Kliknij %sTutaj%s aby powrÃ³ciÄ‡ do Administracji UÅ›mieszkami';
 
 
 //
 // User Management
 //
-$lang['User_admin'] = 'Administracja U¿ytkownikami';
-$lang['User_admin_explain'] = 'Tutaj mo¿esz zmieniæ informacje o u¿ytkowniku i ustawione przez niego opcje. Aby zmieniæ jego prawa dostêpu skorzystaj z systemu zmiany zezwoleñ.';
+$lang['User_admin'] = 'Administracja UÅ¼ytkownikami';
+$lang['User_admin_explain'] = 'Tutaj moÅ¼esz zmieniÄ‡ informacje o uÅ¼ytkowniku i ustawione przez niego opcje. Aby zmieniÄ‡ jego prawa dostÄ™pu skorzystaj z systemu zmiany zezwoleÅ„.';
 
-$lang['Look_up_user'] = 'Poka¿ u¿ytkownika';
+$lang['Look_up_user'] = 'PokaÅ¼ uÅ¼ytkownika';
 
-$lang['Admin_user_fail'] = 'Nie mo¿na by³o zaktualizowaæ profilu u¿ytkownika.';
-$lang['Admin_user_updated'] = 'Profil u¿ytkownika zosta³ zaktualizowany.';
-$lang['Click_return_useradmin'] = 'Kliknij %sTutaj%s aby powróciæ do Administracji U¿ytkownikami';
+$lang['Admin_user_fail'] = 'Nie moÅ¼na byÅ‚o zaktualizowaÄ‡ profilu uÅ¼ytkownika.';
+$lang['Admin_user_updated'] = 'Profil uÅ¼ytkownika zostaÅ‚ zaktualizowany.';
+$lang['Click_return_useradmin'] = 'Kliknij %sTutaj%s aby powrÃ³ciÄ‡ do Administracji UÅ¼ytkownikami';
 
-$lang['User_delete'] = 'Usuñ tego u¿ytkownika';
-$lang['User_delete_explain'] = 'Zaznacz aby usun±æ u¿ytkownika, nie mo¿na tego cofn±æ !';
-$lang['User_deleted'] = 'U¿ytkownik zosta³ usuniêty.';
+$lang['User_delete'] = 'UsuÅ„ tego uÅ¼ytkownika';
+$lang['User_delete_explain'] = 'Zaznacz aby usunÄ…Ä‡ uÅ¼ytkownika, nie moÅ¼na tego cofnÄ…Ä‡ !';
+$lang['User_deleted'] = 'UÅ¼ytkownik zostaÅ‚ usuniÄ™ty.';
 
-$lang['User_status'] = 'U¿ytkownik jest aktywny';
-$lang['User_allowpm'] = 'Mo¿e wysy³aæ Prywatne Wiadomo¶ci';
-$lang['User_allowavatar'] = 'Mo¿e pokazywaæ Avatar';
+$lang['User_status'] = 'UÅ¼ytkownik jest aktywny';
+$lang['User_allowpm'] = 'MoÅ¼e wysyÅ‚aÄ‡ Prywatne WiadomoÅ›ci';
+$lang['User_allowavatar'] = 'MoÅ¼e pokazywaÄ‡ Avatar';
 
-$lang['Admin_avatar_explain'] = 'Tutaj mo¿esz zobaczyæ i usun±æ obecny Avatar u¿ytkownika.';
+$lang['Admin_avatar_explain'] = 'Tutaj moÅ¼esz zobaczyÄ‡ i usunÄ…Ä‡ obecny Avatar uÅ¼ytkownika.';
 
 $lang['User_special'] = 'Specjalne pola administratora';
-$lang['User_special_explain'] = 'Tych pól nie mog± zmieniaæ sami u¿ytkownicy. Mo¿esz tutaj zmodyfikowaæ ich status i inne opcje dotycz±ce ich mo¿liwo¶ci dzia³ania.';
+$lang['User_special_explain'] = 'Tych pÃ³l nie mogÄ… zmieniaÄ‡ sami uÅ¼ytkownicy. MoÅ¼esz tutaj zmodyfikowaÄ‡ ich status i inne opcje dotyczÄ…ce ich moÅ¼liwoÅ›ci dziaÅ‚ania.';
 
 
 //
 // Group Management
 //
 $lang['Group_administration'] = 'Administracja Grupami';
-$lang['Group_admin_explain'] = 'Z tego panelu mo¿esz administrowaæ wszystkimi grupami u¿ytkowników; mo¿esz je usuwaæ, tworzyæ i zmieniaæ ustawienia. Mo¿esz wybieraæ moderatorów, zmieniaæ na otwarte lub zamkniête i modyfikowaæ nazwê oraz opis.';
-$lang['Updated_group'] = 'Grupa zosta³a zaktualizowana';
-$lang['Added_new_group'] = 'Nowa grupa zosta³a utworzona';
-$lang['Deleted_group'] = 'Grupa zosta³a usuniêta';
-$lang['New_group'] = 'Utwórz now± grupê';
-$lang['Edit_group'] = 'Edytuj grupê';
+$lang['Group_admin_explain'] = 'Z tego panelu moÅ¼esz administrowaÄ‡ wszystkimi grupami uÅ¼ytkownikÃ³w; moÅ¼esz je usuwaÄ‡, tworzyÄ‡ i zmieniaÄ‡ ustawienia. MoÅ¼esz wybieraÄ‡ moderatorÃ³w, zmieniaÄ‡ na otwarte lub zamkniÄ™te i modyfikowaÄ‡ nazwÄ™ oraz opis.';
+$lang['Updated_group'] = 'Grupa zostaÅ‚a zaktualizowana';
+$lang['Added_new_group'] = 'Nowa grupa zostaÅ‚a utworzona';
+$lang['Deleted_group'] = 'Grupa zostaÅ‚a usuniÄ™ta';
+$lang['New_group'] = 'UtwÃ³rz nowÄ… grupÄ™';
+$lang['Edit_group'] = 'Edytuj grupÄ™';
 $lang['group_name'] = 'Nazwa Grupy';
 $lang['group_description'] = 'Opis Grupy';
 $lang['group_moderator'] = 'Moderator Grupy';
 $lang['group_status'] = 'Status Grupy';
 $lang['group_open'] = 'Otwarta';
-$lang['group_closed'] = 'Zamkniêta';
+$lang['group_closed'] = 'ZamkniÄ™ta';
 $lang['group_hidden'] = 'Ukryta';
-$lang['group_delete'] = 'Usuñ Grupê';
-$lang['group_delete_check'] = 'Usuñ tê grupê';
-$lang['No_group_name'] = 'Musisz wpisaæ nazwê dla tej grupy';
-$lang['No_group_moderator'] = 'Musisz podaæ moderatora tej grupy';
-$lang['delete_group_moderator'] = 'Usun±æ poprzedniego moderatora grupy?';
-$lang['delete_moderator_explain'] = 'Je¿eli zmieniasz moderatora zaznacz to pole aby usun±æ starego moderatora. Je¿eli tego nie zrobisz stanie siê on zwyk³ym cz³onkiem grupy.';
-$lang['Click_return_groupsadmin'] = 'Kliknij %sTutaj%s aby powróciæ do Administracji Grupami.';
-$lang['Select_group'] = 'Wybierz grupê';
-$lang['Look_up_group'] = 'Poka¿ grupê';
+$lang['group_delete'] = 'UsuÅ„ GrupÄ™';
+$lang['group_delete_check'] = 'UsuÅ„ tÄ™ grupÄ™';
+$lang['No_group_name'] = 'Musisz wpisaÄ‡ nazwÄ™ dla tej grupy';
+$lang['No_group_moderator'] = 'Musisz podaÄ‡ moderatora tej grupy';
+$lang['delete_group_moderator'] = 'UsunÄ…Ä‡ poprzedniego moderatora grupy?';
+$lang['delete_moderator_explain'] = 'JeÅ¼eli zmieniasz moderatora zaznacz to pole aby usunÄ…Ä‡ starego moderatora. JeÅ¼eli tego nie zrobisz stanie siÄ™ on zwykÅ‚ym czÅ‚onkiem grupy.';
+$lang['Click_return_groupsadmin'] = 'Kliknij %sTutaj%s aby powrÃ³ciÄ‡ do Administracji Grupami.';
+$lang['Select_group'] = 'Wybierz grupÄ™';
+$lang['Look_up_group'] = 'PokaÅ¼ grupÄ™';
 
 
 //
 // Prune Administration
 //
 $lang['Forum_Prune'] = 'Czyszczenie Forum';
-$lang['Forum_Prune_explain'] = 'Usuniête zostan± tematy, w których nie napisano nic nowego przez okre¶lon± liczbê dni. Je¿eli nie wpiszesz ¿adnej liczby usuniête zostan± wszystkie tematy. Nietkniête pozostan± tematy z aktywnymi ankietami oraz og³oszenia. Bêdziesz musia³ usun±æ je rêcznie.';
+$lang['Forum_Prune_explain'] = 'UsuniÄ™te zostanÄ… tematy, w ktÃ³rych nie napisano nic nowego przez okreÅ›lonÄ… liczbÄ™ dni. JeÅ¼eli nie wpiszesz Å¼adnej liczby usuniÄ™te zostanÄ… wszystkie tematy. NietkniÄ™te pozostanÄ… tematy z aktywnymi ankietami oraz ogÅ‚oszenia. BÄ™dziesz musiaÅ‚ usunÄ…Ä‡ je rÄ™cznie.';
 $lang['Do_Prune'] = 'Wykonaj';
-$lang['Prune_topics_not_posted'] = 'Wyczy¶æ tematy bez nowych odpowiedzi przez dni';
-$lang['Topics_pruned'] = 'Usuniêto tematów';
-$lang['Prune_success'] = 'Czyszczenie zosta³o wykonane';
+$lang['Prune_topics_not_posted'] = 'WyczyÅ›Ä‡ tematy bez nowych odpowiedzi przez dni';
+$lang['Topics_pruned'] = 'UsuniÄ™to tematÃ³w';
+$lang['Prune_success'] = 'Czyszczenie zostaÅ‚o wykonane';
 
 
 //
 // Word censor
 //
-$lang['Words_title'] = 'Cenzura S³ów';
-$lang['Words_explain'] = 'Z tego miejsca mo¿esz dodawaæ, zmieniaæ i usuwaæ s³owa, które zostan± automatycznie ocenzurowane na Twoim forach. Dodatkowo ludzie nie bêd± mogli siê rejestrowaæ z nazwami zawieraj±cymi te s³owa. Znaki uniwersalne (*) s± dozwolone, np. *test* obejmie przetestowanie, test* obejmie testowanie, *test obejmie przedtest.';
-$lang['Word'] = 'S³owo';
-$lang['Edit_word_censor'] = 'Zmieñ Cenzurê';
+$lang['Words_title'] = 'Cenzura SÅ‚Ã³w';
+$lang['Words_explain'] = 'Z tego miejsca moÅ¼esz dodawaÄ‡, zmieniaÄ‡ i usuwaÄ‡ sÅ‚owa, ktÃ³re zostanÄ… automatycznie ocenzurowane na Twoim forach. Dodatkowo ludzie nie bÄ™dÄ… mogli siÄ™ rejestrowaÄ‡ z nazwami zawierajÄ…cymi te sÅ‚owa. Znaki uniwersalne (*) sÄ… dozwolone, np. *test* obejmie przetestowanie, test* obejmie testowanie, *test obejmie przedtest.';
+$lang['Word'] = 'SÅ‚owo';
+$lang['Edit_word_censor'] = 'ZmieÅ„ CenzurÄ™';
 $lang['Replacement'] = 'Zamiennik';
-$lang['Add_new_word'] = 'Dodaj nowe s³owo';
+$lang['Add_new_word'] = 'Dodaj nowe sÅ‚owo';
 
-$lang['Must_enter_word'] = 'Musisz wpisaæ s³owo i jego zamiennik';
-$lang['No_word_selected'] = 'Nie wybrano s³owa do edycji';
+$lang['Must_enter_word'] = 'Musisz wpisaÄ‡ sÅ‚owo i jego zamiennik';
+$lang['No_word_selected'] = 'Nie wybrano sÅ‚owa do edycji';
 
-$lang['Word_updated'] = 'Wybrana cenzura zosta³a zaktualizowana';
-$lang['Word_added'] = 'Nowa cenzura zosta³a dodana';
-$lang['Word_removed'] = 'Wybrana cenzura zosta³a usuniêta';
+$lang['Word_updated'] = 'Wybrana cenzura zostaÅ‚a zaktualizowana';
+$lang['Word_added'] = 'Nowa cenzura zostaÅ‚a dodana';
+$lang['Word_removed'] = 'Wybrana cenzura zostaÅ‚a usuniÄ™ta';
 
-$lang['Click_return_wordadmin'] = 'Kliknij %sTutaj%s aby powróciæ do Administracji Cenzur±';
+$lang['Click_return_wordadmin'] = 'Kliknij %sTutaj%s aby powrÃ³ciÄ‡ do Administracji CenzurÄ…';
 
 //
 // Ranks admin
 //
 
 $lang['Ranks_title'] = 'Administracja Rangami';
-$lang['Ranks_explain'] = 'U¿ywaj±c tego formularza mo¿esz dodawaæ, zmieniaæ, przegl±daæ i usuwaæ rangi. Mo¿esz te¿ tworzyæ specjalne rangi i przydzielaæ je poprzez system zarz±dzania u¿ytkowników.';
+$lang['Ranks_explain'] = 'UÅ¼ywajÄ…c tego formularza moÅ¼esz dodawaÄ‡, zmieniaÄ‡, przeglÄ…daÄ‡ i usuwaÄ‡ rangi. MoÅ¼esz teÅ¼ tworzyÄ‡ specjalne rangi i przydzielaÄ‡ je poprzez system zarzÄ…dzania uÅ¼ytkownikÃ³w.';
 
-$lang['Add_new_rank'] = 'Dodaj now± rangê';
+$lang['Add_new_rank'] = 'Dodaj nowÄ… rangÄ™';
 
 $lang['Rank_title'] = 'Nazwa Rangi';
-$lang['Rank_title_e'] = 'Je¶li chcesz u¿yæ obrazka rangi w którym jest ju¿ nazwa rangi i chcesz ¿eby nie powtarza³a siê ona w nazwie rangi to przed nazw± rangi daj: <b>-#</b> wówczas nie bêdzie ona wy¶wietlana';
-$lang['Rank_special'] = 'Jest Rang± personaln±';
-$lang['Rank_minimum'] = 'Minimum Postów';
+$lang['Rank_title_e'] = 'JeÅ›li chcesz uÅ¼yÄ‡ obrazka rangi w ktÃ³rym jest juÅ¼ nazwa rangi i chcesz Å¼eby nie powtarzaÅ‚a siÄ™ ona w nazwie rangi to przed nazwÄ… rangi daj: <b>-#</b> wÃ³wczas nie bÄ™dzie ona wyÅ›wietlana';
+$lang['Rank_special'] = 'Jest RangÄ… personalnÄ…';
+$lang['Rank_minimum'] = 'Minimum PostÃ³w';
 $lang['Rank_image'] = 'Obraz Rangi';
-$lang['Rank_image_explain'] = 'Mo¿esz tutaj okre¶liæ obrazek zwi±zany z dan± rang±<br />Obrazki rang powinny siê znajdowaæ we wszystkich katalogach stylów w: /templates/Nazwa_stylu/images/ranks/';
+$lang['Rank_image_explain'] = 'MoÅ¼esz tutaj okreÅ›liÄ‡ obrazek zwiÄ…zany z danÄ… rangÄ…<br />Obrazki rang powinny siÄ™ znajdowaÄ‡ we wszystkich katalogach stylÃ³w w: /templates/Nazwa_stylu/images/ranks/';
 
-$lang['Must_select_rank'] = 'Musisz wybraæ rangê';
-$lang['No_assigned_rank'] = 'Nie okre¶lono rang specjalnych';
+$lang['Must_select_rank'] = 'Musisz wybraÄ‡ rangÄ™';
+$lang['No_assigned_rank'] = 'Nie okreÅ›lono rang specjalnych';
 
-$lang['Rank_updated'] = 'Ranga zosta³a zaktualizowana';
-$lang['Rank_added'] = 'Ranga zosta³a dodana';
-$lang['Rank_removed'] = 'Ranga zosta³a usuniêta';
-$lang['No_update_ranks'] = 'Ranga zosta³a usuniêta, jednak¿e konta u¿ytkowników, którym zosta³a przydzielona nie zosta³y zmienione. Bêdziesz musia³ rêcznie usun±æ rangê z tych kont';
+$lang['Rank_updated'] = 'Ranga zostaÅ‚a zaktualizowana';
+$lang['Rank_added'] = 'Ranga zostaÅ‚a dodana';
+$lang['Rank_removed'] = 'Ranga zostaÅ‚a usuniÄ™ta';
+$lang['No_update_ranks'] = 'Ranga zostaÅ‚a usuniÄ™ta, jednakÅ¼e konta uÅ¼ytkownikÃ³w, ktÃ³rym zostaÅ‚a przydzielona nie zostaÅ‚y zmienione. BÄ™dziesz musiaÅ‚ rÄ™cznie usunÄ…Ä‡ rangÄ™ z tych kont';
 
-$lang['Click_return_rankadmin'] = 'Kliknij %sTutaj%s aby powróciæ do Administracji Rangami';
+$lang['Click_return_rankadmin'] = 'Kliknij %sTutaj%s aby powrÃ³ciÄ‡ do Administracji Rangami';
 
 
 //
 // Disallow Username Admin
 //
 $lang['Disallow_control'] = 'Kontrola Zabronionych Nazw';
-$lang['Disallow_explain'] = 'Tutaj mo¿esz kontrolowaæ nazwy u¿ytkowników, których nie wolno u¿ywaæ. Zabronione nazwy mog± zawieraæ znak zamienny *. Pamiêtaj, ¿e nie mo¿esz zabroniæ nazwy, która ju¿ zosta³a zarejestrowana. Najpierw usuñ tego u¿ytkownika a potem dopisz tutaj nazwê.';
+$lang['Disallow_explain'] = 'Tutaj moÅ¼esz kontrolowaÄ‡ nazwy uÅ¼ytkownikÃ³w, ktÃ³rych nie wolno uÅ¼ywaÄ‡. Zabronione nazwy mogÄ… zawieraÄ‡ znak zamienny *. PamiÄ™taj, Å¼e nie moÅ¼esz zabroniÄ‡ nazwy, ktÃ³ra juÅ¼ zostaÅ‚a zarejestrowana. Najpierw usuÅ„ tego uÅ¼ytkownika a potem dopisz tutaj nazwÄ™.';
 
-$lang['Delete_disallow_title'] = 'Usuñ Zabronion± Nazwê';
-$lang['Delete_disallow_explain'] = 'Mo¿esz usun±æ zabronion± nazwê wybieraj±c j± z tej listy i klikaj±c Wy¶lij.';
+$lang['Delete_disallow_title'] = 'UsuÅ„ ZabronionÄ… NazwÄ™';
+$lang['Delete_disallow_explain'] = 'MoÅ¼esz usunÄ…Ä‡ zabronionÄ… nazwÄ™ wybierajÄ…c jÄ… z tej listy i klikajÄ…c WyÅ›lij.';
 
-$lang['Add_disallow_title'] = 'Dodaj Zabronion± Nazwê';
-$lang['Add_disallow_explain'] = 'Mo¿esz zabroniæ korzystania z jakiej¶ nazwy wykorzystuj±c znak * równowa¿ny dowolnemu ci±gowi znaków';
-$lang['Disallowed_deleted'] = 'Zabroniona nazwa zosta³a usuniêta';
-$lang['Disallow_successful'] = 'Zabroniona nazwa zosta³a dodana';
-$lang['Disallowed_already'] = 'Nazwa, któr± wpisa³' .  (($he) ? 'e' : 'a') . '¶, nie mo¿e byæ zakazana. Albo jest ju¿ na li¶cie albo istnieje ju¿ taki u¿ytkownik.';
+$lang['Add_disallow_title'] = 'Dodaj ZabronionÄ… NazwÄ™';
+$lang['Add_disallow_explain'] = 'MoÅ¼esz zabroniÄ‡ korzystania z jakiejÅ› nazwy wykorzystujÄ…c znak * rÃ³wnowaÅ¼ny dowolnemu ciÄ…gowi znakÃ³w';
+$lang['Disallowed_deleted'] = 'Zabroniona nazwa zostaÅ‚a usuniÄ™ta';
+$lang['Disallow_successful'] = 'Zabroniona nazwa zostaÅ‚a dodana';
+$lang['Disallowed_already'] = 'Nazwa, ktÃ³rÄ… wpisaÅ‚' .  (($he) ? 'e' : 'a') . 'Å›, nie moÅ¼e byÄ‡ zakazana. Albo jest juÅ¼ na liÅ›cie albo istnieje juÅ¼ taki uÅ¼ytkownik.';
 
-$lang['Click_return_disallowadmin'] = 'Kliknij %sTutaj%s aby powróciæ do Administracji Zabronionymi Nazwami';
+$lang['Click_return_disallowadmin'] = 'Kliknij %sTutaj%s aby powrÃ³ciÄ‡ do Administracji Zabronionymi Nazwami';
 
 
 //
 // Styles Admin
 //
 $lang['Styles_admin'] = 'Administracja Stylami';
-$lang['Styles_explain'] = 'Korzystaj±c z tego narzêdzia mo¿esz dodawaæ, usuwaæ i zarz±dzaæ stylami (oraz szablonami) dostêpnymi dla u¿ytkowników';
-$lang['Styles_addnew_explain'] = 'Poni¿sza lista zawiera wszystkie style, które s± dostêpne dla posiadanych przez ciebie szablonów. Elementy na tej li¶cie nie zosta³y jeszcze zainstalowane w bazie danych phpBB. Aby zainstalowaæ styl po prostu kliknij odno¶nik Instaluj obok wpisu';
+$lang['Styles_explain'] = 'KorzystajÄ…c z tego narzÄ™dzia moÅ¼esz dodawaÄ‡, usuwaÄ‡ i zarzÄ…dzaÄ‡ stylami (oraz szablonami) dostÄ™pnymi dla uÅ¼ytkownikÃ³w';
+$lang['Styles_addnew_explain'] = 'PoniÅ¼sza lista zawiera wszystkie style, ktÃ³re sÄ… dostÄ™pne dla posiadanych przez ciebie szablonÃ³w. Elementy na tej liÅ›cie nie zostaÅ‚y jeszcze zainstalowane w bazie danych phpBB. Aby zainstalowaÄ‡ styl po prostu kliknij odnoÅ›nik Instaluj obok wpisu';
 
 $lang['Select_template'] = 'Wybierz Szablon';
 
 $lang['Style'] = 'Styl';
 $lang['Template'] = 'Szablon';
 $lang['Install'] = 'Instaluj';
-$lang['Download'] = '¦ci±gnij';
+$lang['Download'] = 'ÅšciÄ…gnij';
 
 $lang['Edit_theme'] = 'Edytuj Styl';
-$lang['Edit_theme_explain'] = 'W formularzu poni¿ej mo¿esz zmieniæ ustawienia dla wybranego stylu';
+$lang['Edit_theme_explain'] = 'W formularzu poniÅ¼ej moÅ¼esz zmieniÄ‡ ustawienia dla wybranego stylu';
 
-$lang['Create_theme'] = 'Utwórz Styl';
-$lang['Create_theme_explain'] = 'U¿yj formularza poni¿ej aby utworzyæ nowy styl dla wybranego szablonu. Wpisuj±c kolory (do których mo¿esz u¿ywaæ jedynie warto¶ci szesnastkowych) nie dodawaj pocz±tkowego #, np. CCCCCC jest poprawne ale #CCCCCC ju¿ nie.';
+$lang['Create_theme'] = 'UtwÃ³rz Styl';
+$lang['Create_theme_explain'] = 'UÅ¼yj formularza poniÅ¼ej aby utworzyÄ‡ nowy styl dla wybranego szablonu. WpisujÄ…c kolory (do ktÃ³rych moÅ¼esz uÅ¼ywaÄ‡ jedynie wartoÅ›ci szesnastkowych) nie dodawaj poczÄ…tkowego #, np. CCCCCC jest poprawne ale #CCCCCC juÅ¼ nie.';
 
 $lang['Export_themes'] = 'Eksportuj Styl';
-$lang['Export_explain'] = 'Z tego panelu mo¿esz eksportowaæ dane stylu dla wybranego szablonu. Wybierz styl z poni¿szej listy, a skrypt utworzy plik jego konfiguracji i spróbuje zapisaæ go w wybranym katalogu stylów. Je¿eli nie bêdzie mo¿liwe zapisanie pliku otrzymasz mo¿liwo¶æ ¶ci±gniêcia go. Aby plik zosta³ zapisany serwer musi mieæ uprawnienia zapisu w danym katalogu. Wiêcej informacji znajdziesz w podrêczniku phpBB 2.';
+$lang['Export_explain'] = 'Z tego panelu moÅ¼esz eksportowaÄ‡ dane stylu dla wybranego szablonu. Wybierz styl z poniÅ¼szej listy, a skrypt utworzy plik jego konfiguracji i sprÃ³buje zapisaÄ‡ go w wybranym katalogu stylÃ³w. JeÅ¼eli nie bÄ™dzie moÅ¼liwe zapisanie pliku otrzymasz moÅ¼liwoÅ›Ä‡ Å›ciÄ…gniÄ™cia go. Aby plik zostaÅ‚ zapisany serwer musi mieÄ‡ uprawnienia zapisu w danym katalogu. WiÄ™cej informacji znajdziesz w podrÄ™czniku phpBB 2.';
 
-$lang['Theme_installed'] = 'Wybrany styl zosta³ zainstalowany';
-$lang['Style_removed'] = 'Wybrany styl zosta³ usuniêty z bazy danych. Aby ca³kowicie usun±æ styl z systemu musisz usun±æ go rêcznie z katalogu szablonów.';
-$lang['Theme_info_saved'] = 'Informacje o stylu dla wybranego szablonu zosta³y zapisane. Powin' .  (($he) ? 'iene¶' : 'na¶') . ' teraz przywróciæ uprawnienia dostêpu pliku theme_info.cfg (i je¶li to potrzebne tak¿e dla katalogu szablonów) na \'tylko do odczytu\'.';
-$lang['Theme_updated'] = 'Wybrany styl zosta³ zaktualizowany. Powin' .  (($he) ? 'iene¶' : 'na¶') . ' wyeksportowaæ nowe ustawienia.';
-$lang['Theme_created'] = 'Styl utworzony. Powin' .  (($he) ? 'iene¶' : 'na¶') . ' teraz wyeksportowaæ go do pliku konfiguracyjnego aby go zabezpieczyæ lub u¿yæ gdzie indziej.';
+$lang['Theme_installed'] = 'Wybrany styl zostaÅ‚ zainstalowany';
+$lang['Style_removed'] = 'Wybrany styl zostaÅ‚ usuniÄ™ty z bazy danych. Aby caÅ‚kowicie usunÄ…Ä‡ styl z systemu musisz usunÄ…Ä‡ go rÄ™cznie z katalogu szablonÃ³w.';
+$lang['Theme_info_saved'] = 'Informacje o stylu dla wybranego szablonu zostaÅ‚y zapisane. Powin' .  (($he) ? 'ieneÅ›' : 'naÅ›') . ' teraz przywrÃ³ciÄ‡ uprawnienia dostÄ™pu pliku theme_info.cfg (i jeÅ›li to potrzebne takÅ¼e dla katalogu szablonÃ³w) na \'tylko do odczytu\'.';
+$lang['Theme_updated'] = 'Wybrany styl zostaÅ‚ zaktualizowany. Powin' .  (($he) ? 'ieneÅ›' : 'naÅ›') . ' wyeksportowaÄ‡ nowe ustawienia.';
+$lang['Theme_created'] = 'Styl utworzony. Powin' .  (($he) ? 'ieneÅ›' : 'naÅ›') . ' teraz wyeksportowaÄ‡ go do pliku konfiguracyjnego aby go zabezpieczyÄ‡ lub uÅ¼yÄ‡ gdzie indziej.';
 
-$lang['Confirm_delete_style'] = 'Czy na pewno chcesz usun±æ ten styl';
+$lang['Confirm_delete_style'] = 'Czy na pewno chcesz usunÄ…Ä‡ ten styl';
 
-$lang['Download_theme_cfg'] = 'Eksporter nie móg³ zapisaæ pliku z informacjami o stylu. Kliknij przycisk poni¿ej aby ¶ci±gn±æ ten plik przez przegl±darkê. Kiedy ju¿ go ¶ci±gniesz wy¶lij go rêcznie do katalogu z plikami szablonu. Mo¿esz wtedy spakowaæ pliki dla dystrybucji lub u¿ycia gdzie indziej.';
-$lang['No_themes'] = 'Wybrany szablon nie ma ¿adnych do³±czonych stylów. Aby utworzyæ nowy styl kliknij odno¶nik Utwórz Nowy na lewym panelu.';
-$lang['No_template_dir'] = 'Otwarcie katalogu szablonów by³o niemo¿liwe. Byæ mo¿e nie istnieje lub serwer nie ma do niego praw dostêpu.';
-$lang['Cannot_remove_style'] = 'Nie mo¿esz usun±æ wybranego stylu, poniewa¿ jest obecnie domy¶lnym dla forum. Zmieñ ustawienia domy¶lne i spróbuj ponownie.';
-$lang['Style_exists'] = 'Nazwa stylu, któr± wybra³' .  (($he) ? 'e' : 'a') . '¶ ju¿ istnieje, wróæ i spróbuj z inn± nazw±.';
+$lang['Download_theme_cfg'] = 'Eksporter nie mÃ³gÅ‚ zapisaÄ‡ pliku z informacjami o stylu. Kliknij przycisk poniÅ¼ej aby Å›ciÄ…gnÄ…Ä‡ ten plik przez przeglÄ…darkÄ™. Kiedy juÅ¼ go Å›ciÄ…gniesz wyÅ›lij go rÄ™cznie do katalogu z plikami szablonu. MoÅ¼esz wtedy spakowaÄ‡ pliki dla dystrybucji lub uÅ¼ycia gdzie indziej.';
+$lang['No_themes'] = 'Wybrany szablon nie ma Å¼adnych doÅ‚Ä…czonych stylÃ³w. Aby utworzyÄ‡ nowy styl kliknij odnoÅ›nik UtwÃ³rz Nowy na lewym panelu.';
+$lang['No_template_dir'] = 'Otwarcie katalogu szablonÃ³w byÅ‚o niemoÅ¼liwe. ByÄ‡ moÅ¼e nie istnieje lub serwer nie ma do niego praw dostÄ™pu.';
+$lang['Cannot_remove_style'] = 'Nie moÅ¼esz usunÄ…Ä‡ wybranego stylu, poniewaÅ¼ jest obecnie domyÅ›lnym dla forum. ZmieÅ„ ustawienia domyÅ›lne i sprÃ³buj ponownie.';
+$lang['Style_exists'] = 'Nazwa stylu, ktÃ³rÄ… wybraÅ‚' .  (($he) ? 'e' : 'a') . 'Å› juÅ¼ istnieje, wrÃ³Ä‡ i sprÃ³buj z innÄ… nazwÄ….';
 
-$lang['Click_return_styleadmin'] = 'Kliknij %sTutaj%s aby powróciæ do Administracji Stylami';
+$lang['Click_return_styleadmin'] = 'Kliknij %sTutaj%s aby powrÃ³ciÄ‡ do Administracji Stylami';
 
 $lang['Theme_settings'] = 'Ustawienia Tematu';
 $lang['Theme_element'] = 'Element Tematu';
@@ -447,32 +447,32 @@ $lang['Simple_name'] = 'Prosta Nazwa';
 $lang['Save_Settings'] = 'Zapisz Ustawienia';
 
 $lang['Stylesheet'] = 'Arkusz CSS';
-$lang['Background_image'] = 'Obrazek T³a';
-$lang['Background_color'] = 'Kolor T³a';
+$lang['Background_image'] = 'Obrazek TÅ‚a';
+$lang['Background_color'] = 'Kolor TÅ‚a';
 $lang['Theme_name'] = 'Nazwa Tematu';
-$lang['Link_color'] = 'Kolor Odno¶nika';
+$lang['Link_color'] = 'Kolor OdnoÅ›nika';
 $lang['Text_color'] = 'Kolor Tekstu';
-$lang['VLink_color'] = 'Kolor Odwiedzonego Odno¶nika';
-$lang['ALink_color'] = 'Kolor Aktywnego Odno¶nika';
-$lang['HLink_color'] = 'Kolor Odno¶nika pod Kursorem';
-$lang['Tr_color1'] = 'Kolor Rzêdu Tabeli 1';
-$lang['Tr_color2'] = 'Kolor Rzêdu Tabeli 2';
-$lang['Tr_color3'] = 'Kolor Rzêdu Tabeli 3';
-$lang['Tr_class1'] = 'Klasa Rzêdu Tabeli 1';
-$lang['Tr_class2'] = 'Klasa Rzêdu Tabeli 2';
-$lang['Tr_class3'] = 'Klasa Rzêdu Tabeli 3';
-$lang['Th_color1'] = 'Kolor Nag³ówka Tabeli 1';
-$lang['Th_color2'] = 'Kolor Nag³ówka Tabeli 2';
-$lang['Th_color3'] = 'Kolor Nag³ówka Tabeli 3';
-$lang['Th_class1'] = 'Klasa Nag³ówka Tabeli 1';
-$lang['Th_class2'] = 'Klasa Nag³ówka Tabeli 2';
-$lang['Th_class3'] = 'Klasa Nag³ówka Tabeli 3';
-$lang['Td_color1'] = 'Kolor Komórki Tabeli 1';
-$lang['Td_color2'] = 'Kolor Komórki Tabeli 2';
-$lang['Td_color3'] = 'Kolor Komórki Tabeli 3';
-$lang['Td_class1'] = 'Klasa Komórki Tabeli 1';
-$lang['Td_class2'] = 'Klasa Komórki Tabeli 2';
-$lang['Td_class3'] = 'Klasa Komórki Tabeli 3';
+$lang['VLink_color'] = 'Kolor Odwiedzonego OdnoÅ›nika';
+$lang['ALink_color'] = 'Kolor Aktywnego OdnoÅ›nika';
+$lang['HLink_color'] = 'Kolor OdnoÅ›nika pod Kursorem';
+$lang['Tr_color1'] = 'Kolor RzÄ™du Tabeli 1';
+$lang['Tr_color2'] = 'Kolor RzÄ™du Tabeli 2';
+$lang['Tr_color3'] = 'Kolor RzÄ™du Tabeli 3';
+$lang['Tr_class1'] = 'Klasa RzÄ™du Tabeli 1';
+$lang['Tr_class2'] = 'Klasa RzÄ™du Tabeli 2';
+$lang['Tr_class3'] = 'Klasa RzÄ™du Tabeli 3';
+$lang['Th_color1'] = 'Kolor NagÅ‚Ã³wka Tabeli 1';
+$lang['Th_color2'] = 'Kolor NagÅ‚Ã³wka Tabeli 2';
+$lang['Th_color3'] = 'Kolor NagÅ‚Ã³wka Tabeli 3';
+$lang['Th_class1'] = 'Klasa NagÅ‚Ã³wka Tabeli 1';
+$lang['Th_class2'] = 'Klasa NagÅ‚Ã³wka Tabeli 2';
+$lang['Th_class3'] = 'Klasa NagÅ‚Ã³wka Tabeli 3';
+$lang['Td_color1'] = 'Kolor KomÃ³rki Tabeli 1';
+$lang['Td_color2'] = 'Kolor KomÃ³rki Tabeli 2';
+$lang['Td_color3'] = 'Kolor KomÃ³rki Tabeli 3';
+$lang['Td_class1'] = 'Klasa KomÃ³rki Tabeli 1';
+$lang['Td_class2'] = 'Klasa KomÃ³rki Tabeli 2';
+$lang['Td_class3'] = 'Klasa KomÃ³rki Tabeli 3';
 $lang['fontface1'] = 'Czcionka 1';
 $lang['fontface2'] = 'Czcionka 2';
 $lang['fontface3'] = 'Czcionka 3';
@@ -490,9 +490,9 @@ $lang['span_class3'] = 'Klasa Span 3';
 // Install Process
 //
 
-$lang['Default_lang'] = 'Domy¶lny Jêzyk Forum';
-$lang['ftp_info'] = 'Wpisz informacjê o twoim FTP';
-$lang['ftp_username'] = 'U¿ytkownik FTP';
+$lang['Default_lang'] = 'DomyÅ›lny JÄ™zyk Forum';
+$lang['ftp_info'] = 'Wpisz informacjÄ™ o twoim FTP';
+$lang['ftp_username'] = 'UÅ¼ytkownik FTP';
 $lang['Install'] = 'Instalacja';
 
 //
@@ -500,346 +500,346 @@ $lang['Install'] = 'Instalacja';
 //
 
 $lang['Poll Admin'] = 'Sondy';
-$lang['Poll Results'] = 'Wyniki glosowañ';
-$lang['Prune_User_Posts'] = 'Masowe kasowanie postów u¿ytkowników';
-$lang['logs'] = 'Logi po³±czeñ';
+$lang['Poll Results'] = 'Wyniki glosowaÅ„';
+$lang['Prune_User_Posts'] = 'Masowe kasowanie postÃ³w uÅ¼ytkownikÃ³w';
+$lang['logs'] = 'Logi poÅ‚Ä…czeÅ„';
 $lang['Categories'] = 'Kategorie';
-$lang['Clear_Cache'] = 'Wyczy¶æ Cache';
+$lang['Clear_Cache'] = 'WyczyÅ›Ä‡ Cache';
 
 $lang['Status_locked'] = 'Zablokowane';
 $lang['Status_unlocked'] = 'Odblokowane';
-$lang['Sort_alpha'] = 'Tytu³u tematu';
+$lang['Sort_alpha'] = 'TytuÅ‚u tematu';
 $lang['Sort_fpdate'] = 'Czasu ostatniego postu';
 $lang['Sort_ttime'] = 'Czasu napisania tematu';
 $lang['Sort_author'] = 'Autora tematu';
-$lang['User_allowsig'] = 'Mo¿e dodawaæ podpis';
-$lang['No_group_action'] = 'Nie wybrano czynno¶ci';
+$lang['User_allowsig'] = 'MoÅ¼e dodawaÄ‡ podpis';
+$lang['No_group_action'] = 'Nie wybrano czynnoÅ›ci';
 $lang['Download2'] = 'Download';
 
 $lang['Active'] = 'Aktywny';
-$lang['modules'] = 'Rozmieszczenie modu³ów';
+$lang['modules'] = 'Rozmieszczenie moduÅ‚Ã³w';
 $lang['clock'] = 'Zegar';
-$lang['l_search_a'] = 'Wyrównanie Menu Szukaj';
-$lang['Deactivate'] = 'Wy³±cz';
-$lang['none'] = 'wy³±cz';
+$lang['l_search_a'] = 'WyrÃ³wnanie Menu Szukaj';
+$lang['Deactivate'] = 'WyÅ‚Ä…cz';
+$lang['none'] = 'wyÅ‚Ä…cz';
 $lang['Logs'] = 'Logi';
-$lang['LogsActions'] = 'Logi czynno¶ci';
+$lang['LogsActions'] = 'Logi czynnoÅ›ci';
 $lang['Log_action_title'] = 'Logi administracyjne';
-$lang['Log_action_explain'] = 'Poni¿ej znajduj± siê logi czynno¶ci wykonywanych przez administratorów i moderatorów';
-$lang['Choose_sort_method'] = 'Wybierz metodê sortowania';
+$lang['Log_action_explain'] = 'PoniÅ¼ej znajdujÄ… siÄ™ logi czynnoÅ›ci wykonywanych przez administratorÃ³w i moderatorÃ³w';
+$lang['Choose_sort_method'] = 'Wybierz metodÄ™ sortowania';
 $lang['Id_log'] = 'Log Id';
 $lang['Delete_log'] = 'Skasuj Log';
-$lang['Action'] = 'Czynno¶æ';
+$lang['Action'] = 'CzynnoÅ›Ä‡';
 $lang['Done_by'] = 'Wykonane przez';
-$lang['User_ip'] = 'IP u¿ytkownika';
+$lang['User_ip'] = 'IP uÅ¼ytkownika';
 $lang['Log_delete'] = 'Log skasowany.';
-$lang['Click_return_admin_log'] = 'Kliknij %sTutaj%s ¿eby przej¶æ do logów';
-$lang['OverallPermissions'] = 'Zezwolenia ogólne';
-$lang['OverallPermissions_all'] = 'Ustaw poni¿sze zezwolenia dla wszystkich forów';
-$lang['l_logsip_e'] = 'Logi domy¶lnie wy³±czone, mo¿esz je w³±czyæ w menu Konfiguracja. Do poprawnej pracy logowania plik /admin/admin_logs.php musi mieæ prawa do zapisu: chmod 777 admin_logs.php<br />Je¿eli chcesz wyczy¶ciæ logi, usuñ zawarto¶æ danych w pliku /admin/admin_logs.php';
-$lang['l_logsip'] = 'Logi po³±czeñ';
+$lang['Click_return_admin_log'] = 'Kliknij %sTutaj%s Å¼eby przejÅ›Ä‡ do logÃ³w';
+$lang['OverallPermissions'] = 'Zezwolenia ogÃ³lne';
+$lang['OverallPermissions_all'] = 'Ustaw poniÅ¼sze zezwolenia dla wszystkich forÃ³w';
+$lang['l_logsip_e'] = 'Logi domyÅ›lnie wyÅ‚Ä…czone, moÅ¼esz je wÅ‚Ä…czyÄ‡ w menu Konfiguracja. Do poprawnej pracy logowania plik /admin/admin_logs.php musi mieÄ‡ prawa do zapisu: chmod 777 admin_logs.php<br />JeÅ¼eli chcesz wyczyÅ›ciÄ‡ logi, usuÅ„ zawartoÅ›Ä‡ danych w pliku /admin/admin_logs.php';
+$lang['l_logsip'] = 'Logi poÅ‚Ä…czeÅ„';
 $lang['Files'] = 'Pliki';
-$lang['Globalannounce'] = 'Wa¿ne og³oszenie';
+$lang['Globalannounce'] = 'WaÅ¼ne ogÅ‚oszenie';
 $lang['Group_rank'] = 'Rangi dla grup';
-$lang['Group_rank_explain'] = 'Tutaj mo¿esz wybraæ rangi dla ca³ych grup. Bêdzie ignorowane je¶li ustawisz rangê specjaln±.';
+$lang['Group_rank_explain'] = 'Tutaj moÅ¼esz wybraÄ‡ rangi dla caÅ‚ych grup. BÄ™dzie ignorowane jeÅ›li ustawisz rangÄ™ specjalnÄ….';
 $lang['Group_Rank_special'] = 'Personalna- / Ranga grupy';
-$lang['Group_rank_order'] = 'Pierwszeñstwo Grup';
+$lang['Group_rank_order'] = 'PierwszeÅ„stwo Grup';
 $lang['Group_rank_order_moved'] = 'Grupa przeniesiona.';
-$lang['Group_rank_order_alreay_moved'] = 'Grupa ju¿ jest przeniesiona.';
-$lang['Group_rank_order_could_not_moved'] = 'Grupa nie mo¿e byæ przeniesiona poniewa¿ ju¿ jest na górze lub na dole.';
+$lang['Group_rank_order_alreay_moved'] = 'Grupa juÅ¼ jest przeniesiona.';
+$lang['Group_rank_order_could_not_moved'] = 'Grupa nie moÅ¼e byÄ‡ przeniesiona poniewaÅ¼ juÅ¼ jest na gÃ³rze lub na dole.';
 $lang['Group_rank_resynced'] = 'Grupowanie zsynchronizowane';
-$lang['Group_rank_order_explain'] = 'Je¶li u¿ytkownik jest w wiêcej ni¿ jednej grupie, bêdzie pokazywana ta ranga która jest wy¿ej na li¶cie.';
+$lang['Group_rank_order_explain'] = 'JeÅ›li uÅ¼ytkownik jest w wiÄ™cej niÅ¼ jednej grupie, bÄ™dzie pokazywana ta ranga ktÃ³ra jest wyÅ¼ej na liÅ›cie.';
 
-$lang['Inactive_title'] = 'Nieaktywni u¿ytkownicy';
-$lang['Deleted_user'] = 'U¿ytkownik z ID #%d usuniêty';
-$lang['Activate_title'] = 'Czynno¶æ konta u¿ytkownika';
+$lang['Inactive_title'] = 'Nieaktywni uÅ¼ytkownicy';
+$lang['Deleted_user'] = 'UÅ¼ytkownik z ID #%d usuniÄ™ty';
+$lang['Activate_title'] = 'CzynnoÅ›Ä‡ konta uÅ¼ytkownika';
 $lang['Activate'] = 'Aktywuj';
-$lang['Waiting_1'] = '(Oczekuje na aktywacjê %d dzieñ)';
-$lang['Waiting_2'] = '(Oczekuje na aktywacjê od %d dni)';
-$lang['No_users'] = 'Nie ma u¿ytkowników oczekuj±cych na aktywacjê';
-$lang['Total_member'] = '<b>%d</b> u¿ytkownik oczekuje na aktywacjê.';
-$lang['Total_members'] = '<b>%d</b> u¿ytkowników oczekuje na aktywacjê.';
+$lang['Waiting_1'] = '(Oczekuje na aktywacjÄ™ %d dzieÅ„)';
+$lang['Waiting_2'] = '(Oczekuje na aktywacjÄ™ od %d dni)';
+$lang['No_users'] = 'Nie ma uÅ¼ytkownikÃ³w oczekujÄ…cych na aktywacjÄ™';
+$lang['Total_member'] = '<b>%d</b> uÅ¼ytkownik oczekuje na aktywacjÄ™.';
+$lang['Total_members'] = '<b>%d</b> uÅ¼ytkownikÃ³w oczekuje na aktywacjÄ™.';
 
 $lang['Account_block'] = 'Konto zablokowane';
-$lang['Account_block_explain'] = 'Tutaj znajduj± siê informacje dot. blokady konta, prób b³êdnego logowania, daty, adresu.';
+$lang['Account_block_explain'] = 'Tutaj znajdujÄ… siÄ™ informacje dot. blokady konta, prÃ³b bÅ‚Ä™dnego logowania, daty, adresu.';
 $lang['Block_until'] = 'Zablokowane do: %s';
-$lang['Block_by'] = 'Próby logowañ z IP: %s';
+$lang['Block_by'] = 'PrÃ³by logowaÅ„ z IP: %s';
 $lang['Last_block_by'] = 'Ostatnio z IP: %s';
 $lang['Unblock_user'] = 'Odblokuj konto';
 $lang['Block_user'] = 'Zablokuj konto na %s minut';
-$lang['Badlogin_count'] = 'Ilo¶æ b³êdnych logowañ';
+$lang['Badlogin_count'] = 'IloÅ›Ä‡ bÅ‚Ä™dnych logowaÅ„';
 
-$lang['BM_Show_bans_by'] = 'Poka¿ bany na';
+$lang['BM_Show_bans_by'] = 'PokaÅ¼ bany na';
 $lang['BM_All'] = 'Wszystkie';
-$lang['BM_Show'] = 'Poka¿';
-$lang['BM_Banned'] = 'Za³o¿ony';
-$lang['BM_Expires'] = 'Wyga¶nie';
+$lang['BM_Show'] = 'PokaÅ¼';
+$lang['BM_Banned'] = 'ZaÅ‚oÅ¼ony';
+$lang['BM_Expires'] = 'WygaÅ›nie';
 $lang['BM_By'] = 'Przez';
 $lang['BM_Add_a_new_ban'] = 'Dodaj bana';
 $lang['BM_Edit_ban'] = 'Edytuj bana';
-$lang['BM_Delete_selected_bans'] = 'Usuñ wybrane bany';
-$lang['BM_Private_reason'] = 'Prywatny powód';
-$lang['BM_Private_reason_explain'] = 'Ten powód bêdzie widoczny tylko dla administratorów';
-$lang['BM_Public_reason'] = 'Publiczny powód';
-$lang['BM_Public_reason_explain'] = 'Ten powód bêdzie wy¶wietlany tylko zbanowanemu u¿ytkownikowi, je¶li bêdzie próbowa³ wej¶æ na forum';
-$lang['BM_Generic_reason'] = 'Powód standardowy';
-$lang['BM_Mirror_private_reason'] = 'Powód taki sam jak Prywatny Powód';
-$lang['BM_Other'] = 'Inny/wpisz ni¿ej';
-$lang['BM_Expire_time'] = 'Czas wyga¶niêcia';
-$lang['BM_Expire_time_explain'] = 'Mo¿esz ustaliæ kiedy ban ma znikn±æ/wygasn±æ.';
+$lang['BM_Delete_selected_bans'] = 'UsuÅ„ wybrane bany';
+$lang['BM_Private_reason'] = 'Prywatny powÃ³d';
+$lang['BM_Private_reason_explain'] = 'Ten powÃ³d bÄ™dzie widoczny tylko dla administratorÃ³w';
+$lang['BM_Public_reason'] = 'Publiczny powÃ³d';
+$lang['BM_Public_reason_explain'] = 'Ten powÃ³d bÄ™dzie wyÅ›wietlany tylko zbanowanemu uÅ¼ytkownikowi, jeÅ›li bÄ™dzie prÃ³bowaÅ‚ wejÅ›Ä‡ na forum';
+$lang['BM_Generic_reason'] = 'PowÃ³d standardowy';
+$lang['BM_Mirror_private_reason'] = 'PowÃ³d taki sam jak Prywatny PowÃ³d';
+$lang['BM_Other'] = 'Inny/wpisz niÅ¼ej';
+$lang['BM_Expire_time'] = 'Czas wygaÅ›niÄ™cia';
+$lang['BM_Expire_time_explain'] = 'MoÅ¼esz ustaliÄ‡ kiedy ban ma zniknÄ…Ä‡/wygasnÄ…Ä‡.';
 $lang['BM_Never'] = 'Nigdy';
-$lang['BM_After_specified_length_of_time'] = 'Po up³ywie:';
+$lang['BM_After_specified_length_of_time'] = 'Po upÅ‚ywie:';
 $lang['BM_Minutes'] = 'Minut';
 $lang['BM_Weeks'] = 'Tygodni';
-$lang['BM_Months'] = 'Miesiêcy';
+$lang['BM_Months'] = 'MiesiÄ™cy';
 $lang['BM_Years'] = 'Lat';
 
 $lang['Custom_fields'] = 'Pola w profilu';
-$lang['shoutbox_on'] = 'ShoutBox w³±czony';
-$lang['date_on'] = 'Wy¶wietlanie daty';
-$lang['sb_make_links'] = 'W³±cz automatyczne tworzenie linków';
+$lang['shoutbox_on'] = 'ShoutBox wÅ‚Ä…czony';
+$lang['date_on'] = 'WyÅ›wietlanie daty';
+$lang['sb_make_links'] = 'WÅ‚Ä…cz automatyczne tworzenie linkÃ³w';
 $lang['sb_links_names'] = 'Nazwa linkiem do profilu';
-$lang['sb_allow_edit'] = 'Zezwól na edycje wiadomo¶ci przez Administratorów';
-$lang['sb_allow_edit_m'] = 'Zezwól na edycje wiadomo¶ci przez Moderatorów';
-$lang['sb_allow_edit_all'] = 'Zezwól na edycje w³asnych wiadomo¶ci';
-$lang['sb_allow_delete'] = 'Zezwól na usuwanie wiadomo¶ci przez Administratorów';
-$lang['sb_allow_delete_m'] = 'Zezwól na usuwanie wiadomo¶ci przez Moderatorów';
-$lang['sb_allow_delete_all'] = 'Zezwól na usuwanie w³asnych wiadomo¶ci';
-$lang['sb_allow_guest'] = 'Go¶cie mog± pisaæ w ShoutBox\'ie ?';
-$lang['sb_allow_guest_view'] = 'Shoutbox tylko widoczny dla go¶ci, bez mo¿liwo¶ci pisania';
-$lang['sb_allow_users'] = 'Zarejestrowani u¿ytkownicy mog± pisaæ w ShoutBox\'ie ?';
-$lang['sb_allow_users_view'] = 'Shoutbox tylko widoczny dla zarejestrowanych u¿ytkowników, bez mo¿liwo¶ci pisania';
-$lang['delete_days'] = 'Po ilu dniach kasowaæ wiadomo¶ci';
-$lang['sb_shout_refresh'] = 'Czêstotliwo¶æ od¶wie¿ania shoutboxa.<br>Po jakim czasie shoutbox ma pobraæ nowe wiadomo¶ci czekaj±ce w kolejce? Warto¶ci w sekundach, czyli 5 = 5 sekund';
-$lang['sb_shout_group'] = 'Wybierz grupy, które bêd± mog³y pisaæ w shoutboxie. Przytrzymaj klawisz CTRL i myszk± wybieraj grupy.';
-$lang['l_usercall'] = 'Po klikniêciu w nick przenosi jego nazwê do pola pisania wiadomo¶ci. User Call.';
-$lang['sb_smilies'] = 'W³±cz wysuwany panel emotikon.';
-$lang['sb_count_msg'] = 'Ilo¶æ wy¶wietlanych wiadomo¶ci';
-$lang['sb_text_lenght'] = 'Maksymalna ilo¶æ znaków w wiadomo¶ci';
-$lang['sb_word_lenght'] = 'Maksymalna ilo¶æ znaków w jednym wyrazie';
+$lang['sb_allow_edit'] = 'ZezwÃ³l na edycje wiadomoÅ›ci przez AdministratorÃ³w';
+$lang['sb_allow_edit_m'] = 'ZezwÃ³l na edycje wiadomoÅ›ci przez ModeratorÃ³w';
+$lang['sb_allow_edit_all'] = 'ZezwÃ³l na edycje wÅ‚asnych wiadomoÅ›ci';
+$lang['sb_allow_delete'] = 'ZezwÃ³l na usuwanie wiadomoÅ›ci przez AdministratorÃ³w';
+$lang['sb_allow_delete_m'] = 'ZezwÃ³l na usuwanie wiadomoÅ›ci przez ModeratorÃ³w';
+$lang['sb_allow_delete_all'] = 'ZezwÃ³l na usuwanie wÅ‚asnych wiadomoÅ›ci';
+$lang['sb_allow_guest'] = 'GoÅ›cie mogÄ… pisaÄ‡ w ShoutBox\'ie ?';
+$lang['sb_allow_guest_view'] = 'Shoutbox tylko widoczny dla goÅ›ci, bez moÅ¼liwoÅ›ci pisania';
+$lang['sb_allow_users'] = 'Zarejestrowani uÅ¼ytkownicy mogÄ… pisaÄ‡ w ShoutBox\'ie ?';
+$lang['sb_allow_users_view'] = 'Shoutbox tylko widoczny dla zarejestrowanych uÅ¼ytkownikÃ³w, bez moÅ¼liwoÅ›ci pisania';
+$lang['delete_days'] = 'Po ilu dniach kasowaÄ‡ wiadomoÅ›ci';
+$lang['sb_shout_refresh'] = 'CzÄ™stotliwoÅ›Ä‡ odÅ›wieÅ¼ania shoutboxa.<br>Po jakim czasie shoutbox ma pobraÄ‡ nowe wiadomoÅ›ci czekajÄ…ce w kolejce? WartoÅ›ci w sekundach, czyli 5 = 5 sekund';
+$lang['sb_shout_group'] = 'Wybierz grupy, ktÃ³re bÄ™dÄ… mogÅ‚y pisaÄ‡ w shoutboxie. Przytrzymaj klawisz CTRL i myszkÄ… wybieraj grupy.';
+$lang['l_usercall'] = 'Po klikniÄ™ciu w nick przenosi jego nazwÄ™ do pola pisania wiadomoÅ›ci. User Call.';
+$lang['sb_smilies'] = 'WÅ‚Ä…cz wysuwany panel emotikon.';
+$lang['sb_count_msg'] = 'IloÅ›Ä‡ wyÅ›wietlanych wiadomoÅ›ci';
+$lang['sb_text_lenght'] = 'Maksymalna iloÅ›Ä‡ znakÃ³w w wiadomoÅ›ci';
+$lang['sb_word_lenght'] = 'Maksymalna iloÅ›Ä‡ znakÃ³w w jednym wyrazie';
 $lang['setup_shoutbox'] = 'Ustawienia Shoutboxa';
 $lang['shout_size'] = 'Rozmiary ShoutBox\'a';
-$lang['sb_banned_send'] = 'Zabroñ wysy³aæ wiadomo¶ci u¿ytkownikowi';
-$lang['sb_banned_send_e'] = 'Wpisz ID u¿ytkownika, któremu chcesz odebraæ mo¿liwo¶æ wysy³ania wiadomo¶ci do ShoutBox\'a, mo¿esz podaæ kilka, oddziel je przecinkami. Przyk³ad: <b>18, 124</b>';
-$lang['sb_banned_view'] = 'Wy³±cz ShoutBox dla u¿ytkownika';
-$lang['sb_banned_view_e'] = 'Wpisz ID u¿ytkownika, któremu chcesz odebraæ mo¿liwo¶æ u¿ywania ShoutBox\'a, mo¿esz podaæ kilka, oddziel je przecinkami. Przyk³ad: <b>18, 124</b>';
+$lang['sb_banned_send'] = 'ZabroÅ„ wysyÅ‚aÄ‡ wiadomoÅ›ci uÅ¼ytkownikowi';
+$lang['sb_banned_send_e'] = 'Wpisz ID uÅ¼ytkownika, ktÃ³remu chcesz odebraÄ‡ moÅ¼liwoÅ›Ä‡ wysyÅ‚ania wiadomoÅ›ci do ShoutBox\'a, moÅ¼esz podaÄ‡ kilka, oddziel je przecinkami. PrzykÅ‚ad: <b>18, 124</b>';
+$lang['sb_banned_view'] = 'WyÅ‚Ä…cz ShoutBox dla uÅ¼ytkownika';
+$lang['sb_banned_view_e'] = 'Wpisz ID uÅ¼ytkownika, ktÃ³remu chcesz odebraÄ‡ moÅ¼liwoÅ›Ä‡ uÅ¼ywania ShoutBox\'a, moÅ¼esz podaÄ‡ kilka, oddziel je przecinkami. PrzykÅ‚ad: <b>18, 124</b>';
 
 $lang['disallow_forums'] = 'Zablokuj pisanie w forach';
-$lang['disallow_forums_e'] = 'Zablokuj temu u¿ytkownikowi mo¿liwo¶æ pisania w okre¶lonych forach.<br />Dla wyboru kilku, przytrzymaj klawisz Ctrl';
-$lang['can_custom_ranks'] = 'Mo¿e ustawiaæ swój tytu³';
-$lang['can_custom_color'] = 'Mo¿e ustawiaæ kolor nazwy';
+$lang['disallow_forums_e'] = 'Zablokuj temu uÅ¼ytkownikowi moÅ¼liwoÅ›Ä‡ pisania w okreÅ›lonych forach.<br />Dla wyboru kilku, przytrzymaj klawisz Ctrl';
+$lang['can_custom_ranks'] = 'MoÅ¼e ustawiaÄ‡ swÃ³j tytuÅ‚';
+$lang['can_custom_color'] = 'MoÅ¼e ustawiaÄ‡ kolor nazwy';
 
-$lang['group_count'] = 'Ilo¶æ wymaganych postów';
-$lang['group_count_explain'] = 'Je¶li u¿ytkownik bêdzie mia³ tyle postów lub wiêcej ni¿ ta warto¶æ zostanie automatycznie do³±czony do tej grupy';
-$lang['Group_count_enable'] = 'Automatyczne dodawanie u¿ytkowników';
-$lang['Group_count_update'] = 'Dodaj teraz u¿ytkowników z podan± lub wiêksz± ilo¶ci± postów';
-$lang['Group_count_delete'] = 'Usuñ teraz wszystkich u¿ytkowników tej grupy';
+$lang['group_count'] = 'IloÅ›Ä‡ wymaganych postÃ³w';
+$lang['group_count_explain'] = 'JeÅ›li uÅ¼ytkownik bÄ™dzie miaÅ‚ tyle postÃ³w lub wiÄ™cej niÅ¼ ta wartoÅ›Ä‡ zostanie automatycznie doÅ‚Ä…czony do tej grupy';
+$lang['Group_count_enable'] = 'Automatyczne dodawanie uÅ¼ytkownikÃ³w';
+$lang['Group_count_update'] = 'Dodaj teraz uÅ¼ytkownikÃ³w z podanÄ… lub wiÄ™kszÄ… iloÅ›ciÄ… postÃ³w';
+$lang['Group_count_delete'] = 'UsuÅ„ teraz wszystkich uÅ¼ytkownikÃ³w tej grupy';
 
 $lang['Optimize_DB'] = 'Optymalizacja SQL';
 $lang['Optimize'] = 'Optymalizuj';
-$lang['Optimize_explain'] = 'Optymalizacja bazy SQL polega na czyszczeniu pustych pól w bazie';
+$lang['Optimize_explain'] = 'Optymalizacja bazy SQL polega na czyszczeniu pustych pÃ³l w bazie';
 $lang['Optimize_Table'] = 'Tabela';
-$lang['Optimize_Record'] = 'Wpisów';
+$lang['Optimize_Record'] = 'WpisÃ³w';
 $lang['Optimize_Type'] = 'Typ';
 $lang['Optimize_Size'] = 'Rozmiar';
 $lang['Optimize_Status'] = 'Status';
-$lang['Optimize_InvertChecked'] = 'Odwróæ zaznaczenia';
-$lang['Optimize_success'] = 'Baza pomy¶lnie zoptymalizowana';
-$lang['Optimize_NoTableChecked'] = 'Nie wybrano ¿adnej tabeli';
+$lang['Optimize_InvertChecked'] = 'OdwrÃ³Ä‡ zaznaczenia';
+$lang['Optimize_success'] = 'Baza pomyÅ›lnie zoptymalizowana';
+$lang['Optimize_NoTableChecked'] = 'Nie wybrano Å¼adnej tabeli';
 
-$lang['SQL_Admin_No_Access'] = 'Nie masz dostêpu do tego menu.<br /><br />Kliknij %sTutaj%s ¿eby zobaczyæ szczegó³y.';
+$lang['SQL_Admin_No_Access'] = 'Nie masz dostÄ™pu do tego menu.<br /><br />Kliknij %sTutaj%s Å¼eby zobaczyÄ‡ szczegÃ³Å‚y.';
 $lang['Category_attachment'] = 'Przypisane do';
 $lang['Category_desc'] = 'Opis';
-$lang['Attach_forum_wrong'] = 'Nie mo¿esz przypisaæ forum do forum. Tylko kategorie.';
-$lang['Attach_root_wrong'] = 'Nie mo¿esz przypisaæ forum do g³ównego forum, utwórz kategorie';
-$lang['Forum_name_missing'] = 'Nie mo¿na utworzyæ forum bez nazwy';
-$lang['Category_name_missing'] = 'Nie mo¿na utworzyæ kategorii bez nazwy';
-$lang['Only_forum_for_topics'] = 'Tematy mog± byæ tylko w forum';
-$lang['Delete_forum_with_attachment_denied'] = 'Nie mo¿esz usun±æ forum zawieraj±cego podkategorie';
-$lang['Category_delete'] = 'Usuñ kategorie';
-$lang['Category_delete_explain'] = 'W tym miejscu mo¿esz usun±æ kategorie i przenie¶æ fora oraz podkategorie które zawiera.';
+$lang['Attach_forum_wrong'] = 'Nie moÅ¼esz przypisaÄ‡ forum do forum. Tylko kategorie.';
+$lang['Attach_root_wrong'] = 'Nie moÅ¼esz przypisaÄ‡ forum do gÅ‚Ã³wnego forum, utwÃ³rz kategorie';
+$lang['Forum_name_missing'] = 'Nie moÅ¼na utworzyÄ‡ forum bez nazwy';
+$lang['Category_name_missing'] = 'Nie moÅ¼na utworzyÄ‡ kategorii bez nazwy';
+$lang['Only_forum_for_topics'] = 'Tematy mogÄ… byÄ‡ tylko w forum';
+$lang['Delete_forum_with_attachment_denied'] = 'Nie moÅ¼esz usunÄ…Ä‡ forum zawierajÄ…cego podkategorie';
+$lang['Category_delete'] = 'UsuÅ„ kategorie';
+$lang['Category_delete_explain'] = 'W tym miejscu moÅ¼esz usunÄ…Ä‡ kategorie i przenieÅ›Ä‡ fora oraz podkategorie ktÃ³re zawiera.';
 $lang['Forum_link_url'] = 'Forum&nbsp;jako&nbsp;link';
-$lang['Forum_link_url_explain'] = 'W tym miejscu mo¿esz podaæ adres lokalny lub pe³ny adres do zewnêtrznego miejsca.<br />Pamiêtaj ¿eby podaæ http://';
+$lang['Forum_link_url_explain'] = 'W tym miejscu moÅ¼esz podaÄ‡ adres lokalny lub peÅ‚ny adres do zewnÄ™trznego miejsca.<br />PamiÄ™taj Å¼eby podaÄ‡ http://';
 $lang['Forum_link_internal'] = 'Adres lokalny';
-$lang['Forum_link_internal_explain'] = 'Wybierz Tak je¶li adres jest lokalny (katalog forum)';
-$lang['Forum_link_hit_count'] = 'Klikniêæ';
-$lang['Forum_link_hit_count_explain'] = 'Wybierz Tak, je¶li chcesz aby klikniêcia by³y zliczane i pokazywane.';
-$lang['Forum_link_with_attachment_deny'] = 'Nie mo¿esz ustawiæ forum jako link, je¿eli zawiera podkategorie.';
-$lang['Forum_link_with_topics_deny'] = 'Nie mo¿esz ustawiæ forum jako link, je¿eli zawiera tematy.';
-$lang['Forum_attached_to_link_denied'] = 'Nie mo¿esz przypisaæ forum ani kategorii do forum które jest linkiem.';
+$lang['Forum_link_internal_explain'] = 'Wybierz Tak jeÅ›li adres jest lokalny (katalog forum)';
+$lang['Forum_link_hit_count'] = 'KlikniÄ™Ä‡';
+$lang['Forum_link_hit_count_explain'] = 'Wybierz Tak, jeÅ›li chcesz aby klikniÄ™cia byÅ‚y zliczane i pokazywane.';
+$lang['Forum_link_with_attachment_deny'] = 'Nie moÅ¼esz ustawiÄ‡ forum jako link, jeÅ¼eli zawiera podkategorie.';
+$lang['Forum_link_with_topics_deny'] = 'Nie moÅ¼esz ustawiÄ‡ forum jako link, jeÅ¼eli zawiera tematy.';
+$lang['Forum_attached_to_link_denied'] = 'Nie moÅ¼esz przypisaÄ‡ forum ani kategorii do forum ktÃ³re jest linkiem.';
 
-$lang['mass_smilies_add'] = 'Dodaj u¶mieszki z katalogu';
-$lang['Click_to_back_smilies'] = 'U¶mieszków dodanych: <b>%s</b><br /><br />Kliknij %sTutaj%s ¿eby wróciæ do zarz±dzania u¶mieszkami';
+$lang['mass_smilies_add'] = 'Dodaj uÅ›mieszki z katalogu';
+$lang['Click_to_back_smilies'] = 'UÅ›mieszkÃ³w dodanych: <b>%s</b><br /><br />Kliknij %sTutaj%s Å¼eby wrÃ³ciÄ‡ do zarzÄ…dzania uÅ›mieszkami';
 $lang['Resync_Stats'] = 'Synchronizacja';
 $lang['Rebuild_search'] = 'Odbuduj Search';
-$lang['Rebuild_search_explain'] = 'Ta funkcja pozwala na odbudowanie tabel phpbb_search_* pobiera ona dane z tabeli postów i kopiuje je do search\'u. Umo¿liwia to ca³kowite odzyskanie tabel search, przydatne jest to w sytuacji gdy mamy du¿± bazê danych i potrzebujemy przenie¶æ forum na inny serwer, wówczas mo¿emy usun±æ ca³kowicie tabele phpbb_search_* które zajmuj± oko³o 40% ca³ej bazy, skopiowaæ bazê danych na drugi serwer i wówczas odbudowaæ search.<br />Odbudowywanie search\'u przy du¿ej ilo¶ci postów mo¿e trwaæ kilka godzin, jest wyposa¿one w automat który pozwala na kontynuowanie odbudowywania po roz³±czeniu.<br />Je¿eli mamy forum na wolnym serwerze, musimy wybraæ wiêkszy czas oraz mniejszy limit postów, w przypadku "zaciêcia" siê funkcji w jakim¶ miejscu musimy chwilowo zmniejszyæ jeszcze bardziej limit postów (dzieje siê tak wtedy gdy skrypt natrafi na obszerny post)<br /><b>Pamiêtaj</b> ¿e podczas startu skryptu tabele phpbb_search_* zostaj± wyczyszczone.';
+$lang['Rebuild_search_explain'] = 'Ta funkcja pozwala na odbudowanie tabel phpbb_search_* pobiera ona dane z tabeli postÃ³w i kopiuje je do search\'u. UmoÅ¼liwia to caÅ‚kowite odzyskanie tabel search, przydatne jest to w sytuacji gdy mamy duÅ¼Ä… bazÄ™ danych i potrzebujemy przenieÅ›Ä‡ forum na inny serwer, wÃ³wczas moÅ¼emy usunÄ…Ä‡ caÅ‚kowicie tabele phpbb_search_* ktÃ³re zajmujÄ… okoÅ‚o 40% caÅ‚ej bazy, skopiowaÄ‡ bazÄ™ danych na drugi serwer i wÃ³wczas odbudowaÄ‡ search.<br />Odbudowywanie search\'u przy duÅ¼ej iloÅ›ci postÃ³w moÅ¼e trwaÄ‡ kilka godzin, jest wyposaÅ¼one w automat ktÃ³ry pozwala na kontynuowanie odbudowywania po rozÅ‚Ä…czeniu.<br />JeÅ¼eli mamy forum na wolnym serwerze, musimy wybraÄ‡ wiÄ™kszy czas oraz mniejszy limit postÃ³w, w przypadku "zaciÄ™cia" siÄ™ funkcji w jakimÅ› miejscu musimy chwilowo zmniejszyÄ‡ jeszcze bardziej limit postÃ³w (dzieje siÄ™ tak wtedy gdy skrypt natrafi na obszerny post)<br /><b>PamiÄ™taj</b> Å¼e podczas startu skryptu tabele phpbb_search_* zostajÄ… wyczyszczone.';
 $lang['Time_limit'] = 'Limit czasu';
-$lang['Post_limit'] = 'Limit postów';
-$lang['Finished'] = 'Zakoñczono';
-$lang['Refresh_rate'] = 'Od¶wie¿anie';
-$lang['Percentage_complete'] = 'Postêp';
-$lang['Resync_page_desc_simple'] = 'W tym miejscu mo¿esz zsynchronizowaæ bazê danych forów, to narzêdzie ustala prawdziw± warto¶æ dla: ilo¶ci tematów, postów, ostatnich postów, odpowiedzi, mo¿esz wybraæ poszczególne fora do synchronizacji, lub zaznaczyæ wszystkie.<br />Je¿eli masz du¿e forum, z du¿± ilo¶ci± tematów i postów, u¿yj trybu zaawansowanego aby synchronizowaæ fora pojedynczo.<br /><b>Przed u¿yciem tego narzêdzia powin' .  (($he) ? 'iene¶' : 'na¶') . ' zrobiæ kopiê bazy danych.</b><br />Zalecane jest dwukrotne wykonanie synchronizacji.'; 
-$lang['Resync_all_ask'] = 'Synchronizacja wszystkich forów';
+$lang['Post_limit'] = 'Limit postÃ³w';
+$lang['Finished'] = 'ZakoÅ„czono';
+$lang['Refresh_rate'] = 'OdÅ›wieÅ¼anie';
+$lang['Percentage_complete'] = 'PostÄ™p';
+$lang['Resync_page_desc_simple'] = 'W tym miejscu moÅ¼esz zsynchronizowaÄ‡ bazÄ™ danych forÃ³w, to narzÄ™dzie ustala prawdziwÄ… wartoÅ›Ä‡ dla: iloÅ›ci tematÃ³w, postÃ³w, ostatnich postÃ³w, odpowiedzi, moÅ¼esz wybraÄ‡ poszczegÃ³lne fora do synchronizacji, lub zaznaczyÄ‡ wszystkie.<br />JeÅ¼eli masz duÅ¼e forum, z duÅ¼Ä… iloÅ›ciÄ… tematÃ³w i postÃ³w, uÅ¼yj trybu zaawansowanego aby synchronizowaÄ‡ fora pojedynczo.<br /><b>Przed uÅ¼yciem tego narzÄ™dzia powin' .  (($he) ? 'ieneÅ›' : 'naÅ›') . ' zrobiÄ‡ kopiÄ™ bazy danych.</b><br />Zalecane jest dwukrotne wykonanie synchronizacji.'; 
+$lang['Resync_all_ask'] = 'Synchronizacja wszystkich forÃ³w';
 $lang['Resync_options'] = 'Opcje synchronizacji';
-$lang['Resync_forum_topics'] = 'Ilo¶æ tematów w forum';
-$lang['Resync_forum_posts'] = 'Ilo¶æ postów w forum';
+$lang['Resync_forum_topics'] = 'IloÅ›Ä‡ tematÃ³w w forum';
+$lang['Resync_forum_posts'] = 'IloÅ›Ä‡ postÃ³w w forum';
 $lang['Resync_forum_last_post'] = 'Ostatni post w forum';
-$lang['Resync_topic_replies'] = 'Ilo¶æ odpowiedzi w tematach';
+$lang['Resync_topic_replies'] = 'IloÅ›Ä‡ odpowiedzi w tematach';
 $lang['Resync_topic_last_post'] = 'Ostatni post w tematach';
-$lang['Resync_question'] = 'Wybór';
-$lang['Resync_do'] = 'Uruchom synchronizacjê';
-$lang['Resync_redirect'] = '<br /><br />Wróæ do <a href="%s">Synchronizacji</a><br /><br />Wróæ do <a href="%s">Panelu admina</a>.';
-$lang['Resync_completed'] = 'Fora oraz tematy zosta³y zsynchronizowane';
-$lang['Resync_no_forums'] = 'Brak forów do synchronizacji';
-$lang['resume_rebuild'] = '<b>Uwaga!</b> poprzednie odbudowywanie zosta³o przerwane przed ukoñczeniem zadania, kliknij %sTutaj%s aby je przywróciæ, lub %sTutaj%s aby anulowaæ. Je¿eli anulujesz, w tabelach phpbb_search_* pozostan± niepe³ne dane które zosta³y odtworzone do tej pory, zaleca sie wtedy rozpocz±æ przebudowywanie od pocz±tku.';
-$lang['value_not'] = 'Warto¶æ: <b>%s</b> nie ma odpowiednika, popraw zapytanie<br /><br />Kliknij %sTutaj%s ¿eby powróciæ';
-$lang['confirm_clear'] = 'Nie poda³' .  (($he) ? 'e' : 'a') . '¶ warunków, czy na pewno chcesz wyczy¶ciæ tê tabelê ?';
-$lang['cannot_execute'] = 'Nie mogê wykonaæ: <b>%s</b><br /><br />Kliknij %sTutaj%s ¿eby powróciæ.';
-$lang['execute_done'] = 'Ilo¶æ rekordów: <b>%s</b><br /><br /><b>%s</b><br /><br />Kliknij %sTutaj%s ¿eby powróciæ.';
-$lang['mysql_e'] = '<span style="color: red"><b>UWAGA !!!</b></span> To narzêdzie jest dla zaawansowanych u¿ytkowników! Znaj±cych dzia³anie baz SQL, niew³a¶ciwe u¿ycie mo¿e spowodowaæ trwa³± utratê danych z bazy!<br />W tym miejscu mo¿esz wykonaæ jedno lub kilka zapytañ SQL. Aby wykonaæ kilka, oddziel je znakiem <b>;</b> jednak ten znak nie mo¿e wystêpowaæ w samym zapytaniu SQL.<br />Przed u¿yciem zalecane jest wykonanie kopii bazy SQL ! Prefix tabel: <b>%s</b>';
-$lang['do_query'] = 'Wykonanie zapytania/zapytañ SQL';
+$lang['Resync_question'] = 'WybÃ³r';
+$lang['Resync_do'] = 'Uruchom synchronizacjÄ™';
+$lang['Resync_redirect'] = '<br /><br />WrÃ³Ä‡ do <a href="%s">Synchronizacji</a><br /><br />WrÃ³Ä‡ do <a href="%s">Panelu admina</a>.';
+$lang['Resync_completed'] = 'Fora oraz tematy zostaÅ‚y zsynchronizowane';
+$lang['Resync_no_forums'] = 'Brak forÃ³w do synchronizacji';
+$lang['resume_rebuild'] = '<b>Uwaga!</b> poprzednie odbudowywanie zostaÅ‚o przerwane przed ukoÅ„czeniem zadania, kliknij %sTutaj%s aby je przywrÃ³ciÄ‡, lub %sTutaj%s aby anulowaÄ‡. JeÅ¼eli anulujesz, w tabelach phpbb_search_* pozostanÄ… niepeÅ‚ne dane ktÃ³re zostaÅ‚y odtworzone do tej pory, zaleca sie wtedy rozpoczÄ…Ä‡ przebudowywanie od poczÄ…tku.';
+$lang['value_not'] = 'WartoÅ›Ä‡: <b>%s</b> nie ma odpowiednika, popraw zapytanie<br /><br />Kliknij %sTutaj%s Å¼eby powrÃ³ciÄ‡';
+$lang['confirm_clear'] = 'Nie podaÅ‚' .  (($he) ? 'e' : 'a') . 'Å› warunkÃ³w, czy na pewno chcesz wyczyÅ›ciÄ‡ tÄ™ tabelÄ™ ?';
+$lang['cannot_execute'] = 'Nie mogÄ™ wykonaÄ‡: <b>%s</b><br /><br />Kliknij %sTutaj%s Å¼eby powrÃ³ciÄ‡.';
+$lang['execute_done'] = 'IloÅ›Ä‡ rekordÃ³w: <b>%s</b><br /><br /><b>%s</b><br /><br />Kliknij %sTutaj%s Å¼eby powrÃ³ciÄ‡.';
+$lang['mysql_e'] = '<span style="color: red"><b>UWAGA !!!</b></span> To narzÄ™dzie jest dla zaawansowanych uÅ¼ytkownikÃ³w! ZnajÄ…cych dziaÅ‚anie baz SQL, niewÅ‚aÅ›ciwe uÅ¼ycie moÅ¼e spowodowaÄ‡ trwaÅ‚Ä… utratÄ™ danych z bazy!<br />W tym miejscu moÅ¼esz wykonaÄ‡ jedno lub kilka zapytaÅ„ SQL. Aby wykonaÄ‡ kilka, oddziel je znakiem <b>;</b> jednak ten znak nie moÅ¼e wystÄ™powaÄ‡ w samym zapytaniu SQL.<br />Przed uÅ¼yciem zalecane jest wykonanie kopii bazy SQL ! Prefix tabel: <b>%s</b>';
+$lang['do_query'] = 'Wykonanie zapytania/zapytaÅ„ SQL';
 $lang['execute'] = 'wykonaj';
 $lang['access_title'] = 'Zezwolenia dla SQL\'a';
-$lang['access_explain'] = 'Z powodów bezpieczeñstwa do menu SQL mog± mieæ dostêp tylko wybrani administratorzy.<br />Je¿eli nie masz dostêpu a uwa¿asz ¿e powin' .  (($he) ? 'iene¶' : 'na¶') . ' mieæ, zwróæ siê do g³ównego administratora.<br />Dopisywanie administratorów którzy maj± mieæ dostêp do SQL odbywa siê za pomoc± ID. Je¿eli nie wiesz co to znaczy to lepiej ¿eby¶ nie wiedzia³' .  (($he) ? '' : 'a') . ' i nie mia³' .  (($he) ? '' : 'a') . ' dostêpu do tej czê¶ci menu, bo mo¿e siê to skoñczyæ uszkodzeniem forum :><br />Je¶li jeste¶ "dopisanym" adminem poni¿ej jest formularz s³u¿±cy do dodania kolejnych adminów którzy bêd± mieli dostêp do SQL. Je¿eli jeste¶ g³ównym administratorem i nie widzisz formularza, kliknij %s<b>Tutaj</b>%s bêdziesz mia³' .  (($he) ? '' : 'a') . ' mo¿liwo¶æ dodania swojego ID (domy¶lnie 2)<br /><span style="color: red"><b>Pamiêtaj</b></span> ¿eby po zakoñczeniu koniecznie zmieniæ nazwê pliku <b>/admin/main_admin.php</b> lub go usun±æ, w przeciwnym razie twoi administratorzy bêd± mogli zast±piæ twoje ID swoim i bêd± mieæ dostêp do SQL.<br />W celu jeszcze wiêkszego bezpieczeñstwa wskazane jest po zakoñczeniu operacji na bazie danych, usuniêcie z tej listy zezwoleñ swojego numeru ID i zmianê nazwy pliku poprzez FTP';
+$lang['access_explain'] = 'Z powodÃ³w bezpieczeÅ„stwa do menu SQL mogÄ… mieÄ‡ dostÄ™p tylko wybrani administratorzy.<br />JeÅ¼eli nie masz dostÄ™pu a uwaÅ¼asz Å¼e powin' .  (($he) ? 'ieneÅ›' : 'naÅ›') . ' mieÄ‡, zwrÃ³Ä‡ siÄ™ do gÅ‚Ã³wnego administratora.<br />Dopisywanie administratorÃ³w ktÃ³rzy majÄ… mieÄ‡ dostÄ™p do SQL odbywa siÄ™ za pomocÄ… ID. JeÅ¼eli nie wiesz co to znaczy to lepiej Å¼ebyÅ› nie wiedziaÅ‚' .  (($he) ? '' : 'a') . ' i nie miaÅ‚' .  (($he) ? '' : 'a') . ' dostÄ™pu do tej czÄ™Å›ci menu, bo moÅ¼e siÄ™ to skoÅ„czyÄ‡ uszkodzeniem forum :><br />JeÅ›li jesteÅ› "dopisanym" adminem poniÅ¼ej jest formularz sÅ‚uÅ¼Ä…cy do dodania kolejnych adminÃ³w ktÃ³rzy bÄ™dÄ… mieli dostÄ™p do SQL. JeÅ¼eli jesteÅ› gÅ‚Ã³wnym administratorem i nie widzisz formularza, kliknij %s<b>Tutaj</b>%s bÄ™dziesz miaÅ‚' .  (($he) ? '' : 'a') . ' moÅ¼liwoÅ›Ä‡ dodania swojego ID (domyÅ›lnie 2)<br /><span style="color: red"><b>PamiÄ™taj</b></span> Å¼eby po zakoÅ„czeniu koniecznie zmieniÄ‡ nazwÄ™ pliku <b>/admin/main_admin.php</b> lub go usunÄ…Ä‡, w przeciwnym razie twoi administratorzy bÄ™dÄ… mogli zastÄ…piÄ‡ twoje ID swoim i bÄ™dÄ… mieÄ‡ dostÄ™p do SQL.<br />W celu jeszcze wiÄ™kszego bezpieczeÅ„stwa wskazane jest po zakoÅ„czeniu operacji na bazie danych, usuniÄ™cie z tej listy zezwoleÅ„ swojego numeru ID i zmianÄ™ nazwy pliku poprzez FTP';
 $lang['change_main_admin'] = 'Wpisz swoje ID (dla kilku oddziel przecinkami)';
 $lang['IPSearch_Search_by_IP'] = 'Szukaj adresu IP';
 $lang['IPSearch_Enter_IP'] = 'Podaj adres IP';
 $lang['IPSearch_Search_Results'] = 'Wyniki wyszukiwania IP';
 $lang['IPSearch_Enter_an_IP'] = 'Cofnij sie i podaj adres IP';
 $lang['IPSearch_Again'] = 'Szukaj jeszcze raz';
-$lang['smiley_del_all_success'] = 'Wszystkie u¶mieszki zosta³y usuniête';
-$lang['dell_all_smilies'] = 'Usuñ wszystkie u¶mieszki !';
-$lang['can_topic_color'] = 'Mo¿e u¿ywaæ koloru tematu';
+$lang['smiley_del_all_success'] = 'Wszystkie uÅ›mieszki zostaÅ‚y usuniÄ™te';
+$lang['dell_all_smilies'] = 'UsuÅ„ wszystkie uÅ›mieszki !';
+$lang['can_topic_color'] = 'MoÅ¼e uÅ¼ywaÄ‡ koloru tematu';
 $lang['Uninstall18'] = 'Deinstalator modyfikacji';
-$lang['uninstall_explain'] = 'W tym miejscu mo¿esz przywróciæ forum do oryginalnej postaci, mo¿e siê to okazaæ potrzebne gdy bêdziesz chcia³' .  (($he) ? '' : 'a') . ' uaktualniæ swoje forum np. do wersji phpBB 2.2.<br />Przywracanie sk³ada siê z dwóch etapów: 1. Odinstalowanie w tym miejscu modyfikacji z bazy danych. 2. Nadpisanie plików oryginalnymi plikami phpBB 2.0.x Lepszym sposobem jest usuniêcie z katalogu forum wszystkich plików, z wyj±tkiem katalogu \'images\' oraz pliku <b>config.php</b> i wgranie oryginalnych plików.<br /><br /><b>Odinstalowanie z bazy danych SQL</b><br />Pamiêtaj, ¿e gdy odinstalujesz modyfikacjê z bazy SQL nie bêdzie mo¿na tego cofn±æ. Stracisz wszystkie dodatkowe informacje, te których nie ma w oryginalnym phpBB. Zalecane jest wiêc zrobienie kopii bazy SQL.<br />Mo¿liwe jest oczywi¶cie ponowne przywrócenie forum do postaci z przed odinstalowania, pod warunkiem posiadania kopii bazy SQL. Je¿eli chcemy przywróciæ, czy¶cimy bazê danych, wgrywamy kopiê bazy i nadpisujemy pliki forum plikami phpBB modified v1.12.5 by Przemo z wyj±tkiem pliku <b>config.php</b>';
+$lang['uninstall_explain'] = 'W tym miejscu moÅ¼esz przywrÃ³ciÄ‡ forum do oryginalnej postaci, moÅ¼e siÄ™ to okazaÄ‡ potrzebne gdy bÄ™dziesz chciaÅ‚' .  (($he) ? '' : 'a') . ' uaktualniÄ‡ swoje forum np. do wersji phpBB 2.2.<br />Przywracanie skÅ‚ada siÄ™ z dwÃ³ch etapÃ³w: 1. Odinstalowanie w tym miejscu modyfikacji z bazy danych. 2. Nadpisanie plikÃ³w oryginalnymi plikami phpBB 2.0.x Lepszym sposobem jest usuniÄ™cie z katalogu forum wszystkich plikÃ³w, z wyjÄ…tkiem katalogu \'images\' oraz pliku <b>config.php</b> i wgranie oryginalnych plikÃ³w.<br /><br /><b>Odinstalowanie z bazy danych SQL</b><br />PamiÄ™taj, Å¼e gdy odinstalujesz modyfikacjÄ™ z bazy SQL nie bÄ™dzie moÅ¼na tego cofnÄ…Ä‡. Stracisz wszystkie dodatkowe informacje, te ktÃ³rych nie ma w oryginalnym phpBB. Zalecane jest wiÄ™c zrobienie kopii bazy SQL.<br />MoÅ¼liwe jest oczywiÅ›cie ponowne przywrÃ³cenie forum do postaci z przed odinstalowania, pod warunkiem posiadania kopii bazy SQL. JeÅ¼eli chcemy przywrÃ³ciÄ‡, czyÅ›cimy bazÄ™ danych, wgrywamy kopiÄ™ bazy i nadpisujemy pliki forum plikami phpBB modified v1.12.5 by Przemo z wyjÄ…tkiem pliku <b>config.php</b>';
 $lang['Uninstall'] = 'Odinstaluj';
-$lang['confirm_uninstall'] = 'Czy jeste¶ pew' .  (($he) ? 'ien' : 'na') . ' ¿e chcesz odinstalowaæ modyfikacje?<br />Spowoduje to utratê niektórych danych, powin' .  (($he) ? 'iene¶' : 'na¶') . ' posiadaæ kopiê bazy danych.';
-$lang['Set_new_version'] = 'Podaj wersjê plików phpBB2 którymi nadpiszesz istniej±ce';
-$lang['uninstall_end'] = '<span class="nav"><b>Wynik deinstalacji:</b></span><br /><span class="gensmall">Je¿eli wszystkie zapytania s± w kolorze niebieskim, oznacza to ¿e deinstalacja przebieg³a pomy¶lnie. Usuñ wszystkie dodatkowe pliki pakietu phpBB modified by Przemo, i nadpisz wszystkie istniej±ce plikami z oryginalnego pakietu phpBB 2.0.15 lub wy¿szego.</span>';
+$lang['confirm_uninstall'] = 'Czy jesteÅ› pew' .  (($he) ? 'ien' : 'na') . ' Å¼e chcesz odinstalowaÄ‡ modyfikacje?<br />Spowoduje to utratÄ™ niektÃ³rych danych, powin' .  (($he) ? 'ieneÅ›' : 'naÅ›') . ' posiadaÄ‡ kopiÄ™ bazy danych.';
+$lang['Set_new_version'] = 'Podaj wersjÄ™ plikÃ³w phpBB2 ktÃ³rymi nadpiszesz istniejÄ…ce';
+$lang['uninstall_end'] = '<span class="nav"><b>Wynik deinstalacji:</b></span><br /><span class="gensmall">JeÅ¼eli wszystkie zapytania sÄ… w kolorze niebieskim, oznacza to Å¼e deinstalacja przebiegÅ‚a pomyÅ›lnie. UsuÅ„ wszystkie dodatkowe pliki pakietu phpBB modified by Przemo, i nadpisz wszystkie istniejÄ…ce plikami z oryginalnego pakietu phpBB 2.0.15 lub wyÅ¼szego.</span>';
 $lang['query_executed'] = 'Instrukcja wykonana';
 $lang['query_not_executed'] = 'Instrukcja nie wykonana';
 $lang['Updates'] = 'Uaktualnienia';
 
-$lang['Report_post'] = 'Zg³aszanie postów';
-$lang['Report_config_updated'] = 'Ustawienia zg³aszanych postów zaktualizowane.';
-$lang['Click_return_report_config'] = 'Kliknij %sTutaj%s aby przej¶æ do ustawieñ zg³aszania postów';
-$lang['Click_return_report_auth'] = 'Kliknij %sTutaj%s aby przej¶æ do ustawieñ zezwoleñ zg³aszania postów';
-$lang['Click_return_report_auth_select'] = 'Kliknij %sTutaj%s aby przej¶æ do wyboru zezwoleñ zg³aszania postów';
-$lang['Report_config'] = 'Zg³aszanie postów - Konfiguracja';
+$lang['Report_post'] = 'ZgÅ‚aszanie postÃ³w';
+$lang['Report_config_updated'] = 'Ustawienia zgÅ‚aszanych postÃ³w zaktualizowane.';
+$lang['Click_return_report_config'] = 'Kliknij %sTutaj%s aby przejÅ›Ä‡ do ustawieÅ„ zgÅ‚aszania postÃ³w';
+$lang['Click_return_report_auth'] = 'Kliknij %sTutaj%s aby przejÅ›Ä‡ do ustawieÅ„ zezwoleÅ„ zgÅ‚aszania postÃ³w';
+$lang['Click_return_report_auth_select'] = 'Kliknij %sTutaj%s aby przejÅ›Ä‡ do wyboru zezwoleÅ„ zgÅ‚aszania postÃ³w';
+$lang['Report_config'] = 'ZgÅ‚aszanie postÃ³w - Konfiguracja';
 $lang['Report_config_explain'] = '';
 $lang['Report_popup_size'] = 'Rozmiary popup\'a';
-$lang['Report_popup_size_explain'] = 'W tym miejscu mo¿esz ustawiæ szeroko¶æ i wysoko¶æ popup\'a (w pikselach)';
+$lang['Report_popup_size_explain'] = 'W tym miejscu moÅ¼esz ustawiÄ‡ szerokoÅ›Ä‡ i wysokoÅ›Ä‡ popup\'a (w pikselach)';
 $lang['Report_popup_links_target'] = 'Okno popup\'a';
-$lang['Report_popup_links_target_explain'] = 'W tym miejscu mo¿esz ustaliæ w jakim oknie ma byæ otwierany popup';
+$lang['Report_popup_links_target_explain'] = 'W tym miejscu moÅ¼esz ustaliÄ‡ w jakim oknie ma byÄ‡ otwierany popup';
 $lang['Report_popup_links_target_0'] = 'Jako popup';
 $lang['Report_popup_links_target_1'] = 'W nowym oknie';
 $lang['Report_popup_links_target_2'] = 'W tym samym oknie';
-$lang['Report_only_admin'] = 'Tylko dla administratorów';
-$lang['Report_only_admin_explain'] = 'Je¶li w³±czysz t± opcje, tylko administratorzy bêd± powiadamiani o zg³aszanych postach';
+$lang['Report_only_admin'] = 'Tylko dla administratorÃ³w';
+$lang['Report_only_admin_explain'] = 'JeÅ›li wÅ‚Ä…czysz tÄ… opcje, tylko administratorzy bÄ™dÄ… powiadamiani o zgÅ‚aszanych postach';
 $lang['Report_no_guests'] = 'Tylko zarejestrowani';
-$lang['Report_no_guests_explain'] = 'Tylko zarejestrowani u¿ytkownicy mog± zg³aszaæ posty';
+$lang['Report_no_guests_explain'] = 'Tylko zarejestrowani uÅ¼ytkownicy mogÄ… zgÅ‚aszaÄ‡ posty';
 $lang['No_group_specified'] = 'Nie ma ustalonej grupy/grup';
-$lang['Report_already_auth'] = 'Ten u¿ytkownik/grupa ju¿ jest dodany';
-$lang['Report_auth_field_explain'] = 'Mo¿esz zaznaczyæ kilka u¿ytkowników';
-$lang['Report_permissions_explain'] = 'W tym miejscu mo¿esz zablokowaæ zg³aszanie postów, lub wy³±czyæ powiadamianie o zg³oszonych postach dla wybranych u¿ytkowników';
-$lang['Report_no_auth'] = 'Zablokuj mo¿liwo¶æ zg³aszania postów wybranym u¿ytkownikom';
-$lang['Report_disable'] = 'Wy³±cz powiadamianie o zg³aszanych postach dla wybranych u¿ytkowników';
+$lang['Report_already_auth'] = 'Ten uÅ¼ytkownik/grupa juÅ¼ jest dodany';
+$lang['Report_auth_field_explain'] = 'MoÅ¼esz zaznaczyÄ‡ kilka uÅ¼ytkownikÃ³w';
+$lang['Report_permissions_explain'] = 'W tym miejscu moÅ¼esz zablokowaÄ‡ zgÅ‚aszanie postÃ³w, lub wyÅ‚Ä…czyÄ‡ powiadamianie o zgÅ‚oszonych postach dla wybranych uÅ¼ytkownikÃ³w';
+$lang['Report_no_auth'] = 'Zablokuj moÅ¼liwoÅ›Ä‡ zgÅ‚aszania postÃ³w wybranym uÅ¼ytkownikom';
+$lang['Report_disable'] = 'WyÅ‚Ä…cz powiadamianie o zgÅ‚aszanych postach dla wybranych uÅ¼ytkownikÃ³w';
 $lang['Back'] = 'Cofnij';
-$lang['Remove'] = 'Usuñ';
-$lang['Report_post_disable'] = 'Zg³aszanie postów wy³±czone';
-$lang['Prune_users'] = 'Masowe kasowanie u¿ytkowników'; 
+$lang['Remove'] = 'UsuÅ„';
+$lang['Report_post_disable'] = 'ZgÅ‚aszanie postÃ³w wyÅ‚Ä…czone';
+$lang['Prune_users'] = 'Masowe kasowanie uÅ¼ytkownikÃ³w'; 
 $lang['Ecat'] = 'Kategoria: Edytuj';
-$lang['Dcat'] = 'Kategoria: Usuñ';
+$lang['Dcat'] = 'Kategoria: UsuÅ„';
 $lang['Rcat'] = 'Kategoria: Przemianuj';
 $lang['Efile'] = 'Pliki: Edytuj';
-$lang['Dfile'] = 'Pliki: Usuñ';
+$lang['Dfile'] = 'Pliki: UsuÅ„';
 $lang['Efield'] = 'Dodatki: Edytuj';
-$lang['Dfield'] = 'Dodatki: Usuñ';
-$lang['wrong_config_parametr'] = $lang['Server_name'] . ' nie mo¿e zawieraæ <b>%s</b> !';
-$lang['Forum_link'] = 'Link zewnêtrzny';
-$lang['User_allow_helped'] = 'Mo¿e u¿ywaæ punktów "Pomóg³"';
-$lang['User_allow_helped_e'] = 'W³±cza lub wy³±cza zarówno u¿ywanie przycisku "Pomóg³" jak i ukrywa ilo¶æ punktów "Pomóg³" uzyskanych przez tego u¿ytkownika';
-$lang['Admin_notepad'] = 'Notatnik Administratorów';
-$lang['confirm_deluser'] = 'Czy jeste¶ pew' .  (($he) ? 'ien' : 'na') . ' ¿e chcesz usun±æ tego u¿ytkownika ?';
+$lang['Dfield'] = 'Dodatki: UsuÅ„';
+$lang['wrong_config_parametr'] = $lang['Server_name'] . ' nie moÅ¼e zawieraÄ‡ <b>%s</b> !';
+$lang['Forum_link'] = 'Link zewnÄ™trzny';
+$lang['User_allow_helped'] = 'MoÅ¼e uÅ¼ywaÄ‡ punktÃ³w "PomÃ³gÅ‚"';
+$lang['User_allow_helped_e'] = 'WÅ‚Ä…cza lub wyÅ‚Ä…cza zarÃ³wno uÅ¼ywanie przycisku "PomÃ³gÅ‚" jak i ukrywa iloÅ›Ä‡ punktÃ³w "PomÃ³gÅ‚" uzyskanych przez tego uÅ¼ytkownika';
+$lang['Admin_notepad'] = 'Notatnik AdministratorÃ³w';
+$lang['confirm_deluser'] = 'Czy jesteÅ› pew' .  (($he) ? 'ien' : 'na') . ' Å¼e chcesz usunÄ…Ä‡ tego uÅ¼ytkownika ?';
 $lang['Forum_moderate'] = 'Forum moderowane';
-$lang['Forum_moderate_e'] = 'Tematy i posty bêd± oczekiwa³y na akceptacjê przez Moderatora lub Administratora';
+$lang['Forum_moderate_e'] = 'Tematy i posty bÄ™dÄ… oczekiwaÅ‚y na akceptacjÄ™ przez Moderatora lub Administratora';
 $lang['Tree_req'] = 'Tematy tylko w formie drzewa';
-$lang['Tree_req_grade'] = 'Po ilu stopniach drzewa zmniejszenie odleg³o¶ci stopni drzewa<br />0 - Wy³±cza ca³kowicie drzewa w forum';
-$lang['Prune_explain'] = 'Nie zostan± usuniête tematy zawieraj±ce sondy lub bêd±ce og³oszeniami lub tematami przyklejonymi.';
-$lang['No_count'] = 'Niezliczanie postów';
-$lang['Forums_shadow'] = 'Fora nieskojarzone z ¿adn± kategori±';
-$lang['Wrong_category'] = 'Nie mo¿esz przypisaæ forum samego do siebie.';
+$lang['Tree_req_grade'] = 'Po ilu stopniach drzewa zmniejszenie odlegÅ‚oÅ›ci stopni drzewa<br />0 - WyÅ‚Ä…cza caÅ‚kowicie drzewa w forum';
+$lang['Prune_explain'] = 'Nie zostanÄ… usuniÄ™te tematy zawierajÄ…ce sondy lub bÄ™dÄ…ce ogÅ‚oszeniami lub tematami przyklejonymi.';
+$lang['No_count'] = 'Niezliczanie postÃ³w';
+$lang['Forums_shadow'] = 'Fora nieskojarzone z Å¼adnÄ… kategoriÄ…';
+$lang['Wrong_category'] = 'Nie moÅ¼esz przypisaÄ‡ forum samego do siebie.';
 $lang['All_forums'] = 'Wszystkie fora i kategorie';
-$lang['log_file_limit_info'] = 'Plik logów <b>/admin/admin_logs.'.$phpEx.'</b> jest zbyt du¿y (%sMb) aby go otworzyæ w oknie przegl±darki.<br /><br />Plik zosta³ skompresowany i znajduje siê w: <b>%s</b><br /><br />Kliknij %sTutaj%s aby go pobraæ.<br /><br />Po ¶ci±gniêciu KONIECZNIE usuñ go z katalogu /files/ mo¿esz te¿ wyczy¶ciæ stary plik /admin/admin_logs.'.$phpEx;
-$lang['log_file_limit_error1'] = 'B³±d odczytu pliku: <b>%s</b>';
-$lang['log_file_limit_error2'] = 'B³±d zapisu skompresowanego pliku: <b>%s</b>';
+$lang['log_file_limit_info'] = 'Plik logÃ³w <b>/admin/admin_logs.'.$phpEx.'</b> jest zbyt duÅ¼y (%sMb) aby go otworzyÄ‡ w oknie przeglÄ…darki.<br /><br />Plik zostaÅ‚ skompresowany i znajduje siÄ™ w: <b>%s</b><br /><br />Kliknij %sTutaj%s aby go pobraÄ‡.<br /><br />Po Å›ciÄ…gniÄ™ciu KONIECZNIE usuÅ„ go z katalogu /files/ moÅ¼esz teÅ¼ wyczyÅ›ciÄ‡ stary plik /admin/admin_logs.'.$phpEx;
+$lang['log_file_limit_error1'] = 'BÅ‚Ä…d odczytu pliku: <b>%s</b>';
+$lang['log_file_limit_error2'] = 'BÅ‚Ä…d zapisu skompresowanego pliku: <b>%s</b>';
 
-$lang['Confirm_delete_all'] = 'Czy na pewno chcesz usun±æ wszystkie: <b>%s</b> ?';
-$lang['Split'] = '£±czenie';
+$lang['Confirm_delete_all'] = 'Czy na pewno chcesz usunÄ…Ä‡ wszystkie: <b>%s</b> ?';
+$lang['Split'] = 'ÅÄ…czenie';
 $lang['Expire'] = 'Wygasanie';
-$lang['Warning_delete'] = 'Usuniêcie ostrze¿enia';
-$lang['Warning_edit'] = 'Edycja ostrze¿enia';
+$lang['Warning_delete'] = 'UsuniÄ™cie ostrzeÅ¼enia';
+$lang['Warning_edit'] = 'Edycja ostrzeÅ¼enia';
 $lang['Object'] = 'Obiekt';
-$lang['Group_mail_enable'] = 'Moderator grupy mo¿e wysy³aæ masow± korespondencjê do cz³onków grupy ?';
-$lang['Forum_trash'] = 'Forum jako ¶mietnik';
-$lang['Forum_trash_e'] = 'Gdy ustawisz forum jako ¶mietnik, podczas kasowania tematów pojawi siê dodatkowy przycisk s³u¿±cy przenoszeniu tematu do ¶mietnika';
-$lang['Resync_page_posts'] = 'Synchronizacja u¿ytkowników';
-$lang['No_themes'] = 'Brak Szablonów w bazie danych';
-$lang['Group_prefix'] = 'Prefix, pojawi siê przed nazw± u¿ytkowników';
+$lang['Group_mail_enable'] = 'Moderator grupy moÅ¼e wysyÅ‚aÄ‡ masowÄ… korespondencjÄ™ do czÅ‚onkÃ³w grupy ?';
+$lang['Forum_trash'] = 'Forum jako Å›mietnik';
+$lang['Forum_trash_e'] = 'Gdy ustawisz forum jako Å›mietnik, podczas kasowania tematÃ³w pojawi siÄ™ dodatkowy przycisk sÅ‚uÅ¼Ä…cy przenoszeniu tematu do Å›mietnika';
+$lang['Resync_page_posts'] = 'Synchronizacja uÅ¼ytkownikÃ³w';
+$lang['No_themes'] = 'Brak SzablonÃ³w w bazie danych';
+$lang['Group_prefix'] = 'Prefix, pojawi siÄ™ przed nazwÄ… uÅ¼ytkownikÃ³w';
 $lang['Group_no_unsub'] = 'Zakaz opuszczania';
-$lang['Groups_color_explain'] = 'Mo¿esz wyró¿niæ grupy, ustawiaj±c im kolor prefix oraz styl. Je¿eli w edycji danych stylu, usuniesz kolor dla Admina, Moda lub Junior Admina nie bêd± oni oznaczani kolorem i bêdziesz ' .  (($he) ? 'móg³' : 'mog³a') . ' ich przypisaæ do wyró¿nionej grupy, zniknie te¿ opis kolorów m.in. na stronie g³ównej.<br />Wiele stylów oddziel ¶rednikiem, przyk³ady: <b>font-weight: bold; font-size: 16px; text-decoration: line-through; font-style: italic; filter: glow(color=#FF0000);height:10</b> i wiele innych (max. 255 znaków)';
+$lang['Groups_color_explain'] = 'MoÅ¼esz wyrÃ³Å¼niÄ‡ grupy, ustawiajÄ…c im kolor prefix oraz styl. JeÅ¼eli w edycji danych stylu, usuniesz kolor dla Admina, Moda lub Junior Admina nie bÄ™dÄ… oni oznaczani kolorem i bÄ™dziesz ' .  (($he) ? 'mÃ³gÅ‚' : 'mogÅ‚a') . ' ich przypisaÄ‡ do wyrÃ³Å¼nionej grupy, zniknie teÅ¼ opis kolorÃ³w m.in. na stronie gÅ‚Ã³wnej.<br />Wiele stylÃ³w oddziel Å›rednikiem, przykÅ‚ady: <b>font-weight: bold; font-size: 16px; text-decoration: line-through; font-style: italic; filter: glow(color=#FF0000);height:10</b> i wiele innych (max. 255 znakÃ³w)';
 $lang['Group_style'] = 'Styl';
-$lang['Separate_topics'] = 'Oddzielone wa¿ne tematy';
+$lang['Separate_topics'] = 'Oddzielone waÅ¼ne tematy';
 $lang['Separate_total'] = 'osobne tabele';
 $lang['Separate_med'] = 'belka';
-$lang['Show_global_announce'] = 'Pokazuj wa¿ne og³oszenia z innych dzia³ów';
+$lang['Show_global_announce'] = 'Pokazuj waÅ¼ne ogÅ‚oszenia z innych dziaÅ‚Ã³w';
 $lang['Advert_title'] = 'Reklama';
-$lang['Show_hosts'] = 'Poka¿ hosty';
-$lang['Forum_no_split'] = 'Nie ³±cz postów';
-$lang['Forum_no_helped'] = 'Wy³±cz "Pomóg³"';
-$lang['topic_tags'] = 'Tagi tematów, oddzielaj przecinkami, nie u¿ywaj znaków <b>[]</b>';
-$lang['sort_methods'] = 'Zablokowane na dó³';
+$lang['Show_hosts'] = 'PokaÅ¼ hosty';
+$lang['Forum_no_split'] = 'Nie Å‚Ä…cz postÃ³w';
+$lang['Forum_no_helped'] = 'WyÅ‚Ä…cz "PomÃ³gÅ‚"';
+$lang['topic_tags'] = 'Tagi tematÃ³w, oddzielaj przecinkami, nie uÅ¼ywaj znakÃ³w <b>[]</b>';
+$lang['sort_methods'] = 'Zablokowane na dÃ³Å‚';
 
-$lang['Statistics_management'] = 'Modu³y statystyk';
+$lang['Statistics_management'] = 'ModuÅ‚y statystyk';
 $lang['Statistics_config'] = 'Konfiguracja statystyk';
-$lang['Acces_menu_denied'] = 'Nie masz dostêpu do tego menu';
+$lang['Acces_menu_denied'] = 'Nie masz dostÄ™pu do tego menu';
 $lang['Check-files'] = 'Kontrola Systemu';
-$lang['New_info'] = 'Proszê czekaæ, trwa pobieranie informacji o aktualizacjach ...';
+$lang['New_info'] = 'ProszÄ™ czekaÄ‡, trwa pobieranie informacji o aktualizacjach ...';
 $lang['forum_compress'] = 'przez skrypt';
 $lang['server_compress'] = 'przez serwer';
 $lang['Name'] = 'Nazwa';
-$lang['Files_count'] = 'Ilo¶æ plików';
-$lang['Rows_count'] = 'Ilo¶æ wpisów';
+$lang['Files_count'] = 'IloÅ›Ä‡ plikÃ³w';
+$lang['Rows_count'] = 'IloÅ›Ä‡ wpisÃ³w';
 $lang['Config_setup'] = 'Zapis konfiguracji';
-$lang['Config_setup_e'] = 'W tym miejscu mo¿esz zapisaæ bie¿±c± konfiguracjê forum, odtworzyæ zapisan± konfiguracjê, ustawiæ minimaln± i maksymaln± konfiguracjê. Dotyczy to ogólnej konfiguracji forum, ostrze¿eñ, shoutbox\'a, za³±czników, oraz zg³aszania postów. Dotyczy to tylko konfiguracji, nie dotyczy informacji które s± dodawane jak np. zezwolenia, u¶mieszki, cenzura s³ów, zainstalowane style, banlista, pola w profilu, zabronione nazwy, grupy, fora, kategorie, rozszerzenia za³±czników.';
-$lang['Default_config'] = 'Ustaw domy¶ln± konfiguracjê';
-$lang['Max_config'] = 'Ustaw maksymaln± konfiguracjê';
-$lang['Min_config'] = 'Ustaw minimaln± konfiguracjê';
-$lang['Save_config'] = 'Zapisz bie¿±c± konfiguracjê';
-$lang['Saved_config'] = 'Ustaw konfiguracjê zapisan±: %s';
-$lang['Permissions_List'] = 'Lista zezwoleñ';                  
-$lang['Forum_auth_list_explain'] = 'Lista zezwoleñ dla wszystkich forów. Mo¿esz je edytowaæ klikaj±c na button "Edycja zezwoleñ" na dole forum.';                                                                  
-$lang['Forum_auth_list_explain_ALL'] = 'Wszyscy u¿ytkownicy';                                                          
-$lang['Forum_auth_list_explain_REG'] = 'Wszyscy zarejestrowani u¿ytkownicy';                                               
-$lang['Forum_auth_list_explain_PRIVATE'] = 'Tylko u¿ytkownicy ze specjalnymi zezwoleniami';                          
+$lang['Config_setup_e'] = 'W tym miejscu moÅ¼esz zapisaÄ‡ bieÅ¼Ä…cÄ… konfiguracjÄ™ forum, odtworzyÄ‡ zapisanÄ… konfiguracjÄ™, ustawiÄ‡ minimalnÄ… i maksymalnÄ… konfiguracjÄ™. Dotyczy to ogÃ³lnej konfiguracji forum, ostrzeÅ¼eÅ„, shoutbox\'a, zaÅ‚Ä…cznikÃ³w, oraz zgÅ‚aszania postÃ³w. Dotyczy to tylko konfiguracji, nie dotyczy informacji ktÃ³re sÄ… dodawane jak np. zezwolenia, uÅ›mieszki, cenzura sÅ‚Ã³w, zainstalowane style, banlista, pola w profilu, zabronione nazwy, grupy, fora, kategorie, rozszerzenia zaÅ‚Ä…cznikÃ³w.';
+$lang['Default_config'] = 'Ustaw domyÅ›lnÄ… konfiguracjÄ™';
+$lang['Max_config'] = 'Ustaw maksymalnÄ… konfiguracjÄ™';
+$lang['Min_config'] = 'Ustaw minimalnÄ… konfiguracjÄ™';
+$lang['Save_config'] = 'Zapisz bieÅ¼Ä…cÄ… konfiguracjÄ™';
+$lang['Saved_config'] = 'Ustaw konfiguracjÄ™ zapisanÄ…: %s';
+$lang['Permissions_List'] = 'Lista zezwoleÅ„';                  
+$lang['Forum_auth_list_explain'] = 'Lista zezwoleÅ„ dla wszystkich forÃ³w. MoÅ¼esz je edytowaÄ‡ klikajÄ…c na button "Edycja zezwoleÅ„" na dole forum.';                                                                  
+$lang['Forum_auth_list_explain_ALL'] = 'Wszyscy uÅ¼ytkownicy';                                                          
+$lang['Forum_auth_list_explain_REG'] = 'Wszyscy zarejestrowani uÅ¼ytkownicy';                                               
+$lang['Forum_auth_list_explain_PRIVATE'] = 'Tylko uÅ¼ytkownicy ze specjalnymi zezwoleniami';                          
 $lang['Forum_auth_list_explain_MOD'] = 'Tylko moderatorzy tego forum';                                      
 $lang['Forum_auth_list_explain_ADMIN'] = 'Tylko administratorzy';                                              
-$lang['Forum_auth_list_explain_auth_view'] = '%s mog± ogl±daæ to forum';                                       
-$lang['Forum_auth_list_explain_auth_read'] = '%s mog± czytaæ posty w tym forum';                              
-$lang['Forum_auth_list_explain_auth_post'] = '%s mog± pisaæ nowe posty w tym forum';                                    
-$lang['Forum_auth_list_explain_auth_reply'] = '%s mog± opowiadaæ na posty w tym forum';                            
-$lang['Forum_auth_list_explain_auth_edit'] = '%s mog± edytowaæ posty w tym forum';                              
-$lang['Forum_auth_list_explain_auth_delete'] = '%s mog± usuwaæ posty w tym forum';                          
-$lang['Forum_auth_list_explain_auth_sticky'] = '%s mog± ustawiaæ przyklejone tematy w tym forum';                    
-$lang['Forum_auth_list_explain_auth_announce'] = '%s mog± pisaæ og³oszenia w tym forum';                  
-$lang['Forum_auth_list_explain_auth_vote'] = '%s mog± braæ udzia³ w g³osowaniu w sondach w tym forum';                           
-$lang['Forum_auth_list_explain_auth_pollcreate'] = '%s mog± tworzyæ ankiety w tym forum';                      
+$lang['Forum_auth_list_explain_auth_view'] = '%s mogÄ… oglÄ…daÄ‡ to forum';                                       
+$lang['Forum_auth_list_explain_auth_read'] = '%s mogÄ… czytaÄ‡ posty w tym forum';                              
+$lang['Forum_auth_list_explain_auth_post'] = '%s mogÄ… pisaÄ‡ nowe posty w tym forum';                                    
+$lang['Forum_auth_list_explain_auth_reply'] = '%s mogÄ… opowiadaÄ‡ na posty w tym forum';                            
+$lang['Forum_auth_list_explain_auth_edit'] = '%s mogÄ… edytowaÄ‡ posty w tym forum';                              
+$lang['Forum_auth_list_explain_auth_delete'] = '%s mogÄ… usuwaÄ‡ posty w tym forum';                          
+$lang['Forum_auth_list_explain_auth_sticky'] = '%s mogÄ… ustawiaÄ‡ przyklejone tematy w tym forum';                    
+$lang['Forum_auth_list_explain_auth_announce'] = '%s mogÄ… pisaÄ‡ ogÅ‚oszenia w tym forum';                  
+$lang['Forum_auth_list_explain_auth_vote'] = '%s mogÄ… braÄ‡ udziaÅ‚ w gÅ‚osowaniu w sondach w tym forum';                           
+$lang['Forum_auth_list_explain_auth_pollcreate'] = '%s mogÄ… tworzyÄ‡ ankiety w tym forum';                      
 $lang['Cancel'] = 'Anuluj';
-$lang['Edit_permissions'] = 'Edycja zezwoleñ';
+$lang['Edit_permissions'] = 'Edycja zezwoleÅ„';
 
-$lang['Forum_out_of_date'] = 'Twoje forum jest NIEAKTUALNE! <a href="http://przemo.org/phpBB2/index.php?cid=0">Pobierz</a> najnowsz± wersjê!';
+$lang['Forum_out_of_date'] = 'Twoje forum jest NIEAKTUALNE! <a href="http://przemo.org/phpBB2/index.php?cid=0">Pobierz</a> najnowszÄ… wersjÄ™!';
 $lang['Forum_up_to_date'] = 'Twoje forum jest aktualne.';
-$lang['Forum_search_for_updates'] = 'Sprawd¼ teraz';
+$lang['Forum_search_for_updates'] = 'SprawdÅº teraz';
 $lang['Forum_last_update_check'] = 'Ostatnio sprawdzano %s';
 $lang['Forum_last_update_check_minutes_ago'] = '%d minut temu';
 $lang['Forum_last_update_check_hours_ago'] = '%d godzin temu';

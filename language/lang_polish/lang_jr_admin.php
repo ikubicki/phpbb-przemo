@@ -1,7 +1,7 @@
 <?php
 $lang['JR_title'] = 'Zezwolenia Junior Admina';
-$lang['JR_description'] = 'W tym miejscu mo¿esz edytowaæ zezwolenia dostêpu Junior Adminów do modu³ów Panelu Administracyjnego.<br />Je¿eli wybrany u¿ytkownik ma chocia¿ jeden modu³, staje siê Junior Adminem';
-$lang['Modules'] = 'Modu³ów';
-$lang['Click_return_admin_jr'] = 'Zezwolenia zosta³y zapisane.<br /><br />Kliknij %sTutaj%s aby powróciæ do Listy U¿ytkowników.<br /><br />Kliknij %sTutaj%s aby powrócic do zezwoleñ wybranego u¿ytkownika.';
+$lang['JR_description'] = 'W tym miejscu moÅ¼esz edytowaÄ‡ zezwolenia dostÄ™pu Junior AdminÃ³w do moduÅ‚Ã³w Panelu Administracyjnego.<br />JeÅ¼eli wybrany uÅ¼ytkownik ma chociaÅ¼ jeden moduÅ‚, staje siÄ™ Junior Adminem';
+$lang['Modules'] = 'ModuÅ‚Ã³w';
+$lang['Click_return_admin_jr'] = 'Zezwolenia zostaÅ‚y zapisane.<br /><br />Kliknij %sTutaj%s aby powrÃ³ciÄ‡ do Listy UÅ¼ytkownikÃ³w.<br /><br />Kliknij %sTutaj%s aby powrÃ³cic do zezwoleÅ„ wybranego uÅ¼ytkownika.';
 
 ?>

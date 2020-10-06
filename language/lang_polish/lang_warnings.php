@@ -17,16 +17,16 @@
  *
  ***************************************************************************/
 
-$lang['how_many_warnings'] = 'OstrzeøeÒ';
-$lang['value'] = 'Warto∂Ê';
-$lang['add'] = 'Doda≥';
-$lang['warnings'] = 'Ostrzeøenia uøytkownikÛw';
+$lang['how_many_warnings'] = 'Ostrze≈ºe≈Ñ';
+$lang['value'] = 'Warto≈õƒá';
+$lang['add'] = 'Doda≈Ç';
+$lang['warnings'] = 'Ostrze≈ºenia u≈ºytkownik√≥w';
 if ( $board_config['mod_warnings'] )
 {
 	if ( $board_config['mod_edit_warnings'] ) $lang['mod_edit_warnings'] = 'Tak'; else $lang['mod_edit_warnings'] = 'Nie';
 	$lang['mod_warnings'] = 'Tak'; 
-	$lang['mod_edit_warnings'] = '<br />- Moderatorzy mog± edytowaÊ ostrzeøenia dodane przez innych: <b><u>' . $lang['mod_edit_warnings'] . '</u></b>';
-	$lang['mod_value_warning'] = '<br />- Maksymalna warto∂Ê ostrzeøenia dodanego przez moderatora to: <b><u>' . $board_config['mod_value_warning'] . '</u></b>';
+	$lang['mod_edit_warnings'] = '<br />- Moderatorzy mogƒÖ edytowaƒá ostrze≈ºenia dodane przez innych: <b><u>' . $lang['mod_edit_warnings'] . '</u></b>';
+	$lang['mod_value_warning'] = '<br />- Maksymalna warto≈õƒá ostrze≈ºenia dodanego przez moderatora to: <b><u>' . $board_config['mod_value_warning'] . '</u></b>';
 }
 else
 {
@@ -36,53 +36,53 @@ else
 }
 if ( $board_config['expire_warnings'] < 1 )
 {
-	$expire_war = 'nie wygasaj± z up≥ywem czasu';
+	$expire_war = 'nie wygasajƒÖ z up≈Çywem czasu';
 }
 else
 {
-	$expire_war = 'wygasaj± po <b>' . $board_config['expire_warnings'] . '</b> dniach';
+	$expire_war = 'wygasajƒÖ po <b>' . $board_config['expire_warnings'] . '</b> dniach';
 }
 if ( $board_config['warnings_mods_public'] ) $lang['warnings_mods_public'] = 'Tak'; else $lang['warnings_mods_public'] = 'Nie';
-$lang['warnings_e'] = 'W tym miejscu wy∂wietlani s± uøytkownicy, posiadaj±cy na swoim koncie ostrzeøenia dodane przez administratorÛw, lub moderatorÛw.<br /><hr /><span class="gensmall"><b>Ustawienia ostrzeøeÒ:</b><br />- Zablokowanie moøliwo∂ci pisania postÛw po warto∂ci ostrzeøeÒ: <b><u>' . $board_config['write_warnings'] . '</u></b><br />- Zablokowanie moøliwo∂ci wej∂cia na forum po warto∂ci ostrzeøeÒ: <b><u>' . $board_config['ban_warnings'] . '</u></b><br />- Ostrzeøenia ' . $expire_war . '<br />- Uøytkownicy mog± widzieÊ od kogo dostali ostrzeøenie: <b><u>' . $lang['warnings_mods_public'] . '</u></b><br />- Moderatorzy mog± dodawaÊ ostrzeøenia: <b><u>' . $lang['mod_warnings'] . '</u></b>' . $lang['mod_edit_warnings'] . '' . $lang['mod_value_warning'] . '</span>';
-$lang['add_warning'] = 'Dodaj ostrzeøenie';
-$lang['index_warning'] = 'Strona g≥Ûwna ostrzeøeÒ';
-$lang['action'] = 'Czynno∂Ê';
-$lang['Click_view_edited_warning'] = 'Ostrzeøenie zmienione. Kliknij %sTutaj%s aby przej∂Ê do widoku ostrzeøeÒ tego uøytkownika';
-$lang['Click_view_deleted_warning'] = 'Ostrzeøenie usuniÍte. Kliknij %sTutaj%s aby wrÛciÊ do widoku ostrzeøeÒ';
-$lang['Click_to_back'] = 'Kliknij %sTutaj%s øeby wrÛciÊ';
-$lang['Click_view_added'] = 'Ostrzeøenie dodane. Kliknij %sTutaj%s aby przej∂Ê do widoku ostrzeøeÒ tego uøytkownika';
-$lang['list_empty'] = 'Nie ma øadnych ostrzeøeÒ<br /><br />';
-$lang['wrong_value'] = 'Nieprawid≥owa warto∂Ê';
-$lang['reason_empty'] = 'Musisz podaÊ powÛd';
-$lang['user_empty'] = 'Musisz wybraÊ uøytkownika';
-$lang['wrong_user'] = 'Podany uøytkownik jest nieprawid≥owy, nie ma go na li∂cie uøytkownikÛw';
-$lang['add_warning_e'] = 'Dodawanie nowego ostrzeøenia';
-$lang['list_users'] = 'Lista uøytkownikÛw ktÛrzy dostali ostrzeøenia';
-$lang['view_warning_detail'] = 'Widok szczegÛ≥owy ostrzeøeÒ dla uøytkownika';
-$lang['view_warning_modid'] = 'Ostrzeøenia ktÛre wystawi≥';
+$lang['warnings_e'] = 'W tym miejscu wy≈õwietlani sƒÖ u≈ºytkownicy, posiadajƒÖcy na swoim koncie ostrze≈ºenia dodane przez administrator√≥w, lub moderator√≥w.<br /><hr /><span class="gensmall"><b>Ustawienia ostrze≈ºe≈Ñ:</b><br />- Zablokowanie mo≈ºliwo≈õci pisania post√≥w po warto≈õci ostrze≈ºe≈Ñ: <b><u>' . $board_config['write_warnings'] . '</u></b><br />- Zablokowanie mo≈ºliwo≈õci wej≈õcia na forum po warto≈õci ostrze≈ºe≈Ñ: <b><u>' . $board_config['ban_warnings'] . '</u></b><br />- Ostrze≈ºenia ' . $expire_war . '<br />- U≈ºytkownicy mogƒÖ widzieƒá od kogo dostali ostrze≈ºenie: <b><u>' . $lang['warnings_mods_public'] . '</u></b><br />- Moderatorzy mogƒÖ dodawaƒá ostrze≈ºenia: <b><u>' . $lang['mod_warnings'] . '</u></b>' . $lang['mod_edit_warnings'] . '' . $lang['mod_value_warning'] . '</span>';
+$lang['add_warning'] = 'Dodaj ostrze≈ºenie';
+$lang['index_warning'] = 'Strona g≈Ç√≥wna ostrze≈ºe≈Ñ';
+$lang['action'] = 'Czynno≈õƒá';
+$lang['Click_view_edited_warning'] = 'Ostrze≈ºenie zmienione. Kliknij %sTutaj%s aby przej≈õƒá do widoku ostrze≈ºe≈Ñ tego u≈ºytkownika';
+$lang['Click_view_deleted_warning'] = 'Ostrze≈ºenie usuniƒôte. Kliknij %sTutaj%s aby wr√≥ciƒá do widoku ostrze≈ºe≈Ñ';
+$lang['Click_to_back'] = 'Kliknij %sTutaj%s ≈ºeby wr√≥ciƒá';
+$lang['Click_view_added'] = 'Ostrze≈ºenie dodane. Kliknij %sTutaj%s aby przej≈õƒá do widoku ostrze≈ºe≈Ñ tego u≈ºytkownika';
+$lang['list_empty'] = 'Nie ma ≈ºadnych ostrze≈ºe≈Ñ<br /><br />';
+$lang['wrong_value'] = 'Nieprawid≈Çowa warto≈õƒá';
+$lang['reason_empty'] = 'Musisz podaƒá pow√≥d';
+$lang['user_empty'] = 'Musisz wybraƒá u≈ºytkownika';
+$lang['wrong_user'] = 'Podany u≈ºytkownik jest nieprawid≈Çowy, nie ma go na li≈õcie u≈ºytkownik√≥w';
+$lang['add_warning_e'] = 'Dodawanie nowego ostrze≈ºenia';
+$lang['list_users'] = 'Lista u≈ºytkownik√≥w kt√≥rzy dostali ostrze≈ºenia';
+$lang['view_warning_detail'] = 'Widok szczeg√≥≈Çowy ostrze≈ºe≈Ñ dla u≈ºytkownika';
+$lang['view_warning_modid'] = 'Ostrze≈ºenia kt√≥re wystawi≈Ç';
 $lang['warning_archive'] = 'Archiwum';
 $lang['write_denied'] = ' zakaz pisania';
 $lang['banned'] = ' zbanowany';
-$lang['no_warning'] = 'Nie moøesz daÊ ostrzeøenia temu uøytkownikowi';
+$lang['no_warning'] = 'Nie mo≈ºesz daƒá ostrze≈ºenia temu u≈ºytkownikowi';
 
 // Admin
-$lang['Warnings_e'] = 'W tym miejscu moøesz w≥±czyÊ moøliwo∂Ê dodawania uøytkownikom ostrzeøeÒ, przez AdministratorÛw lub ModeratorÛw. Uøytkownikom moøna dawaÊ ostrzeøenia o rÛønej warto∂ci, w zaleøno∂ci od ustawionej warto∂ci, po osi±gniÍciu jej uøytkownik moøe mieÊ zablokowan± moøliwo∂Ê pisania, lub zablokowane wej∂cie na forum. Obydwa progi moøna w≥±czyÊ na raz, moøna ustaliÊ ich wielko∂Ê, oraz czas trwania ostrzeøeÒ';
-$lang['l_warnings_enable'] = 'Ostrzeøenia w≥±czone';
-$lang['l_mod_warnings'] = 'Moderatorzy mog± dawaÊ ostrzeøenia';
-$lang['l_mod_edit_warnings'] = 'Moderatorzy mog± edytowaÊ ostrzeøenia ktÛrych nie wystawili';
-$lang['l_mod_value_warning'] = 'Maksymalna warto∂Ê ostrzeøenia dla moderatorÛw';
+$lang['Warnings_e'] = 'W tym miejscu mo≈ºesz w≈ÇƒÖczyƒá mo≈ºliwo≈õƒá dodawania u≈ºytkownikom ostrze≈ºe≈Ñ, przez Administrator√≥w lub Moderator√≥w. U≈ºytkownikom mo≈ºna dawaƒá ostrze≈ºenia o r√≥≈ºnej warto≈õci, w zale≈ºno≈õci od ustawionej warto≈õci, po osiƒÖgniƒôciu jej u≈ºytkownik mo≈ºe mieƒá zablokowanƒÖ mo≈ºliwo≈õƒá pisania, lub zablokowane wej≈õcie na forum. Obydwa progi mo≈ºna w≈ÇƒÖczyƒá na raz, mo≈ºna ustaliƒá ich wielko≈õƒá, oraz czas trwania ostrze≈ºe≈Ñ';
+$lang['l_warnings_enable'] = 'Ostrze≈ºenia w≈ÇƒÖczone';
+$lang['l_mod_warnings'] = 'Moderatorzy mogƒÖ dawaƒá ostrze≈ºenia';
+$lang['l_mod_edit_warnings'] = 'Moderatorzy mogƒÖ edytowaƒá ostrze≈ºenia kt√≥rych nie wystawili';
+$lang['l_mod_value_warning'] = 'Maksymalna warto≈õƒá ostrze≈ºenia dla moderator√≥w';
 $lang['l_write_warnings'] = 'Blokada pisania';
-$lang['l_write_warnings_e'] = 'Po jakiej warto∂ci ostrzeøeÒ uøytkownik nie bÍdzie mÛg≥ pisac na forum';
-$lang['l_ban_warnings'] = 'Blokada wej∂cia na forum';
-$lang['l_ban_warnings_e'] = 'Po jakiej warto∂ci ostrzeøeÒ uøytkownik nie bÍdzie mÛg≥ wej∂Ê na forum';
-$lang['l_expire_warnings'] = 'Czas trwania ostrzeøenia';
-$lang['l_expire_warnings_e'] = 'Podaj czas po ilu dniach ostrzeøenie zniknie od momentu jego wystawienia. 0 - wy≥±czone';
-$lang['l_warnings_mods_public'] = 'Widoczny autor ostrzeøenia';
-$lang['l_warnings_mods_public_e'] = 'Uøytkownicy mog± widzieÊ kto da≥ ostrzeøenie';
-$lang['detail'] = 'SzczegÛ≥y';
+$lang['l_write_warnings_e'] = 'Po jakiej warto≈õci ostrze≈ºe≈Ñ u≈ºytkownik nie bƒôdzie m√≥g≈Ç pisac na forum';
+$lang['l_ban_warnings'] = 'Blokada wej≈õcia na forum';
+$lang['l_ban_warnings_e'] = 'Po jakiej warto≈õci ostrze≈ºe≈Ñ u≈ºytkownik nie bƒôdzie m√≥g≈Ç wej≈õƒá na forum';
+$lang['l_expire_warnings'] = 'Czas trwania ostrze≈ºenia';
+$lang['l_expire_warnings_e'] = 'Podaj czas po ilu dniach ostrze≈ºenie zniknie od momentu jego wystawienia. 0 - wy≈ÇƒÖczone';
+$lang['l_warnings_mods_public'] = 'Widoczny autor ostrze≈ºenia';
+$lang['l_warnings_mods_public_e'] = 'U≈ºytkownicy mogƒÖ widzieƒá kto da≈Ç ostrze≈ºenie';
+$lang['detail'] = 'Szczeg√≥≈Çy';
 $lang['hide_config'] = 'Ukryj ustawienia';
-$lang['show_config'] = 'Pokaø ustawienia';
-$lang['viewtopic_warnings'] = 'Ostrzeøenia pod avatarem';
+$lang['show_config'] = 'Poka≈º ustawienia';
+$lang['viewtopic_warnings'] = 'Ostrze≈ºenia pod avatarem';
 $lang['added_by'] = 'Otrzymane od';
 
 ?>

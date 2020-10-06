@@ -35,11 +35,11 @@ $lang['xs_template'] = 'Schemat';
 $lang['xs_id'] = 'ID';
 $lang['xs_style'] = 'Styl';
 $lang['xs_styles'] = 'Style';
-$lang['xs_users'] = 'U¿ytkownicy';
+$lang['xs_users'] = 'UÅ¼ytkownicy';
 $lang['xs_options'] = 'Opcje';
 $lang['xs_comment'] = 'Komentarz';
-$lang['xs_upload_time'] = 'Czas wysy³ania';
-$lang['xs_select'] = 'Wybór';
+$lang['xs_upload_time'] = 'Czas wysyÅ‚ania';
+$lang['xs_select'] = 'WybÃ³r';
 
 $lang['xs_continue'] = 'Kontynuuj';	// button
 
@@ -53,8 +53,8 @@ $lang['xs_config_shownav'] = array(
 	'Konfiguracja',
 	'Instaluj Style',
 	'Odinstaluj style',
-	'Domy¶lny Styl',
-	'Zarz±dzaj Cache\'m',
+	'DomyÅ›lny Styl',
+	'ZarzÄ…dzaj Cache\'m',
 	'Importuj Styl',
 	'Eksportuj Styl',
 	'Klonuj Styl',
@@ -62,7 +62,7 @@ $lang['xs_config_shownav'] = array(
 	'Edytuj Schemat',
 	'Edytuj Styl',
 	'Eksportuj Dane',
-	'Sprawd¼ Uaktualnienia',
+	'SprawdÅº Uaktualnienia',
 	);
 
 /*
@@ -77,47 +77,47 @@ $lang['xs_install_styles_lc'] = 'instaluj style';
 * index.tpl
 */
 
-$lang['xs_main_comment1'] = 'To jest g³owne menu eXtreme Styles.<br />Ten modu³ zastêpuje oryginalne zarz±dzanie stylami. S± tu tak¿e oryginalne funkcje phpBB2, jednak zosta³y zoptymalizowane i posiadaj± dodatkowe mo¿liwo¶ci.';
+$lang['xs_main_comment1'] = 'To jest gÅ‚owne menu eXtreme Styles.<br />Ten moduÅ‚ zastÄ™puje oryginalne zarzÄ…dzanie stylami. SÄ… tu takÅ¼e oryginalne funkcje phpBB2, jednak zostaÅ‚y zoptymalizowane i posiadajÄ… dodatkowe moÅ¼liwoÅ›ci.';
 $lang['xs_main_comment2'] = 'eXtreme Styles pozwala na zapisanie danych stylu do pliku w formie skompresowanej.';
-$lang['xs_main_comment3'] = 'Wszystkie funkcje zarz±dzania stylami phpBB2 zosta³y zast±pione przez eXtreme Styles<br /><br /><a href="{URL}">Kliknij tutaj</a> aby zobaczyæ Menu.';
+$lang['xs_main_comment3'] = 'Wszystkie funkcje zarzÄ…dzania stylami phpBB2 zostaÅ‚y zastÄ…pione przez eXtreme Styles<br /><br /><a href="{URL}">Kliknij tutaj</a> aby zobaczyÄ‡ Menu.';
 $lang['xs_main_title'] = 'eXtreme Styles Menu Nawigacji';
 $lang['xs_menu'] = 'eXtreme Styles Menu';
 
-$lang['xs_manage_styles'] = 'Zarz±dzanie Stylami';
-$lang['xs_import_export_styles'] = 'Import/Eksport Stylów';
-$lang['xs_install_uninstall_styles'] = 'Instalacja/Deinstalacja Stylów';
-$lang['xs_edit_templates'] = 'Edycja Stylów';
+$lang['xs_manage_styles'] = 'ZarzÄ…dzanie Stylami';
+$lang['xs_import_export_styles'] = 'Import/Eksport StylÃ³w';
+$lang['xs_install_uninstall_styles'] = 'Instalacja/Deinstalacja StylÃ³w';
+$lang['xs_edit_templates'] = 'Edycja StylÃ³w';
 $lang['xs_other_functions'] = 'Inne funkcje';
 
 $lang['xs_configuration'] = 'Konfiguracja';
 $lang['xs_configuration_explain'] = 'Konfiguracja eXtreme Styles';
-$lang['xs_default_style'] = 'Domy¶lny styl';
-$lang['xs_default_style_explain'] = 'Ta opcja pozwala na ustawienie domy¶lnego stylu forum, oraz prze³±czenie stylów u¿ytkowników.';
-$lang['xs_manage_cache'] = 'Zarz±dzanie Cach\'em';
-$lang['xs_manage_cache_explain'] = 'Zarz±dzanie plikami cache.';
+$lang['xs_default_style'] = 'DomyÅ›lny styl';
+$lang['xs_default_style_explain'] = 'Ta opcja pozwala na ustawienie domyÅ›lnego stylu forum, oraz przeÅ‚Ä…czenie stylÃ³w uÅ¼ytkownikÃ³w.';
+$lang['xs_manage_cache'] = 'ZarzÄ…dzanie Cach\'em';
+$lang['xs_manage_cache_explain'] = 'ZarzÄ…dzanie plikami cache.';
 $lang['xs_import_styles'] = 'Import Stylu';
-$lang['xs_import_styles_explain'] = 'Tutaj mo¿esz pobraæ i instalowaæ pliki .style';
+$lang['xs_import_styles_explain'] = 'Tutaj moÅ¼esz pobraÄ‡ i instalowaÄ‡ pliki .style';
 $lang['xs_export_styles'] = 'Eksport Stylu';
-$lang['xs_export_styles_explain'] = 'W tym miejscu mo¿esz zapisaæ styl swojego forum do pliku .style co umo¿liwia miêdzy innymi ³atwy transfer na inne forum';
+$lang['xs_export_styles_explain'] = 'W tym miejscu moÅ¼esz zapisaÄ‡ styl swojego forum do pliku .style co umoÅ¼liwia miÄ™dzy innymi Å‚atwy transfer na inne forum';
 $lang['xs_clone_styles'] = 'Klonuj Styl';
-$lang['xs_clone_styles_explain'] = 'W tym miejscu mo¿esz sklonowaæ wybrany styl.';
+$lang['xs_clone_styles_explain'] = 'W tym miejscu moÅ¼esz sklonowaÄ‡ wybrany styl.';
 $lang['xs_download_styles'] = 'Pobierz Style';
-$lang['xs_download_styles_explain'] = 'Ta funkcja pozwala na szybkie pobranie i zainstalowanie stylów ze strony www. Mo¿esz zarz±dzaæ list± dostêpnych stron.';
+$lang['xs_download_styles_explain'] = 'Ta funkcja pozwala na szybkie pobranie i zainstalowanie stylÃ³w ze strony www. MoÅ¼esz zarzÄ…dzaÄ‡ listÄ… dostÄ™pnych stron.';
 $lang['xs_install_styles'] = 'Instaluj Style';
-$lang['xs_install_styles_explain'] = 'W tym miejscu mo¿esz zainstalowaæ style które znajduj± siê w katalogu /templates/';
-$lang['xs_uninstall_styles'] = 'Deinstalacja Stylów';
-$lang['xs_uninstall_styles_explain'] = 'W tym miejscu mo¿esz odinstalowaæ style z forum.';
-$lang['xs_edit_templates_explain'] = 'W tym miejscu mo¿esz edytowaæ pliki .tpl poprzez formularz.';
-$lang['xs_edit_styles_data'] = 'Edycja Danych Stylów';
-$lang['xs_edit_styles_data_explain'] = 'W tym miejscu mo¿esz edytowaæ kolory stylów';
+$lang['xs_install_styles_explain'] = 'W tym miejscu moÅ¼esz zainstalowaÄ‡ style ktÃ³re znajdujÄ… siÄ™ w katalogu /templates/';
+$lang['xs_uninstall_styles'] = 'Deinstalacja StylÃ³w';
+$lang['xs_uninstall_styles_explain'] = 'W tym miejscu moÅ¼esz odinstalowaÄ‡ style z forum.';
+$lang['xs_edit_templates_explain'] = 'W tym miejscu moÅ¼esz edytowaÄ‡ pliki .tpl poprzez formularz.';
+$lang['xs_edit_styles_data'] = 'Edycja Danych StylÃ³w';
+$lang['xs_edit_styles_data_explain'] = 'W tym miejscu moÅ¼esz edytowaÄ‡ kolory stylÃ³w';
 $lang['xs_export_styles_data'] = 'Eksport Danych Stylu';
-$lang['xs_export_styles_data_explain'] = 'W tym miejscu mo¿esz zapisaæ ustawienia danych stylu, znajduj±cych siê w pliku theme_info.cfg.';
-$lang['xs_check_for_updates'] = 'Sprawd¼ Altualizacje';
-$lang['xs_check_for_updates_explain'] = 'W tym miejscu mo¿esz sprawdziæ, czy jest dostêpna nowa wersja modu³u';
+$lang['xs_export_styles_data_explain'] = 'W tym miejscu moÅ¼esz zapisaÄ‡ ustawienia danych stylu, znajdujÄ…cych siÄ™ w pliku theme_info.cfg.';
+$lang['xs_check_for_updates'] = 'SprawdÅº Altualizacje';
+$lang['xs_check_for_updates_explain'] = 'W tym miejscu moÅ¼esz sprawdziÄ‡, czy jest dostÄ™pna nowa wersja moduÅ‚u';
 
 $lang['xs_set_configuration_lc'] = 'konfiguracja';
-$lang['xs_set_default_style_lc'] = 'domy¶lny styl';
-$lang['xs_manage_cache_lc'] = 'zarz±dzaj cache\'m';
+$lang['xs_set_default_style_lc'] = 'domyÅ›lny styl';
+$lang['xs_manage_cache_lc'] = 'zarzÄ…dzaj cache\'m';
 $lang['xs_import_styles_lc'] = 'importuj styl';
 $lang['xs_export_styles_lc'] = 'eksportuj styl';
 $lang['xs_clone_styles_lc'] = 'klonuj styl';
@@ -125,65 +125,65 @@ $lang['xs_uninstall_styles_lc'] = 'odinstaluj style';
 $lang['xs_edit_templates_lc'] = 'edytuj styl';
 $lang['xs_edit_styles_data_lc'] = 'edytuj dane stylu';
 $lang['xs_export_styles_data_lc'] = 'eksportuj dane stylu';
-$lang['xs_check_for_updates_lc'] = 'sprawd¼ aktualizacje';
+$lang['xs_check_for_updates_lc'] = 'sprawdÅº aktualizacje';
 
 /*
 * ftp.tpl, ftp functions
 */
 
-$lang['xs_ftp_comment1'] = 'Przy u¿yciu tej funkcji, musisz wybraæ metodê wysy³ania pliku. Je¿eli wybierzesz FTP, has³o nie zostanie zapisane, bêdziesz o nie proszony podczas ka¿dego po³±czenia. Je¿eli wybierzesz lokalne przechowywanie pliku, upewnij siê, czy wybrane katalogi maj± prawa do zapisu (chmod 777)';
-$lang['xs_ftp_comment2'] = 'Przy u¿yciu tej funkcji musisz podaæ ustawienia FTP. Has³o nie zostanie zapisane, bêdziesz o nie proszony podczas ka¿dego po³±czenia.';
-$lang['xs_ftp_comment3'] = 'Uwaga: funkcja FTP jest wy³±czona na tym serwerze. Nie mo¿esz u¿ywaæ ustawieñ wymagaj±cych dostêpu poprzez FTP.';
+$lang['xs_ftp_comment1'] = 'Przy uÅ¼yciu tej funkcji, musisz wybraÄ‡ metodÄ™ wysyÅ‚ania pliku. JeÅ¼eli wybierzesz FTP, hasÅ‚o nie zostanie zapisane, bÄ™dziesz o nie proszony podczas kaÅ¼dego poÅ‚Ä…czenia. JeÅ¼eli wybierzesz lokalne przechowywanie pliku, upewnij siÄ™, czy wybrane katalogi majÄ… prawa do zapisu (chmod 777)';
+$lang['xs_ftp_comment2'] = 'Przy uÅ¼yciu tej funkcji musisz podaÄ‡ ustawienia FTP. HasÅ‚o nie zostanie zapisane, bÄ™dziesz o nie proszony podczas kaÅ¼dego poÅ‚Ä…czenia.';
+$lang['xs_ftp_comment3'] = 'Uwaga: funkcja FTP jest wyÅ‚Ä…czona na tym serwerze. Nie moÅ¼esz uÅ¼ywaÄ‡ ustawieÅ„ wymagajÄ…cych dostÄ™pu poprzez FTP.';
 
 $lang['xs_ftp_title'] = 'Konfiguracja FTP';
 
-$lang['xs_ftp_explain'] = 'FTP jest u¿ywane do wysy³ania nowych stylów. Je¿eli chcesz importowaæ style, musisz odpowiednio skonfigurowaæ parametry FTP. Bêd± one wykryte automatycznie je¿eli bêdzie taka mo¿liwo¶æ.';
+$lang['xs_ftp_explain'] = 'FTP jest uÅ¼ywane do wysyÅ‚ania nowych stylÃ³w. JeÅ¼eli chcesz importowaÄ‡ style, musisz odpowiednio skonfigurowaÄ‡ parametry FTP. BÄ™dÄ… one wykryte automatycznie jeÅ¼eli bÄ™dzie taka moÅ¼liwoÅ›Ä‡.';
 
-$lang['xs_ftp_error_fatal'] = 'Funkcja FTP jest wy³±czona na tym serwerze, nie mo¿na kontynuowaæ.';
-$lang['xs_ftp_error_connect'] = 'B³±d FTP: nie mo¿na po³±czyæ do {HOST}';
-$lang['xs_ftp_error_login'] = 'B³±d FTP: nie mo¿na zalogowaæ';
-$lang['xs_ftp_error_chdir'] = 'B³±d FTP: nie mo¿na wej¶c do katalogu {DIR}';
-$lang['xs_ftp_error_nonphpbbdir'] = 'B³±d FTP: ustawiony niew³a¶ciwy katalog. Brak plików phpBB w katalogu.';
-$lang['xs_ftp_error_noconnect'] = 'B³±d po³±czenia do serwera';
-$lang['xs_ftp_error_login2'] = 'Z³y login lub has³o';
+$lang['xs_ftp_error_fatal'] = 'Funkcja FTP jest wyÅ‚Ä…czona na tym serwerze, nie moÅ¼na kontynuowaÄ‡.';
+$lang['xs_ftp_error_connect'] = 'BÅ‚Ä…d FTP: nie moÅ¼na poÅ‚Ä…czyÄ‡ do {HOST}';
+$lang['xs_ftp_error_login'] = 'BÅ‚Ä…d FTP: nie moÅ¼na zalogowaÄ‡';
+$lang['xs_ftp_error_chdir'] = 'BÅ‚Ä…d FTP: nie moÅ¼na wejÅ›c do katalogu {DIR}';
+$lang['xs_ftp_error_nonphpbbdir'] = 'BÅ‚Ä…d FTP: ustawiony niewÅ‚aÅ›ciwy katalog. Brak plikÃ³w phpBB w katalogu.';
+$lang['xs_ftp_error_noconnect'] = 'BÅ‚Ä…d poÅ‚Ä…czenia do serwera';
+$lang['xs_ftp_error_login2'] = 'ZÅ‚y login lub hasÅ‚o';
 
-$lang['xs_ftp_log_disabled'] = 'funkcja FTP jest wy³±czona na tym serwerze, nie mo¿na kontynuowaæ';
-$lang['xs_ftp_log_connecting'] = '³±czenie do {HOST}';
-$lang['xs_ftp_log_noconnect'] = 'b³±d ³±czenia do {HOST}';
-$lang['xs_ftp_log_connected'] = 'po³±czony, logowanie ...';
-$lang['xs_ftp_log_nologin'] = 'nie mo¿na zalogowaæ jako {USER}';
+$lang['xs_ftp_log_disabled'] = 'funkcja FTP jest wyÅ‚Ä…czona na tym serwerze, nie moÅ¼na kontynuowaÄ‡';
+$lang['xs_ftp_log_connecting'] = 'Å‚Ä…czenie do {HOST}';
+$lang['xs_ftp_log_noconnect'] = 'bÅ‚Ä…d Å‚Ä…czenia do {HOST}';
+$lang['xs_ftp_log_connected'] = 'poÅ‚Ä…czony, logowanie ...';
+$lang['xs_ftp_log_nologin'] = 'nie moÅ¼na zalogowaÄ‡ jako {USER}';
 $lang['xs_ftp_log_loggedin'] = 'zalogowany';
 $lang['xs_ftp_log_end'] = 'koniec wykonywania skryptu';
-$lang['xs_ftp_log_nopwd'] = 'b³±d: nie mo¿na odczytaæ bie¿±cego katalogu';
-$lang['xs_ftp_log_nomkdir'] = 'b³±d: nie mo¿na utworzyæ katalogu {DIR}';
+$lang['xs_ftp_log_nopwd'] = 'bÅ‚Ä…d: nie moÅ¼na odczytaÄ‡ bieÅ¼Ä…cego katalogu';
+$lang['xs_ftp_log_nomkdir'] = 'bÅ‚Ä…d: nie moÅ¼na utworzyÄ‡ katalogu {DIR}';
 $lang['xs_ftp_log_mkdir'] = 'tworzenie katalogu {DIR}';
-$lang['xs_ftp_log_nochdir'] = 'b³±d: nie mo¿na zmieniæ katalogu na {DIR}';
-$lang['xs_ftp_log_normdir'] = 'b³±d: nie mo¿na usun±æ katalogu {DIR}';
+$lang['xs_ftp_log_nochdir'] = 'bÅ‚Ä…d: nie moÅ¼na zmieniÄ‡ katalogu na {DIR}';
+$lang['xs_ftp_log_normdir'] = 'bÅ‚Ä…d: nie moÅ¼na usunÄ…Ä‡ katalogu {DIR}';
 $lang['xs_ftp_log_rmdir'] = 'usuwanie katalogu {DIR}';
 $lang['xs_ftp_log_chdir'] = 'zmiana katalogu na {DIR}';
-$lang['xs_ftp_log_noupload'] = 'b³±d: nie mo¿na wys³aæ pliku {FILE}';
-$lang['xs_ftp_log_upload'] = 'wysy³anie pliku {FILE}';
-$lang['xs_ftp_log_nochmod'] = 'uwaga: nie mo¿na ustawiæ odpowiednich praw dla pliku {FILE}';
+$lang['xs_ftp_log_noupload'] = 'bÅ‚Ä…d: nie moÅ¼na wysÅ‚aÄ‡ pliku {FILE}';
+$lang['xs_ftp_log_upload'] = 'wysyÅ‚anie pliku {FILE}';
+$lang['xs_ftp_log_nochmod'] = 'uwaga: nie moÅ¼na ustawiÄ‡ odpowiednich praw dla pliku {FILE}';
 $lang['xs_ftp_log_chmod'] = 'prawa pliku {FILE} na {MODE}';
-$lang['xs_ftp_log_invalidcommand'] = 'b³±d: nieznane polecenie: {COMMAND}';
-$lang['xs_ftp_log_chdir2'] = 'zmiana bie¿±cego katalogu spowrotem na {DIR}';
-$lang['xs_ftp_log_nochdir2'] = 'nie mo¿na zmieniæ katalogu na {DIR}';
+$lang['xs_ftp_log_invalidcommand'] = 'bÅ‚Ä…d: nieznane polecenie: {COMMAND}';
+$lang['xs_ftp_log_chdir2'] = 'zmiana bieÅ¼Ä…cego katalogu spowrotem na {DIR}';
+$lang['xs_ftp_log_nochdir2'] = 'nie moÅ¼na zmieniÄ‡ katalogu na {DIR}';
 
 $lang['xs_ftp_config'] = 'Konfiguracja FTP';
-$lang['xs_ftp_select_method'] = 'Wybierz metodê wysy³ania';
-$lang['xs_ftp_select_local'] = 'U¿yj lokalnego systemu plików (nie wymaga konfiguracji lecz wymaga praw do zapisu w katalogu stylów chmod 777)';
-$lang['xs_ftp_select_ftp'] = 'U¿yj FTP (ustaw parametry poni¿ej)';
+$lang['xs_ftp_select_method'] = 'Wybierz metodÄ™ wysyÅ‚ania';
+$lang['xs_ftp_select_local'] = 'UÅ¼yj lokalnego systemu plikÃ³w (nie wymaga konfiguracji lecz wymaga praw do zapisu w katalogu stylÃ³w chmod 777)';
+$lang['xs_ftp_select_ftp'] = 'UÅ¼yj FTP (ustaw parametry poniÅ¼ej)';
 
 $lang['xs_ftp_settings'] = 'Ustawienia FTP';
 $lang['xs_ftp_host'] = 'Host FTP';
 $lang['xs_ftp_login'] = 'Login FTP';
-$lang['xs_ftp_path'] = '¦cie¿ka do phpBB';
-$lang['xs_ftp_pass'] = 'Has³o FTP';
+$lang['xs_ftp_path'] = 'ÅšcieÅ¼ka do phpBB';
+$lang['xs_ftp_pass'] = 'HasÅ‚o FTP';
 $lang['xs_ftp_remotedir'] = 'Zdalny Katalog';
 
 $lang['xs_ftp_host_guess'] = ' (prawdopodobnie "{HOST}" [<a href="javascript: void(0)" onclick="{CLICK}">ustaw host</a>])';
 $lang['xs_ftp_login_guess'] = ' (prawdopodobnie "{LOGIN}" [<a href="javascript: void(0)" onclick="{CLICK}">ustaw host</a>])';
-$lang['xs_ftp_path_guess'] = ' (prawdopodobnie "{PATH}" [<a href="javascript: void(0)" onclick="{CLICK}">ustaw ¶cie¿kê</a>])';
+$lang['xs_ftp_path_guess'] = ' (prawdopodobnie "{PATH}" [<a href="javascript: void(0)" onclick="{CLICK}">ustaw Å›cieÅ¼kÄ™</a>])';
 
 
 /*
@@ -191,62 +191,62 @@ $lang['xs_ftp_path_guess'] = ' (prawdopodobnie "{PATH}" [<a href="javascript: vo
 */
 
 $lang['xs_config_updated'] = 'Konfiguracja zaktualizowana.';
-$lang['xs_config_updated_explain'] = 'Musisz od¶wie¿yæ stronê aby nowa konfiguracja odnios³a skutek. <a href="{URL}">Kliknij tutaj</a> aby od¶wie¿yæ.';
-$lang['xs_config_warning'] = 'Uwaga: cache nie mo¿e zostaæ zapisany.';
-$lang['xs_config_warning_explain'] = 'Katalog Cache nie ma praw do zapisu. eXtreme Styles mo¿e spróbowaæ ustawiæ odpowiednie prawa.<br /><a href="{URL}">Kliknij tutaj</a> aby ustawiæ.<br /><br />Je¿eli nie bêdzie mo¿liwo¶ci korzystania z cach\'u nie przejmuj siê, eXtreme Styles pomimo tego przyspieszy dzia³anie stylów.';
+$lang['xs_config_updated_explain'] = 'Musisz odÅ›wieÅ¼yÄ‡ stronÄ™ aby nowa konfiguracja odniosÅ‚a skutek. <a href="{URL}">Kliknij tutaj</a> aby odÅ›wieÅ¼yÄ‡.';
+$lang['xs_config_warning'] = 'Uwaga: cache nie moÅ¼e zostaÄ‡ zapisany.';
+$lang['xs_config_warning_explain'] = 'Katalog Cache nie ma praw do zapisu. eXtreme Styles moÅ¼e sprÃ³bowaÄ‡ ustawiÄ‡ odpowiednie prawa.<br /><a href="{URL}">Kliknij tutaj</a> aby ustawiÄ‡.<br /><br />JeÅ¼eli nie bÄ™dzie moÅ¼liwoÅ›ci korzystania z cach\'u nie przejmuj siÄ™, eXtreme Styles pomimo tego przyspieszy dziaÅ‚anie stylÃ³w.';
 
 $lang['xs_config_maintitle'] = 'Konfiguracja eXtreme Styles';
-$lang['xs_config_subtitle'] = 'Je¿eli nie rozumiesz tych parametrów, nic nie zmieniaj !';
+$lang['xs_config_subtitle'] = 'JeÅ¼eli nie rozumiesz tych parametrÃ³w, nic nie zmieniaj !';
 $lang['xs_config_title'] = 'Ustawienia eXtreme Styles v{VERSION}';
 $lang['xs_config_cache'] = 'Ustawienia Cache';
 
-$lang['xs_config_navbar'] = 'Poka¿ w lewej ramce:';
-$lang['xs_config_navbar_explain'] = 'Mo¿esz wybraæ jakie pozycje bêd± wy¶wietlane w lewej ramce panelu administracyjnego w sekcji stylów.';
+$lang['xs_config_navbar'] = 'PokaÅ¼ w lewej ramce:';
+$lang['xs_config_navbar_explain'] = 'MoÅ¼esz wybraÄ‡ jakie pozycje bÄ™dÄ… wyÅ›wietlane w lewej ramce panelu administracyjnego w sekcji stylÃ³w.';
 
-$lang['xs_config_def_template'] = 'Domy¶lny katalog stylów';
-$lang['xs_config_def_template_explain'] = 'Je¿eli wymagane pliki stylu (*.tpl) nie zostan± odnalezione w odpowiednim katalogu (mo¿e to nast±piæ na skutek b³êdnego wys³ania plików stylu lub z³ej instalacji modów) system podmieni brakuj±cy plik z powi±zanym stylem np. subSilver. Pozostaw puste aby wy³±czyæ tê funkcjê.';
+$lang['xs_config_def_template'] = 'DomyÅ›lny katalog stylÃ³w';
+$lang['xs_config_def_template_explain'] = 'JeÅ¼eli wymagane pliki stylu (*.tpl) nie zostanÄ… odnalezione w odpowiednim katalogu (moÅ¼e to nastÄ…piÄ‡ na skutek bÅ‚Ä™dnego wysÅ‚ania plikÃ³w stylu lub zÅ‚ej instalacji modÃ³w) system podmieni brakujÄ…cy plik z powiÄ…zanym stylem np. subSilver. Pozostaw puste aby wyÅ‚Ä…czyÄ‡ tÄ™ funkcjÄ™.';
 
-$lang['xs_config_check_switches'] = 'Sprawdzaj b³êdy podczas kompilacji';
-$lang['xs_config_check_switches_explain'] = 'Ta opcja sprawdza b³êdy w stylach. Wy³±czenie spowoduje szybsz± kompilacjê plików, lecz kompilator mo¿e omin±æ wa¿ne b³êdy które mog± siê pojawiæ w plikach.';
-$lang['xs_config_check_switches_0'] = 'Wy³±czone';
+$lang['xs_config_check_switches'] = 'Sprawdzaj bÅ‚Ä™dy podczas kompilacji';
+$lang['xs_config_check_switches_explain'] = 'Ta opcja sprawdza bÅ‚Ä™dy w stylach. WyÅ‚Ä…czenie spowoduje szybszÄ… kompilacjÄ™ plikÃ³w, lecz kompilator moÅ¼e ominÄ…Ä‡ waÅ¼ne bÅ‚Ä™dy ktÃ³re mogÄ… siÄ™ pojawiÄ‡ w plikach.';
+$lang['xs_config_check_switches_0'] = 'WyÅ‚Ä…czone';
 $lang['xs_config_check_switches_1'] = 'Szybkie sprawdzanie';
 $lang['xs_config_check_switches_2'] = 'Pojedyncze sprawdzanie';
 
-$lang['xs_config_show_errors'] = 'Poka¿ b³êdy je¿eli pliki s± niepoprawnie dodawane do plików.tpl';
-$lang['xs_config_show_error_explain'] = 'Ta funkcja sprawdza b³êdy gdy u¿ytkownik niew³a¶ciwie wykorzysta funkcjê: &lt;!-- INCLUDE filename --&gt;';
+$lang['xs_config_show_errors'] = 'PokaÅ¼ bÅ‚Ä™dy jeÅ¼eli pliki sÄ… niepoprawnie dodawane do plikÃ³w.tpl';
+$lang['xs_config_show_error_explain'] = 'Ta funkcja sprawdza bÅ‚Ä™dy gdy uÅ¼ytkownik niewÅ‚aÅ›ciwie wykorzysta funkcjÄ™: &lt;!-- INCLUDE filename --&gt;';
 
-$lang['xs_config_tpl_comments'] = 'Dodaj nazwy plików .tpl do kodu HTML';
-$lang['xs_config_tpl_comments_explain'] = 'Dodaje nazwy plików jako komentarze do kodu HTML. Pozwala wykryæ, które pliki .tpl s± aktualnie wykorzystywane.';
+$lang['xs_config_tpl_comments'] = 'Dodaj nazwy plikÃ³w .tpl do kodu HTML';
+$lang['xs_config_tpl_comments_explain'] = 'Dodaje nazwy plikÃ³w jako komentarze do kodu HTML. Pozwala wykryÄ‡, ktÃ³re pliki .tpl sÄ… aktualnie wykorzystywane.';
 
-$lang['xs_config_use_cache'] = 'U¿yj Cach\'u';
-$lang['xs_config_use_cache_explain'] = 'Cache s± to odpowiednio spreparowane (skompilowane) pliki stylów do postaci PHP (serwer nie musi za ka¿dym razem ³±czyæ (kompilowaæ) plików stylu przy ka¿dym wy¶wietleniu strony.';
+$lang['xs_config_use_cache'] = 'UÅ¼yj Cach\'u';
+$lang['xs_config_use_cache_explain'] = 'Cache sÄ… to odpowiednio spreparowane (skompilowane) pliki stylÃ³w do postaci PHP (serwer nie musi za kaÅ¼dym razem Å‚Ä…czyÄ‡ (kompilowaÄ‡) plikÃ³w stylu przy kaÅ¼dym wyÅ›wietleniu strony.';
 
 $lang['xs_config_auto_compile'] = 'Automatyczny zapis do Cache';
-$lang['xs_config_auto_compile_explain'] = 'Automatycznie kompiluj style, które nie s± z\'cach\'owane.';
+$lang['xs_config_auto_compile_explain'] = 'Automatycznie kompiluj style, ktÃ³re nie sÄ… z\'cach\'owane.';
 
 $lang['xs_config_auto_recompile'] = 'Automatycznie rekompiluj Cache';
-$lang['xs_config_auto_recompile_explain'] = 'Rekompiluje automatycznie pliki stylów, gdy zostan± zmienione.';
+$lang['xs_config_auto_recompile_explain'] = 'Rekompiluje automatycznie pliki stylÃ³w, gdy zostanÄ… zmienione.';
 
-$lang['xs_config_php'] = 'Rozszerzenie dla nazw plików cach\'u';
-$lang['xs_config_php_explain'] = 'Rozszerzenie dla plików cach\'u. Pliki PHP które s± zapisywane do cach\' maj± automatycznie dodawane rozszerzenie php. Nie podawaj kropek.';
+$lang['xs_config_php'] = 'Rozszerzenie dla nazw plikÃ³w cach\'u';
+$lang['xs_config_php_explain'] = 'Rozszerzenie dla plikÃ³w cach\'u. Pliki PHP ktÃ³re sÄ… zapisywane do cach\' majÄ… automatycznie dodawane rozszerzenie php. Nie podawaj kropek.';
 
-$lang['xs_config_back'] = '<a href="{URL}">Kliknij tutaj</a> aby powróciæ do konfiguracji.';
-$lang['xs_config_sql_error'] = 'B³±d zapisu konfiguracji dla {VAR}';
+$lang['xs_config_back'] = '<a href="{URL}">Kliknij tutaj</a> aby powrÃ³ciÄ‡ do konfiguracji.';
+$lang['xs_config_sql_error'] = 'BÅ‚Ä…d zapisu konfiguracji dla {VAR}';
 
 // Debug info
 $lang['xs_debug_header'] = 'Debug info';
-$lang['xs_debug_explain'] = 'U¿yj do odnalezienia, lub naprawy b³êdów z cache\'m.';
+$lang['xs_debug_explain'] = 'UÅ¼yj do odnalezienia, lub naprawy bÅ‚Ä™dÃ³w z cache\'m.';
 $lang['xs_debug_vars'] = 'Ustawienia Stylu';
 $lang['xs_debug_tpl_name'] = 'Nazwa pliku stylu:';
 $lang['xs_debug_cache_filename'] = 'Plik Cache:';
 $lang['xs_debug_data'] = 'Dane debug:';
 
 $lang['xs_check_hdr'] = 'Sprawdzanie cach\'u dla %s';
-$lang['xs_check_filename'] = 'B³±d: b³êdna nazwa pliku';
-$lang['xs_check_openfile1'] = 'B³±d: nie mo¿na otworzyæ pliku "%s". Próba utworzenia katalogu ...';
-$lang['xs_check_openfile2'] = 'B³±d: nie mo¿na otworzyæ pliku "%s" po raz drugi. Anulowanie ...';
+$lang['xs_check_filename'] = 'BÅ‚Ä…d: bÅ‚Ä™dna nazwa pliku';
+$lang['xs_check_openfile1'] = 'BÅ‚Ä…d: nie moÅ¼na otworzyÄ‡ pliku "%s". PrÃ³ba utworzenia katalogu ...';
+$lang['xs_check_openfile2'] = 'BÅ‚Ä…d: nie moÅ¼na otworzyÄ‡ pliku "%s" po raz drugi. Anulowanie ...';
 $lang['xs_check_nodir'] = 'Sprawdzanie "%s" - nie odnaleziono katalogu.';
-$lang['xs_check_nodir2'] = 'B³±d: nie mo¿na utworzyæ katalogu "%s" - sprawd¼ zezwolenia.';
+$lang['xs_check_nodir2'] = 'BÅ‚Ä…d: nie moÅ¼na utworzyÄ‡ katalogu "%s" - sprawdÅº zezwolenia.';
 $lang['xs_check_createddir'] = 'Tworzenie katalogu "%s"';
 $lang['xs_check_dir'] = 'Sprawdzanie "%s" - katalog istnieje.';
 $lang['xs_check_ok'] = 'Otwieranie pliku "%s" do zapisu.';
@@ -257,220 +257,220 @@ $lang['xs_check_ok'] = 'Otwieranie pliku "%s" do zapisu.';
 */
 
 $lang['xs_chmod'] = 'CHMOD';
-$lang['xs_chmod_return'] = '<br /><br /><a href="{URL}">Kliknij tutaj</a> aby powróciæ do konfiguracji.';
+$lang['xs_chmod_return'] = '<br /><br /><a href="{URL}">Kliknij tutaj</a> aby powrÃ³ciÄ‡ do konfiguracji.';
 $lang['xs_chmod_message1'] = 'Konfiguracja zapisana.';
-$lang['xs_chmod_error1'] = 'Nie mo¿na zmieniæ praw dostêpu dla katalogu';
+$lang['xs_chmod_error1'] = 'Nie moÅ¼na zmieniÄ‡ praw dostÄ™pu dla katalogu';
 
 
 /*
 * default style
 */
 
-$lang['xs_def_title'] = 'Ustaw domy¶lny styl';
-$lang['xs_def_explain'] = 'W tym miejscu mo¿esz szybko ustawiæ domy¶lny styl Forum oraz prze³±czaæ u¿ytkowników z jednego stylu na drugi.<br />Pamiêtaj, ¿e je¿eli ustawi³e¶ sobie jaki¶ styl gdy by³e¶ nie zalogowany, bêdzie on jako domy¶lny styl. Aby to zmieniæ wyloguj siê i zmieñ styl.';
+$lang['xs_def_title'] = 'Ustaw domyÅ›lny styl';
+$lang['xs_def_explain'] = 'W tym miejscu moÅ¼esz szybko ustawiÄ‡ domyÅ›lny styl Forum oraz przeÅ‚Ä…czaÄ‡ uÅ¼ytkownikÃ³w z jednego stylu na drugi.<br />PamiÄ™taj, Å¼e jeÅ¼eli ustawiÅ‚eÅ› sobie jakiÅ› styl gdy byÅ‚eÅ› nie zalogowany, bÄ™dzie on jako domyÅ›lny styl. Aby to zmieniÄ‡ wyloguj siÄ™ i zmieÅ„ styl.';
 
-$lang['xs_styles_set_default'] = 'ustaw domy¶lny';
-$lang['xs_styles_no_override'] = 'nie zastêpuj ustawieñ u¿ytkowników';
-$lang['xs_styles_do_override'] = 'zast±p ustawienia u¿ytkowników';
+$lang['xs_styles_set_default'] = 'ustaw domyÅ›lny';
+$lang['xs_styles_no_override'] = 'nie zastÄ™puj ustawieÅ„ uÅ¼ytkownikÃ³w';
+$lang['xs_styles_do_override'] = 'zastÄ…p ustawienia uÅ¼ytkownikÃ³w';
 $lang['xs_styles_switch_all'] = 'ustaw wszystkim ten styl';
 $lang['xs_styles_switch_all2'] = 'ustaw wszystkim:';
-$lang['xs_styles_defstyle'] = 'domy¶lny styl';
-$lang['xs_styles_available'] = 'Dostêpne style';
+$lang['xs_styles_defstyle'] = 'domyÅ›lny styl';
+$lang['xs_styles_available'] = 'DostÄ™pne style';
 $lang['xs_styles_make_public'] = 'ustaw jako styl publiczny';
-$lang['xs_styles_make_admin'] = 'ustaw styl tylko dla Administratorów';
-$lang['xs_styles_users'] = 'Lista U¿ytkowników';
+$lang['xs_styles_make_admin'] = 'ustaw styl tylko dla AdministratorÃ³w';
+$lang['xs_styles_users'] = 'Lista UÅ¼ytkownikÃ³w';
 
 
 /*
 * cache management
 */
 
-$lang['xs_manage_cache_explain2'] = 'W tym miejscu mo¿esz skompilowaæ lub usun±æ pliki cach\'u. (usuñ pliki cache np. w przypadku przenoszenia forum lub po dokonaniu rêcznych zmian w bazie SQL !)';
-$lang['xs_clear_all_lc'] = 'usuñ wszystkie';
+$lang['xs_manage_cache_explain2'] = 'W tym miejscu moÅ¼esz skompilowaÄ‡ lub usunÄ…Ä‡ pliki cach\'u. (usuÅ„ pliki cache np. w przypadku przenoszenia forum lub po dokonaniu rÄ™cznych zmian w bazie SQL !)';
+$lang['xs_clear_all_lc'] = 'usuÅ„ wszystkie';
 $lang['xs_compile_all_lc'] = 'kompiluj wszystkie';
-$lang['xs_clear_cache_lc'] = 'wyczy¶æ cache';
+$lang['xs_clear_cache_lc'] = 'wyczyÅ›Ä‡ cache';
 $lang['xs_compile_cache_lc'] = 'kompiluj cache';
-$lang['xs_cache_confirm'] = 'Je¿eli posiadasz wiele stylów, ta czynno¶æ mo¿e znacznie obci±¿yæ serwer. Czy na pewno chcesz kontynuowaæ?';
+$lang['xs_cache_confirm'] = 'JeÅ¼eli posiadasz wiele stylÃ³w, ta czynnoÅ›Ä‡ moÅ¼e znacznie obciÄ…Å¼yÄ‡ serwer. Czy na pewno chcesz kontynuowaÄ‡?';
 
-$lang['xs_cache_nowrite'] = 'B³±d: nie mo¿na uzyskaæ praw do katalogu cache';
+$lang['xs_cache_nowrite'] = 'BÅ‚Ä…d: nie moÅ¼na uzyskaÄ‡ praw do katalogu cache';
 $lang['xs_cache_log_deleted'] = 'Usuwanie {FILE}';
-$lang['xs_cache_log_nodelete'] = 'B³±d: nie mo¿na usun±æ pliku {FILE}';
-$lang['xs_cache_log_nothing'] = 'Nie ma nic do usuniêcia dla stylu {TPL}';
-$lang['xs_cache_log_nothing2'] = 'Nie ma nic do usuniêcia w katalogu cache';
-$lang['xs_cache_log_count'] = 'Plików usuniêtych: {NUM}';
-$lang['xs_cache_log_count2'] = 'B³±d usuwania {NUM} plików';
-$lang['xs_cache_log_compiled'] = 'Skompilowano: {NUM} plików';
-$lang['xs_cache_log_errors'] = 'B³êdów: {NUM}';
-$lang['xs_cache_log_noaccess'] = 'B³±d: nie mo¿na uzyskaæ praw do katalogu {DIR}';
+$lang['xs_cache_log_nodelete'] = 'BÅ‚Ä…d: nie moÅ¼na usunÄ…Ä‡ pliku {FILE}';
+$lang['xs_cache_log_nothing'] = 'Nie ma nic do usuniÄ™cia dla stylu {TPL}';
+$lang['xs_cache_log_nothing2'] = 'Nie ma nic do usuniÄ™cia w katalogu cache';
+$lang['xs_cache_log_count'] = 'PlikÃ³w usuniÄ™tych: {NUM}';
+$lang['xs_cache_log_count2'] = 'BÅ‚Ä…d usuwania {NUM} plikÃ³w';
+$lang['xs_cache_log_compiled'] = 'Skompilowano: {NUM} plikÃ³w';
+$lang['xs_cache_log_errors'] = 'BÅ‚Ä™dÃ³w: {NUM}';
+$lang['xs_cache_log_noaccess'] = 'BÅ‚Ä…d: nie moÅ¼na uzyskaÄ‡ praw do katalogu {DIR}';
 $lang['xs_cache_log_compiled2'] = 'Skompilowano: {FILE}';
-$lang['xs_cache_log_nocompile'] = 'B³±d kompilacji: {FILE}';
+$lang['xs_cache_log_nocompile'] = 'BÅ‚Ä…d kompilacji: {FILE}';
 
 /*
 * export/import/download/clone
 */
 
-$lang['xs_import_explain'] = 'W tym miejscu mo¿esz importowaæ style. Mo¿esz tak¿e automatycznie zainstalowaæ i zaktualizowaæ style.';
+$lang['xs_import_explain'] = 'W tym miejscu moÅ¼esz importowaÄ‡ style. MoÅ¼esz takÅ¼e automatycznie zainstalowaÄ‡ i zaktualizowaÄ‡ style.';
 
 $lang['xs_import_lc'] = 'import';
-$lang['xs_list_files_lc'] = 'lista plików';
-$lang['xs_delete_file_lc'] = 'usuñ plik';
+$lang['xs_list_files_lc'] = 'lista plikÃ³w';
+$lang['xs_delete_file_lc'] = 'usuÅ„ plik';
 $lang['xs_export_style_lc'] = 'eksportuj styl';
 
-$lang['xs_import_no_cached'] = 'Nie ma plików cach\'u do importu';
+$lang['xs_import_no_cached'] = 'Nie ma plikÃ³w cach\'u do importu';
 $lang['xs_add_styles'] = 'Dodaj Style';
 $lang['xs_add_styles_web'] = 'Pobierz z sieci';
 $lang['xs_add_styles_web_get'] = 'Pobierz';
 $lang['xs_add_styles_copy'] = 'Kopiuj z lokalnego pliku';
 $lang['xs_add_styles_copy_get'] = 'Kopiuj';
-$lang['xs_add_styles_upload'] = 'Wy¶lij z komputera';
-$lang['xs_add_styles_upload_get'] = 'Wy¶lij';
+$lang['xs_add_styles_upload'] = 'WyÅ›lij z komputera';
+$lang['xs_add_styles_upload_get'] = 'WyÅ›lij';
 
-$lang['xs_export_style'] = 'Eksport Stylów';
-$lang['xs_export_style_explain'] = 'W tym miejscu mo¿esz eksportowaæ style jako pojedynczy plik. Plik ten bêdzie bardzo ma³y, co umo¿liwia szybszy transfer w inne miejsce.<br /><br />Mo¿esz tak¿e wys³aæ style bezpo¶rednio na inny serwer, przy u¿yciu po³±czenia FTP.';
+$lang['xs_export_style'] = 'Eksport StylÃ³w';
+$lang['xs_export_style_explain'] = 'W tym miejscu moÅ¼esz eksportowaÄ‡ style jako pojedynczy plik. Plik ten bÄ™dzie bardzo maÅ‚y, co umoÅ¼liwia szybszy transfer w inne miejsce.<br /><br />MoÅ¼esz takÅ¼e wysÅ‚aÄ‡ style bezpoÅ›rednio na inny serwer, przy uÅ¼yciu poÅ‚Ä…czenia FTP.';
 
 $lang['xs_export_style_title'] = 'Eksportuj Styl "{TPL}"';
 $lang['xs_export_tpl_name'] = 'Eksportuj jako (nazwa schematu)';
 $lang['xs_export_style_names'] = 'Wybierz Style do eksportu';
 $lang['xs_export_style_name'] = 'Style do eksportu (nazwa stylu)';
 $lang['xs_export_style_comment'] = 'Komentarz';
-$lang['xs_export_where'] = 'Gdzie eksportowaæ';
+$lang['xs_export_where'] = 'Gdzie eksportowaÄ‡';
 $lang['xs_export_where_download'] = 'Pobierz jako plik';
 $lang['xs_export_where_store'] = 'Zapisz jako plik na serwerze';
 $lang['xs_export_where_store_dir'] = 'Katalog';
-$lang['xs_export_where_ftp'] = 'Wy¶lij poprzez FTP';
+$lang['xs_export_where_ftp'] = 'WyÅ›lij poprzez FTP';
 $lang['xs_export_filename'] = 'Nazwa eksportowanego pliku';
 
-$lang['xs_download_explain2'] = 'W tym miejscu mo¿esz szybko pobraæ i zainstalowaæ style bezpo¶rednio ze strony www. Kliknij na link obok nazwy strony aby zostaæ przekierowanym do strony z list± stylów do pobrania.<br /><br />Mo¿esz tak¿e zarz±dzaæ list± dostêpnych stron.';
+$lang['xs_download_explain2'] = 'W tym miejscu moÅ¼esz szybko pobraÄ‡ i zainstalowaÄ‡ style bezpoÅ›rednio ze strony www. Kliknij na link obok nazwy strony aby zostaÄ‡ przekierowanym do strony z listÄ… stylÃ³w do pobrania.<br /><br />MoÅ¼esz takÅ¼e zarzÄ…dzaÄ‡ listÄ… dostÄ™pnych stron.';
 
 $lang['xs_download_locations'] = 'Lokalizacje';
 $lang['xs_edit_link'] = 'Edytuj Link';
 $lang['xs_add_link'] = 'Dodaj Link';
-$lang['xs_link_title'] = 'Tytu³ Linku';
+$lang['xs_link_title'] = 'TytuÅ‚ Linku';
 $lang['xs_link_url'] = 'Adres Linku';
-$lang['xs_delete'] = 'Usuñ';
+$lang['xs_delete'] = 'UsuÅ„';
 
-$lang['xs_style_header_error_file'] = 'Nie mo¿na otworzyæ lokalnego pliku';
-$lang['xs_style_header_error_server'] = 'B³±d serwera: ';
-$lang['xs_style_header_error_invalid'] = 'B³êdny nag³ówek pliku';
-$lang['xs_style_header_error_reason'] = 'B³±d odczytu nag³ówka pliku: ';
+$lang['xs_style_header_error_file'] = 'Nie moÅ¼na otworzyÄ‡ lokalnego pliku';
+$lang['xs_style_header_error_server'] = 'BÅ‚Ä…d serwera: ';
+$lang['xs_style_header_error_invalid'] = 'BÅ‚Ä™dny nagÅ‚Ã³wek pliku';
+$lang['xs_style_header_error_reason'] = 'BÅ‚Ä…d odczytu nagÅ‚Ã³wka pliku: ';
 $lang['xs_style_header_error_incomplete'] = 'Plik jest niekompletny';
-$lang['xs_style_header_error_incomplete2'] = 'B³êdny rozmiar pliku. Prawdopodobnie plik jest niekompletny.';
-$lang['xs_style_header_error_invalid2'] = 'B³êdny plik. Prawdopodobnie plik nie jest plikiem kompatybilnym z eXtreme Styles lub jest z innej wersji.';
-$lang['xs_error_cannot_open'] = 'Nie mo¿na otworzyæ pliku.';
-$lang['xs_error_decompress_style'] = 'B³±d dekompresji pliku. Prawdopodobnie plik jest uszkodzony.';
-$lang['xs_error_cannot_create_file'] = 'Nie mo¿na utworzyæ pliku "{FILE}"';
-$lang['xs_error_cannot_create_tmp'] = 'Nie mo¿na utworzyæ pliku tymczasowego "{FILE}"';
-$lang['xs_import_invalid_file'] = 'B³êdny plik';
+$lang['xs_style_header_error_incomplete2'] = 'BÅ‚Ä™dny rozmiar pliku. Prawdopodobnie plik jest niekompletny.';
+$lang['xs_style_header_error_invalid2'] = 'BÅ‚Ä™dny plik. Prawdopodobnie plik nie jest plikiem kompatybilnym z eXtreme Styles lub jest z innej wersji.';
+$lang['xs_error_cannot_open'] = 'Nie moÅ¼na otworzyÄ‡ pliku.';
+$lang['xs_error_decompress_style'] = 'BÅ‚Ä…d dekompresji pliku. Prawdopodobnie plik jest uszkodzony.';
+$lang['xs_error_cannot_create_file'] = 'Nie moÅ¼na utworzyÄ‡ pliku "{FILE}"';
+$lang['xs_error_cannot_create_tmp'] = 'Nie moÅ¼na utworzyÄ‡ pliku tymczasowego "{FILE}"';
+$lang['xs_import_invalid_file'] = 'BÅ‚Ä™dny plik';
 $lang['xs_import_incomplete_file'] = 'Niekompletny plik';
-$lang['xs_import_uploaded'] = 'Styl wys³any.';
-$lang['xs_import_installed'] = 'Styl wys³any i zainstalowany.';
-$lang['xs_import_notinstall'] = 'Styl wys³any, lecz wyst±pi³ b³±d podczas instalacji stylu (sql error).';
-$lang['xs_import_notinstall2'] = 'Styl wys³any, lecz wyst±pi³ b³±d podczas instalacji stylu: nie odnaleziono stylów w pliku theme_info.cfg';
-$lang['xs_import_notinstall3'] = 'Styl wys³any, lecz wyst±pi³ b³±d podczas instalacji stylu: nie odnaleziono wpisów dla "{STYLE}" w pliku theme_info.cfg';
-$lang['xs_import_notinstall4'] = 'Styl wys³any, lecz wyst±pi³ b³±d podczas instalacji stylu: nie mo¿na uzyskaæ nastêpnego numeru themes_id';
-$lang['xs_import_notinstall5'] = 'Styl wys³any, lecz wyst±pi³ b³±d podczas instalacji stylu: nie mo¿na zaktualizowaæ tabeli stylów';
-$lang['xs_import_nodownload'] = 'Nie mo¿na pobraæ stylu z {URL}';
-$lang['xs_import_nodownload2'] = 'Nie mo¿na skopiowac stylu z {URL}';
-$lang['xs_import_nodownload3'] = 'Plik nie zosta³ wys³any.';
-$lang['xs_import_uploaded2'] = 'Styl pobrany. Mo¿esz go teraz importowaæ.<br /><br /><a href="{URL}">Kliknij tutaj</a> aby importowaæ styl.';
-$lang['xs_import_uploaded3'] = 'Styl skopiowany. Mo¿esz go teraz importowaæ.<br /><br /><a href="{URL}">Kliknij tutaj</a> aby importowaæ styl.';
-$lang['xs_import_uploaded4'] = 'Styl wys³any. Mo¿esz go teraz importowaæ.<br /><br /><a href="{URL}">Kliknij tutaj</a> aby importowaæ styl.';
-$lang['xs_export_no_open_dir'] = 'Nie mo¿na otworzyæ katalogu {DIR}';
-$lang['xs_export_no_open_file'] = 'Nie mo¿na otworzyæ pliku {FILE}';
-$lang['xs_export_no_read_file'] = 'B³±d odczytu pliku {FILE}';
-$lang['xs_no_theme_data'] = 'Nie mo¿na pobraæ informacji o stylu dla wybranego schematu';
-$lang['xs_no_style_info'] = 'Nie mo¿na pobraæ informacji o stylu';
-$lang['xs_export_noselect_themes'] = 'Powiniene¶ wybraæ jako najmniejszy styl';
-$lang['xs_export_error'] = 'Nie mo¿na eksportowaæ schematu "{TPL}": ';
-$lang['xs_export_error2'] = 'Nie mo¿na eksportowaæ schematu "{TPL}": styl jest pusty';
+$lang['xs_import_uploaded'] = 'Styl wysÅ‚any.';
+$lang['xs_import_installed'] = 'Styl wysÅ‚any i zainstalowany.';
+$lang['xs_import_notinstall'] = 'Styl wysÅ‚any, lecz wystÄ…piÅ‚ bÅ‚Ä…d podczas instalacji stylu (sql error).';
+$lang['xs_import_notinstall2'] = 'Styl wysÅ‚any, lecz wystÄ…piÅ‚ bÅ‚Ä…d podczas instalacji stylu: nie odnaleziono stylÃ³w w pliku theme_info.cfg';
+$lang['xs_import_notinstall3'] = 'Styl wysÅ‚any, lecz wystÄ…piÅ‚ bÅ‚Ä…d podczas instalacji stylu: nie odnaleziono wpisÃ³w dla "{STYLE}" w pliku theme_info.cfg';
+$lang['xs_import_notinstall4'] = 'Styl wysÅ‚any, lecz wystÄ…piÅ‚ bÅ‚Ä…d podczas instalacji stylu: nie moÅ¼na uzyskaÄ‡ nastÄ™pnego numeru themes_id';
+$lang['xs_import_notinstall5'] = 'Styl wysÅ‚any, lecz wystÄ…piÅ‚ bÅ‚Ä…d podczas instalacji stylu: nie moÅ¼na zaktualizowaÄ‡ tabeli stylÃ³w';
+$lang['xs_import_nodownload'] = 'Nie moÅ¼na pobraÄ‡ stylu z {URL}';
+$lang['xs_import_nodownload2'] = 'Nie moÅ¼na skopiowac stylu z {URL}';
+$lang['xs_import_nodownload3'] = 'Plik nie zostaÅ‚ wysÅ‚any.';
+$lang['xs_import_uploaded2'] = 'Styl pobrany. MoÅ¼esz go teraz importowaÄ‡.<br /><br /><a href="{URL}">Kliknij tutaj</a> aby importowaÄ‡ styl.';
+$lang['xs_import_uploaded3'] = 'Styl skopiowany. MoÅ¼esz go teraz importowaÄ‡.<br /><br /><a href="{URL}">Kliknij tutaj</a> aby importowaÄ‡ styl.';
+$lang['xs_import_uploaded4'] = 'Styl wysÅ‚any. MoÅ¼esz go teraz importowaÄ‡.<br /><br /><a href="{URL}">Kliknij tutaj</a> aby importowaÄ‡ styl.';
+$lang['xs_export_no_open_dir'] = 'Nie moÅ¼na otworzyÄ‡ katalogu {DIR}';
+$lang['xs_export_no_open_file'] = 'Nie moÅ¼na otworzyÄ‡ pliku {FILE}';
+$lang['xs_export_no_read_file'] = 'BÅ‚Ä…d odczytu pliku {FILE}';
+$lang['xs_no_theme_data'] = 'Nie moÅ¼na pobraÄ‡ informacji o stylu dla wybranego schematu';
+$lang['xs_no_style_info'] = 'Nie moÅ¼na pobraÄ‡ informacji o stylu';
+$lang['xs_export_noselect_themes'] = 'PowinieneÅ› wybraÄ‡ jako najmniejszy styl';
+$lang['xs_export_error'] = 'Nie moÅ¼na eksportowaÄ‡ schematu "{TPL}": ';
+$lang['xs_export_error2'] = 'Nie moÅ¼na eksportowaÄ‡ schematu "{TPL}": styl jest pusty';
 $lang['xs_export_saved'] = 'Styl zapisany jako "{FILE}"';
-$lang['xs_export_error_uploading'] = 'B³±d wysy³ania pliku';
-$lang['xs_export_uploaded'] = 'Plik wys³any.';
-$lang['xs_clone_taken'] = 'Nazwa stylu jest ju¿ u¿ywana.';
-$lang['xs_error_new_row'] = 'Nie mo¿na dodaæ wpisu do tabeli.';
+$lang['xs_export_error_uploading'] = 'BÅ‚Ä…d wysyÅ‚ania pliku';
+$lang['xs_export_uploaded'] = 'Plik wysÅ‚any.';
+$lang['xs_clone_taken'] = 'Nazwa stylu jest juÅ¼ uÅ¼ywana.';
+$lang['xs_error_new_row'] = 'Nie moÅ¼na dodaÄ‡ wpisu do tabeli.';
 $lang['xs_theme_cloned'] = 'Styl sklonowany.';
-$lang['xs_invalid_style_name'] = 'B³êdna nazwa stylu.';
-$lang['xs_clone_style_exists'] = 'Schemat ju¿ istnieje';
-$lang['xs_clone_no_select'] = 'Powiniene¶ wybraæ najmniejszy styl do sklonowania.';
+$lang['xs_invalid_style_name'] = 'BÅ‚Ä™dna nazwa stylu.';
+$lang['xs_clone_style_exists'] = 'Schemat juÅ¼ istnieje';
+$lang['xs_clone_no_select'] = 'PowinieneÅ› wybraÄ‡ najmniejszy styl do sklonowania.';
 $lang['xs_no_themes'] = 'Styl nie odnaleziony w bazie.';
 
-$lang['xs_import_back'] = '<a href="{URL}">Kliknij tutaj</a> aby powróciæ do importu stylów.';
-$lang['xs_import_back_download'] = '<a href="{URL}" target="main">Kliknij tutaj</a> aby powróciæ do pobierania stylów.';
-$lang['xs_export_back'] = '<a href="{URL}">Kliknij tutaj</a> aby powróciæ eksportu stylów.';
-$lang['xs_clone_back'] = '<a href="{URL}">Kliknij tutaj</a> aby powróciæ do klonowania stylów.';
-$lang['xs_download_back'] = '<a href="{URL}">Kliknij tutaj</a> aby powróciæ do pobierania stylów.';
+$lang['xs_import_back'] = '<a href="{URL}">Kliknij tutaj</a> aby powrÃ³ciÄ‡ do importu stylÃ³w.';
+$lang['xs_import_back_download'] = '<a href="{URL}" target="main">Kliknij tutaj</a> aby powrÃ³ciÄ‡ do pobierania stylÃ³w.';
+$lang['xs_export_back'] = '<a href="{URL}">Kliknij tutaj</a> aby powrÃ³ciÄ‡ eksportu stylÃ³w.';
+$lang['xs_clone_back'] = '<a href="{URL}">Kliknij tutaj</a> aby powrÃ³ciÄ‡ do klonowania stylÃ³w.';
+$lang['xs_download_back'] = '<a href="{URL}">Kliknij tutaj</a> aby powrÃ³ciÄ‡ do pobierania stylÃ³w.';
 
 $lang['xs_import_tpl'] = 'Importuj Schemat "{TPL}"';
-$lang['xs_import_tpl_comment'] = 'W tym miejscu mo¿esz wys³aæ schemat dla twojego forum. Je¿eli schemat pod t± nazw± ju¿ istnieje, stare pliki zostan± automatycznie zast±pione. Styl mo¿e byæ automatycznie zainstalowany. Je¿eli chcesz zainstalowaæ styl po imporcie, wybierz poni¿ej jeden styl lub wiêcej.';
+$lang['xs_import_tpl_comment'] = 'W tym miejscu moÅ¼esz wysÅ‚aÄ‡ schemat dla twojego forum. JeÅ¼eli schemat pod tÄ… nazwÄ… juÅ¼ istnieje, stare pliki zostanÄ… automatycznie zastÄ…pione. Styl moÅ¼e byÄ‡ automatycznie zainstalowany. JeÅ¼eli chcesz zainstalowaÄ‡ styl po imporcie, wybierz poniÅ¼ej jeden styl lub wiÄ™cej.';
 $lang['xs_import_tpl_filename'] = 'Nazwa pliku:';
 $lang['xs_import_tpl_tplname'] = 'Nazwa schematu:';
 $lang['xs_import_tpl_comment2'] = 'Komentarz:';
 $lang['xs_import_select_styles'] = 'Wybierz styl(e) do instalacji:';
-$lang['xs_import_install_def_lc'] = 'ustaw jako domy¶lny styl forum';
+$lang['xs_import_install_def_lc'] = 'ustaw jako domyÅ›lny styl forum';
 $lang['xs_import_install_style'] = 'Instaluj styl:';
 $lang['xs_import'] = 'Importuj';
 
-$lang['xs_import_list_contents'] = 'Zawarto¶æ pliku: ';
+$lang['xs_import_list_contents'] = 'ZawartoÅ›Ä‡ pliku: ';
 $lang['xs_import_list_filename'] = 'Nazwa pliku: ';
 $lang['xs_import_list_template'] = 'Schemat: ';
 $lang['xs_import_list_comment'] = 'Komentarz: ';
 $lang['xs_import_list_styles'] = 'Styl(e): ';
-$lang['xs_import_list_files'] = 'Plików ({NUM}):';
+$lang['xs_import_list_files'] = 'PlikÃ³w ({NUM}):';
 $lang['xs_import_download_lc'] = 'pobierz plik';
-$lang['xs_import_view_lc'] = 'podgl±d pliku';
-$lang['xs_import_file_size'] = '({NUM} bajtów)';
+$lang['xs_import_view_lc'] = 'podglÄ…d pliku';
+$lang['xs_import_file_size'] = '({NUM} bajtÃ³w)';
 
-$lang['xs_import_nogzip'] = 'Ta funkcja wymaga kompresji gzip, która prawdopodobnie nie jest zainstalowana na serwerze.';
-$lang['xs_import_nowrite_cache'] = 'Nie mo¿na zapisaæ do cach\'u. Ta funkcja wymaga, aby katalog cache mia³ prawa do zapisu. Sprawd¼ ustawienia konfiguracji.<br /><br /><a href="{URL1}">Kliknij tutaj</a> aby spróbowaæ ustawiæ prawa do zapisu.<br /><br /><a href="{URL2}">Kliknij tutaj</a> aby powróciæ do importu stylów.';
+$lang['xs_import_nogzip'] = 'Ta funkcja wymaga kompresji gzip, ktÃ³ra prawdopodobnie nie jest zainstalowana na serwerze.';
+$lang['xs_import_nowrite_cache'] = 'Nie moÅ¼na zapisaÄ‡ do cach\'u. Ta funkcja wymaga, aby katalog cache miaÅ‚ prawa do zapisu. SprawdÅº ustawienia konfiguracji.<br /><br /><a href="{URL1}">Kliknij tutaj</a> aby sprÃ³bowaÄ‡ ustawiÄ‡ prawa do zapisu.<br /><br /><a href="{URL2}">Kliknij tutaj</a> aby powrÃ³ciÄ‡ do importu stylÃ³w.';
 
-$lang['xs_import_download_warning'] = 'Zostaniesz przeniesiony do zewnêtrznej strony, gdzie mo¿esz szybko pobraæ i zaimportowaæ style.';
+$lang['xs_import_download_warning'] = 'Zostaniesz przeniesiony do zewnÄ™trznej strony, gdzie moÅ¼esz szybko pobraÄ‡ i zaimportowaÄ‡ style.';
 
 $lang['xs_clone_style'] = 'Klonuj Styl';
-$lang['xs_clone_style_explain'] = 'W tym miejscu mo¿esz szybko sklonowaæ styl lub schemat.<br /><br />Uwaga: Podczas kopiowania schematu, upewnij siê, czy autor wybranego stylu na to zezwoli³.';
-$lang['xs_clone_style_explain2'] = 'W tym miejscu mo¿esz stworzyæ nowy styl dla schematu. Funkcja ta nie kopiuje ¿adnych plików, dodaje tylko odpowiednie wpisy w bazie danych';
-$lang['xs_clone_style_explain3'] = 'Podaj nazwê dla nowego schematu i kliknij przycisk "Klonuj.';
-$lang['xs_clone_style_explain4'] = 'W tym miejscu mo¿esz sklonowac schemat. Mo¿esz tak¿e skopiowaæ wszystkie style przypisane do tego schematu. W pó¼niejszym czasie mo¿esz bezpiecznie edytowaæ pliki .tpl stary i nowy schemat nie zostanie zmieniony.';
+$lang['xs_clone_style_explain'] = 'W tym miejscu moÅ¼esz szybko sklonowaÄ‡ styl lub schemat.<br /><br />Uwaga: Podczas kopiowania schematu, upewnij siÄ™, czy autor wybranego stylu na to zezwoliÅ‚.';
+$lang['xs_clone_style_explain2'] = 'W tym miejscu moÅ¼esz stworzyÄ‡ nowy styl dla schematu. Funkcja ta nie kopiuje Å¼adnych plikÃ³w, dodaje tylko odpowiednie wpisy w bazie danych';
+$lang['xs_clone_style_explain3'] = 'Podaj nazwÄ™ dla nowego schematu i kliknij przycisk "Klonuj.';
+$lang['xs_clone_style_explain4'] = 'W tym miejscu moÅ¼esz sklonowac schemat. MoÅ¼esz takÅ¼e skopiowaÄ‡ wszystkie style przypisane do tego schematu. W pÃ³Åºniejszym czasie moÅ¼esz bezpiecznie edytowaÄ‡ pliki .tpl stary i nowy schemat nie zostanie zmieniony.';
 
 $lang['xs_clone_style_lc'] = 'klonuj styl';
 $lang['xs_clone_style2'] = 'Klonuj styl "{STYLE}":';
 $lang['xs_clone_style3'] = 'Klonuj Schemat "{STYLE}"';
 $lang['xs_clone_newdir_name'] = 'Nazwa katalogu nowego schematu (directory) :';
 $lang['xs_clone_select'] = 'Wybierz styl(e) do klonowania:';
-$lang['xs_clone_select_explain'] = 'Powiniene¶ wybraæ najmniejszy styl.';
+$lang['xs_clone_select_explain'] = 'PowinieneÅ› wybraÄ‡ najmniejszy styl.';
 $lang['xs_clone_newname'] = 'Nazwa nowego stylu:';
 
 
 /*
 * install/uninstall
 */
-$lang['xs_install_styles_explain2'] = 'To jest lista stylów wys³anych do katalogu stylów, lecz jeszcze niezainstalowanych. Kliknij na link "Instaluj" aby zainstalowaæ wybrany styl lub wybierz kilka stylów i zainstaluj wszystkie u¿ywaj±c przycisku.';
-$lang['xs_uninstall_styles_explain2'] = 'To jest lista zainstalowanych stylów na twoim forum. Kliknij na link "Odinstaluj" aby odinstalowaæ. U¿ytkownicy u¿ywaj±cy odinstalowywanego stylu zostan± prze³±czeni na domy¶lny styl. Deinstalacja usunie równie¿ pliki cach\'u dla stylu .';
+$lang['xs_install_styles_explain2'] = 'To jest lista stylÃ³w wysÅ‚anych do katalogu stylÃ³w, lecz jeszcze niezainstalowanych. Kliknij na link "Instaluj" aby zainstalowaÄ‡ wybrany styl lub wybierz kilka stylÃ³w i zainstaluj wszystkie uÅ¼ywajÄ…c przycisku.';
+$lang['xs_uninstall_styles_explain2'] = 'To jest lista zainstalowanych stylÃ³w na twoim forum. Kliknij na link "Odinstaluj" aby odinstalowaÄ‡. UÅ¼ytkownicy uÅ¼ywajÄ…cy odinstalowywanego stylu zostanÄ… przeÅ‚Ä…czeni na domyÅ›lny styl. Deinstalacja usunie rÃ³wnieÅ¼ pliki cach\'u dla stylu .';
 
 $lang['xs_install'] = 'Instaluj';
 $lang['xs_install_lc'] = 'instaluj';
 $lang['xs_uninstall'] = 'Odinstaluj';
-$lang['xs_remove_files'] = 'Usuñ Pliki';
-$lang['xs_style_removed'] = 'Styl usuniêty.';
+$lang['xs_remove_files'] = 'UsuÅ„ Pliki';
+$lang['xs_style_removed'] = 'Styl usuniÄ™ty.';
 $lang['xs_uninstall_lc'] = 'odinstaluj';
-$lang['xs_uninstall2_lc'] = 'odinstaluj i usuñ pliki';
+$lang['xs_uninstall2_lc'] = 'odinstaluj i usuÅ„ pliki';
 
-$lang['xs_install_back'] = '<a href="{URL}">Kliknij tutaj</a> aby powróciæ do instalacji stylów.';
-$lang['xs_uninstall_back'] = '<a href="{URL}">Kliknij tutaj</a> aby powróciæ do deinstalacji stylów.';
-$lang['xs_goto_default'] = '<a href="{URL}">Kliknij tutaj</a> aby zmieniæ domy¶lny styl.';
+$lang['xs_install_back'] = '<a href="{URL}">Kliknij tutaj</a> aby powrÃ³ciÄ‡ do instalacji stylÃ³w.';
+$lang['xs_uninstall_back'] = '<a href="{URL}">Kliknij tutaj</a> aby powrÃ³ciÄ‡ do deinstalacji stylÃ³w.';
+$lang['xs_goto_default'] = '<a href="{URL}">Kliknij tutaj</a> aby zmieniÄ‡ domyÅ›lny styl.';
 
 $lang['xs_install_installed'] = 'Styl(e) zainstalowan(y/e).';
-$lang['xs_install_error'] = 'B³±d instalacji stylu.';
-$lang['xs_install_none'] = 'Nie ma nowych stylów do instalacji. Wszystkie dostêpne style s± ju¿ zainstalowane.';
+$lang['xs_install_error'] = 'BÅ‚Ä…d instalacji stylu.';
+$lang['xs_install_none'] = 'Nie ma nowych stylÃ³w do instalacji. Wszystkie dostÄ™pne style sÄ… juÅ¼ zainstalowane.';
 
-$lang['xs_uninstall_default'] = 'Nie mo¿esz usun±æ domy¶lnego stylu. Aby zmieniæ domy¶lny styl <a href="{URL}">kliknij tutaj</a>.';
+$lang['xs_uninstall_default'] = 'Nie moÅ¼esz usunÄ…Ä‡ domyÅ›lnego stylu. Aby zmieniÄ‡ domyÅ›lny styl <a href="{URL}">kliknij tutaj</a>.';
 
 /*
 * export theme_info.cfg
 */
-$lang['xs_export_styles_data_explain2'] = 'Ta funkcja zapisuje dane stylu do pliku theme_info.cfg. Mo¿e zostaæ u¿yta do zapisu danych w bazie, przed przenoszeniem stylów z jednego foeum na drugie.';
-$lang['xs_export_styles_data_explain3'] = 'Wybierz style które chcesz eksportowaæ.';
+$lang['xs_export_styles_data_explain2'] = 'Ta funkcja zapisuje dane stylu do pliku theme_info.cfg. MoÅ¼e zostaÄ‡ uÅ¼yta do zapisu danych w bazie, przed przenoszeniem stylÃ³w z jednego foeum na drugie.';
+$lang['xs_export_styles_data_explain3'] = 'Wybierz style ktÃ³re chcesz eksportowaÄ‡.';
 
-$lang['xs_export_data_back'] = '<a href="{URL}">Kliknij tutaj</a> aby powróciæ do eksportu danych stylu.';
+$lang['xs_export_data_back'] = '<a href="{URL}">Kliknij tutaj</a> aby powrÃ³ciÄ‡ do eksportu danych stylu.';
 $lang['xs_export_style_data_lc'] = 'eksportuj dane stylu';
 
 $lang['xs_export_data_saved'] = 'Dane wyeksportowane.';
@@ -478,19 +478,19 @@ $lang['xs_export_data_saved'] = 'Dane wyeksportowane.';
 /*
 * edit templates (file manager)
 */
-$lang['xs_edit_template_comment1'] = 'Ta funkcja pozwala na edycjê schematów. Zostan± pokazane tylko pliki mo¿liwe do edycji.';
-$lang['xs_edit_template_comment2'] = 'Ta funkcja pozwala na edycjê schematów.';
+$lang['xs_edit_template_comment1'] = 'Ta funkcja pozwala na edycjÄ™ schematÃ³w. ZostanÄ… pokazane tylko pliki moÅ¼liwe do edycji.';
+$lang['xs_edit_template_comment2'] = 'Ta funkcja pozwala na edycjÄ™ schematÃ³w.';
 $lang['xs_edit_file_saved'] = 'Plik zapisany.';
 $lang['xs_edit_not_found'] = 'Nie odnaleziono pliku.';
-$lang['xs_edittpl_back_dir'] = '<a href="{URL}">Kliknij tutaj</a> aby powróciæ do zarz±dzania plikami.';
+$lang['xs_edittpl_back_dir'] = '<a href="{URL}">Kliknij tutaj</a> aby powrÃ³ciÄ‡ do zarzÄ…dzania plikami.';
 
-$lang['xs_fileman_browser'] = 'Przegl±darka plików';
+$lang['xs_fileman_browser'] = 'PrzeglÄ…darka plikÃ³w';
 $lang['xs_fileman_directory'] = 'Katalog:';
-$lang['xs_fileman_dircount'] = 'Katalogów ({COUNT}):';
+$lang['xs_fileman_dircount'] = 'KatalogÃ³w ({COUNT}):';
 $lang['xs_fileman_filter'] = 'Filtr';
-$lang['xs_fileman_filter_ext'] = 'Poka¿ tylko pliki z rozszerzeniem:';
-$lang['xs_fileman_filter_content'] = 'Poka¿ tylko pliki zawieraj±ce:';
-$lang['xs_fileman_filter_clear'] = 'Wyczy¶æ filtr';
+$lang['xs_fileman_filter_ext'] = 'PokaÅ¼ tylko pliki z rozszerzeniem:';
+$lang['xs_fileman_filter_content'] = 'PokaÅ¼ tylko pliki zawierajÄ…ce:';
+$lang['xs_fileman_filter_clear'] = 'WyczyÅ›Ä‡ filtr';
 $lang['xs_fileman_filename'] = 'Nazwa pliku';
 $lang['xs_fileman_filesize'] = 'Rozmiar';
 $lang['xs_fileman_filetime'] = 'Modyfikowany';
@@ -499,77 +499,77 @@ $lang['xs_fileman_time_today'] = '(dzisiaj)';
 $lang['xs_fileman_edit_lc'] = 'edytuj';
 
 $lang['xs_fileedit_search_nomatch'] = 'Zakres nie odnaleziony';
-$lang['xs_fileedit_search_match1'] = 'Zast±piono 1 zakres';
-$lang['xs_fileedit_search_matches'] = "Zastapionych zakresów: ' + count + '";
-$lang['xs_fileedit_noundo'] = 'Brak czynno¶ci do cofniêcia';
-$lang['xs_fileedit_undo_complete'] = 'Przywrócono poprzedni± zawarto¶æ';
+$lang['xs_fileedit_search_match1'] = 'ZastÄ…piono 1 zakres';
+$lang['xs_fileedit_search_matches'] = "Zastapionych zakresÃ³w: ' + count + '";
+$lang['xs_fileedit_noundo'] = 'Brak czynnoÅ›ci do cofniÄ™cia';
+$lang['xs_fileedit_undo_complete'] = 'PrzywrÃ³cono poprzedniÄ… zawartoÅ›Ä‡';
 $lang['xs_fileedit_edit_name'] = 'Edytuj plik:';
 $lang['xs_fileedit_location'] = 'Lokalizacja:';
-$lang['xs_fileedit_reload_lc'] = 'prze³aduj plik';
+$lang['xs_fileedit_reload_lc'] = 'przeÅ‚aduj plik';
 $lang['xs_fileedit_download_lc'] = 'pobierz plik';
-$lang['xs_fileedit_trim'] = 'Automatycznie usuwaj odstêpy na pocz±tku i koñcu pliku.';
+$lang['xs_fileedit_trim'] = 'Automatycznie usuwaj odstÄ™py na poczÄ…tku i koÅ„cu pliku.';
 $lang['xs_fileedit_functions'] = 'Edycja funkcji';
-$lang['xs_fileedit_replace1'] = 'Zast±p ';
+$lang['xs_fileedit_replace1'] = 'ZastÄ…p ';
 $lang['xs_fileedit_replace2'] = ' na ';
-$lang['xs_fileedit_replace_first_lc'] = 'zast±p pierwszy zakres';
-$lang['xs_fileedit_replace_all_lc'] = 'zast±p wszystkie zakresy';
-$lang['xs_fileedit_replace_undo_lc'] = 'cofnij zast±pienie';
-$lang['xs_fileedit_backups'] = 'Kopie bezpieczeñstwa';
-$lang['xs_fileedit_backups_save_lc'] = 'zapisz kopiê';
-$lang['xs_fileedit_backups_show_lc'] = 'poka¿ zawarto¶æ';
-$lang['xs_fileedit_backups_restore_lc'] = 'przywróæ';
+$lang['xs_fileedit_replace_first_lc'] = 'zastÄ…p pierwszy zakres';
+$lang['xs_fileedit_replace_all_lc'] = 'zastÄ…p wszystkie zakresy';
+$lang['xs_fileedit_replace_undo_lc'] = 'cofnij zastÄ…pienie';
+$lang['xs_fileedit_backups'] = 'Kopie bezpieczeÅ„stwa';
+$lang['xs_fileedit_backups_save_lc'] = 'zapisz kopiÄ™';
+$lang['xs_fileedit_backups_show_lc'] = 'pokaÅ¼ zawartoÅ›Ä‡';
+$lang['xs_fileedit_backups_restore_lc'] = 'przywrÃ³Ä‡';
 $lang['xs_fileedit_backups_download_lc'] = 'pobierz';
-$lang['xs_fileedit_backups_delete_lc'] = 'usuñ';
-$lang['xs_fileedit_upload'] = 'Wy¶lij';
-$lang['xs_fileedit_upload_file'] = 'Wy¶lij plik:';
+$lang['xs_fileedit_backups_delete_lc'] = 'usuÅ„';
+$lang['xs_fileedit_upload'] = 'WyÅ›lij';
+$lang['xs_fileedit_upload_file'] = 'WyÅ›lij plik:';
 
 /*
 * edit styles data (theme_info)
 */
 $lang['xs_data_head_stylesheet'] = 'Tablica CSS';
-$lang['xs_data_body_background'] = 'Obraz t³a (¶ciezka lub adres do pliku)';
-$lang['xs_data_body_bgcolor'] = 'Kolor t³a';
+$lang['xs_data_body_background'] = 'Obraz tÅ‚a (Å›ciezka lub adres do pliku)';
+$lang['xs_data_body_bgcolor'] = 'Kolor tÅ‚a';
 $lang['xs_data_style_name'] = 'Nazwa stylu';
-$lang['xs_data_body_link'] = 'Kolor linków';
+$lang['xs_data_body_link'] = 'Kolor linkÃ³w';
 $lang['xs_data_body_text'] = 'Kolor tekstu';
-$lang['xs_data_body_vlink'] = 'Kolor odwiedzonych linków';
-$lang['xs_data_body_alink'] = 'Kolor aktywnych linków';
-$lang['xs_data_body_hlink'] = 'Kolor Hover linków';
-$lang['xs_data_tr_color'] = 'Kolor rzêdu tabeli %s';
-$lang['xs_data_tr_color_helped'] = 'Kolor komórki "pomóg³"';
-$lang['xs_data_tr_class'] = 'Klasa rzêdu tabeli %s';
-$lang['xs_data_th_color'] = 'Kolor nag³ówka tabeli %s';
-$lang['xs_data_th_class'] = 'Klasa nag³ówka tabeli %s';
+$lang['xs_data_body_vlink'] = 'Kolor odwiedzonych linkÃ³w';
+$lang['xs_data_body_alink'] = 'Kolor aktywnych linkÃ³w';
+$lang['xs_data_body_hlink'] = 'Kolor Hover linkÃ³w';
+$lang['xs_data_tr_color'] = 'Kolor rzÄ™du tabeli %s';
+$lang['xs_data_tr_color_helped'] = 'Kolor komÃ³rki "pomÃ³gÅ‚"';
+$lang['xs_data_tr_class'] = 'Klasa rzÄ™du tabeli %s';
+$lang['xs_data_th_color'] = 'Kolor nagÅ‚Ã³wka tabeli %s';
+$lang['xs_data_th_class'] = 'Klasa nagÅ‚Ã³wka tabeli %s';
 $lang['xs_data_td_color'] = 'Kolor kolumny tabeli %s';
 $lang['xs_data_td_class'] = 'Klasa kolumny tabeli %s';
-$lang['xs_data_fontface'] = 'Krój tekstu %s';
-$lang['xs_data_fontsize'] = 'Wielko¶æ tekstu %s';
+$lang['xs_data_fontface'] = 'KrÃ³j tekstu %s';
+$lang['xs_data_fontsize'] = 'WielkoÅ›Ä‡ tekstu %s';
 $lang['xs_data_fontcolor'] = 'Kolor tekstu %s';
 $lang['xs_data_fontcolor_admin'] = 'Kolor admina';
 $lang['xs_data_fontcolor_jradmin'] = 'Kolor junior admina';
 $lang['xs_data_fontcolor_mod'] = 'Kolor moda';
 $lang['xs_data_factive_color'] = 'Kolor aktywnego pola formularza';
-$lang['xs_data_faonmouse_color'] = 'Kolor komórki 1 po najechaniu mysz±';
-$lang['xs_data_faonmouse2_color'] = 'Kolor komórki 2 po najechaniu mysz± oraz kolor drugiego pola formularza';
+$lang['xs_data_faonmouse_color'] = 'Kolor komÃ³rki 1 po najechaniu myszÄ…';
+$lang['xs_data_faonmouse2_color'] = 'Kolor komÃ³rki 2 po najechaniu myszÄ… oraz kolor drugiego pola formularza';
 
 $lang['xs_data_span_class'] = 'Klasa span %s';
-$lang['xs_data_img_size_poll'] = 'Rozmiar obrazków ankiet [px]';
-$lang['xs_data_img_size_privmsg'] = 'Rozmiar statusu prywatnych wiadomo¶ci [px]';
+$lang['xs_data_img_size_poll'] = 'Rozmiar obrazkÃ³w ankiet [px]';
+$lang['xs_data_img_size_privmsg'] = 'Rozmiar statusu prywatnych wiadomoÅ›ci [px]';
 $lang['xs_data_theme_public'] = 'Styl publiczny (1 lub 0)';
-$lang['xs_data_unknown'] = 'Opis nie jest dostêpny (%s)';
+$lang['xs_data_unknown'] = 'Opis nie jest dostÄ™pny (%s)';
 
-$lang['xs_edittpl_error_updating'] = 'B³±d aktualizacji stylu.';
+$lang['xs_edittpl_error_updating'] = 'BÅ‚Ä…d aktualizacji stylu.';
 $lang['xs_edittpl_style_updated'] = 'Styl zaktualizowany.';
-$lang['xs_edittpl_failed_open_file'] = 'Nie mo¿na odczytaæ pliku <b>%s</b>';
-$lang['xs_edittpl_failed_open_file_css'] = 'Nie mo¿na zapisaæ do pliku <b>%s</b><br />Prawdopodobnie plik nie posiada praw do zapisu, wpisz u¿ywaj±c klienta FTP z lini± poleceñ: <b> chmod 777 nazwa_pliku.css</b> bêd±c w katalogu w którym znajduje sie plik.';
-$lang['xs_invalid_style_id'] = 'B³êdny numer ID stylu.';
+$lang['xs_edittpl_failed_open_file'] = 'Nie moÅ¼na odczytaÄ‡ pliku <b>%s</b>';
+$lang['xs_edittpl_failed_open_file_css'] = 'Nie moÅ¼na zapisaÄ‡ do pliku <b>%s</b><br />Prawdopodobnie plik nie posiada praw do zapisu, wpisz uÅ¼ywajÄ…c klienta FTP z liniÄ… poleceÅ„: <b> chmod 777 nazwa_pliku.css</b> bÄ™dÄ…c w katalogu w ktÃ³rym znajduje sie plik.';
+$lang['xs_invalid_style_id'] = 'BÅ‚Ä™dny numer ID stylu.';
 
-$lang['xs_edittpl_back_edit'] = '<a href="{URL}">Kliknij tutaj</a> aby powróciæ do edycji.';
-$lang['xs_edittpl_back_list'] = '<a href="{URL}">Kliknij tutaj</a> aby powróciæ do listy stylów.';
+$lang['xs_edittpl_back_edit'] = '<a href="{URL}">Kliknij tutaj</a> aby powrÃ³ciÄ‡ do edycji.';
+$lang['xs_edittpl_back_list'] = '<a href="{URL}">Kliknij tutaj</a> aby powrÃ³ciÄ‡ do listy stylÃ³w.';
 
-$lang['xs_editdata_explain'] = 'W tym miejscu mo¿esz edytowaæ dane zainstalowanych stylów w bazie danych.<br /> W tej modyfikacji w celu zmniejszenia ilo¶ci transferu, forum korzysta tylko z pliku <b>nazwastylu.css</b> i nie ³aduje informacji parametrów stylu do kodu html. Parametry, które widzisz poni¿ej s± pobierane z bazy SQL, przy zapisie s± w niej zapisywane i równolegle s± zapisywane do pliku .css w katalogu stylu <b>(plik ten powinien mieæ prawa do zapisu chmod 777 nazwastylu.css)</b>. Struktura pliku <b>nazwastylu.css</b> oraz pozosta³e kolory których nie mo¿na zmieniæ w tym miejscu, s± pobierane z pliku <b>nazwastylu.tps</b><br />Zmieniæ pozosta³e parametry mo¿na na dwa sposoby: 1. Po zapisaniu zmian w tym miejscu, rêcznie edytowaæ plik <b>nazwastylu.css</b> jednak gdy ponownie zapiszemy zmiany tutaj, plik <b>nazwastylu.css</b> zostanie spowrotem nadpisany przez szablon <b>nazwastylu.tps</b> tak wiêc lepszym rozwi±zaniem jest: 2. Edytowaæ rêcznie plik <b>nazwastylu.tps</b> :)';
+$lang['xs_editdata_explain'] = 'W tym miejscu moÅ¼esz edytowaÄ‡ dane zainstalowanych stylÃ³w w bazie danych.<br /> W tej modyfikacji w celu zmniejszenia iloÅ›ci transferu, forum korzysta tylko z pliku <b>nazwastylu.css</b> i nie Å‚aduje informacji parametrÃ³w stylu do kodu html. Parametry, ktÃ³re widzisz poniÅ¼ej sÄ… pobierane z bazy SQL, przy zapisie sÄ… w niej zapisywane i rÃ³wnolegle sÄ… zapisywane do pliku .css w katalogu stylu <b>(plik ten powinien mieÄ‡ prawa do zapisu chmod 777 nazwastylu.css)</b>. Struktura pliku <b>nazwastylu.css</b> oraz pozostaÅ‚e kolory ktÃ³rych nie moÅ¼na zmieniÄ‡ w tym miejscu, sÄ… pobierane z pliku <b>nazwastylu.tps</b><br />ZmieniÄ‡ pozostaÅ‚e parametry moÅ¼na na dwa sposoby: 1. Po zapisaniu zmian w tym miejscu, rÄ™cznie edytowaÄ‡ plik <b>nazwastylu.css</b> jednak gdy ponownie zapiszemy zmiany tutaj, plik <b>nazwastylu.css</b> zostanie spowrotem nadpisany przez szablon <b>nazwastylu.tps</b> tak wiÄ™c lepszym rozwiÄ…zaniem jest: 2. EdytowaÄ‡ rÄ™cznie plik <b>nazwastylu.tps</b> :)';
 $lang['xs_editdata_var'] = 'Parametr';
-$lang['xs_editdata_value'] = 'Warto¶æ';
+$lang['xs_editdata_value'] = 'WartoÅ›Ä‡';
 $lang['xs_editdata_comment'] = 'Komentarz';
 
 /*
@@ -577,21 +577,21 @@ $lang['xs_editdata_comment'] = 'Komentarz';
 */
 
 $lang['xs_updates'] = 'Aktualizacje';
-$lang['xs_updates_comment'] = 'W tym miejscu mo¿esz sprawdziæ aktualizacje dla niektórych modów i stylów';
+$lang['xs_updates_comment'] = 'W tym miejscu moÅ¼esz sprawdziÄ‡ aktualizacje dla niektÃ³rych modÃ³w i stylÃ³w';
 $lang['xs_updates_comment2'] = 'Rezultat sprawdzania wersji.';
 $lang['xs_update_total1'] = 'Wszystkich pozycji: {NUM}';
-$lang['xs_update_info1'] = 'Ta funkcja sprawdza dostêpno¶æ aktualizacji do phpBB2, kilku modów i stylów na twoim forum. Je¿eli odnajdzie dostêpne aktualizacje, zostanie wy¶wietlony link, który pozwoli je ¶ci±gn±æ. Funkcja ta wymaga mo¿liwo¶ci wykonywania zdalnych po³±czeñ przez PHP. Wiele darmowych serwerów ma zablokowan± tak± mo¿liwo¶æ<br /><br />Po klikniêciu "Kontynuuj", skrypt sprawdzi zainstalowan± zawarto¶æ forum. Je¿eli twój serwer jest powolny, mo¿e to zaj±æ sporo czasu. B±d¼ cierpliwy i nie zatrzymuj procesu. W przypadku niepowodzenia mo¿esz zwiêkszyæ czas bezczynno¶ci.';
+$lang['xs_update_info1'] = 'Ta funkcja sprawdza dostÄ™pnoÅ›Ä‡ aktualizacji do phpBB2, kilku modÃ³w i stylÃ³w na twoim forum. JeÅ¼eli odnajdzie dostÄ™pne aktualizacje, zostanie wyÅ›wietlony link, ktÃ³ry pozwoli je Å›ciÄ…gnÄ…Ä‡. Funkcja ta wymaga moÅ¼liwoÅ›ci wykonywania zdalnych poÅ‚Ä…czeÅ„ przez PHP. Wiele darmowych serwerÃ³w ma zablokowanÄ… takÄ… moÅ¼liwoÅ›Ä‡<br /><br />Po klikniÄ™ciu "Kontynuuj", skrypt sprawdzi zainstalowanÄ… zawartoÅ›Ä‡ forum. JeÅ¼eli twÃ³j serwer jest powolny, moÅ¼e to zajÄ…Ä‡ sporo czasu. BÄ…dÅº cierpliwy i nie zatrzymuj procesu. W przypadku niepowodzenia moÅ¼esz zwiÄ™kszyÄ‡ czas bezczynnoÅ›ci.';
 $lang['xs_update_name'] = 'Nazwa';
 $lang['xs_update_type'] = 'Rodzaj';
 $lang['xs_update_current_version'] = 'Twoja wersja';
 $lang['xs_update_latest_version'] = 'Ostatnia wersja';
 $lang['xs_update_downloadinfo'] = 'Adres pobierania';
-$lang['xs_update_timeout'] = 'Czas bezczynno¶ci skryptu (sekundy):';
+$lang['xs_update_timeout'] = 'Czas bezczynnoÅ›ci skryptu (sekundy):';
 $lang['xs_update_continue'] = 'Kontynuuj';
 
 
-$lang['xs_update_total2'] = 'B³êdów: {NUM}';
-$lang['xs_update_total3'] = 'Dostêpnych aktualizacji: {NUM}';
+$lang['xs_update_total2'] = 'BÅ‚Ä™dÃ³w: {NUM}';
+$lang['xs_update_total3'] = 'DostÄ™pnych aktualizacji: {NUM}';
 $lang['xs_update_select1'] = 'Wybierz pozycje do aktualizacji';
 $lang['xs_update_types'] = array(
 		0 => 'Nieznane',
@@ -599,19 +599,19 @@ $lang['xs_update_types'] = array(
 		2 => 'Mod',
 		3 => 'phpBB'
 		);
-$lang['xs_update_fileinfo'] = 'Wiêcej informacji';
+$lang['xs_update_fileinfo'] = 'WiÄ™cej informacji';
 $lang['xs_update_nothing'] = 'Nie ma nic do zaktualizowania.';
-$lang['xs_update_noupdate'] = 'U¿ywasz ostatniej dostêpnej wersji.';
+$lang['xs_update_noupdate'] = 'UÅ¼ywasz ostatniej dostÄ™pnej wersji.';
 
-$lang['xs_update_error_url'] = 'B³±d: nie mo¿na odczytaæ adresu url %s';
-$lang['xs_update_error_noitem'] = 'B³±d: Nie ma dostêpnej informacji o aktualizacji';
-$lang['xs_update_error_noconnect'] = 'B³±d: Nie mo¿na po³±czyæ do serwera aktualizacji';
+$lang['xs_update_error_url'] = 'BÅ‚Ä…d: nie moÅ¼na odczytaÄ‡ adresu url %s';
+$lang['xs_update_error_noitem'] = 'BÅ‚Ä…d: Nie ma dostÄ™pnej informacji o aktualizacji';
+$lang['xs_update_error_noconnect'] = 'BÅ‚Ä…d: Nie moÅ¼na poÅ‚Ä…czyÄ‡ do serwera aktualizacji';
 
 $lang['xs_update_download'] = 'pobierz';
 $lang['xs_update_downloadinfo2'] = 'pobierz/informacje';
 $lang['xs_update_info'] = 'strona';
 
-$lang['xs_permission_denied'] = 'Dostêp zabroniony';
+$lang['xs_permission_denied'] = 'DostÄ™p zabroniony';
 
 $lang['xs_download_lc'] = 'pobierz';
 $lang['xs_info_lc'] = 'informacja';
@@ -619,10 +619,10 @@ $lang['xs_info_lc'] = 'informacja';
 /*
 * style configuration
 */
-$lang['Template_Config'] = 'Konfiguracja Schematów';
-$lang['xs_style_configuration'] = 'Konfiguracja Schematów';
+$lang['Template_Config'] = 'Konfiguracja SchematÃ³w';
+$lang['xs_style_configuration'] = 'Konfiguracja SchematÃ³w';
 
-$lang['xs_confirm_users'] = 'Czy na pewno chcesz ustawiæ wszystkim u¿ytkownikom ten styl?<br />Nie mo¿na tego cofn±æ.';
+$lang['xs_confirm_users'] = 'Czy na pewno chcesz ustawiÄ‡ wszystkim uÅ¼ytkownikom ten styl?<br />Nie moÅ¼na tego cofnÄ…Ä‡.';
 
-$lang['xs_edit_permission'] = 'Funkcje edycji stylów poprzez formularz oraz importu stylów s± wy³±czone ze wzglêdów bezpieczeñstwa.<br />Je¿eli chcesz je w³±czyæ, ustaw w pliku /admin/admin_config.php zmienn±: $xs_edit na 1';
+$lang['xs_edit_permission'] = 'Funkcje edycji stylÃ³w poprzez formularz oraz importu stylÃ³w sÄ… wyÅ‚Ä…czone ze wzglÄ™dÃ³w bezpieczeÅ„stwa.<br />JeÅ¼eli chcesz je wÅ‚Ä…czyÄ‡, ustaw w pliku /admin/admin_config.php zmiennÄ…: $xs_edit na 1';
 ?>
