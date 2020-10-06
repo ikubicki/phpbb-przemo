@@ -20,7 +20,7 @@
  *   (at your option) any later version.
  *
  ***************************************************************************/
- 
+
 define('IN_PHPBB', true);
 define('SHOUTBOX', true);
 $phpbb_root_path = './';
@@ -57,7 +57,7 @@ if ( $shoutbox_config['sb_group_sel'] != 'all')
 		if ( in_array($v, $fid) ) 
 		{
 			$shoutbox_view_group = true;
-			break; // znalaz³o id, i stopujemy pêtle
+			break; // znalazlo id, i stopujemy petle
 		}
 	}
 }
@@ -74,7 +74,7 @@ $is_auth_e = ( $shoutbox_config['allow_edit'] && ((($is_jr_admin || $is_mod) && 
 $is_auth_d = ( $shoutbox_config['allow_delete'] && ((($is_jr_admin || $is_mod) && $shoutbox_config['allow_delete_m']) || $userdata['user_level'] == ADMIN) ) ? true : false;
 $is_auth_send = ((!$shoutbox_config['allow_guest'] && !$userdata['session_logged_in']) || (!$shoutbox_config['allow_users'] && !$shoutbox_view_group && ($userdata['user_level'] != ADMIN && !$is_mod && !$is_jr_admin))) ? false : true;
 
-$message = (!empty($HTTP_POST_VARS['message'])) ? charset_utf_fix( addslashes( xhtmlspecialchars($_POST['message']) ), true ) : '';
+$message = (!empty($HTTP_POST_VARS['message'])) ? addslashes(xhtmlspecialchars($_POST['message'])) : '';
 if( isset($HTTP_POST_VARS['message']) && empty($message) ) exit;
 
 $id         = intval($HTTP_POST_VARS['id']);
@@ -82,8 +82,8 @@ $id_del     = intval($HTTP_POST_VARS['del']);
 $id_edit    = intval($HTTP_POST_VARS['edit_id']);
 $id_last    = intval($HTTP_POST_VARS['last']);
 $sb_user_id = $userdata['user_id'];
-$request = ( addslashes(xhtmlspecialchars($_SERVER['HTTP_SHOUTBOX']) ) == 'shoutbox_js' ) ? true : false;
-
+$request = $_SERVER['HTTP_SHOUTBOX'] == 'shoutbox_js' ? true : false;
+$request = true;
 if ( !function_exists('json_encode' ) )
 {
 	function json_encode( $a = false )
@@ -129,56 +129,9 @@ if ( !function_exists('json_encode' ) )
 	}
 }
 
-function charset_utf_fix($string, $utfToIso = false )
-{
-	$arrayText = array(
-		"\xb1" => "\xc4\x85", 
-		"\xa1" => "\xc4\x84", 
-		"\xe6" => "\xc4\x87", 
-		"\xc6" => "\xc4\x86",
-		"\xea" => "\xc4\x99", 
-		"\xca" => "\xc4\x98", 
-		"\xb3" => "\xc5\x82", 
-		"\xa3" => "\xc5\x81",
-		"\xf3" => "\xc3\xb3", 
-		"\xd3" => "\xc3\x93", 
-		"\xb6" => "\xc5\x9b", 
-		"\xa6" => "\xc5\x9a",
-		"\xbc" => "\xc5\xba", 
-		"\xac" => "\xc5\xb9", 
-		"\xbf" => "\xc5\xbc", 
-		"\xaf" => "\xc5\xbb",
-		"\xf1" => "\xc5\x84", 
-		"\xd1" => "\xc5\x83",
-		
-		"%u0104" => "\xA1",
-		"%u0106" => "\xC6",
-		"%u0118" => "\xCA",
-		"%u0141" => "\xA3",
-		"%u0143" => "\xD1",
-		"%u00D3" => "\xD3",
-		"%u015A" => "\xA6",
-		"%u0179" => "\xAC",
-		"%u017B" => "\xAF",
-		"%u0105" => "\xB1",
-		"%u0107" => "\xE6",
-		"%u0119" => "\xEA",
-		"%u0142" => "\xB3",
-		"%u0144" => "\xF1",
-		"%u00D4" => "\xF3",
-		"%u015B" => "\xB6",
-		"%u017A" => "\xBC",
-		"%u017C" => "\xBF"
-	);
-	return strtr( $string, ( $utfToIso ? array_flip($arrayText) : $arrayText ) );
-}
-
 function shoutbox_alert($alert, $czas, $disabled = false)
 {
 	global $id_last, $message;
-	
-	$message = charset_utf_fix($message);
-	$alert = charset_utf_fix($alert);
 	
 	$output[] = array(
 			'i' => $id_last+1,
@@ -204,7 +157,7 @@ header( 'Expires: Mon, 26 Jul 1997 05:00:00 GMT' );
 header( 'Last-Modified: ' . gmdate('D, d M Y H:i:s') . 'GMT' ); 
 header( 'Cache-Control: no-cache, must-revalidate' ); 
 header( 'Pragma: no-cache' );
-header( 'Content-Type: ' . ( $request ? 'application/json' : 'text/plain') . '; charset=iso-8859-2' );
+header( 'Content-Type: ' . ( $request ? 'application/json' : 'text/plain') . '; charset=utf-8' );
 
 if( $mode == 'add' )
 {
@@ -253,16 +206,15 @@ if( $mode == 'add' )
 		
 		$shoutbox_banned = true;
 	}
-	
 	if ( !$flood_msg && !$shoutbox_banned && $is_auth_send )
 	{
+
 		$sql = "INSERT INTO " . SHOUTBOX_TABLE . " (sb_user_id, msg, timestamp)
 			VALUES($sb_user_id, '" . str_replace("\'", "''", $message) . "', '" . CR_TIME . "')";
 		if ( !($result = $db->sql_query($sql)) )
 		{
 			message_die(GENERAL_ERROR, 'Could not insert shoutbox message', '', __LINE__, __FILE__, $sql);
 		}
-		
 		$start = CR_TIME - $shoutbox_config['delete_days'] * 86400;
 		$sql = "DELETE FROM " . SHOUTBOX_TABLE . "
 			WHERE timestamp < $start";
@@ -402,6 +354,7 @@ if ( $request )
 		{
 			message_die(GENERAL_ERROR, 'Could not shoutbox table', '', __LINE__, __FILE__, $sql);
 		}
+		
 		$nums = $db->sql_numrows($result);
 		if ( $nums > 0 )
 		{
@@ -422,7 +375,6 @@ if ( $request )
 				$colored_username = color_username( $row['user_level'], $row['user_jr'], $name_id, $name );
 				$name = $colored_username[0];
 				$name = ( $name_id == ANONYMOUS ) ? $lang['Guest'] : $name;
-				$name = charset_utf_fix($name);
 				if ( $shoutbox_config['allow_smilies'] && $userdata['show_smiles'] )
 				{
 					$message = smilies_pass($message);
@@ -442,9 +394,7 @@ if ( $request )
 				$message = stripslashes($message);
 				replace_bad_words($orig_word, $replacement_word, $message);
 				$message = word_wrap_pass( replace_encoded($message) );
-				$message = charset_utf_fix($message);
 				$time = ( $shoutbox_config['date_on'] ) ? '['. create_date($shoutbox_config['date_format'], $row['timestamp'], $board_config['board_timezone']) .']' : '';
-				$time = charset_utf_fix($time);
 				$color = str_replace(' ', '', $colored_username[1]);
 				$color = substr($color, 7, (strlen($color) - 8));
 				$color = ($colored_username[1]) ? $color : '';

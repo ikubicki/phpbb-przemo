@@ -1236,7 +1236,6 @@ else if ( $submit || $confirm )
         $subject_e    = trim(get_vars('subject_e', '', 'POST'));
         $message      = get_vars('message',   '', 'POST');
         $bbcode_uid   = '';
-		var_dump($_POST['message'], $message);
         if( $is_auth['auth_pollcreate'] )
         {
             $poll_title    = get_vars('poll_title',       '', 'POST');

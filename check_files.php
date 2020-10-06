@@ -23,15 +23,9 @@ $only_admin = 0; // Tylko admin ma dostep do check_files ?
 define('IN_PHPBB', true);
 
 error_reporting  (E_ERROR | E_WARNING | E_PARSE); // This will NOT report uninitialized variables
-header('Content-type: text/html; charset=iso-8859-2');
+header('Content-type: text/html; charset=utf-8');
 
-function microtime_float2()
-{
-	list($usec2, $sec2) = explode(" ", microtime());
-	return ((float)$usec2 + (float)$sec2);
-}
-
-$time_start2 = microtime_float2();
+$time_start2 = microtime(true);
 
 $phpbb_root_path = './';
 include($phpbb_root_path . 'extension.inc');
@@ -95,7 +89,7 @@ echo'<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
  <head>
 	<title>phpBB modified by Przemo CheckFiles</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=' . (isset($lang['ENCODING']) ? $lang['ENCODING'] : 'iso-8859-2') . '" />
+	<meta http-equiv="Content-Type" content="text/html; charset=' . (isset($lang['ENCODING']) ? $lang['ENCODING'] : 'utf-8') . '" />
 	<style type="text/css">
 	<!--
 	body {
@@ -515,13 +509,13 @@ if ( defined('PHPBB_INSTALLED') )
 				if ( $sql_results_name['posts_without_topic'] > 0 )
 				{
 					$posts_wtopics = (is_array($posts_wtopics)) ? implode(', ', $posts_wtopics) : $posts_wtopics;
-					$print_result .= '<tr><td><br /><br />Postów bez tematów: <b>' . $sql_results_name['posts_without_topic'] . '</b> ID\'s: <b>' . $posts_wtopics . '</b>';
+					$print_result .= '<tr><td><br /><br />Postï¿½w bez tematï¿½w: <b>' . $sql_results_name['posts_without_topic'] . '</b> ID\'s: <b>' . $posts_wtopics . '</b>';
 				}
 			}
 			if ( ($type == 'topics_without_posts' || $all) && $sql_results_name['topics_without_posts'] > 0 )
 			{
 				$topics_wposts = (is_array($topics_wposts)) ? implode(', ', $topics_wposts) : $topics_wposts;
-				$print_result .= '<tr><td><br /><br />Tematów bez postów: <b>' . $sql_results_name['topics_without_posts'] . '</b><br />Topic ID\'s: ' . $topics_wposts . '</td></tr>';
+				$print_result .= '<tr><td><br /><br />Tematï¿½w bez postï¿½w: <b>' . $sql_results_name['topics_without_posts'] . '</b><br />Topic ID\'s: ' . $topics_wposts . '</td></tr>';
 			}
 			if ( ($type == 'topic_replies' || $all) && $sql_results_name['topic_replies'] > 0 )
 			{
@@ -902,7 +896,7 @@ if ( defined('PHPBB_INSTALLED') )
 
 		echo ($print_result) ? '<tr><td><br /><font color="#FF0000"><b>' . $lang['SQL_unsync'] . '</b></font><br /><br /></td></tr>' . $print_result . '<tr><td><br />' . (($userdata['user_level'] == ADMIN) ? '<br /><b>' . $lang['SQL_unsync_e'] : '') . '</td></tr>' : '<tr><td><br /><font color="#009900"><b>' . (($all) ? $lang['SQL_sync'] : $lang['sync']) . '.</b></font></tr></td>';
 
-		$time_end2 = microtime_float2();
+		$time_end2 = microtime(true);
 		$generated_time2 = round(($time_end2 - $time_start2), 2);
 
 		echo '<tr><td><br /><hr /><font size="1">' . (($generated_time2 > 0) ? $lang['gentime'] . ': <b>' . $generated_time2 . '</b>s.<br />' : '') . $lang['SQL_queries'] . ': <b>' . $db->num_queries . '</b></font></td></tr>';

@@ -359,10 +359,7 @@ if ($mode == 'auto_set')
 		//
 		// Start Time
 		//
-		$mtime = microtime();
-		$mtime = explode(" ",$mtime);
-		$mtime = $mtime[1] + $mtime[0];
-		$starttime = $mtime;
+		$starttime = microtime(true);
 
 		$db->num_queries = 0;
 
@@ -405,10 +402,7 @@ if ($mode == 'auto_set')
 		//
 		// End Time
 		//
-		$mtime = microtime();
-		$mtime = explode(" ",$mtime);
-		$mtime = $mtime[1] + $mtime[0];
-		$endtime = $mtime;
+		$endtime = microtime(true);
 		$totaltime = ($endtime - $starttime);
 
 		$num_queries = $db->num_queries;
@@ -828,10 +822,7 @@ if ($mode == 'edit')
 	//
 	// Start Time
 	//
-	$mtime = microtime();
-	$mtime = explode(" ",$mtime);
-	$mtime = $mtime[1] + $mtime[0];
-	$starttime = $mtime;
+	$starttime = microtime(true);
 
 	$db->num_queries = 0;
 
@@ -867,10 +858,7 @@ if ($mode == 'edit')
 	//
 	// End Time
 	//
-	$mtime = microtime();
-	$mtime = explode(" ",$mtime);
-	$mtime = $mtime[1] + $mtime[0];
-	$endtime = $mtime;
+	$endtime = microtime(true);
 	$totaltime = ($endtime - $starttime);
 
 	$num_queries = $db->num_queries;

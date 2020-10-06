@@ -29,18 +29,10 @@ if ( !defined('IN_PHPBB') )
 	die('Hacking attempt');
 }
 
-function microtime_float()
-{
-   list($usec, $sec) = explode(" ", microtime());
-   return ((float)$usec + (float)$sec);
-}
-$time_start = microtime_float();
+$time_start = microtime(true);
 
 //
 error_reporting  (E_ERROR | E_WARNING | E_PARSE); // This will NOT report uninitialized variables
-
-// Disable magic_quotes_runtime
-if(get_magic_quotes_runtime()) { @ini_set('magic_quotes_runtime', 0); }
 
 // The following code (unsetting globals)
 // Thanks to Matt Kavanagh and Stefan Esser for providing feedback as well as patch files
@@ -151,6 +143,14 @@ unset($dbpasswd);
 
 $subdirectory = '';
 
+// let's check if we run in docker
+if (!file_exists('/.dockerenv')) {
+	// let's see if we still got CI directory
+	if (file_exists($phpbb_root_path . '/ci')) {
+		message_die(CRITICAL_ERROR, 'You have to delete /ci directory to run the script outside docker container!');
+	}
+}
+
 // Mozilla navigation bar
 // Default items that should be valid on all pages.
 // Defined here and not in page_header.php so they can be redefined in the code
@@ -195,7 +195,7 @@ if (empty($board_config))
 		FROM " . CONFIG_TABLE;
 	if ( !($result = $db->sql_query($sql)) )
 	{
-		message_die(CRITICAL_ERROR, 'Nie mo�na pobra� danych z tabeli konfiguracyjnej forum !<br /><br /><b>Prawdopodobnie forum nie jest zainstalowane do bazy danych, lub tabele w bazie danych maja inny prefix (standardowo phpbb_ ).<br />Sprawdz czy tabele w bazie danych maja prefix podany w pliku config.php<br /><br /><br />Je�eli chcesz wgra� kopi� bazy danych i wysla�es ja do katalogu forum u�yj <a href="' . $phpbb_root_path . 'dbloader/dbloader.'.$phpEx . '">DumpLoader\'a</a></b><br />');
+		message_die(CRITICAL_ERROR, 'Nie można pobrać danych z tabeli konfiguracyjnej forum !<br /><br /><b>Prawdopodobnie forum nie jest zainstalowane do bazy danych, lub tabele w bazie danych maja inny prefix (standardowo phpbb_ ).<br />Sprawdz czy tabele w bazie danych maja prefix podany w pliku config.php<br /><br /><br />Jeżeli chcesz wgrać kopię bazy danych i wysłałeś ja do katalogu forum użyj <a href="' . $phpbb_root_path . 'dbloader/dbloader.'.$phpEx . '">DumpLoader\'a</a></b><br />');
 	}
 	while ( $row = $db->sql_fetchrow($result) )
 	{

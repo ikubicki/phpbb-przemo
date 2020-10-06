@@ -41,7 +41,7 @@ $template->set_filenames(array(
 
 if ( $board_config['generate_time'] && (!$board_config['generate_time_admin'] || ($board_config['generate_time_admin'] && $userdata['user_level'] == ADMIN) ))
 {
-	$time_end = microtime_float();
+	$time_end = microtime(true);
 	
 	if(empty($time_start)) {
 		

@@ -19,7 +19,7 @@
  *
  ***************************************************************************/
 
-header('Content-type: text/html; charset=iso-8859-2');
+header('Content-type: text/html; charset=utf-8');
  @set_time_limit(0);
 // ---------
 // FUNCTIONS

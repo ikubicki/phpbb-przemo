@@ -1108,13 +1108,11 @@ function setup_style($style)
 		$sql = "SELECT *
 			FROM " . THEMES_TABLE . "
 			LIMIT 1";
-			var_dump($sql);
 		if ( !($result = $db->sql_query($sql)) )
 		{
 			message_die(CRITICAL_ERROR, 'Could not query database for theme info<br />' . $sql);
 		}
 		$row = $db->sql_fetchrow($result);
-		var_dump($db->sql_error(), $result, $row);
 		if ( !$row )
 		{
 			message_die(CRITICAL_ERROR, 'Could not get theme data for themes_id [' . $style . ']');

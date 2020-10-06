@@ -50,23 +50,21 @@ app_exists=$(docker ps | grep przemo_app | xargs)
 if [ ! "$app_exists" == "" ]; then
     docker rm przemo_app -f
 fi
-# if [ "$app_exists" == "" ]; then
-set -x
-# 
-    docker run -d \
-        --network przemo \
-        --name przemo_app \
-        -v $DIR:/var/www/html \
-        $CONFIG \
-        -v przemo_cache_volume:/var/www/html/cache \
-        -p 80:80 \
-        -p 443:443 \
-        -e ADMIN_NAME=admin \
-        -e ADMIN_EMAIL=admin@example.com \
-        -e ADMIN_PASS=qwerty \
-        -e DBHOST=przemo_db \
-        -e DBNAME=przemo \
-        -e DBUSER=przemodbuser \
-        -e DBPASS=przemodbpass \
-        przemo/php:7.4-dev
-# fi
+docker run -d \
+    --network przemo \
+    --name przemo_app \
+    -v $DIR:/var/www/html \
+    $CONFIG \
+    -v przemo_cache_volume:/var/www/html/cache \
+    -p 80:80 \
+    -p 443:443 \
+    -e ADMIN_NAME=admin \
+    -e ADMIN_EMAIL=admin@example.com \
+    -e ADMIN_PASS=qwerty \
+    -e DBHOST=przemo_db \
+    -e DBNAME=przemo \
+    -e DBUSER=przemodbuser \
+    -e DBPASS=przemodbpass \
+    przemo/php:7.4-dev
+
+docker exec -it przemo_app chmod 0777 /var/www/html/cache

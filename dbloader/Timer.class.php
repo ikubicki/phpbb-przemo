@@ -49,9 +49,7 @@ class Timer
 
 	function _get_mtime()
 	{
-		$mtime = microtime();
-		$mtime = explode(' ',$mtime);
-		return $mtime[1] + $mtime[0];	
+		return microtime(true);	
 	}
 
 	function _update()
