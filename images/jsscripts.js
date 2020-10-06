@@ -226,9 +226,14 @@ function quoteSelection(theTarget) {
     if(selectedText != '') theSelection = selectedText;
     else if(document.selection && document.selection.createRange) theSelection = document.selection.createRange().text;
     if(theSelection) {
-        emoticon((theTarget.value ? '' : '') + '[quote' + (quoteAuthor ? '="' + quoteAuthor + '"' : '') + ']' + theSelection + '[/quote]', theTarget);
-        theTarget.focus();
-        selectedText = quoteAuthor = theSelection = '';
+		if (CKEDITOR) {
+			CKEDITOR.instances.message.insertHtml('<blockquote><b>'+quoteAuthor+':</b><br /><br />'+theSelection+'</blockquote><p></p>');
+		}
+		else {
+			emoticon((theTarget.value ? '' : '') + '[quote][b]' + quoteAuthor + ":[/b]\r\n" + theSelection + '[/quote]', theTarget);
+			theTarget.focus();	
+		}
+		selectedText = quoteAuthor = theSelection = '';
         return;
     }
     else {

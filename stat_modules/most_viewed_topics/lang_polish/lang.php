@@ -8,6 +8,6 @@ if ( !defined('IN_PHPBB') )
 //
 // English Language File
 //
-$lang['module_name'] = 'Najczê¶ciej wy¶wietlane tematy';
+$lang['module_name'] = 'NajczÄ™Å›ciej wyÅ›wietlane tematy';
 
 ?>

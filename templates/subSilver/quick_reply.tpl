@@ -1,3 +1,4 @@
+<script src="/js/ckeditor/ckeditor.js"></script>
 <!-- BEGIN quick_reply -->
 <script language="Javascript" type="text/javascript">
 <!--
@@ -20,17 +21,11 @@ function bbcode(strFore, strAft)
    <!-- END user_logged_out -->
    <tr>
       <td class="row1">
-         <table border="0" cellpadding="0" cellspacing="0" width="100%">
-	    <tr>
-               <td class="row1" valign="top">
-				<textarea name="message" rows="10" cols="84" tabindex="3" class="post" onFocus="Active(this)" onBlur="NotActive(this)" onselect="storeCaret(this);" onclick="storeCaret(this);" onkeyup="storeCaret(this);"></textarea><br>
-				<!-- BEGIN smilies_col -->
-				<img src="{quick_reply.smilies_col.SMILEY_IMG}" border="0" onmouseover="cp(this);" onclick="emoticon('{quick_reply.smilies_col.SMILEY_CODE}');" alt="">
-				<!-- END smilies_col -->
-				<!-- BEGIN smilies -->
-				<br>
-				<input type="button" class="button" name="SmilesButt" value="{L_ALL_SMILIES}" OnClick="window.open('{U_MORE_SMILIES}', '_phpbbsmilies', 'HEIGHT=300,resizable=yes,scrollbars=yes,WIDTH=250');">
-				<!-- END smilies -->
+				<textarea id="message" name="message" rows="10" cols="84" tabindex="3" class="post" onFocus="Active(this)" onBlur="NotActive(this)" onselect="storeCaret(this);" onclick="storeCaret(this);" onkeyup="storeCaret(this);"></textarea><br>
+				<script type="text/javascript">
+					CKEDITOR.replace('message');
+					console.log(CKEDITOR.dom.element.createFromHtml());
+				</script>
 				<!-- BEGIN quote_box -->
 				<input type="button" name="quoteselected" class="button" value="{L_QUOTE_SELECTED}" onclick="if (document.post && document.post.message) quoteSelection(); return false" onmouseover="selectedText = document.selection? document.selection.createRange().text : document.getSelection();">
 				<!-- END quote_box -->
@@ -49,42 +44,6 @@ function bbcode(strFore, strAft)
 					<option value="90" class="genmed">90</option>
 					</select> {L_DAYS}</span>
 				<!-- END expire_box -->
-	       </td>
-	       <td width="100%" valign="top" class="row1">
-	          <table>
-				<!-- BEGIN button_b -->
-				<tr>
-					<td>&nbsp;<input type="button" class="button" value="B" style="width: 38px; text-indent: -2px;" onclick="bbcode('[b]', '[/b]')"></td>
-				</tr>
-				<!-- END button_b -->
-				<!-- BEGIN button_i -->
-				<tr>
-					<td>&nbsp;<input type="button" class="button" value="I" style="width: 38px; text-indent: -2px;" onclick="bbcode('[i]', '[/i]')"></td>
-				</tr>
-				<!-- END button_i -->
-				<!-- BEGIN button_u -->
-				<tr>
-					<td>&nbsp;<input type="button" class="button" value="U" style="width: 38px; text-indent: -2px;" onclick="bbcode('[u]', '[/u]')"></td>
-				</tr>
-				<!-- END button_u -->
-				<!-- BEGIN button_im -->
-				<tr>
-					<td>&nbsp;<input type="button" class="button" value="IMG" style="width: 38px; text-indent: -2px;" onclick="imgcode(this.form,'img','http://')"></td>
-				</tr>
-				<!-- END button_im -->
-				<!-- BEGIN button_c -->
-				<tr>
-					<td>&nbsp;<input type="button" class="button" value="Code" style="width: 38px; text-indent: -2px;" onclick="bbcode('[code]', '[/code]')"></td>
-				</tr>
-				<!-- END button_c -->
-				<!-- BEGIN button_q -->
-				<tr>
-					<td>&nbsp;<input type="button" class="button" value="Quote" style="width: 38px; text-indent: -3px;" onclick="bbcode('[quote]', '[/quote]')"></td>
-				</tr>
-				<!-- END button_q -->
-		  </table>
-               </td>
-	    </tr>
 	 </table>
       </td>
    </tr>

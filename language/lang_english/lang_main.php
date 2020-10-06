@@ -31,7 +31,7 @@
 // varies ... give it your best guess!
 //
 
-$lang['ENCODING'] = 'iso-8859-1';
+$lang['ENCODING'] = 'utf-8';
 $lang['DIRECTION'] = 'ltr';
 $lang['DATE_FORMAT'] = 'd M Y'; // This should be changed to the default date format for your language, php date() format
 
@@ -953,7 +953,7 @@ $lang['more_topicicons'] = 'You can choose more icons. If you click here it open
 $lang['online_minutes'] = 'Minutes online: <b>%s</b>';
 $lang['online_hours'] = 'Hours online: <b>%s</b>';
 $lang['Viewing_topic'] = 'View topic';
-$lang['gg_header_info_pm'] = 'Otrzyma³es nowa prywatna wiadomosc od: %s';
+$lang['gg_header_info_pm'] = 'Otrzymaï¿½es nowa prywatna wiadomosc od: %s';
 $lang['gg_notify_topic'] = 'In your topic: "%s" user: %s post reply';
 $lang['l_notify_gg_privmsg'] = 'Link to your private message inbox: %s';
 $lang['l_notify_gg_topic'] = 'To view topic click: %s';

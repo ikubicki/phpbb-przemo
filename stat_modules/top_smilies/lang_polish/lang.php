@@ -8,9 +8,9 @@ if ( !defined('IN_PHPBB') )
 //
 // English Language File
 //
-$lang['module_name'] = 'Najczê¶ciej u¿ywane u¶mieszki';
+$lang['module_name'] = 'NajczÄ™Å›ciej uÅ¼ywane uÅ›mieszki';
 
-$lang['smiley_url'] = 'U¶mieszek';
-$lang['smiley_code'] = 'Kod u¶mieszku';
+$lang['smiley_url'] = 'UÅ›mieszek';
+$lang['smiley_code'] = 'Kod uÅ›mieszku';
 
 ?>

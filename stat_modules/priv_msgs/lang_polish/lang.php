@@ -9,23 +9,23 @@ if ( !defined('IN_PHPBB') )
 // If you wish to support multiple languages easily  = you should add your needed L_VARS
 // here to use below.
 //
-$lang['module_name'] = 'Prywatne wiadomo¶ci';
+$lang['module_name'] = 'Prywatne wiadomoÅ›ci';
 
 $lang['Written_pm'] = 'Wszystkie';
-$lang['Last_month_pm'] = 'miesi±c ';
-$lang['This_month_pm'] = 'miesi±c ';
-$lang['todays_pm'] = 'W ci±gu ostatnich 24 godzin';
-$lang['thisweeks_pm'] = 'W ci±gu ostatnich 7 dni';
-$lang['thismonths_pm'] = 'W ci±gu ostatniego miesi±ca';
+$lang['Last_month_pm'] = 'miesiÄ…c ';
+$lang['This_month_pm'] = 'miesiÄ…c ';
+$lang['todays_pm'] = 'W ciÄ…gu ostatnich 24 godzin';
+$lang['thisweeks_pm'] = 'W ciÄ…gu ostatnich 7 dni';
+$lang['thismonths_pm'] = 'W ciÄ…gu ostatniego miesiÄ…ca';
 
-$lang['numberof_pm'] = 'Ilo¶æ wiadomo¶ci';
-$lang['current_pm'] = 'W tej chwili wiadomo¶ci';
+$lang['numberof_pm'] = 'IloÅ›Ä‡ wiadomoÅ›ci';
+$lang['current_pm'] = 'W tej chwili wiadomoÅ›ci';
 
 $lang['Read_pm'] = 'Odczytanych';
 $lang['New_pm'] = 'Nowych';
-$lang['Sent_pm'] = 'Wys³anych';
-$lang['Inbox_pm'] = 'Zapisanych w skrzynce przychodz±cych';
-$lang['Outbox_pm'] = 'Zapisanych w skrzynce wychodz±cych';
+$lang['Sent_pm'] = 'WysÅ‚anych';
+$lang['Inbox_pm'] = 'Zapisanych w skrzynce przychodzÄ…cych';
+$lang['Outbox_pm'] = 'Zapisanych w skrzynce wychodzÄ…cych';
 $lang['Unread_pm'] = 'Nieprzeczytanych';
 
 $lang['Month'] = '%s'; // %s replaced by the actual month

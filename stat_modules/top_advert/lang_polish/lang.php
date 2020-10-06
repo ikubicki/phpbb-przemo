@@ -9,7 +9,7 @@ if ( !defined('IN_PHPBB') )
 // English Language File
 //
 
-$lang['Most_adv_persons'] = 'Najwiêcej poleconych osób';
-$lang['Persons_advert'] = 'Poleconych osób';
+$lang['Most_adv_persons'] = 'NajwiÄ™cej poleconych osÃ³b';
+$lang['Persons_advert'] = 'Poleconych osÃ³b';
 
 ?>

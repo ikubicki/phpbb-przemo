@@ -8,7 +8,7 @@ if ( !defined('IN_PHPBB') )
 //
 // English Language File
 //
-$lang['module_name'] = 'P³eæ';
+$lang['module_name'] = 'PÅ‚eÄ‡';
 $lang['Gender'] = $lang['Gender'];
 
 ?>

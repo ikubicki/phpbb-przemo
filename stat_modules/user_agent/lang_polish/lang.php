@@ -9,7 +9,7 @@ if ( !defined('IN_PHPBB') )
 // English Language File
 //
 
-$lang['Most_systems'] = 'Systemy u¿ytkowników';
-$lang['Most_browsers'] = 'Przegl±darki u¿ytkowników';
+$lang['Most_systems'] = 'Systemy uÅ¼ytkownikÃ³w';
+$lang['Most_browsers'] = 'PrzeglÄ…darki uÅ¼ytkownikÃ³w';
 
 ?>

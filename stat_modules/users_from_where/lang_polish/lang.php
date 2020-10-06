@@ -9,8 +9,8 @@ if ( !defined('IN_PHPBB') )
 // English Language File
 //
 
-$lang['From_where_title'] = 'Sk±d s± u¿ytkownicy';
-$lang['From_where'] = 'Sk±d';
+$lang['From_where_title'] = 'SkÄ…d sÄ… uÅ¼ytkownicy';
+$lang['From_where'] = 'SkÄ…d';
 $lang['How_many'] = 'Ilu';
 
 ?>

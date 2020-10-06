@@ -18,12 +18,12 @@ $lang['Month_jun'] = 'Czer.';
 $lang['Month_jul'] = 'Lip.';
 $lang['Month_aug'] = 'Sier.';
 $lang['Month_sep'] = 'Wrz';
-$lang['Month_oct'] = 'Pa¼.';
+$lang['Month_oct'] = 'PaÅº.';
 $lang['Month_nov'] = 'List.';
 $lang['Month_dec'] = 'Gru.';
 $lang['Year'] = 'Rok';
-$lang['Month'] = 'Miesi±c';
+$lang['Month'] = 'MiesiÄ…c';
 $lang['Number'] = 'Ile';
-$lang['Topics_month'] = 'Najwiêcej nowych tematów w miesi±cach';
+$lang['Topics_month'] = 'NajwiÄ™cej nowych tematÃ³w w miesiÄ…cach';
 
 ?>

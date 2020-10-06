@@ -9,6 +9,6 @@ if ( !defined('IN_PHPBB') )
 // English Language File
 //
 
-$lang['module_name'] = 'Najbardziej pomocni u¿ytkownicy';
+$lang['module_name'] = 'Najbardziej pomocni uÅ¼ytkownicy';
 
 ?>
