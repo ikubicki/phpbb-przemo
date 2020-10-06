@@ -31,6 +31,11 @@ ini_set('error_reporting', E_ALL ^ E_NOTICE);
 
 include($phpbb_root_path . 'config.'.$phpEx);
 
+// to make sure we will not try to convert new utf8 schema after a switch.
+if (substr($dbname, -5) == '_utf8') {
+    $dbname = substr($dbname, 0, strlen($dbname) - 5);
+}
+
 $db1 = new sql_db($dbhost, $dbuser, $dbpasswd, $dbname, false, 'utf8');
 $db2 = new sql_db($dbhost, $dbuser, $dbpasswd, $dbname . '_utf8', false, 'utf8');
 
@@ -38,15 +43,24 @@ $error1 = $db1->sql_error(1);
 $error2 = $db2->sql_error(1);
 
 if ($error1[0] > 0) {
-    message_die(GENERAL_ERROR, "Unable connect to source schema [$dbname]");
+    message_die(GENERAL_ERROR, "Unable to connect to source schema [$dbname]");
 }
 
 if ($error2[0] > 0) {
-    message_die(GENERAL_ERROR, "Unable connect to destination schema [{$dbname}_utf8]");
+    message_die(GENERAL_ERROR, "Unable to connect to destination schema [{$dbname}_utf8]");
 }
+
+$db2->sql_query("ALTER DATABASE {$dbname}_utf8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci;");
+$error = $db2->sql_error();
+
+if ($error[0] > 0) {
+    message_die(GENERAL_ERROR, "Unable to alter destination schema [{$dbname}_utf8]");
+}
+
 
 $res_tables = $db1->sql_query("SHOW TABLES FROM $dbname");
 $stats = [];
+$errors = [];
 $numeric_fields = [
     'prune_next',
     'post_edit_time',
@@ -60,7 +74,6 @@ $numeric_fields = [
 $defaults = [
     'post_marked' => 'n',
 ];
-
 foreach($db1->sql_fetchrowset($res_tables) as $table) {
     $table = reset($table);
     $res_create = $db1->sql_query("SHOW CREATE TABLE $table");
@@ -68,6 +81,7 @@ foreach($db1->sql_fetchrowset($res_tables) as $table) {
     $create = array_values($create)[1];
     $create = preg_replace('#ENGINE=[a-zA-Z0-9_-]+#', '', $create);
     $create = preg_replace('#DEFAULT\s+CHARSET=[a-zA-Z0-9_-]+#', '', $create);
+    $create = preg_replace('#CHARACTER\s+SET\s+[a-zA-Z0-9_-]+\s+COLLATE\s+[a-zA-Z0-9_-]+#', '', $create);
     $db1->sql_freeresult($res_create);
     $db2->sql_query($create);
     $limit = 100;
@@ -109,7 +123,11 @@ foreach($db1->sql_fetchrowset($res_tables) as $table) {
             $values = "'" . implode("', '", $values) . "'";
             $insert .= "($values);";
             $db2->sql_query($insert);
-            var_dump($table, $row['post_marked'], $db2->sql_error());
+            $error = $db2->sql_error();
+            if ($error[0] > 0) {
+                $errors[$table][md5($error[1])] = $error[1];
+            }
+            
             $records++;
         }
         while(true);
@@ -122,6 +140,11 @@ if (!count($stats)) {
     message_die(GENERAL_ERROR, "No tables converted");
 }
 
+foreach($errors as $table => $table_errors) {
+    print '<h3>'.strtoupper($table).' ERRORS</h3>';
+    print implode('<br />', $table_errors);
+}
+print '<br /><br />';
 foreach($stats as $table => $records) {
     print '<b>'.$table.'</b>: ' . intval($records) . ' processed.<br />';
 }
