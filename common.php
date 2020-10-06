@@ -45,21 +45,17 @@ if(get_magic_quotes_runtime()) { @ini_set('magic_quotes_runtime', 0); }
 // The following code (unsetting globals)
 // Thanks to Matt Kavanagh and Stefan Esser for providing feedback as well as patch files
 
-// PHP5 with register_long_arrays off?
-if (@phpversion() >= '5.0.0' && (!@ini_get('register_long_arrays') || @ini_get('register_long_arrays') == '0' || strtolower(@ini_get('register_long_arrays')) == 'off'))
-{
-	$HTTP_POST_VARS = $_POST;
-	$HTTP_GET_VARS = $_GET;
-	$HTTP_SERVER_VARS = $_SERVER;
-	$HTTP_COOKIE_VARS = $_COOKIE;
-	$HTTP_ENV_VARS = $_ENV;
-	$HTTP_POST_FILES = $_FILES;
+$HTTP_POST_VARS = $_POST;
+$HTTP_GET_VARS = $_GET;
+$HTTP_SERVER_VARS = $_SERVER;
+$HTTP_COOKIE_VARS = $_COOKIE;
+$HTTP_ENV_VARS = $_ENV;
+$HTTP_POST_FILES = $_FILES;
 
-	// _SESSION is the only superglobal which is conditionally set
-	if (isset($_SESSION))
-	{
-		$HTTP_SESSION_VARS = $_SESSION;
-	}
+// _SESSION is the only superglobal which is conditionally set
+if (isset($_SESSION))
+{
+	$HTTP_SESSION_VARS = $_SESSION;
 }
 
 // Protect against GLOBALS tricks
@@ -146,12 +142,6 @@ include($phpbb_root_path . 'includes/auth.'.$phpEx);
 include($phpbb_root_path . 'includes/functions.'.$phpEx);
 include($phpbb_root_path . 'includes/db.'.$phpEx);
 
-//
-// addslashes to vars if magic_quotes_gpc is off
-// this is a security precaution to prevent someone
-// trying to break out of a SQL statement.
-//
-$mquotes = (!get_magic_quotes_gpc()) ? false : true;
 var_adds($HTTP_GET_VARS, false);
 var_adds($HTTP_POST_VARS, true, true);
 var_adds($HTTP_COOKIE_VARS, false);
@@ -205,7 +195,7 @@ if (empty($board_config))
 		FROM " . CONFIG_TABLE;
 	if ( !($result = $db->sql_query($sql)) )
 	{
-		message_die(CRITICAL_ERROR, 'Nie mo¿na pobraæ danych z tabeli konfiguracyjnej forum !<br /><br /><b>Prawdopodobnie forum nie jest zainstalowane do bazy danych, lub tabele w bazie danych maja inny prefix (standardowo phpbb_ ).<br />Sprawdz czy tabele w bazie danych maja prefix podany w pliku config.php<br /><br /><br />Je¿eli chcesz wgraæ kopiê bazy danych i wysla³es ja do katalogu forum u¿yj <a href="' . $phpbb_root_path . 'dbloader/dbloader.'.$phpEx . '">DumpLoader\'a</a></b><br />');
+		message_die(CRITICAL_ERROR, 'Nie moï¿½na pobraï¿½ danych z tabeli konfiguracyjnej forum !<br /><br /><b>Prawdopodobnie forum nie jest zainstalowane do bazy danych, lub tabele w bazie danych maja inny prefix (standardowo phpbb_ ).<br />Sprawdz czy tabele w bazie danych maja prefix podany w pliku config.php<br /><br /><br />Jeï¿½eli chcesz wgraï¿½ kopiï¿½ bazy danych i wyslaï¿½es ja do katalogu forum uï¿½yj <a href="' . $phpbb_root_path . 'dbloader/dbloader.'.$phpEx . '">DumpLoader\'a</a></b><br />');
 	}
 	while ( $row = $db->sql_fetchrow($result) )
 	{
@@ -243,7 +233,7 @@ if ($board_config['gzip_compress'] && @extension_loaded('zlib') && !headers_sent
     }
 }
 
-header('Content-type: text/html; charset=iso-8859-2');
+header('Content-type: text/html; charset='.$content_encoding);
 
 $board_config['topics_per_page'] = ($board_config['topics_per_page'] < 1) ? '25' : $board_config['topics_per_page'];
 $board_config['posts_per_page'] = ($board_config['posts_per_page'] < 1) ? '25' : $board_config['posts_per_page'];

@@ -1,46 +1,46 @@
 <?php
-$lang['Advert_explain'] = 'W tym miejscu mo¿esz wyposa¿yæ swoj± stronê g³ówn± (szczegó³y na forum dyskusyjnym skryptu) o linki i bannery reklamowe w prawej kolumnie i w stopce.<br />Masz do dyspozycji wiele opcji jak: czas wyga¶niêcia, w³±czenie powiadamiania o wygasaniu na e-mail osoby zainteresowanej linkiem, mo¿liwo¶æ zliczania klikniêæ i inne.';
+$lang['Advert_explain'] = 'W tym miejscu moÅ¼esz wyposaÅ¼yÄ‡ swojÄ… stronÄ™ gÅ‚Ã³wnÄ… (szczegÃ³Å‚y na forum dyskusyjnym skryptu) o linki i bannery reklamowe w prawej kolumnie i w stopce.<br />Masz do dyspozycji wiele opcji jak: czas wygaÅ›niÄ™cia, wÅ‚Ä…czenie powiadamiania o wygasaniu na e-mail osoby zainteresowanej linkiem, moÅ¼liwoÅ›Ä‡ zliczania klikniÄ™Ä‡ i inne.';
 
-$lang['Advert'] = 'Nag³ówkowy kod HTML prawej kolumny<br /><span class="gensmall"><a href="../images/dynamic.html" target="_blank">Obs³uga zamienników</a></span>';
+$lang['Advert'] = 'NagÅ‚Ã³wkowy kod HTML prawej kolumny<br /><span class="gensmall"><a href="../images/dynamic.html" target="_blank">ObsÅ‚uga zamiennikÃ³w</a></span>';
 $lang['Advert_foot'] = 'Kod HTML stopki prawej kolumny';
-$lang['Ad_view_hide'] = 'Mo¿liwo¶æ ukrywania przez u¿ytkowników';
+$lang['Ad_view_hide'] = 'MoÅ¼liwoÅ›Ä‡ ukrywania przez uÅ¼ytkownikÃ³w';
 $lang['Ad_registered_users'] = 'Zalogowanych';
-$lang['Ad_staff_users'] = 'Moderatorów, Administratorów';
-$lang['Disable'] = 'Wy³±czone';
-$lang['Ad_width'] = 'Szeroko¶æ prawej kolumny';
+$lang['Ad_staff_users'] = 'ModeratorÃ³w, AdministratorÃ³w';
+$lang['Disable'] = 'WyÅ‚Ä…czone';
+$lang['Ad_width'] = 'SzerokoÅ›Ä‡ prawej kolumny';
 
 $lang['Ad_link_setp'] = 'Wpisy';
 $lang['Ad_add_link'] = 'Dodaj wpis';
-$lang['Ad_days'] = 'Ilo¶æ dni';
+$lang['Ad_days'] = 'IloÅ›Ä‡ dni';
 $lang['Ad_Position'] = 'Pozycja';
 $lang['Pos_left'] = 'Z boku';
 $lang['Pos_down'] = 'Na dole';
 $lang['Pos_no'] = 'Ukryj';
-$lang['Ad_separator'] = 'Separator dolnych linków';
-$lang['Ad_separator_l'] = 'Separator górnych linków';
-$lang['Add_link_e'] = 'Je¿eli podasz e-mail, bêdzie wys³ane na niego powiadomienie na 7 dni przed dat± wyga¶niêcia (deaktywacji) linku/bannera. Je¿eli chcesz dodaæ link/banner na sta³e, pozostaw pole puste, czas nie bêdzie odliczany. Tre¶æ email\'a mo¿esz zmieniæ w pliku languages/lang_polish/advert.tpl. Gdy u¿ywasz tagów <b>A</b> u¿ywaj tylko w takiej kolejno¶ci: <b>&lt;a href=&quot;</b> Gdy w³±czysz zliczanie klikniêæ, link/banner bêdzie linkiem lokalnym np. <b>ad.php?id=7</b> a statystyki klikniêæ bêd± dostêpne po wej¶ciu na http://adres.pl/ad.php Klikniêcia s± blokowane w cookies na 60 minut, co jednak nie jest najlepszym zabezpieczeniem w przypadku próby celowego nabicia licznika. <a href="../images/dynamic.html" target="_blank">Obs³uga zamienników</a>';
-$lang['Ad_clicks'] = 'Zliczanie klikniêæ';
+$lang['Ad_separator'] = 'Separator dolnych linkÃ³w';
+$lang['Ad_separator_l'] = 'Separator gÃ³rnych linkÃ³w';
+$lang['Add_link_e'] = 'JeÅ¼eli podasz e-mail, bÄ™dzie wysÅ‚ane na niego powiadomienie na 7 dni przed datÄ… wygaÅ›niÄ™cia (deaktywacji) linku/bannera. JeÅ¼eli chcesz dodaÄ‡ link/banner na staÅ‚e, pozostaw pole puste, czas nie bÄ™dzie odliczany. TreÅ›Ä‡ email\'a moÅ¼esz zmieniÄ‡ w pliku languages/lang_polish/advert.tpl. Gdy uÅ¼ywasz tagÃ³w <b>A</b> uÅ¼ywaj tylko w takiej kolejnoÅ›ci: <b>&lt;a href=&quot;</b> Gdy wÅ‚Ä…czysz zliczanie klikniÄ™Ä‡, link/banner bÄ™dzie linkiem lokalnym np. <b>ad.php?id=7</b> a statystyki klikniÄ™Ä‡ bÄ™dÄ… dostÄ™pne po wejÅ›ciu na http://adres.pl/ad.php KlikniÄ™cia sÄ… blokowane w cookies na 60 minut, co jednak nie jest najlepszym zabezpieczeniem w przypadku prÃ³by celowego nabicia licznika. <a href="../images/dynamic.html" target="_blank">ObsÅ‚uga zamiennikÃ³w</a>';
+$lang['Ad_clicks'] = 'Zliczanie klikniÄ™Ä‡';
 $lang['Save'] = 'Zapisz';
-$lang['empty_html'] = 'Musisz podaæ kod HTML';
-$lang['Config_ad_updated'] = 'Konfiguracja zosta³a zapisana';
-$lang['Config_ad_not_updated'] = 'Nie wykryto zmian, wpis nie zosta³ zmieniony';
-$lang['New_entry_added'] = 'Nowa pozycja zosta³a dodana';
-$lang['Ad_list_entry'] = 'Istniej±ce wpisy';
-$lang['Ad_list_order'] = 'Kolejno¶æ';
-$lang['Ad_up'] = 'w górê';
-$lang['Ad_down'] = 'w dó³';
+$lang['empty_html'] = 'Musisz podaÄ‡ kod HTML';
+$lang['Config_ad_updated'] = 'Konfiguracja zostaÅ‚a zapisana';
+$lang['Config_ad_not_updated'] = 'Nie wykryto zmian, wpis nie zostaÅ‚ zmieniony';
+$lang['New_entry_added'] = 'Nowa pozycja zostaÅ‚a dodana';
+$lang['Ad_list_entry'] = 'IstniejÄ…ce wpisy';
+$lang['Ad_list_order'] = 'KolejnoÅ›Ä‡';
+$lang['Ad_up'] = 'w gÃ³rÄ™';
+$lang['Ad_down'] = 'w dÃ³Å‚';
 $lang['Last_update'] = 'ostatnia aktualizacja';
 $lang['Added'] = 'Dodany';
-$lang['delete_entry'] = 'Usuñ wpis';
+$lang['delete_entry'] = 'UsuÅ„ wpis';
 
-$lang['Ad_clicks_list'] = 'Odwiedzalno¶æ';
-$lang['Ad_clicks_visit'] = 'Klikniêæ';
+$lang['Ad_clicks_list'] = 'OdwiedzalnoÅ›Ä‡';
+$lang['Ad_clicks_visit'] = 'KlikniÄ™Ä‡';
 $lang['Ad_clicks_day'] = 'Dziennie';
-$lang['email_title'] = 'Za 7 dni wyga¶nie link na "%s"';
+$lang['email_title'] = 'Za 7 dni wygaÅ›nie link na "%s"';
 
 // Advertisement person
-$lang['Adv_explain'] = 'Zaproszone osoby to system uzyskiwania punktów przez u¿ytkowników za ilo¶æ osób którym polecili forum i osoby te zarejestrowa³y siê na forum. Aby aktywowaæ system, utwórz dodatkowe pole w (U¿ytkownicy > Pola w profilu) o nazwie: <b>adv_person</b> skonfiguruj go odpowiednio wed³ug potrzeb. Po aktywacji ka¿dy u¿ytkownik w widoku swojego profilu bêdzie widzia³ link, który mo¿e wys³aæ znajomym. Gdy osoba zaproszona wejdzie na forum, bêdzie je przegl±daæ i zarejestruje siê, osobie polecaj±cej zostanie dodana jedna osoba zaproszona.<br />Poni¿ej znajduje siê lista osób wraz z osobami zaproszonymi. Je¿eli polecaj±cy ma wiêcej na liczniku osób zaproszonych ni¿ wskazuje na to lista, oznacza to, ¿e osoby zaproszone zosta³y usuniête z forum. Dodatkowo zaproszone osoby z takimi samymi adresami IP s± zliczani jako jedna osoba, oraz osoby zarejestrowane w odstêpie mniejszym ni¿ ustawiony, od tej samej osoby polecaj±cej, równie¿ w celu zapobiegniêcia nadu¿yciom.';
-$lang['Adv_time'] = 'Ilo¶æ minut przez któr± nowe zaproszone osoby nie bêd± dodawane od momentu zarejestrowania ostatniej zaproszonej osoby dla danego u¿ytkownika (polecaj±cego).';
+$lang['Adv_explain'] = 'Zaproszone osoby to system uzyskiwania punktÃ³w przez uÅ¼ytkownikÃ³w za iloÅ›Ä‡ osÃ³b ktÃ³rym polecili forum i osoby te zarejestrowaÅ‚y siÄ™ na forum. Aby aktywowaÄ‡ system, utwÃ³rz dodatkowe pole w (UÅ¼ytkownicy > Pola w profilu) o nazwie: <b>adv_person</b> skonfiguruj go odpowiednio wedÅ‚ug potrzeb. Po aktywacji kaÅ¼dy uÅ¼ytkownik w widoku swojego profilu bÄ™dzie widziaÅ‚ link, ktÃ³ry moÅ¼e wysÅ‚aÄ‡ znajomym. Gdy osoba zaproszona wejdzie na forum, bÄ™dzie je przeglÄ…daÄ‡ i zarejestruje siÄ™, osobie polecajÄ…cej zostanie dodana jedna osoba zaproszona.<br />PoniÅ¼ej znajduje siÄ™ lista osÃ³b wraz z osobami zaproszonymi. JeÅ¼eli polecajÄ…cy ma wiÄ™cej na liczniku osÃ³b zaproszonych niÅ¼ wskazuje na to lista, oznacza to, Å¼e osoby zaproszone zostaÅ‚y usuniÄ™te z forum. Dodatkowo zaproszone osoby z takimi samymi adresami IP sÄ… zliczani jako jedna osoba, oraz osoby zarejestrowane w odstÄ™pie mniejszym niÅ¼ ustawiony, od tej samej osoby polecajÄ…cej, rÃ³wnieÅ¼ w celu zapobiegniÄ™cia naduÅ¼yciom.';
+$lang['Adv_time'] = 'IloÅ›Ä‡ minut przez ktÃ³rÄ… nowe zaproszone osoby nie bÄ™dÄ… dodawane od momentu zarejestrowania ostatniej zaproszonej osoby dla danego uÅ¼ytkownika (polecajÄ…cego).';
 $lang['Adv_counter'] = 'Licznik';
 $lang['Ad_visit'] = 'Wizyt';
 $lang['Ad_last_visit'] = 'Ostatnia wizyta';

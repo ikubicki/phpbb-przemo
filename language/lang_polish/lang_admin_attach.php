@@ -25,206 +25,206 @@
 
 // Modules, this replaces the keys used
 $lang['Control_Panel'] = 'Panel kontrolny';
-$lang['Shadow_attachments'] = 'Przegl±danie nieaktywnych za³±czników';
-$lang['Forbidden_extensions'] = 'Usuñ lub dodaj rozszerzenie za³±czników';
-$lang['Extension_control'] = 'Kontrola rozszerzeñ za³±czników';
-$lang['Extension_group_manage'] = 'Kontrola rozszerzeñ za³±czników dla grup';
+$lang['Shadow_attachments'] = 'PrzeglÄ…danie nieaktywnych zaÅ‚Ä…cznikÃ³w';
+$lang['Forbidden_extensions'] = 'UsuÅ„ lub dodaj rozszerzenie zaÅ‚Ä…cznikÃ³w';
+$lang['Extension_control'] = 'Kontrola rozszerzeÅ„ zaÅ‚Ä…cznikÃ³w';
+$lang['Extension_group_manage'] = 'Kontrola rozszerzeÅ„ zaÅ‚Ä…cznikÃ³w dla grup';
 $lang['Special_categories'] = 'Dodatkowe kategorie';
-$lang['Sync_attachments'] = 'Synchronizuj za³±czniki';
+$lang['Sync_attachments'] = 'Synchronizuj zaÅ‚Ä…czniki';
 $lang['Quota_limits'] = 'Limity Quoty';
 
 // Attachments -> Management
-$lang['Attach_settings'] = 'Ustawienia za³±czników';
-$lang['Manage_attachments_explain'] = 'Tutaj mo¿esz ustawiæ g³ówne ustawienia modu³u za³±czników. Gdy naci¶niesz przycisk Testuj Ustawienia, modu³ przez chwile bêdzie sprawdza³ czy wszystko dzia³a poprawnie. Je¶li masz problem z wys³aniem pliku, uruchom Test, ¿eby zobaczyæ dok³adne informacje o b³êdach.';
-$lang['Attach_filesize_settings'] = 'Ustawienia rozmiarów za³±czników';
-$lang['Attach_number_settings'] = 'Ustawienia numerów za³±czników';
-$lang['Attach_options_settings'] = 'Ustawienia za³±czników';
+$lang['Attach_settings'] = 'Ustawienia zaÅ‚Ä…cznikÃ³w';
+$lang['Manage_attachments_explain'] = 'Tutaj moÅ¼esz ustawiÄ‡ gÅ‚Ã³wne ustawienia moduÅ‚u zaÅ‚Ä…cznikÃ³w. Gdy naciÅ›niesz przycisk Testuj Ustawienia, moduÅ‚ przez chwile bÄ™dzie sprawdzaÅ‚ czy wszystko dziaÅ‚a poprawnie. JeÅ›li masz problem z wysÅ‚aniem pliku, uruchom Test, Å¼eby zobaczyÄ‡ dokÅ‚adne informacje o bÅ‚Ä™dach.';
+$lang['Attach_filesize_settings'] = 'Ustawienia rozmiarÃ³w zaÅ‚Ä…cznikÃ³w';
+$lang['Attach_number_settings'] = 'Ustawienia numerÃ³w zaÅ‚Ä…cznikÃ³w';
+$lang['Attach_options_settings'] = 'Ustawienia zaÅ‚Ä…cznikÃ³w';
 
-$lang['Upload_directory'] = 'Katalog za³±czników';
-$lang['Upload_directory_explain'] = 'Podaj ¶cie¿kê od katalogu w którym masz forum. Na przyk³ad \'files\' Przyk³ad: adres forum: http://www.yourdomain.com/phpBB2 a katalog za³±czników: http://www.yourdomain.com/phpBB2/files.';
-$lang['Attach_img_path'] = 'Ikony linków za³±czników';
-$lang['Attach_img_path_explain'] = 'Ta ikona jest wy¶wietlana za linkiem do za³±cznika w postach u¿ytkowników. Pozostaw to pole puste gdy nie chcesz ¿eby by³a wy¶wietlana. Bêdzie zast±pione przez Extension Groups Management.';
-$lang['Attach_topic_icon'] = 'Ikony za³±czników w tematach';
-$lang['Attach_topic_icon_explain'] = 'Ta ikona bêdzie wy¶wietlana przed tematem postu je¶li bêdzie w nim za³±cznik. Pozostaw to pole puste gdy nie chcesz ¿eby by³a wy¶wietlana.';
-$lang['Attach_display_order'] = 'Kolejno¶æ wy¶wietlania za³±czników';
-$lang['Attach_display_order_explain'] = 'Tutaj mo¿esz ustaliæ w jakiej kolejno¶ci bêd± segregowane za³±czniki w postach lub prywatnych wiadomo¶ciach. Mo¿esz ustawiæ (Najnowsze za³±czniki pierwsze) lub (Najstarsze za³±czniki pierwsze).';
-$lang['Show_apcp'] = '"Zwiniêty" sposób pokazywania pól dla za³±czników';
-$lang['Show_apcp_explain'] = 'Przy zwiniêtym, podczas pisania postu, trzeba klikn±æ na link, po czym otworzy siê pole do za³±czania plików. Przy rozwiniêtym te pola bêd± widoczne zawsze.';
+$lang['Upload_directory'] = 'Katalog zaÅ‚Ä…cznikÃ³w';
+$lang['Upload_directory_explain'] = 'Podaj Å›cieÅ¼kÄ™ od katalogu w ktÃ³rym masz forum. Na przykÅ‚ad \'files\' PrzykÅ‚ad: adres forum: http://www.yourdomain.com/phpBB2 a katalog zaÅ‚Ä…cznikÃ³w: http://www.yourdomain.com/phpBB2/files.';
+$lang['Attach_img_path'] = 'Ikony linkÃ³w zaÅ‚Ä…cznikÃ³w';
+$lang['Attach_img_path_explain'] = 'Ta ikona jest wyÅ›wietlana za linkiem do zaÅ‚Ä…cznika w postach uÅ¼ytkownikÃ³w. Pozostaw to pole puste gdy nie chcesz Å¼eby byÅ‚a wyÅ›wietlana. BÄ™dzie zastÄ…pione przez Extension Groups Management.';
+$lang['Attach_topic_icon'] = 'Ikony zaÅ‚Ä…cznikÃ³w w tematach';
+$lang['Attach_topic_icon_explain'] = 'Ta ikona bÄ™dzie wyÅ›wietlana przed tematem postu jeÅ›li bÄ™dzie w nim zaÅ‚Ä…cznik. Pozostaw to pole puste gdy nie chcesz Å¼eby byÅ‚a wyÅ›wietlana.';
+$lang['Attach_display_order'] = 'KolejnoÅ›Ä‡ wyÅ›wietlania zaÅ‚Ä…cznikÃ³w';
+$lang['Attach_display_order_explain'] = 'Tutaj moÅ¼esz ustaliÄ‡ w jakiej kolejnoÅ›ci bÄ™dÄ… segregowane zaÅ‚Ä…czniki w postach lub prywatnych wiadomoÅ›ciach. MoÅ¼esz ustawiÄ‡ (Najnowsze zaÅ‚Ä…czniki pierwsze) lub (Najstarsze zaÅ‚Ä…czniki pierwsze).';
+$lang['Show_apcp'] = '"ZwiniÄ™ty" sposÃ³b pokazywania pÃ³l dla zaÅ‚Ä…cznikÃ³w';
+$lang['Show_apcp_explain'] = 'Przy zwiniÄ™tym, podczas pisania postu, trzeba kliknÄ…Ä‡ na link, po czym otworzy siÄ™ pole do zaÅ‚Ä…czania plikÃ³w. Przy rozwiniÄ™tym te pola bÄ™dÄ… widoczne zawsze.';
 
-$lang['Max_filesize_attach'] = 'Rozmiar za³±czników';
-$lang['Max_filesize_attach_explain'] = 'Maksymalny rozmiar za³±cznika w bajtach (bytes). Gdy ustawisz 0 rozmiar bêdzie nieograniczony.';
+$lang['Max_filesize_attach'] = 'Rozmiar zaÅ‚Ä…cznikÃ³w';
+$lang['Max_filesize_attach_explain'] = 'Maksymalny rozmiar zaÅ‚Ä…cznika w bajtach (bytes). Gdy ustawisz 0 rozmiar bÄ™dzie nieograniczony.';
 $lang['Attach_quota'] = 'Quota dyskowa';
-$lang['Attach_quota_explain'] = 'Maksymalny rozmiar dla wszystkich za³±czników, uwarunkowany twoja quot± na koncie lub twoim dysku na serwerze.';
-$lang['Max_filesize_pm'] = 'Maksymalny rozmiar za³±czników w skrzynce prywatnej';
-$lang['Max_filesize_pm_explain'] = 'Maksymalny rozmiar za³±czników jaki mo¿e mieæ u¿ytkownik w swojej skrzynce na prywatne wiadomo¶ci.'; 
+$lang['Attach_quota_explain'] = 'Maksymalny rozmiar dla wszystkich zaÅ‚Ä…cznikÃ³w, uwarunkowany twoja quotÄ… na koncie lub twoim dysku na serwerze.';
+$lang['Max_filesize_pm'] = 'Maksymalny rozmiar zaÅ‚Ä…cznikÃ³w w skrzynce prywatnej';
+$lang['Max_filesize_pm_explain'] = 'Maksymalny rozmiar zaÅ‚Ä…cznikÃ³w jaki moÅ¼e mieÄ‡ uÅ¼ytkownik w swojej skrzynce na prywatne wiadomoÅ›ci.'; 
 $lang['Default_quota_limit'] = 'Limity Quoty';
-$lang['Default_quota_limit_explain'] = 'W tym miejscu mo¿esz ustaliæ automatyczn± ilo¶æ Quoty dyskowej dla nowych u¿ytkowników oraz dla u¿ytkowników bez przypisanej Quoty indywidualnej';
+$lang['Default_quota_limit_explain'] = 'W tym miejscu moÅ¼esz ustaliÄ‡ automatycznÄ… iloÅ›Ä‡ Quoty dyskowej dla nowych uÅ¼ytkownikÃ³w oraz dla uÅ¼ytkownikÃ³w bez przypisanej Quoty indywidualnej';
 
-$lang['Max_attachments'] = 'Maksymalna ilo¶æ za³±czników - posty';
-$lang['Max_attachments_explain'] = 'Maksymalna ilo¶æ za³±czników w jednym po¶cie.';
-$lang['Max_attachments_pm'] = 'Maksymalna ilo¶æ za³±czników - PM';
-$lang['Max_attachments_pm_explain'] = 'Maksymalna ilo¶æ za³±czników w jednej prywatnej wiadomo¶ci.';
+$lang['Max_attachments'] = 'Maksymalna iloÅ›Ä‡ zaÅ‚Ä…cznikÃ³w - posty';
+$lang['Max_attachments_explain'] = 'Maksymalna iloÅ›Ä‡ zaÅ‚Ä…cznikÃ³w w jednym poÅ›cie.';
+$lang['Max_attachments_pm'] = 'Maksymalna iloÅ›Ä‡ zaÅ‚Ä…cznikÃ³w - PM';
+$lang['Max_attachments_pm_explain'] = 'Maksymalna iloÅ›Ä‡ zaÅ‚Ä…cznikÃ³w w jednej prywatnej wiadomoÅ›ci.';
 
-$lang['Disable_mod'] = 'Wy³±cz modu³ za³±czników';
-$lang['Disable_mod_explain'] = 'Ta opcja wy³±cza modu³ za³±czników.';
-$lang['PM_Attachments'] = 'W³±cz za³±czniki w PM';
-$lang['PM_Attachments_explain'] = 'W³±cza lub wy³±cza mo¿liwo¶æ dodawania za³±czników w prywatnych wiadomo¶ciach';
-$lang['Ftp_upload'] = 'W³±cz upload FTP';
-$lang['Ftp_upload_explain'] = 'W³±cz lub wy³±cz upload FTP. Je¶li w³±czysz musisz podaæ parametry FTP i katalogu do uploadu plików.';
-$lang['Attachment_topic_review'] = 'W³±czyæ pokazywanie za³±czników podczas przegl±dania tematów?';
-$lang['Attachment_topic_review_explain'] = 'Je¶li w³±czysz ikona za³±czników bêdzie pokazywana kiedy odpowiesz na post.';
+$lang['Disable_mod'] = 'WyÅ‚Ä…cz moduÅ‚ zaÅ‚Ä…cznikÃ³w';
+$lang['Disable_mod_explain'] = 'Ta opcja wyÅ‚Ä…cza moduÅ‚ zaÅ‚Ä…cznikÃ³w.';
+$lang['PM_Attachments'] = 'WÅ‚Ä…cz zaÅ‚Ä…czniki w PM';
+$lang['PM_Attachments_explain'] = 'WÅ‚Ä…cza lub wyÅ‚Ä…cza moÅ¼liwoÅ›Ä‡ dodawania zaÅ‚Ä…cznikÃ³w w prywatnych wiadomoÅ›ciach';
+$lang['Ftp_upload'] = 'WÅ‚Ä…cz upload FTP';
+$lang['Ftp_upload_explain'] = 'WÅ‚Ä…cz lub wyÅ‚Ä…cz upload FTP. JeÅ›li wÅ‚Ä…czysz musisz podaÄ‡ parametry FTP i katalogu do uploadu plikÃ³w.';
+$lang['Attachment_topic_review'] = 'WÅ‚Ä…czyÄ‡ pokazywanie zaÅ‚Ä…cznikÃ³w podczas przeglÄ…dania tematÃ³w?';
+$lang['Attachment_topic_review_explain'] = 'JeÅ›li wÅ‚Ä…czysz ikona zaÅ‚Ä…cznikÃ³w bÄ™dzie pokazywana kiedy odpowiesz na post.';
 
 $lang['Ftp_server'] = 'FTP Upload Server';
-$lang['Ftp_server_explain'] = 'Tutaj mo¿esz podaæ IP adres lub Host name dla serwera gdzie bêd± kopiowane za³±czniki. Je¶li pozostawisz to pole puste, bêdzie w tym celu wykorzystany serwer gdzie masz zainstalowane forum. UWAGA nie mo¿na podawaæ adresu FTP w ten sposób: ftp:// lub podobny. Poprawny adres to na przyk³ad: ftp.adres.serwera.pl lub adres IP co zmniejszy czas dostêpu.';
+$lang['Ftp_server_explain'] = 'Tutaj moÅ¼esz podaÄ‡ IP adres lub Host name dla serwera gdzie bÄ™dÄ… kopiowane zaÅ‚Ä…czniki. JeÅ›li pozostawisz to pole puste, bÄ™dzie w tym celu wykorzystany serwer gdzie masz zainstalowane forum. UWAGA nie moÅ¼na podawaÄ‡ adresu FTP w ten sposÃ³b: ftp:// lub podobny. Poprawny adres to na przykÅ‚ad: ftp.adres.serwera.pl lub adres IP co zmniejszy czas dostÄ™pu.';
 
-$lang['Attach_ftp_path'] = 'Katalog uploadu plików';
-$lang['Attach_ftp_path_explain'] = 'Podaj ¶cie¿kê dostêpu do katalogu gdzie bêd± umieszczane pliki. Nie podawaj tutaj adresu FTP, tylko ¶cie¿kê dostêpu do katalogu, adres podajesz wy¿ej.<br /> Na przyk³ad, gdy twój adres do jakiego¶ pliku na FTP wygl±da tak: ftp://adres.serwera.pl/ogolne/pliki/jakis_plik.zip to w tym miejscu wpisujesz: /ogolne/pliki';
-$lang['Ftp_download_path'] = 'Katalog downloadu plików';
-$lang['Ftp_download_path_explain'] = 'To samo co wy¿ej tylko tutaj podajemy pe³n± ¶cie¿kê np: ftp://adres.serwera.pl/ogolne/pliki';
+$lang['Attach_ftp_path'] = 'Katalog uploadu plikÃ³w';
+$lang['Attach_ftp_path_explain'] = 'Podaj Å›cieÅ¼kÄ™ dostÄ™pu do katalogu gdzie bÄ™dÄ… umieszczane pliki. Nie podawaj tutaj adresu FTP, tylko Å›cieÅ¼kÄ™ dostÄ™pu do katalogu, adres podajesz wyÅ¼ej.<br /> Na przykÅ‚ad, gdy twÃ³j adres do jakiegoÅ› pliku na FTP wyglÄ…da tak: ftp://adres.serwera.pl/ogolne/pliki/jakis_plik.zip to w tym miejscu wpisujesz: /ogolne/pliki';
+$lang['Ftp_download_path'] = 'Katalog downloadu plikÃ³w';
+$lang['Ftp_download_path_explain'] = 'To samo co wyÅ¼ej tylko tutaj podajemy peÅ‚nÄ… Å›cieÅ¼kÄ™ np: ftp://adres.serwera.pl/ogolne/pliki';
 $lang['Ftp_passive_mode'] = 'Tryb pasywny';
-$lang['Ftp_passive_mode_explain'] = 'Tryb pasywny wymaga aby zdalny serwer mia³ otwarty port dla po³±czenia i zwraca³ adres dla tego portu i nas³uchiwa³ na tym porcie';
+$lang['Ftp_passive_mode_explain'] = 'Tryb pasywny wymaga aby zdalny serwer miaÅ‚ otwarty port dla poÅ‚Ä…czenia i zwracaÅ‚ adres dla tego portu i nasÅ‚uchiwaÅ‚ na tym porcie';
 
-$lang['No_ftp_extensions_installed'] = 'Niestety nie mo¿esz u¿yæ uploadu FTP gdy¿ serwer PHP nie obs³uguje uploadu FTP';
+$lang['No_ftp_extensions_installed'] = 'Niestety nie moÅ¼esz uÅ¼yÄ‡ uploadu FTP gdyÅ¼ serwer PHP nie obsÅ‚uguje uploadu FTP';
 
 // Attachments -> Shadow Attachments
-$lang['Shadow_attachments_explain'] = 'Tutaj mo¿esz skasowaæ stare lub "nie dzia³aj±ce" za³±czniki, mo¿esz to sprawdziæ klikaj±c na nie';
-$lang['Shadow_attachments_file_explain'] = 'Za³±czniki które znajduj± siê w katalogu za³±czników a nie ma ich w bazie za³±czników, w ¿adnym po¶cie ani prywatnej wiadomo¶ci.';
-$lang['Shadow_attachments_row_explain'] = 'Za³±czniki które znajduj± siê w katalogu za³±czników a nie ma ich w ¿adnym po¶cie ani prywatnej wiadomo¶ci.';
+$lang['Shadow_attachments_explain'] = 'Tutaj moÅ¼esz skasowaÄ‡ stare lub "nie dziaÅ‚ajÄ…ce" zaÅ‚Ä…czniki, moÅ¼esz to sprawdziÄ‡ klikajÄ…c na nie';
+$lang['Shadow_attachments_file_explain'] = 'ZaÅ‚Ä…czniki ktÃ³re znajdujÄ… siÄ™ w katalogu zaÅ‚Ä…cznikÃ³w a nie ma ich w bazie zaÅ‚Ä…cznikÃ³w, w Å¼adnym poÅ›cie ani prywatnej wiadomoÅ›ci.';
+$lang['Shadow_attachments_row_explain'] = 'ZaÅ‚Ä…czniki ktÃ³re znajdujÄ… siÄ™ w katalogu zaÅ‚Ä…cznikÃ³w a nie ma ich w Å¼adnym poÅ›cie ani prywatnej wiadomoÅ›ci.';
 $lang['Empty_file_entry'] = 'Pusty plik';
 
 // Attachments -> Sync
-$lang['Sync_thumbnail_resetted'] = 'Miniatura zresetowana dla za³±cznika: %s'; // replace %s with physical Filename
-$lang['Attach_sync_finished'] = 'Synchronizacja za³±czników zakoñczona.';
+$lang['Sync_thumbnail_resetted'] = 'Miniatura zresetowana dla zaÅ‚Ä…cznika: %s'; // replace %s with physical Filename
+$lang['Attach_sync_finished'] = 'Synchronizacja zaÅ‚Ä…cznikÃ³w zakoÅ„czona.';
 
 // Extensions -> Extension Control
-$lang['Manage_extensions'] = 'Ustawienia zezwoleñ rozszerzeñ za³±czników';
-$lang['Manage_extensions_explain'] = 'Tutaj mo¿esz ustaliæ jakie rozszerzenia za³±czników bêd± akceptowane.';
+$lang['Manage_extensions'] = 'Ustawienia zezwoleÅ„ rozszerzeÅ„ zaÅ‚Ä…cznikÃ³w';
+$lang['Manage_extensions_explain'] = 'Tutaj moÅ¼esz ustaliÄ‡ jakie rozszerzenia zaÅ‚Ä…cznikÃ³w bÄ™dÄ… akceptowane.';
 $lang['Explanation'] = 'Opis';
-$lang['Extension_group'] = 'Rozszerzeñ za³±czników dla grup';
-$lang['Extension_exist'] = 'Rozszerzenie %s ju¿ istnieje'; // replace %s with the Extension
-$lang['Unable_add_forbidden_extension'] = 'Rozszerzenie %s nie znalezione, nie mo¿esz ustawiæ takiego rozszerzenia'; // replace %s with Extension
+$lang['Extension_group'] = 'RozszerzeÅ„ zaÅ‚Ä…cznikÃ³w dla grup';
+$lang['Extension_exist'] = 'Rozszerzenie %s juÅ¼ istnieje'; // replace %s with the Extension
+$lang['Unable_add_forbidden_extension'] = 'Rozszerzenie %s nie znalezione, nie moÅ¼esz ustawiÄ‡ takiego rozszerzenia'; // replace %s with Extension
 
 // Extensions -> Extension Groups Management
-$lang['Manage_extension_groups'] = 'Ustawienia rozszerzeñ za³±czników grup';
-$lang['Manage_extension_groups_explain'] = 'Tutaj mo¿esz dodawaæ, kasowaæ i zmieniaæ rozszerzenia grup, mo¿esz wy³±czyæ Rozszerzenia Grup, przypisaæ specjaln± kategoriê, zmieniæ ustawienia downloadu, ustawiæ ikonê uploadu która jest wy¶wietlana przed Grupami Rozszerzeñ.';
+$lang['Manage_extension_groups'] = 'Ustawienia rozszerzeÅ„ zaÅ‚Ä…cznikÃ³w grup';
+$lang['Manage_extension_groups_explain'] = 'Tutaj moÅ¼esz dodawaÄ‡, kasowaÄ‡ i zmieniaÄ‡ rozszerzenia grup, moÅ¼esz wyÅ‚Ä…czyÄ‡ Rozszerzenia Grup, przypisaÄ‡ specjalnÄ… kategoriÄ™, zmieniÄ‡ ustawienia downloadu, ustawiÄ‡ ikonÄ™ uploadu ktÃ³ra jest wyÅ›wietlana przed Grupami RozszerzeÅ„.';
 $lang['Special_category'] = 'Kategoria specjalna';
-$lang['Category_images'] = 'Ikony za³±czników';
+$lang['Category_images'] = 'Ikony zaÅ‚Ä…cznikÃ³w';
 $lang['Category_stream_files'] = 'Pliki Stream';
 $lang['Category_swf_files'] = 'Pliki Flash';
-$lang['Allowed'] = 'Zezwól';
-$lang['Allowed_forums'] = 'Zezwól na forum';
+$lang['Allowed'] = 'ZezwÃ³l';
+$lang['Allowed_forums'] = 'ZezwÃ³l na forum';
 $lang['Ext_group_permissions'] = 'Prawa grup';
-$lang['Download_mode'] = 'Sposób ¶ci±gania';
-$lang['Upload_icon'] = 'Prze¶lij ikonê';
+$lang['Download_mode'] = 'SposÃ³b Å›ciÄ…gania';
+$lang['Upload_icon'] = 'PrzeÅ›lij ikonÄ™';
 $lang['Max_groups_filesize'] = 'Maksymalny rozmiar pliku';
-$lang['Extension_group_exist'] = 'Rozszerzenie %s dla grupy ju¿ istnieje'; // replace %s with the group name
+$lang['Extension_group_exist'] = 'Rozszerzenie %s dla grupy juÅ¼ istnieje'; // replace %s with the group name
 $lang['Collapse'] = '+';
 $lang['Decollapse'] = '-';
 
 // Extensions -> Special Categories
 $lang['Manage_categories'] = 'Ustawienia specjalnych kategorii';
-$lang['Manage_categories_explain'] = 'Tutaj mo¿esz ustawiæ specjalne kategorie.';
+$lang['Manage_categories_explain'] = 'Tutaj moÅ¼esz ustawiÄ‡ specjalne kategorie.';
 $lang['Settings_cat_images'] = 'Ustawienia Specjalnych Kategorii: Ikony';
 $lang['Settings_cat_streams'] = 'Ustawienia Specjalnych Kategorii: Pliki Stream';
 $lang['Settings_cat_flash'] = 'Ustawienia Specjalnych Kategorii: Pliki Flash';
 $lang['Display_inlined'] = 'Obrazek jako link';
-$lang['Display_inlined_explain'] = 'Ustaw czy obrazek ma byæ pokazywany w po¶cie (Tak) czy ma byæ linkiem do obrazka';
+$lang['Display_inlined_explain'] = 'Ustaw czy obrazek ma byÄ‡ pokazywany w poÅ›cie (Tak) czy ma byÄ‡ linkiem do obrazka';
 $lang['Max_image_size'] = 'Maksymalny rozmiar obrazka';
-$lang['Max_image_size_explain'] = 'Tutaj ustawiasz maksymalny dozwolony rozmiar obrazka (Wysoko¶æ i szeroko¶æ w pikselach).<br />Je¶li podasz warto¶æ 0 nie bêdzie ograniczenia, lecz zbyt du¿y obrazek mo¿e nie pracowaæ poprawnie z PHP.';
-$lang['Image_link_size'] = 'Zamiana na link zbyt du¿ego obrazka';
-$lang['Image_link_size_explain'] = 'Je¶li za³±czony obrazek przekroczy podane warto¶ci, system wy¶wietli tylko link do niego. Je¶li podasz warto¶ci 0 nie bêdzie ograniczenia, lecz zbyt du¿e zdjêcia mog± nie pracowaæ poprawnie w PHP.';
+$lang['Max_image_size_explain'] = 'Tutaj ustawiasz maksymalny dozwolony rozmiar obrazka (WysokoÅ›Ä‡ i szerokoÅ›Ä‡ w pikselach).<br />JeÅ›li podasz wartoÅ›Ä‡ 0 nie bÄ™dzie ograniczenia, lecz zbyt duÅ¼y obrazek moÅ¼e nie pracowaÄ‡ poprawnie z PHP.';
+$lang['Image_link_size'] = 'Zamiana na link zbyt duÅ¼ego obrazka';
+$lang['Image_link_size_explain'] = 'JeÅ›li zaÅ‚Ä…czony obrazek przekroczy podane wartoÅ›ci, system wyÅ›wietli tylko link do niego. JeÅ›li podasz wartoÅ›ci 0 nie bÄ™dzie ograniczenia, lecz zbyt duÅ¼e zdjÄ™cia mogÄ… nie pracowaÄ‡ poprawnie w PHP.';
 $lang['Assigned_group'] = 'Wyznaczona grupa';
 
 $lang['Image_create_thumbnail'] = 'Tworzenie minigalerii';
-$lang['Image_create_thumbnail_explain'] = 'Ta opcja tworzy i wy¶wietla tylko miniaturki za³±czonych zdjêæ (je¶li s± wiêksze ni¿ maksymalny podany poni¿ej rozmiar zdjêæ galerii), które s± linkami do zdjêæ w oryginalnych rozmiarach. Opcja ta wymaga zainstalowanego programu: Imagick, je¶li nie wiesz czy na serwerze jest on zainstalowany, u¿yj poni¿ej przycisku "Znajd¼ Imagick" Je¶li jest on zainstalowany na serwerze, ¶cie¿ka do aplikacji zostanie automatycznie wpisana w pole "Imagick (Pe³na ¶cie¿ka)" je¶li skrypt nie odnajdzie ¶cie¿ki, zapytaj administratora i wpisz ¶cie¿kê rêcznie.';
-$lang['Image_min_thumb_filesize'] = 'Maksymalny rozmiar zdjêæ minigalerii';
-$lang['Image_min_thumb_filesize_explain'] = 'Je¶li za³±czane zdjêcia bêd± przekracza³y podan± wielko¶æ i jest zainstalowany Imagick na serwerze, oraz ¶cie¿ka jest podana prawid³owo, galeria zostanie utworzona.';
-$lang['Image_imagick_path'] = 'Imagick (Pe³na ¶cie¿ka)';
-$lang['Image_imagick_path_explain'] = 'Podaj pe³n± ¶cie¿kê do programu: Imagick, przyk³ad pod systemami Unixowymi: /usr/bin/convert lub windowsowymi: c:/imagemagick/convert.exe Je¶li jej nie znasz, u¿yj przycisku "Znajd¼ Imagick" lub zapytaj administratora.';
-$lang['Image_search_imagick'] = 'Znajd¼ Imagick';
+$lang['Image_create_thumbnail_explain'] = 'Ta opcja tworzy i wyÅ›wietla tylko miniaturki zaÅ‚Ä…czonych zdjÄ™Ä‡ (jeÅ›li sÄ… wiÄ™ksze niÅ¼ maksymalny podany poniÅ¼ej rozmiar zdjÄ™Ä‡ galerii), ktÃ³re sÄ… linkami do zdjÄ™Ä‡ w oryginalnych rozmiarach. Opcja ta wymaga zainstalowanego programu: Imagick, jeÅ›li nie wiesz czy na serwerze jest on zainstalowany, uÅ¼yj poniÅ¼ej przycisku "ZnajdÅº Imagick" JeÅ›li jest on zainstalowany na serwerze, Å›cieÅ¼ka do aplikacji zostanie automatycznie wpisana w pole "Imagick (PeÅ‚na Å›cieÅ¼ka)" jeÅ›li skrypt nie odnajdzie Å›cieÅ¼ki, zapytaj administratora i wpisz Å›cieÅ¼kÄ™ rÄ™cznie.';
+$lang['Image_min_thumb_filesize'] = 'Maksymalny rozmiar zdjÄ™Ä‡ minigalerii';
+$lang['Image_min_thumb_filesize_explain'] = 'JeÅ›li zaÅ‚Ä…czane zdjÄ™cia bÄ™dÄ… przekraczaÅ‚y podanÄ… wielkoÅ›Ä‡ i jest zainstalowany Imagick na serwerze, oraz Å›cieÅ¼ka jest podana prawidÅ‚owo, galeria zostanie utworzona.';
+$lang['Image_imagick_path'] = 'Imagick (PeÅ‚na Å›cieÅ¼ka)';
+$lang['Image_imagick_path_explain'] = 'Podaj peÅ‚nÄ… Å›cieÅ¼kÄ™ do programu: Imagick, przykÅ‚ad pod systemami Unixowymi: /usr/bin/convert lub windowsowymi: c:/imagemagick/convert.exe JeÅ›li jej nie znasz, uÅ¼yj przycisku "ZnajdÅº Imagick" lub zapytaj administratora.';
+$lang['Image_search_imagick'] = 'ZnajdÅº Imagick';
 
-$lang['Use_gd2'] = 'U¿yj kompresji GD2';
-$lang['Use_gd2_explain'] = 'PHP posiada mo¿liwo¶æ wspó³pracy z mechanizmami GD1 oraz GD2 przy przetwarzaniu obrazów, nale¿y je wybraæ indywidualnie wed³ug jako¶ci uzyskiwanych obrazów';
-$lang['Attachment_version'] = 'Wersja modu³u za³±czników: %s'; // %s is the version number
+$lang['Use_gd2'] = 'UÅ¼yj kompresji GD2';
+$lang['Use_gd2_explain'] = 'PHP posiada moÅ¼liwoÅ›Ä‡ wspÃ³Å‚pracy z mechanizmami GD1 oraz GD2 przy przetwarzaniu obrazÃ³w, naleÅ¼y je wybraÄ‡ indywidualnie wedÅ‚ug jakoÅ›ci uzyskiwanych obrazÃ³w';
+$lang['Attachment_version'] = 'Wersja moduÅ‚u zaÅ‚Ä…cznikÃ³w: %s'; // %s is the version number
 
 // Extensions -> Forbidden Extensions
-$lang['Manage_forbidden_extensions'] = 'Ustawianie niedozwolonych rozszerzeñ plików';
-$lang['Manage_forbidden_extensions_explain'] = 'Tutaj mo¿esz dodaæ lub usun±æ niedozwolone rozszerzenia plików. Rozszerzenia php, php3 i php4 s± zabronione z powodów bezpieczeñstwa, je¶li mo¿esz nie kasuj.';
-$lang['Forbidden_extension_exist'] = 'Rozszerzenie %s ju¿ istnieje'; // replace %s with the extension
-$lang['Extension_exist_forbidden'] = 'Rozszerzenie %s jest w tej chwili ustawione jako zezwolone, najpierw usuñ je z listy rozszerzeñ zezwolonych';  // replace %s with the extension
+$lang['Manage_forbidden_extensions'] = 'Ustawianie niedozwolonych rozszerzeÅ„ plikÃ³w';
+$lang['Manage_forbidden_extensions_explain'] = 'Tutaj moÅ¼esz dodaÄ‡ lub usunÄ…Ä‡ niedozwolone rozszerzenia plikÃ³w. Rozszerzenia php, php3 i php4 sÄ… zabronione z powodÃ³w bezpieczeÅ„stwa, jeÅ›li moÅ¼esz nie kasuj.';
+$lang['Forbidden_extension_exist'] = 'Rozszerzenie %s juÅ¼ istnieje'; // replace %s with the extension
+$lang['Extension_exist_forbidden'] = 'Rozszerzenie %s jest w tej chwili ustawione jako zezwolone, najpierw usuÅ„ je z listy rozszerzeÅ„ zezwolonych';  // replace %s with the extension
 
 // Extensions -> Extension Groups Control -> Group Permissions
-$lang['Group_permissions_title'] = 'Prawa rozszerzeñ dla grupy -> \'%s\''; // Replace %s with the Groups Name
-$lang['Group_permissions_explain'] = 'Tutaj mo¿esz ustawiæ w³a¶ciwo¶ci rozszerzeñ grup dla danego forum (podanych w polu zezwoleñ for). Standardowym ustawieniem jest zezwolenie userom na zamieszczanie plików w dowolnym forum.';
+$lang['Group_permissions_title'] = 'Prawa rozszerzeÅ„ dla grupy -> \'%s\''; // Replace %s with the Groups Name
+$lang['Group_permissions_explain'] = 'Tutaj moÅ¼esz ustawiÄ‡ wÅ‚aÅ›ciwoÅ›ci rozszerzeÅ„ grup dla danego forum (podanych w polu zezwoleÅ„ for). Standardowym ustawieniem jest zezwolenie userom na zamieszczanie plikÃ³w w dowolnym forum.';
 $lang['Note_admin_empty_group_permissions'] = 'NOTE:<br />Within the below listed Forums your Users are normally allowed to attach files, but since no Extension Group is allowed to be attached there, your Users are unable to attach anything. If they try, they will receive Error Messages. Maybe you want to set the Permission \'Post Files\' to ADMIN at these Forums.<br /><br />';
 $lang['Add_forums'] = 'Dodaj fora';
 $lang['Add_selected'] = 'Dodaj wybrane';
 $lang['Perm_all_forums'] = 'WSZYSTKIE FORA';
 
 // Attachments -> Quota Limits
-$lang['Manage_quotas'] = 'Zarz±dzanie limitami Quoty dyskowej';
-$lang['Manage_quotas_explain'] = 'W tym miejscu mo¿esz dodaæ/usun±æ/zmieniæ limity quoty. Mo¿esz przypisaæ quotê do u¿ytkowników i grup. Aby przypisaæ limit quoty dla u¿ytkownika przejd¼ do edycji jego danych. Aby przypisaæ quotê dla grup, przejd¼ do edycji danych grupy.';
-$lang['Assigned_users'] = 'Przypisani u¿ytkownicy';
+$lang['Manage_quotas'] = 'ZarzÄ…dzanie limitami Quoty dyskowej';
+$lang['Manage_quotas_explain'] = 'W tym miejscu moÅ¼esz dodaÄ‡/usunÄ…Ä‡/zmieniÄ‡ limity quoty. MoÅ¼esz przypisaÄ‡ quotÄ™ do uÅ¼ytkownikÃ³w i grup. Aby przypisaÄ‡ limit quoty dla uÅ¼ytkownika przejdÅº do edycji jego danych. Aby przypisaÄ‡ quotÄ™ dla grup, przejdÅº do edycji danych grupy.';
+$lang['Assigned_users'] = 'Przypisani uÅ¼ytkownicy';
 $lang['Assigned_groups'] = 'Przypisane grupy';
 $lang['Quota_limit_exist'] = 'Limit quoty %s istnieje.'; // Replace %s with the Quota Description
 
 // Attachments -> Control Panel
-$lang['Control_panel_title'] = 'Panel kontrolny za³±czników';
-$lang['Control_panel_explain'] = 'Tutaj mo¿esz przegl±daæ i ustawiaæ wszystkie za³±czniki wys³ane przez u¿ytkowników';
-$lang['File_comment_cp'] = 'Komentarz za³±cznika';
+$lang['Control_panel_title'] = 'Panel kontrolny zaÅ‚Ä…cznikÃ³w';
+$lang['Control_panel_explain'] = 'Tutaj moÅ¼esz przeglÄ…daÄ‡ i ustawiaÄ‡ wszystkie zaÅ‚Ä…czniki wysÅ‚ane przez uÅ¼ytkownikÃ³w';
+$lang['File_comment_cp'] = 'Komentarz zaÅ‚Ä…cznika';
 
 // Control Panel -> Search
-$lang['Search_wildcard_explain'] = 'U¿yj * by zast±piæ jaki¶ ci±g znaków';
-$lang['Size_smaller_than'] = 'Rozmiar (w bajtach) za³±cznika jest mniejsza ni¿';
-$lang['Size_greater_than'] = 'Rozmiar (w bajtach) za³±cznika jest wiêksza ni¿';
-$lang['Count_smaller_than'] = 'Liczba ¶ci±gniêæ jest mniejsza ni¿';
-$lang['Count_greater_than'] = 'Liczba ¶ci±gniêæ jest wiêksza ni¿';
-$lang['More_days_old'] = 'Za³±czone X dni wstecz.';
-$lang['No_attach_search_match'] = 'Nie znaleziono za³±czników spe³niaj±ce te kryteria';
+$lang['Search_wildcard_explain'] = 'UÅ¼yj * by zastÄ…piÄ‡ jakiÅ› ciÄ…g znakÃ³w';
+$lang['Size_smaller_than'] = 'Rozmiar (w bajtach) zaÅ‚Ä…cznika jest mniejsza niÅ¼';
+$lang['Size_greater_than'] = 'Rozmiar (w bajtach) zaÅ‚Ä…cznika jest wiÄ™ksza niÅ¼';
+$lang['Count_smaller_than'] = 'Liczba Å›ciÄ…gniÄ™Ä‡ jest mniejsza niÅ¼';
+$lang['Count_greater_than'] = 'Liczba Å›ciÄ…gniÄ™Ä‡ jest wiÄ™ksza niÅ¼';
+$lang['More_days_old'] = 'ZaÅ‚Ä…czone X dni wstecz.';
+$lang['No_attach_search_match'] = 'Nie znaleziono zaÅ‚Ä…cznikÃ³w speÅ‚niajÄ…ce te kryteria';
 
 // Control Panel -> Statistics
-$lang['Number_of_attachments'] = 'Ilo¶æ za³±czników';
-$lang['Total_filesize'] = '£±czny rozmiar wszystkich za³±czników';
-$lang['Number_posts_attach'] = 'Ilo¶æ postów z za³±cznikami';
-$lang['Number_topics_attach'] = 'Ilo¶æ tematów z za³±cznikami';
-$lang['Number_users_attach'] = 'Ilo¶æ u¿ytkowników którzy za³±czyli pliki';
-$lang['Number_pms_attach'] = 'Ca³kowita ilo¶æ za³±czników w prywatnych wiadomo¶ciach';
+$lang['Number_of_attachments'] = 'IloÅ›Ä‡ zaÅ‚Ä…cznikÃ³w';
+$lang['Total_filesize'] = 'ÅÄ…czny rozmiar wszystkich zaÅ‚Ä…cznikÃ³w';
+$lang['Number_posts_attach'] = 'IloÅ›Ä‡ postÃ³w z zaÅ‚Ä…cznikami';
+$lang['Number_topics_attach'] = 'IloÅ›Ä‡ tematÃ³w z zaÅ‚Ä…cznikami';
+$lang['Number_users_attach'] = 'IloÅ›Ä‡ uÅ¼ytkownikÃ³w ktÃ³rzy zaÅ‚Ä…czyli pliki';
+$lang['Number_pms_attach'] = 'CaÅ‚kowita iloÅ›Ä‡ zaÅ‚Ä…cznikÃ³w w prywatnych wiadomoÅ›ciach';
 
 // Control Panel -> Attachments
-$lang['Statistics_for_user'] = 'Statystyki za³±czników dla u¿ytkownika %s'; // replace %s with username
+$lang['Statistics_for_user'] = 'Statystyki zaÅ‚Ä…cznikÃ³w dla uÅ¼ytkownika %s'; // replace %s with username
 $lang['Size_in_kb'] = 'Rozmiar (KB)';
-$lang['Downloads'] = '¦ci±gniêto';
+$lang['Downloads'] = 'ÅšciÄ…gniÄ™to';
 $lang['Post_time'] = 'Data postu';
 $lang['Posted_in_topic'] = 'Post w temacie';
 $lang['Submit_changes'] = 'Zachowaj zmiany';
 
 // Sort Types
-$lang['Sort_Attachments'] = 'Za³±czniki';
+$lang['Sort_Attachments'] = 'ZaÅ‚Ä…czniki';
 $lang['Sort_Size'] = 'Rozmiar';
 $lang['Sort_Filename'] = 'Nazwa pliku';
-$lang['Sort_Comment'] = 'Komentarz do za³±cznika';
+$lang['Sort_Comment'] = 'Komentarz do zaÅ‚Ä…cznika';
 $lang['Sort_Extension'] = 'Rozszerzenie';
-$lang['Sort_Downloads'] = '¦ci±gniêto';
+$lang['Sort_Downloads'] = 'ÅšciÄ…gniÄ™to';
 $lang['Sort_Posttime'] = 'Data postu';
 
 // View Types
 $lang['View_Statistic'] = 'Statystyki';
 $lang['View_Search'] = 'Szukaj';
-$lang['View_Username'] = 'U¿ytkownik';
-$lang['View_Attachments'] = 'Za³±czniki';
+$lang['View_Username'] = 'UÅ¼ytkownik';
+$lang['View_Attachments'] = 'ZaÅ‚Ä…czniki';
 
 // Successfully updated
-$lang['Attach_config_updated'] = 'Konfiguracja za³±czników uaktualniona pomy¶lnie';
-$lang['Click_return_attach_config'] = 'Kliknij %stutaj%s ¿eby powróciæ do konfiguracji za³±czników';
-$lang['Test_settings_successful'] = 'Test konfiguracji zakoñczony, wszystko wygl±da dobrze.';
+$lang['Attach_config_updated'] = 'Konfiguracja zaÅ‚Ä…cznikÃ³w uaktualniona pomyÅ›lnie';
+$lang['Click_return_attach_config'] = 'Kliknij %stutaj%s Å¼eby powrÃ³ciÄ‡ do konfiguracji zaÅ‚Ä…cznikÃ³w';
+$lang['Test_settings_successful'] = 'Test konfiguracji zakoÅ„czony, wszystko wyglÄ…da dobrze.';
 
 // Some basic definitions
-$lang['Attachments'] = 'Za³±czniki';
-$lang['Attachment'] = 'Za³±cznik';
+$lang['Attachments'] = 'ZaÅ‚Ä…czniki';
+$lang['Attachment'] = 'ZaÅ‚Ä…cznik';
 $lang['Extension'] = 'Rozszerzenie';
 
 // Auth pages
-$lang['Auth_attach'] = 'Post za³±cznika';
-$lang['Auth_download'] = '¦ci±gnij za³±czniki';
+$lang['Auth_attach'] = 'Post zaÅ‚Ä…cznika';
+$lang['Auth_download'] = 'ÅšciÄ…gnij zaÅ‚Ä…czniki';
 
 ?>

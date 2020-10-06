@@ -17,11 +17,10 @@
  *
  ***************************************************************************/
 
-$lang['Ph_entry_empty'] = 'Nie odnaleziono wpisów dla wybranego postu';
+$lang['Ph_entry_empty'] = 'Nie odnaleziono wpisÃ³w dla wybranego postu';
 $lang['Edit_by'] = 'Edytowany przez';
 $lang['Edit_time'] = 'Data edycji';
-$lang['Delete_post_history'] = 'Usuñ informacje o edycji tego postu';
-$lang['Back_to_post'] = 'Powrót do widoku postu';
-$lang['Ph_deleted'] = 'Dane dotycz±ce edycji historii wybranego postu zosta³y usuniête<br /><br />Kliknij %sTutaj%s aby powróciæ do widoku postu.';
-$lang['Ph_confirm_delete'] = 'Czy na pewno chcesz usun±æ informacje dotycz±ce edycji tego postu ?';
-?>
+$lang['Delete_post_history'] = 'UsuÅ„ informacje o edycji tego postu';
+$lang['Back_to_post'] = 'PowrÃ³t do widoku postu';
+$lang['Ph_deleted'] = 'Dane dotyczÄ…ce edycji historii wybranego postu zostaÅ‚y usuniÄ™te<br /><br />Kliknij %sTutaj%s aby powrÃ³ciÄ‡ do widoku postu.';
+$lang['Ph_confirm_delete'] = 'Czy na pewno chcesz usunÄ…Ä‡ informacje dotyczÄ…ce edycji tego postu ?';

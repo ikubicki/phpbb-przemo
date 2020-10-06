@@ -27,13 +27,6 @@ if ( !defined('IN_PHPBB') )
 
 switch($dbms)
 {
-	case 'mysql':
-		include($phpbb_root_path . 'db/mysql.'.$phpEx);
-		break;
-
-	case 'mysql4':
-		include($phpbb_root_path . 'db/mysql4.'.$phpEx);
-		break;
 	case 'mysqli':
 		include($phpbb_root_path . 'db/mysqli.'.$phpEx);
 		break;
@@ -43,7 +36,7 @@ switch($dbms)
 
 $persistency = false;
 
-$db = new sql_db($dbhost, $dbuser, $dbpasswd, $dbname, $persistency);
+$db = new sql_db($dbhost, $dbuser, $dbpasswd, $dbname, $persistency, $dbchars);
 if(!$db->db_connect_id)
 {
 	$err = $db->sql_error(true);

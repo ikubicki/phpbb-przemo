@@ -35,7 +35,7 @@ $lang['Version_info'] = '<br />System statystyk wersja %s'; //%s = number
 $lang['Rank'] = 'Pozycja';
 $lang['Percent'] = 'Procent';
 $lang['Graph'] = 'Wykres';
-$lang['Uses'] = 'U¿yty';
+$lang['Uses'] = 'UÅ¼yty';
 $lang['How_many'] = 'Ile razy';
 
 //
@@ -55,49 +55,49 @@ $lang['Statistics_title'] = 'Statystyki forum';
 $lang['Statistics_config_title'] = 'Konfiguracja statystyk';
 
 $lang['Return_limit'] = 'Limit pozycji';
-$lang['Return_limit_desc'] = 'Ile pozycji bêdzie wy¶wietlane w rankingu danej kategorii.';
+$lang['Return_limit_desc'] = 'Ile pozycji bÄ™dzie wyÅ›wietlane w rankingu danej kategorii.';
 $lang['Clear_cache'] = 'Czyszczenie Cache';
-$lang['Clear_cache_desc'] = 'Czy¶ci z cachu dane wszystkich modu³ów (od¶wie¿anie)';
+$lang['Clear_cache_desc'] = 'CzyÅ›ci z cachu dane wszystkich moduÅ‚Ã³w (odÅ›wieÅ¼anie)';
 
 //
 // Status Messages
 //
 $lang['Messages'] = 'Komunikaty admina';
 $lang['Updated'] = 'Uaktualnione';
-$lang['Active'] = 'W³±czony';
-$lang['Activate'] = 'W³±cz';
-$lang['Activated'] = 'W³±czono';
+$lang['Active'] = 'WÅ‚Ä…czony';
+$lang['Activate'] = 'WÅ‚Ä…cz';
+$lang['Activated'] = 'WÅ‚Ä…czono';
 $lang['Not_active'] = 'Nieaktywny';
-$lang['Deactivated'] = 'Wy³±czony';
+$lang['Deactivated'] = 'WyÅ‚Ä…czony';
 $lang['Install'] = 'Zainstaluj';
 $lang['Uninstall'] = 'Odinstaluj';
 $lang['Uninstalled'] = 'Odinstalowany';
-$lang['Move_up'] = 'W górê';
-$lang['Move_down'] = 'W dó³';
+$lang['Move_up'] = 'W gÃ³rÄ™';
+$lang['Move_down'] = 'W dÃ³Å‚';
 $lang['Update_time'] = 'Czas uaktualniania';
 $lang['Auth_settings_updated'] = 'Authorization Settings - [These are always updated]';
 
 //
 // Modules Management
 //
-$lang['Back_to_management'] = 'Wróæ do menad¿era statystyk';
-$lang['Statistics_modules_title'] = 'Menad¿er statystyk';
+$lang['Back_to_management'] = 'WrÃ³Ä‡ do menadÅ¼era statystyk';
+$lang['Statistics_modules_title'] = 'MenadÅ¼er statystyk';
 
 $lang['Module_name'] = 'Nazwa';
 $lang['Directory_name'] = 'Nazwa katalogu';
 $lang['Status'] = 'Status';
 $lang['Update_time_minutes'] = 'Czas uaktualniania w godzinach';
-$lang['Update_time_desc'] = 'Czas od¶wie¿ania danych modu³u.';
-$lang['Auto_set_update_time'] = 'Od¶wie¿ wszystkie modu³y.';
-$lang['Uninstall_module'] = 'Odinstaluj modu³';
-$lang['Uninstall_module_desc'] = 'Oznacz modu³ jako "Wy³±czony", mo¿esz go ponownie zainstalowaæ. Je¶li natomiast chcesz go usun±æ na sta³e bêdziesz musia³' .  (($he) ? '' : 'a') . ' jeszcze skasowaæ jego katalog.';
+$lang['Update_time_desc'] = 'Czas odÅ›wieÅ¼ania danych moduÅ‚u.';
+$lang['Auto_set_update_time'] = 'OdÅ›wieÅ¼ wszystkie moduÅ‚y.';
+$lang['Uninstall_module'] = 'Odinstaluj moduÅ‚';
+$lang['Uninstall_module_desc'] = 'Oznacz moduÅ‚ jako "WyÅ‚Ä…czony", moÅ¼esz go ponownie zainstalowaÄ‡. JeÅ›li natomiast chcesz go usunÄ…Ä‡ na staÅ‚e bÄ™dziesz musiaÅ‚' .  (($he) ? '' : 'a') . ' jeszcze skasowaÄ‡ jego katalog.';
 $lang['Active_desc'] = '';
 
-$lang['Not_allowed_to_install'] = 'Nie ma mo¿liwo¶ci zainstalowania tego modu³u. Byæ mo¿e ten modu³ wymaga innego systemu statystyk.';
-$lang['Wrong_stats_mod_version'] = 'Nie ma mo¿liwo¶ci zainstalowaæ tego modu³u, poniewa¿ zosta³ on napisany dla innej wersji systemu statystyk. Zeby go zainstalowaæ, potrzebujesz wersji %s Statystyk.'; // replace %s with Version (2.1.3 for example)
-$lang['Module_install_error'] = 'Wyst±pi³ b³±d podczas instalowania modu³u. Byæ mo¿e wyst±pi³ jaki¶ b³±d SQL, zobacz powy¿ej.';
+$lang['Not_allowed_to_install'] = 'Nie ma moÅ¼liwoÅ›ci zainstalowania tego moduÅ‚u. ByÄ‡ moÅ¼e ten moduÅ‚ wymaga innego systemu statystyk.';
+$lang['Wrong_stats_mod_version'] = 'Nie ma moÅ¼liwoÅ›ci zainstalowaÄ‡ tego moduÅ‚u, poniewaÅ¼ zostaÅ‚ on napisany dla innej wersji systemu statystyk. Zeby go zainstalowaÄ‡, potrzebujesz wersji %s Statystyk.'; // replace %s with Version (2.1.3 for example)
+$lang['Module_install_error'] = 'WystÄ…piÅ‚ bÅ‚Ä…d podczas instalowania moduÅ‚u. ByÄ‡ moÅ¼e wystÄ…piÅ‚ jakiÅ› bÅ‚Ä…d SQL, zobacz powyÅ¼ej.';
 
-$lang['Preview_debug_info'] = 'Modu³ wygenerowany w %f sekund: %d wygenerowanych zapytañ.'; // Replace %f with seconds and %d with queries
+$lang['Preview_debug_info'] = 'ModuÅ‚ wygenerowany w %f sekund: %d wygenerowanych zapytaÅ„.'; // Replace %f with seconds and %d with queries
 $lang['Update_time_recommend'] = 'Proponowany czas uaktualniania minut: <b>%d</b>.'; // Replace %d with Minutes
 
 ?>
