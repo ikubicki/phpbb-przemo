@@ -14,4 +14,4 @@ jobs:
         uses: TheDoctor0/zip-release@0.4.1
         with:
           filename: 'release.zip'
-          exclusions: */ci* *.git*
+          exclusions: '*/ci* *.git*'
