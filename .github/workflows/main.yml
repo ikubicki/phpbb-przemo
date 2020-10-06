@@ -8,13 +8,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@master
 
       - name: ZIP release
         uses: TheDoctor0/zip-release@0.4.1
         with:
-          filename: release.zip
-          path: .
-          directory: .
-          exclusions: ci
-          type: zip
+          filename: 'release.zip'
+          exclusions: */ci* *.git*
