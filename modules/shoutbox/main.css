@@ -1,0 +1,50 @@
+div.shoutbox h2 {
+    font-size: 18px;
+    color: #bbb;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    text-shadow: 0 1px 0 #fff;
+}
+div.shoutbox .messages {
+    overflow-x: hidden;
+    overflow-y: visible;
+    border-bottom: 1px solid #ddd;
+}
+div.shoutbox .messages p {
+    font-size: 12px;
+    padding: 10px;
+    margin: 0;
+}
+
+div.shoutbox .messages p:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+div.shoutbox .messages p.error {
+    background-color: #fb8;
+    padding: 10px;
+}
+
+div.shoutbox .messages p span.author {
+    margin-right: 5px;
+}
+
+div.shoutbox .messages p span.time {
+    float: right;
+    color: #aaa;
+}
+div.shoutbox input {
+    font-size: 12px;
+    padding: 5px;
+    margin: 10px 0;
+    background-color: #fff;
+    border: 0;
+    box-shadow: 0 1px 1px #aaa;
+}
+div.shoutbox input[name=message] {
+    width: 80%;
+    margin-left: 7%;
+}
+div.shoutbox input[name=submit] {
+
+}

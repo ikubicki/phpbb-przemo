@@ -20,7 +20,7 @@ a:hover			{ text-decoration: underline; color : #DD6900; }
 hr				{ height: 0px; border: solid #D1D7DC 0px; border-top-width: 1px; }
 
 /* This is the border line & background colour round the entire page */
-.bodyline { background-color: #FFFFFF; border: 0; padding: 10px 20px; box-shadow: 0 -3px 50px #ddd }
+.bodyline { background-color: #FFFFFF; border: 0; padding: 10px 20px; box-shadow: 0 -3px 50px #ccc }
 
 /* This is the outline round the main forum tables */
 .forumline { background-color: #A9B8C2; border: solid #D1D7DC 0px; border-top-width: 1px; }

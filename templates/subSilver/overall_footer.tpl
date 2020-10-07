@@ -17,7 +17,8 @@
    </span>
    <div style="float:right">
       <span class="copyright">{GENERATE_TIME}</span>
-   </div></td></tr></table>{LOADING_FOOTER}
+   </div><br />&nbsp;</td></tr></table>{LOADING_FOOTER}
+   
 <!-- BEGIN forum_thin -->
 </td>
 </tr>
