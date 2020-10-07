@@ -4,7 +4,7 @@ Dockerized script that will be used to make necessary changes for PHP 7.4 suppor
 
 ### How to start?
 
-Just run `ci/docker.sh` from main directory.
+Just run `ci/docker.sh` from main directory. Once installed, use `ci/docker.sh --config` to use predefined config.
 
 ### Changelog
 
