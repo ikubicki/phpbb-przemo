@@ -1,15 +1,15 @@
 /* General page style. The scroll bar colours only visible in IE5.5+ */
 body { 
-background-color:		#E5E5E5;
-scrollbar-face-color:		#DEE3E7;
-scrollbar-highlight-color:	#FFFFFF;
-scrollbar-shadow-color:		#DEE3E7;
-scrollbar-3dlight-color:	#D1D7DC;
-scrollbar-arrow-color:		#006699;
-scrollbar-track-color:		#EFEFEF;
-scrollbar-darkshadow-color:	#98AAB1;
-background-image: url();
-margin: 4px;
+	background-color:		#E5E5E5;
+	scrollbar-face-color:		#DEE3E7;
+	scrollbar-highlight-color:	#FFFFFF;
+	scrollbar-shadow-color:		#DEE3E7;
+	scrollbar-3dlight-color:	#D1D7DC;
+	scrollbar-arrow-color:		#006699;
+	scrollbar-track-color:		#EFEFEF;
+	scrollbar-darkshadow-color:	#98AAB1;
+	background-image: url();
+	margin: 0;
 }
 
 /* General font families for common tags */
@@ -20,7 +20,7 @@ a:hover			{ text-decoration: underline; color : #DD6900; }
 hr				{ height: 0px; border: solid #D1D7DC 0px; border-top-width: 1px; }
 
 /* This is the border line & background colour round the entire page */
-.bodyline { background-color: #FFFFFF; border: 1px #98AAB1 solid; }
+.bodyline { background-color: #FFFFFF; border: 0; padding: 10px 20px; box-shadow: 0 -3px 50px #ddd }
 
 /* This is the outline round the main forum tables */
 .forumline { background-color: #A9B8C2; border: solid #D1D7DC 0px; border-top-width: 1px; }

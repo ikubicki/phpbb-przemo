@@ -44,7 +44,6 @@ function bbcode(strFore, strAft)
 					<option value="90" class="genmed">90</option>
 					</select> {L_DAYS}</span>
 				<!-- END expire_box -->
-	 </table>
       </td>
    </tr>
    <tr>
