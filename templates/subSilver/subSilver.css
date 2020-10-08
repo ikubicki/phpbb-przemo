@@ -79,11 +79,15 @@ th.thCornerR				{ border-width: 0px; }
 
 /* The largest text used in the index page title and toptic title etc. */
 .maintitle {
-font-weight: bold;
-text-decoration: none; line-height : 120%;
-font-size: 32px;
-color: #fff;
-text-shadow: 0 1px 0 #aaa;
+	font-weight: bold;
+	text-decoration: none; line-height : 120%;
+	font-size: 32px;
+	color: #fff;
+	text-shadow: 0 1px 0 #aaa;
+}
+.gen.description {
+	color: #aaa;
+	text-shadow: 0 -1px 0 #fff;
 }
 
 /* General text */
@@ -160,7 +164,7 @@ form { display: inline; }
 
 input,textarea, select {
 color : #000000;
-font: normal 11px Verdana, Arial, Helvetica, sans-serif;
+font: normal 13px Verdana, Arial, Helvetica, sans-serif;
 }
 
 /* The text input fields background colour */

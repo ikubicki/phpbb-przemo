@@ -79,7 +79,7 @@
 		<td width="80%" valign="middle" align="center">
 			<span class="maintitle">{SITENAME_COLOR}</span>
 			<br>
-			<span class="gen">{SITE_DESCRIPTION}<br><br></span>
+			<span class="gen description">{SITE_DESCRIPTION}<br><br></span>
 		</td>
 		<td align="center" width="10%">
 			<!-- BEGIN switch_page_avatar -->

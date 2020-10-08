@@ -17,6 +17,7 @@ var shouts = {
     latestId: 0,
     refreshCounts: 0,
     enabled: true,
+    smileys: [],
     init: function (options) {
         this.options = Object.assign({}, this.options, options)
         this.run()
@@ -28,7 +29,51 @@ var shouts = {
         this.submitButton.on('click', this.submit)
         this.tokenField = context.find('input[name=token]')
         this.container = context.find('div.messages')
+        this.loadSmileys()
         this.refresh()
+    },
+    loadSmileys: function() {
+        $.getJSON('/js/ckeditor/plugins/emoji/emoji.json', (response) => {
+            shouts.smileys = []
+            limit = 83
+            response.forEach(smiley => {
+                if (smiley.group == 'people' && limit) {
+                    shouts.smileys.push(smiley.symbol)
+                    limit--
+                }
+            })
+            var link = $('<a href="javascript:void(0)">' + response[0].symbol + '</a>')
+            link.on('click', () => {
+                shouts.listSmileys()
+            })
+            this.inputField.after(link)
+        })
+    },
+    listSmileys: function() {
+        var smileysContainer = $(this.options.selector).find('div.smileys')
+        if (smileysContainer.length > 0) {
+            smileysContainer.remove()
+            return
+        }
+        smileysContainer = $('<div class="smileys"></div>')
+        this.submitButton.after(smileysContainer)
+
+        shouts.smileys.forEach(smiley => {
+            var item = $('<a href="javascript:void(0)">' + smiley + '</a>')
+            item.on('click', () => {
+                shouts.addSmiley(smiley)
+            })
+            smileysContainer.append(item)
+        })
+        smileysContainer.append('<br />')
+    },
+    addSmiley: function(smiley) {
+        var caret = this.inputField.focus().prop('selectionStart')
+        var text1 = this.inputField.val().substring(0,caret)
+        var text2 = this.inputField.val().substring(caret)
+        this.inputField.val(text1 + ' ' + smiley + ' ' + text2)
+        this.inputField.prop('selectionStart', caret + 4)
+        this.inputField.prop('selectionEnd', caret + 4)
     },
     toggle: function() {
         $(this.options.selector).animate({
@@ -37,7 +82,8 @@ var shouts = {
         this.enabled = !this.enabled
     },
     getInterval: function() {
-        return this.options.refresh * 1000
+        var offset = Math.floor(shouts.refreshCounts / 25)
+        return (this.options.refresh + offset) * 1000
     },
     refresh: function() {
         var data = {
@@ -71,10 +117,12 @@ var shouts = {
                 shouts.session = response.session
             }
             if (response.messages) {
+                shouts.refreshCounts = 0
                 response.messages.forEach(message => {
                     if (!shouts.messages.includes(message.id)) {
+                        var online = '<span class="author-status author-status-' + message.author.id + ' offline">&bull;</span>';
                         var row = $('<p>' +
-                            '<span class="author"><a href="' + message.author.url + '">' + message.author.name + '</a></span>' +
+                            '<span class="author">' + online + '<a href="' + message.author.url + '">' + message.author.name + '</a></span>' +
                             '<span class="time">' + message.time + '</span>' +
                             '<span class="text">' + message.text + '</span>' +
                             '</p>')
@@ -89,6 +137,12 @@ var shouts = {
                         }
                     }
                 });
+            }
+            shouts.container.find('span.author-status').removeClass('online').addClass('offline')
+            if (response.online) {
+                response.online.forEach(online => {
+                    shouts.container.find('span.author-status-' + online).removeClass('offline').addClass('online')
+                })
             }
             if (response.error) {
                 if (shouts.container.find('p.error').length < 1) {

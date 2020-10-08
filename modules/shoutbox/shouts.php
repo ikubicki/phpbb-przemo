@@ -3,6 +3,7 @@
 $_POST['session'] = [
     'id' => 2
 ];
+$_POST['online'] = [2];
 $_POST['messages'] = [
     ['id' => 1, 'author' => ['id' => 2, 'name' => 'bolec', 'url' => 'viewprofile.php?id=2'], 'text' => 'hello world 1', 'time' => '1 dzień temu'],
     ['id' => 2, 'author' => ['id' => 2, 'name' => 'bolec', 'url' => 'viewprofile.php?id=2'], 'text' => 'hello world 2', 'time' => '30m temu'],
@@ -15,7 +16,7 @@ $_POST['messages'] = [
     ['id' => 9, 'author' => ['id' => 2, 'name' => 'bolec', 'url' => 'viewprofile.php?id=2'], 'text' => 'hello world 9', 'time' => '10m temu'],
     ['id' => 10, 'author' => ['id' => 2, 'name' => 'bolec', 'url' => 'viewprofile.php?id=2'], 'text' => 'hello world 10', 'time' => '6m temu'],
     ['id' => 11, 'author' => ['id' => 2, 'name' => 'bolec', 'url' => 'viewprofile.php?id=2'], 'text' => 'orem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac vulputate velit. Aliquam in rhoncus urna. Fusce mattis leo ac sollicitudin malesuada. Etiam at justo nunc. Vestibulum sit amet enim ac nisi volutpat scelerisque at nec sapien. Maecenas at maximus risus. Donec massa mauris, vulputate sed nulla at, bibendum tempus tellus. In id feugiat est. Vivamus vitae nisl libero.', 'time' => '5m temu'],
-    ['id' => 12, 'author' => ['id' => 2, 'name' => 'bolec', 'url' => 'viewprofile.php?id=2'], 'text' => 'hello world 12', 'time' => '2m temu'],
+    ['id' => 12, 'author' => ['id' => 3, 'name' => 'kolec', 'url' => 'viewprofile.php?id=3'], 'text' => 'hello world 12', 'time' => '2m temu'],
     ['id' => 13, 'author' => ['id' => 2, 'name' => 'bolec', 'url' => 'viewprofile.php?id=2'], 'text' => 'hello world 13', 'time' => 'minutę temu'],
 ];
 echo json_encode($_POST);

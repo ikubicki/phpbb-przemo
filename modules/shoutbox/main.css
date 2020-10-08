@@ -7,12 +7,18 @@ div.shoutbox h2 {
 div.shoutbox .messages {
     overflow-x: hidden;
     overflow-y: visible;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #ccc;
 }
 div.shoutbox .messages p {
     font-size: 12px;
     padding: 10px;
     margin: 0;
+}
+
+div.shoutbox > a {
+    text-decoration: none;
+    margin: 0 5px 0 8px;
+    font-size: 18px;
 }
 
 div.shoutbox .messages p:hover {
@@ -27,6 +33,22 @@ div.shoutbox .messages p.error {
 
 div.shoutbox .messages p span.author {
     margin-right: 5px;
+}
+
+div.shoutbox .messages p span.author .online {
+    color: #0a0;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 12px;
+    margin-right: 3px;
+}
+
+div.shoutbox .messages p span.author .offline {
+    color: #ccc;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 12px;
+    margin-right: 3px;
 }
 
 div.shoutbox .messages p span.time {
@@ -48,8 +70,25 @@ div.shoutbox input {
 }
 div.shoutbox input[name=message] {
     width: 80%;
-    margin-left: 7%;
+    margin-left: 5%;
 }
 div.shoutbox input[type=button] {
     cursor: pointer;
+}
+div.shoutbox div.smileys {
+    margin: 5px 5px 20px;
+}
+
+div.shoutbox div.smileys br {
+    clear: both;
+}
+
+div.shoutbox div.smileys a {
+    text-decoration: none;
+    margin: 5px;
+    float: left;
+    width: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 18px;
 }
