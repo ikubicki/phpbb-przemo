@@ -3,6 +3,10 @@ var shouts = {
         url: '/modules/shoutbox/shouts.php',
         selector: '#shouts',
         refresh: 5,
+        langs: {
+            submit: 'Submit',
+            cancel: 'Cancel'
+        }
     },
     inputField: null,
     submitButton: null,
@@ -12,6 +16,7 @@ var shouts = {
     messages: [],
     latestId: 0,
     refreshCounts: 0,
+    enabled: true,
     init: function (options) {
         this.options = Object.assign({}, this.options, options)
         this.run()
@@ -24,6 +29,12 @@ var shouts = {
         this.tokenField = context.find('input[name=token]')
         this.container = context.find('div.messages')
         this.refresh()
+    },
+    toggle: function() {
+        $(this.options.selector).animate({
+            height: "toggle"
+        })
+        this.enabled = !this.enabled
     },
     getInterval: function() {
         return this.options.refresh * 1000
@@ -50,7 +61,6 @@ var shouts = {
         shouts.refreshCounts++
         shouts.submitButton.attr('disabled', false)
         response = $.parseJSON(response)
-        console.log(response, this)
         var newMessages = 0
         if (response) {
             if (response.token) {
@@ -59,9 +69,6 @@ var shouts = {
             }
             if (response.session) {
                 shouts.session = response.session
-            }
-            if (response.text) {
-                shouts.inputField.val(response.text)
             }
             if (response.messages) {
                 response.messages.forEach(message => {
@@ -97,25 +104,58 @@ var shouts = {
         }
     },
     rowClick: function(event, message) {
-        var action = 'ref'
-        if (message.author.id == shouts.session.id) {
-            action = 'edit'
+        console.log('rowClick()')
+        if (message.author.id != shouts.session.id) {
+            return
         }
         var data = {
-            action,
-            ref: message.id,
-            text: message.text,
+            action: 'edit',
+            message,
             token: shouts.tokenField.val(),
             latestId: shouts.latestId
         }
-        shouts.send(data)
+        shouts.send(data, (response) => {
+            shouts.editor(response, event)
+        })
+    },
+    editor: function(response, event) {
+        response = $.parseJSON(response)
+        console.log(response)
+        var paragraph = $(event.currentTarget)
+        paragraph.off()
+        var container = paragraph.find('span.text')
+        var input = $('<input type="text" />')
+        var submit = $('<input type="button" value="' + shouts.options.langs.submit + '" />')
+        var cancel = $('<input type="button" value="' + shouts.options.langs.cancel + '" />')
+        cancel.on('click', (e) => {
+            container.empty()
+            container.text(response.message.text)
+            var newParagraph = $('<p />')
+            newParagraph.html(paragraph.html())
+            paragraph.after(newParagraph)
+            paragraph.remove()
+            newParagraph.on('click', (event) => {
+                shouts.rowClick(event, response.message)
+            })
+        })
+        container.empty()
+        container.append(input)
+        container.append('&nbsp;')
+        container.append(submit)
+        container.append('&nbsp;')
+        container.append(cancel)
+        input.val(response.message.text)
+        input.focus().val(input.val());
+        console.log(container)
     },
     send: function(data, callback) {
-        if (!callback) {
-            callback = this.submitted
+        if (this.enabled) {
+            if (!callback) {
+                callback = this.submitted
+            }
+            this.submitButton.attr('disabled', true)
+            $.post(this.options.url, data, callback)
         }
-        this.submitButton.attr('disabled', true)
-        $.post(this.options.url, data, callback)
     }
     
 }

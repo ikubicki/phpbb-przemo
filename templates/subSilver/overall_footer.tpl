@@ -14,6 +14,11 @@
 <!-- END warnings -->      
 <!-- END disable_viewonline -->
       {CLICK_HERE_TO_VIEW}
+<script>
+	if (shouts) {
+		document.write(' &nbsp; <a href="javascript:void()" onclick="shouts.toggle()">{L_SHOUTBOX}</a>')
+	}
+</script>
    </span>
    <div style="float:right">
       <span class="copyright">{GENERATE_TIME}</span>

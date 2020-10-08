@@ -13,9 +13,8 @@ body {
 }
 
 /* General font families for common tags */
-font,th,td,p			{ font-family: Verdana, Arial, Helvetica, sans-serif; }
+*			{ font-family: "Trebuchet MS",Verdana,Helvetica,Arial,Sans-serif; font-size : 13px; color : #000000; }
 a:link,a:active,a:visited	{ color : #006699; }
-p, td			{ font-size : 11px; color : #000000; }
 a:hover			{ text-decoration: underline; color : #DD6900; }
 hr				{ height: 0px; border: solid #D1D7DC 0px; border-top-width: 1px; }
 
@@ -44,7 +43,7 @@ background-repeat: repeat-y; height: 22px;
 
 /* Header cells - the blue and silver gradient backgrounds */
 th {
-color:			#FFA34F; font-size: 11px; font-weight: bold;
+color:			#FFA34F; font-weight: bold;
 background-color:	#006699; height: 25px;
 background-image:	url(images/cellpic3.gif);
 }
@@ -64,12 +63,12 @@ th.thHead,th.thSides,th.thLeft,th.thRight,th.thBottom {
 font-weight: bold; border: #FFFFFF; height: 28px;
 }
 
-th.thCornerL,th.thTop,th.thCornerR {color: #FFA34F; font-size: 70%; font-weight: bold; 
+th.thCornerL,th.thTop,th.thCornerR {color: #FFA34F; font-weight: bold; 
 background-color: #006699; background-image: url('images/cellpic3.gif'); height: 28px; }
 
 td.row3Right,td.spaceRow { background-color: #D1D7DC; border: #FFFFFF; border-style: solid; }
 
-th.thHead,td.catHead			{ font-size: 12px; border-width: 0px; }
+th.thHead,td.catHead			{ border-width: 0px; }
 th.thSides,td.catSides,td.spaceRow	{ border-width: 0px; }
 th.thRight,td.catRight,td.row3Right	{ border-width: 0px; }
 th.thLeft,td.catLeft			{ border-width: 0px; }
@@ -80,35 +79,38 @@ th.thCornerR				{ border-width: 0px; }
 
 /* The largest text used in the index page title and toptic title etc. */
 .maintitle {
-font-weight: bold; font-size: 22px; font-family: "Trebuchet MS",Verdana, Arial, Helvetica, sans-serif;
-text-decoration: none; line-height : 120%; color : #000000;
+font-weight: bold;
+text-decoration: none; line-height : 120%;
+font-size: 32px;
+color: #fff;
+text-shadow: 0 1px 0 #aaa;
 }
 
 /* General text */
-.gen						{ font-size : 12px; }
-.genmed					{ font-size : 11px; }
-.gensmall					{ font-size : 10px; }
+.gen						{ font-size : 15px; }
+.genmed					{ font-size : 13px; }
+.gensmall					{ font-size : 12px; }
 .gen,.genmed,.gensmall			{ color : #000000; }
 a.gen,a.genmed,a.gensmall			{ color: #006699; text-decoration: none; }
 a.gen:hover,a.genmed:hover,a.gensmall:hover	{ color: #DD6900; text-decoration: underline; }
 
 /* The register, login, search etc links at the top of the page */
-.mainmenu		{ font-size : 11px; color : #000000; }
+.mainmenu		{ font-size : 15px; color : #000000; }
 a.mainmenu		{ text-decoration: none; color : #006699; }
 a.mainmenu:hover	{ text-decoration: underline; color : #DD6900; }
 
 /* Forum category titles */
-.cattitle		{ font-weight: bold; font-size: 12px ; letter-spacing: 1px; color : #006699;}
+.cattitle		{ font-weight: bold; font-size: 15px ; letter-spacing: 1px; color : #006699;}
 a.cattitle		{ text-decoration: none; color : #006699; }
 a.cattitle:hover	{ text-decoration: underline; }
 
 /* Forum title: Text and link to the forums used in: index.php */
-.forumlink		{ font-weight: bold; font-size: 12px; color : #006699; }
+.forumlink		{ font-weight: bold; font-size: 15px; color : #006699; }
 a.forumlink		{ text-decoration: none; color : #006699; }
 a.forumlink:hover	{ text-decoration: underline; color : #DD6900; }
 
 /* Used for the navigation text, (Page 1,2,3 etc) and the navigation bar when in a forum */
-.nav		{ font-weight: bold; font-size: 11px; color : #000000;}
+.nav		{ font-weight: bold; font-size: 15px; color : #000000;}
 a.nav	{ text-decoration: none; color : #006699; }
 a.nav:hover	{ text-decoration: underline; }
 
@@ -122,31 +124,33 @@ a.topictitle:hover	{ text-decoration: underline; color : #DD6900; }
 .name { font-size : 11px; color : #000000; text-decoration: none;}
 
 /* Location, number of posts, post date etc */
-.postdetails		{ font-size : 10px; color : #000000; }
+.postdetails		{ font-size : 13px; color : #000000; }
 
 /* The content of the posts (body of text) */
-.postbody		{ font-size : 12px; line-height: 18px; }
+.postbody		{ font-size : 13px; line-height: 18px; }
 a.postlink:link	{ text-decoration: none; color : #006699; }
 a.postlink:visited	{ text-decoration: none; color : #5493B4; }
 a.postlink:hover	{ text-decoration: underline; color : #DD6900; }
 
 /* Quote & Code blocks */
 .code {
-font-family:		Courier, 'Courier New', sans-serif; font-size: 11px; color: #006600;
+font-family:		Courier, 'Courier New', sans-serif; font-size: 13px; color: #006600;
 background-color:	#FAFAFA; border: #D1D7DC; border-style: solid;
 border-left-width:	1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px;
 }
 
 .quote {
-font-family:		Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #444444; line-height: 125%;
+font-family:		Verdana, Arial, Helvetica, sans-serif; font-size: 13px; color: #444444; line-height: 125%;
 background-color:	#FAFAFA; border: #D1D7DC; border-style: solid;
 border-left-width:	1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px;
 }
 
 /* Copyright and bottom info */
-.copyright		{ font-size : 10px; color: #444444; font-family: Verdana, Arial, Helvetica, sans-serif; }
-a.copyright		{ text-decoration: none; color : #006699; }
-a.copyright:hover	{ text-decoration: underline; color : #DD6900; }
+.copyright		{ font-size : 12px; color: #888; }
+.copyright a		{ text-decoration: none; color : #888; font-size : 12px; }
+.copyright a:hover	{ color : #dd6900; }
+a.copyright		{ text-decoration: none; color : #dd6900; }
+a.copyright:hover	{ text-decoration: underline; color : #006699; }
 
 /* Form elements */
 
