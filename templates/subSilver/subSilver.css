@@ -13,7 +13,7 @@ body {
 }
 
 /* General font families for common tags */
-*			{ font-family: "Trebuchet MS",Verdana,Helvetica,Arial,Sans-serif; font-size : 13px; color : #000000; }
+*			{ font-family: "Trebuchet MS",Verdana,Helvetica,Arial,Sans-serif; font-size : 13px; }
 a:link,a:active,a:visited	{ color : #006699; }
 a:hover			{ text-decoration: underline; color : #DD6900; }
 hr				{ height: 0px; border: solid #D1D7DC 0px; border-top-width: 1px; }
@@ -147,6 +147,7 @@ border-left-width:	1px; border-top-width: 1px; border-right-width: 1px; border-b
 
 /* Copyright and bottom info */
 .copyright		{ font-size : 12px; color: #888; }
+.copyright b {color : #000000;}
 .copyright a		{ text-decoration: none; color : #888; font-size : 12px; }
 .copyright a:hover	{ color : #dd6900; }
 a.copyright		{ text-decoration: none; color : #dd6900; }
