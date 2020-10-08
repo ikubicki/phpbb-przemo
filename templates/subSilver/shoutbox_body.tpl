@@ -3,7 +3,7 @@
   </tr>
 </table>
 <style>
-@import url('/modules/shoutbox/main.css')
+@import url('/modules/shouts/main.css')
 </style>
 <div class="shoutbox" id="shouts" style="width:800px; margin: auto">
 	<h2>{L_SHOUTBOX}</h2>
@@ -12,7 +12,7 @@
 	<input type="button" name="submit" value="{L_SEND}" />
 	<input type="hidden" name="token" value="" />
 </div>
-<script src="js/shouts.js"></script>
+<script src="/modules/shouts/index.js"></script>
 <script type="text/javascript">
 	shouts.init()
 </script>
