@@ -75,8 +75,8 @@ var shouts = {
                     if (!shouts.messages.includes(message.id)) {
                         var row = $('<p>' +
                             '<span class="author"><a href="' + message.author.url + '">' + message.author.name + '</a></span>' +
-                            '<span class="text">' + message.text + '</span>' +
                             '<span class="time">' + message.time + '</span>' +
+                            '<span class="text">' + message.text + '</span>' +
                             '</p>')
                         row.on('click', (event) => {
                             shouts.rowClick(event, message)
