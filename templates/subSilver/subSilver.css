@@ -1,19 +1,13 @@
-/* General page style. The scroll bar colours only visible in IE5.5+ */
 body { 
-	background-color:		#E5E5E5;
-	scrollbar-face-color:		#DEE3E7;
-	scrollbar-highlight-color:	#FFFFFF;
-	scrollbar-shadow-color:		#DEE3E7;
-	scrollbar-3dlight-color:	#D1D7DC;
-	scrollbar-arrow-color:		#006699;
-	scrollbar-track-color:		#EFEFEF;
-	scrollbar-darkshadow-color:	#98AAB1;
-	background-image: url();
+	background-color: #E5E5E5;
 	margin: 0;
 }
 
 /* General font families for common tags */
-*			{ font-family: "Trebuchet MS",Verdana,Helvetica,Arial,Sans-serif; font-size : 13px; }
+* {
+	font-family: "Trebuchet MS", Verdana, Helvetica, Arial, Sans-serif; 
+	font-size : 13px;
+}
 a:link,a:active,a:visited	{ color : #006699; }
 a:hover			{ text-decoration: underline; color : #DD6900; }
 hr				{ height: 0px; border: solid #D1D7DC 0px; border-top-width: 1px; }
@@ -36,21 +30,21 @@ td.row_helped { background-color: #F0EDDE; }
 	However, you could replace this with a bitmap specific for each forum
 */
 td.rowpic {
-background-color: #FFFFFF;
-background-image: url('images/cellpic2.jpg');
-background-repeat: repeat-y; height: 22px;
+	background-color: #FFFFFF;
+	background-image: url('images/cellpic2.jpg');
+	background-repeat: repeat-y; height: 22px;
 }
 
 /* Header cells - the blue and silver gradient backgrounds */
 th {
-color:			#FFA34F; font-weight: bold;
-background-color:	#006699; height: 25px;
-background-image:	url(images/cellpic3.gif);
+	color:			#FFA34F; font-weight: bold;
+	background-color:	#006699; height: 25px;
+	background-image:	url(images/cellpic3.gif);
 }
 
 td.catHead,td.catSides,td.catLeft,td.catRight,td.catBottom {
-background-image: url(images/cellpic1.gif);
-background-color:#D1D7DC; border: #FFFFFF; border-style: solid; height: 28px;
+	background-image: url(images/cellpic1.gif);
+	background-color:#D1D7DC; border: #FFFFFF; border-style: solid; height: 28px;
 }
 
 /*
@@ -77,18 +71,6 @@ th.thTop				{ border-width: 0px; }
 th.thCornerL				{ border-width: 0px; }
 th.thCornerR				{ border-width: 0px; }
 
-/* The largest text used in the index page title and toptic title etc. */
-.maintitle {
-	font-weight: bold;
-	text-decoration: none; line-height : 120%;
-	font-size: 32px;
-	color: #fff;
-	text-shadow: 0 1px 0 #999;
-}
-.gen.description {
-	color: #999;
-	text-shadow: 0 -1px 0 #fff;
-}
 
 /* General text */
 .gen						{ font-size : 15px; }
@@ -97,11 +79,94 @@ th.thCornerR				{ border-width: 0px; }
 .gen,.genmed,.gensmall			{ color : #000000; }
 a.gen,a.genmed,a.gensmall			{ color: #006699; text-decoration: none; }
 a.gen:hover,a.genmed:hover,a.gensmall:hover	{ color: #DD6900; text-decoration: underline; }
+div.heading.bar {
+	z-index: 999;
+}
+div.heading.bar.floating {
+	position: fixed;
+	top: 0;
+	background: #0f82b3;
+	color: #fff;
+}
+div.heading.bar.floating a {
+	color: #fff;
+	text-shadow: 0 1px 0 #000;
+}
+div.heading.bar.floating > a {
+	display: block;
+}
+div.heading.bar.floating div.left {
+	clear: none
+}
+div.heading.bar > a {
+	float: left;
+	display: none;
+}
+div.heading.bar > a img {
+	height: 50px;
+	padding: 5px 0 0 10px;
+}
+div.heading {
+	margin: 0 0;
+	width: 100%;
+}
+div.heading div {
+	padding: 20px;
+}
+div.heading img {
+	height: 100px;
+}
+div.heading div.right {
+	float: right;
+	clear: right;
+	text-align: right;
+}
+div.heading div.left {
+	float: left;
+	clear: left;
+}
+div.heading br {
+	clear: both;
+}
+div.heading .mainmenu {
+	font-size : 13px;
+	color : #000000;
+}
+div.heading .mainmenu a {
+	text-decoration: none;
+	color : #006699;
+	text-shadow: 0 -1px 0 #fff;
+}
+div.heading .right a {
+	margin-left: 10px;
+}
+div.heading .mainmenu a:hover {
+	text-decoration: none;
+	color: #DD6900;
+}
+div.heading .nav {
+	font-weight: normal;
+	font-size: 13px;
+}
 
-/* The register, login, search etc links at the top of the page */
-.mainmenu		{ font-size : 13px; color : #000000;  }
-.mainmenu a		{ text-decoration: none; color : #006699; }
-.mainmenu a:hover	{ text-decoration: none; color : #DD6900; }
+div.heading .maintitle h1 {
+	font-weight: bold;
+	text-decoration: none; line-height : 120%;
+	font-size: 32px;
+	color: #fff;
+	text-shadow: 0 1px 0 #999;
+	margin: 20px 0 0;
+}
+div.heading .maintitle {
+	color: #999;
+	text-shadow: 0 -1px 0 #fff;
+}
+
+a[name] {
+	visibility: hidden;
+	position: relative;
+	top: -150px;
+}
 
 /* Forum category titles */
 .cattitle		{ font-weight: bold; font-size: 15px ; letter-spacing: 1px; color : #006699;}
@@ -138,24 +203,38 @@ a.postlink:hover	{ text-decoration: underline; color : #DD6900; }
 
 /* Quote & Code blocks */
 .code {
-font-family:		Courier, 'Courier New', sans-serif; font-size: 13px; color: #006600;
-background-color:	#FAFAFA; border: #D1D7DC; border-style: solid;
-border-left-width:	1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px;
+	font-family:		Courier, 'Courier New', sans-serif; font-size: 13px; color: #006600;
+	background-color:	#FAFAFA; border: #D1D7DC; border-style: solid;
+	border-left-width:	1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px;
 }
 
 .quote {
-font-family:		"Trebuchet MS",Verdana, Arial, Helvetica, sans-serif; font-size: 13px; color: #444444; line-height: 125%;
-background-color:	#FAFAFA; border: #D1D7DC; border-style: solid;
-border-left-width:	1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px;
+	font-size: 13px; color: #444444; line-height: 125%;
+	background-color:	#FAFAFA; border: #D1D7DC; border-style: solid;
+	border-left-width:	1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px;
 }
 
 /* Copyright and bottom info */
-.copyright		{ font-size : 12px; color: #888; }
-.copyright b {color : #000000;}
-.copyright a		{ text-decoration: none; color : #888; font-size : 12px; }
-.copyright a:hover	{ color : #dd6900; }
-a.copyright		{ text-decoration: none; color : #dd6900; }
-a.copyright:hover	{ text-decoration: underline; color : #006699; }
+.copyright,
+.links {
+	font-size : 12px;
+	color: #888;
+}
+.copyright b {
+	color : #000000;
+}
+.copyright a,
+.links a {
+	text-decoration: none; 
+	color: #888;
+	font-size : 12px;
+}
+
+.links a {margin-left: 5px;}
+.copyright a:hover,
+.links a:hover {
+	color : #dd6900;
+}
 
 /* Form elements */
 

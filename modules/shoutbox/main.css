@@ -11,7 +11,7 @@ div.shoutbox .messages {
 }
 div.shoutbox .messages p {
     font-size: 12px;
-    padding: 10px;
+    padding: 5px 10px;
     margin: 0;
 }
 
@@ -51,10 +51,19 @@ div.shoutbox .messages p span.author .offline {
     margin-right: 3px;
 }
 
+div.shoutbox .messages p span.author a {
+    text-decoration: none;
+}
+
 div.shoutbox .messages p span.time {
     float: right;
     color: #aaa;
     clear: right;
+    visibility: hidden;
+}
+
+div.shoutbox .messages p:hover span.time {
+    visibility: visible;
 }
 
 div.shoutbox .messages p span.text input[type=text] {

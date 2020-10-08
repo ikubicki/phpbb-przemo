@@ -1,8 +1,3 @@
-<table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
-	<tr>
-		<td align="left" valign="middle" class="nav" width="100%"><span class="nav" style="color: #FF6600;"><a href="{U_INDEX}" class="nav">{L_INDEX}</a>{NAV_CAT_DESC}</span></td>
-	</tr>
-</table>
 {BOARD_INDEX}
 <table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
 	<tr>
@@ -136,8 +131,7 @@ if(GetCookie('imp_topics3_{FORUM_ID}') == '2') ShowHide('imp_topics_{FORUM_ID}',
 
 <table width="100%" cellspacing="2" border="0" align="center" cellpadding="2">
 	<tr>
-		<td align="left" valign="middle"><span class="nav" style="color: #FF6600;"><a href="{U_INDEX}" class="nav">{L_INDEX}</a>{NAV_CAT_DESC}</span></td>
-		<td align="right" valign="middle" nowrap="nowrap"><span class="nav">{PAGE_NUMBER}&nbsp;&nbsp;{PAGINATION}</span></td>
+		<td align="right" colspan="2" valign="middle" nowrap="nowrap"><span class="nav">{PAGE_NUMBER}&nbsp;&nbsp;{PAGINATION}</span></td>
 	</tr>
 	<tr>
 		<td align="left" valign="middle"><a href="{U_POST_NEW_TOPIC}"><img src="{POST_IMG}" border="0" alt="{L_POST_NEW_TOPIC}"></a></td>

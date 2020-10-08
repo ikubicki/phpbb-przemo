@@ -1,9 +1,3 @@
-<table width="100%" cellspacing="1" cellpadding="3" border="0" align="center">
-   <tr>
-      <td align="left" valign="bottom"><span class="nav"><a href="{U_INDEX}" class="nav">{L_INDEX}</a>{NAV_CAT_DESC}</span></td>
-   </tr>
-</table>
-
 <table width="100%" cellpadding="5" cellspacing="1" border="0" class="forumline">
 	<tr>
 		<th colspan="3" height="28" align="center">{L_POPULARITY}</th>

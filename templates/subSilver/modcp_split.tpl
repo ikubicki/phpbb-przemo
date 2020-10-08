@@ -1,10 +1,5 @@
 
 <form method="post" action="{S_SPLIT_ACTION}">
-  <table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
-	<tr> 
-	  <td align="left"><span class="nav"><a href="{U_INDEX}" class="nav">{L_INDEX}</a>{NAV_CAT_DESC}</span></td>
-	</tr>
-  </table>
   <table width="100%" cellpadding="4" cellspacing="1" border="0" class="forumline">
 	<tr> 
 	  <th height="25" class="thHead" colspan="3" nowrap="nowrap">{L_SPLIT_TOPIC}</th>

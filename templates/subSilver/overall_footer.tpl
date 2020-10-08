@@ -4,21 +4,24 @@
    <br clear="all" />
    <span class="copyright">
       <a href="http://www.phpbb.com" target="_blank"><b>phpBB</b></a> by 
-      <a href="http://www.przemo.org/phpBB2/" target="_blank"><b>przemo</b></a> &nbsp;
+      <a href="http://www.przemo.org/phpBB2/" target="_blank"><b>przemo</b></a>
+   </span>
+   <span class="links">
+	  <a href="{U_FAQ}" class="faq">{L_FAQ}</a>
+	  <a href="{U_STAT}" class="stats">{L_STATISTICS}</a>
+	  <a href="{U_MEMBERLIST}" class="users">{L_MEMBERLIST}</a>
+	  <a href="{U_GROUP_CP}" class="groups">{L_USERGROUPS}</a>
+
 <!-- BEGIN disable_viewonline -->
 <!-- BEGIN staff -->
-      <a href="{U_STAFF}">{L_STAFF}</a> &nbsp;
+      <a href="{U_STAFF}">{L_STAFF}</a>
 <!-- END staff -->
 <!-- BEGIN warnings -->
-      {U_WARNINGS} &nbsp;
+      {U_WARNINGS}
 <!-- END warnings -->      
 <!-- END disable_viewonline -->
       {CLICK_HERE_TO_VIEW}
-<script>
-	if (shouts) {
-		document.write(' &nbsp; <a href="javascript:void()" onclick="shouts.toggle()">{L_SHOUTBOX}</a>')
-	}
-</script>
+	  <script>if (shouts) {document.write('<a href="javascript:void()" onclick="shouts.toggle()" class="shoutbox">{L_SHOUTBOX}</a>')}</script>
    </span>
    <div style="float:right">
       <span class="copyright">{GENERATE_TIME}</span>
