@@ -83,10 +83,10 @@ th.thCornerR				{ border-width: 0px; }
 	text-decoration: none; line-height : 120%;
 	font-size: 32px;
 	color: #fff;
-	text-shadow: 0 1px 0 #aaa;
+	text-shadow: 0 1px 0 #999;
 }
 .gen.description {
-	color: #aaa;
+	color: #999;
 	text-shadow: 0 -1px 0 #fff;
 }
 
@@ -99,9 +99,9 @@ a.gen,a.genmed,a.gensmall			{ color: #006699; text-decoration: none; }
 a.gen:hover,a.genmed:hover,a.gensmall:hover	{ color: #DD6900; text-decoration: underline; }
 
 /* The register, login, search etc links at the top of the page */
-.mainmenu		{ font-size : 15px; color : #000000; }
-a.mainmenu		{ text-decoration: none; color : #006699; }
-a.mainmenu:hover	{ text-decoration: underline; color : #DD6900; }
+.mainmenu		{ font-size : 13px; color : #000000;  }
+.mainmenu a		{ text-decoration: none; color : #006699;text-shadow: 0 0 1px #006699; }
+.mainmenu a:hover	{ text-decoration: none; color : #DD6900;text-shadow: 0 0 1px #DD6900; }
 
 /* Forum category titles */
 .cattitle		{ font-weight: bold; font-size: 15px ; letter-spacing: 1px; color : #006699;}
