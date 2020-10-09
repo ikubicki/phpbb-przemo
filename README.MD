@@ -8,6 +8,8 @@ Just run `ci/docker.sh` from main directory. Once installed, use `ci/docker.sh -
 
 ### Changelog
 
+1.12.12 - New shoutbox; Floating menu bar
+
 1.12.11 - CKEditor to replace old text editor
 
 1.12.10 - UTF-8, PHP 7.4 and MySQL 8.0 support; UTF-8 db conversion tool
