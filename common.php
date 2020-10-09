@@ -134,10 +134,11 @@ include($phpbb_root_path . 'includes/auth.'.$phpEx);
 include($phpbb_root_path . 'includes/functions.'.$phpEx);
 include($phpbb_root_path . 'includes/db.'.$phpEx);
 
-var_adds($HTTP_GET_VARS, false);
-var_adds($HTTP_POST_VARS, true, true);
-var_adds($HTTP_COOKIE_VARS, false);
-
+if (!defined('IN_PHPBB')) {
+	var_adds($HTTP_GET_VARS, false);
+	var_adds($HTTP_POST_VARS, true, true);
+	var_adds($HTTP_COOKIE_VARS, false);
+}
 // We do not need this any longer, unset for safety purposes
 unset($dbpasswd);
 

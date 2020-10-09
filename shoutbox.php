@@ -17,12 +17,6 @@ if ( !defined('IN_PHPBB') )
 	die("Hacking attempt");
 }
 
-if ($shoutbox_config['shoutbox_smilies'])
-{
-	generate_smilies('inline', PAGE_SHOUTBOX);
-	$template->assign_block_vars('smilies_emotki', array());
-}
-
 $template->assign_vars(array(
 	'USER_ID' => $userdata['user_id'],
 	'SESSION_ID' => $userdata['session_id'],

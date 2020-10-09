@@ -5,7 +5,8 @@ var shouts = {
         refresh: 5,
         langs: {
             submit: 'Submit',
-            cancel: 'Cancel'
+            cancel: 'Cancel',
+            delete: 'Delete',
         }
     },
     inputField: null,
@@ -96,29 +97,39 @@ var shouts = {
     },
     submit: function(event) {
         var data = {
-            action: 'submit',
+            action: 'add',
             token: shouts.tokenField.val(),
-            message: shouts.inputField.val(),
+            message: {
+                id: 0,
+                text: shouts.inputField.val()
+            },
             latestId: shouts.latestId
         }
-        shouts.send(data)
+        console.log(data)
+        shouts.send(data, (response) => {
+            shouts.inputField.val('')
+            shouts.submitted(response)
+        })
     },
     submitted: function(response) {
         shouts.refreshCounts++
         shouts.submitButton.attr('disabled', false)
-        response = $.parseJSON(response)
+        if (typeof response == 'string') {
+            response = $.parseJSON(response)
+        }
         var newMessages = 0
         if (response) {
             if (response.token) {
                 shouts.tokenField.val(response.token)
-                shouts.inputField.val('')
             }
             if (response.session) {
                 shouts.session = response.session
             }
+
             if (response.messages) {
                 shouts.refreshCounts = 0
                 response.messages.forEach(message => {
+                    message.id = parseInt(message.id)
                     if (!shouts.messages.includes(message.id)) {
                         var online = '<span class="author-status author-status-' + message.author.id + ' offline">&bull;</span>';
                         var row = $('<p>' +
@@ -163,7 +174,7 @@ var shouts = {
             return
         }
         var data = {
-            action: 'edit',
+            action: 'message',
             message,
             token: shouts.tokenField.val(),
             latestId: shouts.latestId
@@ -173,7 +184,9 @@ var shouts = {
         })
     },
     editor: function(response, event) {
-        response = $.parseJSON(response)
+        if (typeof response == 'string') {
+            response = $.parseJSON(response)
+        }
         console.log(response)
         var paragraph = $(event.currentTarget)
         paragraph.off()
@@ -181,6 +194,7 @@ var shouts = {
         var input = $('<input type="text" />')
         var submit = $('<input type="button" value="' + shouts.options.langs.submit + '" />')
         var cancel = $('<input type="button" value="' + shouts.options.langs.cancel + '" />')
+        var del = $('<input type="button" value="' + shouts.options.langs.delete + '" />')
         cancel.on('click', (e) => {
             container.empty()
             container.text(response.message.text)
@@ -192,12 +206,43 @@ var shouts = {
                 shouts.rowClick(event, response.message)
             })
         })
+        submit.on('click', (e) => {
+            var data = {
+                action: 'edit',
+                message: {
+                    id: parseInt(response.message.id),
+                    text: input.val()
+                },
+                token: response.token,
+                latestId: shouts.latestId
+            }
+            shouts.send(data, (response) => {
+                if (typeof response == 'string') {
+                    response = $.parseJSON(response)
+                }
+                if (!response.error) {
+                    console.log('EDIT', response)
+                }
+                container.empty()
+                container.text(response.message.text)
+                var newParagraph = $('<p />')
+                newParagraph.html(paragraph.html())
+                paragraph.after(newParagraph)
+                paragraph.remove()
+                newParagraph.on('click', (event) => {
+                    shouts.rowClick(event, response.message)
+                })
+                shouts.submitted(response)
+            })
+        })
         container.empty()
         container.append(input)
         container.append('&nbsp;')
         container.append(submit)
         container.append('&nbsp;')
         container.append(cancel)
+        container.append('&nbsp;')
+        container.append(del)
         input.val(response.message.text)
         input.focus().val(input.val());
         console.log(container)

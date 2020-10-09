@@ -16,5 +16,6 @@ $dbchars = 'utf8mb4';
 $table_prefix = 'phpbb_';
 // $content_encoding = 'iso-8859-2';
 $content_encoding = 'utf-8';
+$encryption_key = '092jf3rbh9u24hwfncm03im0dmcasdl';
 
 define('PHPBB_INSTALLED', true);
