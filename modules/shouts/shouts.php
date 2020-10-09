@@ -67,7 +67,7 @@ if ($is_user) {
     $acl = [
         'type' => 'user',
         'view' => $shoutbox_config['allow_users_view'],
-        'post' => $shoutbox_config['allow_users'] || $is_allowed_group || $is_admin || $is_mod || $is_jr_admin,
+        'add' => $shoutbox_config['allow_users'] || $is_allowed_group || $is_admin || $is_mod || $is_jr_admin,
         'edit' => [
             'own' => $shoutbox_config['allow_edit_all'],
             'admin' => $shoutbox_config['allow_edit'] && ($can_sb_edit || $is_admin),
@@ -83,7 +83,7 @@ else {
     $acl = [
         'type' => 'guest',
         'view' => $shoutbox_config['allow_guest_view'],
-        'post' => $shoutbox_config['allow_guest'],
+        'add' => $shoutbox_config['allow_guest'],
         'edit' => [
             'own' => false,
             'admin' => false,
@@ -99,24 +99,160 @@ if (!$acl['view']) {
     $shouts->error('You\'re not allowed to use shoutbox!');
 }
 
-function save($id, $text)
+function check_policy($action, $message)
 {
-
+    global $acl, $userdata;
+    $scope = $message['author']['id'] == $userdata['user_id'] ? 'own' : 'admin';
+    switch($action) {
+        case 'add':
+            return $acl['add'];
+        case 'edit':
+            return $acl['type'] == 'user' && $acl['edit'][$scope];
+        case 'delete':
+            return $acl['type'] == 'user' && $acl['delete'][$scope];
+    }
+    return false;
 }
+
+function save($action, $message, $text)
+{
+    switch($action) {
+        case 'add': return save_add($text);
+        case 'edit': return save_edit($message, $text);
+        default: return false;
+    }
+}
+
+function save_add($text)
+{
+    global $db, $acl, $userdata, $shouts;
+    if (empty($acl['add'])) {
+        return false;
+    }
+    $userId = intval($userdata['user_id']);
+    $sql = 'INSERT INTO ' . SHOUTBOX_TABLE . ' ' . 
+        '(sb_user_id, msg, timestamp) VALUES ' .
+        '(' . $userId . ', \'' . $db->sql_escape($text) . '\', ' . time() . ')';
+    $resultset = $db->sql_query($sql);
+    if ($db->sql_affectedrows() > 0) {
+        $lastInsertId = $db->sql_nextid();
+        return message($lastInsertId);
+    }
+    return false;
+}
+
+function save_edit($message, $text)
+{
+    if (empty($message['acl']['edit'])) {
+        return false;
+    }
+    global $db;
+    $sql = 'UPDATE ' . SHOUTBOX_TABLE . ' ' . 
+        'SET msg = \'' . $db->sql_escape($text) . '\'' . 
+        'WHERE id = ' . intval($message['id']) . ' ';
+    $statement = $db->sql_query($sql);
+    if($db->sql_affectedrows() > 0) {
+        return message($message['id']);
+    }
+    return false;
+}
+
+function delete($message)
+{
+    if (empty($message['acl']['delete'])) {
+        return false;
+    }
+    global $db;
+    $sql = 'DELETE FROM ' . SHOUTBOX_TABLE . ' ' . 
+        'WHERE id = ' . intval($message['id']) . ' ' .
+        'LIMIT 1';
+    $resultset = $db->sql_query($sql);
+    return $db->sql_affectedrows() > 0;
+}
+
+function message($id)
+{
+    if ($id > 0) {
+        global $db;
+        $sql = 'SELECT s.timestamp, s.sb_user_id, s.id, s.msg, u.username, u.user_level, u.user_id, u.user_jr ' .
+            'FROM ' . SHOUTBOX_TABLE . ' s, ' . USERS_TABLE . ' u ' .
+            'WHERE u.user_id = s.sb_user_id ' . 
+            'AND s.id = ' . intval($id) . ' ' .
+            'LIMIT 1';
+        $resultset = $db->sql_query($sql);
+        if($resultset) {
+            $row = $db->sql_fetchrow($resultset);
+            $db->sql_freeresult($resultset);
+            return build($row);
+        }
+        return false;
+    }
+}
+
+function build($data)
+{
+    global $userdata;
+    $date = date('Y-m-d', $data['timestamp']);
+    $time = date('H:i:s', $data['timestamp']);
+    $message = [
+        'id' => $data['id'],
+        'author' => [
+            'id' => $data['sb_user_id'],
+            'name' => $data['username'],
+            'url' => '',
+        ],
+        'text' => $data['msg'],
+        'time' => $date == date('Y-m-d') ? $time : "$date $time",
+    ];
+    $message['acl'] = [
+        'edit' => check_policy('edit', $message),
+        'delete' => check_policy('delete', $message),
+    ];
+    if ($data['sb_user_id'] == $userdata['user_id'] && time() - $data['timestamp'] < 60) {
+        $message['acl']['edit'] = true;
+        $message['acl']['delete'] = true;
+    }
+    return $message;
+}
+
+$message = (array) $_POST['message'];
 
 switch($action) {
     case 'message':
-        $message = $_POST['message'];
+        if (!empty($message['id'])) {
+            $message = message($message['id']);
+        }
         break;
     case 'edit':
-    case 'delete':
     case 'add':
-        $id = intval($_POST['message']['id']);
-        $text = htmlentities($_POST['message']['text']);
-        $message = $_POST['message'];
+        $text = $message['text'];
+        $text = $text;
+        if ($text) {
+            if (!empty($message['id'])) {
+                $message = message($message['id']);
+            }
+            else {
+                $message = false;
+            }
+            if (!$message || $message['text'] != $text) {
+                $message = save($action, $message, $text);
+            }
+        }
         $shouts->setAction('refresh');
-        // var_dump($id, $text);
-
+        if(empty($message)) {
+            $shouts->error('Unable to save the message');
+        }
+        break;
+    case 'delete':
+        if ($message['id']) {
+            $message = message($message['id']);
+            $result = delete($message);
+        }
+        $shouts->setAction('refresh');
+        if(empty($result)) {
+            $shouts->error('Unable to delete the message');
+        }
+        break;
 }
 
 // -- HANDLING NEW MESSAGES
@@ -135,19 +271,7 @@ if(!$resultset) {
 }
 $row_messages = [];
 while ($row = $db->sql_fetchrow($resultset)) {
-    $date = date('Y-m-d', $row['timestamp']);
-    $time = date('H:i:s', $row['timestamp']);
-    $row_message = [
-        'id' => $row['id'],
-        'author' => [
-            'id' => $row['sb_user_id'],
-            'name' => $row['username'],
-            'url' => '',
-        ],
-        'text' => $row['msg'],
-        'time' => $date == date('Y-m-d') ? $time : "$date $time",
-    ];
-    $row_messages[] = $row_message;
+    $row_messages[] = build($row);
 }
 
 krsort($row_messages);

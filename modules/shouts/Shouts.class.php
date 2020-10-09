@@ -52,7 +52,7 @@ class Shouts
 
     protected function generateToken()
     {
-        $payload = json_encode([$this->session['id'], md5(microtime()), $this->action]);
+        $payload = json_encode([$this->session['id'], md5(microtime()), $this->action, $this->timestamp]);
         $this->token = $this->encrypt($payload);
     }
 

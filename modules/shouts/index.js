@@ -131,15 +131,25 @@ var shouts = {
                 response.messages.forEach(message => {
                     message.id = parseInt(message.id)
                     if (!shouts.messages.includes(message.id)) {
-                        var online = '<span class="author-status author-status-' + message.author.id + ' offline">&bull;</span>';
-                        var row = $('<p>' +
-                            '<span class="author">' + online + '<a href="' + message.author.url + '">' + message.author.name + '</a></span>' +
-                            '<span class="time">' + message.time + '</span>' +
-                            '<span class="text">' + message.text + '</span>' +
-                            '</p>')
-                        row.on('click', (event) => {
-                            shouts.rowClick(event, message)
-                        })
+                        var row = $('<p></p>')
+                        var rowAuthor = $('<span class="author"></span>')
+                        var rowAuthorOnline = '<span class="author-status author-status-' + message.author.id + ' offline">&bull;</span>'
+                        var rowAuthorName = $('<a href="' + message.author.url + '">' + message.author.name + '</a>')
+                        rowAuthor.append(rowAuthorOnline)
+                        rowAuthor.append(rowAuthorName)
+                        var rowTime = $('<span class="time"></span>')
+                        rowTime.text(message.time)
+                        var rowText = $('<span class="text"></span>')
+                        rowText.text(message.text)
+                        row.append(rowAuthor)
+                        row.append(rowTime)
+                        row.append(rowText)
+                        var acl = message['acl']
+                        if (acl['edit'] || acl['delete']) {
+                            row.on('click', (event) => {
+                                shouts.rowClick(event, message)
+                            })
+                        }
                         shouts.container.append(row)
                         shouts.messages.push(message.id)
                         newMessages++
@@ -195,6 +205,7 @@ var shouts = {
         var submit = $('<input type="button" value="' + shouts.options.langs.submit + '" />')
         var cancel = $('<input type="button" value="' + shouts.options.langs.cancel + '" />')
         var del = $('<input type="button" value="' + shouts.options.langs.delete + '" />')
+        var acl = response.message['acl']
         cancel.on('click', (e) => {
             container.empty()
             container.text(response.message.text)
@@ -204,6 +215,28 @@ var shouts = {
             paragraph.remove()
             newParagraph.on('click', (event) => {
                 shouts.rowClick(event, response.message)
+            })
+        })
+        del.on('click', (e) => {
+            if (!confirm('Are you sure?')) {
+                return
+            }
+            var data = {
+                action: 'delete',
+                message: {
+                    id: parseInt(response.message.id),
+                },
+                token: response.token,
+                latestId: shouts.latestId
+            }
+            shouts.send(data, (response) => {
+                if (typeof response == 'string') {
+                    response = $.parseJSON(response)
+                }
+                if (!response.error) {
+                    paragraph.remove()
+                }
+                shouts.submitted(response)
             })
         })
         submit.on('click', (e) => {
@@ -222,27 +255,31 @@ var shouts = {
                 }
                 if (!response.error) {
                     console.log('EDIT', response)
+                    container.empty()
+                    container.text(response.message.text)
+                    var newParagraph = $('<p />')
+                    newParagraph.html(paragraph.html())
+                    paragraph.after(newParagraph)
+                    paragraph.remove()
+                    newParagraph.on('click', (event) => {
+                        shouts.rowClick(event, response.message)
+                    })
                 }
-                container.empty()
-                container.text(response.message.text)
-                var newParagraph = $('<p />')
-                newParagraph.html(paragraph.html())
-                paragraph.after(newParagraph)
-                paragraph.remove()
-                newParagraph.on('click', (event) => {
-                    shouts.rowClick(event, response.message)
-                })
                 shouts.submitted(response)
             })
         })
         container.empty()
         container.append(input)
-        container.append('&nbsp;')
-        container.append(submit)
+        if (acl['edit']) {
+            container.append('&nbsp;')
+            container.append(submit)
+        }
         container.append('&nbsp;')
         container.append(cancel)
-        container.append('&nbsp;')
-        container.append(del)
+        if (acl['delete']) {
+            container.append('&nbsp;')
+            container.append(del)
+        }
         input.val(response.message.text)
         input.focus().val(input.val());
         console.log(container)

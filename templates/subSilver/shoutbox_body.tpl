@@ -14,7 +14,13 @@
 </div>
 <script src="/modules/shouts/index.js"></script>
 <script type="text/javascript">
-	shouts.init()
+	shouts.init({
+		langs: {
+            submit: '{L_SEND}',
+            cancel: '{L_CANCEL}',
+            delete: '{L_DELETE}'
+		}
+	})
 </script>
 <table width="100%" cellspacing="0" cellpadding="7" border="0" align="center">
    <tr>

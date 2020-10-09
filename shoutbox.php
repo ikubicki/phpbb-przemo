@@ -26,6 +26,8 @@ $template->assign_vars(array(
 	'REFRESH_SB' => $shoutbox_config['shout_refresh'] * 1000,
 
 	'L_SEND' => $lang['Submit'],
+	'L_CANCEL' => $lang['Cancel'],
+	'L_DELETE' => $lang['Delete'],
 	'L_GG_MES' => $lang['Message'],
 	'L_ALERT' => $lang['l_alert_sb'],
 	'L_REFRESH_SB' => $lang['l_refresh_sb'],
