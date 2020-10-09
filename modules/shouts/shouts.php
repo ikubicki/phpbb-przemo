@@ -6,7 +6,7 @@ $phpbb_root_path = '../../';
 $shoutbox_config = [];
 include($phpbb_root_path . 'extension.inc');
 include($phpbb_root_path . 'common.'.$phpEx);
-include(__DIR__ . '/Shouts.class.php');
+include(__DIR__ . '/src/Shouts.class.php');
 
 $shouts = new phpBB\Modules\Shouts\Shouts($encryption_key);
 $userdata = session_pagestart($user_ip, PAGE_INDEX);

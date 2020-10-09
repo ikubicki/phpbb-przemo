@@ -7,6 +7,7 @@ var shouts = {
             submit: 'Submit',
             cancel: 'Cancel',
             delete: 'Delete',
+            confirm: 'Are you sure?'
         }
     },
     inputField: null,
@@ -218,7 +219,7 @@ var shouts = {
             })
         })
         del.on('click', (e) => {
-            if (!confirm('Are you sure?')) {
+            if (!confirm(shouts.options.langs.confirm)) {
                 return
             }
             var data = {

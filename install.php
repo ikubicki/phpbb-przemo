@@ -1016,9 +1016,11 @@ else
 				exit;
 			}
 		}
+		
+		$encryption_key = md5(microtime());
 
 		if (!$upgrade_now)
-		{
+		{	
 			// Write out the config file.
 			$config_data = '<?php'."\n\n";
 			$config_data .= "\n// phpBB 2.x auto-generated config file\n// Do not change anything in this file!\n\n";
@@ -1027,10 +1029,12 @@ else
 			$config_data .= '$dbname = \'' . $dbname . '\';' . "\n";
 			$config_data .= '$dbuser = \'' . $dbuser . '\';' . "\n";
 			$config_data .= '$dbpasswd = \'' . $dbpasswd . '\';' . "\n\n";
+			$config_data .= '$dbchars = \'utf8mb4\';' . "\n\n";
 			$config_data .= '$table_prefix = \'' . $table_prefix . '\';' . "\n\n";
-			$config_data .= 'define(\'PHPBB_INSTALLED\', true);'."\n\n";	
-			$config_data .= '?' . '>'; // Done this to prevent highlighting editors getting confused!
-
+			$config_data .= '$content_encoding = \'utf-8\';' . "\n\n";
+			$config_data .= '$encryption_key = \'' . $encryption_key . '\';' . "\n\n";
+			$config_data .= 'define(\'PHPBB_INSTALLED\', true);'."\n\n";
+			
 			@umask(0111);
 			$no_open = FALSE;
 
@@ -1049,7 +1053,10 @@ else
 				$short_data .= '$dbname = \'' . $dbname . '\';' . "\n";
 				$short_data .= '$dbuser = \'' . $dbuser . '\';' . "\n";
 				$short_data .= '$dbpasswd = \'' . $dbpasswd . '\';' . "\n";
+				$short_data .= '$dbchars = \'utf8mb4\';' . "\n\n";
 				$short_data .= '$table_prefix = \'' . $table_prefix . '\';' . "\n";
+				$short_data .= '$content_encoding = \'utf-8\';' . "\n\n";
+				$short_data .= '$encryption_key = \'' . $encryption_key . '\';' . "\n\n";
 				$short_data .= 'define(\'PHPBB_INSTALLED\', true);'."\n";	
 				$short_data .= '?' . '>'; // Done this to prevent highlighting editors getting confused!
 

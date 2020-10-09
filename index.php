@@ -455,7 +455,7 @@ if ( $shoutbox_config['shoutbox_on'] && $userdata['shoutbox'] )
 	}
 	if ( ($shoutbox_config['allow_users_view'] || $userdata['session_logged_in']) && ($shoutbox_config['allow_users'] || $shoutbox_config['allow_users_view'] || $userdata['user_level'] == ADMIN || $userdata['user_level'] == MOD || $shoutbox_view_group))
 	{
-		include($phpbb_root_path . 'shoutbox.'.$phpEx);
+		include($phpbb_root_path . 'includes/shoutbox.'.$phpEx);
 	}
 }
 

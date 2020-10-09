@@ -2,6 +2,11 @@
 
 namespace phpBB\Modules\Shouts;
 
+/**
+ * Shouts module
+ * 
+ * @author ikubicki
+ */
 class Shouts
 {
 
@@ -12,12 +17,26 @@ class Shouts
     protected $online = [];
     protected $encryption_key;
 
+    /**
+     * Constructor
+     * 
+     * @author ikubicki
+     * @param string $encryption_key
+     * @param string $token
+     */
     public function __construct($encryption_key, $token = null)
     {
         $this->encryption_key = $encryption_key;
         $this->token = $token ?: null;
     }
 
+    /**
+     * Token setter
+     * 
+     * @author ikubicki
+     * @param string $token
+     * @return array
+     */
     public function setToken($token)
     {
         
@@ -34,6 +53,12 @@ class Shouts
         return [$this->session['id'], $this->action];
     }
 
+    /**
+     * User ID setter
+     * 
+     * @author ikubicki
+     * @param integer $userId
+     */
     public function setUserId($userId)
     {
         if ($this->session['id'] != $userId) {
@@ -42,6 +67,12 @@ class Shouts
         }
     }
 
+    /**
+     * Action setter
+     * 
+     * @author ikubicki
+     * @param string $action
+     */
     public function setAction($action)
     {
         if ($this->action != $action) {
@@ -50,18 +81,37 @@ class Shouts
         }
     }
 
+    /**
+     * Generates token
+     * 
+     * @author ikubicki
+     */
     protected function generateToken()
     {
         $payload = json_encode([$this->session['id'], md5(microtime()), $this->action, $this->timestamp]);
         $this->token = $this->encrypt($payload);
     }
 
+    /**
+     * Extracts data from token
+     * 
+     * @author ikubicki
+     * @param string $token
+     * @return array
+     */
     protected function getTokenData($token)
     {
         $payload = $this->decrypt($token);
         return json_decode($payload);
     }
 
+    /**
+     * Encrypts the data
+     * 
+     * @author ikubicki
+     * @param string $payload
+     * @return string
+     */
     protected function encrypt($payload)
     {
         $iv = substr(md5($this->encryption_key), 4, 16);
@@ -70,6 +120,13 @@ class Shouts
         return trim($token, '=');
     }
 
+    /**
+     * Decrypts string
+     * 
+     * @author ikubicki
+     * @param string $token
+     * @return string
+     */
     protected function decrypt($token)
     {
         $iv = substr(md5($this->encryption_key), 4, 16);
@@ -77,6 +134,14 @@ class Shouts
         return openssl_decrypt($token, 'AES-128-CBC', $this->encryption_key, 0, $iv);
     }
 
+    /**
+     * Verifies whether token is valud
+     * 
+     * @author ikubicki
+     * @param integer $userId
+     * @param string $action
+     * @return boolean
+     */
     public function validateToken($userId, $action)
     {
         // var_dump($userId, $action, $this->session['id'], $this->action);
@@ -97,21 +162,45 @@ class Shouts
         return true;
     }
 
+    /**
+     * Adds message
+     * 
+     * @author ikubicki
+     * @param string $message
+     */
     public function addMessage($message)
     {
         $this->messages[] = $message;
     }
 
+    /**
+     * Adds online users ID
+     * 
+     * @author ikubicki
+     * @param integer $userId
+     */
     public function addOnline($userId)
     {
         $this->online[$userId] = $userId;
     }
 
+    /**
+     * Triggers error
+     * 
+     * @author ikubicki
+     * @param string $error
+     */
     public function error($error)
     {
         $this->send(['error' => $error]);
     }
 
+    /**
+     * Prints JSON to output and exit
+     * 
+     * @author ikubicki
+     * @param array $extras
+     */
     public function send(array $extras = [])
     {
         $data = [

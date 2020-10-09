@@ -1,16 +1,4 @@
 <?php
-/***************************************************************************
- *					shoutbox.php
- *					------------
- *	 begin				: Friday, May 02, 2004
- *   copyright			: (C) 2004 Przemo
- *   website			: http://www.przemo.org
- *   email				: przemo@przemo.org
- *   modification		: (C) 2010 lui754 <lui754@gmail.com>
- *	 date modification	: Saturday, Feb 20, 2010
- *   version			: 1.12.7
- *
- ***************************************************************************/
 
 if ( !defined('IN_PHPBB') )
 {
@@ -29,6 +17,7 @@ $template->assign_vars(array(
 	'L_CANCEL' => $lang['Cancel'],
 	'L_DELETE' => $lang['Delete'],
 	'L_GG_MES' => $lang['Message'],
+	'L_CONFIRM_DELETE' => $lang['Confirm_delete'],
 	'L_ALERT' => $lang['l_alert_sb'],
 	'L_REFRESH_SB' => $lang['l_refresh_sb'],
 	'L_CANCEL_SB' => $lang['l_cancel_sb'],
@@ -37,9 +26,10 @@ $template->assign_vars(array(
 	'L_SHOUTBOX' => 'Shoutbox')
 );
 
-$template->set_filenames(array(
-	'shoutbox' => 'shoutbox_body.tpl')
-);
+$template->set_filenames([
+	'shoutbox_module' => __DIR__ . '/../modules/shouts/tpl/shoutbox_body.tpl',
+	'shoutbox' => 'shoutbox_body.tpl',
+]);
 
+$template->assign_var_from_handle('MODULE_SHOUTBOX', 'shoutbox_module');
 $template->assign_var_from_handle('SHOUTBOX_DISPLAY', 'shoutbox');
-?>
