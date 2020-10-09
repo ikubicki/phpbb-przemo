@@ -1,8 +1,4 @@
-<table width="100%" cellpadding="1" cellspacing="1" border="0">
-	<tr> 
-		<td align="left"><span class="nav"><a href="{U_INDEX}" class="nav">{L_INDEX}</a></span></td>
-	</tr>
-</table>
+
 <form action="{S_SEARCH_ACTION}" method="POST">
 <table class="forumline" width="100%" cellpadding="4" cellspacing="1" border="0">
 	<tr> 

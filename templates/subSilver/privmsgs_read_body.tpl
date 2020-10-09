@@ -17,7 +17,7 @@
    <form method="post" action="{S_PRIVMSGS_ACTION}">
    <tr>
       <td valign="middle">{REPLY_PM_IMG}</td>
-      <td width="100%"><span class="nav">&nbsp;<a href="{U_INDEX}" class="nav">{L_INDEX}</a></span></td>
+      <td width="100%">&nbsp;</td>
    </tr>
 </table>
 

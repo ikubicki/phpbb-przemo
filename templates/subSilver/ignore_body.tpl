@@ -1,9 +1,3 @@
- 
-<table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
-  <tr> 
-	<td align="left"><span class="nav"><a href="{U_INDEX}" class="nav">{L_INDEX}</a></span></td>
-  </tr>
-</table>
 
 <form action="{S_ACTION}" {S_FORM_ENCTYPE} method="post" name="post">
 <table width="100%" cellpadding="3" cellspacing="1" border="0" class="forumline">

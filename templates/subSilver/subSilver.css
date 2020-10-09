@@ -16,35 +16,49 @@ hr				{ height: 0px; border: solid #D1D7DC 0px; border-top-width: 1px; }
 .bodyline { background-color: #FFFFFF; border: 0; padding: 10px 20px; box-shadow: 0 -3px 50px #ccc }
 
 /* This is the outline round the main forum tables */
-.forumline { background-color: #A9B8C2; border: solid #D1D7DC 0px; border-top-width: 1px; }
+.forumline {
+	background-color: #A9B8C2;
+	border: solid #006699 0px;
+	border-top-width: 5px;
+	border-spacing: 0px;
+}
 
 /* Main table cell colours and backgrounds */
-td.row1 { background-color: #EFEFEF; }
-td.row2 { background-color: #DEE3E7; }
-td.row3 { background-color: #D1D7DC; }
+td.row1 {
+	background-color: #EFEFEF;
+	padding: 10px;
+	border-bottom: 1px solid #c8d0d7;
+	border-top: 1px solid #fff;
+}
+td.row2 {
+	background-color: #DEE3E7;
+	padding: 10px;
+	border-bottom: 1px solid #c8d0d7;
+	border-top: 1px solid #fff;
+}
+td.row3 { 
+	background-color: #dfe3e8;
+	padding: 10px;
+	border-bottom: 3px solid #fff;
+}
 td.row_helped { background-color: #F0EDDE; }
 
-/*
-	This is for the table cell above the Topics, Post & Last posts on the index.php page
-	By default this is the fading out gradiated silver background.
-	However, you could replace this with a bitmap specific for each forum
-*/
-td.rowpic {
-	background-color: #FFFFFF;
-	background-image: url('images/cellpic2.jpg');
-	background-repeat: repeat-y; height: 22px;
-}
 
 /* Header cells - the blue and silver gradient backgrounds */
 th {
-	color:			#FFA34F; font-weight: bold;
-	background-color:	#006699; height: 25px;
-	background-image:	url(images/cellpic3.gif);
+	color:			#FFA34F;
+	font-weight: bold;
+	background-color: #0f82b3;
+	padding: 10px;
 }
 
-td.catHead,td.catSides,td.catLeft,td.catRight,td.catBottom {
-	background-image: url(images/cellpic1.gif);
-	background-color:#D1D7DC; border: #FFFFFF; border-style: solid; height: 28px;
+td.catHead,
+td.catSides,
+td.catLeft,
+td.catRight,
+td.catBottom {
+	background-color: #dfe3e8;
+	padding: 10px;
 }
 
 /*
@@ -52,13 +66,25 @@ td.catHead,td.catSides,td.catLeft,td.catRight,td.catBottom {
 	The names indicate which sides the border will be on.
 	Don't worry if you don't understand this, just ignore it :-)
 */
-td.cat,td.catHead,td.catBottom { background-color: #C7D0D7; background-image: url('images/cellpic1.gif'); height: 22px; }
+td.cat,
+td.catHead,
+td.catBottom,
+td.rowpic {
+	background-color: #c8d0d7;
+	padding: 10px;
+}
 th.thHead,th.thSides,th.thLeft,th.thRight,th.thBottom {
 font-weight: bold; border: #FFFFFF; height: 28px;
 }
 
-th.thCornerL,th.thTop,th.thCornerR {color: #FFA34F; font-weight: bold; 
-background-color: #006699; background-image: url('images/cellpic3.gif'); height: 28px; }
+th.thCornerL,
+th.thTop,
+th.thCornerR {
+	color: #FFA34F;
+	font-weight: bold;
+	background-color: #0f82b3;
+	padding: 10px;
+}
 
 td.row3Right,td.spaceRow { background-color: #D1D7DC; border: #FFFFFF; border-style: solid; }
 
@@ -183,8 +209,10 @@ a.forumlink:hover	{ text-decoration: underline; color : #DD6900; }
 a.nav	{ text-decoration: none; color : #006699; }
 a.nav:hover	{ text-decoration: underline; }
 
+.catHead a.nav	{ text-decoration: none; color : #fff; }
+
 /* titles for the topics: could specify viewed link colour too */
-.topictitle,h1,h2	{ font-weight: bold; font-size: 11px; color : #000000; }
+.topictitle,h1,h2	{ font-weight: bold; font-size: 15px; color : #000000; }
 a.topictitle:link	{ text-decoration: none; color : #006699; }
 a.topictitle:visited	{ text-decoration: none; color : #5493B4; }
 a.topictitle:hover	{ text-decoration: underline; color : #DD6900; }
@@ -327,5 +355,34 @@ height: 21px; white-space: nowrap; text-align: center; border: 0px solid #91a0ae
 	padding: 1px;
 }
 
-/* Import the fancy styles for IE only (NS4.x doesn't use the @import function) */
-@import url("formIE.css");
+.vote {
+	margin-left: 10px;
+	position: relative;
+	top: 2px;
+}
+
+.vote .count {
+	line-height: 16px;
+	font-size: 14px;
+	position: relative;
+	top: -2px;
+}
+.vote a {
+	line-height: 16px;
+	font-size: 25px;
+}
+
+.vote a.upvote:hover,
+.vote a.downvote:hover {
+	color: #333;
+}
+
+.vote a.upvote {
+	color: green;
+	text-decoration: none;
+}
+
+.vote a.downvote {
+	color: red;
+	text-decoration: none;
+}

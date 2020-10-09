@@ -7,7 +7,7 @@
 
 <table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
   <tr> 
-	<td align="left"><span class="nav"><a href="{U_INDEX}" class="nav">{L_INDEX}</a></span></td>
+	<td align="left">&nbsp;</td>
 	<!-- BEGIN new_windows -->
 	<td align="right" nowrap="nowrap"><span class="nav">
 	<a href="javascript:window.close();" onClick="

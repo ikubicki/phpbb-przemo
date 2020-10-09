@@ -1,8 +1,4 @@
-<table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
-	<tr>
-		<td align="left" valign="middle" class="nav" width="100%"><span class="nav"><a href="{U_INDEX}" class="nav">{L_INDEX}</a></span></td>
-	</tr>
-</table>
+
 <form method="post" action="{FORM_ACTION}" name="ignoreform">
 <table border="0" cellpadding="4" cellspacing="1" width="100%" class="forumline">
 	<tr>

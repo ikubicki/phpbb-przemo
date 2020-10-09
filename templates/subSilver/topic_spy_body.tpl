@@ -1,7 +1,7 @@
 <form method="post" action="{S_MODE_ACTION}">
 <table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
 	<tr>
-		<td align="left"><span class="nav"><a href="{U_INDEX}" class="nav">{L_INDEX}</a></span></td>
+		<td align="left">&nbsp;</td>
 		<td align="right">{L_USERNAME}: <b>{SEARCHED_USERNAME}</b> {L_SEARCH_MATCHES}</td>
 	</tr>
 </table>
@@ -25,7 +25,7 @@
 	<!-- END spy_row -->
 	<tr>
 		<td class="catHead" colspan="2" align="left"><span class="genmed"><input type="text" name="username" value="{SEARCHED_USERNAME}" class="post" size="12" style="font-weight: bold;"> <input type="submit" name="submit" value="{L_SEARCH}" class="mainoption"></span></td>
-		<td class="catHead" colspan="3" align="right"><span class="nav"><a href="{U_INDEX}" class="nav">{L_INDEX}</a></span></td>
+		<td class="catHead" colspan="3" align="right">&nbsp;</td>
 	</tr>
 </table>
 <table width="100%" cellspacing="2" cellpadding="2" border="0">

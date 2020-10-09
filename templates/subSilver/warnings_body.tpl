@@ -1,6 +1,6 @@
 <table width="100%" cellpadding="1" cellspacing="1" border="0">
    <tr> 
-      <td align="left"><span class="nav"><a href="{U_INDEX}" class="nav">{L_INDEX}</a></span></td>
+      <td align="left">&nbsp;</td>
       <td align="right"><span class="nav">{U_INDEX_WARNING}</span></td>
    </tr>
 </table>

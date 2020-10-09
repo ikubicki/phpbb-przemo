@@ -1,8 +1,4 @@
-<table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
-	<tr>
-		<td align="left" class="nav"><a href="{U_INDEX}" class="nav">{L_INDEX}</a></td>
-	</tr>
-</table>
+
 
 <table width="100%" cellpadding="4" cellspacing="1" border="0" class="forumline">
 	<tr>

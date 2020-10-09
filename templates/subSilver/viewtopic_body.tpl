@@ -18,22 +18,22 @@ var img_addr = '{IMG_ADDR}';
 <table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
 	<tr align="right">
 	<!-- BEGIN topic_action -->
-	<td class="catHead" align="left" nowrap="nowrap"><span class="gensmall">{topic_action.TOPIC_ACTION} {topic_action.L_WHO}: <a href="{topic_action.PROFILE_URL}"><b>{topic_action.USERNAME}</b></a><br>{topic_action.DATE}
+	<th class="catHead" align="left" nowrap="nowrap"><span class="gensmall">{topic_action.TOPIC_ACTION} {topic_action.L_WHO}: <a href="{topic_action.PROFILE_URL}"><b>{topic_action.USERNAME}</b></a><br>{topic_action.DATE}
 	<!-- BEGIN topic_action_delete -->   
 	<b><a href="{topic_action.topic_action_delete.U_DELETE_ACTION}" title="{topic_action.topic_action_delete.DELETE_TITLE}">X</a></b>
 	<!-- END topic_action_delete -->
-	</span></td>
-	<td class="catHead" align="right" height="28">
+	</span></th>
+	<th class="catHead" align="right" height="28">
 	<!-- END topic_action -->
 	<!-- BEGIN switch_no_topic_action -->
-	<td colspan="2" class="catHead" align="right" height="28">
+	<th colspan="2" class="catHead" align="right" height="28">
 	<!-- END switch_no_topic_action -->
-	<a class="nav" href="{U_VIEW_TOPIC}"{TOPIC_COLOR}>{TOPIC_TITLE}</a>{IGNORE_STATUS}</td>
+	<a class="nav" href="{U_VIEW_TOPIC}"{TOPIC_COLOR}>{TOPIC_TITLE}</a>{IGNORE_STATUS}</th>
    </tr>
    {POLL_DISPLAY} 
    <tr>
-      <th class="thLeft" width="150" height="26" nowrap="nowrap">{L_AUTHOR}</th>
-      <th class="thRight" nowrap="nowrap">{L_MESSAGE}</th>
+      <td class="cat" width="150" height="26" nowrap="nowrap"><span class="cattitle">{L_AUTHOR}</span></td>
+      <td class="cat" nowrap="nowrap"><span class="cattitle">{L_MESSAGE}</span></td>
    </tr>
    <!-- BEGIN moderate -->
    <tr>
@@ -157,7 +157,13 @@ var img_addr = '{IMG_ADDR}';
                {postrow.custom_fields_post.DESC}{postrow.custom_fields_post.FIELD}
                <!-- END custom_fields_post -->
                </span></td>
-               <td valign="top" align="right" nowrap="nowrap">{postrow.IGNORE}{postrow.QUOTE_IMG} {postrow.EDIT_IMG} {postrow.DELETE_IMG} {postrow.IP_IMG} {postrow.REPORT_IMG}<span class="postdetails"><br>{postrow.POST_EXPIRE}</span></td>
+               <td valign="top" align="right" nowrap="nowrap">
+                  <span class="vote">
+                     <a class="upvote" href="javascript:void()">+</a>
+                     <span class="count">13456</span>
+                     <a class="downvote" href="javascript:void()">-</a>
+                  </span>
+               </td>
             </tr>
             <tr>
                <td colspan="2"><span class="gensmall"><hr></span></td>
@@ -187,7 +193,10 @@ var img_addr = '{IMG_ADDR}';
 		<td class="{postrow.ROW_CLASS}" width="100%" valign="top" nowrap="nowrap">
 			<table cellspacing="0" cellpadding="0" border="0" width="100%">
 				<tr>
-					<td valign="top" nowrap="nowrap">{postrow.HELPED_ME}{postrow.PROFILE_IMG} {postrow.PM_IMG} {postrow.EMAIL_IMG} {postrow.WWW_IMG} {postrow.YIM_IMG}{postrow.MSN_IMG}</td>
+					<td valign="top" nowrap="nowrap">
+                  {postrow.HELPED_ME}{postrow.PROFILE_IMG} {postrow.PM_IMG} {postrow.EMAIL_IMG} {postrow.WWW_IMG} {postrow.YIM_IMG}{postrow.MSN_IMG}
+                  {postrow.IGNORE}{postrow.QUOTE_IMG} {postrow.EDIT_IMG} {postrow.DELETE_IMG} {postrow.IP_IMG} {postrow.REPORT_IMG}<span class="postdetails"><br>{postrow.POST_EXPIRE}</span>
+               </td>
 					<td valign="top" align="left" width="177">
 						<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse">
 							<tr>

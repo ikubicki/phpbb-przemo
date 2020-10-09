@@ -9,9 +9,6 @@
 		<!-- END staff_explain -->		
 		</span></td>
 	</tr>
-	<tr>
-		<td class="nav"><a href="{U_INDEX}" class="nav">{L_INDEX}</a></td>
-	</tr>
 </table>
 <br>
 

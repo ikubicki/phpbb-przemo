@@ -5,12 +5,6 @@
   </tr>
 </table>
 
-<table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
-  <tr> 
-	<td align="left"><span class="nav"><a href="{U_INDEX}" class="nav">{L_INDEX}</a></span></td>
-  </tr>
-</table>
-
 <table border="0" cellpadding="3" cellspacing="1" width="100%" class="forumline" align="center">
   <tr> 
 	<th width="150" height="25" class="thCornerL" nowrap="nowrap">{L_AUTHOR}</th>

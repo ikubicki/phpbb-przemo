@@ -1,10 +1,3 @@
-
-<table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
-	<tr>
-		<td align="left"><span class="nav"><a class="nav" href="{U_INDEX}">{L_INDEX}</a></span></td>
-	</tr>
-</table>
-
 <table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
 	<tr>
 		<th class="thHead" height="25" valign="middle"><span class="tableTitle">{SITENAME} - {REGISTRATION}</span></th>

@@ -18,11 +18,7 @@
   <table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
 	<tr> 
 	  <td align="left" nowrap="nowrap">
-	  <table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
-	<tr>
-		<td class="nav" align="left"><a class="nav" href="{U_INDEX}">{L_INDEX}</a></td>
-	</tr>
-</table>
+
 		</td>
 	  <td align="right" nowrap="nowrap"><span class="genmed">{L_SELECT_SORT_METHOD}:&nbsp;{S_MODE_SELECT}&nbsp;&nbsp;{L_ORDER}&nbsp;{S_ORDER_SELECT}&nbsp;&nbsp; 
 		<input type="submit" name="submit" value="{L_SUBMIT}" class="liteoption">

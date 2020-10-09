@@ -30,12 +30,6 @@ function displayWindow(url, width, height)
 
 <form action="{S_GROUPCP_ACTION}" method="post" onSubmit="return disableForm(this);">
 
-<table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
-	<tr>
-		<td align="left" class="nav"><a href="{U_INDEX}" class="nav">{L_INDEX}</a></td>
-	</tr>
-</table>
-
 <table cellspacing="1" cellpadding="4" border="0" align="center" width="100%" class="forumline">
 	<tr> 
 	  <th class="thHead" colspan="2">{L_COMPOSE}</th>

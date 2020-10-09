@@ -13,7 +13,7 @@
 		<input type="submit" name="submit" value="{L_SUBMIT}" class="liteoption"></span></td>
 	</tr>
 	<tr>
-	<td align="left"><span class="nav"><a href="{U_INDEX}" class="nav">{L_INDEX}</a></span></td>
+	<td align="left">&nbsp;</td>
 	<td colspan="2" align="right" nowrap="nowrap"><span class="genmed">{L_SORT_PER_LETTER}&nbsp;{S_LETTER_SELECT}{S_LETTER_HIDDEN}</span></td>
 	</tr>
 </table>
