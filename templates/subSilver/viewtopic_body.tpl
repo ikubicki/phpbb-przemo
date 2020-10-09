@@ -11,7 +11,6 @@ var img_addr = '{IMG_ADDR}';
 <br>
 <table width="100%" cellspacing="2" cellpadding="2" border="0">
    <tr> 
-      <td align="left" valign="bottom" class="nav"><span class="nav" style="color: #FF6600;"><a href="{U_INDEX}" class="nav">{L_INDEX}</a>{NAV_CAT_DESC}</span></td>
       <td align="right" valign="middle" nowrap="nowrap">{PAGINATION}<span class="gensmall" style="color: #FF6600;"><a href="{U_VIEW_OLDER_TOPIC}" class="nav">{L_VIEW_PREVIOUS_TOPIC}</a> &laquo;&raquo <a href="{U_VIEW_NEWER_TOPIC}" class="nav">{L_VIEW_NEXT_TOPIC}</a></span></td>
    </tr>
 </table>
@@ -53,8 +52,8 @@ var img_addr = '{IMG_ADDR}';
    <!-- END post_tree -->
    <tr>
       <td align="left" valign="top" class="{postrow.ROW_CLASS}" nowrap="nowrap" width="150">
-         <span class="name"><a name="{postrow.U_POST_ID}">
-		 </a><b>{postrow.POSTER_NAME}</b><!-- BEGIN gender -->&nbsp;<img src="{postrow.gender.GENDER}" alt="" border="0"><!-- END gender -->
+         <span class="name"><a name="{postrow.U_POST_ID}"></a>
+         <b>{postrow.POSTER_NAME}</b><!-- BEGIN gender -->&nbsp;<img src="{postrow.gender.GENDER}" alt="" border="0"><!-- END gender -->
 		 <br>
 		 </span>
          <span class="postdetails">{postrow.POSTER_RANK}{postrow.CUSTOM_RANK}{postrow.RANK_IMAGE}{postrow.POSTER_AVATAR}<br>
@@ -307,8 +306,7 @@ var img_addr = '{IMG_ADDR}';
 
 <table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
    <tr>
-      <td align="left" valign="middle" class="nav"><span class="nav" style="color: #FF6600;"><a href="{U_INDEX}" class="nav">{L_INDEX}</a>{NAV_CAT_DESC}</span></td>
-      <td align="right" valign="middle" nowrap="nowrap"><span class="nav">{PAGINATION}
+      <td colspan="2" align="right" valign="middle" nowrap="nowrap"><span class="nav">{PAGINATION}
 	  <!-- BEGIN next_unread_posts -->
 	  <a href="{next_unread_posts.U_TOPIC_NEXT_UNREAD_POSTS}">{next_unread_posts.L_TOPIC_NEXT_UNREAD_POSTS}</a>
 	  <!-- END next_unread_posts -->

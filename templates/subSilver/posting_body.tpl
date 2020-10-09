@@ -27,16 +27,6 @@
 {POST_PREVIEW_BOX}
 {ERROR_BOX}
 
-<table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
-	<tr>
-		<td align="left"><span	class="nav" style="color: #FF6600;"><a href="{U_INDEX}" class="nav">{L_INDEX}</a>
-		<!-- BEGIN switch_not_privmsg -->
-		{NAV_CAT_DESC}
-		<!-- END switch_not_privmsg -->
-		</span></td>
-	</tr>
-</table>
-
 <table border="0" cellpadding="3" cellspacing="1" width="100%" class="forumline">
 	<tr>
 		<th class="thHead" colspan="2" height="25"><b>{L_POST_A}</b></th>
@@ -68,12 +58,20 @@
 			</tr>
 		</table>
 	</td>
-	<td class="row2" width="78%"><span class="gen"><input type="text" name="subject" size="45" maxlength="60" style="width:550px" tabindex="2" class="post" onFocus="Active(this)" onBlur="NotActive(this)" value="{SUBJECT}"></span></td>
+	<td class="row2" width="78%">
+		<span class="gen">
+			<input type="text" name="subject" size="45" maxlength="60" style="width:550px" tabindex="2" class="post" onFocus="Active(this)" onBlur="NotActive(this)" value="{SUBJECT}">
+		</span>
+	</td>
 	</tr>
 	<!-- BEGIN topic_explain -->
 	<tr>
 		<td class="row1" width="22%"><span class="gen"><b>{L_SUBJECT_E}</b></span> <span class="gensmall">({L_SUBJECT_E_INFO})</span></td>
-		<td class="row2" width="78%"><span class="gen"><input type="text" name="subject_e" size="45" maxlength="100" style="width:550px;height:17px;font-size:9px;" tabindex="2" class="post" onFocus="Active(this)" onBlur="NotActive(this)" value="{SUBJECT_E}"></span></td>
+		<td class="row2" width="78%">
+			<span class="gen">
+				<input type="text" name="subject_e" size="45" maxlength="100" style="width:550px;height:17px;font-size:9px;" tabindex="2" class="post" onFocus="Active(this)" onBlur="NotActive(this)" value="{SUBJECT_E}">
+			</span>
+		</td>
 	</tr>
 	<!-- END topic_explain -->
 	<!-- BEGIN switch_msgicon_checkbox -->

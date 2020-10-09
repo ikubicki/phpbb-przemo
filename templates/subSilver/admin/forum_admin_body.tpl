@@ -3,11 +3,6 @@
 
 <p>{L_FORUM_EXPLAIN}</p>
 <form method="post" action="{S_FORUM_ACTION}">
-<table width="100%" cellpadding="4" cellspacing="1" border="0">
-<tr>
-	<td><span class="nav"><a href="{S_FORUM_ACTION}" class="nav">{L_INDEX}</a>{NAV_CAT_DESC}</span></td>
-</tr>
-</table>
 
 <table width="100%" cellpadding="4" cellspacing="1" border="0" class="forumline" align="center">
 <tr>

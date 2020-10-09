@@ -1,26 +1,19 @@
-/* General page style. The scroll bar colours only visible in IE5.5+ */
 body { 
-	background-color:		#E5E5E5;
-	scrollbar-face-color:		#DEE3E7;
-	scrollbar-highlight-color:	#FFFFFF;
-	scrollbar-shadow-color:		#DEE3E7;
-	scrollbar-3dlight-color:	#D1D7DC;
-	scrollbar-arrow-color:		#006699;
-	scrollbar-track-color:		#EFEFEF;
-	scrollbar-darkshadow-color:	#98AAB1;
-	background-image: url();
+	background-color: #E5E5E5;
 	margin: 0;
 }
 
 /* General font families for common tags */
-font,th,td,p			{ font-family: Verdana, Arial, Helvetica, sans-serif; }
+* {
+	font-family: "Trebuchet MS", Verdana, Helvetica, Arial, Sans-serif; 
+	font-size : 13px;
+}
 a:link,a:active,a:visited	{ color : #006699; }
-p, td			{ font-size : 11px; color : #000000; }
 a:hover			{ text-decoration: underline; color : #DD6900; }
 hr				{ height: 0px; border: solid #D1D7DC 0px; border-top-width: 1px; }
 
 /* This is the border line & background colour round the entire page */
-.bodyline { background-color: #FFFFFF; border: 0; padding: 10px 20px; box-shadow: 0 -3px 50px #ddd }
+.bodyline { background-color: #FFFFFF; border: 0; padding: 10px 20px; box-shadow: 0 -3px 50px #ccc }
 
 /* This is the outline round the main forum tables */
 .forumline { background-color: #A9B8C2; border: solid #D1D7DC 0px; border-top-width: 1px; }
@@ -37,21 +30,21 @@ td.row_helped { background-color: #F0EDDE; }
 	However, you could replace this with a bitmap specific for each forum
 */
 td.rowpic {
-background-color: #FFFFFF;
-background-image: url('images/cellpic2.jpg');
-background-repeat: repeat-y; height: 22px;
+	background-color: #FFFFFF;
+	background-image: url('images/cellpic2.jpg');
+	background-repeat: repeat-y; height: 22px;
 }
 
 /* Header cells - the blue and silver gradient backgrounds */
 th {
-color:			#FFA34F; font-size: 11px; font-weight: bold;
-background-color:	#006699; height: 25px;
-background-image:	url(images/cellpic3.gif);
+	color:			#FFA34F; font-weight: bold;
+	background-color:	#006699; height: 25px;
+	background-image:	url(images/cellpic3.gif);
 }
 
 td.catHead,td.catSides,td.catLeft,td.catRight,td.catBottom {
-background-image: url(images/cellpic1.gif);
-background-color:#D1D7DC; border: #FFFFFF; border-style: solid; height: 28px;
+	background-image: url(images/cellpic1.gif);
+	background-color:#D1D7DC; border: #FFFFFF; border-style: solid; height: 28px;
 }
 
 /*
@@ -64,12 +57,12 @@ th.thHead,th.thSides,th.thLeft,th.thRight,th.thBottom {
 font-weight: bold; border: #FFFFFF; height: 28px;
 }
 
-th.thCornerL,th.thTop,th.thCornerR {color: #FFA34F; font-size: 70%; font-weight: bold; 
+th.thCornerL,th.thTop,th.thCornerR {color: #FFA34F; font-weight: bold; 
 background-color: #006699; background-image: url('images/cellpic3.gif'); height: 28px; }
 
 td.row3Right,td.spaceRow { background-color: #D1D7DC; border: #FFFFFF; border-style: solid; }
 
-th.thHead,td.catHead			{ font-size: 12px; border-width: 0px; }
+th.thHead,td.catHead			{ border-width: 0px; }
 th.thSides,td.catSides,td.spaceRow	{ border-width: 0px; }
 th.thRight,td.catRight,td.row3Right	{ border-width: 0px; }
 th.thLeft,td.catLeft			{ border-width: 0px; }
@@ -78,37 +71,115 @@ th.thTop				{ border-width: 0px; }
 th.thCornerL				{ border-width: 0px; }
 th.thCornerR				{ border-width: 0px; }
 
-/* The largest text used in the index page title and toptic title etc. */
-.maintitle {
-font-weight: bold; font-size: 22px; font-family: "Trebuchet MS",Verdana, Arial, Helvetica, sans-serif;
-text-decoration: none; line-height : 120%; color : #000000;
-}
 
 /* General text */
-.gen						{ font-size : 12px; }
-.genmed					{ font-size : 11px; }
-.gensmall					{ font-size : 10px; }
+.gen						{ font-size : 15px; }
+.genmed					{ font-size : 13px; }
+.gensmall					{ font-size : 12px; }
 .gen,.genmed,.gensmall			{ color : #000000; }
 a.gen,a.genmed,a.gensmall			{ color: #006699; text-decoration: none; }
 a.gen:hover,a.genmed:hover,a.gensmall:hover	{ color: #DD6900; text-decoration: underline; }
+div.heading.bar {
+	z-index: 999;
+}
+div.heading.bar.floating {
+	position: fixed;
+	top: 0;
+	background: #0f82b3;
+	color: #fff;
+}
+div.heading.bar.floating a {
+	color: #fff;
+	text-shadow: 0 1px 0 #000;
+}
+div.heading.bar.floating > a {
+	display: block;
+}
+div.heading.bar.floating div.left {
+	clear: none
+}
+div.heading.bar > a {
+	float: left;
+	display: none;
+}
+div.heading.bar > a img {
+	height: 50px;
+	padding: 5px 0 0 10px;
+}
+div.heading {
+	margin: 0 0;
+	width: 100%;
+}
+div.heading div {
+	padding: 20px;
+}
+div.heading img {
+	height: 100px;
+}
+div.heading div.right {
+	float: right;
+	clear: right;
+	text-align: right;
+}
+div.heading div.left {
+	float: left;
+	clear: left;
+}
+div.heading br {
+	clear: both;
+}
+div.heading .mainmenu {
+	font-size : 13px;
+	color : #000000;
+}
+div.heading .mainmenu a {
+	text-decoration: none;
+	color : #006699;
+	text-shadow: 0 -1px 0 #fff;
+}
+div.heading .right a {
+	margin-left: 10px;
+}
+div.heading .mainmenu a:hover {
+	text-decoration: none;
+	color: #DD6900;
+}
+div.heading .nav {
+	font-weight: normal;
+	font-size: 13px;
+}
 
-/* The register, login, search etc links at the top of the page */
-.mainmenu		{ font-size : 11px; color : #000000; }
-a.mainmenu		{ text-decoration: none; color : #006699; }
-a.mainmenu:hover	{ text-decoration: underline; color : #DD6900; }
+div.heading .maintitle h1 {
+	font-weight: bold;
+	text-decoration: none; line-height : 120%;
+	font-size: 32px;
+	color: #fff;
+	text-shadow: 0 1px 0 #999;
+	margin: 20px 0 0;
+}
+div.heading .maintitle {
+	color: #999;
+	text-shadow: 0 -1px 0 #fff;
+}
+
+a[name] {
+	visibility: hidden;
+	position: relative;
+	top: -150px;
+}
 
 /* Forum category titles */
-.cattitle		{ font-weight: bold; font-size: 12px ; letter-spacing: 1px; color : #006699;}
+.cattitle		{ font-weight: bold; font-size: 15px ; letter-spacing: 1px; color : #006699;}
 a.cattitle		{ text-decoration: none; color : #006699; }
 a.cattitle:hover	{ text-decoration: underline; }
 
 /* Forum title: Text and link to the forums used in: index.php */
-.forumlink		{ font-weight: bold; font-size: 12px; color : #006699; }
+.forumlink		{ font-weight: bold; font-size: 15px; color : #006699; }
 a.forumlink		{ text-decoration: none; color : #006699; }
 a.forumlink:hover	{ text-decoration: underline; color : #DD6900; }
 
 /* Used for the navigation text, (Page 1,2,3 etc) and the navigation bar when in a forum */
-.nav		{ font-weight: bold; font-size: 11px; color : #000000;}
+.nav		{ font-weight: bold; font-size: 15px; color : #000000;}
 a.nav	{ text-decoration: none; color : #006699; }
 a.nav:hover	{ text-decoration: underline; }
 
@@ -122,31 +193,48 @@ a.topictitle:hover	{ text-decoration: underline; color : #DD6900; }
 .name { font-size : 11px; color : #000000; text-decoration: none;}
 
 /* Location, number of posts, post date etc */
-.postdetails		{ font-size : 10px; color : #000000; }
+.postdetails		{ font-size : 13px; color : #000000; }
 
 /* The content of the posts (body of text) */
-.postbody		{ font-size : 12px; line-height: 18px; }
+.postbody		{ font-size : 13px; line-height: 18px; }
 a.postlink:link	{ text-decoration: none; color : #006699; }
 a.postlink:visited	{ text-decoration: none; color : #5493B4; }
 a.postlink:hover	{ text-decoration: underline; color : #DD6900; }
 
 /* Quote & Code blocks */
 .code {
-font-family:		Courier, 'Courier New', sans-serif; font-size: 11px; color: #006600;
-background-color:	#FAFAFA; border: #D1D7DC; border-style: solid;
-border-left-width:	1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px;
+	font-family:		Courier, 'Courier New', sans-serif; font-size: 13px; color: #006600;
+	background-color:	#FAFAFA; border: #D1D7DC; border-style: solid;
+	border-left-width:	1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px;
 }
 
 .quote {
-font-family:		Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #444444; line-height: 125%;
-background-color:	#FAFAFA; border: #D1D7DC; border-style: solid;
-border-left-width:	1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px;
+	font-size: 13px; color: #444444; line-height: 125%;
+	background-color:	#FAFAFA; border: #D1D7DC; border-style: solid;
+	border-left-width:	1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px;
 }
 
 /* Copyright and bottom info */
-.copyright		{ font-size : 10px; color: #444444; font-family: Verdana, Arial, Helvetica, sans-serif; }
-a.copyright		{ text-decoration: none; color : #006699; }
-a.copyright:hover	{ text-decoration: underline; color : #DD6900; }
+.copyright,
+.links {
+	font-size : 12px;
+	color: #888;
+}
+.copyright b {
+	color : #000000;
+}
+.copyright a,
+.links a {
+	text-decoration: none; 
+	color: #888;
+	font-size : 12px;
+}
+
+.links a {margin-left: 5px;}
+.copyright a:hover,
+.links a:hover {
+	color : #dd6900;
+}
 
 /* Form elements */
 
@@ -155,7 +243,7 @@ form { display: inline; }
 
 input,textarea, select {
 color : #000000;
-font: normal 11px Verdana, Arial, Helvetica, sans-serif;
+font: normal 13px "Trebuchet MS",Verdana, Arial, Helvetica, sans-serif;
 }
 
 /* The text input fields background colour */
@@ -167,7 +255,8 @@ input						{ text-indent : 2px; }
 input.button {
 background-color :	#EFEFEF;
 color :			#000000;
-font-size:		11px; font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size:		11px;
+font-family: "Trebuchet MS",Verdana, Arial, Helvetica, sans-serif;
 cursor:			pointer;
 }
 

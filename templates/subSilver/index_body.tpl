@@ -78,7 +78,7 @@ if(GetCookie('hm3') == '2') ShowHide('hm', 'hm2', 'hm3');
          <!-- BEGIN switch_user_logged_in -->
          {LAST_VISIT_DATE}<br>
          <!-- END switch_user_logged_in -->
-         {CURRENT_TIME}<br></span><span class="nav"><a href="{U_INDEX}" class="nav">{L_INDEX}</a>{NAV_CAT_DESC}</span></td>
+         {CURRENT_TIME}<br></span></td>
          <td align="right" valign="bottom" class="gensmall">
          <!-- BEGIN switch_user_logged_in -->
          <a href="{U_SEARCH_SELF}" class="gensmall">{L_SEARCH_SELF}</a><br>
