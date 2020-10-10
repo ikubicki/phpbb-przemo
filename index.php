@@ -92,7 +92,7 @@ if ( $board_config['ccount'] )
 {
 	$visit_counter = $board_config['visitors'];
 
-	if ( !$HTTP_COOKIE_VARS[$unique_cookie_name . '_counter'] )
+	if (empty($HTTP_COOKIE_VARS[$unique_cookie_name . '_counter']))
 	{
 		@setcookie($unique_cookie_name . '_counter', '1', (CR_TIME + 3600), $board_config['cookie_path'], $board_config['cookie_domain'], $board_config['cookie_secure']);
 

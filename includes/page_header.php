@@ -104,12 +104,12 @@ else
 	$s_privmsg_new = 0;
 }
 
-$faq_img = $images['faq'];
-$groups_img = $images['groups'];
-$login_img = $images['login'];
-$memberlist_img = $images['memberlist'];
-$message_img = $images['message'];
-$logout_img = $images['logout'];
+$faq_img = $images['faq'] ?? '';
+$groups_img = $images['groups'] ?? '';
+$login_img = $images['login'] ?? '';
+$memberlist_img = $images['memberlist'] ?? '';
+$message_img = $images['message'] ?? '';
+$logout_img = $images['logout'] ?? '';
 
 //
 // Generate HTML required for Mozilla Navigation bar
@@ -142,10 +142,10 @@ $board_msg = ( $board_config['board_msg_enable'] ) ? replace_vars($board_config[
 // The following assigns all _common_ variables that may be used at any point
 // in a template.
 
-$profile_img = $images['profile'];
-$register_img = $images['register'];
-$search_img = $images['search'];
-$statistics_img = $images['statistics'];
+$profile_img = $images['profile'] ?? '';
+$register_img = $images['register'] ?? '';
+$search_img = $images['search'] ?? '';
+$statistics_img = $images['statistics'] ?? '';
 $my_avatar_img = '';
 $link_username = '';
 
@@ -251,6 +251,10 @@ else
 	$meta_desc = '';
 }
 
+if (empty($unique_cookie_name)) {
+	$unique_cookie_name = null;
+}
+
 //
 // The following assigns all _common_ variables that may be used at any point
 // in a template.
@@ -264,7 +268,7 @@ $template->assign_vars(array(
 	'PRIVATE_MESSAGE_NEW_FLAG' => $s_privmsg_new,
 	'PRIVMSG_IMG' => $icon_pm,
 	'BOARD_MSG' => replace_encoded($board_msg),
-	'BOARD_MSG_IMG' => $images['board_msg_img'],
+	'BOARD_MSG_IMG' => $images['board_msg_img'] ?? '',
 	'FAQ_IMG' => $faq_img,
 	'GROUPS_IMG' => $groups_img,
 	'LOGIN_IMG' => $login_img,
@@ -279,7 +283,7 @@ $template->assign_vars(array(
 	'META_DESC' => replace_encoded($meta_desc),
 	'PAGE_LOAD_PLEASE_WAIT' => append_sid('<a href="index.'.$phpEx.'?mode=tloading">' . $lang['Page_loading_wait'] . '</a>'),
 	'PAGE_LOADING_STOP' => $lang['Page_loading_stop'],
-	'FORUM_WARNINGS' => $forum_warnings,
+	'FORUM_WARNINGS' => $forum_warnings ?? '',
 	'ROTATE_BANNER_1' => ($board_config['echange_banner'] == '1') ? $eb : '',
 	'ROTATE_BANNER_2' => ($board_config['echange_banner'] == '2') ? $eb : '',
 	'ROTATE_BANNER_3' => ($board_config['echange_banner'] == '3') ? $eb : '',
@@ -407,7 +411,7 @@ if ( $board_config['width_forum'] )
 		'WIDTH_TABLE' => $board_config['width_table'],));
 }
 
-$advert_hide = ( (($board_config['view_ad_by'] == 1 && $userdata['session_logged_in']) || ($board_config['view_ad_by'] == 2 && ($userdata['user_level'] > 0 || $userdata['user_jr']))) && $userdata['advertising'] ) ? true : false;
+$advert_hide = ( (($board_config['view_ad_by'] == 1 && $userdata['session_logged_in']) || ($board_config['view_ad_by'] == 2 && ($userdata['user_level'] > 0 || $userdata['user_jr']))) && !empty($userdata['advertising']) ) ? true : false;
 
 if ( !$advert_hide )
 {
@@ -625,7 +629,7 @@ if ( $board_config['header_enable'] )
 {
 	$header_block = '';
 }
-else if ( !$userdata['simple_head'] )
+else if (empty($userdata['simple_head']))
 {
 	$template->assign_block_vars('header', array());
 	$template->assign_block_vars('header.' . $logged_in_out_block, array());
@@ -668,7 +672,7 @@ else if ( !$userdata['simple_head'] )
 	}
 }
 
-if ( $userdata['simple_head'] )
+if (!empty($userdata['simple_head']))
 {
 	$template->assign_block_vars('simple_header', array());
 	$template->assign_block_vars('simple_header.' . $logged_in_out_block, array());
@@ -709,7 +713,7 @@ if ( empty($nav_key) )
 {
 	$nav_key = 'Root';
 }
-$nav_cat_desc = make_cat_nav_tree($nav_key, $nav_pgm);
+$nav_cat_desc = make_cat_nav_tree($nav_key, $nav_pgm ?? null);
 
 if ($nav_cat_desc != '')
 {
@@ -720,7 +724,7 @@ if ($nav_cat_desc != '')
 $template->assign_vars(array(
 	'STYLE_NAME' => $theme['template_name'],
 	'SPACER' => $images['spacer'],
-	'NAV_SEPARATOR' => $nav_separator,
+	'NAV_SEPARATOR' => $nav_separator ?? '',
 	'NAV_CAT_DESC' => $nav_cat_desc,
 	)
 );

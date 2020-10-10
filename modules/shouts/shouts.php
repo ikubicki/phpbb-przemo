@@ -215,7 +215,7 @@ function build($data)
     return $message;
 }
 
-$message = (array) $_POST['message'];
+$message = (array) ($_POST['message'] ?? []);
 
 switch($action) {
     case 'message':

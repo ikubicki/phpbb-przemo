@@ -170,7 +170,7 @@ class Template {
 	/**
 	 * Constructor. Installs XS mod on first run or updates it and sets the root dir.
 	 */
-	function Template($root = '.')
+	function __construct($root = '.')
 	{
 		// setting pointer "vars"
 		$this->vars = &$this->_tpldata['.'][0];

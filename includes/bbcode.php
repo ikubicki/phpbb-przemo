@@ -374,10 +374,12 @@ function bbencode_first_pass($text, $uid)
 	// [i] and [/i] for italicizing text.
 	$text = preg_replace("#\[i\](.*?)\[/i\]#si", "[i:$uid]\\1[/i:$uid]", $text);
 
+	$callback = function($m) {
+		return '[img:]'.$m[1] . str_replace([' ', '&amp;'], ['%20', '&'], $m[3]) . '[/img:]';
+	};
+	
 	// [img]image_url_here[/img] code..
-    $text = preg_replace_callback("#\[img\]((http|ftp|https|ftps)://)([^\r\n\t<\"]*?)\[/img\]#si",
-		create_function('$m','return \'[img:]\'.$m[1] . str_replace(array(\' \', \'&amp;\'), array(\'%20\', \'&\'), $m[3]) . \'[/img:]\';'),
-		$text);
+    $text = preg_replace_callback("#\[img\]((http|ftp|https|ftps)://)([^\r\n\t<\"]*?)\[/img\]#si", $callback, $text);
 	$text = str_replace(array('[img:]','[/img:]'), array('[img:'.$uid.']','[/img:'.$uid.']'), $text);
 
 	// Center
@@ -889,7 +891,7 @@ function word_wrap_pass($message)
 
 	for ($num = 0; $num < strlen($message); $num++)
 	{
-		$curChar = $message{$num};
+		$curChar = $message[$num];
 		if ( $curChar == '<' )
 		{
 			$tempText .= '<';

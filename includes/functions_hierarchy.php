@@ -418,8 +418,10 @@ function build_index($cur = 'Root', $cat_break = false, &$forum_moderators, $rea
 					}
 				}
 			}
-
-			if ( $userdata['session_logged_in'] && !$tree['type'][$wthis] && $board_config['ctop'] && $userdata['ctop'])
+			if (empty($wthis)) {
+				$wthis = null;
+			}
+			if ( $userdata['session_logged_in'] && empty($tree['type'][$wthis]) && $board_config['ctop'] && $userdata['ctop'])
 			{
 				$count_unread_posts = unread_forums_posts('count', $id);
 				$count_unread_topics = (isset($userdata['unread_data'][$id]) && is_array($userdata['unread_data'][$id])) ? count($userdata['unread_data'][$id]) : 0;

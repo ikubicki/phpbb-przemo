@@ -279,7 +279,7 @@ else
 }
 
 $ignore_topics_table = $ignore_topics_sql = $sort_unread = '';
-if ( $board_config['ignore_topics'] && $userdata['session_logged_in'] && !$show_ignore )
+if ( $board_config['ignore_topics'] && $userdata['session_logged_in'] && empty($show_ignore) )
 {
 	$ignore_topics_table = "LEFT JOIN " . TOPICS_IGNORE_TABLE . " i ON (i.topic_id = t.topic_id AND i.user_id = " . $userdata['user_id'] . ")";
 	$ignore_topics_sql = "AND i.topic_id IS NULL";
@@ -320,7 +320,7 @@ if ( !empty($HTTP_POST_VARS['topicdays']) || !empty($HTTP_GET_VARS['topicdays'])
 else
 {
 	$topics_count = ($forum_row['forum_topics']) ? $forum_row['forum_topics'] : 1;
-	if ( $topics_count > 1 && $board_config['ignore_topics'] && $userdata['session_logged_in'] && !$show_ignore )
+	if ( $topics_count > 1 && $board_config['ignore_topics'] && $userdata['session_logged_in'] && empty($show_ignore) )
 	{
 		$sql = "SELECT COUNT(t.topic_id) AS forum_topics
 			FROM (" . TOPICS_TABLE . " t, " . TOPICS_IGNORE_TABLE . " i)
@@ -475,6 +475,9 @@ $replacement_word_html = array();
 obtain_word_list($orig_word, $replacement_word, $replacement_word_html);
 $count_orig_word = (count($orig_word));
 
+if (empty($show_ignore_link)) {
+	$show_ignore_link = '';
+}
 // Post URL generation for templating vars
 $template->assign_vars(array(
 	'L_DISPLAY_TOPICS' => $lang['Display_topics'],
@@ -544,7 +547,7 @@ $u_index_check = append_sid('index.'.$phpEx);
 
 if ( $board_config['ignore_topics'] && $userdata['session_logged_in'] && $userdata['view_ignore_topics'] )
 {
-	$show_ignore_topics = (!$show_ignore) ? '<br /><a href="' . append_sid("viewforum.$phpEx?" . POST_FORUM_URL . "=$forum_id&amp;show_ignore=1" . (($start) ? '&amp;start=' . $start : '')) . '">' . $lang['show_ignore_topics'] . '</a>' : '';
+	$show_ignore_topics = empty($show_ignore) ? '<br /><a href="' . append_sid("viewforum.$phpEx?" . POST_FORUM_URL . "=$forum_id&amp;show_ignore=1" . (($start) ? '&amp;start=' . $start : '')) . '">' . $lang['show_ignore_topics'] . '</a>' : '';
 
 	$span_i++;
 	$span_j++;
@@ -794,6 +797,9 @@ if( $total_topics )
 			$newest_post_img = '';
 			if( $userdata['session_logged_in'] )
 			{
+				if (empty($userdata['unread_data'][$topic_rowset[$i]['forum_id']])) {
+					$userdata['unread_data'][$topic_rowset[$i]['forum_id']] = null;
+				}
 				if ( is_array($userdata['unread_data'][$topic_rowset[$i]['forum_id']]) && array_key_exists($topic_id, $userdata['unread_data'][$topic_rowset[$i]['forum_id']]) )
 				{
 					$folder_image = $folder_new;

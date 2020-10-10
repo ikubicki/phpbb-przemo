@@ -670,6 +670,12 @@ function session_pagestart($user_ip, $thispage_id)
 		//
 		if ( isset($userdata['user_id']) )
 		{
+			if (!isset($HTTP_COOKIE_VARS[$unique_cookie_name . '_b'])) {
+				$HTTP_COOKIE_VARS[$unique_cookie_name . '_b'] = null;
+			}
+			if (!isset($HTTP_COOKIE_VARS[$unique_cookie_name . '_bb'])) {
+				$HTTP_COOKIE_VARS[$unique_cookie_name . '_bb'] = null;
+			}
 			if ( ((!$board_config['expire_warnings'] && $HTTP_COOKIE_VARS[$unique_cookie_name . '_b']) || $HTTP_COOKIE_VARS[$unique_cookie_name . '_b'] > (CR_TIME - (3600 * 72)) || $HTTP_COOKIE_VARS[$unique_cookie_name . '_bb'] > (CR_TIME - (3600 * 24)) && $userdata['user_id'] == ANONYMOUS ) )
 			{
 				message_die(CRITICAL_MESSAGE, 'You_been_banned');

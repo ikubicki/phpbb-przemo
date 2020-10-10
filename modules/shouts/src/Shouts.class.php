@@ -10,7 +10,9 @@ namespace phpBB\Modules\Shouts;
 class Shouts
 {
 
-    protected $session = [];
+    protected $session = [
+        'id' => null,
+    ];
     protected $messages = [];
     protected $token;
     protected $action = 'refresh';
@@ -88,7 +90,7 @@ class Shouts
      */
     protected function generateToken()
     {
-        $payload = json_encode([$this->session['id'], md5(microtime()), $this->action, $this->timestamp]);
+        $payload = json_encode([$this->session['id'], md5(microtime()), $this->action]);
         $this->token = $this->encrypt($payload);
     }
 

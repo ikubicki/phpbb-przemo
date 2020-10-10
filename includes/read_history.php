@@ -224,7 +224,7 @@ function unread_forums_posts($mode, $forum_id = false)
 
 	if ( $forum_id )
 	{
-		if ( !($userdata['unread_data'][$forum_id]) )
+		if ( empty($userdata['unread_data'][$forum_id]) )
 		{
 			return $return;
 		}

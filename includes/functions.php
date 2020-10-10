@@ -129,8 +129,8 @@ function get_object_lang($cur, $field)
 {
 	global $board_config, $lang, $tree;
 	$res	= '';
-	$athis	= $tree['keys'][$cur];
-	$type	= $tree['type'][$athis];
+	$athis	= $tree['keys'][$cur] ?? null;
+	$type	= $tree['type'][$athis] ?? null;
 	if ( $cur == 'Root' )
 	{
 		switch($field)
@@ -185,7 +185,7 @@ function build_tree(&$cats, &$forums, &$new_topic_data, &$tracking_topics, &$tra
 	$tree_level = array();
 
 	// get the forums of the level
-	$items = $parents[POST_FORUM_URL][$main];
+	$items = $parents[POST_FORUM_URL][$main] ?? null;
 	if ($items) {
 		for($i=0; $i < count($items); $i++)
 		{
@@ -197,7 +197,7 @@ function build_tree(&$cats, &$forums, &$new_topic_data, &$tracking_topics, &$tra
 		}
 	}
 	// add the categories of this level
-	$items = $parents[POST_CAT_URL][$main];
+	$items = $parents[POST_CAT_URL][$main] ?? null;
 	if ($items) {
 		for($i=0; $i < count($items); $i++)
 		{
@@ -218,7 +218,7 @@ function build_tree(&$cats, &$forums, &$new_topic_data, &$tracking_topics, &$tra
 	// add the tree_level to the tree
 	$level++;
 	$order = 0;
-	$items = $tree_level['data'];
+	$items = $tree_level['data'] ?? null;
 	if ($items) {
 		for($i=0; $i < count($items); $i++)
 		{
@@ -370,7 +370,7 @@ function set_tree_user_auth()
 		// grant the main level
 		if ( $main != 'Root' )
 		{
-			$tree['auth'][$main]['tree.auth_view'] = ($tree['auth'][$main]['tree.auth_view'] || $tree['auth'][$cur]['tree.auth_view']);
+			$tree['auth'][$main]['tree.auth_view'] = (!empty($tree['auth'][$main]['tree.auth_view']) || !empty($tree['auth'][$cur]['tree.auth_view']));
 		}
 
 		$auth_read = false;
@@ -405,8 +405,8 @@ function set_tree_user_auth()
 		}
 		if ( $auth_view )
 		{
-			$tree['data'][$i]['tree.forum_posts'] += $tree['data'][$i]['forum_posts'];
-			$tree['data'][$i]['tree.forum_topics'] += $tree['data'][$i]['forum_topics'];
+			$tree['data'][$i]['tree.forum_posts'] += $tree['data'][$i]['forum_posts'] ?? 0;
+			$tree['data'][$i]['tree.forum_topics'] += $tree['data'][$i]['forum_topics'] ?? 0;
 		}
 
 		if ( $main != 'Root' )
@@ -485,7 +485,7 @@ function get_user_tree(&$userdata)
 		if ( !empty($wauth) )
 		{
 			reset($wauth);
-			while (list($key, $data) = each($wauth))
+			foreach($wauth as $key => $data)
 			{
 				$tree['auth'][POST_FORUM_URL . $key] = $data;
 			}
@@ -532,7 +532,7 @@ function get_auth_keys($cur = 'Root', $all = false, $level = -1, $max = -1, $aut
 			$keys['idx'][$last_i] = (isset($tree['keys'][$cur]) ? $tree['keys'][$cur] : -1);
 
 			// get sub-levels
-			$items = $tree['sub'][$cur];
+			$items = isset($tree['sub'][$cur]) ? $tree['sub'][$cur] : false;
 			if ($items) {
 				for($i=0; $i < count($items); $i++)
 				{
@@ -540,7 +540,7 @@ function get_auth_keys($cur = 'Root', $all = false, $level = -1, $max = -1, $aut
 					$tkeys = get_auth_keys($tree['sub'][$cur][$i], $all, $orig_level+1, $max, $auth_key);
 
 					// add sub-levels
-					$subitems = $tkeys['id'];
+					$subitems = $tkeys['id'] ?? null;
 					if ($subitems) {
 						for($j=0; $j < count($subitems); $j++)
 						{
@@ -576,7 +576,7 @@ function get_tree_option($cur = '', $all = false, $admin_config = false, $admin_
 	{
 		if(!$admin_select_key)
 		{
-			$val_if = ( ($tree['type'][ $keys['idx'][$i] ] != POST_FORUM_URL) || empty($tree['data'][ $keys['idx'][$i] ]['forum_link']) )  ? true:false;
+			$val_if = ( !empty($tree['type'][ $keys['idx'][$i] ]) && ($tree['type'][ $keys['idx'][$i] ] != POST_FORUM_URL) || empty($tree['data'][ $keys['idx'][$i] ]['forum_link']) )  ? true:false;
 		}
 		else
 		{
@@ -872,30 +872,13 @@ function phpbb_clean_username($username)
 	return $username;
 }
 
-// added at phpBB 2.0.12 to fix a bug in PHP 4.3.10 (only supporting charlist in php >= 4.1.0)
 function phpbb_rtrim($str, $charlist = false)
 {
 	if ($charlist === false)
 	{
 		return rtrim($str);
 	}
-	
-	$php_version = explode('.', PHP_VERSION);
-
-	// php version < 4.1.0
-	if ((int) $php_version[0] < 4 || ((int) $php_version[0] == 4 && (int) $php_version[1] < 1))
-	{
-		while ($str{strlen($str)-1} == $charlist)
-		{
-			$str = substr($str, 0, strlen($str)-1);
-		}
-	}
-	else
-	{
-		$str = rtrim($str, $charlist);
-	}
-
-	return $str;
+	return rtrim($str, $charlist);
 }
 
 function make_jumpbox($action, $match_forum_id = 0)
@@ -1707,7 +1690,7 @@ function message_die($msg_code, $msg_text = '', $msg_title = '', $err_line = '',
 	}
 
 	// Try to repair table if potential damage
-	if ( ($sql_error['code'] == '1016' || $sql_error['code'] == '1034') && ($board_config['autorepair_tables'] != 0 || !isset($board_config['autorepair_tables'])) )
+	if ( !empty($sql_error) && ($sql_error['code'] == '1016' || $sql_error['code'] == '1034') && ($board_config['autorepair_tables'] != 0 || !isset($board_config['autorepair_tables'])) )
 	{
 		$sql3 = "SELECT config_value
 			FROM " . CONFIG_TABLE . "
@@ -2004,7 +1987,19 @@ function no_post_count($forum_id, $mode = '')
 function custom_fields($check = '', $view = false, $forum_id = '')
 {
 	global $db;
-
+	$id = [];
+	$desc = [];
+	$max_value = [];
+	$min_value = [];
+	$numerics = [];
+	$jumpbox = [];
+	$makelinks = [];
+	$view_post = [];
+	$prefix = [];
+	$suffix = [];
+	$editable = [];
+	$view_by = [];
+	$where = '';
 	if ( $check )
 	{
 		if ( $check == 'viewable' )
@@ -2057,7 +2052,7 @@ function custom_fields($check = '', $view = false, $forum_id = '')
 			$row = $db->sql_fetchrow($result);
 			sql_cache('write', $cache_name, $row);
 		}
-		if ( $row['total'] > 0 )
+		if ( $row && $row['total'] > 0 )
 		{
 			return true;
 		}
@@ -2250,7 +2245,7 @@ function phpbb_ltrim($str, $charlist = false)
 	// php version < 4.1.0
 	if ((int) $php_version[0] < 4 || ((int) $php_version[0] == 4 && (int) $php_version[1] < 1))
 	{
-		while ($str{0} == $charlist)
+		while ($str[0] == $charlist)
 		{
 			$str = substr($str, 1);
 		}
@@ -2443,6 +2438,9 @@ function groups_color_explain($block)
 
 	foreach($groups_desc as $key => $val)
 	{
+		if (!isset($val['group_type'])) {
+			$val['group_type'] = null;
+		}
 		if( $val['group_type'] != GROUP_HIDDEN || ( $val['group_type'] == GROUP_HIDDEN && $userdata['session_logged_in'] && ( $val['group_moderator'] == $userdata['user_id']  || $userdata['user_level'] == ADMIN ) ) )
 		{
 			$template->assign_block_vars($block, array(
@@ -2661,7 +2659,7 @@ function moderarots_list($forum_id, $mode)
 	if ( $mode == 'groups' )
 	{
 		$return_groups = array();
-		$items = $moderators_list[$forum_id]['group_list'];
+		$items = $moderators_list[$forum_id]['group_list'] ?? null;
 		if ($items) {
 			for($i=0; $i < count($items); $i++)
 			{
@@ -2680,6 +2678,9 @@ function moderarots_list($forum_id, $mode)
 	}
 	else if ( $mode == 'mod' )
 	{
+		if (empty($moderators_list[$forum_id]['mod_list'])) {
+			$moderators_list[$forum_id]['mod_list'] = null;
+		}
 		return (is_array($moderators_list[$forum_id]['mod_list'])) ? $moderators_list[$forum_id]['mod_list'] : array();
 	}
 	return false;

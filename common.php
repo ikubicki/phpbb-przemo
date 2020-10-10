@@ -33,6 +33,8 @@ $time_start = microtime(true);
 
 //
 error_reporting  (E_ERROR | E_WARNING | E_PARSE); // This will NOT report uninitialized variables
+// ini_set('error_reporting', E_ALL);
+// ini_set('display_errors' , true);
 
 // The following code (unsetting globals)
 // Thanks to Matt Kavanagh and Stefan Esser for providing feedback as well as patch files
@@ -152,26 +154,6 @@ if (!file_exists('/.dockerenv')) {
 	}
 }
 
-// Mozilla navigation bar
-// Default items that should be valid on all pages.
-// Defined here and not in page_header.php so they can be redefined in the code
-$nav_links['top'] = array ( 
-	'url' => append_sid($phpbb_root_dir."index.".$phpEx),
-	'title' => sprintf($lang['Forum_Index'], $board_config['sitename'])
-);
-$nav_links['search'] = array ( 
-	'url' => append_sid($phpbb_root_dir."search.".$phpEx),
-	'title' => $lang['Search']
-);
-$nav_links['help'] = array ( 
-	'url' => append_sid($phpbb_root_dir."faq.".$phpEx),
-	'title' => $lang['FAQ']
-);
-$nav_links['author'] = array ( 
-	'url' => append_sid($phpbb_root_dir."memberlist.".$phpEx),
-	'title' => $lang['Memberlist']
-);
-
 //
 // Obtain and encode users IP
 //
@@ -216,6 +198,9 @@ if ( $board_config['protection_get'] && isset($HTTP_GET_VARS) )
 		}
 	}
 }
+
+$phpbb_root_dir = $board_config['script_path'] ?? '/';
+$nav_links = [];
 
 // gzip compression
 $mod_deflate_check = true;
@@ -330,11 +315,9 @@ if ( isset($board_config['db_backup_enable']) && $board_config['db_backup_enable
 	db_backup();
 }
 
-if ( $HTTP_COOKIE_VARS[$unique_cookie_name . '_b'] == "1" )
+if (!empty($HTTP_COOKIE_VARS[$unique_cookie_name . '_b']))
 {
 	message_die(GENERAL_MESSAGE, 'You_been_banned');
 }
 
 if(isset($result)) $db->sql_freeresult($result);
-
-?>

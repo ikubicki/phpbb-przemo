@@ -42,7 +42,7 @@ if ( $userdata['session_logged_in'] )
 {
 	$template->assign_block_vars('quick_reply.user_logged_in', array(
 		'ATTACH_SIGNATURE' => ($userdata['user_attachsig']) ? ' checked="checked"' : '',
-		'NOTIFY_ON_REPLY' => ($notify_user || $userdata['user_notify']) ? ' checked="checked"' : '')
+		'NOTIFY_ON_REPLY' => (!empty($notify_user) || $userdata['user_notify']) ? ' checked="checked"' : '')
 	);
 }
 else

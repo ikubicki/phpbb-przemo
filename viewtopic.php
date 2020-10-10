@@ -284,7 +284,9 @@ if ( $is_auth['auth_mod'] )
         }
     }
 }
-
+if (empty($HTTP_GET_VARS['action'])) {
+	$HTTP_GET_VARS['action'] = null;
+}
 if ( $HTTP_GET_VARS['action'] == 'delete' && (($is_auth['auth_mod'] && $board_config['allow_mod_delete_actions']) || $user_level == ADMIN) )
 {
 	$sql = "UPDATE " . TOPICS_TABLE . "
@@ -296,7 +298,9 @@ if ( $HTTP_GET_VARS['action'] == 'delete' && (($is_auth['auth_mod'] && $board_co
 	}
 	redirect(append_sid("viewtopic.$phpEx?" . POST_TOPIC_URL . "=$topic_id", true));
 }
-
+if (empty($HTTP_GET_VARS['post_edit_by'])) {
+	$HTTP_GET_VARS['post_edit_by'] = null;
+}
 if ( $HTTP_GET_VARS['post_edit_by'] == 'delete' && (($is_auth['auth_mod'] && $board_config['allow_mod_delete_actions']) || $user_level == ADMIN) )
 {
 	$sql = "UPDATE " . POSTS_TABLE . "
@@ -1065,7 +1069,7 @@ $nav_links['up'] = array(
 	'title' => $forum_name
 );
 
-if ( $HTTP_GET_VARS['cp'] && $HTTP_GET_VARS['ap'] )
+if ( !empty($HTTP_GET_VARS['cp']) && !empty($HTTP_GET_VARS['ap']) )
 {
 	$reply_topic_back_url = append_sid("viewtopic.$phpEx?" . POST_TOPIC_URL . "=$topic_id&amp;postdays=0&amp;postorder=0&amp;start=" . (intval($HTTP_GET_VARS['cp']) * $user_posts_per_page));
 	message_die('GENERAL_MESSAGE', sprintf($lang['Loser_protect'], intval($HTTP_GET_VARS['cp']), intval($HTTP_GET_VARS['ap']), '<a href="' . $reply_topic_back_url . '">', '</a>', '<a href="' . $reply_topic_url . '">', '</a>'));
@@ -1305,7 +1309,7 @@ $template->assign_vars(array(
 	'FORUM_NAME' => $forum_name,
 	'TOPIC_ID' => $topic_id,
 	'TOPIC_TITLE' => replace_encoded($topic_title),
-	'TOPIC_TITLE_B' => $b_topic_title,
+	'TOPIC_TITLE_B' => $b_topic_title ?? '',
 	'TOPIC_COLOR' => ($board_config['topic_color'] && $forum_topic_data['topic_color']) ? ' style="color: ' . $forum_topic_data['topic_color'] . '"' : '',
 
 	'POST_IMG' => $post_img,
@@ -1314,7 +1318,7 @@ $template->assign_vars(array(
 	'COMMENT_POST_IMG' => $images['icon_latest_reply'],
 	'PAGE_NUMBER' => ($all_pages > 1) ? sprintf($lang['Page_of'], $current_page, $all_pages) : '',
 	'TELLFRIEND_BOX' => ($board_config['cfriend'] && $session_logged_in) ? '<a href="' . append_sid("tellafriend.$phpEx?topic_id=$topic_id") . '">' . $lang['s_email_friend'] . '</a><br />' : '',
-	'TOPIC_VIEW_IMG' => $topic_view_img,
+	'TOPIC_VIEW_IMG' => $topic_view_img ?? '',
 
 	'L_COMMENT_IMG_TITLE' => $lang['Comment_post'],
 	'L_PRINT' => $lang['Print_View'],
@@ -1877,7 +1881,7 @@ for($i = 0; $i < $total_posts; $i++)
 			$poster_rank = $ranksrow[-1][$postrow[$i]['user_rank']]['rank_title'];
 			$rank_file = $images['rank_path'] . $ranksrow[-1][$postrow[$i]['user_rank']]['rank_image'];
 			$sizes = @getimagesize($rank_file);
-			$rank_sizes = (intval($sizes[0]) > 0 && intval($sizes[1]) > 0) ? '" width="' . $sizes[0] . '" height="' . $sizes[1] : '';
+			$rank_sizes = $sizes && (intval($sizes[0]) > 0 && intval($sizes[1]) > 0) ? '" width="' . $sizes[0] . '" height="' . $sizes[1] : '';
 			$rank_image = ($ranksrow[-1][$postrow[$i]['user_rank']]['rank_image']) ? '<img src="' . $rank_file . $width . '" alt="" title="' . str_replace('-#', '', $poster_rank) . '" border="0" /><br />' : '';
 			$poster_rank = $poster_rank . '<br />';
 			if ( strstr($poster_rank,'-#') )
@@ -2008,43 +2012,8 @@ for($i = 0; $i < $total_posts; $i++)
 					}
 					$www_img = ($postrow[$i]['user_website']) ? '<a href="' . $postrow[$i]['user_website'] . '" target="_userwww" rel="nofollow"><img src="' . $images['icon_www'] . '" alt="" title="' . $lang['Visit_website'] . '" border="0" /></a>' : '';
 					$www = ($postrow[$i]['user_website']) ? '<a href="' . $postrow[$i]['user_website'] . '" target="_userwww" rel="nofollow">' . $lang['Visit_website'] . '</a>' : '';
-					if ( $board_config['cicq'] && !empty($postrow[$i]['user_icq']) )
-					{
-						$icq_status_img = '<a href="http://wwp.icq.com/' . $postrow[$i]['user_icq'] . '#pager"><img src="http://web.icq.com/whitepages/online?icq=' . $postrow[$i]['user_icq'] . '&img=5" width="18" height="18" border="0" alt="" /></a>';
-						$icq_img = '<a href="http://wwp.icq.com/scripts/search.dll?to=' . $postrow[$i]['user_icq'] . '"><img src="' . $images['icon_icq'] . '" alt="" title="' . $lang['ICQ'] . '" border="0" /></a>';
-						$icq = '<a href="http://wwp.icq.com/scripts/search.dll?to=' . $postrow[$i]['user_icq'] . '">' . $lang['ICQ'] . '</a>';
-					}
-			
-					else
-					{
-						$icq_status_img = '';
-						$icq_img = '';
-						$icq = '';
-					}
-					if ( !empty($postrow[$i]['user_aim']) && $board_config['cgg'] )
-					{
-						$gg_url = append_sid("gg.$phpEx?mode=gadu&amp;" . POST_USERS_URL . "=$poster_id");
-						if ( $postrow[$i]['user_viewaim'] )
-						{
-							$aim_status_img = '<a href="gg:' .$postrow[$i]['user_aim'] . '"><img src="http://status.gadu-gadu.pl/users/status.asp?id=' . $postrow[$i]['user_aim'] . '&amp;styl=1" alt="" title="' .$postrow[$i]['user_aim'] . '" border="0" width="16" height="16" /></a>';
-							$aim_img = '<a href="' . $gg_url . '"><img src="' . $images['icon_aim'] . '" alt="" title="' . $lang['AIM'] . ': ' . $postrow[$i]['user_aim'] . '" border="0" /></a>';
-						}
-						else
-						{
-							$aim_status_img = '';
-							$aim_img = '<a href="' . $gg_url . '"><img src="' . $images['icon_aim'] . '" alt="" border="0" /></a>';
-						}
-					}
-					else
-					{
-						$aim_status_img = '';
-						$aim_img = '';
-					}
+
 					$temp_url = append_sid("profile.$phpEx?mode=viewprofile&amp;" . POST_USERS_URL . "=$poster_id");
-					$msn_img = ($postrow[$i]['user_msnm'] && $board_config['cmsn']) ? '<a href="' . $temp_url . '"><img src="' . $images['icon_msnm'] . '" alt="" title="' . $lang['MSNM'] . '" border="0" /></a> ' : '';
-					$msn = ($postrow[$i]['user_msnm']) ? '<a href="' . $temp_url . '">' . $lang['MSNM'] . '</a>' : '';
-					$yim_img = ( $postrow[$i]['user_yim'] && $board_config['cyahoo']) ? '<a href="http://edit.yahoo.com/config/send_webmesg?.target=' . $postrow[$i]['user_yim'] . '&amp;.src=pg"><img src="' . $images['icon_yim'] . '" alt="" title="' . $lang['YIM'] . '" border="0" /></a> ' : '';
-					$yim = ($postrow[$i]['user_yim']) ? '<a href="http://edit.yahoo.com/config/send_webmesg?.target=' . $postrow[$i]['user_yim'] . '&amp;.src=pg">' . $lang['YIM'] . '</a>' : '';
 				}
 				else
 				{
@@ -2068,39 +2037,7 @@ for($i = 0; $i < $total_posts; $i++)
 					$www_img = ($postrow[$i]['user_website']) ? '<a href="' . $postrow[$i]['user_website'] . '" target="_userwww" rel="nofollow" class="gen" title="' . $lang['Visit_website'] . '">[<b>WWW</b>]</a>' : '';
 					$www = ($postrow[$i]['user_website']) ? '<a href="' . $postrow[$i]['user_website'] . '" target="_userwww" rel="nofollow">' . $lang['Visit_website'] . '</a>' : '';
 
-					if ( $board_config['cicq'] && !empty($postrow[$i]['user_icq']) )
-					{
-						$icq_img = '<a href="http://wwp.icq.com/scripts/search.dll?to=' . $postrow[$i]['user_icq'] . '" class="gen" title="' . $lang['ICQ'] . '">[<b>' . $lang['cicq'] . '</b>]</a>';
-						$icq ='<a href="http://wwp.icq.com/scripts/search.dll?to=' . $postrow[$i]['user_icq'] . '" class="gen" title="' . $lang['ICQ'] . '">[<b>' . $lang['cicq'] . '</b>]</a>';
-					}
-					else
-					{
-						$icq_status_img = '';
-						$icq_img = '';
-						$icq = '';
-					}
-					if ( !empty($postrow[$i]['user_aim']) && $board_config['cgg'] )
-					{
-						$gg_url = append_sid("gg.$phpEx?mode=gadu&amp;" . POST_USERS_URL . "=$poster_id");
-						if ( $postrow[$i]['user_viewaim'] )
-						{
-							$aim_img = '<a href="' . $gg_url . '" class="gen" title="' . $lang['AIM'] . ': ' . $postrow[$i]['user_aim'] . '">[<b>' . $lang['aim_mini'] . '</b>]</a>';
-						}
-						else
-						{
-							$aim_img = '<a href="' . $gg_url . '" class="gen">[<b>' . $lang['aim_mini'] . '</b>]</a>';
-						}
-					}
-					else
-					{
-						$aim_status_img = '';
-						$aim_img = '';
-					}
 					$temp_url = append_sid("profile.$phpEx?mode=viewprofile&amp;" . POST_USERS_URL . "=$poster_id");
-					$msn_img = ($postrow[$i]['user_msnm'] && $board_config['cmsn']) ? '<a href="' . $temp_url . '" class="gen" " title="' . $lang['MSNM'] . '">[<b>MSNM</b>]</a> ' : '';
-					$msn = ($postrow[$i]['user_msnm']) ? '<a href="' . $temp_url . '">' . $lang['MSNM'] . '</a>' : '';
-					$yim_img = ($postrow[$i]['user_yim'] && $board_config['cyahoo']) ? '<a href="http://edit.yahoo.com/config/send_webmesg?.target=' . $postrow[$i]['user_yim'] . '&amp;.src=pg" class="gen" title="' . $lang['YIM'] . '>[<b>YIM</a></b>] ' : '';
-					$yim = ($postrow[$i]['user_yim'] ) ? '<a href="http://edit.yahoo.com/config/send_webmesg?.target=' . $postrow[$i]['user_yim'] . '&amp;.src=pg">' . $lang['YIM'] . '</a>' : '';
 				}
 			}
 			else
@@ -2113,20 +2050,15 @@ for($i = 0; $i < $total_posts; $i++)
 				$email = '';
 				$www_img = '';
 				$www = '';
-				$icq_status_img = '';
-				$icq_img = '';
-				$icq = '';
-				$aim_img = '';
-				$msn_img = '';
-				$msn = '';
-				$yim_img = '';
-				$yim = '';
 			}
 
 			$colored_username = color_username($postrow[$i]['user_level'], $postrow[$i]['user_jr'], $postrow[$i]['user_id'], $postrow[$i]['username'], false, 'font-size: 12');
 			$poster_color_username = $colored_username[0];
 			$username_color = $colored_username[1];
 
+			if (empty($postrow[$i]['user_custom_color'])) {
+				$postrow[$i]['user_custom_color'] = null;
+			}
 			if ( $postrow[$i]['user_custom_color'] && $postrow[$i]['can_custom_color'] && $userdata['custom_color_use'] )
 			{
 				if (( (($board_config['custom_color_use'] || $board_config['custom_color_view']) && $poster_posts >= $board_config['allow_custom_color'] ))
@@ -2540,7 +2472,7 @@ for($i = 0; $i < $total_posts; $i++)
 		'ROW_COLOR' => '#' . (!($i % 2)) ? $theme['td_color1'] : $theme['td_color2'],
 		'ROW_CLASS' => (!$row_class) ? (!($i % 2)) ? $theme['td_class1'] : $theme['td_class2'] : $row_class,
 		'POSTER_NAME' => (!$show_post && $userdata['user_id'] != $poster_id) ? '' : $poster,
-		'POSTER_AGE' => ($poster_age) ? $poster_age . '<br />' : '',
+		'POSTER_AGE' => !empty($poster_age) ? $poster_age . '<br />' : '',
 		'POSTER_RANK' => $poster_rank,
 		'CUSTOM_RANK' => $poster_custom_rank,
 		'RANK_IMAGE' => $rank_image,
@@ -2568,15 +2500,6 @@ for($i = 0; $i < $total_posts; $i++)
 		'EMAIL' => $email,
 		'WWW_IMG' => $www_img,
 		'WWW' => $www,
-		'ICQ_STATUS_IMG' => ($board_config['cicq']) ? $icq_status_img : '',
-		'ICQ_IMG' => ($board_config['cicq']) ? $icq_img : '',
-		'ICQ' => ($board_config['cicq']) ? $icq : '',
-		'AIM_IMG' => ($board_config['cgg']) ? $aim_img : '',
-		'AIM_STATUS_IMG' => ($board_config['cgg']) ? $aim_status_img : '',
-		'MSN_IMG' => $msn_img,
-		'MSN' => $msn,
-		'YIM_IMG' => $yim_img,
-		'YIM' => $yim,
 		'EDIT_IMG' => $edit_img,
 		'EDIT' => $edit,
 		'QUOTE_IMG' => $quote_img,
@@ -2950,7 +2873,7 @@ if ( $show_quickreply )
 	include($phpbb_root_path . 'quick_reply.'.$phpEx);
 }
 
-if ( $show_reject_panel && $forum_topic_data['forum_moderate'] && $is_auth['auth_mod'] )
+if ( !empty($show_reject_panel) && $forum_topic_data['forum_moderate'] && $is_auth['auth_mod'] )
 {
 	$template->assign_block_vars('moderate', array(
 		'L_ACCEPT-REJECT_POST' => $lang['Accept-reject'],

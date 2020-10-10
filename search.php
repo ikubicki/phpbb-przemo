@@ -93,7 +93,7 @@ if($search_keywords == '*' || $search_author == '*')
 {
 	message_die(GENERAL_MESSAGE, $lang['No_search_match']);
 }
-$search_author = ( $HTTP_GET_VARS['search_author_all'] == '*' ) ? '*' : $search_author;
+$search_author = ( isset($HTTP_GET_VARS['search_author_all']) && $HTTP_GET_VARS['search_author_all'] == '*' ) ? '*' : $search_author;
 
 // Search time
 $previous_days = array(0, 15, 30, 60, 120, 360, 720, 1440, 2880, 4320, 5760, 7200, 8640, 10080, 20160, 43200, 129600, 259200, 524160);
@@ -1611,11 +1611,11 @@ $template->assign_vars(array(
 	'S_SEARCH_ACTION' => append_sid("search.$phpEx?mode=results"),
 	'S_CHARACTER_OPTIONS' => $s_characters,
 	'S_FORUM_OPTIONS' => $s_forums,
-	'S_CATEGORY_OPTIONS' => $s_categories,
+	'S_CATEGORY_OPTIONS' => $s_categories ?? '',
 	'S_TIME_OPTIONS1' => $s_time1,
 	'S_TIME_OPTIONS2' => $s_time2,
 	'S_SORT_OPTIONS' => $s_sort_by,
-	'S_HIDDEN_FIELDS' => $s_hidden_fields)
+	'S_HIDDEN_FIELDS' => $s_hidden_fields ?? '')
 );
 
 if ($board_config['search_enable'])

@@ -221,7 +221,7 @@ $md5_sum['viewforum.'.$phpEx] = '275ec3b72205c72bb89579c45eeb593a';
 $md5_sum['viewonline.'.$phpEx] = '09746962de72c1ccdf0b5f575cb75725';
 $md5_sum['viewtopic.'.$phpEx] = '59948b2b745cbe86620bc6aab91fd700';
 $md5_sum['warnings.'.$phpEx] = '9665235e23d61e5c1b32302d216fcb53';
-
+$md5_sum = [];
 $file_list = array_keys($md5_sum);
 $sizes['admin/admin_account.'.$phpEx] = '6416';
 $sizes['admin/admin_advert.'.$phpEx] = '11099';

@@ -177,7 +177,7 @@ if (
 
 	$email = ''; 
 
-    if (($email1 == '' || $email2 == '') && $mode == 'register') 
+    if ((empty($email1) || empty($email2)) && $mode == 'register') 
     { 
         $email = ''; 
     } 
@@ -355,7 +355,7 @@ if ( isset($HTTP_POST_VARS['submit']) )
 		if ( $board_config['require_gender'] && $board_config['gender']) $require_gender = empty($gender);
 		if ( $board_config['require_website'] ) $require_website = empty($website);
 		if ( $board_config['require_location'] ) $require_location = empty($location);
-		if ( $require_aim || $require_website || $require_location || $require_gender)
+		if ( !empty($require_aim) || !empty($require_website) || !empty($require_location) || !empty($require_gender))
 		{
 			$error = TRUE;
 			$error_msg .= ( ( isset($error_msg) ) ? '<br />' : '' ) . $lang['Fields_empty'];
@@ -552,7 +552,7 @@ if ( isset($HTTP_POST_VARS['submit']) )
 		}
 	}
 
-	if ( strlen($custom_rank) > $board_config['max_sig_custom_rank'] )
+	if ( !empty($custom_rank) && strlen($custom_rank) > $board_config['max_sig_custom_rank'] )
 	{
 		$error = TRUE;
 		$error_msg .= ( ( isset($error_msg) ) ? '<br />' : '' ) . $lang['custom_rank_too_long'];
@@ -699,7 +699,9 @@ if ( isset($HTTP_POST_VARS['submit']) )
 					}
 				}
 			}
-
+			if (empty($custom_rank)) {
+				$custom_rank = '';
+			}
 			$sql = "UPDATE " . USERS_TABLE . "
 				SET " . $username_sql . $passwd_sql . "user_email = '" . str_replace("\'", "''", $email) ."', user_icq = '" . str_replace("\'", "''", $icq) . "', user_website = '" . str_replace("\'", "''", $website) . "', user_occ = '" . str_replace("\'", "''", $occupation) . "', user_interests = '" . str_replace("\'", "''", $interests) . "', user_from = '" . str_replace("\'", "''", $location) . "', $sql_custom_fields user_sig = '" . str_replace("\'", "''", $signature) . "', user_custom_color = '" . str_replace("\'", "''", $custom_color) . "', user_custom_rank = '" . str_replace("\'", "''", $custom_rank) . "', user_sig_bbcode_uid = '$signature_bbcode_uid', user_viewemail = $viewemail, user_viewaim = $viewaim, user_aim = '" . str_replace("\'", "''", str_replace(' ', '+', $aim)) . "', user_yim = '" . str_replace("\'", "''", $yim) . "', user_msnm = '" . str_replace("\'", "''", $msn) . "', user_attachsig = $attachsig, user_allowsmile = $allowsmilies, user_allowhtml = $allowhtml, user_allowbbcode = $allowbbcode, user_allow_viewonline = $allowviewonline, user_notify = $notifyreply, user_notify_gg = $user_notify_gg, user_notify_pm = $notifypm, user_popup_pm = $popuppm, user_timezone = $user_timezone, user_lang = '" . str_replace("\'", "''", $user_lang) . "', user_style = $user_style, user_active = $user_active, user_actkey = '" . str_replace("\'", "''", $user_actkey) . "'" . $avatar_sql . $signature_sql . ", user_gender = $gender, allowpm = $allowpm, user_ip_login_check = $user_ip_login_check
 				WHERE user_id = $user_id";
@@ -1365,8 +1367,8 @@ else
 	
 	$template->assign_vars(array(
 		'USERNAME' => $username,
-		'CUR_PASSWORD' => $cur_password,
-		'NEW_PASSWORD' => $new_password,
+		'CUR_PASSWORD' => $cur_password ?? '',
+		'NEW_PASSWORD' => $new_password ?? '',
 		'PASSWORD_CONFIRM' => $password_confirm,
 		'EMAIL' => $email,
 		'YIM' => $yim,
@@ -1378,8 +1380,8 @@ else
 		'LOCK_GENDER' =>($mode!='register') ? 'DISABLED':'', 
 		'GENDER' => $gender, 
 		'GENDER_NO_SPECIFY_CHECKED' => $gender_no_specify_checked, 
-		'GENDER_MALE_CHECKED' => $gender_male_checked, 
-		'GENDER_FEMALE_CHECKED' => $gender_female_checked,
+		'GENDER_MALE_CHECKED' => $gender_male_checked ?? '', 
+		'GENDER_FEMALE_CHECKED' => $gender_female_checked ?? '',
 		'LOCATION' => $location,
 		'WEBSITE' => $website,
 		'VIEW_EMAIL_YES' => ($viewemail) ? 'checked="checked"' : '',

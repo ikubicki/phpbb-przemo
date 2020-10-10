@@ -55,7 +55,7 @@ class attach_parent
 	//
 	// Constructor
 	//
-	function attach_parent()
+	function __constructor()
 	{
 		global $HTTP_POST_VARS, $HTTP_POST_FILES;
 		
@@ -247,7 +247,7 @@ class attach_parent
 	function handle_attachments($mode)
 	{
 		global $is_auth, $attach_config, $refresh, $HTTP_POST_VARS, $post_id, $submit, $preview, $error, $error_msg, $lang, $template, $userdata, $db;
-		
+
 		// 
 		// ok, what shall we do ;)
 		//
@@ -296,7 +296,7 @@ class attach_parent
 		//
 		// nothing, if the user is not authorized or attachment mod disabled
 		//
-		if ( intval($attach_config['disable_mod']) || !$is_auth['auth_attachments'])
+		if ( intval($attach_config['disable_mod']) || empty($is_auth['auth_attachments']))
 		{
 			return false;
 		}
@@ -1163,8 +1163,8 @@ class attach_parent
 					$this->attach_filename = delete_extension($this->attach_filename);
 					$this->attach_filename = str_replace(array(' ','-'), array('_','_'), $this->attach_filename);
 					$this->attach_filename = str_replace('__', '_', $this->attach_filename);
-					$this->attach_filename = str_replace(array(',', '.', '!', '?', 'ü', 'Ü', 'ö', 'Ö', 'ä', 'Ä', ';', ':', '@', "'", '"', '&'), array('', '', '', '', 'ue', 'ue', 'oe', 'oe', 'ae', 'ae', '', '', '', '', '', 'and'), $this->attach_filename);
-					$this->attach_filename = str_replace(array('$', 'ß', '>','<','§','%','=','/','(',')','#','*','+',"\\",'{','}','[',']'), array('dollar', 'ss','greater','lower','paragraph','percent','equal','','','','','','','','','','',''), $this->attach_filename);
+					$this->attach_filename = str_replace(array(',', '.', '!', '?', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', ';', ':', '@', "'", '"', '&'), array('', '', '', '', 'ue', 'ue', 'oe', 'oe', 'ae', 'ae', '', '', '', '', '', 'and'), $this->attach_filename);
+					$this->attach_filename = str_replace(array('$', 'ï¿½', '>','<','ï¿½','%','=','/','(',')','#','*','+',"\\",'{','}','[',']'), array('dollar', 'ss','greater','lower','paragraph','percent','equal','','','','','','','','','','',''), $this->attach_filename);
 					// Remove non-latin characters
 					$this->attach_filename = preg_replace("/([\xC2\xC3])([\x80-\xBF])/e", "chr(ord('\\1')<<6&0xC0|ord('\\2')&0x3F)", $this->attach_filename);
 					$this->attach_filename = rawurlencode($this->attach_filename);
@@ -1563,7 +1563,7 @@ class attach_posting extends attach_parent
 	//
 	// Constructor
 	//
-	function attach_posting()
+	function __constructor()
 	{
 		$this->attach_parent();
 		$this->page = 0;
