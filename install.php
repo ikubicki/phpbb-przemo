@@ -43,8 +43,6 @@ td.cat		{ background-image: url('templates/subSilver/images/cellpic1.gif') }
 td.rowpic	{ background-image: url('templates/subSilver/images/cellpic2.jpg'); background-repeat: repeat-y }
 td.catHead,td.catSides,td.catLeft,td.catRight,td.catBottom { background-image: url('templates/subSilver/images/cellpic1.gif') }
 
-/* Import the fancy styles for IE only (NS4.x doesn't use the @import function) */
-@import url("templates/subSilver/formIE.css"); 
 //-->
 </style>
 

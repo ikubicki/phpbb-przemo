@@ -105,55 +105,56 @@
 var sourceBar = $('div.heading.bar')
 $(window).scroll(function(ev){
 	var floatingBar = $('div.heading.bar.floating')
-	if ($(window).scrollTop() > 140) {
+	if ($(window).scrollTop() > sourceBar.position().top) {
 		if (floatingBar.length < 1) {
+			sourceBar.find('div.left.mainmenu').css({
+				'margin-left': 0
+			})
 			var floatingBar = $('<div class="heading bar floating"></div>')
 			floatingBar.html(sourceBar.html())
 			sourceBar.after(floatingBar)
 		}
 	}
 	else {
+		sourceBar.find('div.left.mainmenu').css({
+			'margin-left': $(window).scrollTop() / sourceBar.position().top * 100
+		})
 		floatingBar.remove()
 	}
 })
 </script>
 <!-- END header -->
+<!-- BEGIN simple_header -->
+<div class="heading simple">
+</div>
+<div class="heading bar floating">
+	<a href="{U_INDEX}"><img src="templates/subSilver/images/przemo.png"></a>
+	<div class="left mainmenu">
+		<a href="{U_INDEX}">{L_INDEX_LABEL}</a> {NAV_CAT_DESC}
+	</div>
+	<div class="right mainmenu">
+		<a href="{U_SEARCH}" class="search"><b>{L_SEARCH}</b></a>
+		<!-- BEGIN switch_user_logged_in -->
+		<a href="{U_PRIVATEMSGS}" class="pms">{PRIVATE_MESSAGE_INFO}</a>
+		<a href="{U_PROFILE}" class="profile">{L_PROFILE}</a>
+		<a href="{U_LOGIN_LOGOUT}" class="signin">{L_LOGIN_LOGOUT}</a>
+		<!-- END switch_user_logged_in -->
+		<!-- BEGIN switch_user_logged_out -->
+		<a href="{U_REGISTER}" class="signup">{L_REGISTER}</a>
+		<a href="{U_LOGIN_LOGOUT}" class="signin">{L_LOGIN_LOGOUT}</a>
+		<!-- END switch_user_logged_out -->
+		<!-- BEGIN switch_report_list -->
+		<a href="{switch_report_list.U_REPORT_LIST}" class="mainmenu">{switch_report_list.L_REPORT_LIST}</a></span>&nbsp;
+		<!-- END switch_report_list -->
+	</div>
+</div>
+<!-- END simple_header -->
 <br />
 <table width="100%" cellspacing="0" cellpadding="7" border="0" align="center">
    <tr>
       <td class="bodyline">
 	  {FORUM_WARNINGS}
          {ROTATE_BANNER_2}{BANNER_TOP}
-		<!-- BEGIN simple_header -->
-		<table width="100%" cellpadding="2" cellspacing="1" border="0" class="forumline">
-			<tr>
-				<th>{SITENAME}</th>
-			</tr>
-			<tr>
-				<td class="cat" align="center">
-					<!-- BEGIN switch_user_logged_in -->
-					&bull; <a href="{U_FAQ}" class="mainmenu">{L_FAQ}</a> &bull; <a href="{U_SEARCH}" class="mainmenu">{L_SEARCH}</a> &bull; <a href="{U_MEMBERLIST}" class="mainmenu">{L_MEMBERLIST}</a> &bull; <a href="{U_GROUP_CP}" class="mainmenu">{L_USERGROUPS}</a>
-					<!-- BEGIN statistics -->
-					&bull; <a href="{U_STAT}" class="mainmenu">{L_STATISTICS}</a>
-					<!-- END statistics -->
-					&bull; <a href="{U_PROFILE}" class="mainmenu">{L_PROFILE}</a> &bull; <a href="{U_PRIVATEMSGS}" class="mainmenu">{PRIVATE_MESSAGE_INFO}</a> &bull; <a href="{U_LOGIN_LOGOUT}" class="mainmenu">{L_LOGIN_LOGOUT}</a>
-					<!-- END switch_user_logged_in -->
-					<!-- BEGIN switch_user_logged_out -->
-					&bull; <a href="{U_FAQ}" class="mainmenu">{L_FAQ}</a>
-					&bull; <a href="{U_SEARCH}" class="mainmenu">{L_SEARCH}</a> &bull; <a href="{U_MEMBERLIST}" class="mainmenu">{L_MEMBERLIST}</a> &bull; <a href="{U_GROUP_CP}" class="mainmenu">{L_USERGROUPS}</a>
-					<!-- BEGIN statistics -->
-					&bull; <a href="{U_STAT}" class="mainmenu">{L_STATISTICS}</a>
-					<!-- END statistics -->
-					&bull; <a href="{U_REGISTER}" class="mainmenu">{L_REGISTER}</a> &bull; <a href="{U_LOGIN_LOGOUT}" class="mainmenu">{L_LOGIN_LOGOUT}</a>
-					<!-- END switch_user_logged_out -->
-					<!-- BEGIN switch_report_list -->
-					&bull; <a href="{switch_report_list.U_REPORT_LIST}" class="mainmenu">{switch_report_list.L_REPORT_LIST}</a>
-					<!-- END switch_report_list -->
-					&bull;
-				</span></td>
-            </tr>
-         </table>
-         <!-- END simple_header -->
       {ROTATE_BANNER_3}
       <!-- BEGIN switch_enable_board_msg --> 
 	  <div id="hm" style="display: ''; position: relative;">

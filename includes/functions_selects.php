@@ -73,7 +73,7 @@ function style_select($default_style, $select_name = "style", $dirname = "templa
 {
 	global $db;
 
-	$quick = ($select_name == 'template' || $select_name == 'fpage_theme') ? ' onchange="this.form.submit()" style="font-size:9px;"' : '';
+	$quick = ($select_name == 'template' || $select_name == 'fpage_theme') ? ' onchange="this.form.submit()"' : '';
 
 	$style_select = '<select name="' . $select_name . '"' . $quick . '>';
 

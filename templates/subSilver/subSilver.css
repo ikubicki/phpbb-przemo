@@ -1,19 +1,35 @@
 body { 
-	background-color: #E5E5E5;
+	background-color: #0f82b3;
 	margin: 0;
-}
-
-/* General font families for common tags */
-* {
-	font-family: "Trebuchet MS", Verdana, Helvetica, Arial, Sans-serif; 
 	font-size : 13px;
 }
-a:link,a:active,a:visited	{ color : #006699; }
-a:hover			{ text-decoration: underline; color : #DD6900; }
-hr				{ height: 0px; border: solid #D1D7DC 0px; border-top-width: 1px; }
+
+* {
+	font-family: "Trebuchet MS", Verdana, Helvetica, Arial, Sans-serif; 
+}
+
+a:link,
+a:active,
+a:visited {
+	color : #006699;
+}
+a:hover {
+	text-decoration: underline;
+	color: #DD6900;
+}
+hr {
+	height: 0px;
+	border: solid #D1D7DC 0px;
+	border-top-width: 1px;
+}
 
 /* This is the border line & background colour round the entire page */
-.bodyline { background-color: #FFFFFF; border: 0; padding: 10px 20px; box-shadow: 0 -3px 50px #ccc }
+.bodyline {
+	background-color: #fff;
+	border: 0;
+	padding: 10px 20px;
+	box-shadow: 0 -3px 50px #084162;
+}
 
 /* This is the outline round the main forum tables */
 .forumline {
@@ -53,7 +69,7 @@ td.row2 .signature .postbody{
 
 /* Header cells - the blue and silver gradient backgrounds */
 th {
-	color:			#FFA34F;
+	color: #ffa34f;
 	font-weight: bold;
 	background-color: #0f82b3;
 	padding: 10px;
@@ -80,8 +96,14 @@ td.rowpic {
 	background-color: #c8d0d7;
 	padding: 10px;
 }
-th.thHead,th.thSides,th.thLeft,th.thRight,th.thBottom {
-font-weight: bold; border: #FFFFFF; height: 28px;
+th.thHead,
+th.thSides,
+th.thLeft,
+th.thRight,
+th.thBottom {
+	font-weight: bold;
+	border: #fff;
+	padding: 10px;
 }
 
 th.thCornerL,
@@ -119,15 +141,19 @@ a.gen:hover,a.genmed:hover,a.gensmall:hover	{ color: #DD6900; text-decoration: u
 div.heading.bar {
 	z-index: 999;
 }
+div.heading.bar div {
+	padding: 20px;
+}
+div.heading.simple {
+	height: 40px;
+}
 div.heading.bar.floating {
 	position: fixed;
 	top: 0;
 	background: #0f82b3;
+	background: linear-gradient(#0f82b3, #036994);
 	color: #fff;
-}
-div.heading.bar.floating a {
-	color: #fff;
-	text-shadow: 0 1px 0 #000;
+	border-bottom: 5px solid #fff;
 }
 div.heading.bar.floating > a {
 	display: block;
@@ -146,12 +172,13 @@ div.heading.bar > a img {
 div.heading {
 	margin: 0 0;
 	width: 100%;
+	clear: both;
 }
 div.heading div {
-	padding: 20px;
+	padding: 20px 20px 0;
 }
 div.heading img {
-	height: 100px;
+	height: 75px;
 }
 div.heading div.right {
 	float: right;
@@ -171,8 +198,8 @@ div.heading .mainmenu {
 }
 div.heading .mainmenu a {
 	text-decoration: none;
-	color : #006699;
-	text-shadow: 0 -1px 0 #fff;
+	color: #fff;
+	text-shadow: 0 1px 0 #084162;
 }
 div.heading .right a {
 	margin-left: 10px;
@@ -191,12 +218,13 @@ div.heading .maintitle h1 {
 	text-decoration: none; line-height : 120%;
 	font-size: 32px;
 	color: #fff;
-	text-shadow: 0 1px 0 #999;
+	text-shadow: 0 1px 0 #084162;
 	margin: 20px 0 0;
 }
 div.heading .maintitle {
-	color: #999;
-	text-shadow: 0 -1px 0 #fff;
+	color: #084162;
+	text-shadow: 0 -1px 0 #049bd2;
+	max-width: 500px;
 }
 
 a[name] {
@@ -252,9 +280,11 @@ a.postlink:hover	{ text-decoration: underline; color : #DD6900; }
 }
 
 .quote {
-	font-size: 13px; color: #444444; line-height: 125%;
-	background-color:	#FAFAFA; border: #D1D7DC; border-style: solid;
-	border-left-width:	1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px;
+	font-size: 13px;
+	color: #444444;
+	line-height: 125%;
+	background-color: #fafafa;
+	border: 1px solid #D1D7DC;
 }
 
 /* Copyright and bottom info */
@@ -273,7 +303,9 @@ a.postlink:hover	{ text-decoration: underline; color : #DD6900; }
 	font-size : 12px;
 }
 
-.links a {margin-left: 5px;}
+.links a {
+	margin-left: 5px;
+}
 .copyright a:hover,
 .links a:hover {
 	color : #dd6900;
@@ -284,30 +316,33 @@ a.postlink:hover	{ text-decoration: underline; color : #DD6900; }
 form { margin: 0; }
 form { display: inline; }
 
-input,textarea, select {
-color : #000000;
-font: normal 13px "Trebuchet MS",Verdana, Arial, Helvetica, sans-serif;
+input,
+textarea,
+select {
+	color : #000000;
+	font-size: 13px;
 }
 
 /* The text input fields background colour */
 input.post, textarea.post, select			{ background-color : #EFEFEF; }
 input.post2, textarea.post2, select	{ background-color : #DEE3E7; }
-input						{ text-indent : 2px; }
+input {
+	text-indent : 2px;
+}
 
 /* The buttons used for bbCode styling in message post */
 input.button {
-background-color :	#EFEFEF;
-color :			#000000;
-font-size:		11px;
-font-family: "Trebuchet MS",Verdana, Arial, Helvetica, sans-serif;
-cursor:			pointer;
+	background-color: #EFEFEF;
+	color: #000000;
+	font-size: 13px;
+	cursor: pointer;
 }
 
 /* The main submit button option */
 input.mainoption {
-background-color:	#FAFAFA;
-font-weight:		bold;
-cursor:			pointer;
+	background-color: #FAFAFA;
+	font-weight: bold;
+	cursor: pointer;
 }
 
 /* None-bold submit button */
@@ -400,4 +435,26 @@ height: 21px; white-space: nowrap; text-align: center; border: 0px solid #91a0ae
 .vote a.downvote {
 	color: red;
 	text-decoration: none;
+}
+#shouts.shoutbox div.messages {
+	border-bottom: 1px solid #04739e;
+}
+#shouts.shoutbox div.smileys a,
+#shouts.shoutbox div.messages p {
+	color: #fff;
+}
+#shouts.shoutbox div.messages p:hover {
+	background-color: #04739e;
+}
+#shouts.shoutbox div.messages p a {
+	color: #084162;
+}
+#shouts.shoutbox input {
+    box-shadow: 0 1px 1px #084162;
+}
+#shouts.shoutbox .messages p span.time {
+	color: #6fb2d3;
+}
+#shouts.shoutbox h2 {
+	text-shadow: 0 1px 0 #084162;
 }
