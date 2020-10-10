@@ -41,8 +41,15 @@ td.row3 {
 	padding: 10px;
 	border-bottom: 3px solid #fff;
 }
-td.row_helped { background-color: #F0EDDE; }
+td.row_helped {
+	background-color: #F0EDDE;
+}
 
+td.row1 .signature .postbody,
+td.row2 .signature .postbody{
+	opacity: .5;
+	font-size: 13px;
+}
 
 /* Header cells - the blue and silver gradient backgrounds */
 th {
@@ -86,7 +93,11 @@ th.thCornerR {
 	padding: 10px;
 }
 
-td.row3Right,td.spaceRow { background-color: #D1D7DC; border: #FFFFFF; border-style: solid; }
+td.row3Right,
+td.spaceRow {
+	background-color: #D1D7DC;
+	font-size: 1px;
+}
 
 th.thHead,td.catHead			{ border-width: 0px; }
 th.thSides,td.catSides,td.spaceRow	{ border-width: 0px; }
@@ -195,7 +206,11 @@ a[name] {
 }
 
 /* Forum category titles */
-.cattitle		{ font-weight: bold; font-size: 15px ; letter-spacing: 1px; color : #006699;}
+.cattitle		{
+	font-size: 13px; 
+	letter-spacing: 1px;
+	color: #73787e;
+}
 a.cattitle		{ text-decoration: none; color : #006699; }
 a.cattitle:hover	{ text-decoration: underline; }
 

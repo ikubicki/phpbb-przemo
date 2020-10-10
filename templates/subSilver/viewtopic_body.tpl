@@ -173,7 +173,7 @@ var img_addr = '{IMG_ADDR}';
             </tr>
 			<!-- BEGIN signature -->
 			<tr>
-				<td colspan="2" valign="bottom" align="left"><span class="postbody">_________________<br>{postrow.SIGNATURE}{postrow.SIG_IMAGE}</span></td>
+				<td colspan="2" valign="bottom" align="left" class="signature"><span class="postbody">{postrow.SIGNATURE}{postrow.SIG_IMAGE}</span></td>
 			</tr>
 			<!-- END signature -->
 			<!-- BEGIN post_edited -->
