@@ -41,10 +41,10 @@ function setCheckboxes(the_form, do_check)
 <table border="0" cellpadding="4" cellspacing="1" width="100%" class="forumline">
 	<tr>
 		<th colspan="{SPAN_I}" align="center" class="label" <!-- BEGIN switch_show_hide --> onclick="javascript:ShowHide('imp_topics_{FORUM_ID}','imp_topics2_{FORUM_ID}','imp_topics3_{FORUM_ID}');" style="cursor: pointer" title="{L_VHIDE}"<!-- END switch_show_hide -->>{L_TOPICS}</th>
-		<th width="50" align="center" class="label">{L_REPLIES}</th>
-		<th width="100" align="center" class="label">{L_AUTHOR}</th>
-		<th width="50" align="center" class="label">{L_VIEWS}</th>
-		<th width="150" align="center" class="label">{L_LASTPOST}</th>
+		<th width="50" align="center" class="label center">{L_REPLIES}</th>
+		<th width="100" align="center" class="label center">{L_AUTHOR}</th>
+		<th width="50" align="center" class="label center">{L_VIEWS}</th>
+		<th width="150" align="center" class="label center">{L_LASTPOST}</th>
 	</tr>
 	<!-- BEGIN important_topics -->
 	<tr>
@@ -78,10 +78,10 @@ if(GetCookie('imp_topics3_{FORUM_ID}') == '2') ShowHide('imp_topics_{FORUM_ID}',
 <table border="0" cellpadding="4" cellspacing="1" width="100%" class="forumline">
 	<tr>
 		<th colspan="{SPAN_I}" align="center" class="label">{L_NORMAL_TOPICS}</th>
-		<th width="50" align="center" class="label">{L_REPLIES}</th>
-		<th width="100" align="center" class="label">{L_AUTHOR}</th>
-		<th width="50" align="center" class="label">{L_VIEWS}</th>
-		<th width="150" align="center" class="label">{L_LASTPOST}</th>
+		<th width="50" align="center" class="label center">{L_REPLIES}</th>
+		<th width="100" align="center" class="label center">{L_AUTHOR}</th>
+		<th width="50" align="center" class="label center">{L_VIEWS}</th>
+		<th width="150" align="center" class="label center">{L_LASTPOST}</th>
 	</tr>
 	<!-- END normal_topics -->
 	<tr class="row">

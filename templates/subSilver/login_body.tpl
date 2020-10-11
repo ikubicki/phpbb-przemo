@@ -1,35 +1,41 @@
 <form action="{S_LOGIN_ACTION}" method="post" target="_top">
 
-<table width="100%" cellpadding="4" cellspacing="1" border="0" class="forumline" align="center">
+<table class="forumline posting nolength">
 	<tr>
-		<th height="25" class="thHead" nowrap="nowrap">{L_ENTER_PASSWORD}</th>
+		<th colspan="3">{L_ENTER_PASSWORD}</th>
 	</tr>
 	<tr>
+		<td class="row1" align="right"><span class="gen">{L_USERNAME}:</span></td>
 		<td class="row1">
-			<table border="0" cellpadding="3" cellspacing="1" width="100%">
-				<tr>
-					<td colspan="2" align="center">&nbsp;</td>
-				</tr>
-				<tr>
-					<td width="45%" align="right"><span class="gen">{L_USERNAME}:</span></td>
-					<td><input type="text" name="username" size="25" maxlength="40" value="{USERNAME}" class="post2" id="focus" onFocus="Active(this)" onBlur="NotActive(this)"></td>
-				</tr>
-				<tr>
-					<td align="right"><span class="gen">{L_PASSWORD}:</span></td>
-					<td><input type="password" name="password" size="25" maxlength="40" class="post2" onFocus="Active(this)" onBlur="NotActive(this)"></td>
-				</tr>
-				<!-- BEGIN switch_allow_autologin -->
-				<tr align="center">
-					<td colspan="2"><span class="gen">{L_AUTO_LOGIN}: <input type="checkbox" name="autologin"></span></td>
-				</tr>
-				<!-- END switch_allow_autologin -->
-				<tr align="center">
-					<td colspan="2">{S_HIDDEN_FIELDS}<input type="submit" name="login" class="mainoption" value="{L_LOGIN}"></td>
-				</tr>
-				<tr align="center">
-					<td colspan="2"><span class="gensmall"><a href="{U_SEND_PASSWORD}" class="gensmall">{L_SEND_PASSWORD}</a></span></td>
-				</tr>
-			</table>
+			<input type="text" name="username" maxlength="40" value="{USERNAME}" />
+		</td>
+		<td class="row1" align="right">&nbsp;</td>
+	</tr>
+	<tr>
+		<td class="row1" align="right"><span class="gen">{L_PASSWORD}:</span></td>
+		<td class="row1">
+			<input type="password" name="password" maxlength="40" />
+		</td>
+		<td class="row1" align="right">&nbsp;</td>
+	</tr>
+	<!-- BEGIN switch_allow_autologin -->
+	<tr align="center">
+		<td class="row1 right">
+			<input type="checkbox" name="autologin" id="autologincheck" />
+		</td>
+		<td class="row1 left" colspan="2">
+			<label for="autologincheck"><span class="gen">{L_AUTO_LOGIN}</span></label>
+		</td>
+	</tr>
+	<!-- END switch_allow_autologin -->
+	<tr>
+		<td width="50%" class="submit">&nbsp;</td>
+		<td width="25%" class="submit left">
+			{S_HIDDEN_FIELDS}
+			<input type="submit" name="login" value="{L_LOGIN}" />
+		</td>
+		<td width="25%" class="submit right">
+			<a href="{U_SEND_PASSWORD}">{L_SEND_PASSWORD}</a>
 		</td>
 	</tr>
 </table>

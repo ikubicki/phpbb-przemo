@@ -45,6 +45,11 @@ hr {
 	width: 100%;
 }
 
+table.block {
+	border-spacing: 0px;
+	width: 100%;
+}
+
 /* Main table cell colours and backgrounds */
 td.row1 {
 	background-color: #EFEFEF;
@@ -455,6 +460,9 @@ height: 21px; white-space: nowrap; text-align: center; border: 0px solid #91a0ae
 	text-decoration: none;
 	padding: 1px;
 }
+form[name=quicklogin] input[type=text],
+form[name=quicklogin] input[type=password],
+form[name=quicklogin] input[type=submit],
 form[name=quicksearch] input[type=submit],
 form[name=quicksearch] input[type=text],
 form[name=quickchange] select,
@@ -501,6 +509,13 @@ form[name=jumpbox] input {
 	max-height: 250px;
 }
 
+td.row1.left {
+	text-align: left;
+}
+td.row1.right {
+	text-align: right;
+}
+
 td.submit select,
 td.submit textarea,
 td.submit input[type=text],
@@ -527,6 +542,11 @@ td.submit input[type=reset] {
 .posting td textarea {
 	width: 95%;
 }
+.nolength.posting td input[type=text],
+.nolength.posting td input[type=password],
+.nolength.posting td textarea {
+	width: auto;
+}
 .posting td textarea {
 	resize: vertical;
 }
@@ -547,21 +567,25 @@ td.submit input[type=reset] {
     box-shadow: 0 1px 1px #ccc;
 }
 
-.visible tr.row {
-	display: table-row;
-}
-
-.hidden tr.row {
+.hidden tr.row,
+.hidden th span.description,
+.hidden th.label {
 	display: none;
+}
+.hidden th {
+	border-bottom: 0;
+}
+.hidden th a.cattitle {
+	color: #aaa;
 }
 
 .visible a.toggleCategory {
-	background: url(images/desc_order.png) no-repeat center center;
+	background: url(images/asc_order.png) no-repeat center center;
 	padding: 0 5px;
 	text-decoration: none;
 }
 .hidden a.toggleCategory {
-	background: url(images/asc_order.png) no-repeat center center;
+	background: url(images/desc_order.png) no-repeat center center;
 	padding: 0 5px;
 	text-decoration: none;
 }
