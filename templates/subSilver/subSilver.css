@@ -130,6 +130,19 @@ td.cat.label {
 	font-size: 13px;
 	white-space: nowrap;
 }
+th.tools {
+	font-size: 13px;
+	white-space: nowrap;
+	text-align: right;
+}
+th.tools a {
+	font-size: 13px;
+	text-decoration: none;
+	margin-left: 5px;
+}
+th.tools a:hover {
+	text-decoration: underline;
+}
 
 th.thCornerL,
 th.thTop,

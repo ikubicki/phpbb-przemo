@@ -1,23 +1,25 @@
 
 
-<table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0" align="center">
+<h1>{L_VIEWING_PROFILE}</h1>
+<table class="forumline">
 	<tr>
-		<th class="thHead" colspan="2" height="25" nowrap="nowrap">{L_VIEWING_PROFILE}</th>
-	</tr>
-	<tr>
-		<td class="catLeft" width="40%" height="28" align="center"><b><span class="gen">{L_AVATAR}</span></b></td>
-		<td class="catRight" width="60%"><span class="gensmall"><b>
+		<th class="label" width="40%" align="center">
+			<span class="gen">{L_AVATAR}</span>
+		</th>
+		<th class="tools" width="60%">
+			<span class="gensmall">
 		<!-- BEGIN admin -->
-		<a href="{U_ADMIN_EDIT}" target="_blank">{L_EDIT}</a>&nbsp;
-		<a href="{U_ADMIN_PERMISSION}" target="_blank">{L_PERMISSIONS}</a>&nbsp;
+				<a href="{U_ADMIN_EDIT}" target="_blank">{L_EDIT}</a>
+				<a href="{U_ADMIN_PERMISSION}" target="_blank">{L_PERMISSIONS}</a>
 		<!-- END admin -->
 		<!-- BEGIN add_warning -->
-		<a href="{U_ADD_WARNING}">{L_ADD_WARNING}</a>&nbsp;
+				<a href="{U_ADD_WARNING}">{L_ADD_WARNING}</a>&nbsp;
 		<!-- END add_warning -->
 		<!-- BEGIN topic_spy -->
-		<a href="{U_TOPIC_SPY}">{L_TOPIC_SPY}</a>&nbsp;
+				<a href="{U_TOPIC_SPY}">{L_TOPIC_SPY}</a>&nbsp;
 		<!-- END topic_spy -->
-		</b></span></td>
+			</span>
+		</th>
 	</tr>
 	<tr>
 		<td class="row1" height="6" valign="top" align="center">{AVATAR_IMG}<br><span class="postdetails">{POSTER_RANK}{CUSTOM_RANK}{RANK_IMAGE}</span>
@@ -33,7 +35,7 @@
 			</table>
 			<!-- END signature -->
 		</td>
-		<td class="row1" rowspan="2" valign="top">
+		<td class="row1" rowspan="3" valign="top">
 			<table width="100%" border="0" cellspacing="1" cellpadding="3">
 				<tr>
 					<td valign="middle" align="right" nowrap="nowrap"><span class="gen">{L_JOINED}:&nbsp;</span></td>
@@ -160,47 +162,23 @@
 		</td>
 	</tr>
 	<tr> 
+		<th>{L_CONTACT} {USERNAME}</th>
+	</tr>
+	<tr>
 		<td class="row1" valign="top">
 			<table width="100%" border="0" cellspacing="1" cellpadding="3">
-				<tr>
-					<td colspan="2" class="catLeft" align="center" height="28"><b><span class="gen">{L_CONTACT} {USERNAME} </span></b></td>
-				</tr>
 				<tr> 
 					<td valign="middle" align="right" nowrap="nowrap"><span class="gen">{L_EMAIL_ADDRESS}:</span></td>
-					<td class="row1" valign="middle" width="100%"><b><span class="gen">{EMAIL_IMG}</span></b></td>
+					<td valign="middle" width="100%"><b><span class="gen">{EMAIL_IMG}</span></b></td>
 				</tr>
 				<tr> 
 					<td valign="middle" nowrap="nowrap" align="right"><span class="gen">{L_PM}:</span></td>
-					<td class="row1" valign="middle"><b><span class="gen">{PM_IMG}</span></b></td>
+					<td valign="middle"><b><span class="gen">{PM_IMG}</span></b></td>
 				</tr>
-				<!-- BEGIN msn -->
-				<tr> 
-					<td valign="middle" nowrap="nowrap" align="right"><span class="gen">{L_MESSENGER}:</span></td>
-					<td class="row1" valign="middle"><span class="gen">{MSN}</span></td>
-				</tr>
-				<!-- END msn -->
-				<!-- BEGIN yahoo -->
-				<tr> 
-					<td valign="middle" nowrap="nowrap" align="right"><span class="gen">{L_YAHOO}:</span></td>
-					<td class="row1" valign="middle"><span class="gen">{YIM_IMG}</span></td>
-				</tr>
-				<!-- END yahoo -->
-				<!-- BEGIN aim -->
-				<tr>
-					<td valign="middle" nowrap="nowrap" align="right"><span class="gen">{L_AIM}:</span></td>
-					<td class="row1"><table cellspacing="0" cellpadding="0" border="0"><tr><td nowrap="nowrap"><div style="position:relative;height:18px"><div style="position:absolute">{AIM_IMG}</div><div style="position:absolute;left:3px;top:-1px">{AIM_STATUS_IMG}</div></div></td></tr></table></td>
-				</tr>
-				<!-- END aim -->
-				<!-- BEGIN icq -->
-				<tr> 
-					<td valign="middle" nowrap="nowrap" align="right"><span class="gen">{L_ICQ_NUMBER}:</span></td>
-					<td class="row1"><table cellspacing="0" cellpadding="0" border="0"><tr><td nowrap="nowrap"><div style="position:relative;height:18px"><div style="position:absolute">{ICQ_IMG}</div><div style="position:absolute;left:3px;top:-1px">{ICQ_STATUS_IMG}</div></div></td></tr></table></td>
-				</tr>
-				<!-- END icq -->
 				<!-- BEGIN list -->
 				<tr>
 					<td valign="middle" nowrap="nowrap" align="right"><span class="gen">{L_USERGROUPS}:</span></td>
-					<td class="row1" valign="middle"><span class="gen">
+					<td valign="middle"><span class="gen">
 					<!-- BEGIN groups -->
 					{list.groups.SEPARATOR}<a href="{list.groups.U_GROUP_NAME}" class="nav"{list.groups.GROUP_COLOR}{list.groups.GROUP_STYLE}><b>{list.groups.L_GROUP_NAME}</b></a>
 					<!-- END groups -->
