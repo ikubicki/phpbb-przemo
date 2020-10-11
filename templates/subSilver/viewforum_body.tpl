@@ -119,8 +119,8 @@ if(GetCookie('imp_topics3_{FORUM_ID}') == '2') ShowHide('imp_topics_{FORUM_ID}',
 		</td>
 		<td class="submit right">
 <!-- BEGIN ignore_form -->
-			<input type="submit" name="ignore" class="liteoption" value="{ignore_form.L_IGNORE_MARK}"<!-- BEGIN overlib --> onMouseOver="return overlib('<left>{ignore_form.overlib.L_IGNORE_EXPLAIN}</left>', ol_offsetx=-203, ol_offsety=8, CAPTION, '<center>{ignore_form.L_IGNORE_MARK}</center>')" onMouseOut="nd();"<!-- END overlib -->>
 			<a href="#" onclick="setCheckboxes('ignoreform', true); return false;">{ignore_form.L_MARK_ALL}</a>
+			<input type="submit" name="ignore" class="liteoption" value="{ignore_form.L_IGNORE_MARK}"<!-- BEGIN overlib --> onMouseOver="return overlib('<left>{ignore_form.overlib.L_IGNORE_EXPLAIN}</left>', ol_offsetx=-203, ol_offsety=8, CAPTION, '<center>{ignore_form.L_IGNORE_MARK}</center>')" onMouseOut="nd();"<!-- END overlib -->>
 			</form>
 <!-- END ignore_form -->
 		</td>
