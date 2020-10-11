@@ -1,5 +1,6 @@
 body { 
 	background-color: #0f82b3;
+	/* background: linear-gradient(45deg, #fff, #999, #0f82b3, #0f82b3, #666); */
 	margin: 0;
 	font-size : 13px;
 }
@@ -72,9 +73,9 @@ td.row_helped {
 	background-color: #F0EDDE;
 }
 
-td.row1 .signature .postbody,
-td.row2 .signature .postbody{
-	opacity: .5;
+td.row1.signature .postbody,
+td.row2.signature .postbody{
+	color: #888;
 	font-size: 13px;
 }
 
@@ -275,6 +276,9 @@ div.heading .maintitle {
 	color: #084162;
 	text-shadow: 0 -1px 0 #049bd2;
 	max-width: 500px;
+
+	color: #333;
+	text-shadow: 0 -1px 0px #777;
 }
 
 a[name] {
@@ -491,6 +495,7 @@ form[name=jumpbox] input {
 }
 #shouts.shoutbox div.messages p:hover {
 	background-color: #04739e;
+	background: rgba(0,0,0,0.1);
 }
 #shouts.shoutbox div.messages p a {
 	color: #084162;

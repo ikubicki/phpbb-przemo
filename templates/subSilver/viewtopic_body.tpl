@@ -43,7 +43,7 @@ var img_addr = '{IMG_ADDR}';
    <!-- BEGIN postrow -->
    <!-- BEGIN post_tree -->
 	<tr>
-		<td class="{postrow.ROW_CLASS}" valign="top" colspan="2">
+		<td class="{postrow.ROW_CLASS}" valign="top" colspan="2" <!-- BEGIN signature -->rowspan="2"<!-- END signature -->>
 			<table cellspacing="0" cellpadding="0" width="100%">
 				<tr>
 					<td class="{postrow.ROW_CLASS}" width="{postrow.post_tree.TREE_WIDTH}"></td>
@@ -51,7 +51,7 @@ var img_addr = '{IMG_ADDR}';
 						<table cellspacing="1" cellpadding="3" border="0" class="forumline">
    <!-- END post_tree -->
    <tr>
-      <td align="left" valign="top" class="{postrow.ROW_CLASS}" nowrap="nowrap" width="150">
+      <td align="left" valign="top" class="{postrow.ROW_CLASS}" nowrap="nowrap" width="150" <!-- BEGIN signature -->rowspan="2"<!-- END signature -->>
          <span class="name"><a name="{postrow.U_POST_ID}"></a>
          <b>{postrow.POSTER_NAME}</b><!-- BEGIN gender -->&nbsp;<img src="{postrow.gender.GENDER}" alt="" border="0"><!-- END gender -->
 		 <br>
@@ -167,11 +167,6 @@ var img_addr = '{IMG_ADDR}';
             <tr>
                <td height="100%" valign="top" colspan="2" {postrow.QUOTE_USERNAME}><span class="postbody">{postrow.MESSAGE}{postrow.ATTACHMENTS}</span></td>
             </tr>
-			<!-- BEGIN signature -->
-			<tr>
-				<td colspan="2" valign="bottom" align="left" class="signature"><span class="postbody">{postrow.SIGNATURE}{postrow.SIG_IMAGE}</span></td>
-			</tr>
-			<!-- END signature -->
 			<!-- BEGIN post_edited -->
 			<tr>
 				<td colspan="2" align="right"><span class="gensmall">{postrow.EDITED_MESSAGE}&nbsp;&nbsp;{postrow.post_edited.VIEW_POST_HISTORY}</span></td>
@@ -180,6 +175,13 @@ var img_addr = '{IMG_ADDR}';
          </table>
       </td>
    </tr>
+   <!-- BEGIN signature -->
+   <tr>
+      <td class="{postrow.ROW_CLASS} signature">
+         <span class="postbody">{postrow.SIGNATURE}{postrow.SIG_IMAGE}</span>
+      </td>
+   </tr>
+   <!-- END signature -->
 	<tr>
 		<td class="{postrow.ROW_CLASS}" align="left" valign="middle">
 			<!-- BEGIN top -->
