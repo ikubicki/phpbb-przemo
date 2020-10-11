@@ -1604,6 +1604,7 @@ $template->assign_vars(array(
 	'L_TOPICS' => $lang['Topics'],
 	'L_POSTS' => $lang['Posts'],
 	'L_SEARCH_POST_TIME' => $lang['Search_post_time'],
+	'L_SEARCH_POST_TIME_E' => $lang['Search_post_time_e'],
 
 	'U_SEARCH_USERS' => '<a href="' . append_sid("seeker.$phpEx") . '">' . $lang['Seeker'] . '</a>',
 	'FOLDER_IMG' => $images['folder'],

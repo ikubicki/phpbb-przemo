@@ -40,11 +40,11 @@ function setCheckboxes(the_form, do_check)
 <!-- END switch_show_hide -->
 <table border="0" cellpadding="4" cellspacing="1" width="100%" class="forumline">
 	<tr>
-		<th colspan="{SPAN_I}" align="center" height="25" class="thCornerL" nowrap="nowrap"<!-- BEGIN switch_show_hide --> onclick="javascript:ShowHide('imp_topics_{FORUM_ID}','imp_topics2_{FORUM_ID}','imp_topics3_{FORUM_ID}');" style="cursor: pointer" title="{L_VHIDE}"<!-- END switch_show_hide -->>&nbsp;{L_TOPICS}&nbsp;</th>
-		<th width="50" align="center" class="thTop" nowrap="nowrap">&nbsp;{L_REPLIES}&nbsp;</th>
-		<th width="100" align="center" class="thTop" nowrap="nowrap">&nbsp;{L_AUTHOR}&nbsp;</th>
-		<th width="50" align="center" class="thTop" nowrap="nowrap">&nbsp;{L_VIEWS}&nbsp;</th>
-		<th width="150" align="center" class="thCornerR" nowrap="nowrap">&nbsp;{L_LASTPOST}&nbsp;</th>
+		<th colspan="{SPAN_I}" align="center" class="label" <!-- BEGIN switch_show_hide --> onclick="javascript:ShowHide('imp_topics_{FORUM_ID}','imp_topics2_{FORUM_ID}','imp_topics3_{FORUM_ID}');" style="cursor: pointer" title="{L_VHIDE}"<!-- END switch_show_hide -->>{L_TOPICS}</th>
+		<th width="50" align="center" class="label">{L_REPLIES}</th>
+		<th width="100" align="center" class="label">{L_AUTHOR}</th>
+		<th width="50" align="center" class="label">{L_VIEWS}</th>
+		<th width="150" align="center" class="label">{L_LASTPOST}</th>
 	</tr>
 	<!-- BEGIN important_topics -->
 	<tr>
@@ -77,29 +77,29 @@ if(GetCookie('imp_topics3_{FORUM_ID}') == '2') ShowHide('imp_topics_{FORUM_ID}',
 
 <table border="0" cellpadding="4" cellspacing="1" width="100%" class="forumline">
 	<tr>
-		<th colspan="{SPAN_I}" align="center" class="thCornerL" style="height: 24px;" nowrap="nowrap">&nbsp;{L_NORMAL_TOPICS}&nbsp;</th>
-		<th width="50" align="center" class="thTop" style="height: 24px;" nowrap="nowrap">&nbsp;{L_REPLIES}&nbsp;</th>
-		<th width="100" align="center" class="thTop" style="height: 24px;" nowrap="nowrap">&nbsp;{L_AUTHOR}&nbsp;</th>
-		<th width="50" align="center" class="thTop" style="height: 24px;" nowrap="nowrap">&nbsp;{L_VIEWS}&nbsp;</th>
-		<th width="150" align="center" class="thCornerR" style="height: 24px;" nowrap="nowrap">&nbsp;{L_LASTPOST}&nbsp;</th>
+		<th colspan="{SPAN_I}" align="center" class="label">{L_NORMAL_TOPICS}</th>
+		<th width="50" align="center" class="label">{L_REPLIES}</th>
+		<th width="100" align="center" class="label">{L_AUTHOR}</th>
+		<th width="50" align="center" class="label">{L_VIEWS}</th>
+		<th width="150" align="center" class="label">{L_LASTPOST}</th>
 	</tr>
 	<!-- END normal_topics -->
-	<tr>
+	<tr class="row">
 		<td class="row1" align="center" valign="middle" width="20"><img src="{topicrow.TOPIC_FOLDER_IMG}" alt=""></td>
 		<!-- BEGIN icons -->
 		<td class="row1" align="center" valign="middle" width="16">{topicrow.ICON}</td>
 		<!-- END icons -->
-		<td class="{topicrow.ROW}" width="100%" {ONMOUSE_COLORS}><span class="topictitle">{topicrow.NEWEST_POST_IMG}{topicrow.TOPIC_ATTACHMENT_IMG}{topicrow.TOPIC_TYPE}
+		<td class="{topicrow.ROW}" width="100%" ><span class="topictitle">{topicrow.NEWEST_POST_IMG}{topicrow.TOPIC_ATTACHMENT_IMG}{topicrow.TOPIC_TYPE}
 		<a href="{topicrow.U_VIEW_TOPIC}" class="topictitle"{topicrow.TOPIC_COLOR}
 		<!-- BEGIN title_overlib -->
 		 onMouseOver="return overlib('<left>{topicrow.title_overlib.UNREAD_POSTS}<fieldset><legend><b>{topicrow.title_overlib.L_FIRST_POST}</b></legend>{topicrow.title_overlib.O_TEXT1}</fieldset><!-- BEGIN last --><fieldset><legend><b>{topicrow.title_overlib.L_LAST_POST}</b></legend>{topicrow.title_overlib.last.O_TEXT2}</fieldset><!-- END last --></left>', ol_width=400, ol_offsetx=10, ol_offsety=10, CAPTION, '<center>{topicrow.title_overlib.O_TITLE}</center>')" onMouseOut="nd();"<!-- END title_overlib -->>{topicrow.TOPIC_TITLE}</a></span><span class="gensmall">{topicrow.TOPIC_TITLE_E}<!-- BEGIN style -->{topicrow.style.TOPIC_STYLE}<!-- END style --></span><span class="gensmall">{topicrow.TOPIC_EXPIRE}</span><span class="gensmall"><br>{topicrow.GOTO_PAGE}</span></td>
 		<!-- BEGIN ignore_checkbox -->
 		<td class="row1" align="right"><input type="checkbox" name="list_ignore[]" value="{topicrow.TOPIC_ID}"></td>
 		<!-- END ignore_checkbox -->
-		<td class="row2" {ONMOUSE2_COLORS}align="center" valign="middle"><span class="postdetails">{topicrow.REPLIES}</span></td>
-		<td class="row1" {ONMOUSE_COLORS}align="center" valign="middle"><span class="name">{topicrow.TOPIC_AUTHOR}</span></td>
-		<td class="row2" {ONMOUSE2_COLORS}align="center" valign="middle"><span class="postdetails">{topicrow.VIEWS}</span></td>
-		<td class="row1" {ONMOUSE_COLORS}align="center" valign="middle" nowrap="nowrap"><span class="postdetails">{topicrow.LAST_POST_TIME}<br>{topicrow.LAST_POST_AUTHOR} {topicrow.LAST_POST_IMG}</span></td>
+		<td class="row1" align="center" valign="middle"><span class="postdetails">{topicrow.REPLIES}</span></td>
+		<td class="row1" align="center" valign="middle"><span class="name">{topicrow.TOPIC_AUTHOR}</span></td>
+		<td class="row1" align="center" valign="middle"><span class="postdetails">{topicrow.VIEWS}</span></td>
+		<td class="row1" align="center" valign="middle" nowrap="nowrap"><span class="postdetails">{topicrow.LAST_POST_TIME}<br>{topicrow.LAST_POST_AUTHOR} {topicrow.LAST_POST_IMG}</span></td>
 	</tr>
 	<!-- END topicrow -->
 
@@ -123,9 +123,9 @@ if(GetCookie('imp_topics3_{FORUM_ID}') == '2') ShowHide('imp_topics_{FORUM_ID}',
 </form>
 <!-- END ignore_form -->
 
-<table border="0" cellpadding="4" cellspacing="1" width="100%" class="forumline">
+<table class="forumline">
 	<tr>
-		<td class="catBottom" align="center" valign="middle" height="28"><form method="post" action="{S_POST_DAYS_ACTION}"><span class="genmed">{L_DISPLAY_TOPICS}:&nbsp;{S_SELECT_TOPIC_DAYS}&nbsp;<input type="submit" class="liteoption" value="{L_GO}" name="submit"/></span></form></td>
+		<td class="submit" valign="middle"><form method="post" action="{S_POST_DAYS_ACTION}"><span class="genmed">{L_DISPLAY_TOPICS}:&nbsp;{S_SELECT_TOPIC_DAYS}&nbsp;<input type="submit" class="liteoption" value="{L_GO}" name="submit"/></span></form></td>
 	</tr>
 </table>
 
@@ -137,7 +137,7 @@ if(GetCookie('imp_topics3_{FORUM_ID}') == '2') ShowHide('imp_topics_{FORUM_ID}',
 		<td align="left" valign="middle"><a href="{U_POST_NEW_TOPIC}"><img src="{POST_IMG}" border="0" alt="{L_POST_NEW_TOPIC}"></a></td>
 		<td align="right" nowrap="nowrap">&nbsp;
 		<!-- BEGIN switch_search_for -->
-		<form method="post" action="{SEARCH_ACTION}"><input type="hidden" name="search_where" value="f{FORUM_ID}"><input type="hidden" name="show_results" value="topics"><input type="hidden" name="search_terms" value="any"><input type="hidden" name="search_fields" value="all"><span class="gensmall">{L_SEARCH_FOR}:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br></span><input class="post" onFocus="Active(this)" onBlur="NotActive(this)" type="text" name="search_keywords" value="" size="20" maxlength="150">&nbsp;<input type="submit" name="submit" value="{L_GO}" class="liteoption"></form>
+		<form method="post" action="{SEARCH_ACTION}" name="quicksearch"><input type="hidden" name="search_where" value="f{FORUM_ID}"><input type="hidden" name="show_results" value="topics"><input type="hidden" name="search_terms" value="any"><input type="hidden" name="search_fields" value="all"><span class="gensmall">{L_SEARCH_FOR}:</span> <input class="post" onFocus="Active(this)" onBlur="NotActive(this)" type="text" name="search_keywords" value="" size="20" maxlength="150">&nbsp;<input type="submit" name="submit" value="{L_GO}" class="liteoption"></form>
 		<!-- END switch_search_for -->
 		</td>
 	</tr>

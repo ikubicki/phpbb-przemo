@@ -21,7 +21,6 @@
 <!-- END warnings -->      
 <!-- END disable_viewonline -->
       {CLICK_HERE_TO_VIEW}
-	  <script>if (typeof shouts != 'undefined') {document.write('<a href="javascript:void()" onclick="shouts.toggle()" class="shoutbox">{L_SHOUTBOX}</a>')}</script>
    </span>
    <div style="float:right">
       <span class="copyright">{GENERATE_TIME}</span>

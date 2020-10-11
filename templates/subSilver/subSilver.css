@@ -23,6 +23,13 @@ hr {
 	border-top-width: 1px;
 }
 
+.bodyline h1 {
+	color: #006699;
+	font-size: 25px;
+	font-weight: normal;
+	letter-spacing: -1px;
+}
+
 /* This is the border line & background colour round the entire page */
 .bodyline {
 	background-color: #fff;
@@ -34,9 +41,8 @@ hr {
 /* This is the outline round the main forum tables */
 .forumline {
 	background-color: #A9B8C2;
-	border: solid #006699 0px;
-	border-top-width: 5px;
 	border-spacing: 0px;
+	width: 100%;
 }
 
 /* Main table cell colours and backgrounds */
@@ -68,12 +74,6 @@ td.row2 .signature .postbody{
 }
 
 /* Header cells - the blue and silver gradient backgrounds */
-th {
-	color: #ffa34f;
-	font-weight: bold;
-	background-color: #0f82b3;
-	padding: 10px;
-}
 
 td.catHead,
 td.catSides,
@@ -89,12 +89,24 @@ td.catBottom {
 	The names indicate which sides the border will be on.
 	Don't worry if you don't understand this, just ignore it :-)
 */
+th,
 td.cat,
 td.catHead,
 td.catBottom,
 td.rowpic {
-	background-color: #c8d0d7;
+	text-align: left;
+	font-weight: normal;
+	font-size: 18px;
+	background-color: #fff;
 	padding: 10px;
+	border-bottom: 1px solid #c8d0d7;
+}
+td.submit {
+	border-top: 1px solid #fff;
+	background-color: #e1e4e4;
+	background: linear-gradient(#f5f5f5, #fff, #fff);
+	padding: 10px;
+	text-align: center;
 }
 th.thHead,
 th.thSides,
@@ -104,6 +116,19 @@ th.thBottom {
 	font-weight: bold;
 	border: #fff;
 	padding: 10px;
+}
+th .description,
+td.cat .description {
+	color: #555;
+	opacity: .5;
+	margin-top : 10px;
+	display: block;
+}
+
+th.label,
+td.cat.label {
+	font-size: 13px;
+	white-space: nowrap;
 }
 
 th.thCornerL,
@@ -234,12 +259,15 @@ a[name] {
 }
 
 /* Forum category titles */
-.cattitle		{
-	font-size: 13px; 
-	letter-spacing: 1px;
+.cattitle {
+	letter-spacing: -1px;
 	color: #73787e;
 }
-a.cattitle		{ text-decoration: none; color : #006699; }
+.cattitle,
+a.cattitle {
+	text-decoration: none;
+	color: #006699;
+}
 a.cattitle:hover	{ text-decoration: underline; }
 
 /* Forum title: Text and link to the forums used in: index.php */
@@ -252,7 +280,10 @@ a.forumlink:hover	{ text-decoration: underline; color : #DD6900; }
 a.nav	{ text-decoration: none; color : #006699; }
 a.nav:hover	{ text-decoration: underline; }
 
-.catHead a.nav	{ text-decoration: none; color : #fff; }
+.catHead a.nav	{
+	text-decoration: none;
+	color: #fff;
+}
 
 /* titles for the topics: could specify viewed link colour too */
 .topictitle,h1,h2	{ font-weight: bold; font-size: 15px; color : #000000; }
@@ -404,38 +435,25 @@ height: 21px; white-space: nowrap; text-align: center; border: 0px solid #91a0ae
 	text-decoration: none;
 	padding: 1px;
 }
-
-.vote {
-	margin-left: 10px;
-	position: relative;
-	top: 2px;
-}
-
-.vote .count {
-	line-height: 16px;
-	font-size: 14px;
-	position: relative;
-	top: -2px;
-}
-.vote a {
-	line-height: 16px;
-	font-size: 25px;
-}
-
-.vote a.upvote:hover,
-.vote a.downvote:hover {
+form[name=quicksearch] input[type=submit],
+form[name=quicksearch] input[type=text],
+form[name=quickchange] select,
+form[name=jumpbox] select,
+form[name=jumpbox] input {
+	border: 1px solid #ddd;
+	padding: 5px;
+	background: #fff;
 	color: #333;
+	box-shadow: 0 1px 1px #ccc;
 }
 
-.vote a.upvote {
-	color: green;
-	text-decoration: none;
+form[name=quicksearch] input[type=submit],
+form[name=jumpbox] input {
+	padding: 5px 10px;
 }
 
-.vote a.downvote {
-	color: red;
-	text-decoration: none;
-}
+/*-- shoutbox --*/
+
 #shouts.shoutbox div.messages {
 	border-bottom: 1px solid #04739e;
 }
@@ -457,4 +475,72 @@ height: 21px; white-space: nowrap; text-align: center; border: 0px solid #91a0ae
 }
 #shouts.shoutbox h2 {
 	text-shadow: 0 1px 0 #084162;
+}
+.row1 img,
+.row2 img {
+	max-height: 250px;
+}
+td.submit select,
+td.submit textarea,
+td.submit input[type=text],
+td.submit input[type=password],
+td.submit input[type=submit],
+td.submit input[type=button],
+td.submit input[type=reset] {
+	background: #fff;
+	box-shadow: 0 1px 1px #ccc;
+	padding: 5px;
+	border: 1px solid #d1d1d1;
+}
+.posting td select,
+.posting td input[type=text],
+.posting td input[type=password],
+.posting td textarea {
+	background: #fff;
+	box-shadow: 0 1px 1px #ccc;
+	padding: 10px 20px;
+	border: 1px solid #d1d1d1;
+}
+.posting td input[type=text],
+.posting td input[type=password],
+.posting td textarea {
+	width: 95%;
+}
+.posting td textarea {
+	resize: vertical;
+}
+.posting input[type=submit],
+.posting input[type=button],
+.posting input[type=reset] {
+	background: #fff;
+	box-shadow: 0 1px 1px #ccc;
+	padding: 5px;
+	border: 1px solid #d1d1d1;
+}
+.posting .catBottom input[type=submit] {
+	border: 1px solid #ccc;
+	box-shadow: 0 1px 1px #666;
+	margin-right: 5px;
+}
+.posting #cke_message {
+    box-shadow: 0 1px 1px #ccc;
+}
+
+.visible tr.row {
+	display: table-row;
+}
+
+.hidden tr.row {
+	display: none;
+}
+
+.visible a.toggleCategory {
+	background: url(images/desc_order.png) no-repeat center center;
+	padding: 0 5px;
+	text-decoration: none;
+}
+.hidden a.toggleCategory {
+	background: url(images/asc_order.png) no-repeat center center;
+	padding: 0 5px;
+	text-decoration: none;
 }

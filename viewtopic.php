@@ -2466,7 +2466,7 @@ for($i = 0; $i < $total_posts; $i++)
 
 	$user_agent = ($board_config['cagent'] && $postrow[$i]['user_agent'] && !$ignore_this_post && $show_post && $userdata['cagent']) ? unserialize($postrow[$i]['user_agent']) : '';
 
-	$template->assign_block_vars('postrow', array(
+	$template->assign_block_vars('postrow', [
 		'ICON' => $icon,
 		'POST_EXPIRE' => $post_expire_date,
 		'ROW_COLOR' => '#' . (!($i % 2)) ? $theme['td_color1'] : $theme['td_color2'],
@@ -2514,8 +2514,8 @@ for($i = 0; $i < $total_posts; $i++)
 		'REPORT' => $report,
 		'NEW_POST' => ($new_post) ? $lang['unread_post'] : '',
 		'U_MINI_POST' => $mini_post_url,
-		'U_POST_ID' => $postrow_post_id)
-	);
+		'U_POST_ID' => $postrow_post_id
+	]);
 
 	if ( $postrow[$i]['post_parent'] )
 	{

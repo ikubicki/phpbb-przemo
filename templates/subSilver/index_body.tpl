@@ -175,7 +175,7 @@ if(GetCookie('hm3') == '2') ShowHide('hm', 'hm2', 'hm3');
    <!-- BEGIN disable_viewonline -->
    <table width="100%" cellpadding="3" cellspacing="1" border="0" class="forumline">
       <tr>
-         <td class="catHead" colspan="2" height="28"><span class="cattitle"><a href="{U_VIEWONLINE}" class="cattitle" title="{L_VIEW_DETAILED}">{L_WHO_IS_ONLINE}</a></span></td>
+         <th colspan="2"><span class="cattitle"><a href="{U_VIEWONLINE}" class="cattitle" title="{L_VIEW_DETAILED}">{L_WHO_IS_ONLINE}</a></span></th>
       </tr>
       <tr>
          <td class="row1" {ONMOUSE_COLORS}align="center" valign="middle" rowspan="2">

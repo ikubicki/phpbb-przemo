@@ -41,6 +41,9 @@ function build_index($cur = 'Root', $cat_break = false, &$forum_moderators, $rea
 {
 	global $userdata, $db, $lang, $template, $phpEx, $board_config, $lang, $images, $theme;
 	global $tree, $phpEx, $idx_buffer, $readhist_buffer, $userdata, $HTTP_COOKIE_VARS, $unique_cookie_name;
+
+	static $handled = [];
+
 	// init
 	$display = false;
 
@@ -115,8 +118,12 @@ function build_index($cur = 'Root', $cat_break = false, &$forum_moderators, $rea
 		$template->assign_block_vars('catrow.tablehead', array(
 			'CAT_ID' => $cur,
 			'L_FORUM' => ($athis < 0) ? $lang['Forum'] : get_object_lang($cur, 'name'),
+			'U_FORUM' => append_sid("index.$phpEx?" . POST_CAT_URL . "=" . substr($cur, 1)),
+			'CAT_DESCRIPTION' => get_object_lang($cur, 'desc'),
 			'INC_SPAN' => $max_level + 2)
 		);
+
+		$handled[] = $cur;
 		if ( $cur != 'Root' )
 		{
 			$template->assign_block_vars('catrow.tablehead.br', array('CAT_ID' => $cur));
@@ -145,48 +152,50 @@ function build_index($cur = 'Root', $cat_break = false, &$forum_moderators, $rea
 			// display a cat row
 			$cat = $tree['data'][$athis];
 			$cat_id = $tree['id'][$athis];
+			
+			if (!in_array(POST_CAT_URL . $cat_id, $handled)) {
 
-			// get the class colors
-			$class_catLeft = 'catLeft';
-			$class_cat = 'cat';
-			$class_rowpic = 'rowpic';
+				// get the class colors
+				$class_catLeft = 'catLeft';
+				$class_cat = 'cat';
+				$class_rowpic = 'rowpic';
 
-			// send to template
-			$template->assign_block_vars('catrow', array());
-			$template->assign_block_vars('catrow.cathead', array(
-				'CAT_ID' => $cat_id,
-				'CAT_TITLE'	=> get_object_lang($cur, 'name'),
-				'CLASS_CATLEFT'	=> $class_catLeft,
-				'CLASS_CAT'	=> $class_cat,
-				'CLASS_ROWPIC'	=> $class_rowpic,
-				'INC_SPAN'	=> $max_level - $level + 2,
-				'U_VIEWCAT'	=> append_sid("index.$phpEx?" . POST_CAT_URL . "=$cat_id"))
-			);
-
-
-			// add indentation to the display
-			for($k = 1; $k <= $level; $k++)
-			{
-				$template->assign_block_vars('catrow.cathead.inc', array(
-					'INC_CLASS' => ($k % 2) ? 'row1' : 'row2')
-				);
-			}
-			if (!empty($cat['cat_desc']))
-			{
+				// send to template
 				$template->assign_block_vars('catrow', array());
-				$template->assign_block_vars('catrow.cattitle', array(
+				$template->assign_block_vars('catrow.cathead', array(
+					'CAT_ID' => $cat_id,
+					'CAT_TITLE'	=> get_object_lang($cur, 'name'),
 					'CAT_DESCRIPTION' => get_object_lang(POST_CAT_URL . $cat_id, 'desc'),
-					'INC_SPAN_ALL' => $max_level - $level + 5)
+					'CLASS_CATLEFT'	=> $class_catLeft,
+					'CLASS_CAT'	=> $class_cat,
+					'CLASS_ROWPIC'	=> $class_rowpic,
+					'INC_SPAN'	=> $max_level - $level + 2,
+					'U_VIEWCAT'	=> append_sid("index.$phpEx?" . POST_CAT_URL . "=$cat_id"))
 				);
+				$handled[] = POST_CAT_URL . $cat_id;
 				// add indentation to the display
 				for($k = 1; $k <= $level; $k++)
 				{
-					$template->assign_block_vars('catrow.cattitle.inc', array(
+					$template->assign_block_vars('catrow.cathead.inc', array(
 						'INC_CLASS' => ($k % 2) ? 'row1' : 'row2')
 					);
 				}
+				if (!empty($cat['cat_desc']))
+				{
+					$template->assign_block_vars('catrow', array());
+					$template->assign_block_vars('catrow.cattitle', array(
+						'CAT_DESCRIPTION' => get_object_lang(POST_CAT_URL . $cat_id, 'desc'),
+						'INC_SPAN_ALL' => $max_level - $level + 5)
+					);
+					// add indentation to the display
+					for($k = 1; $k <= $level; $k++)
+					{
+						$template->assign_block_vars('catrow.cattitle.inc', array(
+							'INC_CLASS' => ($k % 2) ? 'row1' : 'row2')
+						);
+					}
+				}
 			}
-
 			// something displayed
 			$display = true;
 		}
@@ -454,6 +463,7 @@ function build_index($cur = 'Root', $cat_break = false, &$forum_moderators, $rea
 				'INC_SPAN' => $max_level- $level+1,
 				'INC_CLASS'	=> ( !($level % 2) ) ? 'row1' : 'row2')
 			);
+			$handled[] = 'f' . $id;
 
 			// add indentation to the display
 			for($k=1; $k <= $level; $k++)

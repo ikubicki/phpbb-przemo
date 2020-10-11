@@ -9,7 +9,7 @@
 
 	<tr> 
 		<td class="row1"><span class="gen"><b>{L_OPTIONS}</b></span></td> 
-	    <td class="row2" nowrap="nowrap"><input type="submit" name="add_attachment_box" value="{L_ADD_ATTACHMENT_TITLE}" class="liteoption">
+	    <td class="row1" nowrap="nowrap"><input type="submit" name="add_attachment_box" value="{L_ADD_ATTACHMENT_TITLE}" class="liteoption">
 <!-- END show_apcp -->
 	<!-- BEGIN switch_posted_attachments -->
 		&nbsp; <input type="submit" name="posted_attachments_box" value="{L_POSTED_ATTACHMENTS}" class="liteoption">

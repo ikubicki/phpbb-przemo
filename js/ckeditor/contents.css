@@ -93,6 +93,10 @@ img.left
 	padding: 5px;
 }
 
+img {
+	max-height: 250px;
+}
+
 pre
 {
 	white-space: pre-wrap; /* CSS 2.1 */

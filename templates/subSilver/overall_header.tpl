@@ -28,10 +28,6 @@
 	report = window.open('{switch_report_popup.U_REPORT_POPUP}', '_phpbbreport', 'HEIGHT={switch_report_popup.S_HEIGHT}, resizable=yes, scrollbars=yes, WIDTH={switch_report_popup.S_WIDTH}');
 	report.focus();
 	<!-- END switch_report_popup -->
-	var rmw_max_width = 400;
-	var rmw_border_1 = '0px solid {T_BODY_LINK}';
-	var rmw_border_2 = '0px dotted {T_BODY_LINK}';
-	var rmw_image_title = '';
 	var img_addr = '{IMG_ADDR}';
 	//-->
 	</script>
@@ -40,7 +36,6 @@
 	<!-- BEGIN overlib -->
 	<script language="JavaScript" type="text/javascript" src="templates/{STYLE_NAME}/overlib.js"><!-- overLIB (c) Erik Bosrup --></script>
 	<!-- END overlib -->
-	<script language="JavaScript" type="text/javascript" src="images/rmw_jslib.js"></script>
 </head>
 <body bgcolor="{T_BODY_BGCOLOR}" text="{T_BODY_TEXT}" link="{T_BODY_LINK}" vlink="{T_BODY_VLINK}" onload="focus_field('focus');">
 <!-- BEGIN body_with_loading -->

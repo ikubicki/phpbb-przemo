@@ -384,7 +384,7 @@ class attach_parent
 			}
 		}
 
-		$this->num_attachments = count($this->attachment_list);
+		$this->num_attachments = $this->attachment_list ? count($this->attachment_list) : 0;
 		
 		if( ($submit) && ($mode != 'vote') )
 		{
@@ -932,7 +932,7 @@ class attach_parent
 
 		$attachments = array();
 
-		if ( count($this->attachment_list) > 0 )
+		if ($this->attachment_list && count($this->attachment_list) > 0)
 		{
 			if (intval($attach_config['show_apcp']))
 			{
@@ -982,7 +982,7 @@ class attach_parent
 			);
 		}
 
-		if (($this->posted_attachments_body) && ( count($this->attachment_list) > 0 ) )
+		if (($this->posted_attachments_body) && ($this->attachment_list && count($this->attachment_list) > 0))
 		{
 			init_display_template('attachbody', '{POSTED_ATTACHMENTS_BODY}', 'posted_attachments_body.tpl');
 

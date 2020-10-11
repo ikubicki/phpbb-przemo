@@ -962,7 +962,8 @@ $lang['unread_post'] = 'Unread post';
 $lang['refresh'] = 'Refresh';
 $lang['new_board_topic'] = 'On the forum %s user %s post new topic: %s';
 $lang['new_board_post'] = 'On the forum %s user %s post reply in topic: %s';
-$lang['Search_post_time'] = 'Show posts last:</span><br /><span class="gensmall">It shows posted posts before choosing time. You can set shows method Topics and Posts';
+$lang['Search_post_time'] = 'Show posts last';
+$lang['Search_post_time_e'] = 'It shows posted posts before choosing time. You can set shows method Topics and Posts';
 $lang['user_not_allowpm'] = 'You can not send private message to this user because he has disabled private messaging';
 $lang['open_all_new_window'] = 'Open all links in new windows';
 

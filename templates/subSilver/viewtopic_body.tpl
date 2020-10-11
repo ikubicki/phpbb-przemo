@@ -1,13 +1,13 @@
 <script type="text/javascript">
 //
 <!--
-var rmw_max_width = 400;
-var rmw_border_1 = '0px solid {T_BODY_LINK}';
-var rmw_border_2 = '0px dotted {T_BODY_LINK}';
-var rmw_image_title = '';
 var img_addr = '{IMG_ADDR}';
 //-->
 </script>
+
+
+<script src="/modules/votes/index.js"></script>
+<style>@import url('modules/votes/main.css')</style>
 <br>
 <table width="100%" cellspacing="2" cellpadding="2" border="0">
    <tr> 
@@ -15,25 +15,25 @@ var img_addr = '{IMG_ADDR}';
    </tr>
 </table>
 
+<h1 {TOPIC_COLOR}>{TOPIC_TITLE} {IGNORE_STATUS}</h1>
 <table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
-	<tr align="right">
 	<!-- BEGIN topic_action -->
-	<th class="catHead" align="left" nowrap="nowrap"><span class="gensmall">{topic_action.TOPIC_ACTION} {topic_action.L_WHO}: <a href="{topic_action.PROFILE_URL}"><b>{topic_action.USERNAME}</b></a><br>{topic_action.DATE}
+	<tr align="right">
+	<th class="catHead" align="left" colspan="2" nowrap="nowrap">
+      <span class="gensmall">
+         {topic_action.TOPIC_ACTION} {topic_action.L_WHO}: <a href="{topic_action.PROFILE_URL}"><b>{topic_action.USERNAME}</b></a><br />
+         {topic_action.DATE}
 	<!-- BEGIN topic_action_delete -->   
-	<b><a href="{topic_action.topic_action_delete.U_DELETE_ACTION}" title="{topic_action.topic_action_delete.DELETE_TITLE}">X</a></b>
+	      <b><a href="{topic_action.topic_action_delete.U_DELETE_ACTION}" title="{topic_action.topic_action_delete.DELETE_TITLE}">X</a></b>
 	<!-- END topic_action_delete -->
-	</span></th>
-	<th class="catHead" align="right" height="28">
-	<!-- END topic_action -->
-	<!-- BEGIN switch_no_topic_action -->
-	<th colspan="2" class="catHead" align="right" height="28">
-	<!-- END switch_no_topic_action -->
-	<a class="nav" href="{U_VIEW_TOPIC}"{TOPIC_COLOR}>{TOPIC_TITLE}</a>{IGNORE_STATUS}</th>
+	   </span>
+   </th>
    </tr>
+	<!-- END topic_action -->
    {POLL_DISPLAY} 
    <tr>
-      <td class="cat" width="150" height="26" nowrap="nowrap"><span class="cattitle">{L_AUTHOR}</span></td>
-      <td class="cat" nowrap="nowrap"><span class="cattitle">{L_MESSAGE}</span></td>
+      <th class="label">{L_AUTHOR}</th>
+      <th class="label">{L_MESSAGE}</th>
    </tr>
    <!-- BEGIN moderate -->
    <tr>
@@ -158,11 +158,7 @@ var img_addr = '{IMG_ADDR}';
                <!-- END custom_fields_post -->
                </span></td>
                <td valign="top" align="right" nowrap="nowrap">
-                  <span class="vote">
-                     <a class="upvote" href="javascript:void()">+</a>
-                     <span class="count">13456</span>
-                     <a class="downvote" href="javascript:void()">-</a>
-                  </span>
+                  <script>votes.show({post: '{postrow.U_POST_ID}'})</script>
                </td>
             </tr>
             <tr>
@@ -297,11 +293,11 @@ var img_addr = '{IMG_ADDR}';
    <!-- END postrow -->
    <!-- BEGIN moderate -->
    <tr>
-      <td class="catBottom" align="right" nowrap="nowrap" colspan="2"><input type="submit" class="liteoption" value="{moderate.L_ACCEPT-REJECT_POST}"></form></td>
+      <td class="submit" align="right" colspan="2"><input type="submit" class="liteoption" value="{moderate.L_ACCEPT-REJECT_POST}"></form></td>
    </tr>
    <!-- END moderate -->
    <tr align="center">
-      <td class="catBottom" align="center" nowrap="nowrap" colspan="2">
+      <td class="submit" colspan="2">
          <form method="post" action="{S_POST_DAYS_ACTION}">
          <table cellspacing="0" cellpadding="0" align="center" border="0">
             <tr>
@@ -312,6 +308,8 @@ var img_addr = '{IMG_ADDR}';
       </td>
    </tr>
 </table>
+
+<script>votes.load({topic: '{TOPIC_ID}'})</script>
 
 <table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
    <tr>

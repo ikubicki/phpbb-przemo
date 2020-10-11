@@ -731,3 +731,34 @@ function chng(val)
     var nval = '#' + val.value;
     val.style.color = nval;
 }
+
+forum = {
+	setCookie: (name, data, exp) => {
+		SetCookie(name, data)
+	},
+	getCookie: (name, data, exp) => {
+		return GetCookie(name)
+	},
+	setCategoryClass: (selector) => {
+		var selectorClass = forum.getCookie(selector)
+		if (forum.getCookie(selector)) {
+			$(selector).removeClass().addClass(selectorClass)
+
+		}
+	},
+	toggleCategory: (selector, link) => {
+		var element = $(selector)
+		if (element.hasClass('visible')) {
+			element.addClass('hidden')
+			element.removeClass('visible')
+			forum.setCookie(selector, 'hidden')
+		}
+		else {
+			element.addClass('visible')
+			element.removeClass('hidden')
+			forum.setCookie(selector, 'visible')
+		}
+	}
+}
+
+// ShowHide('hc_{catrow.tablehead.CAT_ID}','hc2_{catrow.tablehead.CAT_ID}','hc3_{catrow.tablehead.CAT_ID}');

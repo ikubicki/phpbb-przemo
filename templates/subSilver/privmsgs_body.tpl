@@ -16,7 +16,7 @@
   <tr> 
 	<td align="right"> 
 	  <!-- BEGIN switch_box_size_notice -->
-	  <table width="175" cellspacing="1" cellpadding="2" border="0" class="bodyline">
+	  <table width="175" border="0">
 		<tr> 
 		  <td colspan="3" width="175" class="row1" nowrap="nowrap"><span class="gensmall">{ATTACH_BOX_SIZE_STATUS}</span></td>
 		</tr>
@@ -53,7 +53,7 @@
 	</td>
 	<td align="right"> 
 	  <!-- BEGIN switch_box_size_notice -->
-	  <table width="175" cellspacing="1" cellpadding="2" border="0" class="bodyline">
+	  <table width="175" border="0">
 		<tr> 
 		  <td colspan="3" width="100%" class="row1" nowrap="nowrap"><span class="gensmall">{BOX_SIZE_STATUS}</span></td>
 		</tr>
@@ -93,19 +93,19 @@
 
   <table border="0" cellpadding="3" cellspacing="1" width="100%" class="forumline">
 	<tr> 
-	  <th width="5%" height="25" class="thCornerL" nowrap="nowrap">&nbsp;{L_FLAG}&nbsp;</th>
-	  <th width="55%" class="thTop" nowrap="nowrap">&nbsp;{L_SUBJECT}&nbsp;</th>
-	  <th width="20%" class="thTop" nowrap="nowrap">&nbsp;{L_FROM_OR_TO}&nbsp;</th>
-	  <th width="15%" class="thTop" nowrap="nowrap">&nbsp;{L_DATE}&nbsp;</th>
-	  <th width="5%" class="thCornerR" nowrap="nowrap">&nbsp;{L_MARK}&nbsp;</th>
+	  <th width="5%" class="label">{L_FLAG}</th>
+	  <th width="55%" class="label">{L_SUBJECT}</th>
+	  <th width="20%" class="label">{L_FROM_OR_TO}</th>
+	  <th width="15%" class="label">{L_DATE}</th>
+	  <th width="5%" class="label">{L_MARK}</th>
 	</tr>
 	<!-- BEGIN listrow -->
-	<tr> 
-	  <td class="{listrow.ROW_CLASS}" width="5%" align="center" valign="middle"><img src="{listrow.PRIVMSG_FOLDER_IMG}" alt="{listrow.L_PRIVMSG_FOLDER_ALT}" title="{listrow.L_PRIVMSG_FOLDER_ALT}"></td>
-	  <td width="55%" valign="middle" class="{listrow.ROW_CLASS}">{listrow.PRIVMSG_ATTACHMENTS_IMG}<span class="topictitle">&nbsp;<a href="{listrow.U_READ}" class="topictitle">{listrow.SUBJECT}</a></span></td>
-	  <td width="20%" valign="middle" align="center" class="{listrow.ROW_CLASS}"><span class="name">&nbsp;<a href="{listrow.U_FROM_USER_PROFILE}" class="name"{listrow.STYLE}>{listrow.FROM}</a></span></td>
-	  <td width="15%" align="center" valign="middle" class="{listrow.ROW_CLASS}"><span class="postdetails">{listrow.DATE}</span></td>
-	  <td width="5%" align="center" valign="middle" class="{listrow.ROW_CLASS}"><span class="postdetails"><input type="checkbox" name="mark[]2" value="{listrow.S_MARK_ID}"></span></td>
+	<tr class="row">
+	  <td class="row1" align="center" valign="middle"><img src="{listrow.PRIVMSG_FOLDER_IMG}" alt="{listrow.L_PRIVMSG_FOLDER_ALT}" title="{listrow.L_PRIVMSG_FOLDER_ALT}"></td>
+	  <td class="row1" valign="middle">{listrow.PRIVMSG_ATTACHMENTS_IMG}<span class="topictitle">&nbsp;<a href="{listrow.U_READ}" class="topictitle">{listrow.SUBJECT}</a></span></td>
+	  <td class="row1" valign="middle" align="center"><span class="name">&nbsp;<a href="{listrow.U_FROM_USER_PROFILE}" class="name"{listrow.STYLE}>{listrow.FROM}</a></span></td>
+	  <td class="row1" align="center" valign="middle"><span class="postdetails">{listrow.DATE}</span></td>
+	  <td class="row1" align="center" valign="middle"><span class="postdetails"><input type="checkbox" name="mark[]2" value="{listrow.S_MARK_ID}"></span></td>
 	</tr>
 	<!-- END listrow -->
 	<!-- BEGIN switch_no_messages -->
@@ -114,12 +114,10 @@
 	</tr>
 	<!-- END switch_no_messages -->
 	<tr> 
-	  <td class="catBottom" colspan="5" height="28" align="right"> {S_HIDDEN_FIELDS} 
-		<input type="submit" name="save" value="{L_SAVE_MARKED}" class="mainoption">
-		&nbsp; 
-		<input type="submit" name="delete" value="{L_DELETE_MARKED}" class="liteoption">
-		&nbsp; 
-		<input type="submit" name="deleteall" value="{L_DELETE_ALL}" class="liteoption">
+	  <td class="submit" colspan="5" {S_HIDDEN_FIELDS} 
+		<input type="submit" name="save" value="{L_SAVE_MARKED}">
+		<input type="submit" name="delete" value="{L_DELETE_MARKED}">
+		<input type="submit" name="deleteall" value="{L_DELETE_ALL}">
 	  </td>
 	</tr>
   </table>

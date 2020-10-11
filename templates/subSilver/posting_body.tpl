@@ -27,20 +27,20 @@
 {POST_PREVIEW_BOX}
 {ERROR_BOX}
 
-<table border="0" cellpadding="3" cellspacing="1" width="100%" class="forumline">
+<table border="0" cellpadding="3" cellspacing="1" width="100%" class="forumline posting">
 	<tr>
 		<th class="thHead" colspan="2" height="25"><b>{L_POST_A}</b></th>
 	</tr>
 	<!-- BEGIN switch_username_select -->
 	<tr>
 		<td class="row1"><span class="gen"><b>{L_USERNAME}</b></span></td>
-		<td class="row2"><span class="genmed"><input type="text" class="post" onFocus="Active(this)" onBlur="NotActive(this)" tabindex="1" name="username" size="25" maxlength="25" value="{USERNAME}"></span></td>
+		<td class="row1"><span class="genmed"><input type="text" class="post" onFocus="Active(this)" onBlur="NotActive(this)" tabindex="1" name="username" size="25" maxlength="25" value="{USERNAME}"></span></td>
 	</tr>
 	<!-- END switch_username_select -->
 	<!-- BEGIN switch_privmsg -->
 	<tr>
 		<td class="row1"><span class="gen"><b>{L_USERNAME}</b></span></td>
-		<td class="row2"><span class="genmed"><input type="text" class="post" onFocus="Active(this)" onBlur="NotActive(this)" name="username" maxlength="25" size="25" tabindex="1" value="{USERNAME}">&nbsp;<input type="submit" name="usersubmit" value="{L_FIND_USERNAME}" class="liteoption" onClick="window.open('{U_SEARCH_USER}', '_phpbbsearch', 'HEIGHT=250,resizable=yes,WIDTH=400');return false;"></span></td>
+		<td class="row1"><span class="genmed"><input type="text" class="post" onFocus="Active(this)" onBlur="NotActive(this)" name="username" maxlength="25" size="25" tabindex="1" value="{USERNAME}">&nbsp;<input type="submit" name="usersubmit" value="{L_FIND_USERNAME}" class="liteoption" onClick="window.open('{U_SEARCH_USER}', '_phpbbsearch', 'HEIGHT=250,resizable=yes,WIDTH=400');return false;"></span></td>
 	</tr>
 	<!-- END switch_privmsg -->
 	<tr>
@@ -58,18 +58,18 @@
 			</tr>
 		</table>
 	</td>
-	<td class="row2" width="78%">
+	<td class="row1" width="78%">
 		<span class="gen">
-			<input type="text" name="subject" size="45" maxlength="60" style="width:550px" tabindex="2" class="post" onFocus="Active(this)" onBlur="NotActive(this)" value="{SUBJECT}">
+			<input type="text" name="subject" maxlength="60" tabindex="2" class="post" value="{SUBJECT}">
 		</span>
 	</td>
 	</tr>
 	<!-- BEGIN topic_explain -->
 	<tr>
 		<td class="row1" width="22%"><span class="gen"><b>{L_SUBJECT_E}</b></span> <span class="gensmall">({L_SUBJECT_E_INFO})</span></td>
-		<td class="row2" width="78%">
+		<td class="row1" width="78%">
 			<span class="gen">
-				<input type="text" name="subject_e" size="45" maxlength="100" style="width:550px;height:17px;font-size:9px;" tabindex="2" class="post" onFocus="Active(this)" onBlur="NotActive(this)" value="{SUBJECT_E}">
+				<input type="text" name="subject_e" maxlength="100" tabindex="2" class="post" value="{SUBJECT_E}">
 			</span>
 		</td>
 	</tr>
@@ -77,7 +77,7 @@
 	<!-- BEGIN switch_msgicon_checkbox -->
 	<tr>
 		<td valign="middle" class="row1"><span class="gen"><b>{MESSAGEICON}</b></span></td>
-		<td class="row2">
+		<td class="row1">
 			<table width="100%" border="0" cellspacing="0" cellpadding="0">
 				<tr>
 					<td><span class="{CLASS_MORE_ICONS}">
@@ -107,15 +107,11 @@
 	<td class="row1" valign="top">
 		<span class="gen"><b>{L_MESSAGE_BODY}</b></span>
 	</td>
-	<td class="row2" valign="top">
-		<table width="550" border="0" cellspacing="0" cellpadding="2">
-			<tr>
-				<td><span class="gen"><textarea name="message" id="message" rows="15" cols="35" style="width:550px" tabindex="3" class="post" onFocus="Active(this)" onBlur="NotActive(this)" onselect="storeCaret(this);" onclick="storeCaret(this);" onkeyup="storeCaret(this);">{MESSAGE}</textarea></span></td>
-			</tr>
-		</table>
-
+	<td class="row1" valign="top">
+		<textarea name="message" id="message" tabindex="3" class="post">{MESSAGE}</textarea>
 		<script type="text/javascript">
-			CKEDITOR.replace('message');
+			CKEDITOR.config.height = 400
+			CKEDITOR.replace('message')
 		</script>
 
 	</td>
@@ -126,7 +122,7 @@
 		<td class="row1" valign="top"><span class="gen"><b>{expire_box.L_EXPIRE_P}</b></span>
 			<br><span class="gensmall">{expire_box.L_EXPIRE_PE}</span>
 		</td>
-		<td class="row2">
+		<td class="row1">
 			<select class="post" name="msg_expire">
 				<option value="0" class="genmed" {expire_box.CHECK_0}>{expire_box.L_EXPIRE_UNLIMIT}</option>
 				<option value="1" class="genmed" {expire_box.CHECK_1}>{expire_box.L_1_DAY}</option>
@@ -146,13 +142,13 @@
 	<!-- BEGIN tree_width -->
 	<tr>
 		<td class="row1" valign="top"><span class="gen"><b>{tree_width.L_TREE_WIDTH}</b></span></td>
-		<td class="row2"><input type="text" name="tree_width" value="{tree_width.TREE_WIDTH}" size="2" maxlength="2" class="post" onFocus="Active(this)" onBlur="NotActive(this)"></td>
+		<td class="row1"><input type="text" name="tree_width" value="{tree_width.TREE_WIDTH}" size="2" maxlength="2" class="post" onFocus="Active(this)" onBlur="NotActive(this)"></td>
 	</tr>
 	<!-- END tree_width -->
 
 		<tr>
 			<td class="row1" valign="top"><span class="gen"><b>{L_OPTIONS}</b></span><br><span class="gensmall">{HTML_STATUS}<br>{BBCODE_STATUS}<br>{SMILIES_STATUS}</span></td>
-			<td class="row2">
+			<td class="row1">
 				<table cellspacing="0" cellpadding="1" border="0">
 				<!-- BEGIN switch_html_checkbox -->
 				<tr>
@@ -220,7 +216,7 @@
 	{ATTACHBOX}
 	{POLLBOX} 
 	<tr>
-		<td class="catBottom" colspan="2" align="center" height="28">{S_HIDDEN_FORM_FIELDS}<input type="submit" tabindex="5" name="preview" class="mainoption" value="{L_PREVIEW}">&nbsp;<input type="submit" accesskey="s" tabindex="6" name="post" class="mainoption" value="{L_SUBMIT}"></td>
+		<td class="submit" colspan="2">{S_HIDDEN_FORM_FIELDS}<input type="submit" tabindex="5" name="preview" class="mainoption" value="{L_PREVIEW}">&nbsp;<input type="submit" accesskey="s" tabindex="6" name="post" class="mainoption" value="{L_SUBMIT}"></td>
 	</tr>
 </table>
 

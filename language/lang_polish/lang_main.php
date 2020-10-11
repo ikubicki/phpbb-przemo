@@ -963,7 +963,8 @@ $lang['unread_post'] = 'Nieczytany post';
 $lang['refresh'] = 'Odśwież';
 $lang['new_board_topic'] = 'Na forum %s użytkownik %s napisał nowy temat: %s';
 $lang['new_board_post'] = 'Na forum %s użytkownik %s napisał odpowiedź w temacie: %s';
-$lang['Search_post_time'] = 'Wyświetl posty z ostatnich:</span><br /><span class="gensmall">Wyświetla posty napisane w ciągu ostatniego wybranego czasu. Można wybrać metodę wyświetlania: Posty i Tematy';
+$lang['Search_post_time'] = 'Wyświetl posty z ostatnich';
+$lang['Search_post_time_e'] = 'Wyświetla posty napisane w ciągu ostatniego wybranego czasu. Można wybrać metodę wyświetlania: Posty i Tematy';
 $lang['user_not_allowpm'] = 'Nie możesz wysłać prywatnej wiadomości do tego użytkownika. Użytkownik wyłączył prywatne wiadomości.';
 $lang['open_all_new_window'] = 'Otwórz wszystkie w nowych oknach';
 
