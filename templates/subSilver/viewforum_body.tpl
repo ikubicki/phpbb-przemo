@@ -109,23 +109,21 @@ if(GetCookie('imp_topics3_{FORUM_ID}') == '2') ShowHide('imp_topics_{FORUM_ID}',
 	</tr>
 	<!-- END switch_no_topics -->
 
-	<!-- BEGIN ignore_form -->
-	<tr>
-		<td class="row1" colspan="{SPAN_J}" align="center" height="28"><span class="gensmall">
-			<input type="submit" name="ignore" class="liteoption" value="{ignore_form.L_IGNORE_MARK}"<!-- BEGIN overlib --> onMouseOver="return overlib('<left>{ignore_form.overlib.L_IGNORE_EXPLAIN}</left>', ol_offsetx=-203, ol_offsety=8, CAPTION, '<center>{ignore_form.L_IGNORE_MARK}</center>')" onMouseOut="nd();"<!-- END overlib -->>
-			&nbsp;<a href="#" onclick="setCheckboxes('ignoreform', true); return false;">{ignore_form.L_MARK_ALL}</a>
-		</span></td>
-	</tr>
-	<!-- END ignore_form -->
-
 </table>
-<!-- BEGIN ignore_form -->
-</form>
-<!-- END ignore_form -->
+
 
 <table class="forumline">
 	<tr>
-		<td class="submit" valign="middle"><form method="post" action="{S_POST_DAYS_ACTION}"><span class="genmed">{L_DISPLAY_TOPICS}:&nbsp;{S_SELECT_TOPIC_DAYS}&nbsp;<input type="submit" class="liteoption" value="{L_GO}" name="submit"/></span></form></td>
+		<td class="submit left">
+			<form method="post" action="{S_POST_DAYS_ACTION}"><span class="genmed">{L_DISPLAY_TOPICS}:&nbsp;{S_SELECT_TOPIC_DAYS}&nbsp;<input type="submit" class="liteoption" value="{L_GO}" name="submit"/></span></form>
+		</td>
+		<td class="submit right">
+<!-- BEGIN ignore_form -->
+			<input type="submit" name="ignore" class="liteoption" value="{ignore_form.L_IGNORE_MARK}"<!-- BEGIN overlib --> onMouseOver="return overlib('<left>{ignore_form.overlib.L_IGNORE_EXPLAIN}</left>', ol_offsetx=-203, ol_offsety=8, CAPTION, '<center>{ignore_form.L_IGNORE_MARK}</center>')" onMouseOut="nd();"<!-- END overlib -->>
+			<a href="#" onclick="setCheckboxes('ignoreform', true); return false;">{ignore_form.L_MARK_ALL}</a>
+			</form>
+<!-- END ignore_form -->
+		</td>
 	</tr>
 </table>
 

@@ -29,7 +29,7 @@
 
 <table border="0" cellpadding="3" cellspacing="1" width="100%" class="forumline posting">
 	<tr>
-		<th class="thHead" colspan="2" height="25"><b>{L_POST_A}</b></th>
+		<th colspan="2">{L_POST_A}</th>
 	</tr>
 	<!-- BEGIN switch_username_select -->
 	<tr>

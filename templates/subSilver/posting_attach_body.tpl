@@ -1,10 +1,13 @@
 
 <!-- BEGIN show_apcp -->
 	<tr>
-		<th class="thHead" colspan="2">{L_ATTACH_POSTING_CP}</th>
+		<th colspan="2">
+			{L_ATTACH_POSTING_CP}
+			<span class="description gensmall">{L_ATTACH_POSTING_CP_EXPLAIN}</span>
+		</th>
 	</tr>
 	<tr>
-		<td class="row1" colspan="2"><span class="gensmall">{L_ATTACH_POSTING_CP_EXPLAIN}</span></td>
+		<td class="row1" colspan="2"></td>
 	</tr>
 
 	<tr> 

@@ -6,7 +6,7 @@
 		<th class="label" width="40%" align="center">
 			<span class="gen">{L_AVATAR}</span>
 		</th>
-		<th class="tools" width="60%">
+		<th class="label right" width="60%">
 			<span class="gensmall">
 		<!-- BEGIN admin -->
 				<a href="{U_ADMIN_EDIT}" target="_blank">{L_EDIT}</a>

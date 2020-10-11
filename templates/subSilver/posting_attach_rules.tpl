@@ -1,7 +1,7 @@
 
 <table width="100%" cellpadding="4" cellspacing="1" border="0" class="forumline">
 	<tr>
-		<th class="thHead" align="center">{L_RULES_TITLE}</th>
+		<th align="center">{L_RULES_TITLE}</th>
 	</tr>
 <!-- BEGIN switch_nothing -->
 	<tr>

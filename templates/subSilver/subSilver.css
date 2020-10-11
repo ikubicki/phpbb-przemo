@@ -108,6 +108,12 @@ td.submit {
 	padding: 10px;
 	text-align: center;
 }
+td.submit.left {
+	text-align: left;
+}
+td.submit.right {
+	text-align: right;
+}
 th.thHead,
 th.thSides,
 th.thLeft,
@@ -120,7 +126,7 @@ th.thBottom {
 th .description,
 td.cat .description {
 	color: #555;
-	opacity: .5;
+	opacity: .75;
 	margin-top : 10px;
 	display: block;
 }
@@ -130,17 +136,18 @@ td.cat.label {
 	font-size: 13px;
 	white-space: nowrap;
 }
-th.tools {
-	font-size: 13px;
-	white-space: nowrap;
+th.label.center {
+	text-align: center;
+}
+th.label.right {
 	text-align: right;
 }
-th.tools a {
+th.label a {
 	font-size: 13px;
 	text-decoration: none;
 	margin-left: 5px;
 }
-th.tools a:hover {
+th.label a:hover {
 	text-decoration: underline;
 }
 
@@ -493,6 +500,7 @@ form[name=jumpbox] input {
 .row2 img {
 	max-height: 250px;
 }
+
 td.submit select,
 td.submit textarea,
 td.submit input[type=text],

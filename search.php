@@ -790,7 +790,7 @@ else if ( $search_keywords != '' || $search_author != '' || $search_id )
 					AND u2.user_id = p2.poster_id
 					$post_text_where
 					$no_password_forum
-				GROUP by t.topic_id";
+				GROUP by t.topic_id, ph.post_id";
 		}
 
 		$per_page = ($show_results == 'posts') ? $user_posts_per_page : $user_topics_per_page;
@@ -878,6 +878,9 @@ else if ( $search_keywords != '' || $search_author != '' || $search_id )
 
 		$highlight_active = '';
 		$highlight_match = array();
+		if (empty($split_search)) {
+			$split_search = [];
+		}
 		for($j = 0; $j < count($split_search); $j++ )
 		{
 			$split_word = $split_search[$j];
@@ -1388,7 +1391,7 @@ else if ( $search_keywords != '' || $search_author != '' || $search_id )
 							$overlib_title = $lang['not_poster_post'];
 						}
 
-						$count_unread_posts = count($userdata['unread_data'][$searchset[$i]['forum_id']][$topic_id]);
+						$count_unread_posts = count($userdata['unread_data'][$searchset[$i]['forum_id']][$topic_id] ?? []);
 						$overlib_unread_posts = (($count_unread_posts) ? '&raquo; ' . $lang['unread_posts'] . ': <b>' . $count_unread_posts . '</b><br />' : '');
 
 						$topic_title = $topic_add_title . $topic_title;

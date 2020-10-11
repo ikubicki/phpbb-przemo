@@ -175,16 +175,18 @@ if(GetCookie('hm3') == '2') ShowHide('hm', 'hm2', 'hm3');
    <!-- BEGIN disable_viewonline -->
    <table width="100%" cellpadding="3" cellspacing="1" border="0" class="forumline">
       <tr>
-         <th colspan="2"><span class="cattitle"><a href="{U_VIEWONLINE}" class="cattitle" title="{L_VIEW_DETAILED}">{L_WHO_IS_ONLINE}</a></span></th>
+        <th colspan="2">
+		 	<a href="{U_VIEWONLINE}" class="cattitle">{L_WHO_IS_ONLINE}</a>
+		</th>
       </tr>
       <tr>
-         <td class="row1" {ONMOUSE_COLORS}align="center" valign="middle" rowspan="2">
+         <td class="row1" align="center" valign="middle" rowspan="2">
             <img src="templates/subSilver/images/whosonline.gif" width="46" height="25" alt=""></td>
-         <td class="row1" {ONMOUSE_COLORS}align="left" width="100%">
+         <td class="row1" align="left" width="100%">
             <span class="gensmall">{TOTAL_POSTS}<br>{TOTAL_USERS}<br>{NEWEST_USER}{COUNTER}</span></td>
       </tr>
       <tr>
-         <td class="row1" {ONMOUSE_COLORS}align="left">
+         <td class="row1" align="left">
             <span class="gensmall">{TOTAL_USERS_ONLINE}<br>{LOGGED_IN_USER_LIST}<br>{RECORD_USERS}
 			<!-- BEGIN staff_explain -->
 			<a href="{disable_viewonline.staff_explain.U_GROUP_URL}" class="gensmall" style="color: #{disable_viewonline.staff_explain.GROUP_COLOR}{disable_viewonline.staff_explain.GROUP_STYLE}">{disable_viewonline.staff_explain.GROUP_PREFIX}{disable_viewonline.staff_explain.GROUP_NAME}</a>
