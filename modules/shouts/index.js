@@ -112,6 +112,9 @@ var shouts = {
             shouts.submitted(response)
         })
     },
+    htmlentities: function(text) {
+        return $('<div></div>').text(text).html()
+    },
     submitted: function(response) {
         shouts.refreshCounts++
         shouts.submitButton.attr('disabled', false)
@@ -126,22 +129,26 @@ var shouts = {
             if (response.session) {
                 shouts.session = response.session
             }
-
             if (response.messages) {
                 shouts.refreshCounts = 0
                 response.messages.forEach(message => {
                     message.id = parseInt(message.id)
+                    message.text = shouts.htmlentities(message.text)
                     if (!shouts.messages.includes(message.id)) {
+                        if(typeof shouts.options.onmessage == 'function') {
+                            shouts.options.onmessage(message)
+                        }
                         var row = $('<p></p>')
                         var rowAuthor = $('<span class="author"></span>')
                         var rowAuthorOnline = '<span class="author-status author-status-' + message.author.id + ' offline">&bull;</span>'
-                        var rowAuthorName = $('<a href="' + message.author.url + '">' + message.author.name + '</a>')
+                        var rowAuthorName = $('<a href="' + message.author.url + '"></a>')
+                        rowAuthorName.text(message.author.name)
                         rowAuthor.append(rowAuthorOnline)
                         rowAuthor.append(rowAuthorName)
                         var rowTime = $('<span class="time"></span>')
                         rowTime.text(message.time)
                         var rowText = $('<span class="text"></span>')
-                        rowText.text(message.text)
+                        rowText.html(message.text)
                         row.append(rowAuthor)
                         row.append(rowTime)
                         row.append(rowText)
@@ -208,8 +215,12 @@ var shouts = {
         var del = $('<input type="button" value="' + shouts.options.langs.delete + '" />')
         var acl = response.message['acl']
         cancel.on('click', (e) => {
+            response.message.text = shouts.htmlentities(response.message.text)
+            if(typeof shouts.options.onmessage == 'function') {
+                shouts.options.onmessage(response.message)
+            }
             container.empty()
-            container.text(response.message.text)
+            container.html(response.message.text)
             var newParagraph = $('<p />')
             newParagraph.html(paragraph.html())
             paragraph.after(newParagraph)
@@ -255,9 +266,12 @@ var shouts = {
                     response = $.parseJSON(response)
                 }
                 if (!response.error) {
-                    console.log('EDIT', response)
+                    response.message.text = shouts.htmlentities(response.message.text)
+                    if(typeof shouts.options.onmessage == 'function') {
+                        shouts.options.onmessage(response.message)
+                    }
                     container.empty()
-                    container.text(response.message.text)
+                    container.html(response.message.text)
                     var newParagraph = $('<p />')
                     newParagraph.html(paragraph.html())
                     paragraph.after(newParagraph)
