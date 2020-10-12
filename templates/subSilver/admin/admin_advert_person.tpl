@@ -5,7 +5,7 @@
 <form method="post" name="post" action="{S_ACTION}">
 <table cellspacing="1" cellpadding="4" border="0" align="center" class="forumline" width="100%">
 	<tr>
-		<th class="thHead" align="center" colspan="2">{L_SETUP}</th>
+		<th align="center" colspan="2">{L_SETUP}</th>
 	</tr>
 	<tr>
 		<td class="row1" align="center"><span class="gen">{L_ADV_HOURS}</span></td>
@@ -14,7 +14,7 @@
 		<td class="row2" align="center"><input type="text" name="adv_person_time" value="{ADV_TIME}" size="4" class="post"></td>
 	</tr>
 	<tr>
-		<td class="catBottom" align="center" colspan="2"><input type="submit" name="submit" value="{L_SAVE}" class="mainoption"> <input type="reset" name="reset" value="{L_RESET}" class="liteoption"></td>
+		<td class="submit" align="center" colspan="2"><input type="submit" name="submit" value="{L_SAVE}" class="mainoption"> <input type="reset" name="reset" value="{L_RESET}" class="liteoption"></td>
 	</tr>
 </table>
 </form>
@@ -22,11 +22,11 @@
 <a name="add"></a>
 <table cellspacing="1" cellpadding="3" border="0" align="center" class="forumline" width="100%">
 	<tr>
-		<th class="thHead" align="center" width="10%">{L_USERNAME}</th>
-		<th class="thHead" align="center" width="5%">{L_POSTS}</th>
-		<th class="thHead" align="center" width="10%">{L_JOINED}</th>
-		<th class="thHead" align="center" width="5%">{L_COUNTER}</th>
-		<th class="thHead" align="center" width="70%">{L_ADV_TITLE}</th>
+		<th align="center" width="10%">{L_USERNAME}</th>
+		<th align="center" width="5%">{L_POSTS}</th>
+		<th align="center" width="10%">{L_JOINED}</th>
+		<th align="center" width="5%">{L_COUNTER}</th>
+		<th align="center" width="70%">{L_ADV_TITLE}</th>
 	</tr>
 	<tr>
 		<td class="row1">&nbsp;</td>

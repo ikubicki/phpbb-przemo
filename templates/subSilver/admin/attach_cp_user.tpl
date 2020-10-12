@@ -15,10 +15,10 @@
   </table>
   <table width="100%" cellpadding="3" cellspacing="1" border="0" class="forumline">
 	<tr> 
-	  <th height="25" class="thCornerL">#</th>
-	  <th class="thTop">{L_USERNAME}</th>
-	  <th class="thTop">{L_ATTACHMENTS}</th>
-	  <th class="thCornerR">{L_TOTAL_SIZE}</th>
+	  <th height="25">#</th>
+	  <th>{L_USERNAME}</th>
+	  <th>{L_ATTACHMENTS}</th>
+	  <th>{L_TOTAL_SIZE}</th>
 	</tr>
 	<!-- BEGIN memberrow -->
 	<tr> 

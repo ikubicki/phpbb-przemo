@@ -8,7 +8,7 @@
 
 <table cellspacing="1" cellpadding="4" border="0" align="center" class="forumline">
 	<tr>
-		<th colspan="2" class="thHead">{L_RESYNC_OPTIONS}</th>
+		<th colspan="2">{L_RESYNC_OPTIONS}</th>
 	</tr>
 	<tr>
 		<td class="row2"><span class="gen">{L_FORUM_TOPICS}</span></td>
@@ -34,9 +34,9 @@
 <br><br>
 <table cellspacing="1" cellpadding="4" border="0" align="center" class="forumline">
 	<tr>
-	  <th class="thCornerL">{L_CATEGORY}</th>
-	  <th class="thTop">{L_FORUM}</th>
-	  <th class="thCornerR" width="100">{L_RESYNCQ}</th>
+	  <th>{L_CATEGORY}</th>
+	  <th>{L_FORUM}</th>
+	  <th width="100">{L_RESYNCQ}</th>
 	</tr>
 <!-- BEGIN forums -->
 	<tr>
@@ -49,7 +49,7 @@
 	  <td colspan="3" class="row1" align="center"> <span class="gensmall"><a href="{U_MODE_CHANGE}">{L_MODE_CHANGE}</a></span></td>
 	</tr>
 	<tr>
-	  <td colspan="3" class="catBottom" align="center">
+	  <td colspan="3" class="submit" align="center">
 		<input type="submit" name="doresync" value="{L_DO_RESYNC}" class="mainoption">
 		&nbsp;&nbsp;
 		<input type="reset" value="{L_RESET}" class="liteoption" name="reset">

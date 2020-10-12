@@ -9,7 +9,7 @@
   <table cellspacing="1" cellpadding="4" border="0" align="center" class="forumline">
 	<tr> 
 	  <!-- BEGIN forum_auth_titles -->
-	  <th class="thTop">{forum_auth_titles.CELL_TITLE}</th>
+	  <th>{forum_auth_titles.CELL_TITLE}</th>
 	  <!-- END forum_auth_titles -->
 	</tr>
 	<tr> 
@@ -21,7 +21,7 @@
 	  <td colspan="{S_COLUMN_SPAN}" align="center" class="row1"> <span class="gensmall">{U_SWITCH_MODE}</span></td>
 	</tr>
 	<tr>
-	  <td colspan="{S_COLUMN_SPAN}" class="catBottom" align="center">{S_HIDDEN_FIELDS} 
+	  <td colspan="{S_COLUMN_SPAN}" class="submit" align="center">{S_HIDDEN_FIELDS} 
 		<input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption">
 		&nbsp;&nbsp; 
 		<input type="reset" value="{L_RESET}" name="reset" class="liteoption">

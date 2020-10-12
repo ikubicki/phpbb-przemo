@@ -14,7 +14,7 @@
 
 <table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0" align="center">
 	<tr> 
-		<th class="thHead" colspan="2" height="25" nowrap="nowrap">{SEE_SEEKER}</th>
+		<th colspan="2" height="25" nowrap="nowrap">{SEE_SEEKER}</th>
 	</tr>
 	<tr>
 		<td class="row1">
@@ -76,21 +76,21 @@
 			<span class="gen">{PAGINATION}</span><br>
 			<div style="text-align:center; width:100%"><table border="0" cellpadding="4" cellspacing="1" class="forumline" width="96%">
 				<tr>
-					<td class="catHead" align="center" width="5">
+					<td align="center" width="5">
 						<span class="gen"><b>#</b></span>
 					</td>
-					<td class="catHead" width="180">
+					<td width="180">
 						<span class="gen"><b>{SEE_USER}</b></span>
 					</td>
-					<td class="catHead">
+					<td>
 						<span class="gen"><b>{SEE_LOOKFOR_FIELD}</b></span>
 					</td>
 					<!-- BEGIN sort_field -->
-					<td class="catHead">
+					<td>
 						<span class="gen"><b>{see_result.sort_field.NAME}</b></span>
 					</td>
 					<!-- END sort_field -->
-					<td class="catHead" width="150" nowrap="nowrap">
+					<td width="150" nowrap="nowrap">
 						<span class="gen"><b>{SEE_JOINED}</b></span>
 					</td>
 				</tr>

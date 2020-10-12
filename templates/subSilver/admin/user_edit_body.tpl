@@ -7,7 +7,7 @@
 
 <form action="{S_PROFILE_ACTION}" {S_FORM_ENCTYPE} method="post"><table width="98%" cellspacing="1" cellpadding="4" border="0" align="center" class="forumline">
 	<tr> 
-	  <th class="thHead" colspan="2">{L_REGISTRATION_INFO}</th>
+	  <th colspan="2">{L_REGISTRATION_INFO}</th>
 	</tr>
 	<tr> 
 	  <td class="row2" colspan="2"><span class="gensmall">{L_ITEMS_REQUIRED}</span></td>
@@ -456,7 +456,7 @@
 		<input type="checkbox" name="deleteuser"></td>
 	</tr>
 	<tr> 
-	  <td class="catBottom" colspan="2" align="center">{S_HIDDEN_FIELDS} 
+	  <td class="submit" colspan="2" align="center">{S_HIDDEN_FIELDS} 
 		<input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption">
 		&nbsp;&nbsp; 
 		<input type="reset" value="{L_RESET}" class="liteoption">

@@ -26,7 +26,7 @@ function checkForm(formObj) {
 
 <table border="0" cellpadding="3" cellspacing="1" width="100%" class="forumline">
 	<tr> 
-		<th class="thHead" colspan="2" height="25"><b>{L_SEND_EMAIL_MSG}</b></th>
+		<th colspan="2" height="25"><b>{L_SEND_EMAIL_MSG}</b></th>
 	</tr>
 	<tr> 
 		<td class="row1" width="22%"><span class="gen"><b>{L_RECIPIENT}</b></span></td>
@@ -50,7 +50,7 @@ function checkForm(formObj) {
 		</table></td>
 	</tr>
 	<tr>
-		<td class="catBottom" colspan="2" align="center" height="28"><input type="submit" tabindex="6" name="submit" class="mainoption" value="{L_SEND_EMAIL}">{S_HIDDEN_FIELDS}</td>
+		<td class="submit" colspan="2" align="center" height="28"><input type="submit" tabindex="6" name="submit" class="mainoption" value="{L_SEND_EMAIL}">{S_HIDDEN_FIELDS}</td>
 	</tr>
 </table>
 

@@ -8,7 +8,7 @@
 <form action="{S_ATTACH_ACTION}" method="post">
 <table width="99%" cellpadding="4" cellspacing="1" border="0" align="center" class="forumline">
 	<tr>
-	  <th class="thHead" colspan="2">{L_SETTINGS_CAT_IMAGES}<br>{L_ASSIGNED_GROUP}: {S_ASSIGNED_GROUP_IMAGES}</th>
+	  <th colspan="2">{L_SETTINGS_CAT_IMAGES}<br>{L_ASSIGNED_GROUP}: {S_ASSIGNED_GROUP_IMAGES}</th>
 	</tr>
 	<tr>
 		<td class="row1" width="80%">{L_DISPLAY_INLINED}<br><span class="gensmall">{L_DISPLAY_INLINED_EXPLAIN}</span></td>
@@ -41,7 +41,7 @@
 		<td class="row2"><input type="text" size="3" maxlength="4" name="img_link_width" value="{IMAGE_LINK_WIDTH}" class="post"> x <input type="text" size="3" maxlength="4" name="img_link_height" value="{IMAGE_LINK_HEIGHT}" class="post"></td>
 	</tr>
 	<tr>
-		<td class="catBottom" colspan="2" align="center">{S_HIDDEN_FIELDS}<input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption">&nbsp;&nbsp;<input type="reset" value="{L_RESET}" class="liteoption">&nbsp;&nbsp;<input type="submit" name="search_imagick" value="{L_SEARCH_IMAGICK}" class="liteoption">&nbsp;&nbsp;<input type="submit" name="cat_settings" value="{L_TEST_SETTINGS}" class="liteoption"></td>
+		<td class="submit" colspan="2" align="center">{S_HIDDEN_FIELDS}<input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption">&nbsp;&nbsp;<input type="reset" value="{L_RESET}" class="liteoption">&nbsp;&nbsp;<input type="submit" name="search_imagick" value="{L_SEARCH_IMAGICK}" class="liteoption">&nbsp;&nbsp;<input type="submit" name="cat_settings" value="{L_TEST_SETTINGS}" class="liteoption"></td>
 	</tr>
 </table></form>
 

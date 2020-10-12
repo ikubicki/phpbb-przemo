@@ -7,7 +7,7 @@
 			<td align="center">
 				<table width="100%" cellpadding="4" cellspacing="1" border="0" class="forumline">
 					<tr> 
-					  <th height="25" class="thHead"><b>{L_ADMIN}</b></th>
+					  <th height="25"><b>{L_ADMIN}</b></th>
 					</tr>
 					<tr> 
 					  <td class="row1""><span class="gemed"><a href="{U_ADMIN_INDEX}" target="main" class="genmed">{L_ADMIN_INDEX}</a></span></td>
@@ -30,7 +30,7 @@
 			<div id="adm{catrow.CAT_ID}_" style="display: ''; position: relative;">
 				<table width="100%" cellpadding="4" cellspacing="1" border="0" class="forumline">
 					<tr>
-					  <th height="28" style="height: 18px; cursor: pointer;" class="thHead" onclick="javascript:ShowHide('adm{catrow.CAT_ID}_','adm{catrow.CAT_ID}_2','adm{catrow.CAT_ID}_3');"><b>{catrow.ADMIN_CATEGORY}</b></th>
+					  <th height="28" style="height: 18px; cursor: pointer;" onclick="javascript:ShowHide('adm{catrow.CAT_ID}_','adm{catrow.CAT_ID}_2','adm{catrow.CAT_ID}_3');"><b>{catrow.ADMIN_CATEGORY}</b></th>
 					</tr>
 					<!-- BEGIN modulerow -->
 					<tr> 
@@ -43,7 +43,7 @@
 			<div id="adm{catrow.CAT_ID}_2" style="display: none; position: relative;">
 				<table width="100%" cellpadding="4" cellspacing="1" border="0" class="forumline">
 					<tr>
-					  <th height="28" style="height: 18px; cursor: pointer;" class="thHead" onclick="javascript:ShowHide('adm{catrow.CAT_ID}_','adm{catrow.CAT_ID}_2','adm{catrow.CAT_ID}_3');"><b>{catrow.ADMIN_CATEGORY}</b></th>
+					  <th height="28" style="height: 18px; cursor: pointer;" onclick="javascript:ShowHide('adm{catrow.CAT_ID}_','adm{catrow.CAT_ID}_2','adm{catrow.CAT_ID}_3');"><b>{catrow.ADMIN_CATEGORY}</b></th>
 					</tr>
 				</table>
 			</div>

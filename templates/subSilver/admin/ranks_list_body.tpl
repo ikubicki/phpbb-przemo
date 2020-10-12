@@ -5,11 +5,11 @@
 
 <form method="post" action="{S_RANKS_ACTION}"><table cellspacing="1" cellpadding="4" border="0" align="center" class="forumline">
 	<tr>
-		<th class="thCornerL">{L_RANK}</th>
-        <th class="thTop">{L_RANK_MINIMUM}</th>
-		<th class="thTop">{L_SPECIAL_RANK}</th>
-		<th class="thTop">{L_EDIT}</th>
-		<th class="thCornerR">{L_DELETE}</th>
+		<th>{L_RANK}</th>
+        <th>{L_RANK_MINIMUM}</th>
+		<th>{L_SPECIAL_RANK}</th>
+		<th>{L_EDIT}</th>
+		<th>{L_DELETE}</th>
 	</tr>
 	<!-- BEGIN ranks -->
 	<tr>
@@ -21,7 +21,7 @@
 	</tr>
 	<!-- END ranks -->			
 	<tr>
-		<td class="catBottom" align="center" colspan="6"><input type="submit" class="mainoption" name="add" value="{L_ADD_RANK}"></td>
+		<td class="submit" align="center" colspan="6"><input type="submit" class="mainoption" name="add" value="{L_ADD_RANK}"></td>
 	</tr>
 </table></form>
 <br>

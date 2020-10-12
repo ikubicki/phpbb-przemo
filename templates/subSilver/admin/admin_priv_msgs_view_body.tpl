@@ -1,6 +1,6 @@
 <table border="0" cellpadding="4" cellspacing="1" width="100%" class="forumline">
 	<tr> 
-	  <th colspan="3" class="thHead">{L_PRIVATE_MESSAGES}</th>
+	  <th colspan="3">{L_PRIVATE_MESSAGES}</th>
 	</tr>
 	<tr> 
 	  <td class="row2"><span class="genmed">{L_FROM}:</span></td>

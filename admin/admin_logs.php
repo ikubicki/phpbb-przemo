@@ -59,7 +59,7 @@ echo'<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 </head>
 <table width="100%" cellpadding="6" cellspacing="1" border="0" class="forumline">
 <tr>
-<th width="25%" height="25" class="thCornerL">' . $lang['l_logsip'] . '</th>
+<th width="25%" height="25">' . $lang['l_logsip'] . '</th>
 </tr>
 <tr>
 <td class="row1">' . $lang['l_logsip_e'] . '

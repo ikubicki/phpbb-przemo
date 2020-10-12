@@ -22,13 +22,13 @@
 
   <table width="100%" align="center" cellpadding="4" cellspacing="1" border="0" class="forumline">
 	<tr> 
-	  <td class="catHead" colspan="5" align="center" height="28"><span class="cattitle">{L_SHADOW_TITLE}</span> 
+	  <td colspan="5" align="center" height="28"><span class="cattitle">{L_SHADOW_TITLE}</span> 
 	  </td>
 	</tr>
 	<tr> 
-	  <th class="thLeft">&nbsp;{L_ATTACHMENT}&nbsp;</th>
+	  <th>&nbsp;{L_ATTACHMENT}&nbsp;</th>
 	  <th>&nbsp;{L_COMMENT}&nbsp;</th>
-	  <th class="thRight">&nbsp;{L_DELETE}&nbsp;</th>
+	  <th>&nbsp;{L_DELETE}&nbsp;</th>
 	</tr>
 	<tr> 
 	  <td class="spaceRow" colspan="5" align="center"><span class="gensmall">{L_EXPLAIN_FILE}</span></td>
@@ -41,9 +41,9 @@
 	</tr>
   <!-- END file_shadow_row -->
 	<tr> 
-	  <th class="thLeft">&nbsp;{L_ATTACHMENT}&nbsp;</th>
+	  <th>&nbsp;{L_ATTACHMENT}&nbsp;</th>
 	  <th>&nbsp;{L_COMMENT}&nbsp;</th>
-	  <th class="thRight">&nbsp;{L_DELETE}&nbsp;</th>
+	  <th>&nbsp;{L_DELETE}&nbsp;</th>
 	</tr>
 	<tr> 
 	  <td class="spaceRow" colspan="5" align="center"><span class="gensmall">{L_EXPLAIN_ROW}</span></td>
@@ -56,7 +56,7 @@
 	</tr>
   <!-- END table_shadow_row -->
 	<tr align="right"> 
-	  <td class="catBottom" colspan="5" height="29">
+	  <td class="submit" colspan="5" height="29">
 	  <input type="submit" name="submit" class="liteoption" value="{L_DELETE_MARKED}"></td>
 	</tr>
 </table>

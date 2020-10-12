@@ -8,7 +8,7 @@
 
 <table cellspacing="1" cellpadding="4" border="0" align="center" class="forumline">
 	<tr>
-		<th class="thHead" align="center">{L_USER_SELECT}</th>
+		<th align="center">{L_USER_SELECT}</th>
 	</tr>
 	<tr>
 		<td class="row1" align="center"><input type="text" class="post" name="username" maxlength="50" size="20"> <input type="submit" name="usersubmit" value="{L_USER_FIND}" class="liteoption" onClick="window.open('{S_FIND_USERNAME}', '_phpbbsearch', 'HEIGHT=250,resizable=yes,WIDTH=400');return false;"></td>
@@ -20,8 +20,8 @@
 <br><br>
 <table cellspacing="1" cellpadding="4" border="0" align="center" class="forumline">
 	<tr>
-	  <th class="thCornerL">{L_FORUM}</th>
-	  <th class="thCornerR" width="100">{L_RESYNCQ}</th>
+	  <th>{L_FORUM}</th>
+	  <th width="100">{L_RESYNCQ}</th>
 	</tr>
 <!-- BEGIN forums -->
 	<tr>
@@ -33,7 +33,7 @@
 	  <td colspan="2" class="row1" align="center"> <span class="gensmall"><a href="{U_MODE_CHANGE}">{L_MODE_CHANGE}</a></span></td>
 	</tr>
 	<tr>
-	  <td colspan="2" class="catBottom" align="center">
+	  <td colspan="2" class="submit" align="center">
 		<input type="submit" name="submit" value="{L_DO_RESYNC}" class="mainoption">
 		&nbsp;&nbsp;
 		<input type="reset" value="{L_RESET}" class="liteoption" name="reset">

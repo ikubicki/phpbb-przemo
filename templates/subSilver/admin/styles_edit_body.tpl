@@ -5,7 +5,7 @@
 
 <form action="{S_THEME_ACTION}" method="POST"><table width="99%" cellpadding="4" cellspacing="1" border="0" align="center" class="forumline">
 	<tr>
-	  <th class="thHead" colspan="3">{L_THEME_SETTINGS}</th>
+	  <th colspan="3">{L_THEME_SETTINGS}</th>
 	</tr>
 	<tr>
 		<td class="row1">{L_THEME_NAME}:</td>
@@ -238,7 +238,7 @@
 
 
 	<tr>
-		<td class="catBottom" colspan="3" align="center">{S_HIDDEN_FIELDS}<input type="submit" name="submit" value="{L_SAVE_SETTINGS}" class="mainoption">
+		<td class="submit" colspan="3" align="center">{S_HIDDEN_FIELDS}<input type="submit" name="submit" value="{L_SAVE_SETTINGS}" class="mainoption">
 		</td>
 	</tr>
 </table></form>

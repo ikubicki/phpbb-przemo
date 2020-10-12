@@ -16,7 +16,7 @@
 
 <form action="{FORM_ACTION}" method="post">{S_RETURN}<input type="hidden" name="import" value="{IMPORT_FILENAME}" /><table width="100%" cellpadding="4" cellspacing="1" border="0" align="center" class="forumline">
 	<tr>
-		<th class="thHead" colspan="2">{L_XS_IMPORT_TPL}</th>
+		<th colspan="2">{L_XS_IMPORT_TPL}</th>
 	</tr>
 	<tr>
 		<td class="row1" align="left" colspan="2"><span class="gensmall">{L_XS_IMPORT_TPL_COMMENT}<br /><br />{L_XS_IMPORT_TPL_FILENAME} {STYLE_FILENAME}<br />{L_XS_IMPORT_TPL_TPLNAME} {STYLE_TEMPLATE}<br />{L_XS_IMPORT_TPL_COMMENT2} {STYLE_COMMENT}<br /></span></td>
@@ -42,6 +42,6 @@
 	<!-- END switch_select_nostyle -->
 	<input type="hidden" name="total" value="{TOTAL}" />
 	<tr>
-		<td class="catBottom" colspan="2" align="center">{S_HIDDEN_FIELDS}<input type="submit" name="submit" value="{L_XS_IMPORT}" class="mainoption" /></td>
+		<td class="submit" colspan="2" align="center">{S_HIDDEN_FIELDS}<input type="submit" name="submit" value="{L_XS_IMPORT}" class="mainoption" /></td>
 	</tr>
 </table></form>

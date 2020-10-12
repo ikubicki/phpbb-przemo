@@ -3,9 +3,9 @@
 		<th colspan="3" height="28" align="center">{L_POPULARITY}</th>
 	</tr>
 	<tr>
-		<td class="catHead" align="center"><span class="cattitle">Link</span></td>
-		<td class="catHead" align="center"><span class="cattitle">{L_VISIT}</span></td>
-		<td class="catHead" align="center"><span class="cattitle">{L_PER_DAY}</span></td>
+		<td align="center"><span class="cattitle">Link</span></td>
+		<td align="center"><span class="cattitle">{L_VISIT}</span></td>
+		<td align="center"><span class="cattitle">{L_PER_DAY}</span></td>
 	</tr>
 	<!-- BEGIN list -->
 	<tr>
@@ -15,5 +15,5 @@
 	</tr>
 	<!-- END list -->
 	<tr>
-		<td class="catBottom" colspan="3">&nbsp;</td>
+		<td class="submit" colspan="3">&nbsp;</td>
 </table>

@@ -14,11 +14,11 @@
 
 <table width="100%" cellpadding="3" cellspacing="1" border="0" class="forumline">
   <tr> 
-        <th height="25" class="thCornerL" nowrap="nowrap">#</th>
-        <th class="thTop" nowrap="nowrap">{L_USERNAME}</th>
-        <th class="thTop" nowrap="nowrap">{L_EMAIL}</th>
-        <th class="thTop" nowrap="nowrap">{L_JOINED}</th>
-        <th width="33%" class="thCornerL" colspan="2" align="center">{L_ACTIONS}</th>
+        <th height="25" nowrap="nowrap">#</th>
+        <th nowrap="nowrap">{L_USERNAME}</th>
+        <th nowrap="nowrap">{L_EMAIL}</th>
+        <th nowrap="nowrap">{L_JOINED}</th>
+        <th width="33%" colspan="2" align="center">{L_ACTIONS}</th>
   </tr>
   <tr> 
         <td colspan="5" class="row2"><span class="gensmall">{L_ACTIVATION}</span></td>

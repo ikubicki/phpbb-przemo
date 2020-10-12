@@ -1,25 +1,25 @@
 
 <table border="0" width="100%" cellpadding="2" cellspacing="1" class="forumline"> 
   <tr> 
-    <td class="catHead" align="center" colspan="13"> 
+    <td align="center" colspan="13"> 
       <span class="cattitle">{L_NEWTOPICSBYMONTH}</span> 
     </td> 
   </tr> 
 
   <tr>    
-    <th class="thCornerL" align="center" ><strong>{L_YEAR}</strong></th> 
-    <th class="thTop" align="center"><strong>{L_JAN}</strong></th> 
-    <th class="thTop" align="center"><strong>{L_FEB}</strong></th> 
-    <th class="thTop" align="center"><strong>{L_MAR}</strong></th> 
-    <th class="thTop" align="center"><strong>{L_APR}</strong></th> 
-    <th class="thTop" align="center"><strong>{L_MAY}</strong></th> 
-    <th class="thTop" align="center"><strong>{L_JUN}</strong></th> 
-    <th class="thTop" align="center"><strong>{L_JUL}</strong></th> 
-    <th class="thTop" align="center"><strong>{L_AUG}</strong></th> 
-    <th class="thTop" align="center"><strong>{L_SEP}</strong></th> 
-    <th class="thTop" align="center"><strong>{L_OCT}</strong></th> 
-    <th class="thTop" align="center"><strong>{L_NOV}</strong></th> 
-    <th class="thCornerR" align="center"><strong>{L_DEC}</strong></th> 
+    <th align="center" ><strong>{L_YEAR}</strong></th> 
+    <th align="center"><strong>{L_JAN}</strong></th> 
+    <th align="center"><strong>{L_FEB}</strong></th> 
+    <th align="center"><strong>{L_MAR}</strong></th> 
+    <th align="center"><strong>{L_APR}</strong></th> 
+    <th align="center"><strong>{L_MAY}</strong></th> 
+    <th align="center"><strong>{L_JUN}</strong></th> 
+    <th align="center"><strong>{L_JUL}</strong></th> 
+    <th align="center"><strong>{L_AUG}</strong></th> 
+    <th align="center"><strong>{L_SEP}</strong></th> 
+    <th align="center"><strong>{L_OCT}</strong></th> 
+    <th align="center"><strong>{L_NOV}</strong></th> 
+    <th align="center"><strong>{L_DEC}</strong></th> 
   </tr> 
 
    <!-- BEGIN newtopics --> 

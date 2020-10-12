@@ -1,17 +1,17 @@
 
 <table border="0" cellpadding="4" cellspacing="1" class="forumline" width="100%"> 
   <tr> 
-    <td class="catHead" align="center" colspan="6"> 
+    <td align="center" colspan="6"> 
       <span class="cattitle">{L_TOP_SMILIES}</span> 
     </td> 
   </tr> 
   <tr>    
-    <th colspan="1" class="thCornerL" align="left"><strong>{L_RANK}</strong></th> 
-    <th class="thTop" align="center"><strong>{L_USES}</strong></th> 
-    <th class="thTop" align="center"><strong>{L_IMAGE}</strong></th> 
-    <th class="thTop" align="center"><strong>{L_CODE}</strong></th> 
-    <th class="thTop" align="center"><strong>{L_PERCENTAGE}</strong></th> 
-    <th class="thCornerR" align="center"><strong>{L_GRAPH}</strong></th> 
+    <th colspan="1" align="left"><strong>{L_RANK}</strong></th> 
+    <th align="center"><strong>{L_USES}</strong></th> 
+    <th align="center"><strong>{L_IMAGE}</strong></th> 
+    <th align="center"><strong>{L_CODE}</strong></th> 
+    <th align="center"><strong>{L_PERCENTAGE}</strong></th> 
+    <th align="center"><strong>{L_GRAPH}</strong></th> 
   </tr> 
 <!-- BEGIN topsmilies --> 
   <tr> 

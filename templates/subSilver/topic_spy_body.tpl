@@ -8,11 +8,11 @@
 
 <table width="100%" cellpadding="3" cellspacing="1" border="0" class="forumline">
 	<tr>
-		<th class="thTop" nowrap="nowrap">{L_FORUM}</th>
-		<th class="thTop" nowrap="nowrap">{L_TOPIC_TITLE}</th>
-		<th class="thTop" nowrap="nowrap">{L_TOPIC_COUNT}</th>
-		<th class="thTop" nowrap="nowrap">{L_TOPIC_LAST}</th>
-		<th class="thTop" nowrap="nowrap">{L_AUTHOR}</th>
+		<th nowrap="nowrap">{L_FORUM}</th>
+		<th nowrap="nowrap">{L_TOPIC_TITLE}</th>
+		<th nowrap="nowrap">{L_TOPIC_COUNT}</th>
+		<th nowrap="nowrap">{L_TOPIC_LAST}</th>
+		<th nowrap="nowrap">{L_AUTHOR}</th>
 	</tr>
 	<!-- BEGIN spy_row -->
 	<tr>
@@ -24,8 +24,8 @@
 	</tr>
 	<!-- END spy_row -->
 	<tr>
-		<td class="catHead" colspan="2" align="left"><span class="genmed"><input type="text" name="username" value="{SEARCHED_USERNAME}" class="post" size="12" style="font-weight: bold;"> <input type="submit" name="submit" value="{L_SEARCH}" class="mainoption"></span></td>
-		<td class="catHead" colspan="3" align="right">&nbsp;</td>
+		<td colspan="2" align="left"><span class="genmed"><input type="text" name="username" value="{SEARCHED_USERNAME}" class="post" size="12" style="font-weight: bold;"> <input type="submit" name="submit" value="{L_SEARCH}" class="mainoption"></span></td>
+		<td colspan="3" align="right">&nbsp;</td>
 	</tr>
 </table>
 <table width="100%" cellspacing="2" cellpadding="2" border="0">

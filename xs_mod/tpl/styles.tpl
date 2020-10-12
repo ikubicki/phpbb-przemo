@@ -20,11 +20,11 @@
 
 <table width="100%" cellpadding="4" cellspacing="1" border="0" class="forumline">
 	<tr>
-		<th class="thCornerL" align="center" nowrap="nowrap">{L_XS_ID}</th>
-		<th class="thTop" align="center" nowrap="nowrap">{L_XS_STYLE}</th>
-		<th class="thTop" align="center" nowrap="nowrap">{L_XS_TEMPLATE}</th>
-		<th class="thTop" align="center" nowrap="nowrap">{L_XS_USERS}</th>
-		<th class="thCornerR" colspan="2" align="center" nowrap="nowrap">{L_XS_OPTIONS}</th>
+		<th align="center" nowrap="nowrap">{L_XS_ID}</th>
+		<th align="center" nowrap="nowrap">{L_XS_STYLE}</th>
+		<th align="center" nowrap="nowrap">{L_XS_TEMPLATE}</th>
+		<th align="center" nowrap="nowrap">{L_XS_USERS}</th>
+		<th colspan="2" align="center" nowrap="nowrap">{L_XS_OPTIONS}</th>
 	</tr>
 	<!-- BEGIN styles -->
 	<tr>

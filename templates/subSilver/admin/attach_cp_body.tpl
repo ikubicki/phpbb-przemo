@@ -14,8 +14,8 @@
 
 <table width="100%" cellpadding="4" cellspacing="1" border="0" class="forumline">
   <tr> 
-	<th width="50%" nowrap="nowrap" height="25" class="thCornerL">{L_STATISTIC}</th>
-	<th width="50%" height="25" class="thCornerR">{L_VALUE}</th>
+	<th width="50%" nowrap="nowrap" height="25">{L_STATISTIC}</th>
+	<th width="50%" height="25">{L_VALUE}</th>
   </tr>
   <tr> 
 	<td class="row1" nowrap="nowrap">{L_NUMBER_OF_ATTACHMENTS}:</td>

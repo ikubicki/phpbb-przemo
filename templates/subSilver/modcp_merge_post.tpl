@@ -2,7 +2,7 @@
 <form method="post" action="{S_MERGE_ACTION}">
   <table width="100%" cellpadding="4" cellspacing="1" border="0" class="forumline">
 	<tr> 
-	  <th height="25" class="thHead" colspan="3" nowrap="nowrap">{L_MERGE_POST_TOPIC}</th>
+	  <th height="25" colspan="3" nowrap="nowrap">{L_MERGE_POST_TOPIC}</th>
 	</tr>
 	<tr> 
 	  <td class="row2" colspan="3" align="center"><span class="gensmall">{L_MERGE_TOPIC_EXPLAIN}</span></td>
@@ -12,7 +12,7 @@
 	  <td class="row2" colspan="2"><span class="courier">{S_FORUM_SELECT}</span></td>
 	</tr>
 	<tr> 
-	  <td class="catHead" colspan="3" height="28"> 
+	  <td colspan="3" height="28"> 
 		<table width="60%" cellspacing="0" cellpadding="0" border="0" align="center">
 		  <tr> 
 			<td width="50%" align="center"> 
@@ -26,9 +26,9 @@
 	  </td>
 	</tr>
 	<tr> 
-	  <th class="thLeft" nowrap="nowrap">{L_AUTHOR}</th>
+	  <th nowrap="nowrap">{L_AUTHOR}</th>
 	  <th nowrap="nowrap">{L_MESSAGE}</th>
-	  <th class="thRight" nowrap="nowrap">{L_SELECT}</th>
+	  <th nowrap="nowrap">{L_SELECT}</th>
 	</tr>
 	<!-- BEGIN postrow -->
 	<tr> 
@@ -53,7 +53,7 @@
 	</tr>
 	<!-- END postrow -->
 	<tr> 
-	  <td class="catBottom" colspan="3" height="28"> 
+	  <td class="submit" colspan="3" height="28"> 
 		<table width="60%" cellspacing="0" cellpadding="0" border="0" align="center">
 		  <tr> 
 			<td width="50%" align="center"> 

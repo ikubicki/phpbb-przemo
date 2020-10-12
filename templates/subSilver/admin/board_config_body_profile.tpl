@@ -32,7 +32,7 @@
 			<td class="row1">
 				<form action="{S_CONFIG_ACTION}" method="post"><table width="100%" cellpadding="2" cellspacing="1" border="0" align="center" class="forumline">
 				<tr>
-					<th class="thHead" colspan="2">{L_ADDON_PROFILE}</th>
+					<th colspan="2">{L_ADDON_PROFILE}</th>
 				</tr>
 				<tr>
 					<td class="row1">{L_VALIDATION}<br><span class="gensmall">{L_CVALIDATEE}</span></td>
@@ -120,7 +120,7 @@
 					<td class="row2" width="50%"><input type="text" class="post" onFocus="Active(this)" onBlur="NotActive(this)" size="1" maxlength="1" name="viewonline" value="{VIEWONLINE}"></td>
 				</tr>
 				<tr>
-					<th class="thHead" colspan="2">{L_AVATAR_SETTINGS}</th>
+					<th colspan="2">{L_AVATAR_SETTINGS}</th>
 				</tr>
 				<tr>
 					<td class="row1">{L_ALLOW_LOCAL}</td>
@@ -156,7 +156,7 @@
 					<td class="row2" width="50%"><input type="text" class="post" onFocus="Active(this)" onBlur="NotActive(this)" size="20" maxlength="255" name="avatar_gallery_path" value="{AVATAR_GALLERY_PATH}"></td>
 				</tr>
 				<tr>
-					<th class="thHead" colspan="2">{L_PROFLE_PHOTO_SETTINGS}</th>
+					<th colspan="2">{L_PROFLE_PHOTO_SETTINGS}</th>
 				</tr>
 				<tr>
 					<td class="row1">{L_ALLOW_PHOTO_REMOTE} <br><span class="gensmall">{L_ALLOW_PHOTO_REMOTE_EXPLAIN}</span></td>
@@ -179,7 +179,7 @@
 					<td class="row2" width="50%"><input type="text" class="post" onFocus="Active(this)" onBlur="NotActive(this)" size="20" maxlength="255" name="photo_path" value="{PHOTO_PATH}"></td>
 				</tr>
 				<tr>
-					<th class="thHead" colspan="2">{L_SIGNATURE_SETTINGS}</th>
+					<th colspan="2">{L_SIGNATURE_SETTINGS}</th>
 				</tr>
 				<tr>
 					<td class="row1">{L_ALLOW_SIG}</td>
@@ -211,7 +211,7 @@
 				</tr>
 
 				<tr>
-					<td class="catBottom" colspan="2" align="center">{S_HIDDEN_FIELDS}<input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption">&nbsp;&nbsp;<input type="reset" value="{L_RESET}" class="liteoption"></td>
+					<td class="submit" colspan="2" align="center">{S_HIDDEN_FIELDS}<input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption">&nbsp;&nbsp;<input type="reset" value="{L_RESET}" class="liteoption"></td>
 				</tr>
 				</form>
 			</td>

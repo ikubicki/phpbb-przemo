@@ -33,7 +33,7 @@
 			<script language=JavaScript src="../images/picker.js"></script>
 				<form action="{S_CONFIG_ACTION}" method="post" name="pick_form"><table width="100%" cellpadding="2" cellspacing="1" border="0" align="center" class="forumline">
 				<tr>
-					<th class="thHead" colspan="2">{L_GENERAL_SETTINGS}</th>
+					<th colspan="2">{L_GENERAL_SETTINGS}</th>
 				</tr>
 				<tr>
 					<td class="row1">{L_SITE_NAME}</td>
@@ -117,7 +117,7 @@
 					<td class="row2" width="50%"><select name="public_category" size="4">{PUBLIC_DIRECTORIES}</select></td>
 				</tr>
 				<tr>
-					<th class="thHead" colspan="2">{L_COOKIE_SETTINGS}</th>
+					<th colspan="2">{L_COOKIE_SETTINGS}</th>
 				</tr>
 				<tr>
 					<td class="row2" width="50%" colspan="2"><span class="gensmall">{L_COOKIE_SETTINGS_EXPLAIN}</span></td>
@@ -151,7 +151,7 @@
 					<td class="row2" width="50%"><input type="radio" name="cookie_secure" value="0" {S_COOKIE_SECURE_DISABLED}>{L_DISABLED}&nbsp; &nbsp;<input type="radio" name="cookie_secure" value="1" {S_COOKIE_SECURE_ENABLED}>{L_ENABLED}</td>
 				</tr>
 				<tr>
-					<th class="thHead" colspan="2">{L_PRIVATE_MESSAGING}</th>
+					<th colspan="2">{L_PRIVATE_MESSAGING}</th>
 				</tr>
 				<tr>
 					<td class="row1">{L_DISABLE_PRIVATE_MESSAGING}</td>
@@ -170,7 +170,7 @@
 					<td class="row2" width="50%"><input type="text" class="post" onFocus="Active(this)" onBlur="NotActive(this)" maxlength="4" size="4" name="max_savebox_privmsgs" value="{SAVEBOX_LIMIT}"></td>
 				</tr>
 				<tr>
-					<th class="thHead" colspan="2">{L_COPPA_SETTINGS}</th>
+					<th colspan="2">{L_COPPA_SETTINGS}</th>
 				</tr>
 				<tr>
 					<td class="row1">{L_COPPA_FAX}</td>
@@ -181,7 +181,7 @@
 					<td class="row2" width="50%"><textarea name="coppa_mail" class="post" onFocus="Active(this)" onBlur="NotActive(this)" rows="5" cols="30">{COPPA_MAIL}</textarea></td>
 				</tr>
 				<tr>
-					<th class="thHead" colspan="2">{L_EMAIL_SETTINGS}</th>
+					<th colspan="2">{L_EMAIL_SETTINGS}</th>
 				</tr>
 				<tr>
 					<td class="row1">{L_BOARD_EMAIL_CHECK}</td>
@@ -224,7 +224,7 @@
 					<td class="row2" width="50%"><input type="password" autocomplete="off" class="post" onFocus="Active(this)" onBlur="NotActive(this)" name="smtp_password" value="{SMTP_PASSWORD}" size="25" maxlength="255"></td>
 				</tr>
 				<tr>
-					<td class="catBottom" colspan="2" align="center">{S_HIDDEN_FIELDS}<input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption">&nbsp;&nbsp;<input type="reset" value="{L_RESET}" class="liteoption"></td>
+					<td class="submit" colspan="2" align="center">{S_HIDDEN_FIELDS}<input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption">&nbsp;&nbsp;<input type="reset" value="{L_RESET}" class="liteoption"></td>
 				</tr>
 				</form>
 			</td>

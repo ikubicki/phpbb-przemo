@@ -15,7 +15,7 @@ function refresh_username(selected_username)
 	<tr>
 		<td><table width="100%" class="forumline" cellpadding="4" cellspacing="1" border="0">
 			<tr> 
-				<th class="thHead" height="25">{L_SEARCH_USERNAME}</th>
+				<th height="25">{L_SEARCH_USERNAME}</th>
 			</tr>
 			<tr> 
 				<td valign="top" class="row1"><span class="genmed"><br><input type="text" name="search_username" value="{USERNAME}" class="post" onFocus="Active(this)" onBlur="NotActive(this)">&nbsp; <input type="submit" name="search" value="{L_SEARCH}" class="liteoption"></span><br><span class="gensmall">{L_SEARCH_EXPLAIN}</span><br>

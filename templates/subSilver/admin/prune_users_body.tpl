@@ -11,9 +11,9 @@ function SetDays()	{ document.DaysFrm.submit() }
 <table cellspacing="1" cellpadding="4" border="0" align="center" class="forumline">
 
 	<tr> 
-		<td class="catBottom" align="center"><b>{L_DAYS}</b></td>
-	      <td class="catBottom" align="center" nowrap><b>{L_PRUNE_ACTION}</b></td> 
-		<td class="catBottom" align="center"><b>{L_PRUNE_LIST}</b></td>
+		<td class="submit" align="center"><b>{L_DAYS}</b></td>
+	      <td class="submit" align="center" nowrap><b>{L_PRUNE_ACTION}</b></td> 
+		<td class="submit" align="center"><b>{L_PRUNE_LIST}</b></td>
 	</tr>
 <!-- BEGIN prune_list -->
 	<tr> 

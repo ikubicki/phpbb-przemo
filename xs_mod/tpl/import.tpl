@@ -20,12 +20,12 @@
 
 <table width="100%" cellpadding="4" cellspacing="1" border="0" class="forumline">
 	<tr>
-		<th class="thCornerL" align="center" nowrap="nowrap">{L_XS_FILE}</th>
-		<th class="thTop" align="center" nowrap="nowrap">{L_XS_TEMPLATE}</th>
-		<th class="thTop" align="center" nowrap="nowrap">{L_XS_STYLES}</th>
-		<th class="thTop" align="center" nowrap="nowrap">{L_XS_UPLOAD_TIME}</th>
-		<th class="thTop" align="center" nowrap="nowrap">{L_XS_COMMENT}</th>
-		<th class="thCornerR" align="center" nowrap="nowrap">{L_XS_OPTIONS}</th>
+		<th align="center" nowrap="nowrap">{L_XS_FILE}</th>
+		<th align="center" nowrap="nowrap">{L_XS_TEMPLATE}</th>
+		<th align="center" nowrap="nowrap">{L_XS_STYLES}</th>
+		<th align="center" nowrap="nowrap">{L_XS_UPLOAD_TIME}</th>
+		<th align="center" nowrap="nowrap">{L_XS_COMMENT}</th>
+		<th align="center" nowrap="nowrap">{L_XS_OPTIONS}</th>
 	</tr>
 	<!-- BEGIN styles -->
 	<tr>
@@ -56,7 +56,7 @@
 
 <table width="100%" cellpadding="4" cellspacing="1" border="0" align="center" class="forumline">
 	<tr>
-	  <th class="thHead" colspan="2">{L_XS_ADD_STYLES}</th>
+	  <th colspan="2">{L_XS_ADD_STYLES}</th>
 	</tr>
 	<tr>
 		<td class="row1">{L_XS_ADD_STYLES_WEB}:</td>

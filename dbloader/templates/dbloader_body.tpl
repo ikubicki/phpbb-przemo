@@ -172,18 +172,18 @@ label:hover {
     </table>
    </div>
    <div style="padding:2px">
-    <a class="forumlink" href="dbloader.php">Pocz±tek</a> 
+    <a class="forumlink" href="dbloader.php">Poczï¿½tek</a> 
     <b>|</b> <a class="forumlink" href="?mode=makeconfig">Edytuj config.php</a> 
     <!-- BEGIN forum_config_link -->
     <b>|</b> <a class="forumlink" href="?mode=forumconfig">Konfiguruj forum</a> 
-    <b>|</b> <a class="forumlink" href="?mode=checkdb">Sprawd¼ bazê</a> 
+    <b>|</b> <a class="forumlink" href="?mode=checkdb">Sprawdï¿½ bazï¿½</a> 
     <!-- END forum_config_link -->
     <!-- BEGIN no_forum_config_link -->
     <b>|</b> <a class="forumlink" style="color:gray">Konfiguruj forum</a> 
-    <b>|</b> <a class="forumlink" style="color:gray">Sprawd¼ bazê</a> 
+    <b>|</b> <a class="forumlink" style="color:gray">Sprawdï¿½ bazï¿½</a> 
     <!-- END no_forum_config_link -->
     <!-- BEGIN db_actions -->
-    <b>|</b> <a class="forumlink" href="?mode=sqllist">Wczytaj bazê danych</a> 
+    <b>|</b> <a class="forumlink" href="?mode=sqllist">Wczytaj bazï¿½ danych</a> 
     <b>|</b> <a class="forumlink" href="?mode=misc">Inne funkcje</a> 
     <!-- END db_actions -->
    </div>
@@ -207,29 +207,29 @@ label:hover {
        {CONTENT}
 <!-- BEGIN login -->
 <form action="{PHP_SELF}" method="post">
- Skrypt jest zabezpieczony has³em. Aby móc z nim dalej pracowaæ musisz je
- wpisaæ w pole poni¿ej.<br /><br />
+ Skrypt jest zabezpieczony hasï¿½em. Aby mï¿½c z nim dalej pracowaï¿½ musisz je
+ wpisaï¿½ w pole poniï¿½ej.<br /><br />
  <input type="password" name="password"> <input type="submit" value="Zaloguj">
 </form>
 <!-- END login -->
 <!-- BEGIN index -->
-Skrypt ten ma na celu u³atwienie wczytywania kopii bazy danych MySQL
-dla forum phpBB modiefied by Przemo (teoretycznie powinien te¿ dzia³aæ ze
-zwyk³ym phpBB). Obs³ugiwane formaty plików to: &quot;czysty&quot; .sql, .gz
-i .bz2 (dwa ostatnie zale¿nie od serwera).<br /><br />
-Aby wgraæ tabele do bazy danych, upewnij siê ¿e masz poprawny plik
-config.{PHP_EX} i skopiuj na serwer do katalogu z tym skryptem plik z kopi± bazy.
-Je¶li dopiero zamierzasz utworzyæ tak± kopiê, najlepiej zrób to za pomoc±
-<a href="http://phpmyadmin.sf.net">phpMyAdmina</a> (dostêpny na wiêkszo¶ci
-serwerów).<br /><br />
-Uwaga - staraj siê unikaæ wczytywania plików spakowanych Bzipem
-za pomoc± wolnego algorytmu - z nieznanych mi przyczyn skrypt ma tendencjê
-do zapêtlania siê przy odczycie plików bz2 z u¿yciem tej metody.<br /><br />
+Skrypt ten ma na celu uï¿½atwienie wczytywania kopii bazy danych MySQL
+dla forum phpBB modiefied by Przemo (teoretycznie powinien teï¿½ dziaï¿½aï¿½ ze
+zwykï¿½ym phpBB). Obsï¿½ugiwane formaty plikï¿½w to: &quot;czysty&quot; .sql, .gz
+i .bz2 (dwa ostatnie zaleï¿½nie od serwera).<br /><br />
+Aby wgraï¿½ tabele do bazy danych, upewnij siï¿½ ï¿½e masz poprawny plik
+config.{PHP_EX} i skopiuj na serwer do katalogu z tym skryptem plik z kopiï¿½ bazy.
+Jeï¿½li dopiero zamierzasz utworzyï¿½ takï¿½ kopiï¿½, najlepiej zrï¿½b to za pomocï¿½
+<a href="http://phpmyadmin.sf.net">phpMyAdmina</a> (dostï¿½pny na wiï¿½kszoï¿½ci
+serwerï¿½w).<br /><br />
+Uwaga - staraj siï¿½ unikaï¿½ wczytywania plikï¿½w spakowanych Bzipem
+za pomocï¿½ wolnego algorytmu - z nieznanych mi przyczyn skrypt ma tendencjï¿½
+do zapï¿½tlania siï¿½ przy odczycie plikï¿½w bz2 z uï¿½yciem tej metody.<br /><br />
 {index.FAST_CHECK}<br /><br />
-W celu zwiêkszenia bezpieczeñstwa dzia³ania skrypt sprawdza
-twój adres IP. Aby uaktywniæ skrypt wyedytuj plik dbloader.php i zmieñ go
-wed³ug poni¿szego schematu.<br /><br />
-<b>Teraz pocz±tek pliku <i>/dbloader/dbloader.php</i> wygl±da tak:</b>
+W celu zwiï¿½kszenia bezpieczeï¿½stwa dziaï¿½ania skrypt sprawdza
+twï¿½j adres IP. Aby uaktywniï¿½ skrypt wyedytuj plik dbloader.php i zmieï¿½ go
+wedï¿½ug poniï¿½szego schematu.<br /><br />
+<b>Teraz poczï¿½tek pliku <i>/dbloader/dbloader.php</i> wyglï¿½da tak:</b>
 <table cellspacing="1" cellpadding="3" border="0" width="100%">
  <tr>
   <td class="code">
@@ -237,7 +237,7 @@ wed³ug poni¿szego schematu.<br /><br />
   </td>
  </tr>
 </table><br />
-<b>Je¶li skrypt jest wy³±czony, i chcesz rozpocz±æ na nim pracê, zmieñ go tak:</b>
+<b>Jeï¿½li skrypt jest wyï¿½ï¿½czony, i chcesz rozpoczï¿½ï¿½ na nim pracï¿½, zmieï¿½ go tak:</b>
 <table cellspacing="1" cellpadding="3" border="0" width="100%">
  <tr>
   <td class="code">
@@ -245,7 +245,7 @@ wed³ug poni¿szego schematu.<br /><br />
   </td>
  </tr>
 </table>
-<h5><span style="color:red">UWAGA! Po zakoñczeniu pracy DumpLoadera KONIECZNIE wy³±cz skrypt (ustaw $twoje_ip na 'DISABLED')</span></h5>
+<h5><span style="color:red">UWAGA! Po zakoï¿½czeniu pracy DumpLoadera KONIECZNIE wyï¿½ï¿½cz skrypt (ustaw $twoje_ip na 'DISABLED')</span></h5>
 <!-- END index -->
 <!-- BEGIN config -->
 <form action="{PHP_SELF}?mode=makeconfig" method="post"> 
@@ -267,11 +267,11 @@ wed³ug poni¿szego schematu.<br /><br />
   <td class="row2"><input type="text" name="dbname" value="{config.DBNAME}" /></td>
  </tr>
  <tr>
-  <td class="row1" align="right"><span class="gen">U¿ytkownik Bazy Danych:&nbsp;</span></td>
+  <td class="row1" align="right"><span class="gen">Uï¿½ytkownik Bazy Danych:&nbsp;</span></td>
   <td class="row2"><input type="text" name="dbuser" value="{config.DBUSER}" /></td>
  </tr>
  <tr>
-  <td class="row1" align="right"><span class="gen">Has³o Bazy Danych:&nbsp;</span></td>
+  <td class="row1" align="right"><span class="gen">Hasï¿½o Bazy Danych:&nbsp;</span></td>
   <td class="row2"><input type="password" name="dbpasswd" value="{config.DBPASSWORD}" /></td>
  </tr>
  <tr>
@@ -296,9 +296,9 @@ wed³ug poni¿szego schematu.<br /><br />
   <tr>
    <td valign="top">
     <span class="gen">Skopiuj <b>19</b> podanych linii i zapisz je jako
-	<u>config.{PHP_EX}</u> lub kliknij na przycisk <u>¦ci±gnij plik</u> i nastêpnie
-	wy¶lij plik do g³ównego katalogu phpBB2. Upewnij siê ¿e po <u>?&gt;</u>
-	nie ma ¿adnych innych znaków (w tym spacji)! {config.code.SAVE_RESULT}
+	<u>config.{PHP_EX}</u> lub kliknij na przycisk <u>ï¿½ciï¿½gnij plik</u> i nastï¿½pnie
+	wyï¿½lij plik do gï¿½ï¿½wnego katalogu phpBB2. Upewnij siï¿½ ï¿½e po <u>?&gt;</u>
+	nie ma ï¿½adnych innych znakï¿½w (w tym spacji)! {config.code.SAVE_RESULT}
     </span><br /><br />
     <input type="hidden" name="dbms" value="{config.DBMS}" />
     <input type="hidden" name="dbhost" value="{config.DBHOST}" />
@@ -307,8 +307,8 @@ wed³ug poni¿szego schematu.<br /><br />
     <input type="hidden" name="dbpasswd" value="{config.DBPASSWORD}" />
     <input type="hidden" name="table_prefix" value="{config.TABLE_PREFIX}" />
     <input type="hidden" name="download_config" value="true" />
-    <input type="submit" name="submit_download_config" value="¦ci±gnij plik" class="mainoption" />
-	<input type="submit" name="submit_save_config" value="Spróbuj zapisaæ" /><br />
+    <input type="submit" name="submit_download_config" value="ï¿½ciï¿½gnij plik" class="mainoption" />
+	<input type="submit" name="submit_save_config" value="Sprï¿½buj zapisaï¿½" /><br />
    </td>
    <td>
     <table cellspacing="1" cellpadding="3" border="0" width="100%">
@@ -334,11 +334,11 @@ wed³ug poni¿szego schematu.<br /><br />
 <table width="100%" cellpadding="2" cellspacing="1" border="0" class="forumline">
  <tr>
   <td class="row1" style="width:230px"><span class="gensmall">Nazwa opcji</span></td>
-  <td class="row1" style="width:138px"><span class="gensmall">Zalecana warto¶æ</span></td>
-  <td class="row1"><span class="gensmall">Warto¶æ ustawiona w bazie danych</span></td>
+  <td class="row1" style="width:138px"><span class="gensmall">Zalecana wartoï¿½ï¿½</span></td>
+  <td class="row1"><span class="gensmall">Wartoï¿½ï¿½ ustawiona w bazie danych</span></td>
  </tr>
  <tr>
-  <td class="catHead" colspan="3" align="center">
+  <td colspan="3" align="center">
    <span class="gen"><b>Generalne Ustawienia Forum</b></span>
   </td>
  </tr>
@@ -348,7 +348,7 @@ wed³ug poni¿szego schematu.<br /><br />
   <td class="row2"><span class="gensmall">{forumconfig.SERVER_NAME_DB}</span></td>
  </tr>
  <tr>
-  <td class="row1"><span class="gen">Sprawdzanie poprawno¶ci adresu: </span></td>
+  <td class="row1"><span class="gen">Sprawdzanie poprawnoï¿½ci adresu: </span></td>
   <td class="row2"><span class="gen"><input type="radio" name="check_address" value="1" {forumconfig.CHECK_ADDRESS_1} /> Tak &nbsp; <input type="radio" name="check_address" value="0" {forumconfig.CHECK_ADDRESS_0} /> Nie</span></td>
   <td class="row2"><span class="gensmall">{forumconfig.CHECK_ADDRESS_DB}</span></td>
  </tr>
@@ -358,27 +358,27 @@ wed³ug poni¿szego schematu.<br /><br />
   <td class="row2"><span class="gensmall">{forumconfig.SERVER_PORT_DB}</span></td>
  </tr>
  <tr>
-  <td class="row1"><span class="gen">¦cie¿ka skryptu: </span></td>
+  <td class="row1"><span class="gen">ï¿½cieï¿½ka skryptu: </span></td>
   <td class="row2"><input type="text" name="script_path" value="{forumconfig.SCRIPT_PATH}" /></td>
   <td class="row2"><span class="gensmall">{forumconfig.SCRIPT_PATH_DB}</span></td>
  </tr>
  <tr>
-  <td class="catHead" colspan="3" align="center">
+  <td colspan="3" align="center">
    <span class="gen"><b>Ustawienia Cookies</b></span>
   </td>
  </tr>
  <tr>
   <td class="row1"><span class="gen">Domena Cookie:</span></td>
   <td class="row2"><input type="text" maxlength="255" name="cookie_domain" value="{forumconfig.COOKIE_DOMAIN}" /></td>
-  <td class="row2"><span class="gensmall">{forumconfig.COOKIE_DOMAIN_DB} (powinna byæ taka sama jak nazwa domeny)</span></td>
+  <td class="row2"><span class="gensmall">{forumconfig.COOKIE_DOMAIN_DB} (powinna byï¿½ taka sama jak nazwa domeny)</span></td>
  </tr>
  <tr>
   <td class="row1"><span class="gen">Nazwa Cookie</span></td>
   <td class="row2"><input type="text" maxlength="16" name="cookie_name" value="{forumconfig.COOKIE_NAME}" /></td>
-  <td class="row2"><span class="gensmall">{forumconfig.COOKIE_NAME_DB} (domy¶lnie: phpbb2mysql, najlepiej losowa warto¶æ)</span></td>
+  <td class="row2"><span class="gensmall">{forumconfig.COOKIE_NAME_DB} (domyï¿½lnie: phpbb2mysql, najlepiej losowa wartoï¿½ï¿½)</span></td>
  </tr>
  <tr>
-  <td class="row1"><span class="gen">¦cie¿ka Cookie</span></td>
+  <td class="row1"><span class="gen">ï¿½cieï¿½ka Cookie</span></td>
   <td class="row2"><input type="text" maxlength="255" name="cookie_path" value="{forumconfig.COOKIE_PATH}" /></td>
   <td class="row2"><span class="gensmall">{forumconfig.COOKIE_PATH_DB}</span></td>
  </tr>
@@ -390,7 +390,7 @@ wed³ug poni¿szego schematu.<br /><br />
  <tr>
   <td align="center" colspan="3">
    <input type="hidden" name="save_config" value="true" />
-   <input class="mainoption" type="submit" name="submit" value="Zapisz konfiguracjê" />
+   <input class="mainoption" type="submit" name="submit" value="Zapisz konfiguracjï¿½" />
   </td>
  </tr>
 </table>
@@ -404,13 +404,13 @@ Plik definicji tabel dla wersji: <b>{db_check.TABLES_DEF_FOR}</b><br /><br />
 {db_check.create.RESULT}
 <br /><br />
 <!-- END create -->
-<b>Obecno¶æ i poprawno¶æ wszystkich tabel:</b><br />
+<b>Obecnoï¿½ï¿½ i poprawnoï¿½ï¿½ wszystkich tabel:</b><br />
 {db_check.TABES_CHECK}
 <!-- END db_check -->
 <!-- BEGIN sqllist -->
 <b>Znalezione pliki SQL:</b><br /><br />
 <table border="0" cellpadding="3" cellspacing="1" class="forumline" style="margin-left:10px">
- <tr><td class="catHead"><span class="gen"><b>Nazwa pliku</b></span></td><td class="catHead"><span class="gen"><b>Rozmiar (kB)</b></span></td></tr>
+ <tr><td><span class="gen"><b>Nazwa pliku</b></span></td><td><span class="gen"><b>Rozmiar (kB)</b></span></td></tr>
  <!-- BEGIN item -->
  <tr>
   <td class="row{sqllist.item.ROW_STYLE}"><a class="nav" href="{sqllist.item.LINK}"><img src="{STYLE_IMAGES}/icon_mini_message.gif" alt="Plik SQL" width="12" height="13"> {sqllist.item.TEXT}</a></td>
@@ -431,30 +431,30 @@ Plik definicji tabel dla wersji: <b>{db_check.TABLES_DEF_FOR}</b><br /><br />
        <form action="{dbread.form.FORM_ACTION}" method="post">
 	    <table border="0" cellpadding="3" cellspacing="1" class="forumline" style="margin-left:10px">
          <tr>
-          <td class="row2"><span class="gen">Ilo¶æ zapytañ jednorazowo czytana z pliku:</span></td>
+          <td class="row2"><span class="gen">Iloï¿½ï¿½ zapytaï¿½ jednorazowo czytana z pliku:</span></td>
           <td class="row2"><input type="text" name="max_queries" value="{dbread.form.MAX_QUERIES_DEF}" size="5"></td>
          </tr>
          <tr>
           <td class="row2"><span class="gen">
-           <label for="omit_search">Pomiñ wpisy do tabel search_*</label></span><br />
-           <span class="gensmall">Wszystkie rekordy dla tabel wyszukiwania zostan± pominiête.</span>
+           <label for="omit_search">Pomiï¿½ wpisy do tabel search_*</label></span><br />
+           <span class="gensmall">Wszystkie rekordy dla tabel wyszukiwania zostanï¿½ pominiï¿½te.</span>
           </td>
           <td class="row2" valign="top"><input type="checkbox" name="omit_search" id="omit_search"></td>
          </tr>
          <tr>
           <td class="row2">
-           <span class="gen"><label for="alt_engine">U¿yj alternatywnego przetwarzania (szybsze)&nbsp;</label></span><br>
-           <span class="gensmall">Przy wczytywaniu wykorzystuje szybsz± metodê wczytywania<br />
-           zapytañ (domy¶lnie jest u¿ywany algorytm z phpMyAdmina).</span>
+           <span class="gen"><label for="alt_engine">Uï¿½yj alternatywnego przetwarzania (szybsze)&nbsp;</label></span><br>
+           <span class="gensmall">Przy wczytywaniu wykorzystuje szybszï¿½ metodï¿½ wczytywania<br />
+           zapytaï¿½ (domyï¿½lnie jest uï¿½ywany algorytm z phpMyAdmina).</span>
           </td>
           <td class="row2" valign="top"><input type="checkbox" name="alt_engine" checked="checked" id="alt_engine"></td>
          </tr>
          <tr>
           <td class="row2">
            <span class="gen"><label for="lock_tables">Blokuj tabele na czas wczytywania</label></span><br />
-           <span class="gensmall">Podczas wczytywania tabele bêd± blokowane, co pozwoli na<br />
-           szybsze dodawanie rekordów. Wy³±cz je¶li wczytywany plik<br />
-           nie jest zrzutem bazy danych ale zbiorem ró¿nych zapytañ.</span>
+           <span class="gensmall">Podczas wczytywania tabele bï¿½dï¿½ blokowane, co pozwoli na<br />
+           szybsze dodawanie rekordï¿½w. Wyï¿½ï¿½cz jeï¿½li wczytywany plik<br />
+           nie jest zrzutem bazy danych ale zbiorem rï¿½nych zapytaï¿½.</span>
           </td>
           <td class="row2" valign="top"><input type="checkbox" name="lock_tables" checked="checked" id="lock_tables"></td>
          </tr>
@@ -465,33 +465,33 @@ Plik definicji tabel dla wersji: <b>{db_check.TABLES_DEF_FOR}</b><br /><br />
        <!-- BEGIN completed -->
 	   <br />
 	   <table border="0" cellspacing="0" cellpadding="3" class="bodyline" width="100%">
-        <tr><td class="catHead" align="center"><span class="gen"><b>Zakoñczono wczytywanie</b></span></td></tr>
+        <tr><td align="center"><span class="gen"><b>Zakoï¿½czono wczytywanie</b></span></td></tr>
 	<tr>
          <td class="row2">
-		  <span class="gen">Liczba wykonanych zapytañ: <b>{dbread.completed.QUERIES_LOADED}</b> (pominiêtych <b>{dbread.completed.QUERIES_OMITTED}</b>)<br />
-		  Limit zapytañ SQL: <b>{dbread.completed.QUERIES_MAX}</b><br />
+		  <span class="gen">Liczba wykonanych zapytaï¿½: <b>{dbread.completed.QUERIES_LOADED}</b> (pominiï¿½tych <b>{dbread.completed.QUERIES_OMITTED}</b>)<br />
+		  Limit zapytaï¿½ SQL: <b>{dbread.completed.QUERIES_MAX}</b><br />
 		  Blokowano tabele: <b>{dbread.completed.LOCK_TABLES}</b><br /><br />
-		  Limit b³êdów by³ ustawiony na: <b>{dbread.completed.ERRORS_MAX}</b><br />
+		  Limit bï¿½ï¿½dï¿½w byï¿½ ustawiony na: <b>{dbread.completed.ERRORS_MAX}</b><br />
           Zapytania przetworzono w <b>{dbread.completed.TIME_PHP}</b><br />
           Zapytania wykonano do bazy w <b>{dbread.completed.TIME_SQL}</b><br />
-          £±cznie: ~ <b>{dbread.completed.TIME_TOTAL}</b></span>
+          ï¿½ï¿½cznie: ~ <b>{dbread.completed.TIME_TOTAL}</b></span>
 		 </td>
         </tr>
         <tr>
-		<td class="row3" align="center"><span class="gen"><a href="../">Forum - Strona g³ówna</a></span></td>
+		<td class="row3" align="center"><span class="gen"><a href="../">Forum - Strona gï¿½ï¿½wna</a></span></td>
 	</tr>
        </table>
        <!-- BEGIN errors -->
        <br />
        <table border="0" cellspacing="0" cellpadding="3" class="bodyline" width="100%">
         <tr>
-         <td class="catHead" align="center"><span class="gen"><b>B³êdy zwrócone przez MySQL</b></span></td>
+         <td align="center"><span class="gen"><b>Bï¿½ï¿½dy zwrï¿½cone przez MySQL</b></span></td>
         </tr>
         <tr>
          <td class="row3">
-          <span class="gen">Podczas wykonywania zapytañ MySQL znalaz³ b³êdy w zapytaniach:
+          <span class="gen">Podczas wykonywania zapytaï¿½ MySQL znalazï¿½ bï¿½ï¿½dy w zapytaniach:
 		  <span style="color:red"><b>{dbread.completed.errors.ERRORS}</b></span>.<br /><br />
-		  <a href="{PHP_SELF}?mode=dbread&amp;step=show_errors" target="_blank">Poka¿ raport o b³êdach</a></span>
+		  <a href="{PHP_SELF}?mode=dbread&amp;step=show_errors" target="_blank">Pokaï¿½ raport o bï¿½ï¿½dach</a></span>
 		 </td>
         </tr>
        </table>
@@ -513,13 +513,13 @@ Plik definicji tabel dla wersji: <b>{db_check.TABLES_DEF_FOR}</b><br /><br />
 <br />
 <table border="0" cellpadding="3" cellspacing="0" class="bodyline" width="100%" style="margin-left:10px; margin-right:10px">
  <tr>
-  <td class="catHead">
+  <td>
    <span class="gen"><b>Tworzenie / usuwanie bazy danych</b></span>
   </td>
  </tr>
  <tr>
   <td class="row2">
-   <span class="gen"><b>Istniej±ce bazy:</b></span>
+   <span class="gen"><b>Istniejï¿½ce bazy:</b></span>
    <div class="gen" style="margin-left:10px">
     {misc.DBLIST}
    </div><br />
@@ -527,15 +527,15 @@ Plik definicji tabel dla wersji: <b>{db_check.TABLES_DEF_FOR}</b><br /><br />
    <form action="{PHP_SELF}?mode=misc&amp;func=dbcreate" method="post">
     <span class="gen"><b>Nazwa bazy:</b> </span>
     <input type="text" name="dbcreate_dbname">
-    <input type="submit" name="dbcreate_create" value="Utwórz"> <input type="submit" name="dbcreate_drop" value="Usuñ">
-    <span class="gen"><i>Uwaga: dzia³anie tej opcji zale¿y od Twoich uprawnieñ na serwerze</i></span>
+    <input type="submit" name="dbcreate_create" value="Utwï¿½rz"> <input type="submit" name="dbcreate_drop" value="Usuï¿½">
+    <span class="gen"><i>Uwaga: dziaï¿½anie tej opcji zaleï¿½y od Twoich uprawnieï¿½ na serwerze</i></span>
    </form>
   </td>
  </tr>
 </table><br />
 <table border="0" cellpadding="3" cellspacing="0" class="bodyline" width="100%" style="margin-left:10px; margin-right:10px">
  <tr>
-  <td class="catHead">
+  <td>
    <span class="gen"><b>Deinstalacja phpBB z bazy danych</b></span>
   </td>
  </tr>
@@ -543,9 +543,9 @@ Plik definicji tabel dla wersji: <b>{db_check.TABLES_DEF_FOR}</b><br /><br />
   <td class="row2">
    <span class="gen">{misc.BBDROP_RESULT}</span>
    <form action="{PHP_SELF}?mode=misc&amp;func=bbdrop" method="post">
-    <span class="gen">Aby usun±æ tabele z bazy danych wpisz w pole poni¿ej <b>skasuj</b> i kliknij na <b>Usuñ tabele</b>.<br />
-    Uwaga - dane z bazy zostan± usuniête, je¶li chcesz tylko odinstalowaæ wersjê Przema i uzyskaæ czyste phpBB skorzystaj z odpowiedniej opcji w PA.</span><br />
-	<input type="text" name="bbdrop_check"> <input type="submit" name="bbdrop_drop" value="Usuñ tabele">
+    <span class="gen">Aby usunï¿½ï¿½ tabele z bazy danych wpisz w pole poniï¿½ej <b>skasuj</b> i kliknij na <b>Usuï¿½ tabele</b>.<br />
+    Uwaga - dane z bazy zostanï¿½ usuniï¿½te, jeï¿½li chcesz tylko odinstalowaï¿½ wersjï¿½ Przema i uzyskaï¿½ czyste phpBB skorzystaj z odpowiedniej opcji w PA.</span><br />
+	<input type="text" name="bbdrop_check"> <input type="submit" name="bbdrop_drop" value="Usuï¿½ tabele">
    </form>
   </td>
  </tr>

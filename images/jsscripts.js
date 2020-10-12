@@ -218,29 +218,6 @@ function setCheckboxes(theForm, elementName, isChecked)
 	return true;
 }
 
-var selectedText = quoteAuthor = '';
-
-function quoteSelection(theTarget) {
-    if(!theTarget) theTarget = document.post.message;
-    theSelection = false;
-    if(selectedText != '') theSelection = selectedText;
-    else if(document.selection && document.selection.createRange) theSelection = document.selection.createRange().text;
-    if(theSelection) {
-		if (CKEDITOR) {
-			CKEDITOR.instances.message.insertHtml('<blockquote><b>'+quoteAuthor+':</b><br /><br />'+theSelection+'</blockquote><p></p>');
-		}
-		else {
-			emoticon((theTarget.value ? '' : '') + '[quote][b]' + quoteAuthor + ":[/b]\r\n" + theSelection + '[/quote]', theTarget);
-			theTarget.focus();	
-		}
-		selectedText = quoteAuthor = theSelection = '';
-        return;
-    }
-    else {
-        alert(no_text_selected);
-    }
-}
-
 function displayWindow(url, width, height)
 {
 	var Win = window.open(url,"displayWindow",'width=' + width + ',height=' + height + ',resizable=1,scrollbars=no,menubar=no' );
@@ -738,6 +715,25 @@ forum = {
 	},
 	getCookie: (name, data, exp) => {
 		return GetCookie(name)
+	},
+	selection: (selector) => {
+		$(selector).on('copy', (e) => {
+			var author = $(e.currentTarget).attr('author')
+			var text = document.getSelection().toString()
+			if (CKEDITOR) { 
+				if (author) {
+					author = '<b>'+author+':</b>'
+				}
+				CKEDITOR.instances.message.insertHtml(
+					'<blockquote>'+author+'<br /><br />'+text+'</blockquote><p></p>'
+				);
+			}
+			else {
+				text = '[quote]' + text + '[/quote]'
+			}
+			e.originalEvent.clipboardData.setData('text/plain', text)
+			e.preventDefault()
+		})
 	},
 	setCategoryClass: (selector) => {
 		var selectorClass = forum.getCookie(selector)

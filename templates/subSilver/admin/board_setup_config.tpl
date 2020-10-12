@@ -5,7 +5,7 @@
 <input type="hidden" name="action" value="1">
 <table width="100%" cellpadding="8" cellspacing="1" border="0" align="center" class="forumline">
 	<tr>
-		<th class="thHead">{L_CONFIGURATION_TITLE}</th>
+		<th>{L_CONFIGURATION_TITLE}</th>
 	</tr>
 	<tr>
 		<td class="row1" align="center"><input type="submit" name="save" value="{L_SAVE_CONFIG}" class="mainoption"></td>

@@ -19,14 +19,14 @@
 
 <table cellpadding="4" cellspacing="1" border="0" align="center" class="forumline">
 	<tr>
-		<th class="thHead" colspan="2">{L_XS_MAIN_TITLE}</th>
+		<th colspan="2">{L_XS_MAIN_TITLE}</th>
 	</tr>
 	<tr>
 		<td class="row1">{L_XS_CONFIGURATION}:<br /><span class="gensmall">{L_XS_CONFIGURATION_EXPLAIN}</span></td>
 		<td class="row2" align="center">[<a href="{U_CONFIG}">{L_XS_SET_CONFIGURATION_LC}</a>]</td>
 	</tr>
 	<tr>
-		<th class="thHead" colspan="2">{L_XS_INSTALL_UNINSTALL_STYLES}</th>
+		<th colspan="2">{L_XS_INSTALL_UNINSTALL_STYLES}</th>
 	</tr>
 	<tr>
 		<td class="row1">{L_XS_INSTALL_STYLES}:<br /><span class="gensmall">{L_XS_INSTALL_STYLES_EXPLAIN}</span></td>
@@ -37,7 +37,7 @@
 		<td class="row2" align="center">[<a href="{U_UNINSTALL_STYLES}">{L_XS_UNINSTALL_STYLES_LC}</a>]</td>
 	</tr>
 	<tr>
-		<th class="thHead" colspan="2">{L_XS_MANAGE_STYLES}</th>
+		<th colspan="2">{L_XS_MANAGE_STYLES}</th>
 	</tr>
 	<tr>
 		<td class="row1">{L_XS_DEFAULT_STYLE}:<br /><span class="gensmall">{L_XS_DEFAULT_STYLE_EXPLAIN}</span></td>
@@ -48,7 +48,7 @@
 		<td class="row2" align="center">[<a href="{U_MANAGE_CACHE}">{L_XS_MANAGE_CACHE_LC}</a>]</td>
 	</tr>
 	<tr>
-		<th class="thHead" colspan="2">{L_XS_IMPORT_EXPORT_STYLES}</th>
+		<th colspan="2">{L_XS_IMPORT_EXPORT_STYLES}</th>
 	</tr>
 	<tr>
 		<td class="explain" colspan="2">{L_XS_MAIN_COMMENT2}</td>
@@ -70,7 +70,7 @@
 		<td class="row2" align="center">[<a href="{U_DOWNLOAD_STYLES}">{L_XS_DOWNLOAD_STYLES_LC}</a>]</td>
 	</tr> -->
 	<tr>
-		<th class="thHead" colspan="2">{L_XS_EDIT_TEMPLATES}</th>
+		<th colspan="2">{L_XS_EDIT_TEMPLATES}</th>
 	</tr>
 	<tr>
 		<td class="row1">{L_XS_EDIT_TEMPLATES}:<br /><span class="gensmall">{L_XS_EDIT_TEMPLATES_EXPLAIN}</span></td>

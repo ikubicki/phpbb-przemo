@@ -1,5 +1,5 @@
 	<tr>
-		<th class="thHead" colspan="2">{L_POSTED_ATTACHMENTS}</th>
+		<th colspan="2">{L_POSTED_ATTACHMENTS}</th>
 	</tr>
 
 	<!-- BEGIN attach_row -->

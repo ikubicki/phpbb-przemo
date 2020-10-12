@@ -1,16 +1,16 @@
 
 <table border="0" cellpadding="2" cellspacing="1" class="forumline" width="100%"> 
   <tr> 
-    <td class="catHead" align="center" colspan="5"> 
+    <td align="center" colspan="5"> 
    <span class="cattitle">{MODULE_NAME}</span> 
     </td> 
   </tr> 
   <tr>    
-    <th colspan="1" class="thCornerL" align="center"><strong>{L_RANK}</strong></th>    
-    <th colspan="1" class="thTop" align="center" width="10%"><strong>{L_USERNAME}</strong></th> 
-    <th colspan="1" class="thTop" align="center" width="10%"><strong>{L_POSTS}</strong></th> 
-    <th colspan="1" class="thTop" align="center" width="10%"><strong>{L_PERCENTAGE}</strong></th> 
-    <th colspan="1" class="thCornerR" align="center" width="50%"><strong>{L_GRAPH}</strong></th> 
+    <th colspan="1" align="center"><strong>{L_RANK}</strong></th>    
+    <th colspan="1" align="center" width="10%"><strong>{L_USERNAME}</strong></th> 
+    <th colspan="1" align="center" width="10%"><strong>{L_POSTS}</strong></th> 
+    <th colspan="1" align="center" width="10%"><strong>{L_PERCENTAGE}</strong></th> 
+    <th colspan="1" align="center" width="50%"><strong>{L_GRAPH}</strong></th> 
   </tr> 
   <!-- BEGIN users --> 
   <tr> 

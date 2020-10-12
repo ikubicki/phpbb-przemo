@@ -1,15 +1,15 @@
 <table border="0" cellpadding="2" cellspacing="1" class="forumline" width="100%"> 
   <tr> 
-    <td class="catHead" align="center" colspan="5"> 
+    <td align="center" colspan="5"> 
    <span class="cattitle">{MODULE_NAME}</span> 
     </td> 
   </tr> 
   <tr>    
-    <th class="thCornerL" align="center"><strong>{L_RANK}</strong></th>    
-    <th class="thTop" align="center" width="10%"><strong>{L_GENDER}</strong></th> 
-    <th class="thTop" align="center" width="10%"><strong>{L_USERS}</strong></th> 
-    <th class="thTop" align="center" width="10%"><strong>{L_PERCENTAGE}</strong></th> 
-    <th class="thCornerR" align="center" width="50%"><strong>{L_GRAPH}</strong></th> 
+    <th align="center"><strong>{L_RANK}</strong></th>    
+    <th align="center" width="10%"><strong>{L_GENDER}</strong></th> 
+    <th align="center" width="10%"><strong>{L_USERS}</strong></th> 
+    <th align="center" width="10%"><strong>{L_PERCENTAGE}</strong></th> 
+    <th align="center" width="50%"><strong>{L_GRAPH}</strong></th> 
   </tr> 
   <!-- BEGIN gender --> 
   <tr> 

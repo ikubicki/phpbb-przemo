@@ -5,7 +5,7 @@
 <form action="{S_ACTION}" method="post" class="mainoption">
 <table cellpadding="4" cellspacing="1" align="center" border="0" class="forumline"> 
    <tr> 
-      <th nowrap="nowrap" class="thCornerL" align="center">{L_ADMIN_NOTES}</th>
+      <th nowrap="nowrap" align="center">{L_ADMIN_NOTES}</th>
    </tr>
    <tr>
       <td class="row2" align="center">&nbsp;<textarea name="admin_notes" cols="90" rows="6" class="post">{ADMIN_NOTES}</textarea><input type="hidden" name="save" value="1">
@@ -16,13 +16,13 @@
 <br>
 <table width="99%" align="center" cellpadding="4" cellspacing="1" border="0" class="forumline">
    <tr>
-      <th width="15%" class="thCornerL" height="25" colspan="4">&nbsp;{L_FORUM_STATS}&nbsp;</th>
+      <th width="15%" height="25" colspan="4">&nbsp;{L_FORUM_STATS}&nbsp;</th>
   </tr>
   <tr>
-      <td width="25%" nowrap="nowrap" height="25" class="catHead"><span class="cattitle">{L_STATISTIC}</span></td>
-      <td width="25%" height="25" class="catHead"><span class="cattitle">{L_VALUE}</span></td>
-      <td width="25%" nowrap="nowrap" height="25" class="catHead"><span class="cattitle">{L_STATISTIC}</span></td>
-      <td width="25%" height="25" class="catHead"><span class="cattitle">{L_VALUE}</span></td>
+      <td width="25%" nowrap="nowrap" height="25"><span class="cattitle">{L_STATISTIC}</span></td>
+      <td width="25%" height="25"><span class="cattitle">{L_VALUE}</span></td>
+      <td width="25%" nowrap="nowrap" height="25"><span class="cattitle">{L_STATISTIC}</span></td>
+      <td width="25%" height="25"><span class="cattitle">{L_VALUE}</span></td>
   </tr>
   <tr>
       <td class="row1" nowrap="nowrap">{L_NUMBER_POSTS}:</td>
@@ -56,7 +56,7 @@
   </tr>
   <!-- BEGIN details -->
   <tr>
-      <td class="catHead" colspan="4" align="center"><span class="nav">{L_DETAILS_TITLE}</span></td>
+      <td colspan="4" align="center"><span class="nav">{L_DETAILS_TITLE}</span></td>
   </tr>
   <tr>
       <td class="row1" nowrap="nowrap" colspan="2" align="center"><b>{L_NAME}</b></td>
@@ -80,15 +80,15 @@
 </table>
 <table width="99%" align="center" cellpadding="4" cellspacing="1" border="0" class="forumline">
   <tr>
-      <th width="15%" class="thCornerL" height="25" colspan="6">&nbsp;{L_WHO_IS_ONLINE}&nbsp;</th>
+      <th width="15%" height="25" colspan="6">&nbsp;{L_WHO_IS_ONLINE}&nbsp;</th>
   </tr>
   <tr>
-      <td width="15%" class="catHead" height="25"><span class="cattitle">&nbsp;{L_USERNAME}&nbsp;</a></span></td>
-      <td width="15%" class="catHead" height="25" align="center"><span class="cattitle">&nbsp;{L_STARTED}&nbsp;</span></td>
-      <td width="10%" class="catHead" align="center"><span class="cattitle">&nbsp;{L_LAST_UPDATE}&nbsp;</span></td>
-      <td width="10%" class="catHead" align="center"><span class="cattitle">&nbsp;{L_TIME}&nbsp;</span></td>
-      <td width="25%" class="catHead"><span class="cattitle">&nbsp;{L_FORUM_LOCATION}&nbsp;</span></td>
-      <td width="25%" height="25" class="catHead"><span class="cattitle">&nbsp;{L_IP_ADDRESS}&nbsp;</span></td>
+      <td width="15%" height="25"><span class="cattitle">&nbsp;{L_USERNAME}&nbsp;</a></span></td>
+      <td width="15%" height="25" align="center"><span class="cattitle">&nbsp;{L_STARTED}&nbsp;</span></td>
+      <td width="10%" align="center"><span class="cattitle">&nbsp;{L_LAST_UPDATE}&nbsp;</span></td>
+      <td width="10%" align="center"><span class="cattitle">&nbsp;{L_TIME}&nbsp;</span></td>
+      <td width="25%"><span class="cattitle">&nbsp;{L_FORUM_LOCATION}&nbsp;</span></td>
+      <td width="25%" height="25"><span class="cattitle">&nbsp;{L_IP_ADDRESS}&nbsp;</span></td>
   </tr>
   <!-- BEGIN reg_user_row -->
   <tr>

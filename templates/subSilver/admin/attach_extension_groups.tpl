@@ -12,18 +12,18 @@
 <form method="post" action="{S_ATTACH_ACTION}">
   <table width="100%" align="center" cellpadding="4" cellspacing="1" border="0" class="forumline">
 	<tr> 
-	  <td class="catHead" colspan="8" align="center" height="28"><span class="cattitle">{L_EXTENSION_GROUPS_TITLE}</span> 
+	  <td colspan="8" align="center" height="28"><span class="cattitle">{L_EXTENSION_GROUPS_TITLE}</span> 
 	  </td>
 	</tr>
 	<tr> 
-	  <th class="thLeft">&nbsp;{L_EXTENSION_GROUP}&nbsp;</th>
+	  <th>&nbsp;{L_EXTENSION_GROUP}&nbsp;</th>
 	  <th>&nbsp;{L_SPECIAL_CATEGORY}&nbsp;</th>
 	  <th>&nbsp;{L_ALLOWED}&nbsp;</th>
 	  <th>&nbsp;{L_DOWNLOAD_MODE}&nbsp;</th>
 	  <th>&nbsp;{L_UPLOAD_ICON}&nbsp;</th>
 	  <th>&nbsp;{L_MAX_FILESIZE}&nbsp;</th>
 	  <th>&nbsp;{L_ALLOWED_FORUMS}&nbsp;</th>
-	  <th class="thRight">&nbsp;{L_ADD_NEW}&nbsp;</th>
+	  <th>&nbsp;{L_ADD_NEW}&nbsp;</th>
 	</tr>
 	<tr>
 	  <td class="row1" align="center" valign="middle">
@@ -43,17 +43,17 @@
 	  <td class="row2" align="center" valign="middle"><input type="checkbox" name="add_extension_group_check"></td>
 	</tr>
 	<tr align="right"> 
-	  <td class="catBottom" colspan="8" height="29"><input type="submit" name="submit" class="liteoption" value="{L_SUBMIT}"></td>
+	  <td class="submit" colspan="8" height="29"><input type="submit" name="submit" class="liteoption" value="{L_SUBMIT}"></td>
     </tr>
 	<tr> 
-	  <th class="thLeft">&nbsp;{L_EXTENSION_GROUP}&nbsp;</th>
+	  <th>&nbsp;{L_EXTENSION_GROUP}&nbsp;</th>
 	  <th>&nbsp;{L_SPECIAL_CATEGORY}&nbsp;</th>
 	  <th>&nbsp;{L_ALLOWED}&nbsp;</th>
 	  <th>&nbsp;{L_DOWNLOAD_MODE}&nbsp;</th>
 	  <th>&nbsp;{L_UPLOAD_ICON}&nbsp;</th>
 	  <th>&nbsp;{L_MAX_FILESIZE}&nbsp;</th>
 	  <th>&nbsp;{L_ALLOWED_FORUMS}&nbsp;</th>
-	  <th class="thRight">&nbsp;{L_DELETE}&nbsp;</th>
+	  <th>&nbsp;{L_DELETE}&nbsp;</th>
 	</tr>
   <!-- BEGIN grouprow -->
     <tr> 
@@ -91,7 +91,7 @@
   <!-- END grouprow -->
 
 	<tr align="right"> 
-	  <td class="catBottom" colspan="8" height="29"> 
+	  <td class="submit" colspan="8" height="29"> 
 	  <input type="submit" name="{L_CANCEL}" class="liteoption" value="{L_CANCEL}" onClick="self.location.href='{S_CANCEL_ACTION}'">
 	  <input type="submit" name="submit" class="liteoption" value="{L_SUBMIT}"></td>
 	</tr>

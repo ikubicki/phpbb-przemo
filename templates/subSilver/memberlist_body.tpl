@@ -20,19 +20,19 @@
 
 <table width="100%" cellpadding="1" cellspacing="1" border="0" class="forumline">
 	<tr>
-		<th class="thTop" nowrap="nowrap">{L_USERNAME}</th>
-		<th class="thTop" nowrap="nowrap">{L_EMAIL}</th>
-		<th class="thTop" nowrap="nowrap">PM</th>
-		<th class="thTop" nowrap="nowrap">{L_FROM}</th>
-		<th class="thTop" nowrap="nowrap">{L_JOINED}</th>
+		<th nowrap="nowrap">{L_USERNAME}</th>
+		<th nowrap="nowrap">{L_EMAIL}</th>
+		<th nowrap="nowrap">PM</th>
+		<th nowrap="nowrap">{L_FROM}</th>
+		<th nowrap="nowrap">{L_JOINED}</th>
 		<!-- BEGIN llogin -->
-		<th class="thTop" nowrap="nowrap">{L_LAST_VISIT}</th>
+		<th nowrap="nowrap">{L_LAST_VISIT}</th>
 		<!-- END llogin -->
-		<th class="thTop" nowrap="nowrap">{L_POSTS}</th>
+		<th nowrap="nowrap">{L_POSTS}</th>
 		<!-- BEGIN aim -->
-		<th class="thTop" nowrap="nowrap">GG</th>
+		<th nowrap="nowrap">GG</th>
 		<!-- END aim -->
-		<th class="thCornerR" nowrap="nowrap">{L_WEBSITE}</th>
+		<th nowrap="nowrap">{L_WEBSITE}</th>
 	</tr>
 	<!-- BEGIN memberrow -->
 	<tr>

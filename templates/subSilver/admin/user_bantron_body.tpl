@@ -28,23 +28,23 @@
 	<table width="100%" cellpadding="3" cellspacing="1" border="0" align="center" class="forumline">
 		<tr>
 			<!-- BEGIN username_header -->
-			<th height="25" class="thCornerL" nowrap="nowrap">{username_header.L_USERNAME}</th>
+			<th height="25" nowrap="nowrap">{username_header.L_USERNAME}</th>
 			<!-- END username_header -->
 			<!-- BEGIN ip_header -->
-			<th height="25" class="thCornerL" nowrap="nowrap">IP</th>
+			<th height="25" nowrap="nowrap">IP</th>
 			<!-- END ip_header -->
 			<!-- BEGIN host_header -->
-			<th height="25" class="thCornerL" nowrap="nowrap">Host</th>
+			<th height="25" nowrap="nowrap">Host</th>
 			<!-- END host_header -->
 			<!-- BEGIN email_header -->
-			<th height="25" class="thCornerL" nowrap="nowrap">{email_header.L_EMAIL}</th>
+			<th height="25" nowrap="nowrap">{email_header.L_EMAIL}</th>
 			<!-- END email_header -->
-			<th class="thTop" nowrap="nowrap">{L_BANNED}</th>
-			<th class="thTop" nowrap="nowrap">{L_EXPIRES}</th>
-			<th class="thTop" nowrap="nowrap">{L_BY}</th>
-			<th class="thTop" nowrap="nowrap">{L_REASONS}</th>
-			<th class="thTop" nowrap="nowrap">{L_EDIT}</th>
-			<th class="thCornerR" nowrap="nowrap">{L_DELETE}</th>
+			<th nowrap="nowrap">{L_BANNED}</th>
+			<th nowrap="nowrap">{L_EXPIRES}</th>
+			<th nowrap="nowrap">{L_BY}</th>
+			<th nowrap="nowrap">{L_REASONS}</th>
+			<th nowrap="nowrap">{L_EDIT}</th>
+			<th nowrap="nowrap">{L_DELETE}</th>
 		<tr>
 		<!-- BEGIN switch_nobans -->
 		<tr>
@@ -76,10 +76,10 @@
 		</tr>
 		<!-- END rowlist -->
 		<tr>
-			<td class="catBottom" align="left" colspan="5">
+			<td class="submit" align="left" colspan="5">
 				<input type="submit" name="add" value="{L_ADD_A_NEW_BAN}" class="liteoption">
 			</td>
-			<td class="catBottom" align="right" colspan="5">
+			<td class="submit" align="right" colspan="5">
 				<input type="submit" name="delete_submit" value="{L_DELETE_SELECTED_BANS}" class="liteoption">
 			</td>
 		</tr>

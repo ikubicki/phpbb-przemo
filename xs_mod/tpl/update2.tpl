@@ -21,12 +21,12 @@
 
 <table width="100%" cellpadding="4" cellspacing="1" border="0" class="forumline">
 	<tr>
-		<th class="thCornerL" align="center" nowrap="nowrap">{L_XS_UPDATE_NAME}</th>
-		<th class="thTop" align="center" nowrap="nowrap">{L_XS_UPDATE_TYPE}</th>
-		<th class="thTop" align="center" nowrap="nowrap">{L_XS_UPDATE_CURRENT_VERSION}</th>
-		<th class="thTop" align="center" nowrap="nowrap">{L_XS_UPDATE_LATEST_VERSION}</th>
-		<th class="thTop" align="center" nowrap="nowrap">{L_XS_UPDATE_DOWNLOADINFO}</th>
-		<th class="thCornerR" align="center" nowrap="nowrap">{L_XS_UPDATE_FILEINFO}</th>
+		<th align="center" nowrap="nowrap">{L_XS_UPDATE_NAME}</th>
+		<th align="center" nowrap="nowrap">{L_XS_UPDATE_TYPE}</th>
+		<th align="center" nowrap="nowrap">{L_XS_UPDATE_CURRENT_VERSION}</th>
+		<th align="center" nowrap="nowrap">{L_XS_UPDATE_LATEST_VERSION}</th>
+		<th align="center" nowrap="nowrap">{L_XS_UPDATE_DOWNLOADINFO}</th>
+		<th align="center" nowrap="nowrap">{L_XS_UPDATE_FILEINFO}</th>
 	</tr>
 	<!-- BEGIN row -->
 	<tr>
@@ -53,7 +53,7 @@
 	</tr>
 	<!-- END row -->
 	<tr>
-		<td class="catBottom" colspan="6" align="center">{COUNT_TOTAL}, {COUNT_ERROR}, {COUNT_UPDATE}</td>
+		<td class="submit" colspan="6" align="center">{COUNT_TOTAL}, {COUNT_ERROR}, {COUNT_UPDATE}</td>
 	</tr>
 </table>
 

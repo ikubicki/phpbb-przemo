@@ -9,12 +9,12 @@
 <table cellspacing="1" cellpadding="4" border="0" align="center" class="forumline">
 	
 <tr>
-	<th class="thCornerL"> &nbsp; &nbsp; </th>
-	<th class="thTop">{L_OPTIMIZE_TABLE}</th>
-	<th class="thTop">{L_OPTIMIZE_RECORD}</th>
-	<th class="thTop">{L_OPTIMIZE_TYPE}</th>
-	<th class="thTop">{L_OPTIMIZE_SIZE}</th>
-	<th class="thCornerR">{L_OPTIMIZE_STATUS}</th>
+	<th> &nbsp; &nbsp; </th>
+	<th>{L_OPTIMIZE_TABLE}</th>
+	<th>{L_OPTIMIZE_RECORD}</th>
+	<th>{L_OPTIMIZE_TYPE}</th>
+	<th>{L_OPTIMIZE_SIZE}</th>
+	<th>{L_OPTIMIZE_STATUS}</th>
 </tr>	
 
 <!-- BEGIN optimize -->

@@ -2,15 +2,15 @@
 <form method="post" action="{FORM_ACTION}" name="ignoreform">
 <table border="0" cellpadding="4" cellspacing="1" width="100%" class="forumline">
 	<tr>
-		<th align="center" colspan="3" class="thTop">{L_LIST_IGNORE}</th>
+		<th align="center" colspan="3">{L_LIST_IGNORE}</th>
 	</tr>
 	<tr>
 		<td align="center" colspan="3" class="row1"><span class="genmed">{L_LIST_IGNORE_E}</span></th>
 	</tr>
 	<tr>
-		<td align="center" class="catBottom" nowrap="nowrap"><span class="nav">{L_DELETE}</span></td>
-		<td align="center" class="catBottom" nowrap="nowrap"><span class="nav">{L_TOPICS}</span></td>
-		<td align="center" class="catBottom" nowrap="nowrap"><span class="nav">{L_FORUM}</span></td>
+		<td align="center" class="submit" nowrap="nowrap"><span class="nav">{L_DELETE}</span></td>
+		<td align="center" class="submit" nowrap="nowrap"><span class="nav">{L_TOPICS}</span></td>
+		<td align="center" class="submit" nowrap="nowrap"><span class="nav">{L_FORUM}</span></td>
 	</tr>
 	<script language="JavaScript" type="text/javascript">
 	<!--
@@ -27,8 +27,8 @@
 	</tr>
 	<!-- END view -->
 	<tr>
-		<td colspan="2" class="catBottom" align="left"><span class="gensmall"><input type="submit" name="unignore_mark" class="liteoption" value="{L_DELETE_MARK}">&nbsp;<a href="#" onclick="setCheckboxes('ignoreform', true); return false;">{L_MARK_ALL}</a></span></td>
-		<td class="catBottom" align="right"><span class="gensmall"><a href="{VIEW_IGNORE}">{L_LIST_IGNORE}</a></span></td>
+		<td colspan="2" class="submit" align="left"><span class="gensmall"><input type="submit" name="unignore_mark" class="liteoption" value="{L_DELETE_MARK}">&nbsp;<a href="#" onclick="setCheckboxes('ignoreform', true); return false;">{L_MARK_ALL}</a></span></td>
+		<td class="submit" align="right"><span class="gensmall"><a href="{VIEW_IGNORE}">{L_LIST_IGNORE}</a></span></td>
 	</tr>
 </table>
 </form>

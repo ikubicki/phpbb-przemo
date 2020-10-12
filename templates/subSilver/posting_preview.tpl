@@ -1,7 +1,7 @@
  
 <table class="forumline" width="100%" cellspacing="1" cellpadding="4" border="0">
 	<tr> 
-		<th height="25" class="thHead">{L_PREVIEW}</th>
+		<th height="25">{L_PREVIEW}</th>
 	</tr>
 	<tr> 
 		<td class="row1"><img src="{IMG_POST}" alt="{L_POST}"><span class="postdetails">{L_POSTED}: {POST_DATE} &nbsp;&nbsp;&nbsp; {L_POST_SUBJECT}: {POST_SUBJECT}</span></td>

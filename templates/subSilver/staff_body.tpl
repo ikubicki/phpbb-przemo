@@ -2,16 +2,16 @@
 
 <table width="100%" cellpadding="3" cellspacing="1" border="0" class="forumline">
   <tr>
-        <th class="thTop">{L_USERNAME}</th>
-        <th class="thTop">{L_FORUMS}</th>
-        <th class="thTop">{L_POSTS}</th>
-        <th class="thTop">{L_JOINED}</th>
-        <th class="thTop">{L_EMAIL}</th>
-        <th class="thTop">PM</th>
+        <th>{L_USERNAME}</th>
+        <th>{L_FORUMS}</th>
+        <th>{L_POSTS}</th>
+        <th>{L_JOINED}</th>
+        <th>{L_EMAIL}</th>
+        <th>PM</th>
         <!-- BEGIN aim -->
-	<th class="thTop">GG</th>
+	<th>GG</th>
 	<!-- END aim -->
-        <th class="thCornerR">WWW</th>
+        <th>WWW</th>
   </tr>
 <!-- BEGIN staff -->
   <tr> 

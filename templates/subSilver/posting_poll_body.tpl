@@ -1,6 +1,6 @@
 
 			<tr>
-				<th class="thHead" colspan="2">{L_ADD_A_POLL}</th>
+				<th colspan="2">{L_ADD_A_POLL}</th>
 	        </tr>
 			<tr>
 				<td class="row1" colspan="2"><span class="gensmall">{L_ADD_POLL_EXPLAIN}</span></td>

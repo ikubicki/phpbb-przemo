@@ -7,11 +7,11 @@
 <!-- END links_target_1 -->
 <table width="100%" cellpadding="2" cellspacing="1" border="0" class="forumline">
   <tr> 
-	<th class="thCornerL" nowrap="nowrap">&nbsp;{L_POST}&nbsp;</th>
-	<th class="thTop" nowrap="nowrap">&nbsp;{L_AUTHOR}&nbsp;</th>
-	<th class="thTop" nowrap="nowrap">&nbsp;{L_TOPIC}&nbsp;</th>
-	<th class="thTop" nowrap="nowrap">&nbsp;{L_FORUM}&nbsp;</th>
-	<th class="thCornerR" nowrap="nowrap">&nbsp;{L_REPORTER}&nbsp;</th>
+	<th nowrap="nowrap">&nbsp;{L_POST}&nbsp;</th>
+	<th nowrap="nowrap">&nbsp;{L_AUTHOR}&nbsp;</th>
+	<th nowrap="nowrap">&nbsp;{L_TOPIC}&nbsp;</th>
+	<th nowrap="nowrap">&nbsp;{L_FORUM}&nbsp;</th>
+	<th nowrap="nowrap">&nbsp;{L_REPORTER}&nbsp;</th>
   </tr>
 <!-- BEGIN postrow -->
   <tr> 

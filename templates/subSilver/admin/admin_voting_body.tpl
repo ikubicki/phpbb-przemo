@@ -80,10 +80,10 @@
 	</tr>
 <table width="100%" cellpadding="3" cellspacing="1" border="0" class="forumline"> 
 	<tr> 
-		<th class="thCornerL" height="20" valign="middle" nowrap="nowrap">{L_VOTE_ID}</th> 
-		<th class="thTop" height="20" valign="middle" nowrap="nowrap">{L_POLL_TOPIC}</th> 
-		<th class="thTop" height="20" valign="middle" nowrap="nowrap">{L_VOTE_USERNAME}</th> 
-		<th class="thCornerR" height="20" valign="middle" nowrap="nowrap">{L_VOTE_END_DATE}</th> 
+		<th height="20" valign="middle" nowrap="nowrap">{L_VOTE_ID}</th> 
+		<th height="20" valign="middle" nowrap="nowrap">{L_POLL_TOPIC}</th> 
+		<th height="20" valign="middle" nowrap="nowrap">{L_VOTE_USERNAME}</th> 
+		<th height="20" valign="middle" nowrap="nowrap">{L_VOTE_END_DATE}</th> 
 	</tr> 
 <!-- BEGIN votes --> 
 	<tr>
@@ -113,7 +113,7 @@
 	</tr> 
 <!-- END votes --> 
 	<tr>
-		<td class="catBottom" height="18" align="center" valign="middle" colspan="4"></td>
+		<td class="submit" height="18" align="center" valign="middle" colspan="4"></td>
 	</tr>
 </table>
 

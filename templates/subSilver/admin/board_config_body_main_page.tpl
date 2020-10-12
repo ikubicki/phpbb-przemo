@@ -33,7 +33,7 @@
 			<script language=JavaScript src="../images/picker.js"></script>
 				<form action="{S_CONFIG_ACTION}" method="post" name="pick_form"><table width="100%" cellpadding="2" cellspacing="1" border="0" align="center" class="forumline">
 				<tr>
-					<th class="thHead" colspan="2">{L_ADDON_MAIN_PAGE}</th>
+					<th colspan="2">{L_ADDON_MAIN_PAGE}</th>
 				</tr>
 				<tr> 
 					<td class="row1">{L_BANNER_TOP}<br><span class="gensmall">{L_BANNER_TOP_E}</span></td> 
@@ -174,7 +174,7 @@
 					<input type="radio" name="sub_level_links_over" value="0" {SLL_OVER_NO} >{L_NO}</td>
 				</tr>
 				<tr>
-					<td class="catBottom" colspan="2" align="center">{S_HIDDEN_FIELDS}<input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption">&nbsp;&nbsp;<input type="reset" value="{L_RESET}" class="liteoption"></td>
+					<td class="submit" colspan="2" align="center">{S_HIDDEN_FIELDS}<input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption">&nbsp;&nbsp;<input type="reset" value="{L_RESET}" class="liteoption"></td>
 				</tr>
 				</form>
 			</td>

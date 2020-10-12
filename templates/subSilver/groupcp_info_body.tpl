@@ -3,7 +3,7 @@
 
 <table class="forumline" width="100%" cellspacing="1" cellpadding="4" border="0">
 	<tr> 
-		<th class="thHead" colspan="7" height="25"><span class="tableTitle">{L_GROUP_INFORMATION}</span></th>
+		<th colspan="7" height="25"><span class="tableTitle">{L_GROUP_INFORMATION}</span></th>
 	</tr>
 	<tr> 
 		<td class="row1" width="20%"><span class="gen">{L_GROUP_NAME}:</span></td>
@@ -39,13 +39,13 @@
 <form action="{S_GROUPCP_ACTION}" method="post" name="post">
 <table width="100%" cellpadding="4" cellspacing="1" border="0" class="forumline">
 	<tr> 
-	  <th class="thCornerL" height="25">{L_PM}</th>
-	  <th class="thTop">{L_USERNAME}</th>
-	  <th class="thTop">{L_POSTS}</th>
-	  <th class="thTop">{L_FROM}</th>
-	  <th class="thTop">{L_EMAIL}</th>
-	  <th class="thTop">{L_WEBSITE}</th>
-	  <th class="thCornerR">{L_SELECT}</th>
+	  <th height="25">{L_PM}</th>
+	  <th>{L_USERNAME}</th>
+	  <th>{L_POSTS}</th>
+	  <th>{L_FROM}</th>
+	  <th>{L_EMAIL}</th>
+	  <th>{L_WEBSITE}</th>
+	  <th>{L_SELECT}</th>
 	</tr>
 	<tr> 
 	  <td class="catSides" colspan="8" height="28"><span class="cattitle">{L_GROUP_MODERATOR}</span></td>
@@ -93,7 +93,7 @@
 
 	<!-- BEGIN switch_mod_option -->
 	<tr>
-		<td class="catBottom" colspan="8" align="right"><span class="cattitle">
+		<td class="submit" colspan="8" align="right"><span class="cattitle">
 			<input type="submit" name="remove" value="{L_REMOVE_SELECTED}" class="mainoption"></span>
 		</td>
 	</tr>

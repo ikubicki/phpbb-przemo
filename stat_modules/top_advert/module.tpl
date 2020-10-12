@@ -1,13 +1,13 @@
 
 <table border="0" cellpadding="2" cellspacing="1" class="forumline" width="100%"> 
   <tr> 
-    <td class="catHead" align="center" colspan="5"> 
+    <td align="center" colspan="5"> 
 		<span class="cattitle">{L_ADV_TITLE}</span> 
     </td> 
   </tr> 
   <tr>    
-    <th colspan="1" class="thTop" align="center" width="40%"><strong>{L_USERNAME}</strong></th> 
-    <th colspan="1" class="thTop" align="center" width="40%"><strong>{L_ADV_PERSONS}</strong></th> 
+    <th colspan="1" align="center" width="40%"><strong>{L_USERNAME}</strong></th> 
+    <th colspan="1" align="center" width="40%"><strong>{L_ADV_PERSONS}</strong></th> 
   </tr> 
 
   <!-- BEGIN adv --> 

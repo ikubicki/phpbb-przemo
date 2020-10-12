@@ -2,7 +2,7 @@
 <form action="{S_PROFILE_ACTION}" method="post" name="prefs">
 <table border="0" cellpadding="2" cellspacing="1" width="100%" class="forumline">
 	<tr> 
-		<th class="thHead" colspan="2" height="25" valign="middle">{L_PREFERENCES}</th>
+		<th colspan="2" height="25" valign="middle">{L_PREFERENCES}</th>
 	</tr>
 	<tr>
 		<td class="row2" align="center" align="center" colspan="2"><span class="gensmall">{L_PREFERENCES_E}</span></td>
@@ -246,7 +246,7 @@
 	</tr>
 	<!-- END s_user_display_viewonline -->
 	<tr>
-		<td class="catBottom" colspan="2" align="center" height="22"><input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption" onClick="document.prefs.submit.title='save';">&nbsp;&nbsp;<input type="reset" value="{L_RESET}" name="reset" class="liteoption"></td>
+		<td class="submit" colspan="2" align="center" height="22"><input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption" onClick="document.prefs.submit.title='save';">&nbsp;&nbsp;<input type="reset" value="{L_RESET}" name="reset" class="liteoption"></td>
 	</tr>
 </table>
 </form>

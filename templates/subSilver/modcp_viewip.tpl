@@ -1,10 +1,10 @@
 
 <table width="100%" cellpadding="3" cellspacing="1" border="0" class="forumline">
   <tr> 
-	<th height="25" class="thHead">{L_IP_INFO}</th>
+	<th height="25">{L_IP_INFO}</th>
   </tr>
   <tr> 
-	<td class="catHead" height="28"><span class="cattitle"><b>{L_THIS_POST_IP}</b></span></td>
+	<td height="28"><span class="cattitle"><b>{L_THIS_POST_IP}</b></span></td>
   </tr>
   <tr> 
 	<td class="row1"> 
@@ -18,7 +18,7 @@
 	</td>
   </tr>
   <tr> 
-	<td class="catHead" height="28"><span class="cattitle"><b>{L_OTHER_USERS}</b></span></td>
+	<td height="28"><span class="cattitle"><b>{L_OTHER_USERS}</b></span></td>
   </tr>
   <!-- BEGIN userrow -->
   <tr> 
@@ -34,7 +34,7 @@
   </tr>
   <!-- END userrow -->
   <tr> 
-	<td class="catHead" height="28"><span class="cattitle"><b>{L_OTHER_IPS}</b></span></td>
+	<td height="28"><span class="cattitle"><b>{L_OTHER_IPS}</b></span></td>
   </tr>
   <!-- BEGIN iprow -->
   <tr> 

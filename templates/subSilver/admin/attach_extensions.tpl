@@ -8,14 +8,14 @@
 <form method="post" action="{S_ATTACH_ACTION}">
   <table width="100%" align="center" cellpadding="4" cellspacing="1" border="0" class="forumline">
 	<tr> 
-	  <td class="catHead" colspan="5" align="center" height="28"><span class="cattitle">{L_EXTENSIONS_TITLE}</span> 
+	  <td colspan="5" align="center" height="28"><span class="cattitle">{L_EXTENSIONS_TITLE}</span> 
 	  </td>
 	</tr>
 	<tr> 
-	  <th class="thLeft">&nbsp;{L_EXPLANATION}&nbsp;</th>
+	  <th>&nbsp;{L_EXPLANATION}&nbsp;</th>
 	  <th>&nbsp;{L_EXTENSION}&nbsp;</th>
 	  <th>&nbsp;{L_EXTENSION_GROUP}&nbsp;</th>
-	  <th class="thRight">&nbsp;{L_ADD_NEW}&nbsp;</th>
+	  <th>&nbsp;{L_ADD_NEW}&nbsp;</th>
 	</tr>
 	<tr>
 	  <td class="row1" align="center" valign="middle"><input type="text" size="30" maxlength="100" name="add_extension_explain" class="post" value="{ADD_EXTENSION_EXPLAIN}"></td>
@@ -24,13 +24,13 @@
 	  <td class="row2" align="center" valign="middle"><input type="checkbox" name="add_extension_check"></td>
 	</tr>
 	<tr align="right"> 
-	  <td class="catBottom" colspan="5" height="29"> {S_HIDDEN_FIELDS} <input type="submit" name="submit" class="liteoption" value="{L_SUBMIT}"></td>
+	  <td class="submit" colspan="5" height="29"> {S_HIDDEN_FIELDS} <input type="submit" name="submit" class="liteoption" value="{L_SUBMIT}"></td>
     </tr>
 	<tr> 
-	  <th class="thLeft">&nbsp;{L_EXPLANATION}&nbsp;</th>
+	  <th>&nbsp;{L_EXPLANATION}&nbsp;</th>
 	  <th>&nbsp;{L_EXTENSION}&nbsp;</th>
 	  <th>&nbsp;{L_EXTENSION_GROUP}&nbsp;</th>
-	  <th class="thRight">&nbsp;{L_DELETE}&nbsp;</th>
+	  <th>&nbsp;{L_DELETE}&nbsp;</th>
 	</tr>
 <!-- BEGIN extension_row -->
 	<tr> 
@@ -42,7 +42,7 @@
 	</tr>
 <!-- END extension_row -->
 	<tr align="right"> 
-	  <td class="catBottom" colspan="5" height="29"> 
+	  <td class="submit" colspan="5" height="29"> 
 	  <input type="submit" name="{L_CANCEL}" class="liteoption" value="{L_CANCEL}" onClick="self.location.href='{S_CANCEL_ACTION}'">
 	  <input type="submit" name="submit" class="liteoption" value="{L_SUBMIT}"></td>
 	</tr>

@@ -2,10 +2,10 @@
 <form action="{S_ACTION}" {S_FORM_ENCTYPE} method="post" name="post">
 <table width="100%" cellpadding="3" cellspacing="1" border="0" class="forumline">
   <tr> 
-	<th height="25" class="thHead">{L_IGNORE_LIST}</th>
+	<th height="25">{L_IGNORE_LIST}</th>
   </tr>
   <tr> 
-	<td class="catHead" height="28"><span class="cattitle"><b>{L_IGNORE_ADD}</b></span></td>
+	<td height="28"><span class="cattitle"><b>{L_IGNORE_ADD}</b></span></td>
   </tr>
   <tr> 
 	<td class="row1"> 
@@ -21,7 +21,7 @@
 	</td>
   </tr>
   <tr> 
-	<td class="catHead" height="28"><span class="cattitle"><b>{L_IGNORED_USERS}</b></span></td>
+	<td height="28"><span class="cattitle"><b>{L_IGNORED_USERS}</b></span></td>
   </tr>
   <!-- BEGIN userrow -->
   <tr> 

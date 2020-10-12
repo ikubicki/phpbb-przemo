@@ -2,7 +2,7 @@
 <table width="90%" cellpadding="4" cellspacing="1" border="0" class="forumline" align="center">
 <!-- BEGIN rules_row -->
 	<tr>
-		<th class="thHead" align="center">{rules_row.L_RULES_TITLE}</th>
+		<th align="center">{rules_row.L_RULES_TITLE}</th>
 	</tr>
 <tr>
 	<td class="row1" width="90%" align="center">

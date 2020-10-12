@@ -8,7 +8,7 @@
 <form action="{S_ATTACH_ACTION}" method="post">
 <table width="99%" cellpadding="4" cellspacing="1" border="0" align="center" class="forumline">
 	<tr>
-	  <th class="thHead" colspan="2">{L_ATTACHMENT_SETTINGS}</th>
+	  <th colspan="2">{L_ATTACHMENT_SETTINGS}</th>
 	</tr>
 	<tr>
 		<td class="row1" width="80%">{L_UPLOAD_DIR}<br><span class="gensmall">{L_UPLOAD_DIR_EXPLAIN}</span></td>
@@ -35,7 +35,7 @@
 		</table></td>
 	</tr>
 	<tr>
-	  <th class="thHead" colspan="2">{L_ATTACHMENT_FILESIZE_SETTINGS}</th>
+	  <th colspan="2">{L_ATTACHMENT_FILESIZE_SETTINGS}</th>
 	</tr>
 	<tr>
 		<td class="row1" width="80%">{L_MAX_FILESIZE}<br><span class="gensmall">{L_MAX_FILESIZE_EXPLAIN}</span></td>
@@ -65,7 +65,7 @@
 		</td>
 	</tr>
 	<tr>
-	  <th class="thHead" colspan="2">{L_ATTACHMENT_NUMBER_SETTINGS}</th>
+	  <th colspan="2">{L_ATTACHMENT_NUMBER_SETTINGS}</th>
 	</tr>
 	<tr>
 		<td class="row1" width="80%">{L_MAX_ATTACHMENTS}<br><span class="gensmall">{L_MAX_ATTACHMENTS_EXPLAIN}</span></td>
@@ -76,7 +76,7 @@
 		<td class="row2"><input type="text" size="3" maxlength="3" name="max_attachments_pm" class="post" value="{MAX_ATTACHMENTS_PM}"></td>
 	</tr>
 	<tr>
-	  <th class="thHead" colspan="2">{L_ATTACHMENT_OPTIONS_SETTINGS}</th>
+	  <th colspan="2">{L_ATTACHMENT_OPTIONS_SETTINGS}</th>
 	</tr>
 	<tr>
 		<td class="row1" width="80%">{L_DISABLE_MOD}<br><span class="gensmall">{L_DISABLE_MOD_EXPLAIN}</span></td>
@@ -100,7 +100,7 @@
 		<td class="row2"><input type="radio" name="allow_ftp_upload" value="1" {FTP_UPLOAD_YES}> {L_YES}&nbsp;&nbsp;<input type="radio" name="allow_ftp_upload" value="0" {FTP_UPLOAD_NO}> {L_NO}</td>
 	</tr>
 	<tr>
-	  <th class="thHead" colspan="2">{L_ATTACHMENT_FTP_SETTINGS}</th>
+	  <th colspan="2">{L_ATTACHMENT_FTP_SETTINGS}</th>
 	</tr>
 	<tr>
 		<td class="row1" width="80%">{L_ATTACHMENT_FTP_SERVER}<br><span class="gensmall">{L_ATTACHMENT_FTP_SERVER_EXPLAIN}</span></td>
@@ -130,14 +130,14 @@
 <!-- BEGIN switch_no_ftp -->
 	<input type="hidden" name="allow_ftp_upload" value="0">
 	<tr>
-	  <th class="thHead" colspan="2">{L_ATTACHMENT_FTP_SETTINGS}</th>
+	  <th colspan="2">{L_ATTACHMENT_FTP_SETTINGS}</th>
 	</tr>
 	<tr>
 	  <td class="row1" colspan="2" align="center"><span class="gen">{L_NO_FTP_EXTENSIONS}</span></td>
 	</tr>
 <!-- END switch_no_ftp -->
 	<tr>
-		<td class="catBottom" colspan="2" align="center">{S_HIDDEN_FIELDS}<input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption">&nbsp;&nbsp;<input type="reset" value="{L_RESET}" class="liteoption">&nbsp;&nbsp;<input type="submit" name="settings" value="{L_TEST_SETTINGS}" class="liteoption"></td>
+		<td class="submit" colspan="2" align="center">{S_HIDDEN_FIELDS}<input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption">&nbsp;&nbsp;<input type="reset" value="{L_RESET}" class="liteoption">&nbsp;&nbsp;<input type="submit" name="settings" value="{L_TEST_SETTINGS}" class="liteoption"></td>
 	</tr>
 </table></form>
 

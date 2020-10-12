@@ -14,7 +14,7 @@
 
 <table class="forumline" width="100%" cellpadding="4" cellspacing="1" border="0">
 	<tr> 
-		<th class="thHead" colspan="4" height="25">{L_ATTACH_SEARCH_QUERY}</th>
+		<th colspan="4" height="25">{L_ATTACH_SEARCH_QUERY}</th>
 	</tr>
 	<tr> 
 		<td class="row1" colspan="2"><span class="gen">{L_FILENAME}:</span><br><span class="gensmall">{L_WILDCARD_EXPLAIN}</span></td>
@@ -49,7 +49,7 @@
 		<td class="row2" colspan="2" valign="middle"><span class="genmed"><input type="text" style="width: 100px" class="post" name="search_days_greater" size="10"></span></td>
 	</tr>
  	<tr> 
-		<th class="thHead" colspan="4" height="25">{L_SEARCH_OPTIONS}</th>
+		<th colspan="4" height="25">{L_SEARCH_OPTIONS}</th>
 	</tr>
 	<tr> 
 		<td class="row1" colspan="2" align="right"><span class="gen">{L_FORUM}:</span></td>
@@ -63,7 +63,7 @@
 		<td class="row2" colspan="2" valign="middle">{S_SORT_ORDER}</span></td>
 	</tr>
 	<tr> 
-		<td class="catBottom" colspan="4" align="center" height="28">{S_HIDDEN_FIELDS}<input class="liteoption" type="submit" name="search" value="{L_SEARCH}"></td>
+		<td class="submit" colspan="4" align="center" height="28">{S_HIDDEN_FIELDS}<input class="liteoption" type="submit" name="search" value="{L_SEARCH}"></td>
 	</tr>
 </table>
 

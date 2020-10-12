@@ -1,7 +1,7 @@
 
 <table class="forumline" border="0" cellpadding="3" cellspacing="1" width="100%" align="center">
 	<tr>
-		<th class="thHead">{L_TELLFRIEND_TITLE}</th>
+		<th>{L_TELLFRIEND_TITLE}</th>
 	</tr>
 	<tr>
 		<td class="row1"><br><br><form action="{SUBMIT_ACTION}" method="post">
@@ -28,7 +28,7 @@
 			<br></td>
 	</tr>
 	<tr>
-		<td height="28" class="catBottom">&nbsp;</td>
+		<td height="28" class="submit">&nbsp;</td>
 	</tr>
 </table>
 

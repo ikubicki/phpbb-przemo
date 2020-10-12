@@ -3,7 +3,7 @@
 
 <table class="forumline" align="center" width="45%">
 	<tr>
-		<th class="thHead">{L_MESSAGES}</th>
+		<th>{L_MESSAGES}</th>
 	</tr>
 	<tr>
 		<td class="row3"><span class="gen">{MESSAGE}</td>

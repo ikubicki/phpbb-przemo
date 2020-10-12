@@ -5,7 +5,7 @@
 
 <form action="{S_CONFIG_ACTION}" method="post"><table width="99%" cellpadding="4" cellspacing="1" border="0" align="center" class="forumline">
 	<tr>
-	  <th class="thHead" colspan="2">{L_SETUP_SHOUTBOX}</th>
+	  <th colspan="2">{L_SETUP_SHOUTBOX}</th>
 	</tr>
 	<tr>
 		<td class="row1">{L_SHOUTBOX_ON}</td>
@@ -120,7 +120,7 @@
 		<td class="row2"><select class="post" name="sb_group_sel[]" size="7" style="min-width: 170px;" multiple>{S_GROUP_SELECT}</select></td>
 	</tr>
 	<tr>
-		<td class="catBottom" colspan="2" align="center">{S_HIDDEN_FIELDS}<input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption" />&nbsp;&nbsp;<input type="reset" value="{L_RESET}" class="liteoption" />
+		<td class="submit" colspan="2" align="center">{S_HIDDEN_FIELDS}<input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption" />&nbsp;&nbsp;<input type="reset" value="{L_RESET}" class="liteoption" />
 		</td>
 	</tr>
 </table></form>

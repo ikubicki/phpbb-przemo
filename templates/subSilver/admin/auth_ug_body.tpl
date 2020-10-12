@@ -21,11 +21,11 @@
 
   <table cellspacing="1" cellpadding="4" border="0" align="center" class="forumline">
 	<tr> 
-	  <th width="30%" class="thCornerL" colspan="{INC_SPAN}">{L_FORUM}</th>
+	  <th width="30%" colspan="{INC_SPAN}">{L_FORUM}</th>
 	  <!-- BEGIN acltype -->
-	  <th class="thTop">{acltype.L_UG_ACL_TYPE}</th>
+	  <th>{acltype.L_UG_ACL_TYPE}</th>
 	  <!-- END acltype -->
-	  <th class="thCornerR">{L_MODERATOR_STATUS}</th>
+	  <th>{L_MODERATOR_STATUS}</th>
 	</tr>
 	<!-- BEGIN row -->
 	<!-- BEGIN cathead -->
@@ -56,7 +56,7 @@
 	  <td colspan="{S_COLUMN_SPAN}" class="row1" align="center"> <span class="gensmall">{U_SWITCH_MODE}</span></td>
 	</tr>
 	<tr>
-	  <td colspan="{S_COLUMN_SPAN}" class="catBottom" align="center">{S_HIDDEN_FIELDS} 
+	  <td colspan="{S_COLUMN_SPAN}" class="submit" align="center">{S_HIDDEN_FIELDS} 
 		<input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption">
 		&nbsp;&nbsp; 
 		<input type="reset" value="{L_RESET}" class="liteoption" name="reset">

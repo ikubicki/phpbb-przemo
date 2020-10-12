@@ -2,7 +2,7 @@
 <form action="{S_CONFIRM_ACTION}" method="post"><span class="gen">
 <table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
 	<tr>
-		<th class="thHead" height="25" valign="middle"><span class="tableTitle">{MESSAGE_TITLE}</span></th>
+		<th height="25" valign="middle"><span class="tableTitle">{MESSAGE_TITLE}</span></th>
 	</tr>
 	<tr>
 		<td class="row1" align="center">

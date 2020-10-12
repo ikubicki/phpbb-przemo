@@ -28,7 +28,7 @@ top.nav.location = top.nav.location; // '{left_refresh.ACTION}';
 <!-- BEGIN switch_updated -->
 <table class="forumline" width="100%" cellspacing="1" cellpadding="4" border="0">
 	<tr>
-		<th class="thHead" height="25">{L_XS_CONFIG_UPDATED}</th>
+		<th height="25">{L_XS_CONFIG_UPDATED}</th>
 	</tr>
 	<tr> 
 		<td class="row1"><table width="100%" cellspacing="0" cellpadding="1" border="0">
@@ -50,7 +50,7 @@ top.nav.location = top.nav.location; // '{left_refresh.ACTION}';
 <!-- BEGIN switch_xs_warning -->
 <table class="forumline" width="100%" cellspacing="1" cellpadding="4" border="0">
 	<tr>
-		<th class="thHead" height="25">{L_XS_CONFIG_WARNING}</th>
+		<th height="25">{L_XS_CONFIG_WARNING}</th>
 	</tr>
 	<tr> 
 		<td class="row1"><table width="100%" cellspacing="0" cellpadding="1" border="0">
@@ -72,7 +72,7 @@ top.nav.location = top.nav.location; // '{left_refresh.ACTION}';
 <!-- BEGIN noftp -->
 <table class="forumline" width="100%" cellspacing="1" cellpadding="4" border="0">
 	<tr>
-		<th class="thHead" height="25">{L_Error}</th>
+		<th height="25">{L_Error}</th>
 	</tr>
 	<tr> 
 		<td class="row1"><table width="100%" cellspacing="0" cellpadding="1" border="0">
@@ -94,7 +94,7 @@ top.nav.location = top.nav.location; // '{left_refresh.ACTION}';
 <!-- BEGIN ftperror -->
 <table class="forumline" width="100%" cellspacing="1" cellpadding="4" border="0">
 	<tr>
-		<th class="thHead" height="25">{L_Error}</th>
+		<th height="25">{L_Error}</th>
 	</tr>
 	<tr> 
 		<td class="row1"><table width="100%" cellspacing="0" cellpadding="1" border="0">
@@ -115,7 +115,7 @@ top.nav.location = top.nav.location; // '{left_refresh.ACTION}';
 
 <form name="config" action="{FORM_ACTION}" method="post" style="display: inline;"><table width="100%" cellpadding="4" cellspacing="1" border="0" align="center" class="forumline">
 	<tr>
-	  <th class="thHead" colspan="2">{L_XS_CONFIG_TITLE}</th>
+	  <th colspan="2">{L_XS_CONFIG_TITLE}</th>
 	</tr>
 	<tr>
 		<td class="row1">{L_XS_CONFIG_DEF_TEMPLATE}<br /><span class="gensmall">{L_XS_CONFIG_DEF_TEMPLATE_EXPLAIN}</span></td>
@@ -136,7 +136,7 @@ top.nav.location = top.nav.location; // '{left_refresh.ACTION}';
 		<td class="row2"><label><input type="radio" name="xs_warn_includes" value="1" {XS_WARN_INCLUDES_1} /> {L_YES}</label>&nbsp;&nbsp;<label><input type="radio" name="xs_warn_includes" value="0" {XS_WARN_INCLUDES_0} /> {L_NO}</label></td>
 	</tr>
 	<tr>
-	  <th class="thHead" colspan="2">{L_XS_CONFIG_CACHE}</th>
+	  <th colspan="2">{L_XS_CONFIG_CACHE}</th>
 	</tr>
 	<tr>
 		<td class="row1">{L_XS_CONFIG_USE_CACHE}<br /><span class="gensmall">{L_XS_CONFIG_USE_CACHE_EXPLAIN}</span></td>
@@ -155,7 +155,7 @@ top.nav.location = top.nav.location; // '{left_refresh.ACTION}';
 		<td class="row2"><input class="post" type="text" name="xs_php" value="{XS_PHP}" /></td>
 	</tr>
 	<tr>
-		<th class="thHead" colspan="2">{L_XS_FTP_CONFIG}</th>
+		<th colspan="2">{L_XS_FTP_CONFIG}</th>
 	</tr>
 	<tr>
 		<td class="explain" colspan="2" align="left">{L_XS_FTP_EXPLAIN}</td>
@@ -173,7 +173,7 @@ top.nav.location = top.nav.location; // '{left_refresh.ACTION}';
 		<td class="row2"><input class="post" type="text" name="xs_ftp_path" value="{XS_FTP_PATH}" /></td>
 	</tr>
 	<tr>
-		<td class="catBottom" colspan="2" align="center">{S_HIDDEN_FIELDS}<input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption" /></td>
+		<td class="submit" colspan="2" align="center">{S_HIDDEN_FIELDS}<input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption" /></td>
 	</tr>
 </table></form>
 

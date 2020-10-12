@@ -5,7 +5,7 @@
 <table cellspacing="1" cellpadding="4" border="0" align="center" class="forumline">
 <form method="post" action="{S_REBUILD_SEARCH_ACTION}">
 	<tr>
-		<th class="thHead">{L_REBUILD_SEARCH}</th>
+		<th>{L_REBUILD_SEARCH}</th>
 	</tr>
 	<tr>
 		<td class="row1" height="100" width="400" align="center"><font size="8"><b>{L_PERCENTAGE_COMPLETE}&nbsp;{PERCENT} %</b></font></td>

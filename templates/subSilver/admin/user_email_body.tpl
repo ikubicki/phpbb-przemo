@@ -54,7 +54,7 @@ function chval(val)
 
 <table cellspacing="1" cellpadding="4" border="0" align="center" width="700px" class="forumline">
 	<tr> 
-	  <th class="thHead" colspan="2">{L_COMPOSE}</th>
+	  <th colspan="2">{L_COMPOSE}</th>
 	</tr>
 	<!-- BEGIN form -->
 	<tr> 
@@ -78,7 +78,7 @@ function chval(val)
 	  <td class="row2"><span class="gen"> <textarea name="message" rows="15" cols="35" style="width:550px; height: 260px;" tabindex="3" class="post">{MESSAGE}</textarea></span></td>
 	</tr>
 	<tr> 
-	  <td class="catBottom" align="center" colspan="2"><input type="submit" value="{L_EMAIL}" name="submit" class="mainoption"></td>
+	  <td class="submit" align="center" colspan="2"><input type="submit" value="{L_EMAIL}" name="submit" class="mainoption"></td>
 	</tr>
 	<!-- END form -->
 	<!-- BEGIN preview -->
@@ -117,7 +117,7 @@ function chval(val)
 	</tr>
 	<!-- END message -->
 	<tr> 
-	  <td class="catBottom" align="center" colspan="2"><input type="hidden" name="send" value="1">
+	  <td class="submit" align="center" colspan="2"><input type="hidden" name="send" value="1">
 	  {S_PREVIEW_FIELDS}
 	  <input type="submit" value="{L_IMPROVE}" name="improve" class="liteoption"> 
 	  <input type="submit" value="{L_SEND}" name="submit" class="mainoption"></td>

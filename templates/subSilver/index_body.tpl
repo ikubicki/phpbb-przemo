@@ -74,7 +74,7 @@
 <div id="hm" style="display: ''; position: relative;">
 <table class="forumline" align="center">
   <tr> 
-   <th class="thCornerL" height="25" onclick="javascript:ShowHide('hm','hm2','hm3');" style="cursor: pointer" title="{L_VHIDE}">&nbsp;{L_BOARD_MSG}&nbsp;</th>
+   <th height="25" onclick="javascript:ShowHide('hm','hm2','hm3');" style="cursor: pointer" title="{L_VHIDE}">&nbsp;{L_BOARD_MSG}&nbsp;</th>
   </tr>
   <tr>
    <td class="row1"><span class="gen">{BOARD_MSG}</span></td>
@@ -84,7 +84,7 @@
 <div id="hm2" style="display: none; position: relative;">
 <table width="100%" class="forumline" cellspacing="1" cellpadding="3" border="0" align="center">
   <tr> 
-   <th class="thCornerL" height="25" onclick="javascript:ShowHide('hm','hm2','hm3');" style="cursor: pointer">&nbsp;{L_BOARD_MSG}&nbsp;</th>
+   <th height="25" onclick="javascript:ShowHide('hm','hm2','hm3');" style="cursor: pointer">&nbsp;{L_BOARD_MSG}&nbsp;</th>
   </tr>
 </table>
 </div>
@@ -165,7 +165,7 @@ if(GetCookie('hm3') == '2') ShowHide('hm', 'hm2', 'hm3');
 		<td>
 			<table width="100%" cellpadding="3" cellspacing="0" border="0" class="forumline">
 				<tr>
-					<td class="catHead" colspan="9" height="28"><span class="cattitle">&nbsp;{L_REGIST_TITLE}</span></td>
+					<td colspan="9" height="28"><span class="cattitle">&nbsp;{L_REGIST_TITLE}</span></td>
 				</tr>
 				<tr>
 					<td class="row1" valign="middle"><span class="gensmall">{L_USERNAME}:</span></td>

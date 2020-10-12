@@ -6,13 +6,13 @@
 <form method="post" action="{S_ATTACH_ACTION}">
   <table width="99%" align="center" cellpadding="4" cellspacing="1" border="0" class="forumline">
 	<tr> 
-	  <td class="catHead" colspan="5" align="center" height="28"><span class="cattitle">{L_MANAGE_QUOTAS_TITLE}</span> 
+	  <td colspan="5" align="center" height="28"><span class="cattitle">{L_MANAGE_QUOTAS_TITLE}</span> 
 	  </td>
 	</tr>
 	<tr>
-		<th class="thCornerL">{L_DESCRIPTION}</th>
-		<th class="thTop">{L_SIZE}</th>
-		<th class="thCornerR">{L_ADD_NEW}</th>
+		<th>{L_DESCRIPTION}</th>
+		<th>{L_SIZE}</th>
+		<th>{L_ADD_NEW}</th>
 	</tr>
 	<tr>
 		<td class="row1" align="center" valign="middle"><input type="text" size="20" maxlength="25" name="quota_description" class="post" value=""/></td>
@@ -20,12 +20,12 @@
 		<td class="row1" align="center" valign="middle"><input type="checkbox" name="add_quota_check"></td>
 	</tr>
 	<tr align="right">
-	  <td class="catBottom" colspan="5" height="29"> {S_HIDDEN_FIELDS} <input type="submit" name="submit" class="liteoption" value="{L_SUBMIT}"></td>
+	  <td class="submit" colspan="5" height="29"> {S_HIDDEN_FIELDS} <input type="submit" name="submit" class="liteoption" value="{L_SUBMIT}"></td>
 	</tr>
 	<tr>
-		<th class="thCornerL">{L_DESCRIPTION}</th>
-		<th class="thTop">{L_SIZE}</th>
-		<th class="thCornerR">{L_DELETE}</th>
+		<th>{L_DESCRIPTION}</th>
+		<th>{L_SIZE}</th>
+		<th>{L_DELETE}</th>
 	</tr>
 <!-- BEGIN limit_row -->
 	<tr> 
@@ -43,7 +43,7 @@
 	</tr>
 <!-- END limit_row -->
 	<tr align="right">
-	  <td class="catBottom" colspan="5" height="29"> <input type="submit" name="submit" class="liteoption" value="{L_SUBMIT}"></td>
+	  <td class="submit" colspan="5" height="29"> <input type="submit" name="submit" class="liteoption" value="{L_SUBMIT}"></td>
 	</tr>
 </table>
 </form>

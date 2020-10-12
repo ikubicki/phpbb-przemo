@@ -18,9 +18,6 @@
 					CKEDITOR.replace('message');
 					console.log(CKEDITOR.dom.element.createFromHtml());
 				</script>
-				<!-- BEGIN quote_box -->
-				<input type="button" name="quoteselected" value="{L_QUOTE_SELECTED}" onclick="if (document.post && document.post.message) quoteSelection(); return false" onmouseover="selectedText = document.selection? document.selection.createRange().text : document.getSelection();">
-				<!-- END quote_box -->
 				<!-- BEGIN expire_box -->
 				 {L_EXPIRE_Q} <select class="post" name="msg_expire">
 					<option value="0" class="genmed">0</option>

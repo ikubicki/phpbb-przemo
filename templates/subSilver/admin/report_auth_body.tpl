@@ -6,7 +6,7 @@
 <table width="99%" cellpadding="4" cellspacing="1" border="0" align="center" class="forumline">
 	<form action="{S_ACTION}" name="post" method="post">
 	<tr>
-	  <th class="thHead" colspan="3">{L_ACTION_1}</th>
+	  <th colspan="3">{L_ACTION_1}</th>
 	</tr>
 	<tr>
 		<td class="row1">{L_UG}:</td>
@@ -20,7 +20,7 @@
 		</td>
 	</tr>
 	<tr>
-		<td class="catBottom" colspan="2" align="center">
+		<td class="submit" colspan="2" align="center">
 		{S_HIDDEN_FIELDS}
 		<input type="hidden" name="action" value="1"> 
 		<input type="submit" name="submit" value="{L_ADD}" class="mainoption"></td>
@@ -29,14 +29,14 @@
 
 	<form action="{S_ACTION}" method="post">
 	<tr>
-	  <th class="thHead" colspan="3">{L_ACTION_0}</th>
+	  <th colspan="3">{L_ACTION_0}</th>
 	</tr>
 	<tr>
 		<td class="row1">{L_UG}:<br><span class="gensmall">{L_UG_SELECT_EXPLAIN}</span></td>
 		<td class="row2">{UG_SELECT}</td>
 	</tr>
 	<tr>
-		<td class="catBottom" colspan="2" align="center">
+		<td class="submit" colspan="2" align="center">
 		{S_HIDDEN_FIELDS}
 		<input type="hidden" name="action" value="0"> 
 		<input type="submit" name="submit" value="{L_REMOVE}" class="mainoption"></td>

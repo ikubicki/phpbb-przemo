@@ -1,6 +1,6 @@
 <table cellspacing="1" cellpadding="4" border="0" align="center" class="forumline">
 	<tr>
-		<th class="thHead" align="center">{L_USER_SELECT}</th>
+		<th align="center">{L_USER_SELECT}</th>
 	</tr>
 	<tr>
 		<td class="row1" align="center">
@@ -25,13 +25,13 @@
 
 <table width="100%" cellpadding="3" cellspacing="1" border="0" class="forumline">
 	<tr>
-		<th class="thTop" height="25" valign="middle" nowrap="nowrap">{L_ACTION}</th>
-		<th class="thTop" height="25" valign="middle" nowrap="nowrap">{L_USERNAME}</th>
-		<th class="thTop" height="25" valign="middle" nowrap="nowrap">{L_EMAIL}</th>
-		<th class="thTop" height="25" valign="middle" nowrap="nowrap">{L_POSTS}</th>
-		<th class="thTop" height="25" valign="middle" nowrap="nowrap">{L_JOINED}</th>
-		<th class="thTop" height="25" valign="middle" nowrap="nowrap">{L_LAST_VISIT}</th>
-		<th class="thCornerR" height="25" valign="middle" nowrap="nowrap">{L_ACTIVE}</th>
+		<th height="25" valign="middle" nowrap="nowrap">{L_ACTION}</th>
+		<th height="25" valign="middle" nowrap="nowrap">{L_USERNAME}</th>
+		<th height="25" valign="middle" nowrap="nowrap">{L_EMAIL}</th>
+		<th height="25" valign="middle" nowrap="nowrap">{L_POSTS}</th>
+		<th height="25" valign="middle" nowrap="nowrap">{L_JOINED}</th>
+		<th height="25" valign="middle" nowrap="nowrap">{L_LAST_VISIT}</th>
+		<th height="25" valign="middle" nowrap="nowrap">{L_ACTIVE}</th>
 	</tr>
 	<tr>
 		<td class="row2" colspan="8" align="center">
@@ -67,7 +67,7 @@
 	</tr>
 	<!-- END userrow -->
 	<tr>
-		<td class="catBottom" height="28" align="center" valign="middle" colspan="8">
+		<td class="submit" height="28" align="center" valign="middle" colspan="8">
 		</td>
 	</tr>
 </table>

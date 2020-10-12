@@ -20,7 +20,7 @@ function icon(text) {
 	<tr>
 		<td><table width="100%" border="0" cellspacing="1" cellpadding="4" class="forumline">
 			<tr>
-				<th class="thHead"  width="100%" height="25">{L_ICONS}</th>
+				<th  width="100%" height="25">{L_ICONS}</th>
 			</tr>
 			<tr>
 				<td height="100%">

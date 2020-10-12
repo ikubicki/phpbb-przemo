@@ -4,7 +4,7 @@
 <form action="{warnings.S_CONFIG_ACTION}" method="post">
 <table width="100%" cellpadding="2" cellspacing="1" border="0" align="center" class="forumline">
 	<tr>
-		<th class="thHead" colspan="2">{warnings.L_WARNINGS}</th>
+		<th colspan="2">{warnings.L_WARNINGS}</th>
 	</tr>
 	<tr>
 		<td class="row1" width="62%">{warnings.L_WARNINGS_ENABLE}</td>
@@ -43,7 +43,7 @@
 		<td class="row2"><input type="radio" name="viewtopic_warnings" value="1" {warnings.VIEWTOPIC_WARNINGS_YES}> {warnings.L_YES} <input type="radio" name="viewtopic_warnings" value="0" {warnings.VIEWTOPIC_WARNINGS_NO}>{warnings.L_NO}</td>
 	</tr>
 	<tr>
-		<td class="catBottom" colspan="2" align="center"><input type="hidden" name="mode" value="warnings"><input type="submit" name="submit_warnings" value="{warnings.L_SUBMIT}" class="mainoption">&nbsp;&nbsp;<input type="reset" value="{warnings.L_RESET}" class="liteoption">
+		<td class="submit" colspan="2" align="center"><input type="hidden" name="mode" value="warnings"><input type="submit" name="submit_warnings" value="{warnings.L_SUBMIT}" class="mainoption">&nbsp;&nbsp;<input type="reset" value="{warnings.L_RESET}" class="liteoption">
 		</td>
 	</tr>
 </table>

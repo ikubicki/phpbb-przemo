@@ -27,7 +27,7 @@
 <!-- BEGIN error -->
 <table class="forumline" width="100%" cellspacing="1" cellpadding="4" border="0">
 	<tr>
-		<th class="thHead" height="25">{L_ERROR}</th>
+		<th height="25">{L_ERROR}</th>
 	</tr>
 	<tr> 
 		<td class="row1"><table width="100%" cellspacing="0" cellpadding="1" border="0">
@@ -48,7 +48,7 @@
 <form name="ftp" action="{FORM_ACTION}" method="post">{S_HIDDEN_FIELDS}{S_EXTRA_FIELDS}<table width="100%" cellpadding="4" cellspacing="1" border="0" align="center" class="forumline">
 	<!-- BEGIN xs_ftp_local -->
 	<tr>
-		<th class="thHead" colspan="2">{L_XS_FTP_CONFIG}</td>
+		<th colspan="2">{L_XS_FTP_CONFIG}</td>
 	</tr>
 	<tr>
 		<td class="row1">{L_XS_FTP_SELECT_METHOD}:</td>
@@ -58,13 +58,13 @@
 		</td>
 	</tr>
 	<tr>
-		<th class="thHead" colspan="2">{L_XS_FTP_SETTINGS}</th>
+		<th colspan="2">{L_XS_FTP_SETTINGS}</th>
 	</tr>
 	<!-- END xs_ftp_local -->
 	<!-- BEGIN xs_ftp_nolocal -->
 	<input type="hidden" name="xs_ftp_local" value="" />
 	<tr>
-		<th class="thHead" colspan="2">{L_XS_FTP_SETTINGS}</th>
+		<th colspan="2">{L_XS_FTP_SETTINGS}</th>
 	</tr>
 	<!-- END xs_ftp_nolocal -->
 	<tr>
@@ -84,6 +84,6 @@
 		<td class="row2"><input class="post" type="text" name="xs_ftp_pass" /></td>
 	</tr>
 	<tr>
-		<td class="catBottom" colspan="2" align="center">{S_HIDDEN_FIELDS}<input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption" /></td>
+		<td class="submit" colspan="2" align="center">{S_HIDDEN_FIELDS}<input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption" /></td>
 	</tr>
 </table></form>

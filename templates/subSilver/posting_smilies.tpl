@@ -19,7 +19,7 @@ function emoticon(text) {
 	<tr>
 		<td><table width="100%" border="0" cellspacing="1" cellpadding="4" class="forumline">
 			<tr>
-				<th class="thHead" height="25">{L_EMOTICONS}</th>
+				<th height="25">{L_EMOTICONS}</th>
 			</tr>
 			<tr>
 				<td class="row1" align="center"><table width="100" border="0" cellspacing="0" cellpadding="5">

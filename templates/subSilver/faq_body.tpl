@@ -1,6 +1,6 @@
 <table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0" align="center">
 	<tr>
-		<th class="thHead">{L_FAQ_TITLE}</th>
+		<th>{L_FAQ_TITLE}</th>
 	</tr>
 	<tr>
 		<td class="row1">
@@ -14,7 +14,7 @@
 		</td>
 	</tr>
 	<tr>
-		<td class="catBottom" height="28">&nbsp;</td>
+		<td class="submit" height="28">&nbsp;</td>
 	</tr>
 </table>
 
@@ -23,7 +23,7 @@
 <!-- BEGIN faq_block -->
 <table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0" align="center">
 	<tr> 
-		<td class="catHead" height="28" align="center"><span class="cattitle">{faq_block.BLOCK_TITLE}</span></td>
+		<td height="28" align="center"><span class="cattitle">{faq_block.BLOCK_TITLE}</span></td>
 	</tr>
 	<!-- BEGIN faq_row -->  
 	<tr> 

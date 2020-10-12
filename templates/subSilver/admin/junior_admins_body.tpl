@@ -22,8 +22,8 @@ function toggle_check_all(main, sub_num)
 <form action="{S_ACTION}" name="form" method="post">
 <table  border="0" cellpadding="1" cellspacing="1" class="forumline" align="center" width="400">
 	<tr>
-		<td class="catBottom" width="30%" nowrap="nowrap"><input type="checkbox" name="check_all_page" onClick="toggle_check_all(check_all_page, 1);" id="all"> <label for="all" style="cursor: pointer;"><span class="gensmall">{L_MARK_ALL}</span></label>&nbsp;</td>
-		<td class="catBottom" align="right"><span class="nav">{USERNAME}</span>, {L_MODULES}: <b>{MODULES}</b></td>
+		<td class="submit" width="30%" nowrap="nowrap"><input type="checkbox" name="check_all_page" onClick="toggle_check_all(check_all_page, 1);" id="all"> <label for="all" style="cursor: pointer;"><span class="gensmall">{L_MARK_ALL}</span></label>&nbsp;</td>
+		<td class="submit" align="right"><span class="nav">{USERNAME}</span>, {L_MODULES}: <b>{MODULES}</b></td>
 	</tr>
 	<!-- BEGIN catrow -->
 	<tr>
@@ -39,7 +39,7 @@ function toggle_check_all(main, sub_num)
 	<!-- END modulerow -->
 	<!-- END catrow -->
 	<tr>
-		<td colspan="2" align="center" class="catBottom"><input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption"> <input type="reset" name="reset" value="{L_RESET}" class="liteoption"></td>
+		<td colspan="2" align="center" class="submit"><input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption"> <input type="reset" name="reset" value="{L_RESET}" class="liteoption"></td>
 	</tr>
 </table>
 <input type="hidden" name="user_id" value="{USER_ID}">

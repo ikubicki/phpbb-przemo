@@ -20,7 +20,7 @@
 
 <table cellpadding="4" cellspacing="1" border="0" class="forumline" align="center" width="100%">
 <tr>
-	<th class="thHead" colspan="2">{L_XS_DOWNLOAD_LOCATIONS}</th>
+	<th colspan="2">{L_XS_DOWNLOAD_LOCATIONS}</th>
 </tr>
 <!-- BEGIN url -->
 <tr> 
@@ -30,7 +30,7 @@
 <!-- END url -->
 <!-- BEGIN edit -->
 <tr>	
-	<th colspan="2" class="thHead">{L_XS_EDIT_LINK}</th>
+	<th colspan="2">{L_XS_EDIT_LINK}</th>
 </tr>
 <form action="{U_POST}" method="post">{S_HIDDEN_FIELDS}<input type="hidden" name="edit" value="{edit.ID}" />
 <tr>
@@ -43,12 +43,12 @@
 	<td class="row1" align="left">{L_XS_DELETE}:</td><td class="row2"><input type="checkbox" name="edit_delete" /></td>
 </tr>
 <tr>
-	<td class="catBottom" colspan="2" align="center"><input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption" /></td>
+	<td class="submit" colspan="2" align="center"><input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption" /></td>
 </tr>
 </form>
 <!-- END edit -->
 <tr>	
-	<th colspan="2" class="thHead">{L_XS_ADD_LINK}</th>
+	<th colspan="2">{L_XS_ADD_LINK}</th>
 </tr>
 <form action="{U_POST}" method="post">{S_HIDDEN_FIELDS}
 <tr>
@@ -58,7 +58,7 @@
 	<td class="row1" align="left">{L_XS_LINK_URL}:</td><td class="row2"><input type="text" class="post" name="add_url" /></td>
 </tr>
 <tr>
-	<td class="catBottom" colspan="2" align="center"><input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption" /></td>
+	<td class="submit" colspan="2" align="center"><input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption" /></td>
 </tr>
 </form>
 </table>

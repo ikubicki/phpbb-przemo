@@ -3,10 +3,10 @@
 
 <table border="0" cellpadding="3" cellspacing="1" width="100%" class="forumline">
 	<tr> 
-	  <th class="thHead" colspan="{S_COLSPAN}" height="25" valign="middle">{L_AVATAR_GALLERY}</th>
+	  <th colspan="{S_COLSPAN}" height="25" valign="middle">{L_AVATAR_GALLERY}</th>
 	</tr>
 	<tr> 
-	  <td class="catBottom" align="center" valign="middle" colspan="6" height="28"><span class="genmed">{L_CATEGORY}:&nbsp;{S_CATEGORY_SELECT}&nbsp;<input type="submit" class="liteoption" value="{L_GO}" name="avatargallery"></span></td>
+	  <td class="submit" align="center" valign="middle" colspan="6" height="28"><span class="genmed">{L_CATEGORY}:&nbsp;{S_CATEGORY_SELECT}&nbsp;<input type="submit" class="liteoption" value="{L_GO}" name="avatargallery"></span></td>
 	</tr>
 	<!-- BEGIN avatar_row -->
 	<tr> 
@@ -22,7 +22,7 @@
 
 	<!-- END avatar_row -->
 	<tr> 
-	  <td class="catBottom" colspan="{S_COLSPAN}" align="center" height="28">{S_HIDDEN_FIELDS} <input type="submit" name="submitavatar" value="{L_SELECT_AVATAR}" class="mainoption">&nbsp;&nbsp; <input type="submit" name="cancelavatar" value="{L_RETURN_PROFILE}" class="liteoption"></td>
+	  <td class="submit" colspan="{S_COLSPAN}" align="center" height="28">{S_HIDDEN_FIELDS} <input type="submit" name="submitavatar" value="{L_SELECT_AVATAR}" class="mainoption">&nbsp;&nbsp; <input type="submit" name="cancelavatar" value="{L_RETURN_PROFILE}" class="liteoption"></td>
 	</tr>
   </table>
 </form>

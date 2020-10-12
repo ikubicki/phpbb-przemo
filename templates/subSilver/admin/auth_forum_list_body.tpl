@@ -6,9 +6,9 @@
 
 <table width="100%" cellpadding="4" cellspacing="1" border="0" class="forumline" align="center">
 <tr>
-	<th class="thLeft" colspan="{INC_SPAN}" width="75%">{L_FORUM}</th>
+	<th colspan="{INC_SPAN}" width="75%">{L_FORUM}</th>
 		<!-- BEGIN forum_auth_titles -->
-		<th class="thTop">{forum_auth_titles.CELL_TITLE}</th>
+		<th>{forum_auth_titles.CELL_TITLE}</th>
 		<!-- END forum_auth_titles -->
 
 </tr>
@@ -40,7 +40,7 @@
 <!-- END forumrow -->
 <!-- END catrow -->
     <tr>
-        <td class="catBottom" align="center" colspan="{INC_SPAN_ALL}">
+        <td class="submit" align="center" colspan="{INC_SPAN_ALL}">
             <!-- BEGIN buttons_edit -->
                 <input type="submit" value="{buttons_edit.SAVE}" class="liteoption" name="save">
                 &nbsp; &nbsp;
@@ -55,7 +55,7 @@
 <br />
 <table width="100%" cellpadding="7" cellspacing="1" border="0" class="forumline" align="center">
   <tr>
-    <th class="thLeft" width="75%" colspan="7">{forums_shadow.L_FORUMS_SHADOW}</th>
+    <th width="75%" colspan="7">{forums_shadow.L_FORUMS_SHADOW}</th>
   </tr>
   <tr>
     <td class="row3"><span class="nav">{forums_shadow.L_NAME}</span></td>

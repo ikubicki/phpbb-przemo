@@ -1,7 +1,7 @@
  
 <table border="0" cellpadding="4" cellspacing="1" width="100%" class="forumline">
   <tr> 
-	<th height="25" class="thHead" colspan="2">{L_PREVIEW}</th>
+	<th height="25" colspan="2">{L_PREVIEW}</th>
   </tr>
   <tr> 
 	<td class="row2"><span class="genmed">{L_FROM}:</span></td>

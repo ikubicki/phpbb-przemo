@@ -6,7 +6,7 @@
 <form method="post" action="{S_DBUTILS_ACTION}">
 <table cellspacing="1" cellpadding="4" border="0" align="center" class="forumline">
 	<tr>
-		<th colspan="2" class="thHead">{L_BACKUP_OPTIONS}</th>
+		<th colspan="2">{L_BACKUP_OPTIONS}</th>
 	</tr>
 	<tr>
 		<td class="row1">{L_ENABLE}</td>
@@ -25,7 +25,7 @@
 		<td class="row2"><input type="text" name="db_backup_copies" value="{COPIES}" size="3"></td>
 	</tr>
 	<tr>
-		<td class="catBottom" colspan="2" align="center">{S_HIDDEN_FIELDS}<input type="submit" name="update_config" value="{L_SUBMIT}" class="mainoption"></td>
+		<td class="submit" colspan="2" align="center">{S_HIDDEN_FIELDS}<input type="submit" name="update_config" value="{L_SUBMIT}" class="mainoption"></td>
 	</tr>
 </table></form>
 <br>

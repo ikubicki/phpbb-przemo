@@ -5,7 +5,7 @@
 <form method="post" name="post" action="{S_ACTION}">
 <table cellspacing="1" cellpadding="4" border="0" align="center" class="forumline" width="100%">
 	<tr>
-		<th class="thHead" align="center" colspan="2">{L_SETUP}</th>
+		<th align="center" colspan="2">{L_SETUP}</th>
 	</tr>
 	<tr>
 		<td class="row1" align="center"><span class="nav">{L_RIGHT_COLUMN}</span></td>
@@ -46,7 +46,7 @@
 	</tr>
 	</tr>
 	<tr>
-		<td class="catBottom" align="center" colspan="2"><input type="hidden" name="board_config" value="1"><input type="submit" name="submit" value="{L_SAVE}" class="mainoption"> <input type="reset" name="reset" value="{L_RESET}" class="liteoption"></td>
+		<td class="submit" align="center" colspan="2"><input type="hidden" name="board_config" value="1"><input type="submit" name="submit" value="{L_SAVE}" class="mainoption"> <input type="reset" name="reset" value="{L_RESET}" class="liteoption"></td>
 	</tr>
 </table>
 </form>
@@ -55,7 +55,7 @@
 <a name="add"></a>
 <table cellspacing="1" cellpadding="4" border="0" align="center" class="forumline" width="100%">
 	<tr>
-		<th class="thHead" align="center" colspan="2">{L_ADD_LINK}</th>
+		<th align="center" colspan="2">{L_ADD_LINK}</th>
 	</tr>
 	<tr>
 		<td class="row2" align="center"><span class="gensmall">{L_ADD_LINK_E}</span></td>
@@ -79,16 +79,16 @@
 		</td>
 	</tr>
 	<tr>
-		<td class="catBottom" align="center" colspan="2"><input type="hidden" name="add" value="1"><input type="submit" name="submit" value="{L_ADD}" class="mainoption"> <input type="reset" name="reset" value="{L_RESET}" class="liteoption"></td>
+		<td class="submit" align="center" colspan="2"><input type="hidden" name="add" value="1"><input type="submit" name="submit" value="{L_ADD}" class="mainoption"> <input type="reset" name="reset" value="{L_RESET}" class="liteoption"></td>
 	</tr>
 </table>
 </form>
 <br>
 <table cellspacing="1" cellpadding="4" border="0" align="center" class="forumline" width="100%">
 	<tr>
-		<th class="thHead" align="center" width="70" nowrap="nowrap">{L_DAYS}</th>
-		<th class="thHead" align="center" nowrap="nowrap">{L_ORDER}</th>
-		<th class="thHead" align="center" width="100%">{L_LIST}</th>
+		<th align="center" width="70" nowrap="nowrap">{L_DAYS}</th>
+		<th align="center" nowrap="nowrap">{L_ORDER}</th>
+		<th align="center" width="100%">{L_LIST}</th>
 	</tr>
 	<!-- BEGIN list -->
 	<tr>
@@ -114,7 +114,7 @@
 	</tr>
 	<!-- END list -->
 	<tr>
-		<td class="catBottom" align="center" colspan="3"></td>
+		<td class="submit" align="center" colspan="3"></td>
 	</tr>
 </table>
 </form>

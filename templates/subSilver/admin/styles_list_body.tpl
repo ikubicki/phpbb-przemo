@@ -5,10 +5,10 @@
 
 <table cellspacing="1" cellpadding="4" border="0" align="center" class="forumline">
 	<tr>
-		<th class="thCornerL">{L_STYLE}</th>
-		<th class="thTop">{L_TEMPLATE}</th>
-		<th class="thTop">{L_EDIT}</th>
-		<th colspan="2" class="thCornerR">{L_DELETE}</th>
+		<th>{L_STYLE}</th>
+		<th>{L_TEMPLATE}</th>
+		<th>{L_EDIT}</th>
+		<th colspan="2">{L_DELETE}</th>
 	</tr>
 	<!-- BEGIN styles -->
 	<tr>

@@ -2,7 +2,7 @@
 <form action="{S_MODCP_ACTION}" method="post">
   <table width="100%" cellpadding="4" cellspacing="1" border="0" class="forumline">
 	<tr> 
-	  <th height="25" class="thHead"><b>{MESSAGE_TITLE}</b></th>
+	  <th height="25"><b>{MESSAGE_TITLE}</b></th>
 	</tr>
 	<tr> 
 	  <td class="row1"> 

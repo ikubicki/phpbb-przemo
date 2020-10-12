@@ -32,7 +32,7 @@
 			<td class="row1">
 				<form action="{S_CONFIG_ACTION}" method="post"><table width="100%" cellpadding="2" cellspacing="1" border="0" align="center" class="forumline">
 				<tr>
-					<th class="thHead" colspan="2">{L_ADDON_POSTING}</th>
+					<th colspan="2">{L_ADDON_POSTING}</th>
 				</tr>
 				<tr>
 					<td class="row1">{L_ALLOW_HTML}</td>
@@ -190,7 +190,7 @@
 					<td class="row2" width="50%"><input type="radio" name="split_messages_mod" value="1" {SPLIT_MESSAGES_MOD_YES}> {L_YES} <input type="radio" name="split_messages_mod" value="0" {SPLIT_MESSAGES_MOD_NO}>{L_NO}</td>
 				</tr>
 				<tr>
-					<td class="catBottom" colspan="2" align="center">{S_HIDDEN_FIELDS}<input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption">&nbsp;&nbsp;<input type="reset" value="{L_RESET}" class="liteoption"></td>
+					<td class="submit" colspan="2" align="center">{S_HIDDEN_FIELDS}<input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption">&nbsp;&nbsp;<input type="reset" value="{L_RESET}" class="liteoption"></td>
 				</tr>
 				</form>
 			</td>

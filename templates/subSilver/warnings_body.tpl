@@ -6,7 +6,7 @@
 </table>
 <table width="100%" cellpadding="6" cellspacing="1" border="0" class="forumline">
    <tr>
-      <th width="70%" class="thCornerL" height="25" nowrap="nowrap">{L_PAGE}</th>
+      <th width="70%" height="25" nowrap="nowrap">{L_PAGE}</th>
    </tr>
 <!-- BEGIN hide -->
    <tr>
@@ -29,13 +29,13 @@
 <table width="100%" cellpadding="3" cellspacing="1" border="0" class="forumline">
 <!-- BEGIN default -->
    <tr>
-      <th height="25" class="thCornerL">{L_USERNAME}</th>
-      <th height="25" class="thCornerL">{L_WARNINGS}</th>
-      <th height="25" class="thCornerL">{L_VALUE}</th>
-      <th height="25" class="thCornerL">{L_DETAIL}</th>
-      <th height="25" class="thCornerL">{L_LASTPOST}</th>
-      <th height="25" class="thCornerL">{L_POSTS}</th>
-      <th height="25" class="thCornerL">&nbsp;</th>
+      <th height="25">{L_USERNAME}</th>
+      <th height="25">{L_WARNINGS}</th>
+      <th height="25">{L_VALUE}</th>
+      <th height="25">{L_DETAIL}</th>
+      <th height="25">{L_LASTPOST}</th>
+      <th height="25">{L_POSTS}</th>
+      <th height="25">&nbsp;</th>
    </tr>
 <!-- END default -->
 <!-- BEGIN default_list -->
@@ -56,11 +56,11 @@
 <!-- END default -->
 <!-- BEGIN detail -->
    <tr>
-      <th height="25" class="thCornerL" nowrap="nowrap">{L_VALUE}</th>
-      <th height="25" class="thCornerL" nowrap="nowrap">{L_MODID}</th>
-      <th height="25" class="thCornerL" nowrap="nowrap">{L_DATE}</th>
-      <th height="25" class="thCornerL" nowrap="nowrap">{L_REASON}</th>
-      <th height="25" class="thCornerL" nowrap="nowrap">{L_ACTION}</th>
+      <th height="25" nowrap="nowrap">{L_VALUE}</th>
+      <th height="25" nowrap="nowrap">{L_MODID}</th>
+      <th height="25" nowrap="nowrap">{L_DATE}</th>
+      <th height="25" nowrap="nowrap">{L_REASON}</th>
+      <th height="25" nowrap="nowrap">{L_ACTION}</th>
    </tr>
 <!-- END detail -->
 <!-- BEGIN detail_list -->
@@ -74,7 +74,7 @@
 <!-- END detail_list -->
 <!-- BEGIN edit -->
    <tr>
-      <th height="25" colspan="3" class="thCornerL" nowrap="nowrap">{L_EDIT}</th>
+      <th height="25" colspan="3" nowrap="nowrap">{L_EDIT}</th>
    </tr>
    <form action="{S_ACTION}" method="post">
    <tr>
@@ -90,7 +90,7 @@
 <!-- END edit -->
 <!-- BEGIN add -->
    <tr>
-      <th height="25" colspan="3" class="thCornerL" nowrap="nowrap">{add.L_EXPLAIN}</th>
+      <th height="25" colspan="3" nowrap="nowrap">{add.L_EXPLAIN}</th>
    </tr>
    <form action="{S_ACTION_ADD}" method="post">
    <tr>
@@ -110,12 +110,12 @@
 <!-- END add -->
 <!-- BEGIN archive -->
    <tr>
-      <th height="25" class="thCornerL" nowrap="nowrap">{L_USERNAME}</th>
-      <th height="25" class="thCornerL" nowrap="nowrap">{L_VALUE}</th>
-      <th height="25" class="thCornerL" nowrap="nowrap">{L_MODID}</th>
-      <th height="25" class="thCornerL" nowrap="nowrap">{L_DATE}</th>
-      <th height="25" class="thCornerL" nowrap="nowrap">{L_REASON}</th>
-      <th height="25" class="thCornerL" nowrap="nowrap">{L_ACTION}</th>
+      <th height="25" nowrap="nowrap">{L_USERNAME}</th>
+      <th height="25" nowrap="nowrap">{L_VALUE}</th>
+      <th height="25" nowrap="nowrap">{L_MODID}</th>
+      <th height="25" nowrap="nowrap">{L_DATE}</th>
+      <th height="25" nowrap="nowrap">{L_REASON}</th>
+      <th height="25" nowrap="nowrap">{L_ACTION}</th>
    </tr>
 <!-- END archive -->
 <!-- BEGIN archive_list -->
@@ -135,11 +135,11 @@
 <!-- END archive -->
 <!-- BEGIN view_modid_main -->
    <tr>
-      <th height="25" class="thCornerL" nowrap="nowrap">{L_VALUE}</th>
-      <th height="25" class="thCornerL" nowrap="nowrap">{L_USERNAME}</th>
-      <th height="25" class="thCornerL" nowrap="nowrap">{L_DATE}</th>
-      <th height="25" class="thCornerL" nowrap="nowrap">{L_REASON}</th>
-      <th height="25" class="thCornerL" nowrap="nowrap">{L_ACTION}</th>
+      <th height="25" nowrap="nowrap">{L_VALUE}</th>
+      <th height="25" nowrap="nowrap">{L_USERNAME}</th>
+      <th height="25" nowrap="nowrap">{L_DATE}</th>
+      <th height="25" nowrap="nowrap">{L_REASON}</th>
+      <th height="25" nowrap="nowrap">{L_ACTION}</th>
    </tr>
 <!-- END view_modid_main -->
 <!-- BEGIN view_modid -->

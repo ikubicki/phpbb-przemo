@@ -13,9 +13,9 @@
 <!-- END msg -->
 <table cellspacing="1" cellpadding="4" border="0" align="center" class="forumline" width="90%">
 	<tr>
-		<th class="thCornerL">&nbsp;{L_GROUP_NAME}&nbsp;</th>
-		<th class="thTop">&nbsp;{L_MOVE_UP}&nbsp;</th>
-		<th class="thCornerR">&nbsp;{L_MOVE_DOWN}&nbsp;</th>
+		<th>&nbsp;{L_GROUP_NAME}&nbsp;</th>
+		<th>&nbsp;{L_MOVE_UP}&nbsp;</th>
+		<th>&nbsp;{L_MOVE_DOWN}&nbsp;</th>
 	</tr>
 	<!-- BEGIN row -->
 	<tr>
@@ -25,7 +25,7 @@
 	</tr>
 	<!-- END row -->			
 	<tr>
-		<td class="catBottom" align="center" colspan="3">&nbsp;<a href="{U_RESYNC}">{L_RESYNC}</a>&nbsp;</td>
+		<td class="submit" align="center" colspan="3">&nbsp;<a href="{U_RESYNC}">{L_RESYNC}</a>&nbsp;</td>
 	</tr>
 </table>
 <br>

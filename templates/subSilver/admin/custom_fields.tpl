@@ -6,7 +6,7 @@
 
 <table width="100%" cellspacing="1" cellpadding="4" border="0" align="center" class="forumline">
 <tr>
-	<th class="thHead" colspan="2">{L_TITLE}</th>
+	<th colspan="2">{L_TITLE}</th>
 </tr>
 
 <!-- BEGIN add_field -->
@@ -89,7 +89,7 @@
 	</tr>
 	<!-- END delete -->
 	<tr>
-		<td class="catBottom" colspan="2" align="center"><input type="submit" value="{L_ADD_FIELD}" class="mainoption"></td>
+		<td class="submit" colspan="2" align="center"><input type="submit" value="{L_ADD_FIELD}" class="mainoption"></td>
 	</tr>
 	</form>
 <!-- END add_field -->
@@ -110,7 +110,7 @@
 <!-- BEGIN field_list -->
 	<form method="post" action="{S_ACTION_ADD}">
 	<tr>
-		<td class="catBottom" align="left"><input type="submit" value="{L_ADD}" class="mainoption"></td>
+		<td class="submit" align="left"><input type="submit" value="{L_ADD}" class="mainoption"></td>
 	</tr>
 	</form>
 <!-- END field_list -->

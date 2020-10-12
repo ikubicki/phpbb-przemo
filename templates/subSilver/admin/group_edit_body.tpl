@@ -2,7 +2,7 @@
 <script language=JavaScript src="../images/picker.js"></script>
 <form action="{S_GROUP_ACTION}" method="post" name="pick_form"><table border="0" cellpadding="3" cellspacing="1" class="forumline" align="center">
 	<tr> 
-	  <th class="thHead" colspan="2">{L_GROUP_EDIT_DELETE}</th>
+	  <th colspan="2">{L_GROUP_EDIT_DELETE}</th>
 	</tr>
 	<tr>
 	  <td class="row1" colspan="2"><span class="gensmall">{L_ITEMS_REQUIRED}</span></td>
@@ -97,7 +97,7 @@
 	</tr>
 	<!-- END group_edit -->
 	<tr> 
-	  <td class="catBottom" colspan="2" align="center"><span class="cattitle"> 
+	  <td class="submit" colspan="2" align="center"><span class="cattitle"> 
 		<input type="submit" name="group_update" value="{L_SUBMIT}" class="mainoption">
 		&nbsp;&nbsp; 
 		<input type="reset" value="{L_RESET}" name="reset" class="liteoption">

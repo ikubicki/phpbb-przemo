@@ -14,12 +14,12 @@
   </table>
   <table width="100%" cellpadding="3" cellspacing="1" border="0" class="forumline">
 	<tr> 
-	  <th height="25" class="thCornerL">#</th>
-	  <th class="thTop">{L_SUBJECT}</th>
-	  <th class="thTop">{L_FROM}</th>
-	  <th class="thTop">{L_TO}</th>
-	  <th class="thTop">{L_SENT_DATE}</th>
-	  <th class="thCornerR">&nbsp;</th>
+	  <th height="25">#</th>
+	  <th>{L_SUBJECT}</th>
+	  <th>{L_FROM}</th>
+	  <th>{L_TO}</th>
+	  <th>{L_SENT_DATE}</th>
+	  <th>&nbsp;</th>
 	</tr>
 	<!-- BEGIN memberrow -->
 	<tr> 

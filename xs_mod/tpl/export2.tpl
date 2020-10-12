@@ -20,7 +20,7 @@
 
 <form action="{FORM_ACTION}" method="post"><input type="hidden" name="export" value="{EXPORT_TEMPLATE}" /><table width="100%" cellpadding="4" cellspacing="1" border="0" align="center" class="forumline">
 	<tr>
-		<th class="thHead" colspan="2">{L_TITLE}</th>
+		<th colspan="2">{L_TITLE}</th>
 	</tr>
 	<tr>
 		<td class="row1">{L_XS_EXPORT_TPL_NAME}:</td>
@@ -94,6 +94,6 @@
 	</tr>
 	<input type="hidden" name="total" value="{TOTAL}" />
 	<tr>
-		<td class="catBottom" colspan="2" align="center">{S_HIDDEN_FIELDS}<input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption" /></td>
+		<td class="submit" colspan="2" align="center">{S_HIDDEN_FIELDS}<input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption" /></td>
 	</tr>
 </table></form>

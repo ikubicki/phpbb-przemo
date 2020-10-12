@@ -3,13 +3,13 @@
 
 <table width="100%" cellpadding="4" cellspacing="1" border="0" class="forumline">
 	<tr> 
-	  <th class="thCornerL" height="25">{L_PM}</th>
-	  <th class="thTop">{L_USERNAME}</th>
-	  <th class="thTop">{L_POSTS}</th>
-	  <th class="thTop">{L_FROM}</th>
-	  <th class="thTop">{L_EMAIL}</th>
-	  <th class="thTop">{L_WEBSITE}</th>
-	  <th class="thCornerR">{L_SELECT}</th>
+	  <th height="25">{L_PM}</th>
+	  <th>{L_USERNAME}</th>
+	  <th>{L_POSTS}</th>
+	  <th>{L_FROM}</th>
+	  <th>{L_EMAIL}</th>
+	  <th>{L_WEBSITE}</th>
+	  <th>{L_SELECT}</th>
 	</tr>
 	<tr> 
 	  <td class="catSides" colspan="8" height="28"><span class="cattitle">{L_PENDING_MEMBERS}</span></td>

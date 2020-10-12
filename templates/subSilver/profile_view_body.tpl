@@ -275,7 +275,7 @@
 	</tr>
 	<!-- BEGIN signature_image -->
 	<tr> 
-		<td class="catLeft" align="left" width="40%" height="28" colspan="2"><b><span class="gen">{signature_image.L_SIGNATURE}</span></b></td>
+		<td align="left" width="40%" height="28" colspan="2"><b><span class="gen">{signature_image.L_SIGNATURE}</span></b></td>
 	</tr>
 	<tr>
 		<td align="left" colspan="2" class="row1">{signature_image.SIGNATURE}{signature_image.SIG_IMAGE}</td>
@@ -283,7 +283,7 @@
 	<!-- END signature_image -->
 	<!-- BEGIN photo -->
 	<tr> 
-		<td class="catLeft" align="center" width="40%" height="28" colspan="2"><b><span class="gen">{photo.L_PHOTO}</span></b></td>
+		<td align="center" width="40%" height="28" colspan="2"><b><span class="gen">{photo.L_PHOTO}</span></b></td>
 	</tr>
 	<tr>
 		<td align="center" colspan="2" class="row1">{photo.PHOTO_IMG}</td>

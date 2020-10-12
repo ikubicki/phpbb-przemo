@@ -13,7 +13,7 @@ function update_rank(newimage)
 <form action="{S_RANK_ACTION}" method="post">
 <table width="100%" class="forumline" cellpadding="4" cellspacing="1" border="0" align="center">
 	<tr>
-		<th class="thTop" colspan="2">{L_RANKS_TITLE}</th>
+		<th colspan="2">{L_RANKS_TITLE}</th>
 	</tr>
 	<tr>
 		<td class="row1" width="38%"><span class="gen">{L_RANK_TITLE}</span><span class="gensmall"><br>{L_RANK_TITLE_E}</span></td>
@@ -39,7 +39,7 @@ function update_rank(newimage)
 		<td class="row2"><select name="rank_image" onchange="update_rank(this.options[selectedIndex].value);">{RANK_LIST}</select> &nbsp; <img name="rank_image" src="../images/spacer.gif" border="0" alt=""> &nbsp;</td>
 	</tr>
 	<tr>
-		<td class="catBottom" colspan="2" align="center"><input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption">&nbsp;&nbsp;<input type="reset" value="{L_RESET}" class="liteoption"></td>
+		<td class="submit" colspan="2" align="center"><input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption">&nbsp;&nbsp;<input type="reset" value="{L_RESET}" class="liteoption"></td>
 	</tr>
 </table>
 {S_HIDDEN_FIELDS}</form>

@@ -33,7 +33,7 @@
 			<script language=JavaScript src="../images/picker.js"></script>
 				<form action="{S_CONFIG_ACTION}" method="post" name="pick_form"><table width="100%" cellpadding="2" cellspacing="1" border="0" align="center" class="forumline">
 				<tr>
-					<th class="thHead" colspan="2">{L_ADDON_MAIN}</th>
+					<th colspan="2">{L_ADDON_MAIN}</th>
 				</tr>
 				<tr>
 					<td class="row1">{L_READ_TRACKING_C}<br><span class="gensmall">{L_READ_TRACKING_C_E}</span></td>
@@ -221,7 +221,7 @@
 					<td class="row2" width="50%"><input type="text" class="post" onFocus="Active(this)" onBlur="NotActive(this)" name="max_sig_chars_mod" value="{MAX_SIG_CHARS_MOD}" size="4" maxlength="99"></td>
 				</tr>
 				<tr>
-					<th class="thHead" colspan="2">{L_USER_PASSWORD_SETTINGS}</th>
+					<th colspan="2">{L_USER_PASSWORD_SETTINGS}</th>
 				</tr>
 				<tr> 
 					<td class="row1">{L_MAX_LOGIN_ERROR}<br><span class="gensmall">{L_MAX_LOGIN_ERROR_EXPLAIN}</span></td> 
@@ -244,7 +244,7 @@
 					<td class="row2" width="50%"><input class="post" onFocus="Active(this)" onBlur="NotActive(this)" type="text" size="4" maxlength="4" name="min_password_len" value="{MIN_PASSWORD_LEN}"></td> 
 				</tr>
 				<tr>
-					<td class="catBottom" colspan="2" align="center">{S_HIDDEN_FIELDS}<input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption">&nbsp;&nbsp;<input type="reset" value="{L_RESET}" class="liteoption"></td>
+					<td class="submit" colspan="2" align="center">{S_HIDDEN_FIELDS}<input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption">&nbsp;&nbsp;<input type="reset" value="{L_RESET}" class="liteoption"></td>
 				</tr>
 				</form>
 			</td>

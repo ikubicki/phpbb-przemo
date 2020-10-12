@@ -32,7 +32,7 @@
 			<td class="row1">
 				<form action="{S_CONFIG_ACTION}" method="post"><table width="100%" cellpadding="2" cellspacing="1" border="0" align="center" class="forumline">
 				<tr>
-					<th class="thHead" colspan="2">{L_ADDON_VIEWTOPIC}</th>
+					<th colspan="2">{L_ADDON_VIEWTOPIC}</th>
 				</tr>
 				<tr>
 					<td class="row1">{L_CAGENT}<br><span class="gensmall">{L_CAGENT_E}</span></td>
@@ -176,7 +176,7 @@
 					<td class="row2" width="50%"><input type="radio" name="ph_mod_delete" value="1" {PH_MOD_DELETE_YES}> {L_YES} <input type="radio" name="ph_mod_delete" value="0" {PH_MOD_DELETE_NO}>{L_NO}</td>
 				</tr>
 				<tr>
-					<th class="thHead" colspan="2">{L_ADDON_VIEWFORUM}</th>
+					<th colspan="2">{L_ADDON_VIEWFORUM}</th>
 				</tr>
 				<tr>
 					<td class="row1">{L_IGNORE_TOPICS}</td>
@@ -207,7 +207,7 @@
 					<td class="row2" width="50%"><input type="radio" name="post_overlib" value="1" {POST_OVERLIB_YES}> {L_YES} <input type="radio" name="post_overlib" value="0" {POST_OVERLIB_NO}>{L_NO}</td>
 				</tr>
 				<tr>
-					<td class="catBottom" colspan="2" align="center">{S_HIDDEN_FIELDS}<input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption">&nbsp;&nbsp;<input type="reset" value="{L_RESET}" class="liteoption"></td>
+					<td class="submit" colspan="2" align="center">{S_HIDDEN_FIELDS}<input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption">&nbsp;&nbsp;<input type="reset" value="{L_RESET}" class="liteoption"></td>
 				</tr>
 				</form>
 			</td>

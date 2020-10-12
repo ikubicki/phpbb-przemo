@@ -2,9 +2,9 @@
 
 <table width="100%" cellpadding="4" cellspacing="1" border="0" class="forumline">
   <tr> 
-	<th width="35%" class="thCornerL" height="25">&nbsp;{L_USERNAME}&nbsp;</th>
-	<th width="25%" class="thTop">&nbsp;{L_LAST_UPDATE}&nbsp;</th>
-	<th width="40%" class="thCornerR">&nbsp;{L_FORUM_LOCATION}&nbsp;</th>
+	<th width="35%" height="25">&nbsp;{L_USERNAME}&nbsp;</th>
+	<th width="25%">&nbsp;{L_LAST_UPDATE}&nbsp;</th>
+	<th width="40%">&nbsp;{L_FORUM_LOCATION}&nbsp;</th>
   </tr>
   <tr> 
 	<td class="catSides" colspan="3" height="28"><span class="cattitle"><b>{TOTAL_REGISTERED_USERS_ONLINE}</b></span></td>

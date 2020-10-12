@@ -7,12 +7,12 @@
 
 <table border="0" cellpadding="3" cellspacing="1" width="100%" class="forumline" align="center">
   <tr> 
-	<th width="150" height="25" class="thCornerL" nowrap="nowrap">{L_AUTHOR}</th>
-	<th width="100%" class="thCornerR" nowrap="nowrap">{L_MESSAGE}</th>
+	<th width="150" height="25" nowrap="nowrap">{L_AUTHOR}</th>
+	<th width="100%" nowrap="nowrap">{L_MESSAGE}</th>
   </tr>
   <!-- BEGIN searchresults -->
   <tr> 
-	<td class="catHead" colspan="2" height="28"><span class="topictitle"><img src="{FOLDER_IMG}" alt="" align="middle">&nbsp; {L_TOPIC}:&nbsp;<a href="{searchresults.U_TOPIC}" class="topictitle"{searchresults.TOPIC_COLOR}>{searchresults.TOPIC_TITLE}</a></span></td>
+	<td colspan="2" height="28"><span class="topictitle"><img src="{FOLDER_IMG}" alt="" align="middle">&nbsp; {L_TOPIC}:&nbsp;<a href="{searchresults.U_TOPIC}" class="topictitle"{searchresults.TOPIC_COLOR}>{searchresults.TOPIC_TITLE}</a></span></td>
   </tr>
   <tr> 
 	<td width="150" align="left" valign="top" class="row1" rowspan="2"><span class="name"><b>{searchresults.POSTER_NAME}</b></span><br>
@@ -27,7 +27,7 @@
   </tr>
   <!-- END searchresults -->
   <tr> 
-	<td class="catBottom" colspan="2" height="28" align="center">&nbsp; </td>
+	<td class="submit" colspan="2" height="28" align="center">&nbsp; </td>
   </tr>
 </table>
 

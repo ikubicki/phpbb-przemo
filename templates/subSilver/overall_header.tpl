@@ -155,7 +155,7 @@ $(window).scroll(function(ev){
 	  <div id="hm" style="display: ''; position: relative;">
       <table width="100%" class="forumline" cellspacing="1" cellpadding="3" border="0" align="center">
         <tr> 
-         <th class="thCornerL" height="25" nowrap="nowrap" onclick="javascript:ShowHide('hm','hm2','hm3');" style="cursor: pointer" title="{L_VHIDE}">&nbsp;{L_BOARD_MSG}&nbsp;</th>
+         <th height="25" nowrap="nowrap" onclick="javascript:ShowHide('hm','hm2','hm3');" style="cursor: pointer" title="{L_VHIDE}">&nbsp;{L_BOARD_MSG}&nbsp;</th>
         </tr>
         <tr>
          <td class="row1"><span class="gen">{BOARD_MSG}</span></td>
@@ -165,7 +165,7 @@ $(window).scroll(function(ev){
 	<div id="hm2" style="display: none; position: relative;">
 	<table width="100%" class="forumline" cellspacing="1" cellpadding="3" border="0" align="center">
 	  <tr> 
-	   <th class="thCornerL" height="25" nowrap="nowrap" onclick="javascript:ShowHide('hm','hm2','hm3');" style="cursor: pointer">&nbsp;{L_BOARD_MSG}&nbsp;</th>
+	   <th height="25" nowrap="nowrap" onclick="javascript:ShowHide('hm','hm2','hm3');" style="cursor: pointer">&nbsp;{L_BOARD_MSG}&nbsp;</th>
 	  </tr>
 	</table>
 	</div>

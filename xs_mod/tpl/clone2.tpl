@@ -21,7 +21,7 @@
 
 <table width="100%" cellpadding="4" cellspacing="1" border="0" align="center" class="forumline">
 	<tr>
-		<th class="thHead" colspan="2">{L_XS_CLONE_STYLE}</th>
+		<th colspan="2">{L_XS_CLONE_STYLE}</th>
 	</tr>
 	<tr>
 		<td class="explain" colspan="2" align="left">{L_XS_CLONE_STYLE_EXPLAIN4}</td>
@@ -55,7 +55,7 @@
 	<!-- END switch_select_nostyle -->
 	<input type="hidden" name="total" value="{TOTAL}" />
 	<tr>
-		<td class="catBottom" colspan="2" align="center"><input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption" /></td>
+		<td class="submit" colspan="2" align="center"><input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption" /></td>
 	</tr>
 	</form>
 </table>

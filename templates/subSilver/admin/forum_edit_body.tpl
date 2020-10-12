@@ -7,7 +7,7 @@
 <form action="{S_FORUM_ACTION}" method="post" name="pick_form">
   <table width="100%" cellpadding="4" cellspacing="1" border="0" class="forumline" align="center">
 	<tr> 
-	  <th class="thHead" colspan="2">{L_FORUM_SETTINGS}</th>
+	  <th colspan="2">{L_FORUM_SETTINGS}</th>
 	</tr>
 	<tr> 
 	  <td class="row1">{L_FORUM_NAME}</td>
@@ -132,7 +132,7 @@
 		</td>
 	</tr>
 	<tr> 
-	  <td class="catBottom" colspan="2" align="center">{S_HIDDEN_FIELDS}<input type="submit" name="submit" value="{S_SUBMIT_VALUE}" class="mainoption"></td>
+	  <td class="submit" colspan="2" align="center">{S_HIDDEN_FIELDS}<input type="submit" name="submit" value="{S_SUBMIT_VALUE}" class="mainoption"></td>
 	</tr>
   </table>
 </form>

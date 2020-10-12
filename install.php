@@ -135,7 +135,7 @@ function page_common_form($hidden, $submit)
 
 ?>
 					<tr> 
-					  <td class="catBottom" align="center" colspan="2"><?php echo $hidden; ?><input class="mainoption" type="submit" value="<?php echo $submit; ?>" /></td>
+					  <td class="submit" align="center" colspan="2"><?php echo $hidden; ?><input class="mainoption" type="submit" value="<?php echo $submit; ?>" /></td>
 					</tr>
 <?php
 
@@ -1064,7 +1064,7 @@ else
 				</form><br /><br />
 				<table width="100%" align="center" class="forumline" cellspacing="1" cellpading="1">
 					<tr>
-						<td class="catHead" align="center"><span class="nav">' . $lang['After_downloading'] . '</td>
+						<td align="center"><span class="nav">' . $lang['After_downloading'] . '</td>
 					</tr>
 					<tr>
 						<td align="center" class="row1">

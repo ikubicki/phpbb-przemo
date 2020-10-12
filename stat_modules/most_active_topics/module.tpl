@@ -1,14 +1,14 @@
 
 	  <table border="0" cellpadding="2" cellspacing="1" class="forumline" width="100%"> 
         <tr> 
-          <td class="catHead" align="center" colspan="4" height="28"> <span class="cattitle">{MODULE_NAME}</span> 
+          <td align="center" colspan="4" height="28"> <span class="cattitle">{MODULE_NAME}</span> 
           </td> 
         </tr> 
         <tr> 
-          <th colspan="1" class="thCornerL" align="left"><strong>{L_RANK}</strong></th> 
-          <th class="thTop" align="center"><strong>{L_REPLIES}</strong></th> 
-	  <th class="thTop" align="center"><strong>{L_VIEWS}</strong></th> 
-          <th class="thCornerR" align="center"><strong>{L_TOPIC}</strong></th> 
+          <th colspan="1" align="left"><strong>{L_RANK}</strong></th> 
+          <th align="center"><strong>{L_REPLIES}</strong></th> 
+	  <th align="center"><strong>{L_VIEWS}</strong></th> 
+          <th align="center"><strong>{L_TOPIC}</strong></th> 
         </tr> 
         <!-- BEGIN topicreplies --> 
         <tr> 

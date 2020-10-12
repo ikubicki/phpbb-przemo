@@ -28,15 +28,15 @@
   </table>
   <table width="100%" cellpadding="3" cellspacing="1" border="0" class="forumline">
 	<tr> 
-	  <th height="25" class="thCornerL">#</th>
-	  <th class="thTop">{L_FILENAME}</th>
-	  <th class="thTop">{L_FILECOMMENT}</th>
-	  <th class="thTop">{L_EXTENSION}</th>
-	  <th class="thTop">{L_SIZE}</th>
-	  <th class="thTop">{L_DOWNLOADS}</th>
-	  <th class="thTop">{L_POST_TIME}</th>
-	  <th class="thTop">{L_POSTED_IN_TOPIC}</th>
-	  <th class="thCornerR">{L_DELETE}</th>
+	  <th height="25">#</th>
+	  <th>{L_FILENAME}</th>
+	  <th>{L_FILECOMMENT}</th>
+	  <th>{L_EXTENSION}</th>
+	  <th>{L_SIZE}</th>
+	  <th>{L_DOWNLOADS}</th>
+	  <th>{L_POST_TIME}</th>
+	  <th>{L_POSTED_IN_TOPIC}</th>
+	  <th>{L_DELETE}</th>
 	</tr>
 	<!-- BEGIN attachrow -->
 	<tr> 
@@ -53,7 +53,7 @@
 	</tr>
 	<!-- END attachrow -->
 	<tr> 
-	  <td class="catBottom" colspan="9" height="28" align="right"> 
+	  <td class="submit" colspan="9" height="28" align="right"> 
 		<input type="submit" name="delete" value="{L_DELETE_MARKED}" class="liteoption">
 	  </td>
 	</tr>

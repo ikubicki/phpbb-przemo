@@ -1,6 +1,6 @@
 <table border="0" cellpadding="2" cellspacing="1" class="forumline" width="100%"> 
 	<tr>
-		<th class="thTop" align="center" colspan="3">{L_S_AGENT_TITLE}</td>
+		<th align="center" colspan="3">{L_S_AGENT_TITLE}</td>
 	</tr>
 	<!-- BEGIN s_loop -->
 	<tr>
@@ -29,7 +29,7 @@
 <br />
 <table border="0" cellpadding="2" cellspacing="1" class="forumline" width="100%">
 	<tr>
-		<th class="thTop" align="center" colspan="3">{L_B_AGENT_TITLE}</th>
+		<th align="center" colspan="3">{L_B_AGENT_TITLE}</th>
 	</tr>
 	<!-- BEGIN b_loop -->
 	<tr>

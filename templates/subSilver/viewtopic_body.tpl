@@ -20,7 +20,7 @@ var img_addr = '{IMG_ADDR}';
 <table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
 	<!-- BEGIN topic_action -->
 	<tr align="right">
-	<th class="catHead" align="left" colspan="2" nowrap="nowrap">
+	<th align="left" colspan="2" nowrap="nowrap">
       <span class="gensmall">
          {topic_action.TOPIC_ACTION} {topic_action.L_WHO}: <a href="{topic_action.PROFILE_URL}"><b>{topic_action.USERNAME}</b></a><br />
          {topic_action.DATE}
@@ -166,7 +166,9 @@ var img_addr = '{IMG_ADDR}';
                <td colspan="2"><span class="gensmall"><hr></span></td>
             </tr>
             <tr>
-               <td height="100%" valign="top" colspan="2" {postrow.QUOTE_USERNAME}><span class="postbody">{postrow.MESSAGE}{postrow.ATTACHMENTS}</span></td>
+               <td valign="top" colspan="2">
+                  <span class="postbody" author="{postrow.POSTER_NAME_ESCAPED}">{postrow.MESSAGE}{postrow.ATTACHMENTS}</span>
+               </td>
             </tr>
 			<!-- BEGIN post_edited -->
 			<tr>
@@ -313,7 +315,6 @@ var img_addr = '{IMG_ADDR}';
 </table>
 
 <script>votes.load({topic: '{TOPIC_ID}'})</script>
-<script>$('.postbody img').fancybox()</script>
 
 <table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
    <tr>
@@ -350,3 +351,5 @@ function bookmarkthis() {
 </table>
 <div style="display:none" id="resizemod"></div>
 {QUICKREPLY_OUTPUT}
+
+<script>forum.selection('.postbody')</script>

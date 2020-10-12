@@ -48,13 +48,13 @@ function setCheckboxes(the_form, do_check)
 	</tr>
 	<!-- BEGIN important_topics -->
 	<tr>
-		<td class="catHead" colspan="{SPAN_J}"><span class="nav">&bull; {L_IMPORTANT_TOPICS}</span></td>
+		<td colspan="{SPAN_J}"><span class="nav">&bull; {L_IMPORTANT_TOPICS}</span></td>
 	</tr>
 	<!-- END important_topics -->
 	<!-- BEGIN topicrow -->
 	<!-- BEGIN normal_topics_row -->
 	<tr>
-		<td class="catHead" colspan="{SPAN_J}"><span class="nav">&bull; {L_TOPICS}</span></td>
+		<td colspan="{SPAN_J}"><span class="nav">&bull; {L_TOPICS}</span></td>
 	</tr>
 	<!-- END normal_topics_row -->
 	<!-- BEGIN normal_topics -->
@@ -64,7 +64,7 @@ function setCheckboxes(the_form, do_check)
 <div id="imp_topics2_{FORUM_ID}" style="display: none; position: relative;">
 <table border="0" cellpadding="4" cellspacing="1" width="100%" class="forumline">
 	<tr>
-		<th align="center" height="25" class="thCornerL" nowrap="nowrap" onclick="javascript:ShowHide('imp_topics_{FORUM_ID}','imp_topics2_{FORUM_ID}','imp_topics3_{FORUM_ID}');" style="cursor: pointer">&nbsp;{L_TOPICS}&nbsp;</th>
+		<th align="center" height="25" nowrap="nowrap" onclick="javascript:ShowHide('imp_topics_{FORUM_ID}','imp_topics2_{FORUM_ID}','imp_topics3_{FORUM_ID}');" style="cursor: pointer">&nbsp;{L_TOPICS}&nbsp;</th>
 	</tr>
 </table>
 <br>

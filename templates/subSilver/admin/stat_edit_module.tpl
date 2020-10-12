@@ -3,7 +3,7 @@
 
 <table width="100%" class="forumline">
 	<tr>
-		<th class="thHead">{L_PREVIEW}</th>
+		<th>{L_PREVIEW}</th>
 	</tr>
 	<tr>
 		<td class="row3">
@@ -24,7 +24,7 @@
 
 <table class="forumline" align="center" width="45%">
 	<tr>
-		<th class="thHead">{L_MESSAGES}</th>
+		<th>{L_MESSAGES}</th>
 	</tr>
 	<tr>
 		<td class="row3"><span class="gen">{MESSAGE}</td>
@@ -36,7 +36,7 @@
 <form action="{S_ACTION}" method="post">
 <table width="99%" cellpadding="4" cellspacing="1" border="0" align="center" class="forumline">
 	<tr>
-	  <th class="thHead" colspan="2">{L_EDIT}</th>
+	  <th colspan="2">{L_EDIT}</th>
 	</tr>
 	<tr>
 		<td class="row1" align="left" width="50%"><span class="gen">{L_ACTIVE}</span><br><span class="gensmall">{L_ACTIVE_DESC}</span></td>
@@ -58,7 +58,7 @@
 		<td class="row1" colspan="2" align="center"><span class="gen"><a href="{U_MANAGEMENT}" class="gen">{L_BACK_TO_MANAGEMENT}</a></span></td>
 	</tr>
 	<tr>
-		<td class="catBottom" colspan="2" align="center"><input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption">&nbsp;&nbsp;<input type="reset" value="{L_RESET}" class="liteoption"></td>
+		<td class="submit" colspan="2" align="center"><input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption">&nbsp;&nbsp;<input type="reset" value="{L_RESET}" class="liteoption"></td>
 	</tr>
 </table>
 </form>

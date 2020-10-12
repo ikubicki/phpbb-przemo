@@ -1,13 +1,13 @@
 
 	  <table border="0" cellpadding="2" cellspacing="1" class="forumline" width="100%"> 
         <tr> 
-          <td class="catHead" align="center" colspan="3" height="28"> <span class="cattitle">{MODULE_NAME}</span> 
+          <td align="center" colspan="3" height="28"> <span class="cattitle">{MODULE_NAME}</span> 
           </td> 
         </tr> 
         <tr> 
-          <th class="thCornerL" align="left"><strong>{L_RANK}</strong></th> 
-          <th class="thTop" align="center"><strong>{L_TOPIC}</strong></th> 
-          <th class="thCornerR" align="center"><strong>{L_POSTTIME}</strong></th> 
+          <th align="left"><strong>{L_RANK}</strong></th> 
+          <th align="center"><strong>{L_TOPIC}</strong></th> 
+          <th align="center"><strong>{L_POSTTIME}</strong></th> 
         </tr> 
         <!-- BEGIN topics --> 
         <tr> 

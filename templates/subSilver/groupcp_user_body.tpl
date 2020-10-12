@@ -2,7 +2,7 @@
 <table width="100%" cellpadding="4" cellspacing="1" border="0" class="forumline">
   <!-- BEGIN switch_groups_remaining -->
   <tr> 
-	<th colspan="2" align="center" class="thHead" height="25">{L_JOIN_A_GROUP}</th>
+	<th colspan="2" align="center" height="25">{L_JOIN_A_GROUP}</th>
   </tr>
   <!-- BEGIN group_list -->
   <tr>
@@ -13,7 +13,7 @@
   <!-- END switch_groups_remaining -->
   <!-- BEGIN switch_groups_joined -->
   <tr> 
-	<th colspan="2" align="center" class="thHead" height="25">{L_GROUP_MEMBERSHIP_DETAILS}</th>
+	<th colspan="2" align="center" height="25">{L_GROUP_MEMBERSHIP_DETAILS}</th>
   </tr>
   <!-- BEGIN group_member -->
   <tr> 
@@ -23,7 +23,7 @@
   <!-- END group_member -->
   <!-- END switch_groups_joined -->
   <tr>
-	<td class="catBottom" colspan="2">&nbsp;</td>
+	<td class="submit" colspan="2">&nbsp;</td>
   </tr>
 </table>
 

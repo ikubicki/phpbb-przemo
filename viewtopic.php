@@ -2472,6 +2472,7 @@ for($i = 0; $i < $total_posts; $i++)
 		'ROW_COLOR' => '#' . (!($i % 2)) ? $theme['td_color1'] : $theme['td_color2'],
 		'ROW_CLASS' => (!$row_class) ? (!($i % 2)) ? $theme['td_class1'] : $theme['td_class2'] : $row_class,
 		'POSTER_NAME' => (!$show_post && $userdata['user_id'] != $poster_id) ? '' : $poster,
+		'POSTER_NAME_ESCAPED' => htmlentities(htmlentities($poster_username)),
 		'POSTER_AGE' => !empty($poster_age) ? $poster_age . '<br />' : '',
 		'POSTER_RANK' => $poster_rank,
 		'CUSTOM_RANK' => $poster_custom_rank,

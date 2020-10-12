@@ -21,13 +21,13 @@
 <form action="{U_ACTION}" method="post" style="display: inline">{S_HIDDEN_FIELDS}<input type="hidden" name="total" value="{TOTAL}" />
 <table cellpadding="4" cellspacing="1" border="0" class="forumline" align="center">
 <tr>
-	<th class="thHead" colspan="4">{L_XS_INSTALL_STYLES}</th>
+	<th colspan="4">{L_XS_INSTALL_STYLES}</th>
 </tr>
 <tr>
-	<td class="catLeft" align="center"><span class="gen">{L_XS_TEMPLATE}</span></td>
+	<td align="center"><span class="gen">{L_XS_TEMPLATE}</span></td>
 	<td class="cat" align="center"><span class="gen">{L_XS_STYLE}</span></td>
 	<td class="cat" align="center"><span class="gen">{L_XS_INSTALL}</span></td>
-	<td class="catRight" align="center"><span class="gen">{L_XS_SELECT}</span></td>
+	<td align="center"><span class="gen">{L_XS_SELECT}</span></td>
 </tr>
 <!-- BEGIN styles -->
 <tr> 
@@ -38,7 +38,7 @@
 </tr>
 <!-- END styles -->
 <tr>
-	<td class="catBottom" colspan="4" align="center"><input type="submit" name="submit" value="{L_XS_INSTALL}" class="mainoption" /></td>
+	<td class="submit" colspan="4" align="center"><input type="submit" name="submit" value="{L_XS_INSTALL}" class="mainoption" /></td>
 </tr>
 </table>
 </form>

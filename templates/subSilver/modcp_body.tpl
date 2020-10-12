@@ -1,16 +1,16 @@
 <table width="100%" cellpadding="4" cellspacing="1" border="0" class="forumline">
 	<tr>
-		<td class="catHead" colspan="5" align="center" height="28"><span class="cattitle">{L_MOD_CP}</span></td>
+		<td colspan="5" align="center" height="28"><span class="cattitle">{L_MOD_CP}</span></td>
 	</tr>
 	<tr>
 		<td class="spaceRow" colspan="5" align="center"><span class="gensmall">{L_MOD_CP_EXPLAIN}</span></td>
 	</tr>
 	<tr>
-		<th width="4%" class="thLeft" nowrap="nowrap">&nbsp;</th>
+		<th width="4%" nowrap="nowrap">&nbsp;</th>
 		<th nowrap="nowrap">&nbsp;{L_TOPICS}&nbsp;</th>
 		<th width="8%" nowrap="nowrap">&nbsp;{L_REPLIES}&nbsp;</th>
 		<th width="17%" nowrap="nowrap">&nbsp;{L_LASTPOST}&nbsp;</th>
-		<th width="5%" class="thRight" nowrap="nowrap">&nbsp;{L_SELECT}&nbsp;</th>
+		<th width="5%" nowrap="nowrap">&nbsp;{L_SELECT}&nbsp;</th>
 	</tr>
 	<!-- BEGIN topicrow -->
 	<tr>
@@ -22,7 +22,7 @@
 	</tr>
 	<!-- END topicrow -->
 	<tr align="right">
-		<td class="catBottom" colspan="5" height="29">{S_HIDDEN_FIELDS} 
+		<td class="submit" colspan="5" height="29">{S_HIDDEN_FIELDS} 
 		<!-- BEGIN switch_auth_delete -->
 		<input type="submit" name="delete" class="liteoption" value="{L_DELETE}">&nbsp;
 		<!-- END switch_auth_delete -->

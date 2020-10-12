@@ -124,7 +124,7 @@ $message = '';
 
 if ( $HTTP_POST_VARS['mode'] != 'go' )
 {
-	$message = '<form style="display: inline;" action="' . append_sid("update.$phpEx", false, true) . '" method="post" target="_top"><table align="center" width="100%"><tr><td class="row1" align="center"><span class="gen">' . $lang['update_body'] . '<br /><br /></span></td></tr><tr><td align="right" class="row1"><span class="gensmall">' . $lang['Generate_file'] . '<input type="checkbox" name="file" value="1" /></span></td></tr><tr><td class="catHead" align="center"><input type="hidden" name="mode" value="go" /><input type="hidden" name="sid" value="' . $userdata['session_id'] . '" /><input type="submit" name="submit" class="mainoption" value="' . $lang['start_update'] . '" /></td></tr></table></form>';
+	$message = '<form style="display: inline;" action="' . append_sid("update.$phpEx", false, true) . '" method="post" target="_top"><table align="center" width="100%"><tr><td class="row1" align="center"><span class="gen">' . $lang['update_body'] . '<br /><br /></span></td></tr><tr><td align="right" class="row1"><span class="gensmall">' . $lang['Generate_file'] . '<input type="checkbox" name="file" value="1" /></span></td></tr><tr><td align="center"><input type="hidden" name="mode" value="go" /><input type="hidden" name="sid" value="' . $userdata['session_id'] . '" /><input type="submit" name="submit" class="mainoption" value="' . $lang['start_update'] . '" /></td></tr></table></form>';
 	$message .= '<br />' . check_security();
 
 }
@@ -513,7 +513,7 @@ echo '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 </table>
 <table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0" style="background-color: #FFFFFF; border: solid 1px #212121">
 	<tr>
-		<th class="thHead" height="25"><b>' . $lang['Information'] . '</b></th>
+		<th height="25"><b>' . $lang['Information'] . '</b></th>
 	</tr>
 	<tr>
 		<td align="center" class="row1"><span class="gen">' . $message . '</td>

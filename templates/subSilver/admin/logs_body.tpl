@@ -48,14 +48,14 @@
 </tr>
 <!-- END record_row -->
 <tr>
- <td class="catHead" colspan="4" height="28" align="left"><span class="gensmall"><a href="{S_DELETE_ALL}">{L_DELETE_ALL}</a></span></td>
- <td class="catHead" colspan="5" height="28" align="right"> 
+ <td colspan="4" height="28" align="left"><span class="gensmall"><a href="{S_DELETE_ALL}">{L_DELETE_ALL}</a></span></td>
+ <td colspan="5" height="28" align="right"> 
 		<input type="submit" name="delete" class="liteoption" value="{L_DELETE}">
 		<input type="submit" name="{L_CANCEL}" class="liteoption" value="{L_CANCEL}" onClick="self.location.href='{S_CANCEL_ACTION}'">
 	  </td>
 </tr>
 <tr> 
-	  <td class="catBottom" colspan="9" height="28" align="right"><b><span class="gensmall"><a href="javascript:select(true);" class="gensmall">{L_MARK_ALL}</a> :: <a href="javascript:select(false);" class="gensmall">{L_UNMARK_ALL}</a></span></b></td>
+	  <td class="submit" colspan="9" height="28" align="right"><b><span class="gensmall"><a href="javascript:select(true);" class="gensmall">{L_MARK_ALL}</a> :: <a href="javascript:select(false);" class="gensmall">{L_UNMARK_ALL}</a></span></b></td>
 	</tr>
 </table>
 

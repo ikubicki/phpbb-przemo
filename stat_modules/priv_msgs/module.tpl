@@ -1,11 +1,11 @@
 <!-- BEGIN pm -->
 <table width="100%" border="0" cellpadding="2" cellspacing="1" class="forumline">
    <tr> 
-    <td class="catHead" colspan="2" align="center"><span class="cattitle">{MODULE_NAME}</span></td> 
+    <td colspan="2" align="center"><span class="cattitle">{MODULE_NAME}</span></td> 
    </tr>
     <tr> 
-    	<th colspan="1" class="thCornerL" align="center"><strong>{L_NUMBER}</strong></th>
-    	<th colspan="1" class="thCornerR" align="left">&nbsp;</th>  
+    	<th colspan="1" align="center"><strong>{L_NUMBER}</strong></th>
+    	<th colspan="1" align="left">&nbsp;</th>  
    </tr>
  <tr> 
         <td class="row1" align="center" width="20%" nowrap><span class="gen"><b>{pm.TOTAL_MESS}</b></span></td> 
@@ -33,8 +33,8 @@
   </tr> 
   
    <tr> 
-    	<th colspan="1" class="thCornerL" align="center"><strong>{L_CURRENT}</strong></th> 
-    	<th colspan="1" class="thCornerR" align="left">&nbsp;</th>  
+    	<th colspan="1" align="center"><strong>{L_CURRENT}</strong></th> 
+    	<th colspan="1" align="left">&nbsp;</th>  
    </tr>
 
   <tr> 

@@ -3,7 +3,7 @@
 
   <table border="0" cellpadding="3" cellspacing="1" width="100%" class="forumline">
 	<tr> 
-	  <th class="thHead" colspan="2" height="25" valign="middle">{L_SEND_PASSWORD}</th>
+	  <th colspan="2" height="25" valign="middle">{L_SEND_PASSWORD}</th>
 	</tr>
 	<tr> 
 	  <td class="row2" colspan="2"><span class="gensmall">{L_ITEMS_REQUIRED}</span></td>
@@ -17,7 +17,7 @@
 	  <td class="row2"> <input type="text" class="post" onFocus="Active(this)" onBlur="NotActive(this)" style="width: 200px" name="email" size="25" maxlength="255" value="{EMAIL}"></td>
 	</tr>
 	<tr> 
-	  <td class="catBottom" colspan="2" align="center" height="28">{S_HIDDEN_FIELDS} <input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption">&nbsp;&nbsp; <input type="reset" value="{L_RESET}" name="reset" class="liteoption"></td>
+	  <td class="submit" colspan="2" align="center" height="28">{S_HIDDEN_FIELDS} <input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption">&nbsp;&nbsp; <input type="reset" value="{L_RESET}" name="reset" class="liteoption"></td>
 	</tr>
   </table>
 </form>

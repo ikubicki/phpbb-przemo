@@ -22,11 +22,11 @@
 <form action="{U_ACTION}" method="post">{S_HIDDEN_FIELDS}<input type="hidden" name="export" value="{EXPORT}" /><input type="hidden" name="export_total" value="{TOTAL}" />
 <table cellpadding="4" cellspacing="1" border="0" class="forumline" align="center">
 <tr>
-	<th class="thHead" colspan="2">{L_XS_EXPORT_STYLES_DATA}</th>
+	<th colspan="2">{L_XS_EXPORT_STYLES_DATA}</th>
 </tr>
 <tr>
-	<td class="catLeft" align="center"><span class="gen">{L_XS_STYLES}</span></td>
-	<td class="catRight" align="center"><span class="gen">{L_XS_SELECT}</span></td>
+	<td align="center"><span class="gen">{L_XS_STYLES}</span></td>
+	<td align="center"><span class="gen">{L_XS_SELECT}</span></td>
 </tr>
 <!-- BEGIN styles -->
 <tr> 
@@ -35,7 +35,7 @@
 </tr>
 <!-- END styles -->
 <tr>
-	<td class="catBottom" colspan="2" align="center"><input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption" /></td>
+	<td class="submit" colspan="2" align="center"><input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption" /></td>
 </tr>
 </table>
 </form>

@@ -6,8 +6,8 @@
 
 <table width="100%" cellpadding="4" cellspacing="1" border="0" class="forumline" align="center">
 <tr>
-	<th class="thLeft" colspan="{INC_SPAN}" width="75%">{L_FORUM_TITLE}</th>
-	<th class="thRight" colspan="4" width="25%">{L_ACTION}</th>
+	<th colspan="{INC_SPAN}" width="75%">{L_FORUM_TITLE}</th>
+	<th colspan="4" width="25%">{L_ACTION}</th>
 </tr>
 <!-- BEGIN catrow -->
 <!-- BEGIN cathead -->
@@ -62,7 +62,7 @@
 <!-- END catfoot -->
 <!-- END catrow -->
 <tr>
-	<td colspan="{INC_SPAN_ALL}" class="catBottom">
+	<td colspan="{INC_SPAN_ALL}" class="submit">
 		<!-- BEGIN switch_board_footer -->
 		<input class="post" type="text" name="name[0]">&nbsp;
 		<!-- BEGIN sub_forum_attach -->
@@ -77,7 +77,7 @@
 <br>
 <table width="100%" cellpadding="7" cellspacing="1" border="0" class="forumline" align="center">
   <tr>
-    <th class="thLeft" width="75%" colspan="7">{forums_shadow.L_FORUMS_SHADOW}</th>
+    <th width="75%" colspan="7">{forums_shadow.L_FORUMS_SHADOW}</th>
   </tr>
   <tr>
     <td class="row3"><span class="nav">{forums_shadow.L_NAME}</span></td>
@@ -105,7 +105,7 @@
 <br>
 <table width="100%" cellpadding="7" cellspacing="1" border="0" class="forumline" align="center">
   <tr>
-    <th class="thLeft" width="75%" colspan="7">{all.L_ALL_FORUMS}</th>
+    <th width="75%" colspan="7">{all.L_ALL_FORUMS}</th>
   </tr>
   <tr>
     <td class="row3"><span class="nav">{all.L_NAME}</span></td>

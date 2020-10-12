@@ -29,7 +29,7 @@ top.nav.location = top.nav.location; // '{left_refresh.ACTION}';
 <!-- BEGIN removed -->
 <table class="forumline" width="100%" cellspacing="1" cellpadding="4" border="0">
 	<tr>
-		<th class="thHead" height="25">{L_Information}</th>
+		<th height="25">{L_Information}</th>
 	</tr>
 	<tr> 
 		<td class="row1"><table width="100%" cellspacing="0" cellpadding="1" border="0">
@@ -50,13 +50,13 @@ top.nav.location = top.nav.location; // '{left_refresh.ACTION}';
 
 <table cellpadding="4" cellspacing="1" border="0" class="forumline" align="center">
 <tr>
-	<th class="thHead" colspan="4">{L_XS_UNINSTALL_STYLES}</th>
+	<th colspan="4">{L_XS_UNINSTALL_STYLES}</th>
 </tr>
 <tr>
-	<td class="catLeft" align="center"><span class="gen">{L_XS_TEMPLATE}</span></td>
+	<td align="center"><span class="gen">{L_XS_TEMPLATE}</span></td>
 	<td class="cat" align="center"><span class="gen">{L_XS_STYLE}</span></td>
 	<td class="cat" align="center"><span class="gen">{L_XS_UNINSTALL}</span></td>
-	<td class="catRight" align="center"><span class="gen">{L_XS_REMOVE_FILES}</span></td>
+	<td align="center"><span class="gen">{L_XS_REMOVE_FILES}</span></td>
 </tr>
 <!-- BEGIN styles -->
 <!-- BEGIN item -->

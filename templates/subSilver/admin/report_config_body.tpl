@@ -5,7 +5,7 @@
 <form action="{S_ACTION}" method="post" name="post">
 <table width="99%" cellpadding="4" cellspacing="1" border="0" align="center" class="forumline">
 	<tr>
-	  <th class="thHead" colspan="2">{L_SETTINGS}</th>
+	  <th colspan="2">{L_SETTINGS}</th>
 	</tr>
 	<tr>
 		<td class="row1">{L_RP_DISABLE}</span></td>
@@ -28,7 +28,7 @@
 		<td class="row2"><input type="radio" name="report_no_guestes" value="1" {S_NO_GUESTS_YES}> {L_YES}&nbsp;&nbsp;<input type="radio" name="report_no_guestes" value="0" {S_NO_GUESTS_NO}> {L_NO}</td>
 	</tr>
 	<tr>
-		<td class="catBottom" colspan="2" align="center">{S_HIDDEN_FIELDS}<input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption">&nbsp;&nbsp;<input type="reset" value="{L_RESET}" class="liteoption">
+		<td class="submit" colspan="2" align="center">{S_HIDDEN_FIELDS}<input type="submit" name="submit" value="{L_SUBMIT}" class="mainoption">&nbsp;&nbsp;<input type="reset" value="{L_RESET}" class="liteoption">
 		</td>
 	</tr>
 </table></form>
