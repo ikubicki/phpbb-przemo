@@ -2,7 +2,7 @@
 </span>
 <table border="0" align="center" width="90%" cellpadding="3" cellspacing="1">
 <tr> 
-<td><span class="genmed"><b>Ukryta Wiadomo¶æ:</b></span></td>
+<td><span class="genmed"><b>Ukryta Wiadomoï¿½ï¿½:</b></span></td>
 </tr>
 <tr>
 <td class="quote">
@@ -16,11 +16,11 @@
 </span>
 <table border="0" align="center" width="90%" cellpadding="3" cellspacing="1">
 <tr> 
-<td><span class="genmed"><b>Ukryta Wiadomo¶æ:</b></span></td>
+<td><span class="genmed"><b>Ukryta Wiadomoï¿½ï¿½:</b></span></td>
 </tr>
 <tr>
 <td class="quote">
-<center>Je¶li jeste¶ *zarejestrowanym u¿ytkownikiem* musisz odpowiedzieæ w tym temacie ¿eby zobaczyæ t± wiadomo¶æ<br>--- If you are a *registered user* : you need to post in this topic to see the message ---</center>
+<center>Jeï¿½li jesteï¿½ *zarejestrowanym uï¿½ytkownikiem* musisz odpowiedzieï¿½ w tym temacie ï¿½eby zobaczyï¿½ tï¿½ wiadomoï¿½ï¿½<br>--- If you are a *registered user* : you need to post in this topic to see the message ---</center>
 </td>
 </tr>
 </table>
@@ -71,16 +71,6 @@
 <!-- BEGIN b_close --></span><!-- END b_close -->
 
 
-<!-- BEGIN fade_open -->
-<span style="height: 1; Filter: Alpha(Opacity=100, FinishOpacity=0, Style=1, StartX=0, FinishX=100%)">
-<!-- END fade_open -->
-<!-- BEGIN fade_close -->
-</span>
-<!-- END fade_close -->
-
-<!-- BEGIN scroll_open --><span><marquee><!-- END scroll_open -->
-<!-- BEGIN scroll_close --></marquee></span><!-- END scroll_close -->
-
 <!-- BEGIN u_open --><span style="text-decoration: underline"><!-- END u_open -->
 <!-- BEGIN u_close --></span><!-- END u_close -->
 
@@ -93,23 +83,14 @@
 <!-- BEGIN color_open --><span style="color: {COLOR}"><!-- END color_open -->
 <!-- BEGIN color_close --></span><!-- END color_close -->
 
-<!-- BEGIN size_open --><span style="font-size: {SIZE}px; line-height: normal"><!-- END size_open -->
+<!-- BEGIN size_open --><span style="font-size: {SIZE}px"><!-- END size_open -->
 <!-- BEGIN size_close --></span><!-- END size_close -->
 
-<!-- BEGIN img --><img src="{URL}" resizemod="on" onload="rmw_img_loaded(this)" border="0" alt=""><!-- END img -->
+<!-- BEGIN img --><a href="{URL}" rel="nofollow" data-lightbox="topic-set" target="_blank"><img src="{URL}" /></a><!-- END img -->
 
-<!-- BEGIN url --><a href="{URL}" rel="nofollow" target="_blank" class="postlink">{DESCRIPTION}</a><!-- END url -->
+<!-- BEGIN url --><a href="{URL}" rel="nofollow" target="_blank">{DESCRIPTION}</a><!-- END url -->
 
 <!-- BEGIN email --><a href="mailto:{EMAIL}">{EMAIL}</a><!-- END email -->
 
-<!-- BEGIN scroll_open --><span><marquee><!-- END scroll_open -->
-<!-- BEGIN scroll_close --></marquee></span><!-- END scroll_close -->
-
 <!-- BEGIN center_open --><div align="center"><!-- END center_open -->
 <!-- BEGIN center_close --></div><!-- END center_close -->
-
-<!-- BEGIN glow_open --><span style="filter: glow(color={GLOWCOLOR}); height:20"><!-- END glow_open -->
-<!-- BEGIN glow_close --></span><!-- END glow_close -->
-
-<!-- BEGIN shadow_open --><span style="filter: shadow(color={SHADOWCOLOR}); height:20"><!-- END shadow_open -->
-<!-- BEGIN shadow_close --></span><!-- END shadow_close -->

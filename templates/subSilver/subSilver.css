@@ -594,3 +594,9 @@ td.submit input[type=reset] {
 	padding: 0 5px;
 	text-decoration: none;
 }
+
+
+body .lightboxOverlay {
+	background-color: #0f82b3;
+	background: linear-gradient(#333, #04739e, #0f82b3, #04739e, #333);
+}

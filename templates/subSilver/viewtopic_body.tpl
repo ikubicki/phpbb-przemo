@@ -5,7 +5,8 @@ var img_addr = '{IMG_ADDR}';
 //-->
 </script>
 
-
+<script src="/js/lightbox/lightbox.js"></script>
+<style>@import url('/js/lightbox/lightbox.css')</style>
 <script src="/modules/votes/index.js"></script>
 <style>@import url('modules/votes/main.css')</style>
 <br>
@@ -312,6 +313,7 @@ var img_addr = '{IMG_ADDR}';
 </table>
 
 <script>votes.load({topic: '{TOPIC_ID}'})</script>
+<script>$('.postbody img').fancybox()</script>
 
 <table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
    <tr>
