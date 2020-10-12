@@ -166,9 +166,13 @@ th.thCornerR {
 	padding: 10px;
 }
 
+td.spacer {
+	background: #fff;
+}
+
 td.row3Right,
 td.spaceRow {
-	background-color: #D1D7DC;
+	background-color: #f5f5f5;
 	font-size: 1px;
 }
 

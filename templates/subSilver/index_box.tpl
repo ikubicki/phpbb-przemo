@@ -24,7 +24,7 @@
 				<!-- BEGIN cathead -->
 				<tr class="row">
 					<!-- BEGIN inc -->
-					<td width="46" class="{catrow.cathead.inc.INC_CLASS}"><img src="{SPACER}" width="46" height="0"></td>
+					<td class="spacer">&nbsp;</td>
 					<!-- END inc -->
 					<td class="{catrow.cathead.CLASS_CAT}" width="100%" colspan="{catrow.cathead.INC_SPAN}">
 						<a href="{catrow.cathead.U_VIEWCAT}" class="cattitle">{catrow.cathead.CAT_TITLE}</a>
@@ -40,9 +40,9 @@
 				<!-- BEGIN forumrow -->
 				<tr class="row">
 					<!-- BEGIN inc -->
-					<td width="46" class="{catrow.forumrow.inc.INC_CLASS}"><img src="{SPACER}" width="46" height="0"></td>
+					<td class="spacer">&nbsp;</td>
 					<!-- END inc -->
-					<td class="{catrow.forumrow.INC_CLASS}" align="center" valign="middle" height="50"><img src="{catrow.forumrow.FORUM_FOLDER_IMG}" alt="" title="{catrow.forumrow.L_FORUM_FOLDER_ALT}"></td>
+					<td class="row1" align="center" valign="middle"><img src="{catrow.forumrow.FORUM_FOLDER_IMG}" alt="" title="{catrow.forumrow.L_FORUM_FOLDER_ALT}"></td>
 					<td class="row1" width="100%" height="50" colspan="{catrow.forumrow.INC_SPAN}">
 						<span class="forumlink"><a href="{catrow.forumrow.U_VIEWFORUM}" class="forumlink"{catrow.forumrow.FORUM_COLOR}>{catrow.forumrow.FORUM_NAME}</a></span><span class="gensmall">&nbsp;&nbsp;{catrow.forumrow.LAST_POSTMSG}<br></span>
 						<span class="genmed">{catrow.forumrow.FORUM_DESC}<br></span>
