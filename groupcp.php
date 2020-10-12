@@ -1257,7 +1257,7 @@ else
 		}
 	}
 
-	if ( count($s_group_list_opt) || count($s_member_groups_opt) )
+	if ( count($s_group_list_opt ?? []) || count($s_member_groups_opt ?? []) )
 	{
 		//
 		// Load and process templates

@@ -1,5 +1,5 @@
 <form method="post" action="{S_MODE_ACTION}">
-<table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
+<table class="block">
 	<tr>
 		<td align="left"><span class="gensmall">
 			<!-- BEGIN staff_explain -->
@@ -20,23 +20,22 @@
 
 <table width="100%" cellpadding="1" cellspacing="1" border="0" class="forumline">
 	<tr>
-		<th nowrap="nowrap">{L_USERNAME}</th>
-		<th nowrap="nowrap">{L_EMAIL}</th>
-		<th nowrap="nowrap">PM</th>
-		<th nowrap="nowrap">{L_FROM}</th>
-		<th nowrap="nowrap">{L_JOINED}</th>
+		<th class="label center">{L_USERNAME}</th>
+		<th class="label center">{L_EMAIL}</th>
+		<th class="label center">PM</th>
+		<th class="label center">{L_FROM}</th>
+		<th class="label center">{L_JOINED}</th>
 		<!-- BEGIN llogin -->
-		<th nowrap="nowrap">{L_LAST_VISIT}</th>
+		<th class="label center">{L_LAST_VISIT}</th>
 		<!-- END llogin -->
-		<th nowrap="nowrap">{L_POSTS}</th>
-		<!-- BEGIN aim -->
-		<th nowrap="nowrap">GG</th>
-		<!-- END aim -->
-		<th nowrap="nowrap">{L_WEBSITE}</th>
+		<th class="label center">{L_POSTS}</th>
+		<th class="label center">{L_WEBSITE}</th>
 	</tr>
 	<!-- BEGIN memberrow -->
 	<tr>
-		<td class="{memberrow.ROW_CLASS}" width="15%" nowrap="nowrap" align="center"><span class="name"><a href="{memberrow.U_VIEWPROFILE}" class="name"{memberrow.USERNAME_COLOR}>{memberrow.USERNAME}</a></span></td>
+		<td class="{memberrow.ROW_CLASS}" width="15%" nowrap="nowrap" align="center">
+			<span class="gen"><a href="{memberrow.U_VIEWPROFILE}" class="name"{memberrow.USERNAME_COLOR}>{memberrow.USERNAME}</a></span>
+		</td>
 		<td class="{memberrow.ROW_CLASS}" width="5%" align="center" valign="middle">&nbsp;{memberrow.EMAIL_IMG}&nbsp;</td>
 		<td class="{memberrow.ROW_CLASS}" width="5%" align="center">&nbsp;{memberrow.PM_IMG}&nbsp;</td>
 		<td class="{memberrow.ROW_CLASS}" width="15%" align="center" valign="middle"><span class="gen">{memberrow.FROM}</span></td>
@@ -45,9 +44,6 @@
 		<td class="{memberrow.ROW_CLASS}" width="15%" align="center" nowrap="nowrap" valign="middle"><span class="gensmall">{memberrow.LAST_VISIT}</span></td>
 		<!-- END llogin_row -->
 		<td class="{memberrow.ROW_CLASS}" width="3%" align="center" valign="middle"><span class="gen">{memberrow.POSTS}</span></td>
-		<!-- BEGIN aim_row -->
-		<td class="{memberrow.ROW_CLASS}" width="3%" align="center" valign="middle"><span class="gen">{memberrow.AIM_STATUS_IMG}</span></td>
-		<!-- END aim_row -->
 		<td class="{memberrow.ROW_CLASS}" width="5%" align="center">&nbsp;{memberrow.WWW_IMG}&nbsp;</td>
 	</tr>
 	<!-- END memberrow -->

@@ -550,7 +550,7 @@ $lang['Group_hidden'] = 'Grupa ukryta';
 
 $lang['Memberships_pending'] = 'Oczekujesz na przyjęcie';
 
-$lang['No_groups_exist'] = 'Żadna Grupa nie Istnieje';
+$lang['No_groups_exist'] = 'Żadna grupa nie istnieje';
 $lang['Group_not_exist'] = 'Taka grupa nie istnieje';
 
 $lang['Join_group'] = 'Dołącz';

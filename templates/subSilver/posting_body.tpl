@@ -22,7 +22,7 @@
 <br clear="all">
 <!-- END privmsg_extensions -->
 
-<form action="{S_POST_ACTION}" method="post" name="post" onsubmit="return checkForm(this)" {S_FORM_ENCTYPE}>
+<form action="{S_POST_ACTION}" method="post" name="post" {S_FORM_ENCTYPE}>
 
 {POST_PREVIEW_BOX}
 {ERROR_BOX}
