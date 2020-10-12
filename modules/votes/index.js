@@ -19,18 +19,17 @@ var votes = {
         this.render({id: options.post})
     },
     render: function(postData) {
-        console.log('render')
-        if (!postData.id) return
-        console.log(postData)
+        if (!postData.id) {
+            return
+        }
         var container = $('span.vote.vote-'+postData.id)
         if (!container.length) {
-            console.log('written')
             container = $('<span class="vote vote-' + postData.id + '" />')
             var upvote = $('<a class="upvote">&plus;</a>')
             var downvote = $('<a class="downvote">&minus;</a>')
-            var count = $('<span class="count" />')
+            var sum = $('<span class="sum" />')
             container.append(downvote)
-            container.append(count)
+            container.append(sum)
             container.append(upvote)
             this.update(container, postData)
             document.write($('<body />').append(container.clone()).html())
@@ -40,10 +39,10 @@ var votes = {
         }
     },
     update: function(container, postData) {
-        count = container.find('> .count')
-        if (typeof postData.count == 'undefined') {
+        sum = container.find('> .sum')
+        if (typeof postData.sum == 'undefined') {
             container.css({display: 'none'})
-            postData.count = 0
+            postData.sum = 0
         }
         else {
             container.removeAttr('style')
@@ -55,21 +54,20 @@ var votes = {
             container.addClass('downvoted')
         }
         else {
-            if (postData.count > 0) {
-                count.addClass('upvoted')
+            if (postData.sum > 0) {
+                sum.addClass('upvoted')
             }
-            if (postData.count < 0) {
-                count.addClass('downvoted')
+            if (postData.sum < 0) {
+                sum.addClass('downvoted')
             }
         }
-        if (postData.count > 0) {
+        if (postData.sum > 0) {
             container.addClass('trend-up')
         }
-        if (postData.count < 0) {
+        if (postData.sum < 0) {
             container.addClass('trend-down')
         }
-        count.text(parseInt(postData.count))
-        console.log(container)
+        sum.text(parseInt(postData.sum))
     },
     getTopicCounts: async function(topic) {
         if (typeof this.cache == 'object') {
@@ -77,18 +75,14 @@ var votes = {
         }
         this.send({topic})
     },
-    getPostCounts: function(post) {
-        $.when(this.getTopicCounts(this.topic)).done((r) => {
-            console.log(r)
-        })
-        
-        return data[post]
-    },
     send: function(data, callback) {
         if (!callback) {
             callback = (response) => {
                 this.cache = response.posts
                 this.posts.forEach((id) => {
+                    if (typeof this.cache[id] == 'undefined') {
+                        this.cache[id] = {id, sum: 0}
+                    }
                     this.render(this.cache[id])
                 })
             }

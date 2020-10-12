@@ -2447,7 +2447,7 @@ for($i = 0; $i < $total_posts; $i++)
 			$title_style = ($show_quickreply) ? 'title="' . $lang['QuoteSelelected'] . '"' : '';
 			$quote_q_img = ($show_quickreply && !$forum_topic_data['topic_tree_width']) ? '<a href="javascript:void(null)" onclick="qc();" onmouseover="qo();"><img src="' . $images['icon_q_quote'] . '" ' . $title_style . ' border="0" alt="" /></a>&nbsp;' : $quote_q_img = '';
 			$quote_img = ($user_id != $poster_id || $user_id == ANONYMOUS) ? $quote_q_img . '<a href="' . $temp_url . '"><img src="' . $images['icon_quote'] . '" alt="" title="' . $lang['Reply_with_quote'] . '" border="0" /></a>' : '';
-			$quote_username = 'onmouseup="if(qu()) quoteAuthor = &quot;' . $poster_username . '&quot;"';
+			$quote_username = 'quoteAuthor = &quot;' . $poster_username . '&quot;"';
 		}
 		else
 		{

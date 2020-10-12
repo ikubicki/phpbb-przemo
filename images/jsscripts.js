@@ -332,95 +332,6 @@ function imgcode(theform,imgcode,prompttext)
 	theform.message.focus();
 }
 
-function namedlink(theform,thetype)
-{
-	linktext = prompt(link_text_prompt,"");
-	var prompttext;
-	if (thetype == "URL")
-	{
-		prompt_text = link_url_prompt;
-		prompt_contents = "http://";
-	}
-	else
-	{
-		prompt_text = link_email_prompt;
-		prompt_contents = "";
-	}
-	linkurl = prompt(prompt_text,prompt_contents);
-	if ((linkurl != null) && (linkurl != ""))
-	{
-		if ((linktext != null) && (linktext != "")) theform.message.value += "["+thetype+"="+linkurl+"]"+linktext+"[/"+thetype+"] ";
-		else theform.message.value += "["+thetype+"]"+linkurl+"[/"+thetype+"] ";
-	}
-	theform.message.focus();
-}
-
-function filter_freak()
-{
-	theSelection = document.selection.createRange().text;
-	if (theSelection != '')
-	{
-		var caretPos = document.post.message.caretPos;
-		var export_text = '';
-		var current_char = '';
-		for (i = 0; i <= caretPos.text.length; i++)
-		{
-			current_char = caretPos.text.charAt(i);
-			if ( (i % 2) == 0 )
-			{
-				export_text += current_char.toUpperCase();
-			}
-			else
-			{
-				export_text += current_char.toLowerCase();
-			}
-		}
-		caretPos.text = export_text;document.post.message.focus();
-		return;
-	}
-	alert(no_text_selected);
-	return;
-}
-			
-function filter_l33t()
-{
-	theSelection = document.selection.createRange().text;
-	if (theSelection != '')
-	{
-		var caretPos = document.post.message.caretPos;
-		var export_text = '';
-		var current_char = '';
-		for (i = 0; i <= caretPos.text.length; i++)
-		{
-			current_char = caretPos.text.charAt(i);
-			if ( (current_char == 'a') || (current_char == 'A') )
-			{
-				export_text += '4';
-			}
-			else if ( (current_char == 'e') || (current_char == 'E') )
-			{
-				export_text += '3';
-			}
-			else if ( (current_char == 'i') || (current_char == 'I') )
-			{
-				export_text += '1';
-			}
-			else if ( (current_char == 'o') || (current_char == 'O') )
-			{
-				export_text += '0';
-			}
-			else
-			{
-				export_text += current_char;
-			}
-		}
-		caretPos.text = export_text;document.post.message.focus();
-		return;
-	}
-	alert(no_text_selected);
-	return;
-}
-
 function onv(element)
 {
 	element.style.backgroundColor=faonmouse_color;
@@ -471,23 +382,6 @@ function qc()
 function qo()
 {
 	selectedText = document.selection? document.selection.createRange().text : document.getSelection();
-}
-
-function qu(username)
-{
-	if (window.getSelection && window.getSelection() || document.selection && document.selection.createRange && document.selection.createRange().text)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-}
-
-function cp(what)
-{
-	what.style.cursor='pointer';
 }
 
 var PreloadFlag = false;
@@ -587,122 +481,6 @@ function expMenu(id)
 	}
 }
 
-function showMenu(id)
-{
-	var itm = null;
-	if (document.getElementById) 
-	{
-		itm = document.getElementById(id);
-	}
-	else if (document.all)
-	{
-		itm = document.all[id];
-	} 
-	else if (document.layers)
-	{
-		itm = document.layers[id];
-	}
-	if (!itm) 
-	{
-		// do nothing
-	}
-	else if (itm.style) 
-	{
-		if (itm.style.display == "none")
-		{ 
-			itm.style.display = ""; 
-			return true;
-		}
-		else
-		{
-//			itm.style.display = "none"; 
-			return true;
-		}
-	}
-	else 
-	{
-		itm.visibility = "show"; 
-		return true;
-	}
-}
-
-function hideMenu(id)
-{
-	var itm = null;
-	if (document.getElementById) 
-	{
-		itm = document.getElementById(id);
-	}
-	else if (document.all)
-	{
-		itm = document.all[id];
-	} 
-	else if (document.layers)
-	{
-		itm = document.layers[id];
-	}
-	if (!itm) 
-	{
-		// do nothing
-	}
-	else if (itm.style) 
-	{
-		if (itm.style.display == "none")
-		{ 
-//			itm.style.display = ""; 
-			return true;
-		}
-		else
-		{
-			itm.style.display = "none"; 
-			return true;
-		}
-	}
-	else 
-	{
-		itm.visibility = "hide"; 
-		return true;
-	}
-}
-
-function change_size(area_object, mode)
-{
-	var msg_cur_size = GetCookie('msg_size');
-	var new_size = msg_cur_size;
-
-	if ( mode == 1 )
-	{
-		new_size++;
-		new_size2++;
-		if ( new_size > 8 ) new_size = 8;
-		if ( new_size2 > 8 ) new_size2 = 8;
-		SetCookie('msg_size', new_size);
-	}
-	else if ( mode == -1 )
-	{
-		new_size = 0;
-		new_size2 = 0;
-		if ( new_size < 0 ) new_size = 0;
-		if ( new_size2 < 0 ) new_size2 = 0;
-		SetCookie('msg_size', new_size);
-	}
-	if (document.cookie.length) call_size = new_size;
-	else call_size = new_size2;
-
-	set_size(area_object, call_size);
-}
-
-function set_size(area_object, new_size)
-{
-	var default_width = 550;
-	var default_height = 200;
-
-	if ( new_size == "undefined" ) new_size = 0;
-
-	area_object.style.width = (default_width + (30 * new_size)) + "px";
-	area_object.style.height = (default_height + (100 * new_size)) + "px";
-}
-
 function chng(val)
 {
     var nval = '#' + val.value;
@@ -754,6 +532,31 @@ forum = {
 			element.removeClass('hidden')
 			forum.setCookie(selector, 'visible')
 		}
+	},
+
+	stickyMenu: (selector) => {
+		var sourceBar = $(selector)
+		$(window).scroll(function(ev){
+			var floatingBar = $(selector+'.floating')
+			if ($(window).scrollTop() > sourceBar.position().top) {
+				if (floatingBar.length < 1) {
+					sourceBar.find('div.left.mainmenu').css({
+						'margin-left': 0
+					})
+					var floatingBarClasses = selector.split('.')
+					floatingBarClasses.shift()
+					var floatingBar = $('<div class="'+floatingBarClasses.join(' ')+' floating"></div>')
+					floatingBar.html(sourceBar.html())
+					sourceBar.after(floatingBar)
+				}
+			}
+			else {
+				sourceBar.find('div.left.mainmenu').css({
+					'margin-left': $(window).scrollTop() / sourceBar.position().top * 100
+				})
+				floatingBar.remove()
+			}
+		})
 	}
 }
 

@@ -1,6 +1,6 @@
 var bbcode = {
     bbcodes: {
-        '\\[b\\](.+?)\\[/b\\]': '<b>$1</b>',
+        '\\[b\\](.+?)\\[/b\\]': '<b class="bbcode">$1</b>',
     },
     loaded: [],
     load: function() {

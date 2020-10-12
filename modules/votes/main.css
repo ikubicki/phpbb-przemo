@@ -10,25 +10,25 @@
     float: right;
 }
 
-.vote.upvoted .count {
+.vote.upvoted .sum {
 	border-radius: 5px 0 0 5px;
 }
 .vote.upvoted a.upvote,
-.vote.upvoted .count {
+.vote.upvoted .sum {
 	background: #147f00;
 	color: #fff;
 }
 
-.vote.downvoted .count {
+.vote.downvoted .sum {
 	border-radius: 0 5px 5px 0;
 }
 .vote.downvoted a.downvote,
-.vote.downvoted .count {
+.vote.downvoted .sum {
 	background: #fe3b3e;
 	color: #fff;
 }
 
-.vote .count {
+.vote .sum {
 	line-height: 16px;
     font-size: 14px;
     cursor: default;
@@ -45,22 +45,22 @@
 }
 
 .vote a.upvote,
-.vote .count.upvoted {
+.vote .sum.upvoted {
 	color: #147f00;
     text-decoration: none;
 }
 
 .vote a.downvote,
-.vote .count.downvoted {
+.vote .sum.downvoted {
 	color: #fe3b3e;
     text-decoration: none;
 }
 
 .vote a.upvote,
-.vote .count.downvoted {
+.vote .sum.downvoted {
     border-radius: 0 5px 5px 0;
 }
 .vote a.downvote,
-.vote .count.upvoted {
+.vote .sum.upvoted {
     border-radius: 5px 0 0 5px;
 }

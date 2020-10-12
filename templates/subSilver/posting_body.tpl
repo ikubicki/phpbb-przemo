@@ -233,11 +233,4 @@
 </tr>
 </table>
 
-<script language="Javascript" type="text/javascript">
-<!--
-	change_size(document.forms.post.message);
-//-->
-</script>
-
-
 {TOPIC_REVIEW_BOX}

@@ -31,13 +31,13 @@
 	var img_addr = '{IMG_ADDR}';
 	//-->
 	</script>
-	<script language="JavaScript" type="text/javascript" src="images/jsscripts.js"></script>
 	<script type="text/javascript" src="images/jQuery.js"></script>
+	<script language="JavaScript" type="text/javascript" src="images/jsscripts.js"></script>
 	<!-- BEGIN overlib -->
 	<script language="JavaScript" type="text/javascript" src="templates/{STYLE_NAME}/overlib.js"><!-- overLIB (c) Erik Bosrup --></script>
 	<!-- END overlib -->
 </head>
-<body bgcolor="{T_BODY_BGCOLOR}" text="{T_BODY_TEXT}" link="{T_BODY_LINK}" vlink="{T_BODY_VLINK}" onload="focus_field('focus');">
+<body>
 <!-- BEGIN body_with_loading -->
 <script language="Javascript" type="text/javascript">
 <!--
@@ -96,28 +96,8 @@
 		<!-- END switch_report_list -->
 	</div>
 </div>
-<script type="text/javascript">
-var sourceBar = $('div.heading.bar')
-$(window).scroll(function(ev){
-	var floatingBar = $('div.heading.bar.floating')
-	if ($(window).scrollTop() > sourceBar.position().top) {
-		if (floatingBar.length < 1) {
-			sourceBar.find('div.left.mainmenu').css({
-				'margin-left': 0
-			})
-			var floatingBar = $('<div class="heading bar floating"></div>')
-			floatingBar.html(sourceBar.html())
-			sourceBar.after(floatingBar)
-		}
-	}
-	else {
-		sourceBar.find('div.left.mainmenu').css({
-			'margin-left': $(window).scrollTop() / sourceBar.position().top * 100
-		})
-		floatingBar.remove()
-	}
-})
-</script>
+<script>forum.stickyMenu('div.heading.bar')</script>
+
 <!-- END header -->
 <!-- BEGIN simple_header -->
 <div class="heading simple">

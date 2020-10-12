@@ -1,5 +1,6 @@
 <style>
-@import url('/modules/shouts/main.css')
+@import url('/modules/bbcode/main.css');
+@import url('/modules/shouts/main.css');
 </style>
 <div class="shoutbox" id="shouts" style="width:800px; margin: auto">
 	<h2>{L_SHOUTBOX}</h2>
@@ -20,7 +21,7 @@
 			confirm: '{L_CONFIRM_DELETE}'
 		},
 		onmessage: (message) => {
-			//message.text = bbcode.parse(message.text)
+			message.text = bbcode.parse(message.text)
 			//message.text = markdown.parse(message.text)
 			return message
 		}

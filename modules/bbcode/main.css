@@ -1,0 +1,9 @@
+.bbcode {
+	border-radius: 3px;
+	background: rgba(0, 0, 0, 0.1);
+	padding: 5px;
+}
+
+.bbcode:hover {
+	background: rgba(0, 0, 0, 0.2);
+}

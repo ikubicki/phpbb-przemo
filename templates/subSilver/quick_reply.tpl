@@ -1,7 +1,7 @@
 <!-- BEGIN quick_reply -->
 <script src="/js/ckeditor/ckeditor.js"></script>
 <br />
-<form action="{quick_reply.POST_ACTION}" method="post" name="post" onsubmit="return checkForm(this)">
+<form action="{quick_reply.POST_ACTION}" method="post" name="post">
 <table border="0" cellpadding="5" cellspacing="1" width="100%" class="forumline posting">
    <tr>
       <th><span class="cattitle">{L_QUICK_REPLY}</span></th>
@@ -16,7 +16,6 @@
 				<textarea id="message" name="message" rows="10" cols="84" tabindex="3" class="post" onFocus="Active(this)" onBlur="NotActive(this)" onselect="storeCaret(this);" onclick="storeCaret(this);" onkeyup="storeCaret(this);"></textarea><br>
 				<script type="text/javascript">
 					CKEDITOR.replace('message');
-					console.log(CKEDITOR.dom.element.createFromHtml());
 				</script>
 				<!-- BEGIN expire_box -->
 				 {L_EXPIRE_Q} <select class="post" name="msg_expire">

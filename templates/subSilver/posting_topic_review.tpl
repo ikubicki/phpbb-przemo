@@ -24,7 +24,7 @@
 				<td colspan="2"><hr></td>
 			</tr>
 			<tr> 
-				<td colspan="2" onmouseup="if(qu()) quoteAuthor = &quot;{postrow.POSTER_NAME}&quot;"><span class="postbody">{postrow.MESSAGE}{postrow.ATTACHMENTS}</span></td>
+				<td colspan="2"><span class="postbody">{postrow.MESSAGE}{postrow.ATTACHMENTS}</span></td>
 			</tr>
 		</table></td>
 	</tr>
