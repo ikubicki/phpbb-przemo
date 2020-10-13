@@ -2275,12 +2275,12 @@ for($i = 0; $i < $total_posts; $i++)
 
 		if ( $user_sig != '' && $user_sig_bbcode_uid != '' )
 		{
-			$user_sig = ($board_config['allow_bbcode']) ? bbencode_second_pass($user_sig, $user_sig_bbcode_uid, $userdata['username']) : preg_replace("/\:$user_sig_bbcode_uid/si", '', $user_sig);
+			$user_sig = preg_replace("/\:$user_sig_bbcode_uid/si", '', $user_sig);
 		}
 
 		if ( $bbcode_uid != '' )
 		{
-			$message = ($board_config['allow_bbcode']) ? bbencode_second_pass($message, $bbcode_uid, $userdata['username']) : preg_replace("/\:$bbcode_uid/si", '', $message);
+			$message = preg_replace("/\:$bbcode_uid/si", '', $message);
 
 			if ( strpos($message, "[hide:$bbcode_uid]") !== false )
 			{
@@ -2300,20 +2300,6 @@ for($i = 0; $i < $total_posts; $i++)
 					$userdata_reply_buffered = true;
 				}
 				$message = bbencode_third_pass($message, $bbcode_uid, $valid);
-			}
-		}
-
-		// Parse smilies
-		if ( $board_config['allow_smilies'] && $userdata['show_smiles'] )
-		{
-			if ( $postrow[$i]['user_allowsmile'] && $user_sig != '' )
-			{
-				$user_sig = smilies_pass($user_sig);
-			}
-
-			if ( $postrow[$i]['enable_smilies'] )
-			{
-				$message = smilies_pass($message);
 			}
 		}
 

@@ -353,3 +353,15 @@ function bookmarkthis() {
 {QUICKREPLY_OUTPUT}
 
 <script>forum.selection('.postbody')</script>
+<style>
+@import url('/modules/bbcode/main.css');
+</style>
+<script src="/modules/bbcode/index.js"></script>
+<script src="/modules/markdown/index.js"></script>
+<script type="text/javascript">
+   $('span.postbody').each((i, el) => {
+
+      $(el).html(bbcode.parse($(el).html()))
+      //message.text = markdown.parse(message.text)
+   })
+</script>

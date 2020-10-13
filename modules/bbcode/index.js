@@ -1,6 +1,7 @@
 var bbcode = {
     bbcodes: {
         '\\[b\\](.+?)\\[/b\\]': '<b class="bbcode">$1</b>',
+        '\\[img\\](.+?)\\[/img\\]': '<a href="$1" rel="nofollow" data-lightbox="topic-set" target="_blank"><img src="$1" /></a>'
     },
     loaded: [],
     load: function() {
@@ -12,6 +13,7 @@ var bbcode = {
         }
     },
     parse: function(text) {
+        console.log(text)
         return this.loaded.reduce((txt, regex) => txt.replace(regex.in, regex.out), text)
     }
 }

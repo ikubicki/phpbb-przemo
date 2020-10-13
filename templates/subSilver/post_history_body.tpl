@@ -1,19 +1,17 @@
-<br>
+<h1>{L_POST_HISTORY_TITLE}</h1>
 <table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
 	<tr>
-		<th align="center" colspan="6">{L_POST_HISTORY_TITLE}</th>
-	<tr>
-		<td align="center" width="25%"><span class="nav">{L_TOPIC}: <a href="{U_TOPIC_URL}">{TOPIC_TITLE}</a></span></td>
-		<td align="center" width="15%" nowrap="nowrap"><span class="nav">{L_AUTHOR}: {POST_POSTER}</span></td>
-		<td align="center" width="25%"><span class="genmed"> {L_POST_TIME}: {POST_TIME}</span></td>
-		<td align="center" width="3%" nowrap="nowrap"><span class="nav">ID: {POST_ID}</span></td>
-		<td align="center" width="10%" nowrap="nowrap"><span class="nav">{L_EDITED_BY}</span></td>
-		<td align="center" width="10%" nowrap="nowrap"><span class="nav">{L_EDITED_TIME}</span></td>
+		<th width="25%" class="label">{L_TOPIC}: <a href="{U_TOPIC_URL}">{TOPIC_TITLE}</a></th>
+		<th width="15%" class="label">{L_AUTHOR}: {POST_POSTER}</th>
+		<th width="25%" class="label">{L_POST_TIME}: {POST_TIME}</th>
+		<th width="3%" class="label">ID: {POST_ID}</th>
+		<th width="10%" class="label center">{L_EDITED_BY}</th>
+		<th width="10%" class="label center">{L_EDITED_TIME}</th>
 	</tr>
 
 	<!-- BEGIN postrow -->
 	<tr>
-		<td class="{postrow.ROW_CLASS}" colspan="4">{postrow.MESSAGE}</td>
+		<td class="{postrow.ROW_CLASS}" colspan="4"><span class="postbody">{postrow.MESSAGE}</span></td>
 		<td class="{postrow.ROW_CLASS}" align="center" valign="top"><a href="{postrow.EDITED_BY_URL}">{postrow.EDITED_BY_USERNAME}</a></td>
 		<td class="{postrow.ROW_CLASS}" align="center" valign="top"><span class="gensmall">{postrow.EDITED_TIME}</span></td>
 	</tr>
