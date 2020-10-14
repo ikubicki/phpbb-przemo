@@ -120,7 +120,7 @@ echo'<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 				<td class="bodyline" valign="top">';
 
 
-$dbversion = '1.12.9';
+$dbversion = '1.12.13';
 
 echo '<h3>CheckFiles - phpBB by Przemo ' . $lang['version'] . ' ' . $dbversion . '</h3>' . $version_check . (($mode) ? '<h5>' . $lang['sql_checkng'] . '</h5>' : '');
 if ( @filesize("config.$phpEx") > 50 && $userdata['user_level'] == ADMIN )
