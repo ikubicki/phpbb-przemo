@@ -18,7 +18,7 @@ CREATE TABLE phpbb_advertisement (
   notify tinyint(1) default '0' NOT NULL,
   type tinyint(1) default '0' NOT NULL,
   PRIMARY KEY (id)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_adv_person'
@@ -28,7 +28,7 @@ CREATE TABLE phpbb_adv_person (
   person_id mediumint(9) default '0' NOT NULL,
   person_ip char(8) default '',
   PRIMARY KEY (user_id, person_id)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_anti_robotic_reg'
@@ -38,7 +38,7 @@ CREATE TABLE phpbb_anti_robotic_reg (
   reg_key char(4) NOT NULL default '',
   timestamp int(10) UNSIGNED NOT NULL default '0',
   PRIMARY KEY (session_id)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_attachments'
@@ -53,7 +53,7 @@ CREATE TABLE phpbb_attachments (
   KEY attach_id_privmsgs_id (attach_id, privmsgs_id),
   KEY user_id_1 (user_id_1),
   KEY user_id_2 (user_id_2)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci; 
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci; 
 
 #
 # Table structure for table 'phpbb_attachments_config'
@@ -62,7 +62,7 @@ CREATE TABLE phpbb_attachments_config (
   config_name varchar(255) NOT NULL default '',
   config_value varchar(255) NOT NULL default '',
   PRIMARY KEY (config_name)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_attachments_desc'
@@ -82,7 +82,7 @@ CREATE TABLE phpbb_attachments_desc (
   KEY filetime (filetime),
   KEY physical_filename (physical_filename(10)),
   KEY filesize (filesize)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_attach_quota'
@@ -93,7 +93,7 @@ CREATE TABLE phpbb_attach_quota (
   quota_type smallint(2) NOT NULL default '0',
   quota_limit_id mediumint(8) UNSIGNED NOT NULL default '0',
   KEY quota_type (quota_type)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_auth_access'
@@ -117,7 +117,7 @@ CREATE TABLE phpbb_auth_access (
   auth_download tinyint(1) default '0' NOT NULL,
   KEY group_id (group_id),
   KEY forum_id (forum_id)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_banlist'
@@ -136,7 +136,7 @@ CREATE TABLE phpbb_banlist (
   ban_host varchar(255) default '',
   PRIMARY KEY (ban_id), 
   KEY ban_ip_user_id (ban_ip, ban_userid)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_categories'
@@ -150,7 +150,7 @@ CREATE TABLE phpbb_categories (
   cat_desc text NOT NULL,
   PRIMARY KEY (cat_id), 
   KEY cat_order (cat_order)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_config'
@@ -159,7 +159,7 @@ CREATE TABLE phpbb_config (
    config_name varchar(255) NOT NULL default '',
    config_value text NOT NULL,
    PRIMARY KEY (config_name)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_disallow'
@@ -168,7 +168,7 @@ CREATE TABLE phpbb_disallow (
   disallow_id mediumint(8) UNSIGNED NOT NULL auto_increment,
   disallow_username varchar(25) default '' NOT NULL,
   PRIMARY KEY (disallow_id)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_extensions'
@@ -179,7 +179,7 @@ CREATE TABLE phpbb_extensions (
   extension varchar(100) NOT NULL default '',
   comment varchar(100) default '',
   PRIMARY KEY ext_id (ext_id)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_extension_groups'
@@ -194,7 +194,7 @@ CREATE TABLE phpbb_extension_groups (
   max_filesize int(20) default '0' NOT NULL,
   forum_permissions varchar(255) default '' NOT NULL,
   PRIMARY KEY group_id (group_id)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_forbidden_extensions'
@@ -203,7 +203,7 @@ CREATE TABLE phpbb_forbidden_extensions (
   ext_id mediumint(8) UNSIGNED NOT NULL auto_increment, 
   extension varchar(100) NOT NULL default '', 
   PRIMARY KEY (ext_id)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_forum_prune'
@@ -215,7 +215,7 @@ CREATE TABLE phpbb_forum_prune (
   prune_freq smallint(5) UNSIGNED NOT NULL default '0',
   PRIMARY KEY(prune_id),
   KEY forum_id (forum_id)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_forums'
@@ -269,7 +269,7 @@ CREATE TABLE phpbb_forums (
   KEY cat_id (cat_id), 
   KEY forum_last_post_id (forum_last_post_id),
   KEY no_count (no_count)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_groups'
@@ -292,7 +292,7 @@ CREATE TABLE phpbb_groups (
   PRIMARY KEY (group_id), 
   KEY group_single_user (group_single_user),
   KEY group_type (group_type)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_ignore'
@@ -301,7 +301,7 @@ CREATE TABLE phpbb_ignores (
   user_id mediumint(8) NOT NULL default '0',
   user_ignore mediumint(8) NOT NULL default '0',
   PRIMARY KEY (user_id, user_ignore)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_jr_admin_users'
@@ -310,7 +310,7 @@ CREATE TABLE phpbb_jr_admin_users (
   user_id mediumint(9) NOT NULL default '0',
   user_jr_admin varchar(254) default '' NOT NULL,
   PRIMARY KEY (user_id)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_logs'
@@ -324,7 +324,7 @@ CREATE TABLE phpbb_logs (
   user_ip char(8) default '0' NOT NULL,
   time int(11) default '0',
   PRIMARY KEY (id_log)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_mass_email'
@@ -337,7 +337,7 @@ CREATE TABLE phpbb_mass_email (
   mass_email_html tinyint(1) default '0' NOT NULL,
   mass_email_to varchar(128) default '' NULL,
   PRIMARY KEY (mass_email_user_id)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_posts'
@@ -376,7 +376,7 @@ CREATE TABLE phpbb_posts (
   KEY reporter_id (reporter_id),
   KEY post_parent (post_parent),
   KEY post_approve (post_approve)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_posts_text'
@@ -387,7 +387,7 @@ CREATE TABLE phpbb_posts_text (
   post_subject char(60) DEFAULT '' NOT NULL,
   post_text text,
   PRIMARY KEY (post_id)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_posts_text_history'
@@ -400,7 +400,19 @@ CREATE TABLE phpbb_posts_text_history (
   th_time int(11) DEFAULT '0' NOT NULL,
   PRIMARY KEY (th_id),
   KEY th_post_id (th_post_id)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+CREATE TABLE `phpbb_posts_votes` (
+  `forum_id` smallint unsigned NOT NULL,
+  `topic_id` mediumint unsigned NOT NULL,
+  `post_id` mediumint unsigned NOT NULL,
+  `user_id` mediumint NOT NULL,
+  `vote` tinyint(1) NOT NULL,
+  `timestamp` int NOT NULL,
+  UNIQUE KEY `unique_vote_per_post` (`user_id`,`post_id`),
+  KEY `topic_id` (`topic_id`),
+  KEY `forum_id` (`forum_id`)
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_privmsgs'
@@ -422,7 +434,7 @@ CREATE TABLE phpbb_privmsgs (
   KEY privmsgs_from_userid (privmsgs_from_userid),
   KEY privmsgs_to_userid (privmsgs_to_userid),
   KEY privmsgs_type (privmsgs_type)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_privmsgs_text'
@@ -432,7 +444,7 @@ CREATE TABLE phpbb_privmsgs_text (
   privmsgs_bbcode_uid char(10) DEFAULT '0' NOT NULL, 
   privmsgs_text text,
   PRIMARY KEY (privmsgs_text_id)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_quota_limits'
@@ -442,7 +454,7 @@ CREATE TABLE phpbb_quota_limits (
   quota_desc varchar(20) NOT NULL DEFAULT '',
   quota_limit bigint(20) UNSIGNED NOT NULL DEFAULT '0',
   PRIMARY KEY  (quota_limit_id)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_ranks'
@@ -455,7 +467,7 @@ CREATE TABLE phpbb_ranks (
   rank_image varchar(255) default '',
   rank_group mediumint(8) DEFAULT '0' NOT NULL,
   PRIMARY KEY (rank_id) 
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_read_history'
@@ -469,7 +481,7 @@ CREATE TABLE phpbb_read_history (
   KEY post_id (post_id),
   KEY topic_id (topic_id),
   KEY forum_id (forum_id)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table `phpbb_search_results`
@@ -481,7 +493,7 @@ CREATE TABLE phpbb_search_results (
   search_time int NOT NULL,
   PRIMARY KEY  (search_id),
   KEY session_id (session_id)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table `phpbb_search_wordlist`
@@ -492,7 +504,7 @@ CREATE TABLE phpbb_search_wordlist (
   word_common tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
   PRIMARY KEY (word_text), 
   KEY word_id (word_id)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table `phpbb_search_wordmatch`
@@ -503,7 +515,7 @@ CREATE TABLE phpbb_search_wordmatch (
   title_match tinyint(1) NOT NULL DEFAULT '0',
   KEY post_id (post_id),
   KEY word_id (word_id)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_sessions'
@@ -532,7 +544,7 @@ CREATE TABLE phpbb_sessions (
   KEY session_user_id (session_user_id),
   KEY session_id_ip_user_id (session_id, session_ip, session_user_id),
   KEY session_time (session_time)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table `phpbb_sessions_keys`
@@ -544,7 +556,7 @@ CREATE TABLE phpbb_sessions_keys (
   last_login int(11) DEFAULT '0' NOT NULL,
   PRIMARY KEY (key_id, user_id),
   KEY last_login (last_login)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_shoutbox'
@@ -557,7 +569,7 @@ CREATE TABLE phpbb_shoutbox (
   PRIMARY KEY (id),
   KEY sb_user_id (sb_user_id),
   KEY timestamp (timestamp)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_shoutbox_config'
@@ -566,7 +578,7 @@ CREATE TABLE phpbb_shoutbox_config (
    config_name varchar(255) NOT NULL default '', 
    config_value varchar(255) NOT NULL default '', 
    PRIMARY KEY (config_name)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_smilies'
@@ -578,7 +590,7 @@ CREATE TABLE phpbb_smilies (
   emoticon varchar(75) default '',
   smile_order mediumint(8) UNSIGNED DEFAULT '1' NOT NULL,
   PRIMARY KEY (smilies_id)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_stats_config'
@@ -587,7 +599,7 @@ CREATE TABLE phpbb_stats_config (
   config_name varchar(50) NOT NULL DEFAULT '',
   config_value varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (config_name)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_stats_modules'
@@ -606,7 +618,7 @@ CREATE TABLE phpbb_stats_modules (
   module_info_time int(10) UNSIGNED NOT NULL DEFAULT '0',
   module_cache_time int(10) UNSIGNED NOT NULL DEFAULT '0',
   PRIMARY KEY (module_id)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_themes'
@@ -663,7 +675,7 @@ CREATE TABLE phpbb_themes (
   img_size_poll smallint(5) UNSIGNED, 
   img_size_privmsg smallint(5) UNSIGNED, 
   PRIMARY KEY  (themes_id)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_themes_name'
@@ -701,7 +713,7 @@ CREATE TABLE phpbb_themes_name (
   span_class2_name char(50),
   span_class3_name char(50),
   PRIMARY KEY (themes_id)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_topics'
@@ -730,6 +742,7 @@ CREATE TABLE phpbb_topics (
   topic_action_date int(11) DEFAULT '0' NOT NULL,
   topic_tree_width smallint(2) DEFAULT '0' NOT NULL,
   topic_accept TINYINT( 1 ) NOT NULL DEFAULT '1',
+  topic_votes_sum INT UNSIGNED NOT NULL DEFAULT '0',
   PRIMARY KEY (topic_id),
   KEY forum_id (forum_id),
   KEY topic_moved_id (topic_moved_id),
@@ -740,7 +753,7 @@ CREATE TABLE phpbb_topics (
   KEY topic_first_post_id (topic_first_post_id),
   KEY topic_vote (topic_vote)
 
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_topics_ignore'
@@ -749,7 +762,7 @@ CREATE TABLE phpbb_topics_ignore (
   topic_id mediumint(8) UNSIGNED NOT NULL auto_increment,
   user_id mediumint(8) DEFAULT '0' NOT NULL,
   PRIMARY KEY (topic_id, user_id)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_topics_watch'
@@ -761,7 +774,7 @@ CREATE TABLE phpbb_topics_watch (
   KEY topic_id (topic_id),
   KEY user_id (user_id), 
   KEY notify_status (notify_status)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_topic_view'
@@ -772,7 +785,7 @@ CREATE TABLE phpbb_topic_view (
   view_time int(11) NOT NULL default '0', 
   view_count int(11) NOT NULL default '0',
   PRIMARY KEY (topic_id, user_id)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_users'
@@ -858,7 +871,7 @@ CREATE TABLE phpbb_users (
   KEY user_level (user_level),
   KEY user_lastvisit (user_lastvisit),
   KEY user_active (user_active)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_user_group'
@@ -870,7 +883,7 @@ CREATE TABLE phpbb_user_group (
   KEY group_id (group_id),
   KEY user_id (user_id),
   KEY user_pending (user_pending)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_users_warnings'
@@ -890,7 +903,7 @@ CREATE TABLE phpbb_users_warnings (
   KEY date (date),
   KEY userid (userid),
   KEY modid (modid)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_vote_desc'
@@ -907,7 +920,7 @@ CREATE TABLE phpbb_vote_desc (
   vote_tothide tinyint(1) DEFAULT '0' NOT NULL,
   PRIMARY KEY  (vote_id),
   KEY topic_id (topic_id)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_vote_results'
@@ -919,7 +932,7 @@ CREATE TABLE phpbb_vote_results (
   vote_result int(11) NOT NULL DEFAULT '0',
   KEY vote_option_id (vote_option_id),
   KEY vote_id (vote_id)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_vote_voters'
@@ -932,7 +945,7 @@ CREATE TABLE phpbb_vote_voters (
   KEY vote_id (vote_id),
   KEY vote_user_id (vote_user_id),
   KEY vote_user_ip (vote_user_ip)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 #
 # Table structure for table 'phpbb_words'
@@ -942,4 +955,4 @@ CREATE TABLE phpbb_words (
   word char(100) NOT NULL default '',
   replacement text NOT NULL,
   PRIMARY KEY (word_id)
-) DEFAULT CHARSET latin2 COLLATE latin2_general_ci;
+) DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
