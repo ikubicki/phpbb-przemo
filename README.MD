@@ -8,6 +8,8 @@ Just run `ci/docker.sh` from main directory. Once installed, use `ci/docker.sh -
 
 ### Changelog
 
+1.12.13 - subSilver 2.0; BBCode JS encoding; Posts voting
+
 1.12.12 - New shoutbox; Floating menu bar
 
 1.12.11 - CKEditor to replace old text editor

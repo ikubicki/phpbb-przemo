@@ -1,5 +1,5 @@
 #
-# Basic DB data for phpBB2 modified v1.12.9 by Przemo
+# Basic DB data for phpBB2 modified v1.12.13 by Przemo
 #
 
 #

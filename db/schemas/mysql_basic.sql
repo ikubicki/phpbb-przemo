@@ -1,5 +1,5 @@
 #
-# Basic DB data for phpBB2 modified v1.12.9 by Przemo
+# Basic DB data for phpBB2 modified v1.12.13 by Przemo
 #
 
 # -- attachments_config
@@ -36,9 +36,9 @@ INSERT INTO phpbb_attachments_config (config_name, config_value) VALUES ('ftp_pa
 INSERT INTO phpbb_attachments_config (config_name, config_value) VALUES ('use_gd2', '0');
 
 # -- categories
-INSERT INTO phpbb_categories (cat_id, cat_title, cat_order, cat_main_type, cat_main, cat_desc) VALUES (1, 'G³ówna kategoria forum', 10, 'c', 0, 'G³ówna kategoria forum');
-INSERT INTO phpbb_categories (cat_id, cat_title, cat_order, cat_main_type, cat_main, cat_desc) VALUES (4, 'Kategoria Sondy', 80, 'c', 1, '');
-INSERT INTO phpbb_categories (cat_id, cat_title, cat_order, cat_main_type, cat_main, cat_desc) VALUES (3, 'Kategoria SubForów', 40, 'f', 2, '');
+INSERT INTO phpbb_categories (cat_id, cat_title, cat_order, cat_main_type, cat_main, cat_desc) VALUES (1, 'GÅ‚Ã³wna kategoria forum', 10, 'c', 0, 'Opis gÅ‚Ã³wnej kategorii forum');
+INSERT INTO phpbb_categories (cat_id, cat_title, cat_order, cat_main_type, cat_main, cat_desc) VALUES (4, 'Kategoria sondy', 80, 'c', 1, '');
+INSERT INTO phpbb_categories (cat_id, cat_title, cat_order, cat_main_type, cat_main, cat_desc) VALUES (3, 'Kategoria subforÃ³w', 40, 'f', 2, '');
 
 # -- config
 INSERT INTO phpbb_config (config_name, config_value) VALUES ('server_name', 'www.myserver.tld');
@@ -52,7 +52,7 @@ INSERT INTO phpbb_config (config_name, config_value) VALUES ('board_disable', ''
 INSERT INTO phpbb_config (config_name, config_value) VALUES ('session_length', '900');
 INSERT INTO phpbb_config (config_name, config_value) VALUES ('check_address', '0');
 INSERT INTO phpbb_config (config_name, config_value) VALUES ('sitename', 'Nazwa twojego forum');
-INSERT INTO phpbb_config (config_name, config_value) VALUES ('site_desc', 'Krótki tekst opisuj±cy twoje forum');
+INSERT INTO phpbb_config (config_name, config_value) VALUES ('site_desc', 'KrÃ³tki tekst opisujÄ…cy twoje forum');
 INSERT INTO phpbb_config (config_name, config_value) VALUES ('allow_html', '0');
 INSERT INTO phpbb_config (config_name, config_value) VALUES ('allow_html_tags', 'b,i,u,pre');
 INSERT INTO phpbb_config (config_name, config_value) VALUES ('allow_bbcode', '1');
@@ -96,7 +96,7 @@ INSERT INTO phpbb_config (config_name, config_value) VALUES ('coppa_fax', '');
 INSERT INTO phpbb_config (config_name, config_value) VALUES ('coppa_mail', '');
 INSERT INTO phpbb_config (config_name, config_value) VALUES ('record_online_users', '0');
 INSERT INTO phpbb_config (config_name, config_value) VALUES ('record_online_date', '0');
-INSERT INTO phpbb_config (config_name, config_value) VALUES ('version', '1.12.9');
+INSERT INTO phpbb_config (config_name, config_value) VALUES ('version', '1.12.13');
 INSERT INTO phpbb_config (config_name, config_value) VALUES ('allow_autologin', '1');
 INSERT INTO phpbb_config (config_name, config_value) VALUES ('allow_photo_remote', '0');
 INSERT INTO phpbb_config (config_name, config_value) VALUES ('allow_photo_upload', '0');
@@ -407,11 +407,11 @@ INSERT INTO phpbb_forbidden_extensions (ext_id, extension) VALUES (7,'cgi');
 
 # -- forums
 INSERT INTO phpbb_forums (forum_id, cat_id, forum_name, forum_desc, forum_status, forum_order, forum_posts, forum_topics, forum_last_post_id, prune_next, prune_enable, auth_view, auth_read, auth_post, auth_reply, auth_edit, auth_delete, auth_sticky, auth_announce, auth_globalannounce, auth_vote, auth_pollcreate, auth_attachments, auth_download, password, forum_sort, forum_color, forum_link, forum_link_internal, forum_link_hit_count, forum_link_hit, main_type, forum_moderate, no_count) VALUES (1, 1, 'Testowe forum', 'Testowe forum.', 0, 20, 1, 1, 5, NULL, 0, 0, 0, 1, 0, 1, 1, 3, 3, 3, 1, 1, 1, 1, '', 'SORT_FPDATE', '', '', 0, 0, 0, 'c', 0, 0);
-INSERT INTO phpbb_forums (forum_id, cat_id, forum_name, forum_desc, forum_status, forum_order, forum_posts, forum_topics, forum_last_post_id, prune_next, prune_enable, auth_view, auth_read, auth_post, auth_reply, auth_edit, auth_delete, auth_sticky, auth_announce, auth_globalannounce, auth_vote, auth_pollcreate, auth_attachments, auth_download, password, forum_sort, forum_color, forum_link, forum_link_internal, forum_link_hit_count, forum_link_hit, main_type, forum_moderate, no_count) VALUES (2, 1, 'Test SubForów', 'W tym forum, znajduj± siê dwa testowe fora, mo¿na w nim równie¿ pisaæ tematy', 0, 30, 1, 1, 3, NULL, 0, 0, 0, 1, 0, 1, 1, 3, 3, 3, 1, 1, 1, 1, '', 'SORT_FPDATE', '', '', 0, 0, 0, 'c', 0, 0);
+INSERT INTO phpbb_forums (forum_id, cat_id, forum_name, forum_desc, forum_status, forum_order, forum_posts, forum_topics, forum_last_post_id, prune_next, prune_enable, auth_view, auth_read, auth_post, auth_reply, auth_edit, auth_delete, auth_sticky, auth_announce, auth_globalannounce, auth_vote, auth_pollcreate, auth_attachments, auth_download, password, forum_sort, forum_color, forum_link, forum_link_internal, forum_link_hit_count, forum_link_hit, main_type, forum_moderate, no_count) VALUES (2, 1, 'Test SubforÃ³w', 'W tym forum, znajdujÄ… siÄ™ dwa testowe fora, moÅ¼na w nim rÃ³wnieÅ¼ pisaÄ‡ tematy', 0, 30, 1, 1, 3, NULL, 0, 0, 0, 1, 0, 1, 1, 3, 3, 3, 1, 1, 1, 1, '', 'SORT_FPDATE', '', '', 0, 0, 0, 'c', 0, 0);
 INSERT INTO phpbb_forums (forum_id, cat_id, forum_name, forum_desc, forum_status, forum_order, forum_posts, forum_topics, forum_last_post_id, prune_next, prune_enable, auth_view, auth_read, auth_post, auth_reply, auth_edit, auth_delete, auth_sticky, auth_announce, auth_globalannounce, auth_vote, auth_pollcreate, auth_attachments, auth_download, password, forum_sort, forum_color, forum_link, forum_link_internal, forum_link_hit_count, forum_link_hit, main_type, forum_moderate, no_count) VALUES (3, 3, 'Testowe podforum 1', 'Testowe podforum 1', 0, 50, 0, 0, 0, NULL, 0, 0, 0, 1, 0, 1, 1, 3, 3, 3, 1, 1, 1, 1, '', 'SORT_FPDATE', '', '', 0, 0, 0, 'c', 0, 0);
 INSERT INTO phpbb_forums (forum_id, cat_id, forum_name, forum_desc, forum_status, forum_order, forum_posts, forum_topics, forum_last_post_id, prune_next, prune_enable, auth_view, auth_read, auth_post, auth_reply, auth_edit, auth_delete, auth_sticky, auth_announce, auth_globalannounce, auth_vote, auth_pollcreate, auth_attachments, auth_download, password, forum_sort, forum_color, forum_link, forum_link_internal, forum_link_hit_count, forum_link_hit, main_type, forum_moderate, no_count) VALUES (4, 3, 'Testowe podforum 2', 'Testowe podforum 2', 0, 60, 0, 0, 0, NULL, 0, 0, 0, 1, 0, 1, 1, 3, 3, 3, 1, 1, 1, 1, '', 'SORT_FPDATE', '', '', 0, 0, 0, 'c', 0, 0);
-INSERT INTO phpbb_forums (forum_id, cat_id, forum_name, forum_desc, forum_status, forum_order, forum_posts, forum_topics, forum_last_post_id, prune_next, prune_enable, auth_view, auth_read, auth_post, auth_reply, auth_edit, auth_delete, auth_sticky, auth_announce, auth_globalannounce, auth_vote, auth_pollcreate, auth_attachments, auth_download, password, forum_sort, forum_color, forum_link, forum_link_internal, forum_link_hit_count, forum_link_hit, main_type, forum_moderate, no_count) VALUES (6, 4, 'Forum moderacji', 'W tym forum tylko moderatorzy mog± zak³adac nowe tematy', 0, 90, 2, 2, 9, NULL, 0, 0, 0, 1, 0, 1, 1, 3, 3, 3, 1, 1, 1, 1, '', 'SORT_FPDATE', 'FF0000', '', 0, 0, 0, 'c', 0, 0);
-INSERT INTO phpbb_forums (forum_id, cat_id, forum_name, forum_desc, forum_status, forum_order, forum_posts, forum_topics, forum_last_post_id, prune_next, prune_enable, auth_view, auth_read, auth_post, auth_reply, auth_edit, auth_delete, auth_sticky, auth_announce, auth_globalannounce, auth_vote, auth_pollcreate, auth_attachments, auth_download, password, forum_sort, forum_color, forum_link, forum_link_internal, forum_link_hit_count, forum_link_hit, main_type, forum_moderate, no_count) VALUES (7, 4, 'Sondy moderacji', 'To jest forum do umieszczania sond, tutaj tylko moderatorzy mog± umieszczaæ sondy i pisaæ posty.', 0, 100, 1, 1, 7, NULL, 0, 0, 0, 1, 0, 1, 1, 3, 3, 3, 1, 1, 1, 1, '', 'SORT_FPDATE', '32CD32', '', 0, 0, 0, 'c', 0, 0);
+INSERT INTO phpbb_forums (forum_id, cat_id, forum_name, forum_desc, forum_status, forum_order, forum_posts, forum_topics, forum_last_post_id, prune_next, prune_enable, auth_view, auth_read, auth_post, auth_reply, auth_edit, auth_delete, auth_sticky, auth_announce, auth_globalannounce, auth_vote, auth_pollcreate, auth_attachments, auth_download, password, forum_sort, forum_color, forum_link, forum_link_internal, forum_link_hit_count, forum_link_hit, main_type, forum_moderate, no_count) VALUES (6, 4, 'Forum moderacji', 'W tym forum tylko moderatorzy mogÄ… zakÅ‚adaÄ‡ nowe tematy', 0, 90, 2, 2, 9, NULL, 0, 0, 0, 1, 0, 1, 1, 3, 3, 3, 1, 1, 1, 1, '', 'SORT_FPDATE', 'FF0000', '', 0, 0, 0, 'c', 0, 0);
+INSERT INTO phpbb_forums (forum_id, cat_id, forum_name, forum_desc, forum_status, forum_order, forum_posts, forum_topics, forum_last_post_id, prune_next, prune_enable, auth_view, auth_read, auth_post, auth_reply, auth_edit, auth_delete, auth_sticky, auth_announce, auth_globalannounce, auth_vote, auth_pollcreate, auth_attachments, auth_download, password, forum_sort, forum_color, forum_link, forum_link_internal, forum_link_hit_count, forum_link_hit, main_type, forum_moderate, no_count) VALUES (7, 4, 'Sondy moderacji', 'To jest forum do umieszczania sond, tutaj tylko moderatorzy mogÄ… umieszczaÄ‡ sondy i pisaÄ‡ posty.', 0, 100, 1, 1, 7, NULL, 0, 0, 0, 1, 0, 1, 1, 3, 3, 3, 1, 1, 1, 1, '', 'SORT_FPDATE', '32CD32', '', 0, 0, 0, 'c', 0, 0);
 
 # -- groups
 INSERT INTO phpbb_groups (group_id, group_name, group_description, group_single_user) VALUES (1, 'Anonymous', 'Personal User', 1);
@@ -429,7 +429,7 @@ INSERT INTO phpbb_posts_text (post_id, bbcode_uid, post_subject, post_text) VALU
 INSERT INTO phpbb_posts_text (post_id, bbcode_uid, post_subject, post_text) VALUES (3, 'b63934e592', 'Testowy temat w SubForum', 'Testowy temat w SubForum');
 INSERT INTO phpbb_posts_text (post_id, bbcode_uid, post_subject, post_text) VALUES (7, '2fe4a4ef6b', 'Sonda1', 'sonda1');
 INSERT INTO phpbb_posts_text (post_id, bbcode_uid, post_subject, post_text) VALUES (8, 'c93fefdf03', 'Test trzeciego newsa', '[URL=http://www.przemo.org]test[/URL] [b:c93fefdf03]test[/b:c93fefdf03] [size=18:c93fefdf03][shadow=red:c93fefdf03]test[/shadow:c93fefdf03][/size:c93fefdf03]\r\n\r\nt\r\n\r\ne\r\n\r\ns\r\n\r\nt\r\n\r\n.\r\n.\r\n.\r\n.\r\n.\r\n.\r\n.\r\n\r\nn\r\n\r\ne');
-INSERT INTO phpbb_posts_text (post_id, bbcode_uid, post_subject, post_text) VALUES (5, 'bcf3b5262c', 'Witaj na forum phpBB modified by Przemo', 'Dziêkujê, za wybranie [URL=http://www.przemo.org/phpBB2/]phpBB modified by Przemo[/URL] do obs³ugi Twojego Forum.\r\n\r\nZapoznaj siê dok³adnie z instrukcjami zamieszczonymi w pliku [b:bcf3b5262c]/docs/readme.html[/b:bcf3b5262c] w katalogu forum.');
+INSERT INTO phpbb_posts_text (post_id, bbcode_uid, post_subject, post_text) VALUES (5, 'bcf3b5262c', 'Witaj na forum phpBB modified by Przemo', 'DziÄ™kujÄ™, za wybranie [URL=http://www.przemo.org/phpBB2/]phpBB modified by Przemo[/URL] do obsÅ‚ugi Twojego Forum.\r\n\r\nZapoznaj siÄ™ dokÅ‚adnie z instrukcjami zamieszczonymi w pliku [b:bcf3b5262c]/docs/readme.html[/b:bcf3b5262c] w katalogu forum.');
 
 # -- quota_limits
 INSERT INTO phpbb_quota_limits (quota_limit_id, quota_desc, quota_limit) VALUES (1, 'Low', 262144);
@@ -452,7 +452,7 @@ INSERT INTO phpbb_user_group (group_id, user_id, user_pending) VALUES (1, -1, 0)
 INSERT INTO phpbb_user_group (group_id, user_id, user_pending) VALUES (2, 2, 0);
 
 # -- vote
-INSERT INTO phpbb_vote_desc (vote_id, topic_id, vote_text, vote_start, vote_length) VALUES (1, 5, 'Czy podoba Ci siê to Forum?', 1065137203, 0);
+INSERT INTO phpbb_vote_desc (vote_id, topic_id, vote_text, vote_start, vote_length) VALUES (1, 5, 'Czy podoba Ci siÄ™ to Forum?', 1065137203, 0);
 INSERT INTO phpbb_vote_results (vote_id, vote_option_id, vote_option_text, vote_result) VALUES (1, 1, 'Tak', 0);
 INSERT INTO phpbb_vote_results (vote_id, vote_option_id, vote_option_text, vote_result) VALUES (1, 2, 'Nie', 0);
 
