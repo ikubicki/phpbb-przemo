@@ -158,12 +158,12 @@ var img_addr = '{IMG_ADDR}';
                {postrow.custom_fields_post.DESC}{postrow.custom_fields_post.FIELD}
                <!-- END custom_fields_post -->
                </span></td>
-               <td valign="top" align="right" nowrap="nowrap">
-                  <script>votes.show({post: '{postrow.U_POST_ID}'})</script>
+               <td valign="top" align="right" id="voting_{postrow.U_POST_ID}">
+                  <script>votes.show({selector: '#voting_{postrow.U_POST_ID}', post: '{postrow.U_POST_ID}'})</script>
                </td>
             </tr>
             <tr>
-               <td colspan="2"><span class="gensmall"><hr></span></td>
+               <td colspan="2"><br /></td>
             </tr>
             <tr>
                <td valign="top" colspan="2">

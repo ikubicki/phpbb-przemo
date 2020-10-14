@@ -533,7 +533,28 @@ forum = {
 			forum.setCookie(selector, 'visible')
 		}
 	},
+	closeIframe: null,
+	iframe: (url) => {
+		var overlay = $('<div class="overlay iframe"></div>')
+		var container = $('<div class="container"></div>')
+		var close = $('<a href="javascript:void(0)">X</a>')
+		var iframe = $('<iframe src="'+url+'" />')
+		iframe.css({
+			height: ($(window).height() - 200) + 'px',
+		})
+		close.on('click', function(e) {
+			overlay.remove()
+		})
+		overlay.append(container)
+		container.append(close)
+		container.append(iframe)
 
+		forum.closeIframe = () => {
+			overlay.remove()
+		}
+		
+		$('body').append(overlay)
+	},
 	stickyMenu: (selector) => {
 		var sourceBar = $(selector)
 		$(window).scroll(function(ev){

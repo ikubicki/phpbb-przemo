@@ -18,7 +18,7 @@
 
 <p>{L_XS_EDITDATA_EXPLAIN}</p>
 <script language=JavaScript src="../images/picker.js"></script>
-<script language="JavaScript" type="text/javascript" src="../images/jsscripts.js"></script>
+<script language="JavaScript" type="text/javascript" src="../js/forum.js"></script>
 <form action="{U_ACTION}" method="post" name="pick_form">{S_HIDDEN_FIELDS}<input type="hidden" name="edit" value="{ID}" />
 <table cellpadding="4" cellspacing="1" border="0" class="forumline" align="center">
 <tr>

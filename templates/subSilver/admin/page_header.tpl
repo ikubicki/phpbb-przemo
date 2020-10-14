@@ -21,7 +21,7 @@ var cdomain = '{COOKIE_DOMAIN}';
 var csecure = '{COOKIE_SECURE}';
 //-->
 </script>
-<script language="JavaScript" type="text/javascript" src="../images/jsscripts.js"></script>
+<script language="JavaScript" type="text/javascript" src="../js/forum.js"></script>
 <title>{SITENAME} - {L_PHPBB_ADMIN}</title>
 </head>
 <body bgcolor="{T_BODY_BGCOLOR}" text="{T_BODY_TEXT}" link="{T_BODY_LINK}" vlink="{T_BODY_VLINK}">

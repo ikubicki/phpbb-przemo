@@ -1079,6 +1079,7 @@ $lang['Not_admin'] = 'You have no Admin authorisation';
 $lang['Posting_disabled'] = 'Posting is disabled.';
 $lang['Registering_disabled'] = 'Registering is disabled.';
 $lang['Pruning_unread_posts'] = 'Your account exceed maximum amount of unread posts: <b>%s</b> Information about unread posts was removed, without posts writen through last: <b>%s</b> days.<br />Removed unread posts: <b>%s</b><br />You may read posts or mar all as read.<br />You can use search to find posts writen through last choosed time.';
+$lang['Votes'] = 'Votes';
 //
 // That's all Folks!
 // -------------------------------------------------

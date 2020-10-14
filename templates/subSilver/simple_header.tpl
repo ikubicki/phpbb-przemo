@@ -19,7 +19,7 @@ function show_s_div()
 }
 //-->
 </script>
-<script language="JavaScript" type="text/javascript" src="images/jsscripts.js"></script>
+<script language="JavaScript" type="text/javascript" src="js/forum.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset={S_CONTENT_ENCODING}">
 <meta http-equiv="Content-Style-Type" content="text/css">
 {META}

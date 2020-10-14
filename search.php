@@ -1015,8 +1015,7 @@ else if ( $search_keywords != '' || $search_author != '' || $search_id )
 
 						if ( $bbcode_uid != '' )
 						{
-							$message = ($board_config['allow_bbcode']) ? bbencode_second_pass($message, $bbcode_uid, $userdata['username']) : preg_replace('/\:[0-9a-z\:]+\]/si', ']', $message);
-							$message = bbencode_third_pass($message, $bbcode_uid, FALSE);
+							$message = preg_replace('/\:[0-9a-z\:]+\]/si', ']', $message);
 						}
 
 						$message = make_clickable($message);

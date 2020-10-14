@@ -20,6 +20,7 @@
       {U_WARNINGS}
 <!-- END warnings -->      
 <!-- END disable_viewonline -->
+	  <a href="javascript:void(0);" onclick="forum.iframe('{U_PREFERENCES}')" onclick2="window.open('{U_PREFERENCES}', 'WindowOpen', 'HEIGHT=500,resizable=yes,scrollbars=yes,WIDTH=380');">{L_PREFERENCES}</a>
       {CLICK_HERE_TO_VIEW}
    </span>
    <div style="float:right">

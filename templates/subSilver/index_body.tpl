@@ -139,25 +139,30 @@ if(GetCookie('hm3') == '2') ShowHide('hm', 'hm2', 'hm3');
 <!-- END switch_user_logged_out -->
 
 {BOARD_INDEX}
-
+<br />
 <form method="post" action="{T_SELECT_ACTION}" name="quickchange">
-<table width="100%" cellspacing="1" border="0" align="center" cellpadding="3">
+<table class="block legend">
    <tr>
-		<td><span class="gensmall">
+		<td style="width:30%">
 			<!-- BEGIN switch_user_logged_in -->
 			<a href="{U_MARK_READ}" class="gensmall">{L_MARK_FORUMS_READ}</a>
 			<!-- END switch_user_logged_in -->
-		</span></td>
-		<td align="right"><span class="gensmall">[ <a href="javascript:void(0);" OnClick="window.open('{U_PREFERENCES}', 'WindowOpen', 'HEIGHT=500,resizable=yes,scrollbars=yes,WIDTH=380');" style="text-decoration: none;">{L_PREFERENCES}</a> ]&nbsp;
+		</td>
+		<td style="width:40%">
+			<img src="{FOLDER_NEW_IMG}" alt="" /> {L_NEW_POSTS}
+			<img src="{FOLDER_IMG}" alt="" /> {L_NO_NEW_POSTS}
+			<img src="{FOLDER_LOCKED_IMG}" alt="" /> {L_FORUM_LOCKED}
+		</td>
+		<td style="width:30%">
 			<!-- BEGIN change_style -->
 			{change_style.L_CHANGE_STYLE}: 
 			{change_style.TEMPLATE_SELECT}
 			<!-- END change_style -->
-		</span></td>
+		</td>
    </tr>
 </table>
 </form>
-
+<br />
 <!-- BEGIN custom_registration_bottom -->
 <form method="post" action="{S_PROFILE_ACTION}">
 <table width="100%" cellpadding="1" cellspacing="0" border="0" class="forumline">
@@ -204,29 +209,40 @@ if(GetCookie('hm3') == '2') ShowHide('hm', 'hm2', 'hm3');
 <br>
 <!-- END custom_registration_bottom -->
 
+	{SHOUTBOX_DISPLAY}
+
    <!-- BEGIN disable_viewonline -->
-   <table width="100%" cellpadding="3" cellspacing="1" border="0" class="forumline">
+   <table class="forumline online">
       <tr>
-        <th colspan="2">
+        <th colspan="3">
 		 	<a href="{U_VIEWONLINE}" class="cattitle">{L_WHO_IS_ONLINE}</a>
 		</th>
       </tr>
       <tr>
-         <td class="row1" align="center" valign="middle" rowspan="2">
-            <img src="templates/subSilver/images/whosonline.gif" width="46" height="25" alt=""></td>
-         <td class="row1" width="100%">
-            <span class="gensmall">{TOTAL_POSTS}<br>{TOTAL_USERS}<br>{NEWEST_USER}{COUNTER}</span></td>
-      </tr>
-      <tr>
-         <td class="row1">
-            <span class="gensmall">{TOTAL_USERS_ONLINE}<br>{LOGGED_IN_USER_LIST}<br>{RECORD_USERS}
+        <td class="icon">
+            <img src="templates/subSilver/images/whosonline.gif" alt="" />
+		</td>
+		<td class="col1">
+            {TOTAL_POSTS}<br />
+			{TOTAL_USERS}<br />
+			{NEWEST_USER}
+			{COUNTER}
+		</td>
+        <td class="col2">
+            {TOTAL_USERS_ONLINE}<br />
+			{LOGGED_IN_USER_LIST}<br />
+			{RECORD_USERS}
 			<!-- BEGIN staff_explain -->
-			<a href="{disable_viewonline.staff_explain.U_GROUP_URL}" class="gensmall" style="color: #{disable_viewonline.staff_explain.GROUP_COLOR}{disable_viewonline.staff_explain.GROUP_STYLE}">{disable_viewonline.staff_explain.GROUP_PREFIX}{disable_viewonline.staff_explain.GROUP_NAME}</a>
+			<a href="{disable_viewonline.staff_explain.U_GROUP_URL}" style="color: #{disable_viewonline.staff_explain.GROUP_COLOR}{disable_viewonline.staff_explain.GROUP_STYLE}">
+				{disable_viewonline.staff_explain.GROUP_PREFIX}{disable_viewonline.staff_explain.GROUP_NAME}
+			</a>
 			<!-- BEGIN se_separator -->
 			&bull;
 			<!-- END se_separator -->
 			<!-- END staff_explain -->
-			<br>{USERS_OF_THE_DAY_LIST}</span></td>
+			<br />
+			{USERS_OF_THE_DAY_LIST}
+		</td>
       </tr>
    </table>
 
@@ -238,17 +254,3 @@ if(GetCookie('hm3') == '2') ShowHide('hm', 'hm2', 'hm3');
 
    <!-- END disable_viewonline -->
    <br clear="all">
-   <table cellspacing="3" border="0" align="center" cellpadding="0">
-      <tr>
-         <td width="20" align="center"><img src="{FOLDER_NEW_IMG}" alt=""/></td>
-         <td><span class="gensmall">{L_NEW_POSTS}</span></td>
-         <td>&nbsp;&nbsp;</td>
-         <td width="20" align="center"><img src="{FOLDER_IMG}" alt=""></td>
-         <td><span class="gensmall">{L_NO_NEW_POSTS}</span></td>
-         <td>&nbsp;&nbsp;</td>
-         <td width="20" align="center"><img src="{FOLDER_LOCKED_IMG}" alt=""></td>
-         <td><span class="gensmall">{L_FORUM_LOCKED}</span></td>
-      </tr>
-   </table>
-   <br clear="all">
-	{SHOUTBOX_DISPLAY}

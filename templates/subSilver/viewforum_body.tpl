@@ -41,6 +41,7 @@ function setCheckboxes(the_form, do_check)
 <table border="0" cellpadding="4" cellspacing="1" width="100%" class="forumline">
 	<tr>
 		<th colspan="{SPAN_I}" align="center" class="label" <!-- BEGIN switch_show_hide --> onclick="javascript:ShowHide('imp_topics_{FORUM_ID}','imp_topics2_{FORUM_ID}','imp_topics3_{FORUM_ID}');" style="cursor: pointer" title="{L_VHIDE}"<!-- END switch_show_hide -->>{L_TOPICS}</th>
+		<th width="50" align="center" class="label center">{L_VOTES}</th>		
 		<th width="50" align="center" class="label center">{L_REPLIES}</th>
 		<th width="100" align="center" class="label center">{L_AUTHOR}</th>
 		<th width="50" align="center" class="label center">{L_VIEWS}</th>
@@ -78,6 +79,7 @@ if(GetCookie('imp_topics3_{FORUM_ID}') == '2') ShowHide('imp_topics_{FORUM_ID}',
 <table border="0" cellpadding="4" cellspacing="1" width="100%" class="forumline">
 	<tr>
 		<th colspan="{SPAN_I}" align="center" class="label">{L_NORMAL_TOPICS}</th>
+		<th width="50" align="center" class="label center">{L_VOTES}</th>
 		<th width="50" align="center" class="label center">{L_REPLIES}</th>
 		<th width="100" align="center" class="label center">{L_AUTHOR}</th>
 		<th width="50" align="center" class="label center">{L_VIEWS}</th>
@@ -96,6 +98,7 @@ if(GetCookie('imp_topics3_{FORUM_ID}') == '2') ShowHide('imp_topics_{FORUM_ID}',
 		<!-- BEGIN ignore_checkbox -->
 		<td class="row1" align="right"><input type="checkbox" name="list_ignore[]" value="{topicrow.TOPIC_ID}"></td>
 		<!-- END ignore_checkbox -->
+		<td class="row1" align="center" valign="middle"><span class="postdetails">{topicrow.TOPIC_VOTES}</span></td>
 		<td class="row1" align="center" valign="middle"><span class="postdetails">{topicrow.REPLIES}</span></td>
 		<td class="row1" align="center" valign="middle"><span class="name">{topicrow.TOPIC_AUTHOR}</span></td>
 		<td class="row1" align="center" valign="middle"><span class="postdetails">{topicrow.VIEWS}</span></td>

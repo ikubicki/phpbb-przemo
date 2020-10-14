@@ -1208,7 +1208,7 @@ $ignore_status = '';
 
 if ( $board_config['ignore_topics'] && $session_logged_in && $userdata['view_ignore_topics'] )
 {
-	$ignore_status = ($ignore_this_topic) ? '&nbsp;&nbsp;&nbsp;<span class="gensmall">[ <a href="' . append_sid("ignore_topics.$phpEx?mode=view&amp;topic_ignore=$topic_id") . '">' . $lang['current_topic_ignore'] . '</a> ]</span>' : '&nbsp;&nbsp;&nbsp;&nbsp;<a href="' . append_sid("ignore_topics.$phpEx?topic_id=$topic_id&amp;sid=" . $session_id . "") . '"><img src="' . $images['icon_delpost'] . '" alt="' . $lang['ignore_topic'] . '" title="' . $lang['ignore_topic'] . '" border="0" align="top"/></a>';
+	$ignore_status = ($ignore_this_topic) ? '<span class="gensmall">[<a href="' . append_sid("ignore_topics.$phpEx?mode=view&amp;topic_ignore=$topic_id") . '">' . $lang['current_topic_ignore'] . '</a>]</span>' : '<a href="' . append_sid("ignore_topics.$phpEx?topic_id=$topic_id&amp;sid=" . $session_id . "") . '"><img src="' . $images['icon_delpost'] . '" alt="' . $lang['ignore_topic'] . '" title="' . $lang['ignore_topic'] . '" border="0" align="top"/></a>';
 }
 
 if ( $board_config['cignore'] && $userdata['cignore'] && $userdata['session_logged_in'] )

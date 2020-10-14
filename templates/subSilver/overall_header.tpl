@@ -31,8 +31,8 @@
 	var img_addr = '{IMG_ADDR}';
 	//-->
 	</script>
-	<script type="text/javascript" src="images/jQuery.js"></script>
-	<script language="JavaScript" type="text/javascript" src="images/jsscripts.js"></script>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script language="JavaScript" type="text/javascript" src="js/forum.js"></script>
 	<!-- BEGIN overlib -->
 	<script language="JavaScript" type="text/javascript" src="templates/{STYLE_NAME}/overlib.js"><!-- overLIB (c) Erik Bosrup --></script>
 	<!-- END overlib -->

@@ -1081,6 +1081,7 @@ $lang['Not_admin'] = 'Nie posiadasz uprawnień administratora.';
 $lang['Posting_disabled'] = 'Pisanie postów i tematów zostało wyłączone.';
 $lang['Registering_disabled'] = 'Rejestracja została wyłączona.';
 $lang['Pruning_unread_posts'] = 'Twoje konto przekroczyło maksymalną ilość nieprzeczytanych postów: <b>%s</b> Zostały usunięte informacje o nieczytanych postach z wyjątkiem postów napisanych przez ostatnie: <b>%s</b> dni<br />Ilość usuniętych nieczytanych postów: <b>%s</b><br /><br />Aby nie otrzymywać tego komunikatu, przeczytaj oznaczone tematy, lub oznacz wszystkie jako przeczytane.<br />W każdej chwili możesz skorzystać z wyszukiwarki postów aby odszukać posty napisane w ciągu ostatniego wybranego czasu.';
+$lang['Votes'] = 'Głosy';
 //
 // That's all Folks!
 // -------------------------------------------------
