@@ -6,6 +6,10 @@ Dockerized script that will be used to make necessary changes for PHP 7.4 suppor
 
 Just run `ci/docker.sh` from main directory. Once installed, use `ci/docker.sh --config` to use predefined config.
 
+### In development
+
+*1.13.0* - [WIP] - Default avatars; New gallery; Themes; Forcing SSL; Version checking based on GitHub tags; Forum templates; Topic templates
+
 ### Changelog
 
 1.12.13 - subSilver 2.0; BBCode JS encoding; Posts voting
