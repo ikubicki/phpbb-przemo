@@ -1985,12 +1985,15 @@ for($i = 0; $i < $total_posts; $i++)
 						{
 							case 1 :
 								$gender_image = $images['icon_minigender_male'];
+								$gender_class = 'male';
 							break;
 							case 2 :
 								$gender_image = $images['icon_minigender_female'];
+								$gender_class = 'female';
 							break;
 							default :
 								$gender_image = '';
+								$gender_class = '';
 						}
 					}
 					else
@@ -2451,20 +2454,24 @@ for($i = 0; $i < $total_posts; $i++)
 	}
 
 	$user_agent = ($board_config['cagent'] && $postrow[$i]['user_agent'] && !$ignore_this_post && $show_post && $userdata['cagent']) ? unserialize($postrow[$i]['user_agent']) : '';
-
 	$template->assign_block_vars('postrow', [
 		'ICON' => $icon,
 		'POST_EXPIRE' => $post_expire_date,
 		'ROW_COLOR' => '#' . (!($i % 2)) ? $theme['td_color1'] : $theme['td_color2'],
 		'ROW_CLASS' => (!$row_class) ? (!($i % 2)) ? $theme['td_class1'] : $theme['td_class2'] : $row_class,
+		'POSTER_ID' => $poster_id,
+		'POSTER_NAME_RAW' => $postrow[$i]['username'] ?: ($postrow[$i]['post_username'] ?: $lang['Guest']),
 		'POSTER_NAME' => (!$show_post && $userdata['user_id'] != $poster_id) ? '' : $poster,
+		'POSTER_COLOR' => $colored_username[2],
 		'POSTER_NAME_ESCAPED' => htmlentities(htmlentities($poster_username)),
 		'POSTER_AGE' => !empty($poster_age) ? $poster_age . '<br />' : '',
 		'POSTER_RANK' => $poster_rank,
 		'CUSTOM_RANK' => $poster_custom_rank,
+		'GENDER_CLASS' => $gender_class,
 		'RANK_IMAGE' => $rank_image,
 		'POSTER_JOINED' => ($poster_joined) ? $poster_joined . '<br />' : '',
 		'POSTER_POSTS' => ($poster_post) ? $poster_post . '<br />' : '',
+		'POSTER_POSTS_COUNT' => intval($postrow[$i]['user_posts']),
 		'POSTER_FROM' => ($poster_from) ? $poster_from . '<br />' : '',
 		'POSTER_ONLINE' => $poster_online,
 		'POSTER_AVATAR' => $poster_avatar,

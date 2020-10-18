@@ -2318,26 +2318,30 @@ function color_username($level, $jr_admin, $user_id, $username, $us_bold = true,
 	$users_style = $groups_color[4];
 
 	$bold = ($us_bold) ? '<b>%s</b>' : '%s';
-
+	$color = '';
 	$style_color = $color_id = $group_id = '';
 	if ( $level == ADMIN && $theme['fontcolor_admin'] )
 	{
 		$username = sprintf($bold, $username);
 		$style_color = ' style="color:#' . $theme['fontcolor_admin'] . (($style) ? '; ' . $style : '') . '"';
+		$color = $theme['fontcolor_admin'];
 	}
 	else if ( $jr_admin && $theme['fontcolor_jradmin'] )
 	{
 		$username = sprintf($bold, $username);
 		$style_color = ' style="color:#' . $theme['fontcolor_jradmin'] . (($style) ? '; ' . $style : '') . '"';
+		$color = $theme['fontcolor_jradmin'];
 	}
 	else if ( $level == MOD && $theme['fontcolor_mod'] )
 	{
 		$username = sprintf($bold, $username);
 		$style_color = ' style="color:#' . $theme['fontcolor_mod'] . (($style) ? '; ' . $style : '') . '"';
+		$color = $theme['fontcolor_mod'];
 	}
 	else if ( @in_array($user_id, $users_color_id) )
 	{
 		$color_id = array_search($user_id, $users_color_id);
+		$color = '';
 		$group_id = $users_groups_id[$color_id];
 		if ( $users_prefix[$group_id] )
 		{
@@ -2346,6 +2350,7 @@ function color_username($level, $jr_admin, $user_id, $username, $us_bold = true,
 		if ( $users_color[$group_id] )
 		{
 			$style_color = 'color:#' . $users_color[$group_id];
+			$color = $users_color[$group_id];
 		}
 		if ( $users_style[$group_id] )
 		{
@@ -2365,7 +2370,7 @@ function color_username($level, $jr_admin, $user_id, $username, $us_bold = true,
 		$style_color = ($style) ? ' style="' . $style . '"' : '';
 		return array($username, $style_color);
 	}
-	return array($username, $style_color);
+	return array($username, $style_color, $color ? "#$color" : '');
 }
 
 function groups_color_explain($block)

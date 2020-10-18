@@ -1080,6 +1080,8 @@ $lang['Posting_disabled'] = 'Posting is disabled.';
 $lang['Registering_disabled'] = 'Registering is disabled.';
 $lang['Pruning_unread_posts'] = 'Your account exceed maximum amount of unread posts: <b>%s</b> Information about unread posts was removed, without posts writen through last: <b>%s</b> days.<br />Removed unread posts: <b>%s</b><br />You may read posts or mar all as read.<br />You can use search to find posts writen through last choosed time.';
 $lang['Votes'] = 'Votes';
+$lang['Topic_gallery'] = 'Add all images from this topic in Gallery';
+$lang['Topic_gallery_e'] = 'Selecting this option will automatically add all images (that use [IMG] tag) from topic and replies into Gallery.';
 //
 // That's all Folks!
 // -------------------------------------------------

@@ -125,9 +125,9 @@ if(GetCookie('hm3') == '2') ShowHide('hm', 'hm2', 'hm3');
 			<input type="text" name="username" value="nick" />
 			<input type="password" name="password" value="password" size="8" />
 		<!-- BEGIN switch_allow_autologin -->
-			<input class="text" type="checkbox" name="autologin" />
+			<input type="checkbox" name="autologin" />
 		<!-- END switch_allow_autologin -->
-			<input type="submit" class="liteoption" name="login" value="{L_LOGIN}" />
+			<input type="submit" name="login" value="{L_LOGIN}" />
 		
 		<!-- END switch_user_logged_out -->
       </td>

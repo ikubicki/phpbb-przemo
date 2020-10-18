@@ -9,6 +9,11 @@ RUN apt-get update -y && \
     docker-php-ext-install zip pdo_mysql mysqli gd && \
     docker-php-ext-enable pdo_mysql mysqli gd
 
+
+RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/ssl-cert-snakeoil.key -out /etc/ssl/certs/ssl-cert-snakeoil.pem -subj "/C=PL/ST=DS/L=Wroclaw/O=Security/OU=Development/CN=localhost"
+RUN a2ensite default-ssl
+RUN a2enmod ssl
+
 #DEBUG
 RUN pecl install xdebug && \
     docker-php-ext-enable xdebug

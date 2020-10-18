@@ -527,9 +527,12 @@ $page_title = $lang['View_forum'] . ' - ' . $forum_row['forum_name'];
 include($phpbb_root_path . 'includes/page_header.'.$phpEx);
 include($phpbb_root_path . 'includes/functions_hierarchy.'.$phpEx);
 
-$template->set_filenames(array(
-	'body' => 'viewforum_body.tpl')
-);
+if (!$forum_row['forum_template']) {
+	$forum_row['forum_template'] = 'viewforum_body.tpl';
+}
+$template->set_filenames([
+	'body' => $forum_row['forum_template']
+]);
 
 make_jumpbox('viewforum.'.$phpEx);
 
@@ -972,6 +975,9 @@ if( $total_topics )
 			}
 		}
 
+		$img = null;
+		preg_match('#\[img(:[a-z0-9]+)?\](.*?)\[/img(:[a-z0-9]+)?\]#i', $topic_rowset[$i]['post_text'], $img);
+
 		$template->assign_block_vars('topicrow', array(
 			'ICON' => ($topic_rowset[$i]['topic_icon'] != 0) ? '<img src="' . $images['rank_path'] . 'icon/icon' . $topic_rowset[$i]['topic_icon']. '.gif" alt="" border="0">' : ' ',
 			'TOPIC_EXPIRE' => $topic_expire_date,
@@ -980,6 +986,7 @@ if( $total_topics )
 			'ROW' => (isset($helped_list[$topic_id])) ? 'row_helped' : 'row1',
 			'FORUM_ID' => $forum_id,
 			'TOPIC_ID' => $topic_id,
+			'TOPIC_IMAGE' => $img[2] ?? '',
 			'TOPIC_FOLDER_IMG' => $folder_image,
 			'TOPIC_AUTHOR' => $topic_author,
 			'TOPIC_VOTES' => intval($topic_rowset[$i]['topic_votes_sum']),

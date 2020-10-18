@@ -257,7 +257,7 @@ function prepare_post(&$mode, &$post_data, &$bbcode_on, &$html_on, &$smilies_on,
 //
 // Post a new topic/reply/poll or edit existing post/poll
 //
-function submit_post($mode, &$post_data, &$message, &$meta, &$forum_id, &$topic_id, &$post_id, &$poll_id, &$topic_type, &$bbcode_on, &$html_on, &$smilies_on, &$attach_sig, &$bbcode_uid, $post_username, $post_subject, $post_subject_e, $post_message, $poll_title, &$poll_options, &$poll_length, &$max_vote, &$hide_vote, &$tothide_vote, &$user_agent, &$msg_icon, &$msg_expire, &$topic_color, &$post_approve, &$is_mod, &$is_jr_admin)
+function submit_post($mode, &$post_data, &$message, &$meta, &$forum_id, &$topic_id, &$post_id, &$poll_id, &$topic_type, &$bbcode_on, &$html_on, &$smilies_on, &$attach_sig, &$bbcode_uid, $post_username, $post_subject, $post_subject_e, $post_message, $poll_title, &$poll_options, &$poll_length, &$max_vote, &$hide_vote, &$tothide_vote, &$user_agent, &$msg_icon, &$msg_expire, &$topic_color, &$post_approve, &$is_mod, &$is_jr_admin, $topic_gallery = 0)
 {
 	global $board_config, $lang, $db, $phpbb_root_path, $phpEx;
 	global $userdata, $user_ip;
@@ -322,7 +322,10 @@ function submit_post($mode, &$post_data, &$message, &$meta, &$forum_id, &$topic_
 	{
 		$topic_tree_width = ($post_data['topic_tree_width']) ? $post_data['topic_tree_width'] : 0;
 		$topic_vote = ( !empty($poll_title) && count($poll_options) >= 2 ) ? 1 : 0;
-		$sql = ($mode != 'editpost') ? "INSERT INTO " . TOPICS_TABLE . " (topic_title, topic_poster, topic_time, forum_id, topic_status, topic_type, topic_vote, topic_icon, topic_expire, topic_color, topic_title_e, topic_tree_width, topic_accept) VALUES ('$post_subject', " . $userdata['user_id'] . ", $current_time, $forum_id, " . TOPIC_UNLOCKED . ", $topic_type, $topic_vote, $msg_icon, $expire_time, '$topic_color', '$post_subject_e', $topic_tree_width, $post_approve)" : "UPDATE " . TOPICS_TABLE . " SET topic_title = '$post_subject', topic_type = $topic_type, topic_icon = $msg_icon, topic_expire = $expire_time, topic_color = '$topic_color', topic_title_e = '$post_subject_e', topic_tree_width = $topic_tree_width " . (($post_data['edit_vote'] || !empty($poll_title)) ? ", topic_vote = " . $topic_vote : "") . " WHERE topic_id = $topic_id";
+		$topic_gallery = intval($topic_gallery);
+		$sql = ($mode != 'editpost') ? 
+			"INSERT INTO " . TOPICS_TABLE . " (topic_title, topic_gallery, topic_poster, topic_time, forum_id, topic_status, topic_type, topic_vote, topic_icon, topic_expire, topic_color, topic_title_e, topic_tree_width, topic_accept) VALUES ('$post_subject', $topic_gallery, " . $userdata['user_id'] . ", $current_time, $forum_id, " . TOPIC_UNLOCKED . ", $topic_type, $topic_vote, $msg_icon, $expire_time, '$topic_color', '$post_subject_e', $topic_tree_width, $post_approve)" : 
+			"UPDATE " . TOPICS_TABLE . " SET topic_title = '$post_subject', topic_gallery = $topic_gallery, topic_type = $topic_type, topic_icon = $msg_icon, topic_expire = $expire_time, topic_color = '$topic_color', topic_title_e = '$post_subject_e', topic_tree_width = $topic_tree_width " . (($post_data['edit_vote'] || !empty($poll_title)) ? ", topic_vote = " . $topic_vote : "") . " WHERE topic_id = $topic_id";
 		if ( !$db->sql_query($sql) )
 		{
 			message_die(GENERAL_ERROR, 'Error in posting', '', __LINE__, __FILE__, $sql);
@@ -471,86 +474,6 @@ function submit_post($mode, &$post_data, &$message, &$meta, &$forum_id, &$topic_
 		add_search_words(0, $post_id, stripslashes($post_message), stripslashes($post_subject . ' ' . $post_subject), stripslashes($post_subject . ' ' . $post_subject_e));
 	}
 
-	$admin_notify_gg = $board_config['admin_notify_gg'];
-
-	if ( ($mode == 'newtopic' || ($board_config['admin_notify_reply'] && $mode == 'reply')) && !empty($board_config['numer_gg']) && !empty($board_config['haslo_gg']) && !empty($admin_notify_gg) )
-	{
-
-		$server_protocol = ($board_config['cookie_secure']) ? 'https://' : 'http://';
-		$server_name = preg_replace('#^\/?(.*?)\/?$#', '\1', trim($board_config['server_name']));
-		$server_port = ($board_config['server_port'] <> 80) ? ':' . trim($board_config['server_port']) : '';
-		$script_name = preg_replace('#^\/?(.*?)\/?$#', '\1', trim($board_config['script_path']));
-		$script_name = ($script_name == '') ? $script_name . '/viewtopic.'.$phpEx : '/' . $script_name . '/viewtopic.'.$phpEx;
-
-		$check_topic_post = ($mode == 'newtopic') ? POST_TOPIC_URL . '=' .$topic_id : POST_POST_URL . '=' . $post_id . '#' . $post_id;
-
-		if ( $board_config['admin_notify_reply'] && $mode == 'reply' )
-		{
-			$sql = "SELECT topic_title
-				FROM " . TOPICS_TABLE . "
-				WHERE topic_id = $topic_id";
-			$result = $db->sql_query($sql);
-			$rowname = $db->sql_fetchrow($result);
-
-			$orig_word = array();
-			$replacement_word = array();
-			$replacement_word_html = array();
-			obtain_word_list($orig_word, $replacement_word, $replacement_word_html);
-			$gg_topic_title = preg_replace($orig_word, $replacement_word, unprepare_message($rowname['topic_title']));
-		}
-
-		$tresc2 = sprintf($lang['l_notify_gg_topic'], $server_protocol . $server_name . $server_port . $script_name . '?' . $check_topic_post);
-
-		$ch_post_subject = ($board_config['admin_notify_reply'] && $mode == 'reply') ? $gg_topic_title : $post_subject;
-
-		if ( $board_config['admin_notify_message'] )
-		{
-			$post_message_gg = preg_replace('/\:[0-9a-z\:]+\]/si', ']', $post_message);
-			$code_e_match = array('&lt;','&gt;','&quot;','&#58;','&#91;','&#93;','&#40;','&#41;','&#123;','&#125;','[/quote]','[/color]','[/size]','[/shadow]','[/glow]','[u]','[b]','[i]','[/u]','[/b]','[/i]','[code]','[/code]','[img]','[/img]','[center]','[/center]','[fade]','[/fade]','[scroll]','[/scroll]','[stream]','[/stream]','&amp;','[URL=');
-			$code_en_replace = array('<','>','"',':','[',']','(',')','{','}','[<-CYTAT]','','','','','','','','',	'','','','','IMAGE:','','','','','','','','STREAM:','','&','URL:');
-			$post_message_gg = str_replace($code_e_match, $code_en_replace, $post_message_gg);
-			$post_message_gg = preg_replace("#\[hide\](.*?)\[/hide\]#si", '-= HIDDEN MESSAGE =-', $post_message_gg);
-			$post_message_gg = preg_replace("#\[color=(.*?)\]#si", '', $post_message_gg);
-			$post_message_gg = preg_replace("#\[size=(.*?)\]#si", '', $post_message_gg);
-			$post_message_gg = preg_replace("#\[shadow=(.*?)\]#si", '', $post_message_gg);
-			$post_message_gg = preg_replace("#\[quote(.*?)\]#si", '[CYTAT->]', $post_message_gg);
-			$post_message_gg = preg_replace("#\[glow=(.*?)\]#si", '', $post_message_gg);
-			$post_message_gg = preg_replace("#\](.*?)\[/URL\]#si", '', $post_message_gg);
-			$post_message_gg = preg_replace("#\[swf width=(.*?)\]#si", '', $post_message_gg);
-			if ( strlen($post_message_gg ) > 1700)
-			{
-				$post_message_gg = substr($post_message_gg, 0, 1700) . ' ...<cut>';
-			}
-			$gg_subject_message = "\"$ch_post_subject\r\n\r\n" . $lang['Message_body'] . ":\r\n$post_message_gg\"";
-		}
-		
-		$gg_post_subject = (!$board_config['admin_notify_message']) ? '"' . $ch_post_subject . '"' : $gg_subject_message;
-		$check_lang_p_t = ($mode == 'newtopic') ? $lang['new_board_topic'] : $lang['new_board_post'];
-		$tresc = sprintf($check_lang_p_t, $board_config['sitename'], $userdata['username'], $gg_post_subject);
-		$separator = "\r\n\r\n________________________\r\n$tresc2";
-		$tresc = $tresc . $separator;
-		$do_admin_notify = false;
-
-		$do_admin_notify = true;
-
-		$list_admins_notify = explode(',', $admin_notify_gg);
-
-		for($i = 0; $i < count($list_admins_notify); $i++)
-		{
-			if ( intval(trim($userdata['user_aim'])) != intval(trim($list_admins_notify[$i])) )
-			{
-				$admins_notify[] = intval(trim($list_admins_notify[$i]));
-			}
-		}
-
-		if ( $do_admin_notify )
-		{
-			require_once('includes/functions_gg_notice.'.$phpEx);
-
-			@wiadomosc_gg($admins_notify, $tresc, $board_config['numer_gg'], $board_config['haslo_gg']);
-		}
-	}
-
 	// Add poll
 	$hide_vote = ($hide_vote) ? $hide_vote : 0;
 	$tothide_vote = ($tothide_vote) ? $tothide_vote : 0;
@@ -626,6 +549,11 @@ function submit_post($mode, &$post_data, &$message, &$meta, &$forum_id, &$topic_
 	$message = $lang['Stored'] . '<br /><br />' . sprintf($lang['Click_view_message'], '<a href="' . append_sid("viewtopic.$phpEx?" . POST_POST_URL . "=" . $post_id) . '#' . $post_id . '">', '</a>') . '<br /><br />' . sprintf($lang['Click_return_forum'], '<a href="' . append_sid("viewforum.$phpEx?" . POST_FORUM_URL . "=$forum_id") . '">', '</a>');
 
 	return false;
+}
+
+function refresh_gallery($topic_id, array $post_ids = [])
+{
+	
 }
 
 

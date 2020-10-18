@@ -94,7 +94,7 @@ $lang['files_list'] = 'Available files: %s';
 $lang['Database_Utilities'] = 'Database Utilities';
 $lang['Restore'] = 'Restore';
 $lang['Backup'] = 'Backup';
-$lang['Backup_explain'] = 'Here you can activate automated database backup. The database will be backed up every 24h from the time of activation. <br /> You can chose how many backups are to be stored on the server. The copies will be stored in the directory /db/db_backup The <b>db_backup</b> directory should have write-permissions activated (chmod 777). <br> Here you can also make a backup “on demand” by clicking the link. <br /> The name of the stored file will be i.e. db_backup_phpbb_psmdowhx_date_30-05-2005.sql.gz. The psmdowhx is a random text, which will protect the file from unwanted visitors.  The directory /db_backup/ is not indexable because it contains the file index.html. <br /> You have the option to disable backup of the search and read_history tables. The table search can be rebuilt using the rebuild tool in the admin panel. The tables search and read_history are the most space consuming tables in the database. The read_history table can not be restored in the same way as the search table.';
+$lang['Backup_explain'] = 'Here you can activate automated database backup. The database will be backed up every 24h from the time of activation. <br /> You can chose how many backups are to be stored on the server. The copies will be stored in the directory /db/db_backup The <b>db_backup</b> directory should have write-permissions activated (chmod 777). <br> Here you can also make a backup ï¿½on demandï¿½ by clicking the link. <br /> The name of the stored file will be i.e. db_backup_phpbb_psmdowhx_date_30-05-2005.sql.gz. The psmdowhx is a random text, which will protect the file from unwanted visitors.  The directory /db_backup/ is not indexable because it contains the file index.html. <br /> You have the option to disable backup of the search and read_history tables. The table search can be rebuilt using the rebuild tool in the admin panel. The tables search and read_history are the most space consuming tables in the database. The read_history table can not be restored in the same way as the search table.';
 $lang['db_backup_enable'] = 'Enable automatic copy database';
 $lang['db_backup_copies'] = 'Number of copies held';
 $lang['db_backup_tables_search'] = 'Copy search table data';
@@ -837,7 +837,7 @@ $lang['Forum_auth_list_explain_auth_pollcreate'] = '%s can create polls in this 
 $lang['Cancel'] = 'Cancel';
 $lang['Edit_permissions'] = 'Edit forum permissions';
 
-$lang['Forum_out_of_date'] = 'Your forum is OUT OF DATE! <a href="http://przemo.org/phpBB2/index.php?cid=0">Download</a> latest version now!';
+$lang['Forum_out_of_date'] = 'Your forum is OUT OF DATE! <a href="%s">Download</a> latest version now!';
 $lang['Forum_up_to_date'] = 'Your forum is up to date.';
 $lang['Forum_search_for_updates'] = 'Check now';
 $lang['Forum_last_update_check'] = 'Last updates check %s';

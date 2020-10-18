@@ -1,5 +1,7 @@
+<style>
+@import url('/modules/auth-facebook/main.css');
+</style>
 <form action="{S_LOGIN_ACTION}" method="post" target="_top">
-
 <table class="forumline posting nolength">
 	<tr>
 		<th colspan="3">{L_ENTER_PASSWORD}</th>
@@ -33,6 +35,7 @@
 		<td width="25%" class="submit left">
 			{S_HIDDEN_FIELDS}
 			<input type="submit" name="login" value="{L_LOGIN}" />
+			<input id="facebook_login_btn" type="button" class="facebook" value="Zaloguj z Facebook" />
 		</td>
 		<td width="25%" class="submit right">
 			<a href="{U_SEND_PASSWORD}">{L_SEND_PASSWORD}</a>
@@ -40,3 +43,10 @@
 	</tr>
 </table>
 </form>
+<script src="/modules/auth-facebook/index.js"></script>
+<script>
+	auth.facebook.init({
+		appid: '257433195682871'
+	})
+	auth.facebook.onclick('#facebook_login_btn')
+</script>

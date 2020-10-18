@@ -1,0 +1,8 @@
+td.submit input[type=button].facebook,
+td.submit input[type=submit].facebook {
+    background-image: url(icon.png);
+    background-repeat: no-repeat;
+    background-position: 5px center;
+    padding-left: 30px;
+    background-size: 20px;
+}

@@ -481,7 +481,7 @@ function session_begin($user_id, $user_ip, $page_id, $auto_create = 0, $enable_a
 		list($sec, $usec) = explode(' ', microtime());
 		mt_srand((float) $sec + ((float) $usec * 100000));
 		$session_id = md5(uniqid(mt_rand(), true));
-
+		$admin = intval($admin);
 		$sql = "INSERT INTO " . SESSIONS_TABLE . "
 			(session_id, session_user_id, session_start, session_time, session_ip, session_page, session_logged_in, session_admin)
 			VALUES ('$session_id', $user_id, $current_time, $current_time, '$user_ip', $page_id, $login, $admin)";
@@ -611,7 +611,7 @@ function session_begin($user_id, $user_ip, $page_id, $auto_create = 0, $enable_a
 // Checks for a given user session, tidies session table and updates user
 // sessions at each page refresh
 //
-function session_pagestart($user_ip, $thispage_id)
+function session_pagestart($user_ip, $thispage_id = 0)
 {
 	global $db, $lang, $board_config;
 	global $HTTP_COOKIE_VARS, $HTTP_GET_VARS, $SID, $unique_cookie_name;
@@ -701,8 +701,14 @@ function session_pagestart($user_ip, $thispage_id)
 					// A little trick to reset session_admin on session re-usage
 					$update_admin = (!defined('IN_ADMIN') && $current_time - $userdata['session_time'] > ($board_config['session_length']+60)) ? ', session_admin = 0' : '';
 
+					$sql_page = '';
+					$sql_user_page = '';
+					if ($thispage_id > 0) {
+						$sql_page = ", session_page = $thispage_id ";
+						$sql_user_page = ", user_session_page = $thispage_id ";
+					}
 					$sql = "UPDATE " . SESSIONS_TABLE . " 
-						SET session_time = $current_time, session_page = $thispage_id$update_admin
+						SET session_time = $current_time $sql_page $update_admin
 						" . (($userdata['session_time'] < ($current_time - $board_config['session_length'])) ? ", session_start = " . $current_time : "") . "
 						WHERE session_id = '" . $userdata['session_id'] . "'";
 					if ( !$db->sql_query($sql) )
@@ -713,7 +719,7 @@ function session_pagestart($user_ip, $thispage_id)
 					if ( $userdata['user_id'] != ANONYMOUS )
 					{
 						$sql = "UPDATE " . USERS_TABLE . " 
-							SET user_session_time = $current_time, user_session_page = $thispage_id
+							SET user_session_time = $current_time $sql_user_page
 							, " . (($userdata['session_time'] < ($current_time - $board_config['session_length'])) ? "user_session_start = $current_time, user_visit = user_visit + 1, user_lastvisit = " . $userdata['user_session_time'] . ", user_ip = '$user_ip'" : "user_spend_time = user_spend_time + " . ($current_time - $userdata['session_time'])) . "
 							WHERE user_id = " . $userdata['user_id'];
 						if ( !$db->sql_query($sql) )

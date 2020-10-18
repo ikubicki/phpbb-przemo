@@ -285,7 +285,7 @@ switch ( $mode )
 			$select_sql .= ( $mode == 'delete' ) ? ', p.reporter_id' : '';
 		}
 
-		$sql = "SELECT f.*, t.topic_id, t.topic_status, t.topic_type, t.topic_first_post_id, t.topic_last_post_id, t.topic_vote, topic_tree_width, p.post_id, post_time, p.poster_id" . $select_sql . " 
+		$sql = "SELECT f.*, t.topic_id, t.topic_status, t.topic_type, t.topic_first_post_id, t.topic_last_post_id, t.topic_vote, t.topic_gallery, topic_tree_width, p.post_id, post_time, p.poster_id" . $select_sql . " 
 			FROM (" . POSTS_TABLE . " p, " . TOPICS_TABLE . " t, " . FORUMS_TABLE . " f" . $from_sql . ")
 			WHERE p.post_id = $post_id 
 				AND t.topic_id = p.topic_id 
@@ -383,6 +383,7 @@ if ( $result = $db->sql_query($sql) )
 		$post_data['topic_type'] = $post_info['topic_type'];
 		$post_data['poster_id'] = $post_info['poster_id'];
 		$post_data['post_time'] = $post_info['post_time'];
+		$post_data['topic_gallery'] = $post_info['topic_gallery'];
 
 		if ( $post_data['first_post'] && $post_data['has_poll'] )
 		{
@@ -611,6 +612,18 @@ else
 {
 	$html_on = 0;
 	$show_html = false;
+}
+
+$topic_gallery_on = false;
+$topic_gallery_change = false;
+if ($userdata['session_logged_in'] && $board_config['allow_topic_gallery'] && ($post_data['topic_gallery'] || !empty($HTTP_POST_VARS['topic_gallery'])))
+{
+	$topic_gallery_on = true;
+	$topic_gallery_change = $post_data['topic_gallery'] != $topic_gallery_on;
+}
+
+if ($topic_gallery_change) {
+	refresh_gallery($topic_id, []);
 }
 
 $user_can_use_bbcode = false;
@@ -1165,7 +1178,7 @@ else if ( $submit || $confirm )
 			$str_replace_poll_title = str_replace("\'", "''", $poll_title);
 			$str_replace_user_agent = str_replace("\'", "''", $user_agent);
 			$str_replace_topic_color = str_replace("\'", "''", $topic_color);
-			submit_post($mode, $post_data, $return_message, $return_meta, $forum_id, $topic_id, $post_id, $poll_id, $topic_type, $bbcode_on, $html_on, $smilies_on, $attach_sig, $bbcode_uid, $str_replace_username, $str_replace_subject, $str_replace_subject_e, $str_replace_message, $str_replace_poll_title, $poll_options, $poll_length, $max_vote, $hide_vote, $tothide_vote, $str_replace_user_agent, $msg_icon, $msg_expire, $str_replace_topic_color, $post_approve, $is_mod_forum, $is_jr_admin);
+			submit_post($mode, $post_data, $return_message, $return_meta, $forum_id, $topic_id, $post_id, $poll_id, $topic_type, $bbcode_on, $html_on, $smilies_on, $attach_sig, $bbcode_uid, $str_replace_username, $str_replace_subject, $str_replace_subject_e, $str_replace_message, $str_replace_poll_title, $poll_options, $poll_length, $max_vote, $hide_vote, $tothide_vote, $str_replace_user_agent, $msg_icon, $msg_expire, $str_replace_topic_color, $post_approve, $is_mod_forum, $is_jr_admin, $topic_gallery_on);
 
 			$board_config['ph_days'] = intval($board_config['ph_days']);
 			if ( ((strlen($old_post_text) - strlen($message)) > ($board_config['ph_len'] - 1) || (strlen($message) - strlen($old_post_text)) > ($board_config['ph_len'] - 1)) && $board_config['ph_days'] )
@@ -1306,7 +1319,7 @@ else if ( $submit || $confirm )
 				}
 				$post_data['topic_first_post_id'] = $post_info['topic_first_post_id'];
 			}
-			submit_post($mode, $post_data, $return_message, $return_meta, $forum_id, $topic_id, $post_id, $poll_id, $topic_type, $bbcode_on, $html_on, $smilies_on, $attach_sig, $bbcode_uid, $str_replace_username, $str_replace_subject, $str_replace_subject_e, $str_replace_message, $str_replace_poll_title, $poll_options, $poll_length, $max_vote, $hide_vote, $tothide_vote, $str_replace_user_agent, $msg_icon, $msg_expire, $str_replace_topic_color, $post_approve, $is_mod_forum, $is_jr_admin);
+			submit_post($mode, $post_data, $return_message, $return_meta, $forum_id, $topic_id, $post_id, $poll_id, $topic_type, $bbcode_on, $html_on, $smilies_on, $attach_sig, $bbcode_uid, $str_replace_username, $str_replace_subject, $str_replace_subject_e, $str_replace_message, $str_replace_poll_title, $poll_options, $poll_length, $max_vote, $hide_vote, $tothide_vote, $str_replace_user_agent, $msg_icon, $msg_expire, $str_replace_topic_color, $post_approve, $is_mod_forum, $is_jr_admin, $topic_gallery_on);
 
 			$notify_n = 1;
 			$mode_n = $mode;
@@ -1939,6 +1952,9 @@ if ( $board_config['split_messages'] && !$comment )
 $topic_type_toggle = '';
 if ( $mode == 'newtopic' || ( $mode == 'editpost' && $post_data['first_post'] ) )
 {
+
+	$template->assign_block_vars('show_topic_gallery', array());
+
 	if ( !$comment )
 	{
 		$template->assign_block_vars('switch_type_toggle', array());
@@ -2054,6 +2070,15 @@ else
 	$s_html_checked = 'checked="checked"';
 }
 
+if ( !$HTTP_POST_VARS['topic_gallery'] )
+{
+	$s_topic_gallery_checked = !$topic_gallery_on && empty($HTTP_POST_VARS['topic_gallery'])  ? '' : 'checked="checked"';
+}
+else
+{
+	$s_topic_gallery_checked = 'checked="checked"';
+}
+
 //
 // Output the data to the template
 //
@@ -2076,6 +2101,9 @@ $template->assign_vars(array(
 	'L_MSG_ICON_NO_ICON' => $lang['Msg_Icon_No_Icon'],
 	'L_MORE_SMILIES' => $lang['More_emoticons'],
 	'L_MORE_TOPICICONS' => $lang['more_topicicons'],
+
+	'L_TOPIC_GALLERY' => $lang['Topic_gallery'],
+	'L_TOPIC_GALLERY_E' => $lang['Topic_gallery_e'],
 
 	'L_COLOR_DEFAULT' => $lang['color_default'],
 	'L_COLOR_DARK_RED' => $lang['color_dark_red'],
@@ -2127,6 +2155,7 @@ $template->assign_vars(array(
 	'MORE_ICON_CHECK' => ($post_info['post_icon'] > 10) ? $post_info['post_icon'] : '',
 	'CLASS_MORE_ICONS' => $class_more_icons,
 	'S_HTML_CHECKED' => $s_html_checked,
+	'S_TOPIC_GALLERY_CHECKED' => $s_topic_gallery_checked,
 	'S_BBCODE_CHECKED' => (!$bbcode_on) ? 'checked="checked"' : '',
 	'S_SMILIES_CHECKED' => (!$smilies_on || $HTTP_POST_VARS['disable_smilies']) ? 'checked="checked"' : '',
 	'S_SIGNATURE_CHECKED' => ( $attach_sig) ? 'checked="checked"' : '',

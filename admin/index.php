@@ -29,6 +29,7 @@ define('IN_PHPBB', 1);
 // Load default header
 //
 $no_page_header = TRUE;
+$tags_url = 'https://api.github.com/repos/ikubicki/phpbb-przemo/tags';
 $phpbb_root_path = "./../";
 require($phpbb_root_path . 'extension.inc');
 require('./pagestart.' . $phpEx);
@@ -64,69 +65,50 @@ if ($row['username'] != 'Anonymous')
 	message_die(GENERAL_ERROR, 'Anonymous user not exist in database or not ID -1 or not username Anonymous<br />Check your mysql_basic.sql file and add correctly anonymous user');
 }
 
+function symverToNumber($symver)
+{
+	list($major, $minor, $patch) = explode('.', $symver);
+	return intval(sprintf('%04d%04d%04d', $major ?: 0, $minor ?: 0, $patch ?: 0));
+}
+
 if ( !(function_exists('get_ri')) )
 {
 	function get_ri()
 	{
-		global $db, $board_config, $public_description, $lang, $phpEx;
+		global $db, $board_config, $public_description, $lang, $phpEx, $tags_url;
 
 		$anonymous = 0;
 		// Set to 1 if you want be anonymous. I collect adress forums data for statistics and it still private of course.
 		// If set to 1 checking update verson will be available for you.
 
+
 		if(array_key_exists('checkupdates', $_GET) || intval($board_config['ri_time']) < CR_TIME - 172800 || intval($board_config['ri_time']) > CR_TIME) {
 			
 			update_config('ri_time', $board_config['ri_time'] = CR_TIME);
 			
-			$fp = @fsockopen('www.przemo.org', 80, $erstr, $errno, 2);
-			
-			if($fp) {
-			
-				if($anonymous) {
-				
-					$forum_addr = 'anonymous';
+			$ch = curl_init();
+			curl_setopt($ch, CURLOPT_URL, $tags_url);
+			curl_setopt($ch, CURLOPT_USERAGENT, 'User-Agent: przemo,' . $board_config['version']);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+			$json = curl_exec($ch);
+			curl_close($ch);
+			$tags = json_decode($json, true);
+
+			$myVersion = symverToNumber($board_config['version']);
+			$latestVersion = 0;
+			$latestTag = null;
+			$newerVersions = 0;
+			foreach($tags as $tag) {
+				$version = symverToNumber($tag['name']);
+				if($version > $myVersion) {
+					$newerVersions++;
 				}
-				else
-				{
-					$server_name = trim($board_config['server_name']);
-					$server_port = ($board_config['server_port'] <> 80) ? ':' . trim($board_config['server_port']) : '';
-					$script_name = preg_replace('/^\/?(.*?)\/?$/', "\\1", trim($board_config['script_path']));
-					$script_name = ($script_name == '') ? $script_name : '/' . $script_name;
-			
-					// Jezeli zostanie wykryta proba zafalszowania wysylanych danych, bedzie na stale zablokowana komunikacja
-					// Spowoduje to utrate informacji o aktualizacjach oraz mozliwosc prezentacji w katalogu for.
-					$forum_addr = $server_name . $server_port . $script_name . '&tc=' . get_db_stat('topiccount');
-			
-					if ( $board_config['public_category'] )
-					{
-						$public_description = '&pc=' . $board_config['public_category'] . '&pd=' . base64_encode($board_config['site_desc']);
-					}
+				if ($latestVersion < $version) {
+					$latestTag = $tag['name'];
+					$latestVersion = $version;
 				}
-			
-				$path = "/phpBB2/phpBB_data.php?version=" . $board_config['version'] . "&lang=" . $board_config['default_lang'] . "&addr=" . $forum_addr . $public_description;
-			
-				@fputs($fp, "GET $path HTTP/1.0\r\nHost: www.przemo.org\r\nUser-Agent: phpBB\r\n");
-				@fputs($fp, "Connection: close\r\n\r\n");
-				$data = '';
-				
-				while(!@feof($fp)) {
-					
-					$data .= @fgets($fp, 1024);
-				}
-				
-				@fclose($fp);
-				
-				$status = 1;
-				
-				if(stripos($data, 'przemo.org/phpBB2')) {
-					
-					$status = 2;
-				}
-				
-				update_config('ri_data', $status);
 			}
-			
-			//return sprintf('<div style="padding:12px 0 15px;border-bottom:3px solid #d1d7dc;text-align:center;font-size:13px;font-family:Verdana,Arial,Helvetica,sans-serif">%s</div>', $lang['Forum_up_to_date']);
+			update_config('ri_data', $latestTag);
 		}
 		
 		$time_elapsed = time() - $board_config['ri_time'];
@@ -142,11 +124,11 @@ if ( !(function_exists('get_ri')) )
 			$time_ago = sprintf($lang['Forum_last_update_check_days_ago'], floor($time_elapsed / 86400));
 		}
 		
-		if($board_config['ri_data'] > 1) {
+		if($board_config['ri_data']) {
 			
 			return sprintf(
 				'<div style="padding:20px 0 22px;background:#ffa34f;border-bottom:3px solid #fff;text-align:center;font-size:13px;font-weight:bold;font-family:Verdana,Arial,Helvetica,sans-serif">%s</div>',
-				$lang['Forum_out_of_date']
+				sprintf($lang['Forum_out_of_date'], 'https://github.com/ikubicki/phpbb-przemo/releases/tag/'.$board_config['ri_data'])
 			);
 		}
 				

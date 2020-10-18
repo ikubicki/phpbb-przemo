@@ -72,12 +72,6 @@ $template->set_filenames(array(
 	'body' => 'statistics.tpl')
 );
 
-print '<table width="100%" cellspacing="1" cellpadding="3" border="0" align="center">
-<tr>
-<td align="left" valign="bottom">
-<span class="nav"><a href="' . append_sid('index.'.$phpEx) . '" class="nav">' . sprintf($lang['Forum_Index'], $board_config['sitename']) . '</a></span>
-</td>
-</table>';
 
 $stat_module_rows = get_module_list_from_db();
 $stat_module_data = get_module_data_from_db();
@@ -113,6 +107,11 @@ while (list($module_id, $module_name) = each($stat_module_rows))
 		{
 			$language = 'english';
 		}
+
+		if (!file_exists($phpbb_root_path . $stats_config['modules_dir'] . '/' . $module_name)) {
+			break;
+		}
+
 		include($phpbb_root_path . $stats_config['modules_dir'] . '/' . $module_name . '/lang_' . $language . '/lang.' . $phpEx);
 		$reload = FALSE;
 

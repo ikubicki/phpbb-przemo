@@ -39,10 +39,17 @@ function generate_module_info($module_data)
 
 	$module_dir = trim($module_data['name']);
 
+	$real_module_dir = $phpbb_root_path . $stats_config['modules_dir'] . '/' . $module_dir;
+	$infofile = $real_module_dir . '/info.txt';
+
+	if (!file_exists($real_module_dir)) {
+		return false;
+	}
+
 	//
 	// Get Info from Cache or not...
 	//
-	if ($module_data['module_info_time'] == filemtime($phpbb_root_path . $stats_config['modules_dir'] . '/' . $module_dir . '/info.txt'))
+	if (file_exists($infofile) && $module_data['module_info_time'] == filemtime($infofile))
 	{
 		$ret_array = unserialize(stripslashes($module_data['module_info_cache']));
 	}

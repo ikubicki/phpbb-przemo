@@ -136,6 +136,7 @@ include($phpbb_root_path . 'includes/auth.'.$phpEx);
 include($phpbb_root_path . 'includes/functions.'.$phpEx);
 include($phpbb_root_path . 'includes/db.'.$phpEx);
 
+
 if (!defined('IN_PHPBB')) {
 	var_adds($HTTP_GET_VARS, false);
 	var_adds($HTTP_POST_VARS, true, true);
@@ -201,6 +202,22 @@ if ( $board_config['protection_get'] && isset($HTTP_GET_VARS) )
 
 $phpbb_root_dir = $board_config['script_path'] ?? '/';
 $nav_links = [];
+
+
+if ($board_config['cookie_secure']) {
+	$ssl = $_SERVER['HTTPS'] ?? false || $_SERVER['X-FORWARDED-PROTO'] ?? '' == 'https' || $_SERVER['X-FORWARDER-SSL'] ?? '' == 'on';
+	if(!$ssl)
+	{
+		$server_protocol = ($board_config['cookie_secure']) ? 'https://' : 'http://';
+		$server_name = preg_replace('#^\/?(.*?)\/?$#', '\1', trim($board_config['server_name']));
+		$server_port = ($board_config['server_port'] <> 80) ? ':' . trim($board_config['server_port']) : '';
+		$script_name = preg_replace('#^\/?(.*?)\/?$#', '\1', trim($board_config['script_path']));
+		$script_name = ($script_name == '') ? $script_name . '/index.'.$phpEx : '/' . $script_name . '/index.'.$phpEx;
+		$url_absolute = $server_protocol . $server_name . $server_port . $script_name;
+		header('Location: ' . $url_absolute);
+		exit;
+	}
+}
 
 // gzip compression
 $mod_deflate_check = true;

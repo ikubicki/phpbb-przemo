@@ -150,6 +150,13 @@
 			<td class="row1" valign="top"><span class="gen"><b>{L_OPTIONS}</b></span><br><span class="gensmall">{HTML_STATUS}<br>{BBCODE_STATUS}<br>{SMILIES_STATUS}</span></td>
 			<td class="row1">
 				<table cellspacing="0" cellpadding="1" border="0">
+				<!-- BEGIN show_topic_gallery -->
+				<tr>
+					<td><input type="checkbox" name="topic_gallery" {S_TOPIC_GALLERY_CHECKED}></td>
+					<td><span class="gen">{L_TOPIC_GALLERY}</span></td>
+				</tr>
+				<!-- END show_topic_gallery -->
+
 				<!-- BEGIN switch_html_checkbox -->
 				<tr>
 					<td><input type="checkbox" name="disable_html" {S_HTML_CHECKED}></td>

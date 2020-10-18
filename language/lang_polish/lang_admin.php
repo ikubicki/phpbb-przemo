@@ -837,7 +837,7 @@ $lang['Forum_auth_list_explain_auth_pollcreate'] = '%s mogą tworzyć ankiety w 
 $lang['Cancel'] = 'Anuluj';
 $lang['Edit_permissions'] = 'Edycja zezwoleń';
 
-$lang['Forum_out_of_date'] = 'Twoje forum jest NIEAKTUALNE! <a href="http://przemo.org/phpBB2/index.php?cid=0">Pobierz</a> najnowszą wersję!';
+$lang['Forum_out_of_date'] = 'Twoje forum jest NIEAKTUALNE! <a href="%s">Pobierz</a> najnowszą wersję!';
 $lang['Forum_up_to_date'] = 'Twoje forum jest aktualne.';
 $lang['Forum_search_for_updates'] = 'Sprawdź teraz';
 $lang['Forum_last_update_check'] = 'Ostatnio sprawdzano %s';

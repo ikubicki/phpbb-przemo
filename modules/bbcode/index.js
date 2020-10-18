@@ -15,10 +15,8 @@ var bbcode = {
         })
     },
     parse: function(text) {
-        return this.loaded.reduce((txt, regex) =>  txt.replace(regex.in, regex.out), text)
-    },
-    clickable: function(text) {
-        return text.replace(new RegExp('\s*'+url_expression+'\s*', 'gim'), '[url]$1[/url]')
+        text = text.split('&amp;').join('&')
+        return this.loaded.reduce((txt, regex) => txt.replace(regex.in, regex.out), text)
     }
 }
 bbcode.load([

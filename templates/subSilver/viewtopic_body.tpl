@@ -9,6 +9,8 @@ var img_addr = '{IMG_ADDR}';
 <style>@import url('/js/lightbox/lightbox.css')</style>
 <script src="/modules/votes/index.js"></script>
 <style>@import url('modules/votes/main.css')</style>
+<script src="/modules/avatars/index.js"></script>
+
 <br>
 <table width="100%" cellspacing="2" cellpadding="2" border="0">
    <tr> 
@@ -44,7 +46,7 @@ var img_addr = '{IMG_ADDR}';
    <!-- BEGIN postrow -->
    <!-- BEGIN post_tree -->
 	<tr>
-		<td class="{postrow.ROW_CLASS}" valign="top" colspan="2" <!-- BEGIN signature -->rowspan="2"<!-- END signature -->>
+		<td valign="top" colspan="2" <!-- BEGIN signature -->rowspan="2"<!-- END signature -->>
 			<table cellspacing="0" cellpadding="0" width="100%">
 				<tr>
 					<td class="{postrow.ROW_CLASS}" width="{postrow.post_tree.TREE_WIDTH}"></td>
@@ -53,15 +55,19 @@ var img_addr = '{IMG_ADDR}';
    <!-- END post_tree -->
    <tr>
       <td align="left" valign="top" class="{postrow.ROW_CLASS}" nowrap="nowrap" width="150" <!-- BEGIN signature -->rowspan="2"<!-- END signature -->>
-         <span class="name"><a name="{postrow.U_POST_ID}"></a>
-         <b>{postrow.POSTER_NAME}</b><!-- BEGIN gender -->&nbsp;<img src="{postrow.gender.GENDER}" alt="" border="0"><!-- END gender -->
+         <a name="{postrow.U_POST_ID}"></a>
+         <div style="text-align: center">
+            <script>avatars.show({user: {postrow.POSTER_ID}, class: '{postrow.GENDER_CLASS}', style: 'border-color: {postrow.POSTER_COLOR}'})</script>
+            <b style="color: {postrow.POSTER_COLOR}">{postrow.POSTER_NAME_RAW}</b><br />
+            {postrow.POSTER_RANK}{postrow.CUSTOM_RANK}
+            <span class="posts">{postrow.POSTER_POSTS_COUNT}</span>
+         </div>
 		 <br>
-		 </span>
-         <span class="postdetails">{postrow.POSTER_RANK}{postrow.CUSTOM_RANK}{postrow.RANK_IMAGE}{postrow.POSTER_AVATAR}<br>
+         <span class="postdetails">
+            
          <!-- BEGIN custom_fields_avatar -->
-         {postrow.custom_fields_avatar.DESC}{postrow.custom_fields_avatar.FIELD}<br>
+         {postrow.custom_fields_avatar.DESC}{postrow.custom_fields_avatar.FIELD}<br />
          <!-- END custom_fields_avatar -->
-         {postrow.SPECIAL_RANK}{postrow.POSTER_AGE}{postrow.POSTER_JOINED}{postrow.POSTER_POSTS}{postrow.POSTER_FROM}{postrow.POSTER_ONLINE}</span>
          <!-- BEGIN levelmodl -->
          <span class="postdetails">
          {L_LEVEL}: <b>{postrow.levelmodl.POSTER_LEVEL}</b>
@@ -180,7 +186,7 @@ var img_addr = '{IMG_ADDR}';
    </tr>
    <!-- BEGIN signature -->
    <tr>
-      <td class="{postrow.ROW_CLASS} signature">
+      <td class="{postrow.ROW_CLASS} signature" height="1%">
          <span class="postbody">{postrow.SIGNATURE}{postrow.SIG_IMAGE}</span>
       </td>
    </tr>
