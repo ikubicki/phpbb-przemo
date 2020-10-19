@@ -8,7 +8,9 @@ Just run `ci/docker.sh` from main directory. Once installed, use `ci/docker.sh -
 
 ### In development
 
-*1.13.0* - [WIP] - Default avatars; New gallery; Themes; Forcing SSL; Version checking based on GitHub tags; Forum templates; Topic templates
+*1.13.0 / 2.0.0* - [WIP] - Default avatars; New gallery; Themes; Forcing SSL; Version checking based on GitHub tags; Forum templates; Topic templates
+
+[2.0.0 branch](https://github.com/ikubicki/phpbb-przemo/tree/new_stuff)
 
 ### Changelog
 
