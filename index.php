@@ -26,7 +26,7 @@ $phpbb_root_path = './';
 include($phpbb_root_path . 'extension.inc');
 include($phpbb_root_path . 'common.'.$phpEx);
 include($phpbb_root_path . 'includes/functions_selects.'.$phpEx); 
-/*
+
 
 // FORUMS HIERARCHY v2
 
@@ -42,8 +42,8 @@ $callback = function ($entity) {
 $tree = new PhpBB\Forum\Tree;
 $tree->cache($phpbb_root_path . '/cache/tree.data.php');
 if (!$tree->isCached()) {
-	$tree->import((new PhpBB\Model\CategoriesCollection)->find());
-	$tree->import((new PhpBB\Model\ForumsCollection)->find());
+	$tree->import((new PhpBB\Model\CategoriesCollection)->all());
+	$tree->import((new PhpBB\Model\ForumsCollection)->all());
 	$tree->storeCache();
 }
 

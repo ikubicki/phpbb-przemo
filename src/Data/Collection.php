@@ -70,6 +70,11 @@ class Collection
         return $this->find($criteria, $order, 1, $offset);
     }
 
+    public function all(array $order = [])
+    {
+        return $this->find([], $order);
+    }
+
     public function find($criteria = [], array $order = [], $limit = null, $offset = 0)
     {
         $this->criteria = $criteria;
