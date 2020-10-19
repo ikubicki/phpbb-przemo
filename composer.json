@@ -1,0 +1,13 @@
+{
+    "name": "irekk/phpbb",
+    "authors": [
+        {
+            "name": "Irek Kubicki",
+            "email": "irek@ixdude.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"PhpBB\\": "src/"}
+    },
+    "require": {}
+}

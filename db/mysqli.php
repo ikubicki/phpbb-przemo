@@ -103,7 +103,7 @@ if(!defined("SQL_LAYER")) {
 
                 return $this->query_result;
             } else {
-                if($this->in_transaction) {
+                if($this->in_transaction && $transaction != KEEP_TRANSACTION) {
                     $this->sql_transaction('rollback');
                     $this->in_transaction = FALSE;
                 }

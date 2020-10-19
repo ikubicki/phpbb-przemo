@@ -7,7 +7,6 @@
       <a href="http://www.przemo.org/phpBB2/" target="_blank"><b>przemo</b></a>
    </span>
    <span class="links">
-	  <a href="{U_FAQ}" class="faq">{L_FAQ}</a>
 	  <a href="{U_STAT}" class="stats">{L_STATISTICS}</a>
 	  <a href="{U_MEMBERLIST}" class="users">{L_MEMBERLIST}</a>
 	  <a href="{U_GROUP_CP}" class="groups">{L_USERGROUPS}</a>

@@ -81,6 +81,7 @@ define('EDITED', 5);
 // SQL codes
 define('BEGIN_TRANSACTION', 1);
 define('END_TRANSACTION', 2);
+define('KEEP_TRANSACTION', 3);
 
 // Error codes
 define('GENERAL_MESSAGE', 200);

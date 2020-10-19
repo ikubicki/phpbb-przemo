@@ -26,7 +26,46 @@ $phpbb_root_path = './';
 include($phpbb_root_path . 'extension.inc');
 include($phpbb_root_path . 'common.'.$phpEx);
 include($phpbb_root_path . 'includes/functions_selects.'.$phpEx); 
+/*
 
+// FORUMS HIERARCHY v2
+
+$callback = function($entity) {
+	global $board_config;
+	print $board_config['sitename'] . " : ".$entity->getName() . ':' . $entity->getNesting() . "<br>";
+};
+
+$callback = function ($entity) {
+	printf ('%s %s <br />', str_repeat('&nbsp; ', $entity->getNesting()), $entity->getName());
+};
+
+$tree = new PhpBB\Forum\Tree;
+$tree->cache($phpbb_root_path . '/cache/tree.data.php');
+if (!$tree->isCached()) {
+	$tree->import((new PhpBB\Model\CategoriesCollection)->find());
+	$tree->import((new PhpBB\Model\ForumsCollection)->find());
+	$tree->storeCache();
+}
+
+// full nested tree
+$tree->iterate($callback);
+
+
+print '<hr />';
+
+// category #1 nested tree
+(new PhpBB\Model\CategoriesCollection)->get(1)->iterate($callback);
+print '<hr />';
+
+$forum = (new PhpBB\Model\ForumsCollection)->get(6);
+
+// navigation
+foreach($tree->trace($forum) as $el) {
+	printf (' &bull; <a href="%s">%s</a>', $el->getUrl(), $el->getName());
+}
+
+exit;
+/**/
 if ( $board_config['check_address'] )
 {
 	if ( !empty($HTTP_SERVER_VARS['SERVER_NAME']) || !empty($HTTP_ENV_VARS['SERVER_NAME']) )

@@ -1179,7 +1179,7 @@ else if ( $submit || $confirm )
 			$str_replace_user_agent = str_replace("\'", "''", $user_agent);
 			$str_replace_topic_color = str_replace("\'", "''", $topic_color);
 			submit_post($mode, $post_data, $return_message, $return_meta, $forum_id, $topic_id, $post_id, $poll_id, $topic_type, $bbcode_on, $html_on, $smilies_on, $attach_sig, $bbcode_uid, $str_replace_username, $str_replace_subject, $str_replace_subject_e, $str_replace_message, $str_replace_poll_title, $poll_options, $poll_length, $max_vote, $hide_vote, $tothide_vote, $str_replace_user_agent, $msg_icon, $msg_expire, $str_replace_topic_color, $post_approve, $is_mod_forum, $is_jr_admin, $topic_gallery_on);
-
+			refresh_gallery($topic_id, [$post_id]);
 			$board_config['ph_days'] = intval($board_config['ph_days']);
 			if ( ((strlen($old_post_text) - strlen($message)) > ($board_config['ph_len'] - 1) || (strlen($message) - strlen($old_post_text)) > ($board_config['ph_len'] - 1)) && $board_config['ph_days'] )
 			{
@@ -1320,7 +1320,7 @@ else if ( $submit || $confirm )
 				$post_data['topic_first_post_id'] = $post_info['topic_first_post_id'];
 			}
 			submit_post($mode, $post_data, $return_message, $return_meta, $forum_id, $topic_id, $post_id, $poll_id, $topic_type, $bbcode_on, $html_on, $smilies_on, $attach_sig, $bbcode_uid, $str_replace_username, $str_replace_subject, $str_replace_subject_e, $str_replace_message, $str_replace_poll_title, $poll_options, $poll_length, $max_vote, $hide_vote, $tothide_vote, $str_replace_user_agent, $msg_icon, $msg_expire, $str_replace_topic_color, $post_approve, $is_mod_forum, $is_jr_admin, $topic_gallery_on);
-
+			refresh_gallery($topic_id, [$post_id]);
 			$notify_n = 1;
 			$mode_n = $mode;
 			$post_data_n = $post_data;

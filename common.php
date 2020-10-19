@@ -29,6 +29,8 @@ if ( !defined('IN_PHPBB') )
 	die('Hacking attempt');
 }
 
+require __DIR__ . '/vendor/autoload.php';
+
 $time_start = microtime(true);
 
 //
@@ -135,6 +137,19 @@ include($phpbb_root_path . 'includes/sessions.'.$phpEx);
 include($phpbb_root_path . 'includes/auth.'.$phpEx);
 include($phpbb_root_path . 'includes/functions.'.$phpEx);
 include($phpbb_root_path . 'includes/db.'.$phpEx);
+
+$dbdsn = PhpBB\Data\MySQL\Connection::GetDSN($dbname, $dbhost, $dbport, $dbchars);
+
+PhpBB\Core\Context::register([
+	'values' => [
+		'query-builder' => PhpBB\Data\MySQL\Query::class,
+		'collection-prefix' => $table_prefix,
+		'file-handler' => PhpBB\Core\File::class,
+	],
+	'services' => [
+		'db-connection' => new PhpBB\Data\MySQL\Connection($dbdsn, $dbuser, $dbpasswd),
+	]
+]);
 
 
 if (!defined('IN_PHPBB')) {

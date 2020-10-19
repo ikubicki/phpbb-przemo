@@ -449,7 +449,9 @@ function submit_post($mode, &$post_data, &$message, &$meta, &$forum_id, &$topic_
 
 	$edited_sql = ($mode == 'editpost' && (!$post_data['last_post'] || $board_config['show_action_edited_self_all']) && $post_data['poster_post']) ? ", post_edit_time = $current_time, post_edit_count = post_edit_count + 1 " : "";
 
-	$sql = ($mode != 'editpost') ? "INSERT INTO " . POSTS_TABLE . " (topic_id, forum_id, poster_id, post_username, post_time, poster_ip, enable_bbcode, enable_html, enable_smilies, enable_sig, user_agent, post_icon, post_expire, post_approve, post_parent, post_order) VALUES ($topic_id, $forum_id, " . $userdata['user_id'] . ", '$post_username', $current_time, '$user_ip', $bbcode_on, $html_on, $smilies_on, $attach_sig, '$user_agent', $msg_icon, $expire_time, $post_approve, " . $post_data['post_parent'] . ", $post_order)" : "UPDATE " . POSTS_TABLE . " SET enable_bbcode = $bbcode_on, enable_html = $html_on, enable_smilies = $smilies_on, enable_sig = $attach_sig" . $edited_sql . ", post_icon = $msg_icon, post_expire = $expire_time WHERE post_id = $post_id";
+	$sql = ($mode != 'editpost') ? 
+		"INSERT INTO " . POSTS_TABLE . " (topic_id, forum_id, poster_id, post_username, post_time, poster_ip, enable_bbcode, enable_html, enable_smilies, enable_sig, user_agent, post_icon, post_expire, post_approve, post_parent, post_order) VALUES ($topic_id, $forum_id, " . $userdata['user_id'] . ", '$post_username', $current_time, '$user_ip', $bbcode_on, $html_on, $smilies_on, $attach_sig, '$user_agent', $msg_icon, $expire_time, $post_approve, " . $post_data['post_parent'] . ", $post_order)" : 
+		"UPDATE " . POSTS_TABLE . " SET enable_bbcode = $bbcode_on, enable_html = $html_on, enable_smilies = $smilies_on, enable_sig = $attach_sig" . $edited_sql . ", post_icon = $msg_icon, post_expire = $expire_time WHERE post_id = $post_id";
 	if ( !$db->sql_query($sql, BEGIN_TRANSACTION) )
 	{
 		message_die(GENERAL_ERROR, 'Error in posting', '', __LINE__, __FILE__, $sql);
@@ -553,7 +555,57 @@ function submit_post($mode, &$post_data, &$message, &$meta, &$forum_id, &$topic_
 
 function refresh_gallery($topic_id, array $post_ids = [])
 {
-	
+
+	global $db;
+	static $processed = [];
+	$topic_id = intval($topic_id);
+	$where = " p.topic_id = $topic_id ";
+	if (count($post_ids)) {
+		$where = sprintf(" p.post_id in (%s) ", implode(', ', $post_ids));
+	}
+
+	$rowset = $db->sql_query("
+		SELECT pt.post_text, p.post_id, p.topic_id, p.forum_id, p.poster_id
+		FROM " . POSTS_TABLE . " p
+		JOIN " . POSTS_TEXT_TABLE . " pt
+		ON pt.post_id = p.post_id
+		WHERE $where
+	");
+	$values = [];
+	while($row = $db->sql_fetchrow($rowset)) {
+		foreach(extract_images($row['post_text']) as $image) {
+			$values[] = sprintf(
+				"(%d, %d, %d, %d, %d, '%s')",
+				$row['forum_id'],
+				$row['topic_id'], 
+				$row['post_id'],
+				$row['poster_id'],
+				$row['post_time'],
+				$db->sql_escape($image),
+			);
+		}
+	}
+
+	if (count($values)) {
+		$query = "
+			DELETE FROM phpbb_gallery_images p
+			WHERE $where
+		";
+		$db->sql_query($query, KEEP_TRANSACTION);
+		$query = "
+			INSERT INTO phpbb_gallery_images
+			(forum_id, topic_id, post_id, poster_id, image_time, image_url)
+			VALUES 
+		" . implode(",\r\n", $values);
+		$db->sql_query($query, KEEP_TRANSACTION);
+	}
+}
+
+function extract_images($text)
+{
+	$matches = [];
+	preg_match_all('#\[img\:[a-z0-9]+\](.*?)\[\/img\:[a-z0-9]+\]#i', $text, $matches);
+	return $matches[1] ?? [];
 }
 
 

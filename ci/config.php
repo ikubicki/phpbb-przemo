@@ -7,6 +7,7 @@
 $dbms = 'mysqli';
 
 $dbhost = 'przemo_db';
+$dbport = 3306;
 $dbname = 'przemo_utf8';
 $dbuser = 'przemodbuser';
 $dbpasswd = 'przemodbpass';

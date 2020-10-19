@@ -1,11 +1,11 @@
 <?php
-// twój adres IP
+// twï¿½j adres IP
 $twoje_ip = 'TU WPISZ SWOJE IP';
-// wy³±cz sprawdzanie IP
+// wyï¿½ï¿½cz sprawdzanie IP
 $disable_ip_check = 0;
-// maksymalny czas wykonywania skryptu w sekundach, 0 je¶li nieograniczony
+// maksymalny czas wykonywania skryptu w sekundach, 0 jeï¿½li nieograniczony
 $execution_time = 300;
-// hash md5 has³a, wy³±czone je¶li puste
+// hash md5 hasï¿½a, wyï¿½ï¿½czone jeï¿½li puste
 $pass_hash = ''; 
 
 error_reporting  (E_ERROR | E_WARNING | E_PARSE);
@@ -35,7 +35,7 @@ $is_limited = @ini_get('safe_mode') || preg_match('/lycos/', get_servername()) |
 
 $page_time = new Timer;
 //
-// Sprawd¼ config.php i po³±czenie z baz±
+// Sprawdï¿½ config.php i poï¿½ï¿½czenie z bazï¿½
 //
 if( file_exists($phpbb_root_path . 'config.' . $phpEx) )
 {
@@ -47,11 +47,12 @@ else
 	$config_size_ok = false;
 	$is_config = false;
 }
-if( $config_size_ok ) // config w porz±dku, po³±cz z baz± danych
+if( $config_size_ok ) // config w porzï¿½dku, poï¿½ï¿½cz z bazï¿½ danych
 {
 	include $phpbb_root_path . 'config.' . $phpEx;
     define('BEGIN_TRANSACTION', 1);
     define('END_TRANSACTION',   2);
+    define('KEEP_TRANSACTION',  3);
 
     switch($dbms)
     {
@@ -114,24 +115,24 @@ elseif( !$is_config )
 {
 	$template->assign_block_vars('info', array(
 		'TITLE' => 'Brak pliku config.'.$phpEx,
-		'CONTENT' => 'Brak pliku config.'.$phpEx.' w g³ównym katalogu forum. Aby kontynuowaæ pracê ze skryptem musisz go utworzyæ.')
+		'CONTENT' => 'Brak pliku config.'.$phpEx.' w gï¿½ï¿½wnym katalogu forum. Aby kontynuowaï¿½ pracï¿½ ze skryptem musisz go utworzyï¿½.')
 	);
 }
 elseif( !$config_size_ok )
 {
 	$template->assign_block_vars('info', array(
 		'TITLE' => 'Niepoprawny plik config.'.$phpEx,
-		'CONTENT' => 'Plik config.'.$phpEx.' ma zbyt ma³y rozmiar by móg³ zostaæ uznany za poprawny. Aby kontynuowaæ pracê ze skryptem musisz go poprawiæ.')
+		'CONTENT' => 'Plik config.'.$phpEx.' ma zbyt maï¿½y rozmiar by mï¿½gï¿½ zostaï¿½ uznany za poprawny. Aby kontynuowaï¿½ pracï¿½ ze skryptem musisz go poprawiï¿½.')
 	);
 }
 elseif( $db_error )
 {
-	$msg = 'Podczas próby po³±czenia z baz± danych nast±pi³ b³±d.<br />';
+	$msg = 'Podczas prï¿½by poï¿½ï¿½czenia z bazï¿½ danych nastï¿½piï¿½ bï¿½ï¿½d.<br />';
 	$sql_error = $db->sql_error($connect);
 	$msg .= ' &nbsp; Error code: ' . $sql_error['code'] . '<br />';
 	$msg .= ' &nbsp; Error message: ' . $sql_error['message'];
 	$template->assign_block_vars('info', array(
-		'TITLE' => 'B³±d bazy danych',
+		'TITLE' => 'Bï¿½ï¿½d bazy danych',
 		'CONTENT' => $msg)
 	);
 }
@@ -161,7 +162,7 @@ if ( $mode == 'makeconfig' )
 
 	$config_save = false;
 	$save_result = '';
-	if( isset($_POST['download_config']) && $_POST['download_config'] == true && isset($_POST['submit_download_config']) && $_POST['submit_download_config'] == '¦ci±gnij plik' )
+	if( isset($_POST['download_config']) && $_POST['download_config'] == true && isset($_POST['submit_download_config']) && $_POST['submit_download_config'] == 'ï¿½ciï¿½gnij plik' )
 	{
 		header('Pragma: no-cache');
 		header('Content-Type: text/x-delimtext; name="config.php"');
@@ -169,7 +170,7 @@ if ( $mode == 'makeconfig' )
 		echo make_download($dbms, $dbhost, $dbname, $dbuser, $dbpasswd, $table_prefix);
 		return;
 	}
-	elseif( isset($_POST['download_config']) && $_POST['download_config'] == true && isset($_POST['submit_save_config']) && $_POST['submit_save_config'] == 'Spróbuj zapisaæ' )
+	elseif( isset($_POST['download_config']) && $_POST['download_config'] == true && isset($_POST['submit_save_config']) && $_POST['submit_save_config'] == 'Sprï¿½buj zapisaï¿½' )
 	{
 		$config_save = true;
 		$config_fname = $phpbb_root_path . 'config.' . $phpEx;
@@ -177,11 +178,11 @@ if ( $mode == 'makeconfig' )
 		{
 			fwrite($fh, make_download($dbms, $dbhost, $dbname, $dbuser, $dbpasswd, $table_prefix));
 			fclose($fh);
-			$save_result = '<br /><br /><span style="color:green"><b>Zapisano plik '.$config_fname.'</b></span>. Aby nowa konfiguracja zaczê³a dzia³aæ od¶wie¿ stronê.';
+			$save_result = '<br /><br /><span style="color:green"><b>Zapisano plik '.$config_fname.'</b></span>. Aby nowa konfiguracja zaczï¿½a dziaï¿½aï¿½ odï¿½wieï¿½ stronï¿½.';
 		}
 		else
 		{
-			$save_result = '<br /><br /><span style="color:red">Nie zapisano pliku '.$config_fname.'! Powodem mog± byæ niewystarczaj±ce prawa dostêpu do pliku. Wymagany chmod to 666.</span>';
+			$save_result = '<br /><br /><span style="color:red">Nie zapisano pliku '.$config_fname.'! Powodem mogï¿½ byï¿½ niewystarczajï¿½ce prawa dostï¿½pu do pliku. Wymagany chmod to 666.</span>';
 		}
 	}
 	$available_dbms = array(
@@ -246,7 +247,7 @@ elseif( $mode == 'forumconfig' )
 	$cookie_domain = $server_name;
 	$cookie_path = '/';
 	$cookie_secure = false;
-	// Je¶li wys³ano forumularz, zapisz konfiguracjê do bazy
+	// Jeï¿½li wysï¿½ano forumularz, zapisz konfiguracjï¿½ do bazy
 	if( isset($_POST['save_config']) && $_POST['save_config'] == 'true' )
 	{
 		$new_cfg = array(
@@ -299,7 +300,7 @@ elseif( $mode == 'forumconfig' )
 	if( isset($q_error) )
 	{
 		$template->assign_block_vars('forumconfig.result', array(
-			'RESULT' => ($q_error != '' ? $q_error : '<span style="color:green">Zapisano konfiguracjê</span>'))
+			'RESULT' => ($q_error != '' ? $q_error : '<span style="color:green">Zapisano konfiguracjï¿½</span>'))
 		);
 	}
 	$template->assign_var('PAGE_GENTIME', $page_time->elapsed());
@@ -308,7 +309,7 @@ elseif( $mode == 'forumconfig' )
 elseif( $mode == 'checkdb' )
 {
 	$template->assign_vars(array(
-		'TITLE' => 'Sprawdzanie zgodno¶ci bazy danych z phpBB modified by Przemo')
+		'TITLE' => 'Sprawdzanie zgodnoï¿½ci bazy danych z phpBB modified by Przemo')
 	);
 	if( !$config_size_ok || $db_error)
 	{
@@ -325,7 +326,7 @@ elseif( $mode == 'checkdb' )
 				$cr_query = nl2br($dbs_item['create']);
 				if( $db->sql_query($dbs_item['create']) )
 				{
-					$cr_res = '<span style="color:green">Utworzono tabelê ' . $dbs_item['table'] . '</span>';
+					$cr_res = '<span style="color:green">Utworzono tabelï¿½ ' . $dbs_item['table'] . '</span>';
 				}
 				else
 				{
@@ -350,10 +351,10 @@ elseif( $mode == 'checkdb' )
 		$table_exists = in_array($table_name, $tbls_in_db);
 		if( $verbose && !$table_exists )
 		{
-			$tables_check .= '<span style="color:red"><b>brak tabeli</b> ' . $table_name . '</span> <img src="'.$img_path.'icon_mini_ignore.gif" alt="B³±d">';
+			$tables_check .= '<span style="color:red"><b>brak tabeli</b> ' . $table_name . '</span> <img src="'.$img_path.'icon_mini_ignore.gif" alt="Bï¿½ï¿½d">';
 			if( isset($dbs_item['create']) )
 			{
-				$tables_check .= ' <a class="nav" href="?mode=checkdb&amp;create=' . $table_name . '"><i>Utwórz</i></a>';
+				$tables_check .= ' <a class="nav" href="?mode=checkdb&amp;create=' . $table_name . '"><i>Utwï¿½rz</i></a>';
 			}
 			$tables_check .= '<br />';
 		}
@@ -362,14 +363,14 @@ elseif( $mode == 'checkdb' )
 			$db->sql_query("CHECK TABLE `$table_name`");
 			$ret = $db->sql_fetchrow();
 			$error = $ret['Msg_text'] != 'OK';
-			$tables_check .= ( $error ) ? '<span style="color:red"><b>tabela uszkodzona</b> ' . $table_name . '</span> <img src="'.$img_path.'icon_mini_ignore.gif" alt="B³±d"><br />' : '';
+			$tables_check .= ( $error ) ? '<span style="color:red"><b>tabela uszkodzona</b> ' . $table_name . '</span> <img src="'.$img_path.'icon_mini_ignore.gif" alt="Bï¿½ï¿½d"><br />' : '';
 			if( !$error && isset($dbs_item['fields']) )
 			{
 				$db->sql_query("SHOW COLUMNS FROM `$table_name`");
 				$numrows = $db->sql_numrows();
 				if( $numrows < $dbs_item['fields'] )
 				{
-					$tables_check .= '<span style="color:red"><b>tabela </b> ' . $table_name . ' zawiera za ma³o pól ('.$numrows.' zamiast '.$dbs_item['fields'].')</span> <img src="'.$img_path.'icon_mini_ignore.gif" alt="B³±d"><br />';
+					$tables_check .= '<span style="color:red"><b>tabela </b> ' . $table_name . ' zawiera za maï¿½o pï¿½l ('.$numrows.' zamiast '.$dbs_item['fields'].')</span> <img src="'.$img_path.'icon_mini_ignore.gif" alt="Bï¿½ï¿½d"><br />';
 				}
 			}
 			if( !$error && $table_name == $table_prefix . 'config' )
@@ -378,13 +379,13 @@ elseif( $mode == 'checkdb' )
 				$ret = $db->sql_fetchrow();
 				if ( $ret['Type'] != 'text' )
 				{
-					$tables_check .= '<span style="color:red"><b>tabela </b> ' . $table_name . ' ma niepoprawny typ kolumny config_value</span> <img src="'.$img_path.'icon_mini_ignore.gif" alt="B³±d">';
+					$tables_check .= '<span style="color:red"><b>tabela </b> ' . $table_name . ' ma niepoprawny typ kolumny config_value</span> <img src="'.$img_path.'icon_mini_ignore.gif" alt="Bï¿½ï¿½d">';
 					$tables_check .= ' <a class="nav" href="?mode=checkdb&amp;config_update=text"><i>Napraw</i></a><br />';
 				}
 			}
 		}
 	}
-	$tables_check = ( $tables_check == '' ) ? '<span style="color:green">Wszystkie tabele (' . count($dbs) . ') istniej± i nie zawieraj± b³êdów</span> <img src="'.$img_path.'icon_mini_register.gif" alt="Ok"><br />' : $tables_check ;
+	$tables_check = ( $tables_check == '' ) ? '<span style="color:green">Wszystkie tabele (' . count($dbs) . ') istniejï¿½ i nie zawierajï¿½ bï¿½ï¿½dï¿½w</span> <img src="'.$img_path.'icon_mini_register.gif" alt="Ok"><br />' : $tables_check ;
 	$template->assign_block_vars('db_check', array(
 		'DB' => $dbuser.'.'.$dbname.' @ '.$dbhost,
 		'TABES_CHECK' => $tables_check,
@@ -437,7 +438,7 @@ elseif( $mode == 'sqllist' )
 	else
 	{
 		$template->assign_block_vars('sqllist.no_items', array(
-			'MSG' => 'Brak plików w przeszukanych katalogach')
+			'MSG' => 'Brak plikï¿½w w przeszukanych katalogach')
 		);
 	}
 	$template->assign_var('PAGE_GENTIME', $page_time->elapsed());
@@ -482,7 +483,7 @@ elseif( $mode == 'dbread' )
 		'error_notify_continue', 'break', 'show_errors');
 	if( !in_array($step, $allowed_steps) )
 	{
-		$msg = "Z³e wywo³anie skryptu.";
+		$msg = "Zï¿½e wywoï¿½anie skryptu.";
 		$template->assign_vars(array(
 			'TITLE' => 'Wczytywanie zrzutu bazy danych...',
 			'CONTENT' => $msg,
@@ -511,7 +512,7 @@ elseif( $mode == 'dbread' )
 			$tables[] = '_dbloader_err';
 			$tables = escape_str(serialize($tables));
 			$db->sql_freeresult($result);
-			// Wpisz zmienne do bazy danych, bêd± ³adowane do tablicy $rt_cfg
+			// Wpisz zmienne do bazy danych, bï¿½dï¿½ ï¿½adowane do tablicy $rt_cfg
 			$queries = array(
 "CREATE TABLE IF NOT EXISTS `_dbloader` (
 `config` VARCHAR( 255 ) NOT NULL ,
@@ -567,7 +568,7 @@ PRIMARY KEY ( `id` ) ) DEFAULT CHARSET latin2 COLLATE latin2_general_ci",
 	//
 	elseif( $step == 'go')
 	{
-		// ustaw limit czasu wykonywania skryptu, nie dzia³a w Safe Mode
+		// ustaw limit czasu wykonywania skryptu, nie dziaï¿½a w Safe Mode
 		@set_time_limit($execution_time);
 
 		$fr = new FileReader($rt_data['file_name'], $rt_data['file_size']);
@@ -591,9 +592,9 @@ PRIMARY KEY ( `id` ) ) DEFAULT CHARSET latin2 COLLATE latin2_general_ci",
 		while( $i <= $rt_data['max_queries'] && is_array($query = $sqlreader->get_query()) )
 		{
 			$i++;
-			// rozbij kawa³ek zapytania
+			// rozbij kawaï¿½ek zapytania
 			$tokens = explode(' ', str_replace(array("\n", "\r"), array(' ', ''), substr($query['query'], 0, 64)));
-			// je¶li INSERT i co¶ pomijamy lub blokujemy...
+			// jeï¿½li INSERT i coï¿½ pomijamy lub blokujemy...
 			if( ($rt_data['omit_search'] || $rt_data['lock_tables'])
 				&& $tokens[0] == 'INSERT' )
 			{
@@ -617,7 +618,7 @@ PRIMARY KEY ( `id` ) ) DEFAULT CHARSET latin2 COLLATE latin2_general_ci",
 					}
 				}
 			}
-			// sprawd¼ czy zapytanie to LOCK TABLES
+			// sprawdï¿½ czy zapytanie to LOCK TABLES
 			if( $rt_data['lock_tables'] && $tokens[0] == 'LOCK'
 				&& !in_array($tokens[2], $locked) )
 			{
@@ -629,7 +630,7 @@ PRIMARY KEY ( `id` ) ) DEFAULT CHARSET latin2 COLLATE latin2_general_ci",
 			// wykonaj zapytanie
 			if( !$db->sql_query($query['query']) )
 			{
-				// b³±d...
+				// bï¿½ï¿½d...
 				$is_error = true;
 				$err = $db->sql_error();
 
@@ -673,7 +674,7 @@ PRIMARY KEY ( `id` ) ) DEFAULT CHARSET latin2 COLLATE latin2_general_ci",
 			}
 			$gentime['php']->start();
 		}
-		// je¶li jakie¶ tabele zablokowane, odblokuj
+		// jeï¿½li jakieï¿½ tabele zablokowane, odblokuj
 		if( count($locked) > 0 )
 		{
 			$db->sql_query('UNLOCK TABLES');
@@ -686,7 +687,7 @@ PRIMARY KEY ( `id` ) ) DEFAULT CHARSET latin2 COLLATE latin2_general_ci",
 		echo generate_progress($rt_data,
 			($do_redir
 			? substr($query['query'], 0, 300)
-			: 'Zakoñczono wczytywanie' )
+			: 'Zakoï¿½czono wczytywanie' )
 			);
 		flush();
 
@@ -717,7 +718,7 @@ VALUES ( '".$errors[$i]['pos']."', '".$errors[$i]['code']."', '".escape_str($err
 			if( !$db->sql_query($query) )
 			{
 				$err = $db->sql_error();
-				echo 'B³±d zapisu konfiguracji ('.$err['code'].': '.xhtmlspecialchars($err['message']).')<br />'.xhtmlspecialchars($query).'<hr />';
+				echo 'Bï¿½ï¿½d zapisu konfiguracji ('.$err['code'].': '.xhtmlspecialchars($err['message']).')<br />'.xhtmlspecialchars($query).'<hr />';
 				$save_error = true;
 			}
 		}
@@ -822,7 +823,7 @@ VALUES ( '".$errors[$i]['pos']."', '".$errors[$i]['code']."', '".escape_str($err
 	//
 	elseif( $step == 'show_errors' )
 	{
-		// ustaw limit czasu wykonywania skryptu, nie dzia³a w Safe Mode
+		// ustaw limit czasu wykonywania skryptu, nie dziaï¿½a w Safe Mode
 		@set_time_limit($execution_time);
 
 		$template->assign_block_vars('dbread', array(
@@ -850,7 +851,7 @@ VALUES ( '".$errors[$i]['pos']."', '".$errors[$i]['code']."', '".escape_str($err
 			);
 		}
 		$template->assign_vars(array(
-			'TITLE' => 'Wczytywanie zrzutu bazy danych - raport o b³êdach',
+			'TITLE' => 'Wczytywanie zrzutu bazy danych - raport o bï¿½ï¿½dach',
 			'PAGE_GENTIME' => $page_time->elapsed())
 		);
 		$template->pparse('body');
@@ -878,7 +879,7 @@ elseif( $mode == 'misc' )
 		}
 		else
 		{
-			$res = '<div class="code">' . $query . '</div><br /><span style="color:green">Baza <b>' . $_POST['dbcreate_dbname'] . '</b> zosta³a ' . ( isset($_POST['dbcreate_create']) ? 'utworzona' : 'usuniêta' ) . '.</span>';
+			$res = '<div class="code">' . $query . '</div><br /><span style="color:green">Baza <b>' . $_POST['dbcreate_dbname'] . '</b> zostaï¿½a ' . ( isset($_POST['dbcreate_create']) ? 'utworzona' : 'usuniï¿½ta' ) . '.</span>';
 		}
 	 	$_SESSION['dbcreate_res'] = $res;
 	}
@@ -900,13 +901,13 @@ elseif( $mode == 'misc' )
 				}
 				if( $res == '' )
 				{
-					$res = '<span style="color:green">Tabele zosta³y usuniête.</span>';
+					$res = '<span style="color:green">Tabele zostaï¿½y usuniï¿½te.</span>';
 				}
 			}
 		}
 		else
 		{
-			$res = 'Wpierw wype³nij pole tekstowe.';
+			$res = 'Wpierw wypeï¿½nij pole tekstowe.';
 		}
 		$_SESSION['bbdrop_res'] = $res . '<br />';
 	}
@@ -972,32 +973,32 @@ else
 		}
 		else
 		{
-			$content .= '<span style="color:red">prawdopodobnie pusty (ma³y rozmiar)</span> <img src="'.$img_path.'icon_mini_ignore.gif" alt="B³±d"><br />';  
+			$content .= '<span style="color:red">prawdopodobnie pusty (maï¿½y rozmiar)</span> <img src="'.$img_path.'icon_mini_ignore.gif" alt="Bï¿½ï¿½d"><br />';  
 		}
 	}
 	else
 	{
-		$content .= '<span style="color:red">brak pliku</span> <img src="'.$img_path.'icon_mini_ignore.gif" alt="B³±d"><br />';
+		$content .= '<span style="color:red">brak pliku</span> <img src="'.$img_path.'icon_mini_ignore.gif" alt="Bï¿½ï¿½d"><br />';
 	}
 
 	$content .= '<br /><b>baza danych</b><br />';
 	if( !$db_error )
 	{
-		$content .= '<span style="color:green">nawi±zano po³±czenie ('.$dbuser.'.'.$dbname.' @ '.$dbhost.')</span> <img src="'.$img_path.'icon_mini_register.gif" alt="Ok"><br />';
-		$content .= ( $tables_deleted ) ? '<span style="color:green">usuniêto tymczasowe tabele _dloader i _dbloader_err</span> <img src="'.$img_path.'icon_mini_register.gif" alt="Ok"><br />' : '';
-		$content .= ( $not_supported ) ? '<span style="color:red">nieobs³ugiwany typ bazy danych: <b>'.$dbms.'</b>, skrypt mo¿e nie dzia³aæ poprawnie</span> <img src="'.$img_path.'icon_mini_ignore.gif" alt="B³±d"><br />' : '';
+		$content .= '<span style="color:green">nawiï¿½zano poï¿½ï¿½czenie ('.$dbuser.'.'.$dbname.' @ '.$dbhost.')</span> <img src="'.$img_path.'icon_mini_register.gif" alt="Ok"><br />';
+		$content .= ( $tables_deleted ) ? '<span style="color:green">usuniï¿½to tymczasowe tabele _dloader i _dbloader_err</span> <img src="'.$img_path.'icon_mini_register.gif" alt="Ok"><br />' : '';
+		$content .= ( $not_supported ) ? '<span style="color:red">nieobsï¿½ugiwany typ bazy danych: <b>'.$dbms.'</b>, skrypt moï¿½e nie dziaï¿½aï¿½ poprawnie</span> <img src="'.$img_path.'icon_mini_ignore.gif" alt="Bï¿½ï¿½d"><br />' : '';
 		if( $cfg_table_ex )
 		{
-			$content .= '<span style="color:green">znaleziono tabelê '.$table_prefix.'config</span> <img src="'.$img_path.'icon_mini_register.gif" alt="Ok"><br />';
+			$content .= '<span style="color:green">znaleziono tabelï¿½ '.$table_prefix.'config</span> <img src="'.$img_path.'icon_mini_register.gif" alt="Ok"><br />';
 		}
 		else
 		{
-			$content .= '<span style="color:red">nie znaleziono tabeli '.$table_prefix.'config</span> <img src="'.$img_path.'icon_mini_ignore.gif" alt="B³±d"><br />';
+			$content .= '<span style="color:red">nie znaleziono tabeli '.$table_prefix.'config</span> <img src="'.$img_path.'icon_mini_ignore.gif" alt="Bï¿½ï¿½d"><br />';
 		}
 	}
 	else
 	{
-		$content .= '<span style="color:red">nie nawi±zano po³±czenia</span> <img src="'.$img_path.'icon_mini_ignore.gif" alt="B³±d"><br />';
+		$content .= '<span style="color:red">nie nawiï¿½zano poï¿½ï¿½czenia</span> <img src="'.$img_path.'icon_mini_ignore.gif" alt="Bï¿½ï¿½d"><br />';
 		if( $config_size_ok )
 		{
 			$sql_error = $db->sql_error($connect);
@@ -1009,18 +1010,18 @@ else
 	$gz = function_exists('gzopen');
 	$bz2 = function_exists('bzdecompress');
 	$content .= ( $is_limited ) ? '<span style="color:red">Safe Mode lub serwer Lycos</span><br />' : '';
-	$content .= '<span style="color:'.($gz ? 'green' : 'red').'">obs³uga gzip (.gz)</span> <img src="'.$img_path.'icon_mini_'.($gz ? 'register' : 'ignore').'.gif" alt="'.($gz ? 'Ok' : 'B³±d').'"><br />';
-	$content .= '<span style="color:'.($bz2 ? 'green' : 'red').'">obs³uga <a href="http://sources.redhat.com/bzip2/" target="_blank">&raquo; Bzip2</a> (.bz2)</span> <img src="'.$img_path.'icon_mini_'.($bz2 ? 'register' : 'ignore').'.gif" alt="'.($bz2 ? 'Ok' : 'B³±d').'"><br />';
+	$content .= '<span style="color:'.($gz ? 'green' : 'red').'">obsï¿½uga gzip (.gz)</span> <img src="'.$img_path.'icon_mini_'.($gz ? 'register' : 'ignore').'.gif" alt="'.($gz ? 'Ok' : 'Bï¿½ï¿½d').'"><br />';
+	$content .= '<span style="color:'.($bz2 ? 'green' : 'red').'">obsï¿½uga <a href="http://sources.redhat.com/bzip2/" target="_blank">&raquo; Bzip2</a> (.bz2)</span> <img src="'.$img_path.'icon_mini_'.($bz2 ? 'register' : 'ignore').'.gif" alt="'.($bz2 ? 'Ok' : 'Bï¿½ï¿½d').'"><br />';
 	
 	$pg_title = 'phpBB DumpLoader ' . $version;
-	$pg_title .= ( $has_access ) ? '' : ' &nbsp; <span style="color:red">wy³±czony</span>';
+	$pg_title .= ( $has_access ) ? '' : ' &nbsp; <span style="color:red">wyï¿½ï¿½czony</span>';
 	$conf_current = '<?php
-// twój adres IP
+// twï¿½j adres IP
 $twoje_ip = \''.$twoje_ip.'\';
 ... ';
 	$conf_proper = '<?php
-// twój adres IP
-$twoje_ip = \''.$_SERVER['REMOTE_ADDR'].'\';'.($_SERVER['REMOTE_ADDR'] != $twoje_ip ? ' // zmieñ tu' : '').'
+// twï¿½j adres IP
+$twoje_ip = \''.$_SERVER['REMOTE_ADDR'].'\';'.($_SERVER['REMOTE_ADDR'] != $twoje_ip ? ' // zmieï¿½ tu' : '').'
 ... ';
 	$conf_current = str_replace("\r\n", "\n", $conf_current);
 	$conf_current = highlight_string($conf_current, true);
