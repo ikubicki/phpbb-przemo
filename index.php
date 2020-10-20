@@ -29,27 +29,14 @@ include($phpbb_root_path . 'includes/functions_selects.'.$phpEx);
 
 
 // FORUMS HIERARCHY v2
-
-$callback = function($entity) {
-	global $board_config;
-	print $board_config['sitename'] . " : ".$entity->getName() . ':' . $entity->getNesting() . "<br>";
-};
-
 $callback = function ($entity) {
 	printf ('%s %s <br />', str_repeat('&nbsp; ', $entity->getNesting()), $entity->getName());
 };
 
-$tree = new PhpBB\Forum\Tree;
-$tree->cache($phpbb_root_path . '/cache/tree.data.php');
-if (!$tree->isCached()) {
-	$tree->import((new PhpBB\Model\CategoriesCollection)->all());
-	$tree->import((new PhpBB\Model\ForumsCollection)->all());
-	$tree->storeCache();
-}
+$tree = PhpBB\Core\Context::getService('tree');
 
 // full nested tree
 $tree->iterate($callback);
-
 
 print '<hr />';
 

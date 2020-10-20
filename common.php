@@ -148,9 +148,18 @@ PhpBB\Core\Context::register([
 	],
 	'services' => [
 		'db-connection' => new PhpBB\Data\MySQL\Connection($dbdsn, $dbuser, $dbpasswd),
+		'tree' => new PhpBB\Forum\Tree,
 	]
 ]);
 
+// build forums tree
+$forums_tree = PhpBB\Core\Context::getService('tree');
+$forums_tree->cache($phpbb_root_path . '/cache/tree.data.php');
+if (!$forums_tree->isCached()) {
+	$forums_tree->import((new PhpBB\Model\CategoriesCollection)->all());
+	$forums_tree->import((new PhpBB\Model\ForumsCollection)->all());
+	$forums_tree->storeCache();
+}
 
 if (!defined('IN_PHPBB')) {
 	var_adds($HTTP_GET_VARS, false);
