@@ -27,7 +27,7 @@ include($phpbb_root_path . 'extension.inc');
 include($phpbb_root_path . 'common.'.$phpEx);
 include($phpbb_root_path . 'includes/functions_selects.'.$phpEx); 
 
-
+/*
 // FORUMS HIERARCHY v2
 $callback = function ($entity) {
 	printf ('%s %s <br />', str_repeat('&nbsp; ', $entity->getNesting()), $entity->getName());
@@ -52,7 +52,12 @@ foreach($tree->trace($forum) as $el) {
 }
 print '<hr />';
 print $forum->getLatestTopic()->getTitle();
+print '<hr />';
 
+$req = PhpBB\Core\Context::getService('request');
+var_dump($req->headers->accept_encoding);
+var_dump($req->post->c);
+var_dump($req->get->c);
 exit;
 /**/
 if ( $board_config['check_address'] )

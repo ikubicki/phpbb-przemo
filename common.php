@@ -148,6 +148,7 @@ PhpBB\Core\Context::register([
 		'query-builder' => PhpBB\Data\MySQL\Query::class,
 	],
 	'services' => [
+		'request' => new PhpBB\Core\Request,
 		'encryption' => new PhpBB\Core\Encryption($encryption_key),
 		'db-connection' => new PhpBB\Data\MySQL\Connection($dbdsn, $dbuser, $dbpasswd),
 		'tree' => new PhpBB\Forum\Tree,
