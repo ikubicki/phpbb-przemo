@@ -63,6 +63,8 @@ $forum = (new PhpBB\Model\ForumsCollection)->get(6);
 foreach($tree->trace($forum) as $el) {
 	printf (' &bull; <a href="%s">%s</a>', $el->getUrl(), $el->getName());
 }
+print '<hr />';
+print $forum->getLatestTopic()->getTitle();
 
 exit;
 /**/

@@ -8,6 +8,7 @@ class Forum extends ForumHierarchicalEntity
     //public $cat_id;
     //public $forum_name;
 
+    protected $latest_topic;
 
     public function getName()
     {
@@ -45,5 +46,13 @@ class Forum extends ForumHierarchicalEntity
     public function getUrl()
     {
         return 'viewforum.php?f=' . $this->forum_id;
+    }
+
+    public function getLatestTopic()
+    {
+        if (!$this->latest_topic && $this->forum_last_post_id) {
+            $this->latest_topic = (new TopicsCollection)->get($this->forum_last_post_id);
+        }
+        return $this->latest_topic;
     }
 }

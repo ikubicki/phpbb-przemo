@@ -67,7 +67,7 @@ class Collection
 
     public function one($criteria, array $order = [], $offset = 0)
     {
-        return $this->find($criteria, $order, 1, $offset);
+        return $this->find($criteria, $order, 1, $offset)[0] ?? false;
     }
 
     public function all(array $order = [])
