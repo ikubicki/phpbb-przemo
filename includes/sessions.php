@@ -372,6 +372,9 @@ function session_begin($user_id, $user_ip, $page_id, $auto_create = 0, $enable_a
 
 	if ($user_id != ANONYMOUS)
 	{
+
+		PhpBB\Core\Context::getService('session')->set(['user_id' => $user_id]);
+
 		if (isset($sessiondata['autologinid']) && (string) $sessiondata['autologinid'] != '' && $user_id)
 		{
 			// Auto login key reset if last visit user IP is different
@@ -842,6 +845,8 @@ function session_end($session_id, $user_id)
 
 	setcookie($cookiename . '_data', '', $current_time - 31536000, $cookiepath, $cookiedomain, $cookiesecure);
 	setcookie($cookiename . '_sid', '', $current_time - 31536000, $cookiepath, $cookiedomain, $cookiesecure);
+
+	PhpBB\Core\Context::getService('session')->terminate();
 
 	return true;
 }

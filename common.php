@@ -142,15 +142,27 @@ $dbdsn = PhpBB\Data\MySQL\Connection::GetDSN($dbname, $dbhost, $dbport, $dbchars
 
 PhpBB\Core\Context::register([
 	'values' => [
-		'query-builder' => PhpBB\Data\MySQL\Query::class,
 		'collection-prefix' => $table_prefix,
 		'file-handler' => PhpBB\Core\File::class,
+		'cookie-handler' => PhpBB\Core\Cookie::class,
+		'query-builder' => PhpBB\Data\MySQL\Query::class,
 	],
 	'services' => [
+		'encryption' => new PhpBB\Core\Encryption($encryption_key),
 		'db-connection' => new PhpBB\Data\MySQL\Connection($dbdsn, $dbuser, $dbpasswd),
 		'tree' => new PhpBB\Forum\Tree,
 	]
 ]);
+PhpBB\Core\Context::registerService('session', new PhpBB\Forum\Session(
+	new PhpBB\Core\Cookie([
+		'name' => 'sess',
+		'path' => '/',
+		'secure' => true,
+		'samesite' => true,
+	])
+));
+
+$user_session = PhpBB\Core\Context::getService('session');
 
 // build forums tree
 $forums_tree = PhpBB\Core\Context::getService('tree');
