@@ -37,6 +37,7 @@ $time_start = microtime(true);
 error_reporting  (E_ERROR | E_WARNING | E_PARSE); // This will NOT report uninitialized variables
 // ini_set('error_reporting', E_ALL);
 // ini_set('display_errors' , true);
+// ob_start();
 
 // The following code (unsetting globals)
 // Thanks to Matt Kavanagh and Stefan Esser for providing feedback as well as patch files
@@ -152,6 +153,7 @@ PhpBB\Core\Context::register([
 		'encryption' => new PhpBB\Core\Encryption($encryption_key),
 		'db-connection' => new PhpBB\Data\MySQL\Connection($dbdsn, $dbuser, $dbpasswd),
 		'tree' => new PhpBB\Forum\Tree,
+		'templates' => new PhpBB\Forum\Templates($phpbb_root_dir ?: '.', ['cache' => false, 'debug' => true]),
 	]
 ]);
 PhpBB\Core\Context::registerService('session', new PhpBB\Forum\Session(
@@ -162,8 +164,28 @@ PhpBB\Core\Context::registerService('session', new PhpBB\Forum\Session(
 		'samesite' => true,
 	])
 ));
-
+// header('Content-Type:text/plain');
 $user_session = PhpBB\Core\Context::getService('session');
+// print_r($user_session);
+
+$tpl = PhpBB\Core\Context::getService('templates');
+$tpl->vars(null, [
+	'VARIABLE' => 'this is the VARIABLE',
+	'cond1' => mt_rand(0, 1),
+]);
+$tpl->block('block1.block2', [
+	'prop1' => 'val1',
+	'prop2' => 'val2',
+	'cond1' => mt_rand(0, 1),
+]);
+$tpl->block('block1.block2', [
+	'prop1' => 'val3',
+	'prop2' => 'val4',
+	'cond1' => mt_rand(0, 1),
+]);
+$tpl->display('example.tpl');
+exit;
+
 
 // build forums tree
 $forums_tree = PhpBB\Core\Context::getService('tree');
