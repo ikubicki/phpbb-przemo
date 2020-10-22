@@ -891,11 +891,7 @@ function make_jumpbox($action, $match_forum_id = 0)
 	$boxstring .= '<option value="-1">' . $lang['Select_forum'] . '</option><option value="-1"></option>' . get_tree_option(POST_FORUM_URL . $match_forum_id);
 	$boxstring .= '</select><input type="hidden" name="sid" value="' . $userdata['session_id'] . '" />';
 
-	// dump this to template
-	$template->set_filenames(array(
-		'jumpbox' => 'jumpbox.tpl')
-	);
-	$template->assign_vars(array(
+	$template->vars(array(
 		'L_GO' => $lang['Go'],
 		'L_JUMP_TO' => $lang['Jump_to'],
 		'L_SELECT_FORUM' => $lang['Select_forum'],
@@ -903,7 +899,7 @@ function make_jumpbox($action, $match_forum_id = 0)
 		'S_JUMPBOX_SELECT' => $boxstring,
 		'S_JUMPBOX_ACTION' => append_sid($action))
 	);
-	$template->assign_var_from_handle('JUMPBOX', 'jumpbox');
+	$template->var('JUMPBOX', $template->render('jumpbox.tpl'));
 
 	return;
 }
@@ -1216,7 +1212,7 @@ function generate_pagination($base_url, $num_items, $per_page, $start_item, $add
 			$pages_jumpbox .= '<option value="' . ($per_page * $i) . '"' . ((($on_page-1) == $i) ? ' selected="selected"' : '') . '>' . ($i+1) . '</option>';
 		}
 
-		$template->assign_block_vars('pagina_pages', array('OPTIONS' => $pages_jumpbox));
+		$template->block('pagina_pages', array('OPTIONS' => $pages_jumpbox));
 	}
 
 	$template->set_filenames(array(
@@ -1225,7 +1221,7 @@ function generate_pagination($base_url, $num_items, $per_page, $start_item, $add
 
 	if ( $total_pages > 10 )
 	{
-		$template->assign_vars(array(
+		$template->vars(array(
 			'L_ALL_AVAILABLE' => $lang['All_available'],
 			'BASE_URL' => append_sid($base_url))
 		);
@@ -1233,22 +1229,22 @@ function generate_pagination($base_url, $num_items, $per_page, $start_item, $add
 
 	$base_url = (strpos($base_url, '?') !== false) ? $base_url . '&amp;' : $base_url . '?';
 
-	$template->assign_vars(array(
+	$template->vars(array(
 		'PAGE_NUMBER' => sprintf($lang['Page_of'], $on_page, $total_pages),
 		'L_GOTO_PAGE' => $lang['Goto_page'] . ': ')
 	);
 
-	$template->assign_block_vars('pages.begin', array());
+	$template->block('pages.begin', array());
 
 	if ( $add_prevnext_text )
 	{
-		$template->assign_vars(array(
+		$template->vars(array(
 			'L_BACK' => $lang['Previous'],
 			'L_NEXT' => $lang['Next'])
 		);
 		if ( $on_page > 1 )
 		{
-			$template->assign_block_vars('pages.begin', array(
+			$template->block('pages.begin', array(
 				'URL' => append_sid($base_url . "start=" . ( ( $on_page - 2 ) * $per_page ) ))
 			);
 		}
@@ -1263,13 +1259,13 @@ function generate_pagination($base_url, $num_items, $per_page, $start_item, $add
 		{
 			if ( $i == $on_page )
 			{
-				$template->assign_block_vars('pages.onpage', array(
+				$template->block('pages.onpage', array(
 					'NUMBER' => $i)
 				);
 			}
 			else
 			{
-				$template->assign_block_vars('pages.page', array(
+				$template->block('pages.page', array(
 					'URL' => append_sid($base_url . "start=" . ( ( $i - 1 ) * $per_page ) ),
 					'NUMBER' => $i)
 				);
@@ -1277,7 +1273,7 @@ function generate_pagination($base_url, $num_items, $per_page, $start_item, $add
 
 			if ( $i < $init_page_max )
 			{
-				$template->assign_block_vars('pages.separator', array());
+				$template->block('pages.separator', array());
 			}
 		}
 
@@ -1287,11 +1283,11 @@ function generate_pagination($base_url, $num_items, $per_page, $start_item, $add
 			{
 				if ( $on_page > 5 )
 				{
-					$template->assign_block_vars('pages.allpages', array());
+					$template->block('pages.allpages', array());
 				}
 				else
 				{
-					$template->assign_block_vars('pages.separator', array());
+					$template->block('pages.separator', array());
 				}
 
 				$init_page_min = ( $on_page > 4 ) ? $on_page : 5;
@@ -1301,13 +1297,13 @@ function generate_pagination($base_url, $num_items, $per_page, $start_item, $add
 				{
 					if ($i == $on_page)
 					{
-						$template->assign_block_vars('pages.onpage', array(
+						$template->block('pages.onpage', array(
 							'NUMBER' => $i)
 						);
 					}
 					else
 					{
-						$template->assign_block_vars('pages.page', array(
+						$template->block('pages.page', array(
 							'URL' => append_sid($base_url . "start=" . ( ( $i - 1 ) * $per_page ) ),
 							'NUMBER' => $i)
 						);
@@ -1315,35 +1311,35 @@ function generate_pagination($base_url, $num_items, $per_page, $start_item, $add
 
 					if ( $i < $init_page_max + 1 )
 					{
-						$template->assign_block_vars('pages.separator', array());
+						$template->block('pages.separator', array());
 					}
 				}
 
 				if ( $on_page < $total_pages - 4 )
 				{
-					$template->assign_block_vars('pages.allpages', array());
+					$template->block('pages.allpages', array());
 				}
 				else
 				{
-					$template->assign_block_vars('pages.separator', array());
+					$template->block('pages.separator', array());
 				}
 			}
 			else
 			{
-				$template->assign_block_vars('pages.allpages', array());
+				$template->block('pages.allpages', array());
 			}
 
 			for($i = $total_pages - 2; $i < $total_pages + 1; $i++)
 			{
 				if ( $i == $on_page )
 				{
-					$template->assign_block_vars('pages.onpage', array(
+					$template->block('pages.onpage', array(
 						'NUMBER' => $i)
 					);
 				}
 				else
 				{
-					$template->assign_block_vars('pages.page', array(
+					$template->block('pages.page', array(
 						'URL' => append_sid($base_url . "start=" . ( ( $i - 1 ) * $per_page ) ),
 						'NUMBER' => $i)
 					);
@@ -1351,7 +1347,7 @@ function generate_pagination($base_url, $num_items, $per_page, $start_item, $add
 
 				if ( $i < $total_pages )
 				{
-					$template->assign_block_vars('pages.separator', array());
+					$template->block('pages.separator', array());
 				}
 			}
 		}
@@ -1362,20 +1358,20 @@ function generate_pagination($base_url, $num_items, $per_page, $start_item, $add
 		{
 			if ( $i == $on_page ) 
 			{
-				$template->assign_block_vars('pages.onpage', array(
+				$template->block('pages.onpage', array(
 					'NUMBER' => $i)
 				);
 			}
 			else
 			{
-				$template->assign_block_vars('pages.page', array(
+				$template->block('pages.page', array(
 					'URL' => append_sid($base_url . "start=" . ( ( $i - 1 ) * $per_page ) ),
 					'NUMBER' => $i)
 				);
 			}
 			if ( $i < $total_pages )
 			{
-				$template->assign_block_vars('pages.separator', array());
+				$template->block('pages.separator', array());
 			}
 		}
 	}
@@ -1384,13 +1380,13 @@ function generate_pagination($base_url, $num_items, $per_page, $start_item, $add
 	{
 		if ( $on_page < $total_pages )
 		{
-			$template->assign_block_vars('pages.end', array(
+			$template->block('pages.end', array(
 				'URL' => append_sid($base_url . "start=" . ( $on_page * $per_page ) ))
 			);
 		}
 	}
 
-	$template->assign_var_from_handle('PAGINATION', 'pagination');
+	$template->var('PAGINATION', $template->render('pagination.tpl'));
 
 	return;
 }
@@ -1757,7 +1753,7 @@ function message_die($msg_code, $msg_text = '', $msg_title = '', $err_line = '',
 			);
 		}
 
-		$template->assign_vars(array(
+		$template->vars(array(
 			'MESSAGE_TITLE' => $msg_title,
 			'MESSAGE_TEXT' => $msg_text)
 		);
@@ -1874,7 +1870,7 @@ function password_box ($forum_id, $s_form_action)
 		'body' => 'password_body.tpl')
 	);
 
-	$template->assign_vars(array(
+	$template->vars(array(
 		'L_ENTER_PASSWORD' => $lang['Enter_forum_password'],
 		'L_SUBMIT' => $lang['Submit'],
 		'L_CANCEL' => $lang['Cancel'],
@@ -2550,7 +2546,7 @@ function generate_smilies($mode, $page_id)
 			{
 				if (!$col)
 				{
-					$template->assign_block_vars('smilies_row', array());
+					$template->block('smilies_row', array());
 				}
 
 				$sizes = @getimagesize($board_config['smilies_path'] . '/' . $smile_url);
@@ -2558,7 +2554,7 @@ function generate_smilies($mode, $page_id)
 
 				$th_block = ($mode == 'quickreply') ? 'quick_reply' : 'smilies_row';
 
-				$template->assign_block_vars($th_block . '.smilies_col', array(
+				$template->block($th_block . '.smilies_col', array(
 					'SMILEY_CODE' => ' ' . $data['code'] . ' ',
 					'SMILEY_IMG' => $board_config['smilies_path'] . '/' . $smile_url . $width,
 					'SMILEY_DESC' => str_replace('\\\\', '\\', $data['code']))
@@ -2583,15 +2579,15 @@ function generate_smilies($mode, $page_id)
 
 			if ($mode == 'inline' && $num_smilies > $inline_rows * $inline_columns)
 			{
-				$template->assign_block_vars('switch_smilies_extra', array());
+				$template->block('switch_smilies_extra', array());
 
-				$template->assign_vars(array(
+				$template->vars(array(
 					'L_MORE_SMILIES' => $lang['More_emoticons'], 
 					'U_MORE_SMILIES' => append_sid("posting.$phpEx?mode=smilies"))
 				);
 			}
 
-			$template->assign_vars(array(
+			$template->vars(array(
 				'L_EMOTICONS' => $lang['Emoticons'], 
 				'L_CLOSE_WINDOW' => $lang['Close_window'], 
 				'S_SMILIES_COLSPAN' => $s_colspan)

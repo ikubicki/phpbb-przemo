@@ -238,7 +238,7 @@ if ( $board_config['login_require'] && !$session_logged_in )
 //
 // Start auth check
 //
-$is_auth = array();
+$is_auth = [];
 $is_auth = $tree['auth'][POST_FORUM_URL . $forum_id];
 
 if( !$is_auth['auth_read'] )
@@ -262,8 +262,8 @@ $forum_view_moderate = ($forum_topic_data['forum_moderate'] && !$is_auth['auth_m
 
 if ( $is_auth['auth_mod'] )
 {
-    $accept_post = get_vars('accept_post', array(), 'POST', true, 1);
-    $reject_post = get_vars('reject_post', array(), 'POST', true, 1);
+    $accept_post = get_vars('accept_post', [], 'POST', true, 1);
+    $reject_post = get_vars('reject_post', [], 'POST', true, 1);
     if (!empty($accept_post)){
         foreach( $accept_post as $k => $v ){
             if( !in_array($v, $reject_post) ){
@@ -493,7 +493,7 @@ if( $userdata['session_logged_in'] )
 				}
 			}
 			
-			$template->assign_vars(array(
+			$template->vars(array(
 				'META' => '<meta http-equiv="refresh" content="' . $board_config['refresh'] . ';url=' . append_sid("viewtopic.$phpEx?" . POST_TOPIC_URL . "=$topic_id&amp;start=$start") . '">')
 			);
 
@@ -540,7 +540,7 @@ if( $userdata['session_logged_in'] )
 				}
 			}
 
-			$template->assign_vars(array(
+			$template->vars(array(
 				'META' => '<meta http-equiv="refresh" content="' . $board_config['refresh'] . ';url=' . append_sid("viewtopic.$phpEx?" . POST_TOPIC_URL . "=$topic_id&amp;start=$start") . '">')
 			);
 
@@ -681,7 +681,7 @@ if ( isset($HTTP_GET_VARS['p_add']) && $board_config['helped'] && !$forum_topic_
 
 				if ( $db->sql_query($sql) && $db->sql_query($sql2) ) 
 				{
-					$template->assign_vars(array( 
+					$template->vars(array( 
 						'META' => '<meta http-equiv="refresh" content="3;url=' . append_sid("viewtopic.$phpEx?" . POST_POST_URL . '=' . $p_add) . '#' . $p_add .'">')
 					); 
 
@@ -835,9 +835,9 @@ if ( !($result = $db->sql_query($sql)) )
 	message_die(GENERAL_ERROR, 'Could not obtain post/user information.', '', __LINE__, __FILE__, $sql);
 }
 
-$postrow = array();
-$posters_id = array();
-$posts_id = array();
+$postrow = [];
+$posters_id = [];
+$posts_id = [];
 
 $poster_id_sql = '';
 if ( $row = $db->sql_fetchrow($result) )
@@ -869,7 +869,7 @@ if ( $session_logged_in )
 {
 	include($phpbb_root_path . 'includes/read_history.'.$phpEx);
 	$userdata = user_unread_posts();
-	$new_posts_to_delete = array();
+	$new_posts_to_delete = [];
 }
 
 // Get warnings for users
@@ -884,7 +884,7 @@ if ( $board_config['viewtopic_warnings'] && $board_config['warnings_enable'] )
 	{
 		message_die(GENERAL_ERROR, 'Couldnt Query value info from warnings table', '', __LINE__, __FILE__, $sql);
 	}
-	$warnings = array();
+	$warnings = [];
 
 	foreach( $posters_id as $poster_id )
 	{
@@ -925,13 +925,13 @@ if ( $resync && $board_config['last_resync'] < (CR_TIME - 1500) )
 	$total_replies = $row['total'];
 }
 
-$ranksrow = $list_ranks = array();
+$ranksrow = $list_ranks = [];
 $rank_group_id_sql = '';
 
 $list_ranks = sql_cache('check', 'list_ranks');
 if (!isset($list_ranks))
 {
-	$list_ranks = array();
+	$list_ranks = [];
 	$sql = "SELECT *
 		FROM " . RANKS_TABLE . "
 		ORDER BY rank_special, rank_min DESC";
@@ -966,7 +966,7 @@ for($i=0; $i < count($list_ranks); $i++)
 	}
 }
 
-$poster_group = array();
+$poster_group = [];
 if ( !empty($poster_id_sql) && !empty($rank_group_id_sql) )
 {
 	$rank_group_id_sql = substr($rank_group_id_sql, 1);
@@ -995,9 +995,9 @@ if ( !empty($poster_id_sql) && !empty($rank_group_id_sql) )
 //
 // Define censored word matches
 //
-$orig_word = array();
-$replacement_word = array();
-$replacement_word_html = array();
+$orig_word = [];
+$replacement_word = [];
+$replacement_word_html = [];
 obtain_word_list($orig_word, $replacement_word, $replacement_word_html);
 
 //
@@ -1213,7 +1213,7 @@ if ( $board_config['ignore_topics'] && $session_logged_in && $userdata['view_ign
 
 if ( $board_config['cignore'] && $userdata['cignore'] && $userdata['session_logged_in'] )
 {
-	$ignored_users = array();
+	$ignored_users = [];
 	$sql = "SELECT user_ignore
 		FROM " . IGNORE_TABLE . "
 		WHERE user_id = $user_id";
@@ -1275,7 +1275,7 @@ if ( $forum_topic_data['topic_action'] && $forum_topic_data['topic_action_user']
 	{
 		$by_userdata = get_userdata($forum_topic_data['topic_action_user'], false, 'username');
 
-		$template->assign_block_vars('topic_action', array(
+		$template->block('topic_action', array(
 			'L_WHO' => $lang['TA_Who'],
 			'USERNAME' => $by_userdata['username'],
 			'PROFILE_URL' => append_sid("profile.$phpEx?mode=viewprofile&amp;" . POST_USERS_URL . "=" . $forum_topic_data['topic_action_user']),
@@ -1285,7 +1285,7 @@ if ( $forum_topic_data['topic_action'] && $forum_topic_data['topic_action_user']
 
 		if ( ($is_auth['auth_mod'] && $board_config['allow_mod_delete_actions']) || $user_level == ADMIN )
 		{
-			$template->assign_block_vars('topic_action.topic_action_delete', array(
+			$template->block('topic_action.topic_action_delete', array(
 				'U_DELETE_ACTION' => append_sid("viewtopic.$phpEx?" . POST_TOPIC_URL . "=$topic_id&amp;action=delete"),
 				'DELETE_TITLE' => $lang['TA_Delete'])
 			);
@@ -1293,18 +1293,18 @@ if ( $forum_topic_data['topic_action'] && $forum_topic_data['topic_action_user']
 	}
 	else
 	{
-		$template->assign_block_vars('switch_no_topic_action', array());
+		$template->block('switch_no_topic_action', []);
 	}
 }
 else
 {
-	$template->assign_block_vars('switch_no_topic_action', array());
+	$template->block('switch_no_topic_action', []);
 }
 
 //
 // Send vars to template
 //
-$template->assign_vars(array(
+$template->vars(array(
 	'FORUM_ID' => $forum_id,
 	'FORUM_NAME' => $forum_name,
 	'TOPIC_ID' => $topic_id,
@@ -1416,9 +1416,6 @@ if ( !empty($forum_topic_data['topic_vote']) && (!$forum_topic_data['forum_moder
 
 		if ( $user_voted || $view_result || $poll_expired || !$is_auth['auth_vote'] || $forum_topic_data['topic_status'] == TOPIC_LOCKED )
 		{
-			$template->set_filenames(array(
-				'pollbox' => 'viewtopic_poll_result.tpl')
-			);
 
 			$vote_results_sum = 0;
 
@@ -1464,7 +1461,7 @@ if ( !empty($forum_topic_data['topic_vote']) && (!$forum_topic_data['forum_moder
 					}
 					$poll_expires_c = $lang['Results_after'];
 
-					$template->assign_block_vars('poll_option', array(
+					$template->block('poll_option', array(
 						'POLL_OPTION_CAPTION' => $vote_info[$i]['vote_option_text'],
 						'POLL_OPTION_RESULT' => $hide_vote_bl,
 						'POLL_OPTION_PERCENT' => $hide_vote_bl,
@@ -1475,7 +1472,7 @@ if ( !empty($forum_topic_data['topic_vote']) && (!$forum_topic_data['forum_moder
 				else
 				{
 					$poll_expires_c = '';
-					$template->assign_block_vars('poll_option', array(
+					$template->block('poll_option', array(
 						'POLL_OPTION_CAPTION' => $vote_info[$i]['vote_option_text'],
 						'POLL_OPTION_RESULT' => $vote_info[$i]['vote_result'],
 						'POLL_OPTION_PERCENT' => sprintf("%.1d%%", ($vote_percent * 100)),
@@ -1510,7 +1507,7 @@ if ( !empty($forum_topic_data['topic_vote']) && (!$forum_topic_data['forum_moder
 			}
 			$voted_vote_nb = $voted_vote;
 
-			$template->assign_vars(array(
+			$template->vars(array(
 				'VOTED_SHOW' => $lang['Voted_show'],
 				'L_TOTAL_VOTES' => $total_votes_1 . ': ',
 				'L_RESULTS_AFTER' => $poll_expires_c,
@@ -1521,9 +1518,6 @@ if ( !empty($forum_topic_data['topic_vote']) && (!$forum_topic_data['forum_moder
 		}
 		else
 		{
-			$template->set_filenames(array(
-				'pollbox' => 'viewtopic_poll_ballot.tpl')
-			);
 
 			$vote_box = ($max_vote > 1) ? 'checkbox' : 'radio';
 
@@ -1542,14 +1536,14 @@ if ( !empty($forum_topic_data['topic_vote']) && (!$forum_topic_data['forum_moder
 					replace_bad_words($orig_word, $replacement_word, $vote_option_text);
 				}
 
-				$template->assign_block_vars('poll_option', array(
+				$template->block('poll_option', array(
 					'POLL_VOTE_BOX' => $vote_box,
 					'POLL_OPTION_ID' => $vote_info[$i]['vote_option_id'],
 					'POLL_OPTION_CAPTION' => $vote_info[$i]['vote_option_text'])
 				);
 			}
 
-			$template->assign_vars(array(
+			$template->vars(array(
 				'L_SUBMIT_VOTE' => $lang['Submit_vote'],
 				'L_VIEW_RESULTS' => $lang['View_results'],
 
@@ -1585,7 +1579,7 @@ if ( !empty($forum_topic_data['topic_vote']) && (!$forum_topic_data['forum_moder
 
 		$s_hidden_fields .= '<input type="hidden" name="sid" value="' . $session_id . '" />';
 
-		$template->assign_vars(array(
+		$template->vars(array(
 			'POLL_QUESTION' => $vote_title,
 			'POLL_VOTE_BR' => $vote_br,
 			'MAX_VOTING_1_EXPLAIN' => $lang['Max_voting_1_explain'],
@@ -1598,7 +1592,7 @@ if ( !empty($forum_topic_data['topic_vote']) && (!$forum_topic_data['forum_moder
 			'S_POLL_ACTION' => append_sid("posting.$phpEx?mode=vote&amp;" . POST_TOPIC_URL . "=$topic_id"))
 		);
 
-		$template->assign_var_from_handle('POLL_DISPLAY', 'pollbox');
+		$template->var('POLL_DISPLAY', $template->render('viewtopic_poll_result.tpl'));
 	}
 }
 
@@ -1652,7 +1646,7 @@ for($i = 0; $i < $total_posts; $i++)
 	{
 		if ( !isset($parents_data) )
 		{
-			$parents_data = array();
+			$parents_data = [];
 			$sql = "SELECT post_id, post_parent
 				FROM " . POSTS_TABLE . "
 				WHERE topic_id = $topic_id
@@ -2454,7 +2448,7 @@ for($i = 0; $i < $total_posts; $i++)
 	}
 
 	$user_agent = ($board_config['cagent'] && $postrow[$i]['user_agent'] && !$ignore_this_post && $show_post && $userdata['cagent']) ? unserialize($postrow[$i]['user_agent']) : '';
-	$template->assign_block_vars('postrow', [
+	$template->block('postrow', [
 		'ICON' => $icon,
 		'POST_EXPIRE' => $post_expire_date,
 		'ROW_COLOR' => '#' . (!($i % 2)) ? $theme['td_color1'] : $theme['td_color2'],
@@ -2528,29 +2522,29 @@ for($i = 0; $i < $total_posts; $i++)
 			$parents_data[$postrow[$i]['post_id']] = floor($parents_data[$postrow[$i]['post_id']] - $shift_decrease);
 		}
 
-		$template->assign_block_vars('postrow.post_tree', array(
+		$template->block('postrow.post_tree', [
 			'TREE_ID' => $tree_id,
-			'TREE_WIDTH' => $parents_data[$postrow[$i]['post_id']])
-		);
+			'TREE_WIDTH' => $parents_data[$postrow[$i]['post_id']]
+		]);
 	}
 
 	if ( $forum_topic_data['forum_moderate'] && !$postrow[$i]['post_approve'] && $is_auth['auth_mod'] )
 	{
-		$template->assign_block_vars('postrow.post_moderate', array());
+		$template->block('postrow.post_moderate', []);
 	}
 
 	if ( $gender_image && $show_post )
 	{
-		$template->assign_block_vars('postrow.gender', array(
-			'GENDER' => $gender_image)
-		);
+		$template->block('postrow.gender', [
+			'GENDER' => $gender_image
+		]);
 	}
 
 	if ( $is_auth['auth_mod'] && $poster_id != $userdata['user_id'] )
 	{
-		$template->assign_block_vars('postrow.icon_comment', array(
-			'U_COMMENT_POST' => append_sid("posting.$phpEx?mode=editpost&amp;" . POST_POST_URL . "=$postrow_post_id&amp;comment=1"))
-		);
+		$template->block('postrow.icon_comment', [
+			'U_COMMENT_POST' => append_sid("posting.$phpEx?mode=editpost&amp;" . POST_POST_URL . "=$postrow_post_id&amp;comment=1")
+		]);
 	}
 
 	if ( $fields_to_get && $show_post )
@@ -2633,21 +2627,21 @@ for($i = 0; $i < $total_posts; $i++)
 				
 						if ( $view_post == '2' )
 						{
-							$template->assign_block_vars('postrow.custom_fields_avatar', array(
+							$template->block('postrow.custom_fields_avatar', array(
 								'DESC' => (strpos($desc, '-#') !== false) ? '' : $desc,
 								'FIELD' => $user_field)
 							);
 						}
 						else if ( $view_post == '1' )
 						{
-							$template->assign_block_vars('postrow.custom_fields_post', array(
+							$template->block('postrow.custom_fields_post', array(
 								'DESC' => (strpos($desc_post, '-#') !== false) ? '' : '<b>' . $desc_post . ':</b> ',
 								'FIELD' => $user_field)
 							);
 						}
 						else
 						{
-							$template->assign_block_vars('postrow.custom_fields_upost', array(
+							$template->block('postrow.custom_fields_upost', array(
 								'DESC' => (strpos($desc, '-#') !== false) ? '' : '<b>' . $desc_post . ':</b> ',
 								'FIELD' => $user_field)
 							);
@@ -2660,23 +2654,23 @@ for($i = 0; $i < $total_posts; $i++)
 
 	if ( $postrow[$i]['th_post_id'] || $show_edited_block )
 	{
-		$template->assign_block_vars('postrow.post_edited', array(
+		$template->block('postrow.post_edited', array(
 			'VIEW_POST_HISTORY' => ( $postrow[$i]['th_post_id'] && ($userdata['user_level'] == ADMIN || ($is_auth['auth_mod'] && $board_config['ph_mod'])) ) ? '<a href="' . append_sid("post_history.$phpEx?" . POST_POST_URL . "=" . $postrow[$i]['th_post_id']) . '" style="text-decoration: none;">' . $lang['Post_history'] . '</a>' : ''
 		));
 	}
 	if ( $user_sig || $user_sig_image && $show_post )
 	{
-		$template->assign_block_vars('postrow.signature', array());
+		$template->block('postrow.signature', []);
 	}
 
 	if ( $board_config['post_footer'] && !$postrow[$i]['post_parent'] )
 	{
-		$template->assign_block_vars('postrow.footer', array());
+		$template->block('postrow.footer', []);
 	}
 
 	if ( $board_config['post_footer'] && $show_post && !$postrow[$i]['post_parent'] )
 	{
-		$template->assign_block_vars('postrow.top', array(
+		$template->block('postrow.top', array(
 			'TOP_IMG' => ($i == 0) ? '<a href="#' . $postrow[($total_posts-1)]['post_id']	 . '"><img src="' . $images['topic_mod_merge'] . '" alt="" border="0" /></a>' : '<a href="#top"><img src="' . $images['topic_mod_move'] . '" alt="" border="0" /></a>')
 		);
 	}
@@ -2695,149 +2689,21 @@ for($i = 0; $i < $total_posts; $i++)
 			$max_warn = $board_config['ban_warnings'];
 			$warn_percent = ($val > $max_warn) ? 100 : $val / $max_warn * 100;
 
-			$template->assign_block_vars('postrow.warnings', array(
+			$template->block('postrow.warnings', [
 				'WARNINGS' => $lang['Warnings_viewtopic'],
 				'HOW' => '<a href="' . append_sid("warnings.$phpEx?mode=detail&amp;userid=" . $poster_id . "") . '" class="mainmenu"><b>' . $val . '</b></a>',
 				'WRITE' => $board_config['write_warnings'],
 				'MAX' => $max_warn,
 				'POSTER_W_WIDTH' => $warn_percent,
-				'POSTER_W_EMPTY' => (100 - $warn_percent))
-			);
+				'POSTER_W_EMPTY' => (100 - $warn_percent)
+			]);
 		}
-	}
-
-	// Level Mod
-	if ( ($board_config['clevell'] || $board_config['cleveld'] && $poster_id != ANONYMOUS && $board_config['graphic']) && $userdata['level'] && $show_post )
-	{
-		if ( $poster_posts < 1 )
-		{
-			$level_level = 0;
-		}
-		else
-		{
-			$level_level = floor(pow(log10( $poster_posts), 3)) + 1;
-		}
-		$level_avg_ppd = 5;
-		$level_bonus_redux = 5;
-		$level_user_ppd = ($poster_posts/max(1, round((CR_TIME - $postrow[$i]['user_regdate'])/86400 )));
-		if ( $level_level < 1 )
-		{
-			$level_hp = '0/0';
-			$level_hp_percent = 0;
-		}
-		else
-		{
-			$level_max_hp = floor((pow( $level_level, (1/4) ) ) * (pow( 10, pow( $level_level+2, (1/3) ) ) )/(1.5) );
-
-			if ( $level_user_ppd >= $level_avg_ppd )
-			{
-				$level_hp_percent = floor((.5 + (($level_user_ppd - $level_avg_ppd)/($level_bonus_redux * 2))) * 100);
-			}
-			else
-			{
-				$level_hp_percent = floor($level_user_ppd/($level_avg_ppd/50));
-			}
-	
-			if ( $level_hp_percent > 100 )
-			{
-				//Give the user a bonus to max HP for greater than 100% hp.
-				$level_max_hp += floor(($level_hp_percent - 100) * pi());
-				$level_hp_percent = 100;
-			}
-			else
-			{
-				$level_hp_percent = max(0, $level_hp_percent);
-			}
-	
-			$level_cur_hp = floor($level_max_hp * ($level_hp_percent/100) );
-	
-			//Be sure a user has no more than max, and no less than zero hp.
-			$level_cur_hp = max(0, $level_cur_hp);
-			$level_cur_hp = min($level_max_hp, $level_cur_hp);
-	
-			$level_hp = $level_cur_hp . '/' . $level_max_hp;
-		}
-		$level_user_days = max(1, round(( CR_TIME - $postrow[$i]['user_regdate'] ) / 86400));
-		$level_post_mp_cost = 2.5;
-		$level_mp_regen_per_day = 4;
-		if ( $level_level < 1 )
-		{
-			$level_mp = '0/0';
-			$level_mp_percent = 0;
-		}
-		else
-		{
-			$level_max_mp = floor((pow( $level_level, (1/4) ) ) * (pow( 10, pow($level_level+2, (1/3)))) / (pi()) );
-			$level_mp_cost = $poster_posts * $level_post_mp_cost;
-			$level_mp_regen = max(1, $level_user_days * $level_mp_regen_per_day);
-			$level_cur_mp = floor($level_max_mp - $level_mp_cost + $level_mp_regen);
-			$level_cur_mp = max(0, $level_cur_mp);
-			$level_cur_mp = min($level_max_mp, $level_cur_mp);
-			$level_mp = $level_cur_mp . '/' . $level_max_mp;
-			$level_mp_percent = floor($level_cur_mp/$level_max_mp * 100 );
-		}
-		if ( $level_level == 0 )
-		{
-			$level_exp = '0/0';
-			$level_exp_percent = 100;
-		}
-		else
-		{
-			$level_posts_for_next = floor(pow(10, pow($level_level, (1/3))));
-			@$level_posts_for_this = max(1, floor(pow( 10, pow(($level_level - 1), (1/3)))));
-			$level_exp = ($poster_posts - $level_posts_for_this) . "/" . ($level_posts_for_next - $level_posts_for_this);
-			$level_exp_percent = floor((($poster_posts - $level_posts_for_this) / max(1, ($level_posts_for_next - $level_posts_for_this))) * 100);
-		}
-
-		if ( $board_config['cleveld'] )
-		{
-			if ( $board_config['post_footer'] )
-			{
-				$template->assign_block_vars('postrow.levelmodd', array(
-					"POSTER_HP" => $level_hp,
-					"POSTER_HP_WIDTH" => $level_hp_percent,
-					"POSTER_HP_EMPTY" => ( 100 - $level_hp_percent ),
-					"POSTER_MP" => $level_mp,
-					"POSTER_MP_WIDTH" => $level_mp_percent,
-					"POSTER_MP_EMPTY" => ( 100 - $level_mp_percent ),
-					"POSTER_EXP" => $level_exp,
-					"POSTER_EXP_WIDTH" => $level_exp_percent,
-					"POSTER_EXP_EMPTY" => ( 100 - $level_exp_percent ),
-					"POSTER_LEVEL" => $level_level)
-				);
-			}
-		}
-		if ( $board_config['clevell'] )
-		{
-			$template->assign_block_vars('postrow.levelmodl', array(
-				"POSTER_HP" => $level_hp,
-				"POSTER_HP_WIDTH" => $level_hp_percent,
-				"POSTER_HP_EMPTY" => ( 100 - $level_hp_percent ),
-				"POSTER_MP" => $level_mp,
-				"POSTER_MP_WIDTH" => $level_mp_percent,
-				"POSTER_MP_EMPTY" => ( 100 - $level_mp_percent ),
-				"POSTER_EXP" => $level_exp,
-				"POSTER_EXP_WIDTH" => $level_exp_percent,
-				"POSTER_EXP_EMPTY" => ( 100 - $level_exp_percent ),
-				"POSTER_LEVEL" => $level_level)
-			);
-		}
-	}
-	// End Level Mod
-
-	if ( !empty($postrow[$i]['user_aim']) && $board_config['cgg'] && $poster_id != ANONYMOUS && $board_config['cgg'] && $show_post )
-	{
-		$template->assign_block_vars('postrow.aim', array());
-	}
-	if ( !empty($postrow[$i]['user_icq']) && $board_config['cicq'] && $poster_id != ANONYMOUS && $board_config['cicq'] && $show_post  )
-	{
-		$template->assign_block_vars('postrow.icq', array());
 	}
 }
 
 if ( $is_auth['auth_delete'] )
 {
-	$template->assign_block_vars('switch_auth_delete', array());
+	$template->block('switch_auth_delete', []);
 }
 
 if ( $session_logged_in )
@@ -2848,14 +2714,14 @@ if ( $session_logged_in )
 		$unread_posts_exist = count($unread_posts_diff);
 	}
 
-	$template->assign_vars(array(
+	$template->vars(array(
 		'U_MARK_TOPIC_UNREAD' => '<br /><a href="' . append_sid("viewtopic.$phpEx?".POST_TOPIC_URL."=$topic_id"."&amp;mark_topic=unread&amp;sid=" . $session_id . "") . '">' . $lang['Mark_topic_unread'] . '</a>',
 		'U_MARK_TOPIC_READ' => ($unread_posts_exist) ? '<br /><a href="' . append_sid("viewtopic.$phpEx?".POST_TOPIC_URL."=$topic_id"."&amp;mark_topic=read&amp;sid=" . $session_id . "") . '">' . $lang['Mark_topic_read'] . '</a>' : '')
 	);
 
 	if ( $forum_topic_data['topic_tree_width'] && $unread_posts_exist )
 	{
-		$template->assign_block_vars('next_unread_posts', array(
+		$template->block('next_unread_posts', array(
 			'U_TOPIC_NEXT_UNREAD_POSTS' => append_sid("viewtopic.$phpEx?" . POST_TOPIC_URL . "=$topic_id&amp;view=newest"),
 			'L_TOPIC_NEXT_UNREAD_POSTS' => $lang['View_next_unread_posts'])
 		);
@@ -2869,7 +2735,7 @@ if ( $show_quickreply )
 
 if ( !empty($show_reject_panel) && $forum_topic_data['forum_moderate'] && $is_auth['auth_mod'] )
 {
-	$template->assign_block_vars('moderate', array(
+	$template->block('moderate', array(
 		'L_ACCEPT-REJECT_POST' => $lang['Accept-reject'],
 		'S_MODERATE_ACTION' => append_sid("viewtopic.$phpEx?" . POST_TOPIC_URL . "=$topic_id"))
 	);
@@ -2893,8 +2759,6 @@ if ( $session_logged_in && count($new_posts_to_delete) && !$HTTP_GET_VARS['mark_
 	}
 }
 
-$template->pparse('body');
-
 include($phpbb_root_path . 'includes/page_tail.'.$phpEx);
 
-?>
+$template->display('viewtopic_body.tpl');

@@ -77,12 +77,12 @@
 <div class="heading bar">
 	<a href="{{ U_INDEX }}"><img src="templates/subSilver/images/przemo.png"></a>
 	<div class="left mainmenu">
-		<a href="{{ U_INDEX }}">{{ L_INDEX_LABEL }}</a> {{ NAV_CAT_DESC }}
+		<a href="{{ U_INDEX }}">{{ L_INDEX_LABEL }}</a> {{ NAV_CAT_DESC | raw }}
 	</div>
 	<div class="right mainmenu">
 		<a href="{{ U_SEARCH }}" class="search"><b>{{ L_SEARCH }}</b></a>
 		{% if switch_user_logged_in %}
-		<a href="{{ U_PRIVATEMSGS }}" class="pms">{{ PRIVATE_MESSAGE_INFO }}</a>
+		<a href="{{ U_PRIVATEMSGS }}" class="pms">{{ PRIVATE_MESSAGE_INFO | raw }}</a>
 		<a href="{{ U_PROFILE }}" class="profile">{{ L_PROFILE }}</a>
 		<a href="{{ U_LOGIN_LOGOUT }}" class="signin">{{ L_LOGIN_LOGOUT }}</a>
 		{% endif %}

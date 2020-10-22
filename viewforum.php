@@ -125,7 +125,7 @@ if ( !(@function_exists('users_online')) )
 
 $generate_online = users_online('viewforum');
 $online_userlist = $generate_online[0];
-$topic_expire    = array();
+$topic_expire    = [];
 
 $selected_id = POST_FORUM_URL . $forum_id;
 $athis = isset($tree['keys'][$selected_id]) ? $tree['keys'][$selected_id] : -1;
@@ -175,7 +175,7 @@ if ( $board_config['login_require'] && !$userdata['session_logged_in'] )
 //
 // Start auth check
 //
-$is_auth = array();
+$is_auth = [];
 $is_auth = $tree['auth'][POST_FORUM_URL . $forum_id];
 
 if ( !$is_auth['auth_read'] || !$is_auth['auth_view'] )
@@ -243,7 +243,7 @@ if ( $mark_read == 'topics' )
 			message_die(GENERAL_ERROR, 'Error in marking all as read', '',__LINE__, __FILE__, $sql);
 		}
 
-		$template->assign_vars(array(
+		$template->vars(array(
 			'META' => '<meta http-equiv="refresh" content="' . $board_config['refresh'] . ';url=' . append_sid("viewforum.$phpEx?" . POST_FORUM_URL . "=$forum_id$show_ignore_link") . '">')
 		);
 	}
@@ -422,7 +422,7 @@ if( !$result = $db->sql_query($sql) )
 	message_die(GENERAL_ERROR, 'Couldn\'t obtain topic information', '', __LINE__, __FILE__, $sql);
 }
 
-$topic_rowset = array();
+$topic_rowset = [];
 $total_announcements = $total_topics = $total_external_announcements = 0;
 while( $row = $db->sql_fetchrow($result) )
 {
@@ -469,9 +469,9 @@ $db->sql_freeresult($result);
 $total_topics += $total_announcements;
 
 // Define censored word matches
-$orig_word = array();
-$replacement_word = array();
-$replacement_word_html = array();
+$orig_word = [];
+$replacement_word = [];
+$replacement_word_html = [];
 obtain_word_list($orig_word, $replacement_word, $replacement_word_html);
 $count_orig_word = (count($orig_word));
 
@@ -479,7 +479,7 @@ if (empty($show_ignore_link)) {
 	$show_ignore_link = '';
 }
 // Post URL generation for templating vars
-$template->assign_vars(array(
+$template->vars(array(
 	'L_DISPLAY_TOPICS' => $lang['Display_topics'],
 
 	'LOGGED_IN_USER_LIST' => $online_userlist,
@@ -555,7 +555,7 @@ if ( $board_config['ignore_topics'] && $userdata['session_logged_in'] && $userda
 	$span_i++;
 	$span_j++;
 
-	$template->assign_block_vars('ignore_form', array(
+	$template->block('ignore_form', array(
 		'L_MARK_ALL' => $lang['Mark_all'],
 		'L_IGNORE_MARK' => $lang['ignore_mark'],
 		'U_IGNORE_TOPICS' => append_sid("ignore_topics.$phpEx"))
@@ -563,13 +563,13 @@ if ( $board_config['ignore_topics'] && $userdata['session_logged_in'] && $userda
 
 	if ( $board_config['overlib'] && $userdata['overlib'] )
 	{
-		$template->assign_block_vars('ignore_form.overlib', array(
+		$template->block('ignore_form.overlib', array(
 			'L_IGNORE_EXPLAIN' => $lang['ignore_topic_submit_e'])
 		);
 	}
 }
 
-$template->assign_vars(array(
+$template->vars(array(
 	'FORUM_ID' => $forum_id,
 	'FORUM_NAME' => $forum_row['forum_name'],
 	'U_INDEX' => $u_index_check,
@@ -622,9 +622,9 @@ $template->assign_vars(array(
 // End header
 if ( $board_config['csearch'] )
 {
-	$template->assign_block_vars('switch_search_for', array());
+	$template->block('switch_search_for', []);
 }
-$template->assign_vars(array(
+$template->vars(array(
 	'SEARCH_ACTION' => 'search.'.$phpEx.'?mode=results',
 	'L_SEARCH_FOR' => $lang['Search_for'],
 	'L_SUBMIT_SEARCH' => $lang['Search'])
@@ -634,13 +634,13 @@ $template->assign_vars(array(
 if( $total_topics )
 {
 	// BEGIN fetch additional topic data
-	$topic_id_list = array();
+	$topic_id_list = [];
 	for($i = 0; $i < $total_topics; $i++)
 	{
 		$topic_id_list[] = $topic_rowset[$i]['topic_id'];
 	}
 	$topic_id_list = implode(',', $topic_id_list);
-	$helped_list = array();
+	$helped_list = [];
 	if ( $board_config['helped'] && ($forum_row['forum_no_helped'] == 0))
 	{
 		$sql = "SELECT topic_id
@@ -689,15 +689,15 @@ if( $total_topics )
 			{
 				if ( $forum_row['forum_separate'] == 2 )
 				{
-					$template->assign_vars(array('L_TOPICS' => $lang['Important_topics']));
+					$template->vars(array('L_TOPICS' => $lang['Important_topics']));
 					if ( $enable_hide_important )
 					{
-						$template->assign_block_vars('switch_show_hide', array());
+						$template->block('switch_show_hide', []);
 					}
 				}
 				else
 				{
-					$template->assign_block_vars('important_topics', array());
+					$template->block('important_topics', []);
 				}
 				$important_topics_exists = true;
 			}
@@ -978,7 +978,7 @@ if( $total_topics )
 		$img = null;
 		preg_match('#\[img(:[a-z0-9]+)?\](.*?)\[/img(:[a-z0-9]+)?\]#i', $topic_rowset[$i]['post_text'], $img);
 
-		$template->assign_block_vars('topicrow', array(
+		$template->block('topicrow', array(
 			'ICON' => ($topic_rowset[$i]['topic_icon'] != 0) ? '<img src="' . $images['rank_path'] . 'icon/icon' . $topic_rowset[$i]['topic_icon']. '.gif" alt="" border="0">' : ' ',
 			'TOPIC_EXPIRE' => $topic_expire_date,
 			'ROW_COLOR' => (!($i % 2)) ? $theme['td_color1'] : $theme['td_color2'],
@@ -1011,29 +1011,29 @@ if( $total_topics )
 		{
 			if ( $forum_row['forum_separate'] == 2 )
 			{
-				$template->assign_vars(array('L_NORMAL_TOPICS' => $lang['Topics']));
-				$template->assign_block_vars('topicrow.normal_topics', array());
+				$template->vars(array('L_NORMAL_TOPICS' => $lang['Topics']));
+				$template->block('topicrow.normal_topics', []);
 			}
 			else
 			{
-				$template->assign_block_vars('topicrow.normal_topics_row', array());
+				$template->block('topicrow.normal_topics_row', []);
 			}
 			$normal_topics_exists = true;
 		}
 
 		if ( $board_config['ignore_topics'] && $userdata['session_logged_in'] && $userdata['view_ignore_topics'] )
 		{
-			$template->assign_block_vars('topicrow.ignore_checkbox', array());
+			$template->block('topicrow.ignore_checkbox', []);
 		}
 
 		if ( $board_config['post_icon'] && $userdata['post_icon'] )
 		{
-			$template->assign_block_vars('topicrow.icons', array());
+			$template->block('topicrow.icons', []);
 		}
 
 		if ( $overlib_post_text )
 		{
-			$template->assign_block_vars('topicrow.title_overlib', array(
+			$template->block('topicrow.title_overlib', array(
 				'L_FIRST_POST' => $lang['First_post'],
 				'L_LAST_POST' => $lang['Last_Post'],
 				'UNREAD_POSTS' => $overlib_unread_posts,
@@ -1043,7 +1043,7 @@ if( $total_topics )
 
 			if ( $first_and_last_post )
 			{
-				$template->assign_block_vars('topicrow.title_overlib.last', array(
+				$template->block('topicrow.title_overlib.last', array(
 					'O_TEXT2' => $overlib_last_post_text)
 				);
 			}
@@ -1068,17 +1068,14 @@ else
 	// No topics
 	$no_topics_msg = ( $forum_row['forum_status'] == FORUM_LOCKED ) ? $lang['Forum_locked'] : $lang['No_topics_post_one'];
 
-	$template->assign_vars(array(
+	$template->vars(array(
 		'L_NO_TOPICS' => $no_topics_msg)
 	);
 
-	$template->assign_block_vars('switch_no_topics', array() );
+	$template->block('switch_no_topics', [] );
 
 }
 
-// Parse the page and print
-$template->pparse('body');
-
 include($phpbb_root_path . 'includes/page_tail.'.$phpEx);
 
-?>
+$template->display($forum_row['forum_template']);
