@@ -1105,7 +1105,8 @@ function setup_style($style)
 	$template_path = 'templates/';
 	$template_name = $row['template_name'] ;
 
-	$template = new Template($phpbb_root_path . $template_path . $template_name);
+	//$template = new Template($phpbb_root_path . $template_path . $template_name);
+	$template = \PhpBB\Core\Context::getService('templates');
 
 	if ( $template )
 	{
@@ -1626,7 +1627,8 @@ function message_die($msg_code, $msg_text = '', $msg_title = '', $err_line = '',
 
 		if ( empty($template) )
 		{
-			$template = new Template($phpbb_root_path . 'templates/' . $board_config['board_template']);
+			//$template = new Template($phpbb_root_path . 'templates/' . $board_config['board_template']);
+			$template = \PhpBB\Core\Context::getService('templates');
 		}
 		if ( empty($theme) )
 		{

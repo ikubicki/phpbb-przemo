@@ -60,6 +60,9 @@ var_dump($req->post->c);
 var_dump($req->get->c);
 exit;
 /**/
+
+
+/*
 if ( $board_config['check_address'] )
 {
 	if ( !empty($HTTP_SERVER_VARS['SERVER_NAME']) || !empty($HTTP_ENV_VARS['SERVER_NAME']) )
@@ -105,6 +108,8 @@ if ( $board_config['check_address'] && $hostname != $board_config['server_name']
 		exit;
 	}
 }
+*/
+
 
 //
 // Start session management
@@ -145,17 +150,17 @@ if ( $userdata['user_id'] != ANONYMOUS )
 	$userdata = user_unread_posts();
 	$count_unread_posts = unread_forums_posts('count');
 
-	$template->assign_vars(array(
+	$template->vars([
 		'L_SEARCH_NEW' => $lang['Search_new_unread'],
 		'L_SEARCH_LASTVISIT' => $lang['Search_new'],
 		'U_SEARCH_LASTVISIT' => append_sid('search.'.$phpEx.'?search_id=lastvisit'),
 		'U_SEARCH_NEW' => append_sid('search.'.$phpEx.'?search_id=newposts'),
-		'COUNT_NEW_POSTS' => $count_unread_posts)
-	);
+		'COUNT_NEW_POSTS' => $count_unread_posts
+	]);
 
 	if ( $count_unread_posts )
 	{
-		$template->assign_block_vars('switch_unread', array());
+		$template->assign_block_vars('switch_unread', []);
 	}
 }
 //end count unread posts
@@ -225,7 +230,7 @@ if ( $mark_read == 'forums' )
 		if ( $userdata['session_logged_in'] )
 		{
 			// get the list of object authorized
-			$keys = array();
+			$keys = [];
 			$keys = get_auth_keys($viewcatkey);
 			$post_ids = $forum_ids = '';
 
@@ -329,11 +334,11 @@ if ( !$userdata['session_logged_in'] && $board_config['cregist'] )
 
 	if ( $board_config['cregist_b'] )
 	{
-		$template->assign_block_vars('custom_registration_bottom', array());
+		$template->block('custom_registration_bottom', []);
 	}
 	else
 	{
-		$template->assign_block_vars('custom_registration', array());
+		$template->block('custom_registration', []);
 	}
 
 	$template->assign_vars(array(
@@ -350,11 +355,11 @@ if ( !$userdata['session_logged_in'] && $board_config['cregist'] )
 	{
 		if ( $board_config['cregist_b'] )
 		{
-			$template->assign_block_vars('custom_registration_bottom.gender_box', array());
+			$template->block('custom_registration_bottom.gender_box', []);
 		}
 		else
 		{
-			$template->assign_block_vars('custom_registration.gender_box', array());
+			$template->block('custom_registration.gender_box', []);
 		}
 		$template->assign_vars(array(
 			'L_GENDER' => $lang['Gender'],
@@ -394,11 +399,11 @@ if ( !$userdata['session_logged_in'] && $board_config['cregist'] )
 
 		if ( $board_config['cregist_b'] )
 		{
-			$template->assign_block_vars('custom_registration_bottom.validation', array());
+			$template->block('custom_registration_bottom.validation', []);
 		}
 		else
 		{
-			$template->assign_block_vars('custom_registration.validation', array());
+			$template->block('custom_registration.validation', []);
 		}
 		
 		$template->assign_vars(array(
@@ -420,7 +425,7 @@ if ( $board_config['cstyles'] )
 $shoutbox_config = sql_cache('check', 'shoutbox_config');
 if (empty($shoutbox_config))
 {
-	$shoutbox_config = array();
+	$shoutbox_config = [];
 	$sql = "SELECT *
 		FROM " . SHOUTBOX_CONFIG_TABLE;
 	if ( !($result = $db->sql_query($sql)) )
@@ -532,7 +537,7 @@ $board_config['display_viewonline'] = (!$board_config['display_viewonline_over']
 
 if ( ($board_config['display_viewonline'] == 2) || (($viewcat < 0) && ($board_config['display_viewonline'] == 1)) )
 {
-	$template->assign_block_vars('disable_viewonline', array());
+	$template->assign_block_vars('disable_viewonline', []);
 
 	if ( $board_config['display_viewonline'] && (($board_config['display_viewonline'] == 2 && $viewcat > 0) || $viewcat < 0) )
 	{
@@ -654,7 +659,7 @@ if ( ($board_config['display_viewonline'] == 2) || (($viewcat < 0) && ($board_co
 
 	if ( $board_config['staff_enable'] )
 	{
-		$template->assign_block_vars('disable_viewonline.staff', array());
+		$template->assign_block_vars('disable_viewonline.staff', []);
 		$template->assign_vars(array(
 			'L_STAFF' => $lang['Staff'],
 			'U_STAFF' => append_sid("staff.$phpEx"))
@@ -663,7 +668,7 @@ if ( ($board_config['display_viewonline'] == 2) || (($viewcat < 0) && ($board_co
 
 	if ( $board_config['warnings_enable'] )
 	{
-		$template->assign_block_vars('disable_viewonline.warnings', array());
+		$template->assign_block_vars('disable_viewonline.warnings', []);
 		$template->assign_vars(array(
 			'U_WARNINGS' => '<a href="' . append_sid("warnings.$phpEx") . '">' . $lang['Warnings'] . '</a>',)
 		);
@@ -694,7 +699,7 @@ if (!$display)
 
 if ($board_config['board_msg_enable'] == '1')
 {
-	$template->assign_block_vars('switch_enable_board_msg_index', array()); 
+	$template->assign_block_vars('switch_enable_board_msg_index', []); 
 }
 
 //

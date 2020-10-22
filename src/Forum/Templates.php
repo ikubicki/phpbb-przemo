@@ -34,14 +34,15 @@ class Templates
         echo $this->render($filename);
     }
 
-    public function vars($variable, $value)
+    public function vars($variables)
     {
-        if ($variable === null) {
-            foreach($value as $variable => $subvalue) {
-                $this->vars($variable, $subvalue);
-            }
-            return;
+        foreach($variables as $variable => $subvalue) {
+            $this->var($variable, $subvalue);
         }
+    }
+
+    public function var($variable, $value)
+    {
         $this->variables[$variable] = $value;
     }
 
@@ -60,5 +61,12 @@ class Templates
             $container = &$container[$_block];
         }
         $container[] = $variables;
+    }
+
+    public function set_filenames($filenames)
+    {
+        foreach($filenames as $filename) {
+            $this->twig->load($filename);
+        }
     }
 }
