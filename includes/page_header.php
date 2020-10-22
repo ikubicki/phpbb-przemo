@@ -116,7 +116,7 @@ $logout_img = $images['logout'] ?? '';
 //
 if (!isset($nav_links))
 {
-	$nav_links = array();
+	$nav_links = [];
 }
 
 $nav_links_html = '';
@@ -161,6 +161,7 @@ if ( $board_config['banners_list'] && $board_config['echange_banner'] > 0 )
 	}
 }
 
+// @todo html
 if ( $board_config['cavatar'] && $userdata['page_avatar'] && $board_config['echange_banner'] != '6' )
 {
 	$user_url = append_sid("profile.$phpEx?mode=viewprofile&amp;u" . "=" . $userdata['user_id']);
@@ -259,7 +260,7 @@ if (empty($unique_cookie_name)) {
 // The following assigns all _common_ variables that may be used at any point
 // in a template.
 //
-$template->assign_vars(array(
+$template->vars([
 	'SITENAME' => replace_encoded($board_config['sitename']),
 	'SITENAME_COLOR' => replace_encoded($sitename),
 	'SITE_DESCRIPTION' => replace_encoded($site_description),
@@ -381,34 +382,37 @@ $template->assign_vars(array(
 	'T_SPAN_CLASS2' => $theme['span_class2'],
 	'T_SPAN_CLASS3' => $theme['span_class3'],
 
-	'NAV_LINKS' => $nav_links_html)
-);
+	'NAV_LINKS' => $nav_links_html
+]);
 
 if ( $board_config['disable_type'] == 1 && $userdata['user_level'] == ADMIN )
 {
-	$template->assign_vars(array('SITENAME' => strip_tags($board_config['board_disable'])));
+	$template->vars([
+		'SITENAME' => strip_tags($board_config['board_disable'])
+	]);
 }
 
 if ( $board_config['cload'] && $userdata['cload'] )
 {
-	$template->assign_block_vars('body_with_loading', array());
+	$template->block('body_with_loading', []);
 }
 else
 {
-	$template->assign_block_vars('body_without_loading', array());
+	$template->block('body_without_loading', []);
 }
 
 if ( $board_config['overlib'] && $userdata['overlib'] )
 {
-	$template->assign_block_vars('overlib', array());
+	$template->block('overlib', []);
 }
 if ( $board_config['width_forum'] )
 {
-	$template->assign_block_vars('forum_thin', array(
+	$template->block('forum_thin', [
 		'WIDTH_COLOR_1' => $board_config['width_color1'],
 		'WIDTH_COLOR_2' => $board_config['width_color2'],
 		'TABLE_BORDER' => $board_config['table_border'],
-		'WIDTH_TABLE' => $board_config['width_table'],));
+		'WIDTH_TABLE' => $board_config['width_table'],
+	]);
 }
 
 $advert_hide = ( (($board_config['view_ad_by'] == 1 && $userdata['session_logged_in']) || ($board_config['view_ad_by'] == 2 && ($userdata['user_level'] > 0 || $userdata['user_jr']))) && !empty($userdata['advertising']) ) ? true : false;
@@ -420,7 +424,7 @@ if ( !$advert_hide )
 	$advertising = sql_cache('check', 'advertising');
 	if (!isset($advertising))
 	{
-		$advertising = array();
+		$advertising = [];
 		$sql = "SELECT id, html, email, position, expire, notify, type
 			FROM " . ADV_TABLE . "
 			WHERE position <> 0
@@ -440,7 +444,7 @@ if ( !$advert_hide )
 
 	if ( $count_advertising )
 	{
-		$email_list = $notify_list = array();
+		$email_list = $notify_list = [];
 
 		for($i = 0; $i < $count_advertising; $i++)
 		{
@@ -528,7 +532,7 @@ if ( !$advert_hide )
 			);
 			if ( $board_config['width_forum'] )
 			{
-				$template->assign_block_vars('advert.advert_forum_thin', array());
+				$template->assign_block_vars('advert.advert_forum_thin', []);
 			}
 		}
 	}
@@ -593,7 +597,7 @@ if ( $board_config['clog'] )
 
 $logged_in_out_block = ($userdata['session_logged_in']) ? 'switch_user_logged_in' : 'switch_user_logged_out';
 
-$template->assign_block_vars($logged_in_out_block, array());
+$template->block($logged_in_out_block, []);
 
 // Setup header and userdata logged in/out
 if ( !$userdata['session_logged_in'] )
@@ -603,26 +607,27 @@ if ( !$userdata['session_logged_in'] )
 	//
 	if (!isset($board_config['allow_autologin']) || $board_config['allow_autologin'] )
 	{
-		$template->assign_block_vars('switch_allow_autologin', array());
-		$template->assign_block_vars($logged_in_out_block . '.switch_allow_autologin', array());
+		$template->block('switch_allow_autologin', []);
+		$template->block($logged_in_out_block . '.switch_allow_autologin', []);
 	}
 }
 else
 {
 	if ( !empty($userdata['user_popup_pm']) )
 	{
-		$template->assign_block_vars('switch_enable_pm_popup', array());
+		$template->block('switch_enable_pm_popup', []);
 	}
 }
 
+// @todo cload
 if ( $board_config['cload'] && $userdata['cload'] )
 {
-	$template->assign_block_vars('loading_header', array());
+	$template->block('loading_header', []);
 }
 
 if ( $board_config['cquick'] )
 {
-	$template->assign_block_vars('quick_quote', array());
+	$template->block('quick_quote', []);
 }
 
 if ( $board_config['header_enable'] )
@@ -631,18 +636,18 @@ if ( $board_config['header_enable'] )
 }
 else if (empty($userdata['simple_head']))
 {
-	$template->assign_block_vars('header', array());
-	$template->assign_block_vars('header.' . $logged_in_out_block, array());
+	$template->block('header', []);
+	$template->block('header.' . $logged_in_out_block, []);
 	$header_block = 'header.';
 	
 	if (!$board_config['report_disable'])
 	{
 		if ( ( $board_config['report_only_admin'] ? $userdata['user_level'] == ADMIN : $userdata['user_level'] > USER ) )
 		{
-			$template->assign_block_vars('header.switch_report_list', array(
+			$template->block('header.switch_report_list', [
 				'U_REPORT_LIST' => append_sid('report.'.$phpEx),
 				'L_REPORT_LIST' => $lang['Report_list']
-			));
+			]);
 
 			if ( !isset($no_report_popup) && !$userdata['no_report_popup'] && $userdata['refresh_report_popup'] )
 			{
@@ -652,11 +657,11 @@ else if (empty($userdata['simple_head']))
 				}
 				if ( $userdata['refresh_report_popup'] == 2 || $rp->check_report_popup($userdata) )
 				{
-					$template->assign_block_vars("switch_report_popup", array(
+					$template->assign_block_vars("switch_report_popup", [
 						'U_REPORT_POPUP' => append_sid('report.'.$phpEx.'?mode=popup'),
 						'S_WIDTH' => $board_config['report_popup_width'],
-						'S_HEIGHT' => $board_config['report_popup_height'])
-					);
+						'S_HEIGHT' => $board_config['report_popup_height']
+					]);
 				}
 			}
 		}
@@ -664,27 +669,29 @@ else if (empty($userdata['simple_head']))
 
 	if ( $my_avatar_img )
 	{
-		$template->assign_block_vars('header.switch_page_avatar', array());
-		$template->assign_vars(array(
+		$template->block('header.switch_page_avatar', []);
+		$template->vars([
 			'MY_AVATAR_IMG' => $my_avatar_img,
-			'USERNAME' => $link_username)
-		);
+			'USERNAME' => $link_username
+		]);
 	}
 }
 
 if (!empty($userdata['simple_head']))
 {
-	$template->assign_block_vars('simple_header', array());
-	$template->assign_block_vars('simple_header.' . $logged_in_out_block, array());
+	$template->block('simple_header', []);
+	$template->block('simple_header.' . $logged_in_out_block, []);
 	$header_block = 'simple_header.';
 	$board_config['echange_banner'] = '';
 }
 
-if ($board_config['cstat']) $template->assign_block_vars($header_block . $logged_in_out_block . '.statistics', array());
+if ($board_config['cstat']) {
+	$template->block($header_block . $logged_in_out_block . '.statistics', []);
+}
 
 if ( $board_config['board_msg_enable'] == '2' )
 {
-	$template->assign_block_vars('switch_enable_board_msg', array()); 
+	$template->block('switch_enable_board_msg', []); 
 }
 
 // get the nav sentence
@@ -721,22 +728,26 @@ if ($nav_cat_desc != '')
 }
 
 // send to template
-$template->assign_vars(array(
+$template->vars([
 	'STYLE_NAME' => $theme['template_name'],
 	'SPACER' => $images['spacer'],
 	'NAV_SEPARATOR' => $nav_separator ?? '',
 	'NAV_CAT_DESC' => $nav_cat_desc,
-	)
-);
+]);
 
 $banner_top = ($board_config['banner_top_enable']) ? $board_config['banner_top'] : '';
-$template->assign_vars(array('BANNER_TOP' => replace_vars($banner_top)));
+$template->vars([
+	'BANNER_TOP' => replace_vars($banner_top)
+]);
+
+// @todo cache headers
 
 // Add no-cache control for cookies if they are set
 //$c_no_cache = (isset($HTTP_COOKIE_VARS[$board_config['cookie_name'] . '_sid']) || isset($HTTP_COOKIE_VARS[$board_config['cookie_name'] . '_data'])) ? 'no-cache="set-cookie", ' : '';
 
 // Work around for "current" Apache 2 + PHP module which seems to not
 // cope with private cache control setting
+/*
 if (!empty($HTTP_SERVER_VARS['SERVER_SOFTWARE']) && strstr($HTTP_SERVER_VARS['SERVER_SOFTWARE'], 'Apache/2'))
 {
 	@header ('Cache-Control: no-cache, pre-check=0, post-check=0');
@@ -747,7 +758,6 @@ else
 }
 @header ('Expires: 0');
 @header ('Pragma: no-cache');
+*/
 
 $template->pparse('overall_header');
-
-?>

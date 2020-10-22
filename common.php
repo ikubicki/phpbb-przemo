@@ -140,7 +140,7 @@ include($phpbb_root_path . 'includes/functions.'.$phpEx);
 include($phpbb_root_path . 'includes/db.'.$phpEx);
 
 $dbdsn = PhpBB\Data\MySQL\Connection::GetDSN($dbname, $dbhost, $dbport, $dbchars);
-$templates_directory = ($phpbb_root_dir ?: '.') . '/templates/default';
+$templates_directory = $phpbb_root_path . 'templates/default';
 PhpBB\Core\Context::register([
 	'values' => [
 		'collection-prefix' => $table_prefix,

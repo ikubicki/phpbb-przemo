@@ -64,13 +64,13 @@ else
 	$generate_time = '';
 }
 
-$template->assign_vars(array(
+$template->vars([
 	'LOADING_FOOTER' => ($board_config['cload'] && $userdata['cload']) ? "<script language=\"JavaScript\" type=\"text/javascript\">\n<!--\nhideLoadingPage();\n//-->\n</script>" : '',
 	'CLICK_HERE_TO_VIEW' => $bo,
 	'BANNER_BOTTOM' => replace_vars($banner_bottom),
 	'GENERATE_TIME' => $generate_time,
-	'TRANSLATION_INFO' => (isset($lang['TRANSLATION_INFO'])) ? $lang['TRANSLATION_INFO'] : ((isset($lang['TRANSLATION'])) ? $lang['TRANSLATION'] : ''))
-);
+	'TRANSLATION_INFO' => (isset($lang['TRANSLATION_INFO'])) ? $lang['TRANSLATION_INFO'] : ((isset($lang['TRANSLATION'])) ? $lang['TRANSLATION'] : ''),
+]);
 
 $template->pparse('overall_footer');
 if ( $show_queries )
@@ -81,7 +81,3 @@ if ( $show_queries )
 // Close our DB connection.
 //
 $db->sql_close();
-
-exit;
-
-?>

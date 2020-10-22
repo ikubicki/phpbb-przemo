@@ -2450,16 +2450,16 @@ function groups_color_explain($block)
 		}
 		if( $val['group_type'] != GROUP_HIDDEN || ( $val['group_type'] == GROUP_HIDDEN && $userdata['session_logged_in'] && ( $val['group_moderator'] == $userdata['user_id']  || $userdata['user_level'] == ADMIN ) ) )
 		{
-			$template->assign_block_vars($block, array(
+			$template->block($block, [
 				'GROUP_PREFIX' => $val['group_prefix'],
 				'GROUP_NAME' => $val['group_name'],
 				'GROUP_COLOR' => $val['group_color'],
 				'GROUP_STYLE' => ($val['group_style']) ? '; ' . $val['group_style'] : '',
-				'U_GROUP_URL' => ($board_config['staff_enable'] || !$val['group_url']) ? (append_sid((($val['group_url']) ? "staff" : "groupcp") . ".$phpEx?" . POST_GROUPS_URL . "=" . $val['group_id'])) : 'javascript:void();')
-			);
+				'U_GROUP_URL' => ($board_config['staff_enable'] || !$val['group_url']) ? (append_sid((($val['group_url']) ? "staff" : "groupcp") . ".$phpEx?" . POST_GROUPS_URL . "=" . $val['group_id'])) : 'javascript:void();',
+			]);
 			if ( $i != ($count_groups_desc - 1) )
 			{
-				$template->assign_block_vars($block . '.se_separator', array());
+				$template->block($block . '.se_separator', array());
 			}
 			$i++;
 		}

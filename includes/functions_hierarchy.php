@@ -22,7 +22,7 @@ function get_max_depth($cur = 'Root', $all = false, $level = -1, &$keys, $max = 
 	global $tree;
 	if ( empty($keys['id']) )
 	{
-		$keys = array();
+		$keys = [];
 		$keys = get_auth_keys($cur, $all);
 	}
 
@@ -82,7 +82,7 @@ function build_index($cur = 'Root', $cat_break = false, &$forum_moderators, $rea
 		{
 			$max = 1;
 		}
-		$keys = array();
+		$keys = [];
 		$keys = get_auth_keys($cur, false, -1, $max);
 		$max_level = get_max_depth($cur, false, -1, $keys, $max);
 	}
@@ -114,8 +114,8 @@ function build_index($cur = 'Root', $cat_break = false, &$forum_moderators, $rea
 				}
 			}
 		}
-		$template->assign_block_vars('catrow', array());
-		$template->assign_block_vars('catrow.tablehead', array(
+		$template->block('catrow', []);
+		$template->block('catrow.tablehead', array(
 			'CAT_ID' => $cur,
 			'L_FORUM' => ($athis < 0) ? $lang['Forum'] : get_object_lang($cur, 'name'),
 			'U_FORUM' => append_sid("index.$phpEx?" . POST_CAT_URL . "=" . substr($cur, 1)),
@@ -126,7 +126,7 @@ function build_index($cur = 'Root', $cat_break = false, &$forum_moderators, $rea
 		$handled[] = $cur;
 		if ( $cur != 'Root' )
 		{
-			$template->assign_block_vars('catrow.tablehead.br', array('CAT_ID' => $cur));
+			$template->block('catrow.tablehead.br', array('CAT_ID' => $cur));
 		}
 	}
 
@@ -161,8 +161,8 @@ function build_index($cur = 'Root', $cat_break = false, &$forum_moderators, $rea
 				$class_rowpic = 'rowpic';
 
 				// send to template
-				$template->assign_block_vars('catrow', array());
-				$template->assign_block_vars('catrow.cathead', array(
+				$template->block('catrow', []);
+				$template->block('catrow.cathead', array(
 					'CAT_ID' => $cat_id,
 					'CAT_TITLE'	=> get_object_lang($cur, 'name'),
 					'CAT_DESCRIPTION' => get_object_lang(POST_CAT_URL . $cat_id, 'desc'),
@@ -176,21 +176,21 @@ function build_index($cur = 'Root', $cat_break = false, &$forum_moderators, $rea
 				// add indentation to the display
 				for($k = 1; $k <= $level; $k++)
 				{
-					$template->assign_block_vars('catrow.cathead.inc', array(
+					$template->block('catrow.cathead.inc', array(
 						'INC_CLASS' => ($k % 2) ? 'row1' : 'row2')
 					);
 				}
 				if (!empty($cat['cat_desc']))
 				{
-					$template->assign_block_vars('catrow', array());
-					$template->assign_block_vars('catrow.cattitle', array(
+					$template->block('catrow', []);
+					$template->block('catrow.cattitle', array(
 						'CAT_DESCRIPTION' => get_object_lang(POST_CAT_URL . $cat_id, 'desc'),
 						'INC_SPAN_ALL' => $max_level - $level + 5)
 					);
 					// add indentation to the display
 					for($k = 1; $k <= $level; $k++)
 					{
-						$template->assign_block_vars('catrow.cattitle.inc', array(
+						$template->block('catrow.cattitle.inc', array(
 							'INC_CLASS' => ($k % 2) ? 'row1' : 'row2')
 						);
 					}
@@ -302,7 +302,7 @@ function build_index($cur = 'Root', $cat_break = false, &$forum_moderators, $rea
 
 				if ( !$data['tree.topic_accept'] )
 				{
-					$is_auth = array();
+					$is_auth = [];
 					$is_auth = $tree['auth'][POST_FORUM_URL . $forum_id];
 
 					if ( ($data['tree.topic_poster'] == $userdata['user_id'] && $userdata['user_id'] != ANONYMOUS) || $is_auth['auth_mod'] )
@@ -442,8 +442,8 @@ function build_index($cur = 'Root', $cat_break = false, &$forum_moderators, $rea
 			}
 
 			// send to template
-			$template->assign_block_vars('catrow', array());
-			$template->assign_block_vars('catrow.forumrow', array(
+			$template->block('catrow', []);
+			$template->block('catrow.forumrow', array(
 				'FORUM_ID' => $id,
 //				'CAT_ID' => str_replace(POST_CAT_URL, '', $tree['main'][$athis]),
 				'FORUM_FOLDER_IMG' => $folder_image,
@@ -468,7 +468,7 @@ function build_index($cur = 'Root', $cat_break = false, &$forum_moderators, $rea
 			// add indentation to the display
 			for($k=1; $k <= $level; $k++)
 			{
-				$template->assign_block_vars('catrow.forumrow.inc', array(
+				$template->block('catrow.forumrow.inc', array(
 					'INC_CLASS' => ($k % 2) ? 'row1' : 'row2')
 				);
 			}
@@ -476,7 +476,7 @@ function build_index($cur = 'Root', $cat_break = false, &$forum_moderators, $rea
 			// add the links row
 			if ( !empty($links) )
 			{
-				$template->assign_block_vars('catrow.forumrow.links', array(
+				$template->block('catrow.forumrow.links', array(
 					'L_LINKS' => (empty($moderator_list) ? '' : '<br />'),
 					'LINKS'	=> $links)
 				);
@@ -490,13 +490,13 @@ function build_index($cur = 'Root', $cat_break = false, &$forum_moderators, $rea
 				{
 					$s_hit_count = sprintf($lang['Forum_link_visited'], $tree['data'][$athis]['forum_link_hit']);
 				}
-				$template->assign_block_vars('catrow.forumrow.forum_link', array(
+				$template->block('catrow.forumrow.forum_link', array(
 					'HIT_COUNT' => $s_hit_count)
 				);
 			}
 			else
 			{
-				$template->assign_block_vars('catrow.forumrow.forum_link_no', array());
+				$template->block('catrow.forumrow.forum_link_no', []);
 			}
 			// something displayed
 			$display = true;
@@ -528,15 +528,15 @@ function build_index($cur = 'Root', $cat_break = false, &$forum_moderators, $rea
 		// cat footer
 		if ( ($tree['type'][$athis] == POST_CAT_URL) && $pull_down )
 		{
-			$template->assign_block_vars('catrow', array());
-			$template->assign_block_vars('catrow.catfoot', array(
+			$template->block('catrow', []);
+			$template->block('catrow.catfoot', array(
 				'INC_SPAN' => $max_level - $level+5)
 			);
 
 			// add indentation to the display
 			for($k = 1; $k <= $level; $k++)
 			{
-				$template->assign_block_vars('catrow.catfoot.inc', array(
+				$template->block('catrow.catfoot.inc', array(
 					'INC_SPAN' => $max_level - $level+5,
 					'INC_CLASS' => ($k % 2) ? 'row1' : 'row2')
 				);
@@ -547,11 +547,11 @@ function build_index($cur = 'Root', $cat_break = false, &$forum_moderators, $rea
 	// root level footer
 	if ( ($board_config['split_cat'] && $cat_break && $real_level == 0) || ((!$board_config['split_cat'] || !$cat_break) && $real_level == -1) )
 	{
-		$template->assign_block_vars('catrow', array());
-		$template->assign_block_vars('catrow.tablefoot', array());
+		$template->block('catrow', []);
+		$template->block('catrow.tablefoot', []);
 		if ( $cur != 'Root' )
 		{
-			$template->assign_block_vars('catrow.tablefoot.br_bottom', array(
+			$template->block('catrow.tablefoot.br_bottom', array(
 				'CAT_ID' => $cur,'CAT_TITLE' => get_object_lang($cur, 'name'),
 				'BR' => ($br) ? '' : '<br />',
 			));
@@ -571,29 +571,29 @@ function display_index($cur='Root')
 		'index' => 'index_box.tpl')
 	);
 
-	$forum_moderators = array();
+	$forum_moderators = [];
 
 	$board_config['split_cat'] = (!$board_config['split_cat_over']) ? $userdata['user_split_cat'] : $board_config['split_cat'];
 
 	// let's dump all of this on the template
-	$keys = array();
+	$keys = [];
 	$display = build_index($cur, $board_config['split_cat'], $forum_moderators, -1, -1, $keys);
 
 	// constants
-	$template->assign_vars(array(
+	$template->vars([
 		'L_FORUM' => $lang['Forum'],
 		'L_TOPICS' => $lang['Topics'],
 		'L_POSTS' => $lang['Posts'],
-		'L_LASTPOST' => $lang['Last_Post'])
-	);
-	$template->assign_vars(array(
+		'L_LASTPOST' => $lang['Last_Post'],
+	]);
+	$template->vars([
 		'SPACER' => $images['spacer'],
 		'NAV_SEPARATOR' => $nav_separator,
-		'NAV_CAT_DESC' => $nav_cat_desc)
-	);
+		'NAV_CAT_DESC' => $nav_cat_desc,
+	]);
 	if ( $display )
 	{
-		$template->assign_var_from_handle('BOARD_INDEX', 'index');
+		$template->var('BOARD_INDEX', $template->render('index_box.tpl'));
 	}
 	return $display;
 }

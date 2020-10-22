@@ -8,8 +8,8 @@ use Twig\Environment as TwigEnvironment;
 
 class Templates
 {
-
     protected $twig;
+    protected $loader;
     protected $variables = [];
 
     public function __construct($directory, array $options = [])
@@ -17,10 +17,16 @@ class Templates
         if (!isset($options['cache'])) {
             $options['cache'] = '/tmp/twig';
         }
-        $this->twig = new TwigEnvironment(new TwigLoader($directory), $options);
+        $this->loader = new TwigLoader($directory);
+        $this->twig = new TwigEnvironment($this->loader, $options);
         if (isset($options['debug'])) {
             $this->twig->addExtension(new TwigDebugExt());
         }
+    }
+
+    public function addPath($path)
+    {
+        $this->loader->addPath($path);
     }
 
     public function render($filename)
@@ -31,6 +37,9 @@ class Templates
 
     public function display($filename)
     {
+        //print '<pre>';
+        //print_r($this->variables);
+        //exit;
         echo $this->render($filename);
     }
 
@@ -45,11 +54,54 @@ class Templates
     {
         $this->variables[$variable] = $value;
     }
+    /*
+    /var1
+    /var2
+    /var3
+    /tablehead[]
+        /var1
+        /var2
+        /br[]
+            /var
+    /tablehead[]
+        /var1
+        /var2
+        /br[]
+            /var
+    /tablehead[]
+        /var1
+        /var2
+    /forumrow[]
+        /var1
+        /var2
+        /forum_link_no[]
+    /forumrow[]
+        /var1
+        /var2
+        /forum_link_no[]
+    */
+
+    protected $blockPointers = [];
 
     public function block($block, array $variables = [])
     {
+        // print $block . '<br />';
         $chunks = explode('.', $block);
-        $block = array_shift($chunks);
+        $block = array_pop($chunks);
+        $blockPointerIndex = implode('.', $chunks);
+        $blockPointer = &$this->variables;
+        if ($blockPointerIndex) {
+            $blockPointer = &$this->blockPointers[$blockPointerIndex];
+        }
+        if (!array_key_exists($block, $blockPointer)) {
+            $blockPointer[$block] = [];
+        }
+        $index = count($blockPointer[$block]);
+        $blockPointer[$block][$index] = &$variables;
+        $this->blockPointers[$blockPointerIndex . ($blockPointerIndex ? '.' : '') . $block] = &$variables;
+        //echo "-> $blockPointerIndex$block<br />";
+        //var_dump($this->blockPointers[$blockPointerIndex . $block]);
+/*
         if (!isset($this->variables[$block])) {
             $this->variables[$block] = [];
         }
@@ -60,7 +112,10 @@ class Templates
             }
             $container = &$container[$_block];
         }
-        $container[] = $variables;
+        if (!empty($variables)) {
+            $container[] = $variables;
+        }
+*/
     }
 
     public function set_filenames($filenames)
@@ -68,5 +123,10 @@ class Templates
         foreach($filenames as $filename) {
             $this->twig->load($filename);
         }
+    }
+
+    public function pparse($name)
+    {
+
     }
 }

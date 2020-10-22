@@ -160,7 +160,7 @@ if ( $userdata['user_id'] != ANONYMOUS )
 
 	if ( $count_unread_posts )
 	{
-		$template->assign_block_vars('switch_unread', []);
+		$template->block('switch_unread', []);
 	}
 }
 //end count unread posts
@@ -221,9 +221,9 @@ if ( $mark_read == 'forums' )
 			}
 		}
 
-		$template->assign_vars(array(
-			'META' => '<meta http-equiv="refresh" content="' . $board_config['refresh'] . ';url=' .append_sid("index.$phpEx") . '">')
-		);
+		$template->vara([
+			'META' => '<meta http-equiv="refresh" content="' . $board_config['refresh'] . ';url=' .append_sid("index.$phpEx") . '">'
+		]);
 	}
 	else
 	{
@@ -252,9 +252,9 @@ if ( $mark_read == 'forums' )
 			}
 		}
 
-		$template->assign_vars(array(
-			'META' => '<meta http-equiv="refresh" content="3;url='	.append_sid("index.$phpEx?" . POST_CAT_URL . "=$viewcat") . '">')
-		);
+		$template->vars([
+			'META' => '<meta http-equiv="refresh" content="3;url='	.append_sid("index.$phpEx?" . POST_CAT_URL . "=$viewcat") . '">'
+		]);
 	}
 
 	$message = $lang['Forums_marked_read'] . '<br /><br />' . sprintf($lang['Click_return_index'], '<a href="' . append_sid("index.$phpEx?" . POST_CAT_URL . "=$viewcat") . '">', '</a> ');
@@ -341,15 +341,15 @@ if ( !$userdata['session_logged_in'] && $board_config['cregist'] )
 		$template->block('custom_registration', []);
 	}
 
-	$template->assign_vars(array(
+	$template->vars([
 		'L_REGIST_TITLE' => $lang['rname'],
 		'L_CONFIRM_PASSWORD' => $lang['Confirm_password'],
 		'L_EMAIL' => $lang['Email'],
 
 		'S_HIDDEN_FIELDS' => '<input type="hidden" name="viewemail" value="1" checked="checked" /><input type="hidden" name="hideonline" value="0" checked="checked" /><input type="hidden" name="notifyreply" value="0" checked="checked" /><input type="hidden" name="notifypm" value="1" checked="checked" /><input type="hidden" name="popup_pm" value="1" checked="checked" /><input type="hidden" name="attachsig" value="1" checked="checked" /><input type="hidden" name="allowbbcode" value="1" checked="checked" /><input type="hidden" name="allowhtml" value="1" checked="checked" /><input type="hidden" name="allowsmilies" value="1" checked="checked" /><input type="hidden" name="dateformat" value="' . $board_config['default_dateformat'] . '" /><input type="hidden" name="mode" value="register" /><input type="hidden" name="agreed" value="true" /><input type="hidden" name="sid" value="' . $userdata['session_id'] . '"><input type="hidden" name="coppa" value="0" /><input type="hidden" name="przemo_hash" value="'.przemo_create_hash().'" />',
 		'CUSTOM_FIELDS' => $custom_field_box,
-		'S_PROFILE_ACTION' => append_sid("profile.$phpEx"))
-	);
+		'S_PROFILE_ACTION' => append_sid("profile.$phpEx")
+	]);
 
 	if ( $board_config['gender'] && $board_config['require_gender'] )
 	{
@@ -361,11 +361,11 @@ if ( !$userdata['session_logged_in'] && $board_config['cregist'] )
 		{
 			$template->block('custom_registration.gender_box', []);
 		}
-		$template->assign_vars(array(
+		$template->vars([
 			'L_GENDER' => $lang['Gender'],
 			'L_FEMALE' => $lang['Female'],
-			'L_MALE' => $lang['Male'])
-		);
+			'L_MALE' => $lang['Male'],
+		]);
 	}
 
 	if ( $board_config['validate'] && @extension_loaded('zlib') )
@@ -406,21 +406,22 @@ if ( !$userdata['session_logged_in'] && $board_config['cregist'] )
 			$template->block('custom_registration.validation', []);
 		}
 		
-		$template->assign_vars(array(
+		$template->vars([
 			'VALIDATION_IMAGE' => append_sid("includes/confirm_register.$phpEx"),
-			'L_CODE' => $lang['Code'])
-		);
+			'L_CODE' => $lang['Code']
+		]);
 	}
 }
 
 $counter = ( $board_config['ccount'] ) ? '<br />' . $lang['visitors_txt'] . ' <b>' . $visit_counter . '</b> ' . $lang['visitors_txt2'] : '';
 if ( $board_config['cstyles'] )
 {
-	$template->assign_block_vars('change_style', array(
+	$template->block('change_style', [
 		'L_CHANGE_STYLE' => $lang['Board_style'],
-		'TEMPLATE_SELECT' => ($userdata['session_logged_in']) ? style_select($userdata['user_style'], 'fpage_theme') : style_select($board_config['default_style'], 'template'))
-	);
+		'TEMPLATE_SELECT' => ($userdata['session_logged_in']) ? style_select($userdata['user_style'], 'fpage_theme') : style_select($board_config['default_style'], 'template')
+	]);
 }
+
 
 $shoutbox_config = sql_cache('check', 'shoutbox_config');
 if (empty($shoutbox_config))
@@ -439,7 +440,7 @@ if (empty($shoutbox_config))
 	}
 	sql_cache('write', 'shoutbox_config', $shoutbox_config);
 }
-
+/*
 if ( $shoutbox_config['shoutbox_on'] && $userdata['shoutbox'] )
 {
 	$shoutbox_config['banned_user_id_view'] = $GLOBALS['shoutbox_config']['banned_user_id_view'];
@@ -496,8 +497,39 @@ if ( $shoutbox_config['shoutbox_on'] && $userdata['shoutbox'] )
 		include($phpbb_root_path . 'includes/shoutbox.'.$phpEx);
 	}
 }
+*/
 
-$template->assign_vars(array(
+if ( $shoutbox_config['shoutbox_on'] && $userdata['shoutbox'] )
+{
+	
+	$template->vars([
+		'USER_ID' => $userdata['user_id'],
+		'SESSION_ID' => $userdata['session_id'],
+		'SHOUTBOX_WIDTH' => $shoutbox_config['shout_width'],
+		'SHOUTBOX_HEIGHT' => $shoutbox_config['shout_height'],
+		'MAXLENGHT' => $shoutbox_config['text_lenght'],
+		'REFRESH_SB' => $shoutbox_config['shout_refresh'] * 1000,
+
+		'L_SEND' => $lang['Submit'],
+		'L_CANCEL' => $lang['Cancel'],
+		'L_DELETE' => $lang['Delete'],
+		'L_GG_MES' => $lang['Message'],
+		'L_CONFIRM_DELETE' => $lang['Confirm_delete'],
+		'L_ALERT' => $lang['l_alert_sb'],
+		'L_REFRESH_SB' => $lang['l_refresh_sb'],
+		'L_CANCEL_SB' => $lang['l_cancel_sb'],
+		'L_EDIT_SB' => $lang['l_edit_sb'],
+		'L_SHOUTBOX' => 'Shouts',
+	]);
+
+	$template->addPath(__DIR__ . '/modules');
+	$template->var('MODULE_SHOUTBOX', $template->render('shouts/tpl/shoutbox_body.tpl'));
+	$template->var('SHOUTBOX_DISPLAY', $template->render('shoutbox_body.tpl'));
+}
+
+
+
+$template->vars([
 	'FORUM_IMG' => $images['forum'],
 	'FORUM_NEW_IMG' => $images['forum_new'],
 	'FORUM_LOCKED_IMG' => $images['forum_locked'],
@@ -528,8 +560,8 @@ $template->assign_vars(array(
 	'U_VIEWONLINE' => append_sid('viewonline.'.$phpEx),
 
 	'U_PREFERENCES' => append_sid('customize.'.$phpEx),
-	'U_MARK_READ' => "index.$phpEx?mark=forums&amp;" . POST_CAT_URL . "=$viewcat&amp;sid=" . $userdata['session_id'])
-);
+	'U_MARK_READ' => "index.$phpEx?mark=forums&amp;" . POST_CAT_URL . "=$viewcat&amp;sid=" . $userdata['session_id'],
+]);
 
 // Okay, let's build the index
 
@@ -537,7 +569,7 @@ $board_config['display_viewonline'] = (!$board_config['display_viewonline_over']
 
 if ( ($board_config['display_viewonline'] == 2) || (($viewcat < 0) && ($board_config['display_viewonline'] == 1)) )
 {
-	$template->assign_block_vars('disable_viewonline', []);
+	$template->block('disable_viewonline', []);
 
 	if ( $board_config['display_viewonline'] && (($board_config['display_viewonline'] == 2 && $viewcat > 0) || $viewcat < 0) )
 	{
@@ -659,22 +691,22 @@ if ( ($board_config['display_viewonline'] == 2) || (($viewcat < 0) && ($board_co
 
 	if ( $board_config['staff_enable'] )
 	{
-		$template->assign_block_vars('disable_viewonline.staff', []);
-		$template->assign_vars(array(
+		$template->block('disable_viewonline.staff', []);
+		$template->vars([
 			'L_STAFF' => $lang['Staff'],
-			'U_STAFF' => append_sid("staff.$phpEx"))
-		);
+			'U_STAFF' => append_sid("staff.$phpEx"),
+		]);
 	}
 
 	if ( $board_config['warnings_enable'] )
 	{
-		$template->assign_block_vars('disable_viewonline.warnings', []);
-		$template->assign_vars(array(
-			'U_WARNINGS' => '<a href="' . append_sid("warnings.$phpEx") . '">' . $lang['Warnings'] . '</a>',)
-		);
+		$template->block('disable_viewonline.warnings', []);
+		$template->vars([
+			'U_WARNINGS' => '<a href="' . append_sid("warnings.$phpEx") . '">' . $lang['Warnings'] . '</a>',
+		]);
 	}
 
-	$template->assign_vars(array(
+	$template->vars([
 		'TOTAL_POSTS' => sprintf($l_total_post_s, $total_posts) . ', ' . $lang['topics'] . ' <b>' . get_db_stat('topiccount') . '</b>',
 		'TOTAL_USERS' => sprintf($l_total_user_s, $total_users),
 		'NEWEST_USER' => sprintf($lang['Newest_user'], '<a href="' . append_sid("profile.$phpEx?mode=viewprofile&amp;" . POST_USERS_URL . "=$newest_uid") . '" class="gensmall">', $newest_user, '</a>'),
@@ -684,8 +716,8 @@ if ( ($board_config['display_viewonline'] == 2) || (($viewcat < 0) && ($board_co
 		'RECORD_USERS' => sprintf($lang['Record_online_users'], $board_config['record_online_users'], create_date($board_config['default_dateformat'], $board_config['record_online_date'], $board_config['board_timezone'])),
 		'WHOONLINE_IMG' => $images['icon_online'],
 		'L_WHO_IS_ONLINE' => $lang['Who_is_Online'],
-		'L_VIEW_DETAILED' => $lang['l_whoisonline'])
-	);
+		'L_VIEW_DETAILED' => $lang['l_whoisonline']
+	]);
 }
 
 // display the index
@@ -699,7 +731,7 @@ if (!$display)
 
 if ($board_config['board_msg_enable'] == '1')
 {
-	$template->assign_block_vars('switch_enable_board_msg_index', []); 
+	$template->block('switch_enable_board_msg_index', []); 
 }
 
 //
@@ -708,5 +740,7 @@ if ($board_config['board_msg_enable'] == '1')
 $template->pparse('body');
 
 include($phpbb_root_path . 'includes/page_tail.'.$phpEx);
+
+$template->display('index_body.tpl')
 
 ?>
