@@ -1310,7 +1310,7 @@ $template->vars(array(
 	'TOPIC_ID' => $topic_id,
 	'TOPIC_TITLE' => replace_encoded($topic_title),
 	'TOPIC_TITLE_B' => $b_topic_title ?? '',
-	'TOPIC_COLOR' => ($board_config['topic_color'] && $forum_topic_data['topic_color']) ? ' style="color: ' . $forum_topic_data['topic_color'] . '"' : '',
+	'TOPIC_COLOR' => ($board_config['topic_color'] && $forum_topic_data['topic_color']) ? $forum_topic_data['topic_color'] : '',
 
 	'POST_IMG' => $post_img,
 	'REPLY_IMG' => $reply_img,
@@ -2736,7 +2736,7 @@ if ( $show_quickreply )
 if ( !empty($show_reject_panel) && $forum_topic_data['forum_moderate'] && $is_auth['auth_mod'] )
 {
 	$template->block('moderate', array(
-		'L_ACCEPT-REJECT_POST' => $lang['Accept-reject'],
+		'L_ACCEPT_REJECT_POST' => $lang['Accept-reject'],
 		'S_MODERATE_ACTION' => append_sid("viewtopic.$phpEx?" . POST_TOPIC_URL . "=$topic_id"))
 	);
 }

@@ -1,4 +1,7 @@
 <?php
+
+use PhpBB\Forum\Url;
+
 /***************************************************************************
  *                      functions_hierarchy.php
  *                      -------------------
@@ -275,8 +278,8 @@ function build_index($cur = 'Root', $cat_break = false, &$forum_moderators, $rea
 			}
 
 			// moderators list
-			$l_moderators	= '&nbsp;';
-			$moderator_list = '&nbsp;';
+			$l_moderators	= '';
+			$moderator_list = '';
 			if ( $type == POST_FORUM_URL )
 			{
 				$forum_moderators = moderarots_list($id, 'groups');
@@ -284,13 +287,16 @@ function build_index($cur = 'Root', $cat_break = false, &$forum_moderators, $rea
 
 				if ( $count_moderators > 0 )
 				{
-					$moderator_list = implode(', ', $forum_moderators);
+					$moderator_list = $forum_moderators;
 					$l_moderators = ( $count_moderators == 1 ) ? $lang['Moderator'] : $lang['Moderators'];
 				}
 			}
 
 			// last post
 			$last_post = '--';
+			$last_post_time = '';
+			$last_post_author = '';
+			$u_last_post = '';
 
 			if ( $data['tree.topic_last_post_id'] )
 			{
@@ -321,23 +327,28 @@ function build_index($cur = 'Root', $cat_break = false, &$forum_moderators, $rea
 				{	
 					$topic_title_href = $data['tree.topic_title'];
 				}
-				$topic_title = '<a href="' . append_sid("viewtopic.$phpEx?" . POST_POST_URL . "=" . $data['tree.topic_last_post_id']) . '#' . $data['tree.topic_last_post_id'] . '" title="' . $topic_title_href . '" class="gensmall">' . $topic_title . '</a>';
+				// $topic_title = '<a href="' . append_sid("viewtopic.$phpEx?" . POST_POST_URL . "=" . $data['tree.topic_last_post_id']) . '#' . $data['tree.topic_last_post_id'] . '" title="' . $topic_title_href . '" class="gensmall">' . $topic_title . '</a>';
+				$topic_title = new Url("viewtopic.$phpEx?" . POST_POST_URL . "=" . $data['tree.topic_last_post_id'] . '#' . $data['tree.topic_last_post_id'], $topic_title);
 				
 				$board_config['last_topic_title'] = (!$board_config['last_topic_title_over']) ? $userdata['user_last_topic_title'] : $board_config['last_topic_title'];
-				$last_postmsg = (($board_config['last_topic_title']) ? $topic_title : '');
-				$last_postmsg = ($board_config['last_topic_title']) ? '' . $lang['Last_Post'] . ': ' . $last_postmsg . '' : '';
+				$last_postmsg = $board_config['last_topic_title'] ? $topic_title : '';
 
 				$colored_username = color_username($data['tree.user_level'], $data['tree.user_jr'], $data['tree.post_user_id'], $data['tree.post_username']);
-				$color_username = $colored_username[0];
+				// $color_username = $colored_username[0];
 
 				$last_post_time = create_date($board_config['default_dateformat'], $data['tree.post_time'], $board_config['board_timezone']);
-				$last_post = $last_post_time . '<br />';
+				// $last_post = $last_post_time . '<br />';
 				if ( (isset($data['post_approve']) && $data['post_approve'] == 1) || empty($data['forum_moderate']) )
 				{
-					$last_post .= ( $data['tree.post_user_id'] == ANONYMOUS ) ? $data['tree.post_username'] . ' ' : '<a href="' . append_sid("profile.$phpEx?mode=viewprofile&amp;" . POST_USERS_URL . '=' . $data['tree.post_user_id']) . '"' . $colored_username[1] . ' class="gensmall">' . $color_username . '</a> ';
+					// $last_post .= ( $data['tree.post_user_id'] == ANONYMOUS ) ? $data['tree.post_username'] . ' ' : '<a href="' . append_sid("profile.$phpEx?mode=viewprofile&amp;" . POST_USERS_URL . '=' . $data['tree.post_user_id']) . '"' . $colored_username[1] . ' class="gensmall">' . $color_username . '</a> ';
+					$last_post_author = $data['tree.post_username'];
+					if ($data['tree.post_user_id'] != ANONYMOUS) {
+						$last_post_author = new Url("profile.$phpEx?mode=viewprofile&amp;" . POST_USERS_URL . '=' . $data['tree.post_user_id'], $last_post_author, ['color' => $colored_username[2]]);
+					}
 				}
 
-				$last_post .= '<a href="' . append_sid("viewtopic.$phpEx?" . POST_POST_URL . '=' . $data['tree.topic_last_post_id']) . '#' . $data['tree.topic_last_post_id'] . '"><img src="' . $images['icon_latest_reply'] . '" border="0" alt="' . $lang['Last_Post'] . '" title="' . $lang['Last_Post'] . '" /></a>';
+				// $last_post .= '<a href="' . append_sid("viewtopic.$phpEx?" . POST_POST_URL . '=' . $data['tree.topic_last_post_id']) . '#' . $data['tree.topic_last_post_id'] . '"><img src="' . $images['icon_latest_reply'] . '" border="0" alt="' . $lang['Last_Post'] . '" title="' . $lang['Last_Post'] . '" /></a>';
+				$u_last_post = new Url("viewtopic.$phpEx?" . POST_POST_URL . '=' . $data['tree.topic_last_post_id'] . '#' . $data['tree.topic_last_post_id'], '&nbsp;', ['class' => 'icon reply']);
 			}
 
 			// links to sub-levels
@@ -355,46 +366,54 @@ function build_index($cur = 'Root', $cat_break = false, &$forum_moderators, $rea
 					switch($tree['type'][$wthis])
 					{
 						case POST_FORUM_URL:
-							$wpgm = append_sid("./viewforum.$phpEx?" . POST_FORUM_URL . '=' . $tree['id'][$wthis]);
+							$wpgm = "./viewforum.$phpEx?" . POST_FORUM_URL . '=' . $tree['id'][$wthis];
 							break;
 						case POST_CAT_URL:
-							$wpgm = append_sid("./index.$phpEx?" . POST_CAT_URL . '=' . $tree['id'][$wthis]);
+							$wpgm = "./index.$phpEx?" . POST_CAT_URL . '=' . $tree['id'][$wthis];
 							break;
 						default:
-							$wpgm = append_sid("./index.$phpEx");
+							$wpgm = "./index.$phpEx";
 							break;
 					}
 					$link = '';
 					if ( $wname != '' )
 					{
-						$style_color = (!empty($tree['data'][$wthis]['forum_color'])) ? ' style="color: #' . $tree['data'][$wthis]['forum_color'] . '"' : '';
-						$link = '<a href="' . $wpgm . '" title="' . xhtmlspecialchars(strip_tags($wdesc)) . '" class="gensmall"' . $style_color . '>' . $wname . '</a>';
+						$style_color = (!empty($tree['data'][$wthis]['forum_color'])) ? '#' . $tree['data'][$wthis]['forum_color'] : '';
+						// $link = '<a href="' . $wpgm . '" title="' . xhtmlspecialchars(strip_tags($wdesc)) . '" class="gensmall"' . $style_color . '>' . $wname . '</a>';
+						$link = new Url($wpgm, $wname, ['color' => $style_color]);
+						
 					}
 
-					if ( intval($board_config['sub_level_links']) == 2 )
+					if ( intval($board_config['sub_level_links']) == 2)
 					{
 						$wsub = (!empty($tree['sub'][$wcur]) && $tree['auth'][$wcur]['tree.auth_view']);
 
 						// specific to something attached
-//						if ( $wsub )
-//						{
+						if ( $wsub )
+						{
+							/*
 							$wi_new		= $images['icon_minicat_new'];
 							$wa_new		= $lang['New_posts'];
 							$wi_norm	= $images['icon_minicat'];
 							$wa_norm	= $lang['No_new_posts'];
 							$wi_locked	= $images['icon_minicat_locked'];
 							$wa_locked	= $lang['Forum_locked'];
-/*						}
+							*/
+							$wfolder = 'icon forum';
+						}
 						else
 						{
+							/*
 							$wi_new		= $images['icon_minipost_new'];
 							$wa_new		= $lang['New_posts'];
 							$wi_norm	= $images['icon_minipost'];
 							$wa_norm	= $lang['No_new_posts'];
 							$wi_locked	= $images['icon_minipost_lock'];
 							$wa_locked	= $lang['Forum_locked'];
+							*/
+							$wfolder = 'icon category';
 						}
-*/
+
 						// forum link type
 						if ( ($tree['type'][$wthis] == POST_FORUM_URL) && !empty($wdata['forum_link']) )
 						{
@@ -404,6 +423,7 @@ function build_index($cur = 'Root', $cat_break = false, &$forum_moderators, $rea
 							$wa_norm	= $lang['Forum_link'];
 							$wi_locked	= $images['icon_minilink'];
 							$wa_locked	= $lang['Forum_link'];
+							$wfolder = 'icon link';
 						}
 
 						// front icon
@@ -411,17 +431,20 @@ function build_index($cur = 'Root', $cat_break = false, &$forum_moderators, $rea
 						$u_id = $tree['id'][$wthis];
 						$wdata['tree.unread_topics'] = (!empty($userdata['unread_data'][$u_id])) ? true : false;
 
-						$wfolder_image	= ( $wdata['tree.unread_topics'] ) ? $wi_new : $wi_norm;
-						$wfolder_alt	= ( $wdata['tree.unread_topics'] ) ? $wa_new : $wa_norm;
+						//$wfolder_image	= ( $wdata['tree.unread_topics'] ) ? $wi_new : $wi_norm;
+						//$wfolder_alt	= ( $wdata['tree.unread_topics'] ) ? $wa_new : $wa_norm;
+						$wfolder .= $wdata['tree.unread_topics'] ? ' new' : '';
 						if ( $wdata['tree.locked'] )
 						{
-							$wfolder_image	= $wi_locked;
-							$wfolder_alt	= $wa_locked;
+							//$wfolder_image	= $wi_locked;
+							//$wfolder_alt	= $wa_locked;
+							$wfolder .= ' locked';
 						}
-						$wlast_post = '<a href="' . append_sid("./viewtopic.$phpEx?" . POST_POST_URL . '=' . $wdata['tree.topic_last_post_id']) . '#' . $wdata['tree.topic_last_post_id'] . '">';
-						$wlast_post .= '<img src="' . $wfolder_image . '" style="border: none" alt="' . $wfolder_alt . '" title="' . $wfolder_alt.'"/></a>';
+						//$wlast_post = '<a href="' . append_sid("./viewtopic.$phpEx?" . POST_POST_URL . '=' . $wdata['tree.topic_last_post_id']) . '#' . $wdata['tree.topic_last_post_id'] . '">';
+						//$wlast_post .= '<img src="' . $wfolder_image . '" style="border: none" alt="' . $wfolder_alt . '" title="' . $wfolder_alt.'"/></a>';
+						$wlast_post = new Url("./viewtopic.$phpEx?" . POST_POST_URL . '=' . $wdata['tree.topic_last_post_id'] . '#' . $wdata['tree.topic_last_post_id'], '&nbsp;', ['class' => $wfolder]);
 					}
-					if ( $link != '' )
+					if ($link)
 					{
 						$links .= (($links != '') ? ', ' : '') . $wlast_post . $link;
 					}
@@ -451,8 +474,11 @@ function build_index($cur = 'Root', $cat_break = false, &$forum_moderators, $rea
 				'FORUM_DESC' => replace_encoded($desc),
 				'POSTS' => $data['tree.forum_posts'],
 				'TOPICS' => $data['tree.forum_topics'],
-				'LAST_POST'	=> $last_post,
-				'LAST_POSTMSG'	=> replace_encoded($last_postmsg),
+				'U_LAST_POST' => $u_last_post,
+				'LAST_POST_TIME' => $last_post_time,
+				'LAST_POST_AUTHOR' => $last_post_author,
+				'U_LAST_POSTMSG' => $last_postmsg,
+				'L_LAST_POSTMSG' => $lang['Last_Post'],
                 'MODERATORS'  => $moderator_list,
                 'L_MODERATOR' => $l_moderators,
 				'L_FORUM_FOLDER_ALT' => $folder_alt, 
@@ -476,10 +502,9 @@ function build_index($cur = 'Root', $cat_break = false, &$forum_moderators, $rea
 			// add the links row
 			if ( !empty($links) )
 			{
-				$template->block('catrow.forumrow.links', array(
-					'L_LINKS' => (empty($moderator_list) ? '' : '<br />'),
-					'LINKS'	=> $links)
-				);
+				$template->block('catrow.forumrow.links', [
+					'LINKS'	=> $links
+				]);
 			}
 
 			// forum link type

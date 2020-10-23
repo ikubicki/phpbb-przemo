@@ -76,7 +76,72 @@ table.legend img {
 	top: 4px;
 }
 
+a.latest_reply {
+	background: transparent url(images/icon_latest_reply.gif) no-repeat center center;
+	padding: 0 10px;
+	text-decoration: none;
+}
+
+a.icon {
+	background: transparent no-repeat left center;
+	padding: 0 15px 0 0;
+	text-decoration: none;
+}
+a.icon.link {
+	background-image:  url(images/icon_minilink.gif);
+}
+a.icon.forum {
+	background-image:  url(images/icon_minipost.gif);
+}
+a.icon.category {
+	background-image:  url(images/icon_minicat.gif);
+}
+a.icon.forum.locked {
+	background-image:  url(images/icon_minipost_lock.gif);
+}
+a.icon.category.locked {
+	background-image:  url(images/icon_minicat_lock.gif);
+}
+a.icon.forum.new {
+	background-image:  url(images/icon_minipost_new.gif);
+}
+a.icon.category.new {
+	background-image:  url(images/icon_minicat_new.gif);
+}
+
+
+tr.participated span.participated {
+	display: inline;
+}
+span.participated {
+	display: none;
+}
+
 /* Main table cell colours and backgrounds */
+
+td.nowrap {
+	white-space: nowrap;
+}
+
+tr.forum.row td.left,
+tr.topic.row td.left {
+	text-align: left;
+}
+tr.forum.row td.right,
+tr.topic.row td.right {
+	text-align: right;
+}
+
+tr.forum.row td,
+tr.topic.row td {
+	background-color: #EFEFEF;
+	padding: 10px;
+	border-bottom: 1px solid #c8d0d7;
+	border-top: 1px solid #fff;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 15px;
+}
 td.row1 {
 	background-color: #EFEFEF;
 	padding: 10px;

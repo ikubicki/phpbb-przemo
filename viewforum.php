@@ -1,4 +1,7 @@
 <?php
+
+use PhpBB\Forum\Url;
+
 /***************************************************************************
  *                               viewforum.php
  *                            -------------------
@@ -117,11 +120,7 @@ $user_topics_per_page = ($userdata['user_topics_per_page'] > $board_config['topi
 $user_posts_per_page = ($userdata['user_posts_per_page'] > $board_config['posts_per_page']) ? $board_config['posts_per_page'] : $userdata['user_posts_per_page'];
 
 include($phpbb_root_path . 'includes/read_history.'.$phpEx);
-
-if ( !(@function_exists('users_online')) )
-{
-	include($phpbb_root_path . 'includes/functions_add.'.$phpEx);
-}
+include($phpbb_root_path . 'includes/functions_add.'.$phpEx);
 
 $generate_online = users_online('viewforum');
 $online_userlist = $generate_online[0];
@@ -547,11 +546,12 @@ if ( $board_config['post_icon'] && $userdata['post_icon'] )
 }
 
 $u_index_check = append_sid('index.'.$phpEx);
-
+$show_ignore_topics = '';
 if ( $board_config['ignore_topics'] && $userdata['session_logged_in'] && $userdata['view_ignore_topics'] )
 {
-	$show_ignore_topics = empty($show_ignore) ? '<br /><a href="' . append_sid("viewforum.$phpEx?" . POST_FORUM_URL . "=$forum_id&amp;show_ignore=1" . (($start) ? '&amp;start=' . $start : '')) . '">' . $lang['show_ignore_topics'] . '</a>' : '';
-
+	if (empty($show_ignore)) {
+		$show_ignore_topics = new Url("viewforum.$phpEx?" . POST_FORUM_URL . "=$forum_id&show_ignore=1" . ($start ? '&start=' . $start : ''), $lang['show_ignore_topics']);
+	}
 	$span_i++;
 	$span_j++;
 
@@ -872,77 +872,43 @@ if( $total_topics )
 		}
 
 		$colored_username = color_username($topic_rowset[$i]['user_level'], $topic_rowset[$i]['user_jr'], $topic_rowset[$i]['user_id'], $topic_rowset[$i]['username']);
+		/*
 		$topic_rowset[$i]['username'] = $colored_username[0];
-
 		$topic_author = ($topic_rowset[$i]['user_id'] != ANONYMOUS) ? '<a href="' . append_sid("profile.$phpEx?mode=viewprofile&amp;" . POST_USERS_URL . '=' . $topic_rowset[$i]['user_id']) . '"' . $colored_username[1] . ' class="genmed">' : '';
 		$topic_author .= ($topic_rowset[$i]['user_id'] != ANONYMOUS) ? $topic_rowset[$i]['username'] : ( ( $topic_rowset[$i]['post_username'] != '' ) ? $topic_rowset[$i]['post_username'] : $lang['Guest'] );
 		$topic_author .= ($topic_rowset[$i]['user_id'] != ANONYMOUS) ? '</a>' : '';
+		*/
+		$topic_author = $topic_rowset[$i]['username'] ?: $topic_rowset[$i]['post_username'] ?: $lang['Guest'];
+		if ($topic_rowset[$i]['user_id'] != ANONYMOUS) {
+			$topic_author = new Url("profile.$phpEx?mode=viewprofile&" . POST_USERS_URL . '=' . $topic_rowset[$i]['user_id'], $topic_author, ['color' => $colored_username[2]]);
+		}
+
 		$topic_start_dateformat = ($board_config['topic_start_dateformat']) ? $board_config['topic_start_dateformat'] : $board_config['default_dateformat'];
-		$topic_author = ($board_config['topic_start_date'] && $userdata['topic_start_date']) ? '<span class="gensmall">' . create_date($topic_start_dateformat, $topic_rowset[$i]['topic_time'], $board_config['board_timezone']) . '</span><br />' . $topic_author : $topic_author;
+		$topic_time = ($board_config['topic_start_date'] && $userdata['topic_start_date']) ? create_date($topic_start_dateformat, $topic_rowset[$i]['topic_time'], $board_config['board_timezone']) : '';
 
 		$first_post_time = create_date($board_config['default_dateformat'], $topic_rowset[$i]['topic_time'], $board_config['board_timezone']);
 		$last_post_time = create_date($board_config['default_dateformat'], $topic_rowset[$i]['post_time'], $board_config['board_timezone']);
 
 		$colored_username = color_username($topic_rowset[$i]['user_level2'], $topic_rowset[$i]['user_jr2'], $topic_rowset[$i]['id2'], $topic_rowset[$i]['user2']);
-		$topic_rowset[$i]['user2'] = $colored_username[0];
+		// $topic_rowset[$i]['user2'] = $colored_username[0];
+		// $last_post_author = ($topic_rowset[$i]['id2'] == ANONYMOUS) ? (($topic_rowset[$i]['post_username2'] != '') ? $topic_rowset[$i]['post_username2'] . ' ' : $lang['Guest'] . ' ' ) : '<a href="' . append_sid("profile.$phpEx?mode=viewprofile&amp;" . POST_USERS_URL . '=' . $topic_rowset[$i]['id2']) . '"' . $colored_username[1] . ' class="gensmall">' . $topic_rowset[$i]['user2'] . '</a>';
 
-		$last_post_author = ($topic_rowset[$i]['id2'] == ANONYMOUS) ? (($topic_rowset[$i]['post_username2'] != '') ? $topic_rowset[$i]['post_username2'] . ' ' : $lang['Guest'] . ' ' ) : '<a href="' . append_sid("profile.$phpEx?mode=viewprofile&amp;" . POST_USERS_URL . '=' . $topic_rowset[$i]['id2']) . '"' . $colored_username[1] . ' class="gensmall">' . $topic_rowset[$i]['user2'] . '</a>';
-		$last_post_url = '<a href="' . append_sid("viewtopic.$phpEx?" . POST_POST_URL . '=' . $topic_rowset[$i]['topic_last_post_id']) . '#' . $topic_rowset[$i]['topic_last_post_id'] . '"><img src="' . $images['icon_latest_reply'] . '" alt="" title="' . $lang['Last_Post'] . '" border="0" /></a>';
+		$last_post_author = $topic_rowset[$i]['user2'] ?: $topic_rowset[$i]['post_username2'] ?: $lang['Guest'];
+		if ($topic_rowset[$i]['id2'] != ANONYMOUS) {
+			$last_post_author = new Url("profile.$phpEx?mode=viewprofile&" . POST_USERS_URL . '=' . $topic_rowset[$i]['id2'], $last_post_author, ['color' => $colored_username[2]]);
+		}
+		
+		// $last_post_url = '<a href="' . append_sid("viewtopic.$phpEx?" . POST_POST_URL . '=' . $topic_rowset[$i]['topic_last_post_id']) . '#' . $topic_rowset[$i]['topic_last_post_id'] . '"><img src="' . $images['icon_latest_reply'] . '" alt="" title="' . $lang['Last_Post'] . '" border="0" /></a>';
+		$last_post_url = new Url("viewtopic.$phpEx?" . POST_POST_URL . '=' . $topic_rowset[$i]['topic_last_post_id'] . '#' . $topic_rowset[$i]['topic_last_post_id'], '&nbsp;', ['class' => 'latest_reply']);
 
 		$views = $topic_rowset[$i]['topic_views'];
-
+		$participated = false;
 		if ( $userdata['session_logged_in'] )
 		{
 			$poster_posts = get_poster_topic_posts($topic_id, $userdata['user_id']);
 			if ( $poster_posts && $board_config['poster_posts'])
 			{
-				$topic_title = '&#164; ' . $topic_title;
-			}
-		}
-
-		if ( $board_config['overlib'] && $userdata['overlib'] && ($forum_row['forum_separate'] != 2 || !$topic_important) )
-		{
-			$first_and_last_post = ($topic_rowset[$i]['post_text'] == $topic_rowset[$i]['last_post_text']) ? false : true;
-			if ( $board_config['post_overlib'] )
-			{
-				if ( $forum_view_moderate && (!$topic_rowset[$i]['post_approve'] || !$topic_rowset[$i]['post_approve2']) )
-				{
-					if ( !$topic_rowset[$i]['post_approve'] )
-					{
-						$topic_rowset[$i]['post_text'] = $lang['Post_no_approved'];
-					}
-					if ( !$topic_rowset[$i]['post_approve2'] )
-					{
-						$topic_rowset[$i]['last_post_text'] = $lang['Post_no_approved'];
-					}
-				}
-				$prepared_overlib_text = prepare_overlib_text($topic_rowset[$i]['post_text'], $topic_rowset[$i]['last_post_text']);
-				$overlib_post_text = $prepared_overlib_text[0];
-				$overlib_last_post_text = $prepared_overlib_text[1];
-			}
-			else
-			{
-				$overlib_post_text = $overlib_last_post_text = $first_and_last_post = '';
-			}
-
-			if ( $userdata['session_logged_in'] )
-			{
-				if ( $poster_posts )
-				{
-					$overlib_title = $lang['poster_posts'];
-					$if_poster_posts = '&raquo; ' . $lang['your_posts'] . ': <b>' . $poster_posts . '</b><br />';
-				}
-				else
-				{
-					$overlib_title = $lang['not_poster_post'];
-				}
-
-				$count_unread_posts = count($userdata['unread_data'][$forum_id][$topic_id]);
-				$overlib_unread_posts = (($count_unread_posts) ? '&raquo; ' . $lang['unread_posts'] . ': <b>' . $count_unread_posts . '</b><br />' : '');
-			}
-			else if ( $overlib_post_text )
-			{
-				$overlib_title = ($first_and_last_post) ? $lang['First_post'] . ' :: ' . $lang['Last_Post'] : $lang['First_post'];
+				$participated = true;
 			}
 		}
 
@@ -952,13 +918,13 @@ if( $total_topics )
 			{
 				if ( ($topic_rowset[$i]['topic_poster'] == $userdata['user_id'] && $userdata['user_id'] != ANONYMOUS) || $is_auth['auth_mod'] )
 				{
-					$topic_title = $topic_title . '<br /><i><b>' . $lang['Post_no_approved'] . '</b></i>';
+					$topic_title = $topic_title . $lang['Post_no_approved'];
 					$topic_title_e = '';
 				}
 				else
 				{
-					$topic_title = '<i><b>' . $lang['Post_no_approved'] . '</b></i>';
-					$topic_author = $topic_title_e = '';
+					$topic_title = $lang['Post_no_approved'];
+					$topic_time = $topic_author = $topic_title_e = '';
 				}
 			}
 
@@ -966,7 +932,7 @@ if( $total_topics )
 			{
 				if ( (($topic_rowset[$i]['id2'] == $userdata['user_id'] && $userdata['user_id'] != ANONYMOUS) || $is_auth['auth_mod']) && $topic_rowset[$i]['topic_first_post_id'] != $topic_rowset[$i]['topic_last_post_id'] )
 				{
-					$last_post_author =  '<i>' . $lang['Post_no_approved'] . '</i><br />' . $last_post_author;
+					$last_post_author =  $lang['Post_no_approved'] . $last_post_author;
 				}
 				else
 				{
@@ -978,6 +944,11 @@ if( $total_topics )
 		$img = null;
 		preg_match('#\[img(:[a-z0-9]+)?\](.*?)\[/img(:[a-z0-9]+)?\]#i', $topic_rowset[$i]['post_text'], $img);
 
+		$topic_class = [];
+		if ($participated) {
+			$topic_class[] = 'participated';
+		}
+
 		$template->block('topicrow', array(
 			'ICON' => ($topic_rowset[$i]['topic_icon'] != 0) ? '<img src="' . $images['rank_path'] . 'icon/icon' . $topic_rowset[$i]['topic_icon']. '.gif" alt="" border="0">' : ' ',
 			'TOPIC_EXPIRE' => $topic_expire_date,
@@ -988,21 +959,25 @@ if( $total_topics )
 			'TOPIC_ID' => $topic_id,
 			'TOPIC_IMAGE' => $img[2] ?? '',
 			'TOPIC_FOLDER_IMG' => $folder_image,
+			'TOPIC_TIME' => $topic_time,
 			'TOPIC_AUTHOR' => $topic_author,
 			'TOPIC_VOTES' => intval($topic_rowset[$i]['topic_votes_sum']),
+			'CLASS' => implode(' ', $topic_class),
 			'GOTO_PAGE' => $goto_page,
 			'REPLIES' => $replies,
 			'NEWEST_POST_IMG' => $newest_post_img,
 			'TOPIC_ATTACHMENT_IMG' => ( defined('ATTACHMENTS_ON') ) ? topic_attachment_image($topic_rowset[$i]['topic_attachment']) : '',
 			'TOPIC_TITLE' => replace_encoded($topic_title),
-			'TOPIC_TITLE_E' => ($topic_title_e && $board_config['title_explain']) ? '<br />' . replace_encoded($topic_title_e) : '',
-			'TOPIC_COLOR' => ($board_config['topic_color'] && $topic_rowset[$i]['topic_color']) ? ' style="color: ' . $topic_rowset[$i]['topic_color'] . '"' : '',
+			'TOPIC_TITLE_E' => ($topic_title_e && $board_config['title_explain']) ? replace_encoded($topic_title_e) : '',
+			'TOPIC_COLOR' => ($board_config['topic_color'] && $topic_rowset[$i]['topic_color']) ? $topic_rowset[$i]['topic_color'] : '',
 			'TOPIC_TYPE' => $topic_type,
 			'VIEWS' => $views,
+			
 			'FIRST_POST_TIME' => $first_post_time, 
 			'LAST_POST_TIME' => $last_post_time, 
 			'LAST_POST_AUTHOR' => $last_post_author, 
-			'LAST_POST_IMG' => $last_post_url, 
+			'U_LAST_POST' => $last_post_url,
+
 			'L_TOPIC_FOLDER_ALT' => $folder_alt, 
 			'U_VIEW_TOPIC' => $view_topic_url)
 		);

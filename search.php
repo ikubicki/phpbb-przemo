@@ -1382,7 +1382,6 @@ else if ( $search_keywords != '' || $search_author != '' || $search_id )
 						if ( $poster_posts )
 						{
 							$overlib_title = $lang['poster_posts'];
-							$topic_add_title = ($board_config['poster_posts']) ? '&#164; ' : '';
 							$if_poster_posts = '&raquo; ' . $lang['your_posts'] . ': <b>' . $poster_posts . '</b><br />';
 						}
 						else
@@ -1393,7 +1392,7 @@ else if ( $search_keywords != '' || $search_author != '' || $search_id )
 						$count_unread_posts = count($userdata['unread_data'][$searchset[$i]['forum_id']][$topic_id] ?? []);
 						$overlib_unread_posts = (($count_unread_posts) ? '&raquo; ' . $lang['unread_posts'] . ': <b>' . $count_unread_posts . '</b><br />' : '');
 
-						$topic_title = $topic_add_title . $topic_title;
+						$topic_title = $topic_title;
 					}
 					else if ( $overlib_post_text )
 					{

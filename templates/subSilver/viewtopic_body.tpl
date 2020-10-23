@@ -304,7 +304,7 @@ var img_addr = '{IMG_ADDR}';
    <!-- END postrow -->
    <!-- BEGIN moderate -->
    <tr>
-      <td class="submit" align="right" colspan="2"><input type="submit" class="liteoption" value="{moderate.L_ACCEPT-REJECT_POST}"></form></td>
+      <td class="submit" align="right" colspan="2"><input type="submit" class="liteoption" value="{moderate.L_ACCEPT_REJECT_POST}"></form></td>
    </tr>
    <!-- END moderate -->
    <tr align="center">

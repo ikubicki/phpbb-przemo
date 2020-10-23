@@ -17,9 +17,9 @@
 				<span class="gensmall description">{{ _tablehead.CAT_DESCRIPTION }}</span>
 			{% endif %}
 			</th>
-			<th width="50" class="label">{{ L_TOPICS }}</td>
-			<th width="50" class="label">{{ L_POSTS }}</td>
-			<th width="150" class="label">{{ L_LASTPOST }}</td>
+			<th width="50" class="label center">{{ L_TOPICS }}</td>
+			<th width="50" class="label center">{{ L_POSTS }}</td>
+			<th width="150" class="label center">{{ L_LASTPOST }}</td>
 		</tr>
 	{% endfor %}
 	{% for _cathead in _catrow.cathead %}
@@ -33,39 +33,56 @@
 				<span class="gensmall description">{{ _cathead.CAT_DESCRIPTION }}</span>
 		{% endif %}
 			</td>
-			<td class="{{ _cathead.CLASS_CAT }} label" width="50">{{ L_TOPICS }}</td>
-			<td class="{{ _cathead.CLASS_CAT }} label" width="50">{{ L_POSTS }}</td>
-			<td class="{{ _cathead.CLASS_CAT }} label" width="150">{{ L_LASTPOST }}</td>
+			<td class="label center" width="50">{{ L_TOPICS }}</td>
+			<td class="label center" width="50">{{ L_POSTS }}</td>
+			<td class="label center" width="150">{{ L_LASTPOST }}</td>
 		</tr>
 	{% endfor %}
 
 	{% for _forumrow in _catrow.forumrow %}
-		<tr class="row">
+		<tr class="forum row forum-{{ _forumrow.FORUM_ID }}">
 		{% if forumrow.inc %}
 			<td class="spacer">&nbsp;</td>
 		{% endif %}
-			<td class="row1" align="center" valign="middle"><img src="{{ _forumrow.FORUM_FOLDER_IMG }}" alt="" title="{{ _forumrow.L_FORUM_FOLDER_ALT }}"></td>
-			<td class="row1" width="100%" height="50" colspan="{{ _forumrow.INC_SPAN }}">
-				<span class="forumlink"><a href="{{ _forumrow.U_VIEWFORUM }}" class="forumlink"{{ _forumrow.FORUM_COLOR }}>{{ _forumrow.FORUM_NAME }}</a></span>
-				<span class="gensmall">&nbsp;&nbsp;{{ _forumrow.LAST_POSTMSG }}<br /></span>
-				<span class="genmed">{{ _forumrow.FORUM_DESC }}<br /></span>
-				<span class="gensmall">
-				{{ _forumrow.L_MODERATOR }} {{ _forumrow.MODERATORS }}
-				{% if _forumrow.links %}
-				{{ _forumrow.links.L_LINKS }} {{ _forumrow.links.LINKS }}
+			<td>
+				<img src="{{ _forumrow.FORUM_FOLDER_IMG }}" alt="" title="{{ _forumrow.L_FORUM_FOLDER_ALT }}">
+			</td>
+			<td class="left" width="100%" height="50" colspan="{{ _forumrow.INC_SPAN }}">
+				<a href="{{ _forumrow.U_VIEWFORUM }}" class="forumlink"{{ _forumrow.FORUM_COLOR }}>{{ _forumrow.FORUM_NAME }}</a>
+				{% if _forumrow.FORUM_DESC %}
+				<br /><small>{{ _forumrow.FORUM_DESC }}</small>
 				{% endif %}
-				</span>
+				{% if _forumrow.U_LAST_POSTMSG %}
+				<br /><small><b>{{ _forumrow.L_LAST_POSTMSG }}:</b> {{ _forumrow.U_LAST_POSTMSG | raw }}</small>
+				{% endif %}
+				{% if _forumrow.MODERATORS %}
+				<br /><small>{{ _forumrow.L_MODERATOR }} {{ _forumrow.MODERATORS }}</small>
+				{% endif %}
+				{% for _links in _forumrow.links %}
+				<br /><small>{{ _links.LINKS | raw }}</small>
+				{% endfor %}
 			</td>
 		{% if _forumrow.forum_link_no %}
-			<td class="row1" align="center" valign="middle" height="50"><span class="gensmall">{{ _forumrow.TOPICS }}</span></td>
-			<td class="row1" align="center" valign="middle" height="50"><span class="gensmall">{{ _forumrow.POSTS }}</span></td>
-			<td class="row1" align="center" valign="middle" height="50" nowrap="nowrap">
-				<span class="gensmall">{{ _forumrow.LAST_POST }}{{ _forumrow.NUM_NEW_TOPICS }}{{ _forumrow.NUM_NEW_POSTS }}</span>
-			</td>
+			<td height="50">{{ _forumrow.TOPICS }}</td>
+			<td height="50">{{ _forumrow.POSTS }}</td>
+			<td height="50" class="nowrap"><small>
+			{% if _forumrow.LAST_POST_TIME %}
+				{{ _forumrow.U_LAST_POST | raw }} {{ _forumrow.LAST_POST_TIME }}<br />
+				{{ _forumrow.LAST_POST_AUTHOR | raw }}
+				{% if _forumrow.NUM_NEW_TOPICS %}
+				<br /><small>{{ _forumrow.NUM_NEW_TOPICS }}</small>
+				{% endif %}
+				{% if _forumrow.NUM_NEW_POSTS %}
+				<br /><small>{{ _forumrow.NUM_NEW_POSTS }}</small>
+				{% endif %}
+			{% else %}
+				--
+			{% endif %}
+			</small></td>
 		{% endif %}
 		{% if _forumrow.forum_link %}
-			<td class="row1" align="center" valign="middle" height="50" colspan="3">
-				<span class="gensmall">{{ _forumrow.forum_link.HIT_COUNT }}</span>
+			<td height="50" colspan="3">
+				{{ _forumrow.forum_link.HIT_COUNT }}
 			</td>
 		{% endif %}
 		</tr>

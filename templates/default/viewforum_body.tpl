@@ -1,11 +1,17 @@
 {{ include('overall_header.tpl') }}
 
-{{ BOARD_INDEX }}
+{{ BOARD_INDEX | raw }}
 <table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
 	<tr>
 		<td align="left" valign="bottom" width="90"><a href="{{ U_POST_NEW_TOPIC }}"><img src="{{ POST_IMG }}" border="0" alt="{{ L_POST_NEW_TOPIC }}"></a>&nbsp;&nbsp;</td>
 		<td align="left" valign="bottom"><span class="gensmall">{{ L_MODERATOR }}: {{ MODERATORS }}<br>{{ LOGGED_IN_USER_LIST }}</span></td>
-		<td align="right" valign="bottom" nowrap="nowrap"><span class="gensmall"><b>{{ PAGINATION }}</b><a href="{{ U_MARK_READ }}">{{ L_MARK_TOPICS_READ }}</a>{{ U_SHOW_IGNORE }}</span></td>
+		<td align="right" valign="bottom" nowrap="nowrap">
+			<b>{{ PAGINATION }}</b>
+			<a href="{{ U_MARK_READ }}">{{ L_MARK_TOPICS_READ }}</a>
+{% if U_SHOW_IGNORE %}
+			<br />{{ U_SHOW_IGNORE | raw }}
+{% endif %}
+		</td>
 	</tr>
 </table>
 
@@ -42,12 +48,12 @@ function setCheckboxes(the_form, do_check)
 {% endif %}
 <table border="0" cellpadding="4" cellspacing="1" width="100%" class="forumline">
 	<tr>
-		<th colspan="{{ SPAN_I }}" align="center" class="label" {% if switch_show_hide %} onclick="javascript:ShowHide('imp_topics_{{ FORUM_ID }}','imp_topics2_{{ FORUM_ID }}','imp_topics3_{{ FORUM_ID }}');" style="cursor: pointer" title="{{ L_VHIDE }}"{% endif %}>{{ L_TOPICS }}</th>
-		<th width="50" align="center" class="label center">{{ L_VOTES }}</th>		
-		<th width="50" align="center" class="label center">{{ L_REPLIES }}</th>
-		<th width="100" align="center" class="label center">{{ L_AUTHOR }}</th>
-		<th width="50" align="center" class="label center">{{ L_VIEWS }}</th>
-		<th width="150" align="center" class="label center">{{ L_LASTPOST }}</th>
+		<th colspan="{{ SPAN_I }}" class="label center" {% if switch_show_hide %} onclick="javascript:ShowHide('imp_topics_{{ FORUM_ID }}','imp_topics2_{{ FORUM_ID }}','imp_topics3_{{ FORUM_ID }}');" style="cursor: pointer" title="{{ L_VHIDE }}"{% endif %}>{{ L_TOPICS }}</th>
+		<th width="50" class="label center">{{ L_VOTES }}</th>		
+		<th width="50" class="label center">{{ L_REPLIES }}</th>
+		<th width="100" class="label center">{{ L_AUTHOR }}</th>
+		<th width="50" class="label center">{{ L_VIEWS }}</th>
+		<th width="150" class="label center">{{ L_LASTPOST }}</th>
 	</tr>
 	{% if important_topics %}
 	<tr>
@@ -78,35 +84,51 @@ if(GetCookie('imp_topics3_{{ FORUM_ID }}') == '2') ShowHide('imp_topics_{{ FORUM
 
 <table class="forumline">
 	<tr>
-		<th colspan="{{ SPAN_I }}" align="center" class="label">{{ L_NORMAL_TOPICS }}</th>
-		<th width="50" align="center" class="label center">{{ L_VOTES }}</th>
-		<th width="50" align="center" class="label center">{{ L_REPLIES }}</th>
-		<th width="100" align="center" class="label center">{{ L_AUTHOR }}</th>
-		<th width="50" align="center" class="label center">{{ L_VIEWS }}</th>
-		<th width="150" align="center" class="label center">{{ L_LASTPOST }}</th>
+		<th colspan="{{ SPAN_I }}" class="label center">{{ L_NORMAL_TOPICS }}</th>
+		<th width="50" class="label center">{{ L_VOTES }}</th>
+		<th width="50" class="label center">{{ L_REPLIES }}</th>
+		<th width="100" class="label center">{{ L_AUTHOR }}</th>
+		<th width="50" class="label center">{{ L_VIEWS }}</th>
+		<th width="150" class="label center">{{ L_LASTPOST }}</th>
 	</tr>
 	{% endif %}
-	<tr class="row">
-		<td class="row1" align="center" valign="middle" width="20"><img src="{{ _topicrow.TOPIC_FOLDER_IMG }}" alt=""></td>
+	<tr class="topic row topic-{{ _topicrow.TOPIC_ID }} {{ _topicrow.CLASS }}">
+		<td width="20"><img src="{{ _topicrow.TOPIC_FOLDER_IMG }}" alt=""></td>
 		{% if _topicrow.icons %}
-		<td class="row1" align="center" valign="middle" width="16">{{ _topicrow.ICON }}</td>
+		<td width="16">{{ _topicrow.ICON }}</td>
 		{% endif %}
-		<td class="{{ _topicrow.ROW }}" width="100%" ><span class="topictitle">{{ _topicrow.NEWEST_POST_IMG }}{{ _topicrow.TOPIC_ATTACHMENT_IMG }}{{ _topicrow.TOPIC_TYPE }}
-		<a href="{{ _topicrow.U_VIEW_TOPIC }}" class="topictitle"{{ _topicrow.TOPIC_COLOR }}
-		{% for _title_overlib in title_overlib %}
-		 onMouseOver="return overlib('<left>{{ _title_overlib.UNREAD_POSTS }}<fieldset><legend><b>{{ _title_overlib.L_FIRST_POST }}</b></legend>{{ _title_overlib.O_TEXT1 }}</fieldset>{% for _last in last %}<fieldset><legend><b>{{ _title_overlib.L_LAST_POST }}</b></legend>{{ _last.O_TEXT2 }}</fieldset>{% endfor %}</left>', ol_width=400, ol_offsetx=10, ol_offsety=10, CAPTION, '<center>{{ _title_overlib.O_TITLE }}</center>')" onMouseOut="nd();"{% endfor %}>{{ _topicrow.TOPIC_TITLE }}</a></span>
-		 <span class="gensmall">{{ _topicrow.TOPIC_TITLE_E }}{% for _style in style %}{{ _style.TOPIC_STYLE }}{% endfor %}</span>
-		 <span class="gensmall">{{ _topicrow.TOPIC_EXPIRE }}</span>
-		 <span class="gensmall"><br>{{ _topicrow.GOTO_PAGE }}</span></td>
+		<td width="100%" class="left">
+			{{ _topicrow.NEWEST_POST_IMG }}
+			{{ _topicrow.TOPIC_ATTACHMENT_IMG }}
+			{{ _topicrow.TOPIC_TYPE }}
+			<span class="participated">💬</span>
+			<a href="{{ _topicrow.U_VIEW_TOPIC }}" class="title" style="color:{{ _topicrow.TOPIC_COLOR }}">{{ _topicrow.TOPIC_TITLE }}</a>
+			{% if _topicrow.TOPIC_TITLE_E %}
+		 	<br /><small>{{ _topicrow.TOPIC_TITLE_E }}</small>
+			 {% endif %}
+			 {% if _topicrow.TOPIC_EXPIRE %}
+			<br /><small>{{ _topicrow.TOPIC_EXPIRE }}</small>
+			{% endif %}
+			{% if _topicrow.GOTO_PAGE %}
+		 	<br /><small{{ _topicrow.GOTO_PAGE }}</small>
+			{% endif %}
+		</td>
 		{% if _topicrow.ignore_checkbox %}
-		<td class="row1" align="right"><input type="checkbox" name="list_ignore[]" value="{{ _topicrow.TOPIC_ID }}"></td>
+		<td class="right">
+			<input type="checkbox" name="list_ignore[]" value="{{ _topicrow.TOPIC_ID }}" />
+		</td>
 		{% endif %}
-		<td class="row1" align="center" valign="middle"><span class="postdetails">{{ _topicrow.TOPIC_VOTES }}</span></td>
-		<td class="row1" align="center" valign="middle"><span class="postdetails">{{ _topicrow.REPLIES }}</span></td>
-		<td class="row1" align="center" valign="middle"><span class="name">{{ _topicrow.TOPIC_AUTHOR }}</span></td>
-		<td class="row1" align="center" valign="middle"><span class="postdetails">{{ _topicrow.VIEWS }}</span></td>
-		<td class="row1" align="center" valign="middle" nowrap="nowrap">
-			<span class="postdetails">{{ _topicrow.LAST_POST_TIME }}<br>{{ _topicrow.LAST_POST_AUTHOR }} {{ _topicrow.LAST_POST_IMG }}</span>
+		<td>{{ _topicrow.TOPIC_VOTES }}</td>
+		<td>{{ _topicrow.REPLIES }}</td>
+		<td>
+			{{ _topicrow.TOPIC_TIME }}<br />
+			{{ _topicrow.TOPIC_AUTHOR | raw }}
+		</td>
+		<td>{{ _topicrow.VIEWS }}</td>
+		<td class="nowrap">
+			{{ _topicrow.U_LAST_POST | raw }}
+			{{ _topicrow.LAST_POST_TIME }}<br />
+			{{ _topicrow.LAST_POST_AUTHOR | raw }}
 		</td>
 	</tr>
 	{% endfor %}

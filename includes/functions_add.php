@@ -422,7 +422,9 @@ function users_online($mode)
 
 	$user_forum_sql = ( !empty($forum_id) ) ? "AND s.session_page = " . intval($forum_id) : '';
 
-	$sql = "SELECT u.username, u.user_id, u.user_allow_viewonline, u.user_level, u.user_jr, u.user_session_time, u.user_session_start, s.session_logged_in, s.session_ip, s.session_start, s.session_page
+	$sql = "SELECT u.username, u.user_id, u.user_allow_viewonline, u.user_level, 
+		u.user_jr, u.user_session_time, u.user_session_start, s.session_logged_in,
+		s.session_ip, s.session_start, s.session_page
 		FROM (" . USERS_TABLE . " u, " . SESSIONS_TABLE . " s)
 		WHERE u.user_id = s.session_user_id
 			AND s.session_time >= ".( CR_TIME - 300 ) . "
@@ -517,7 +519,9 @@ function users_online($mode)
 				}
 
 				$colored_username = color_username($row['user_level'], $row['user_jr'], $row['user_id'], $row['username']);
-				$row['username'] = $colored_username[0];
+				// $row['username'] = $colored_username[0];
+
+				// $row['session_page']
 
 				if ( $row['user_allow_viewonline'] )
 				{
