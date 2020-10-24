@@ -348,7 +348,7 @@ function build_index($cur = 'Root', $cat_break = false, &$forum_moderators, $rea
 				}
 
 				// $last_post .= '<a href="' . append_sid("viewtopic.$phpEx?" . POST_POST_URL . '=' . $data['tree.topic_last_post_id']) . '#' . $data['tree.topic_last_post_id'] . '"><img src="' . $images['icon_latest_reply'] . '" border="0" alt="' . $lang['Last_Post'] . '" title="' . $lang['Last_Post'] . '" /></a>';
-				$u_last_post = new Url("viewtopic.$phpEx?" . POST_POST_URL . '=' . $data['tree.topic_last_post_id'] . '#' . $data['tree.topic_last_post_id'], $lang['Last_Post'], ['class' => 'icon reply']);
+				$u_last_post = new Url("viewtopic.$phpEx?" . POST_POST_URL . '=' . $data['tree.topic_last_post_id'] . '#' . $data['tree.topic_last_post_id'], '&nbsp;', ['class' => 'icon reply']);
 			}
 
 			// links to sub-levels

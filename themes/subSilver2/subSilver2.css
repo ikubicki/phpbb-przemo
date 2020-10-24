@@ -87,6 +87,12 @@ a.icon {
 	padding: 0 10px 0 0;
 	text-decoration: none;
 }
+
+a.reply {
+	background: transparent url(images/icon_latest_reply.gif) no-repeat center center;
+	padding: 0 10px;
+	text-decoration: none;
+}
 h1 a.icon {
 	background: transparent no-repeat left center;
 	padding: 0 10px 0;
