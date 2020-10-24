@@ -6,6 +6,22 @@ class Entity
 {
     protected $key;
     protected $collection;
+    protected $_refs = [];
+
+    public function setRefs($refs)
+    {
+        $this->_refs = $refs;
+    }
+
+    public function addRef($field, $entity)
+    {
+        $this->_refs[$field] = $entity;
+    }
+
+    public function getRef($field)
+    {
+        return $this->_refs[$field] ?? false;
+    }
 
     public function setKey($key) 
     {

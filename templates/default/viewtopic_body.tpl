@@ -11,13 +11,18 @@ var img_addr = '{{ IMG_ADDR }}';
 <script src="/modules/avatars/index.js"></script>
 
 <br>
-<table width="100%" cellspacing="2" cellpadding="2" border="0">
+<table>
    <tr> 
-      <td align="right" valign="middle" nowrap="nowrap">{{ PAGINATION }}<span class="gensmall" style="color: #FF6600;"><a href="{{ U_VIEW_OLDER_TOPIC }}" class="nav">{{ L_VIEW_PREVIOUS_TOPIC }}</a> &laquo;&raquo <a href="{{ U_VIEW_NEWER_TOPIC }}" class="nav">{{ L_VIEW_NEXT_TOPIC }}</a></span></td>
+      <td class="right">
+         {{ PAGINATION | raw }}
+         <a href="{{ U_VIEW_OLDER_TOPIC }}" class="nav">{{ L_VIEW_PREVIOUS_TOPIC }}</a>
+         &laquo;&raquo; 
+         <a href="{{ U_VIEW_NEWER_TOPIC }}" class="nav">{{ L_VIEW_NEXT_TOPIC }}</a>
+      </td>
    </tr>
 </table>
 
-<h1 {{ TOPIC_COLOR }}>{{ TOPIC_TITLE }} {{ IGNORE_STATUS }}</h1>
+<h1 {{ TOPIC_COLOR }}>{{ TOPIC_TITLE }} {{ U_IGNORE_STATUS | raw }}</h1>
 <table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
 	{% for _topic_action in topic_action  %}
 	<tr align="right">
@@ -68,6 +73,7 @@ var img_addr = '{{ IMG_ADDR }}';
          {% for _custom_fields_avatar in _postrow.custom_fields_avatar %}
          {{ _custom_fields_avatar.DESC }}{{ _custom_fields_avatar.FIELD }}<br />
          {% endfor %}
+         </span>
          {% for _warnings in _postrow.warnings %}
          <table cellspacing="0" cellpadding="0" border="0">
             <tr>
@@ -96,13 +102,8 @@ var img_addr = '{{ IMG_ADDR }}';
          <table width="100%" style="height: 100%;" border="0" cellspacing="0" cellpadding="0">
             <tr>
                <td valign="top" align="left">
-                  {{ _postrow.ICON }}
-                  {% for _icon_comment in _postrow.icon_comment %}
-                  <a href="{{ _icon_comment.U_COMMENT_POST }}"><img src="{{ COMMENT_POST_IMG }}" title="{{ L_COMMENT_IMG_TITLE }}" border="0"></a>
-                  {% endfor %}
-                  <a href="{{ _postrow.U_MINI_POST }}"><img src="{{ _postrow.MINI_POST_IMG }}" /></a>
-                  <small>{{ L_POSTED }}: {{ _postrow.POST_DATE }}</small>
-                  {{ postrow.POST_SUBJECT }}
+                  <a href="{{ _postrow.U_MINI_POST }}" class="icon post">&nbsp;</a>
+                  {{ L_POSTED }}: {{ _postrow.POST_DATE }}
                   {% for _custom_fields_post in _postrow.custom_fields_post %}
                   <br /><small>{{ _custom_fields_post.DESC }}{{ _custom_fields_post.FIELD }}</small>
                   {% endfor %}
@@ -116,13 +117,16 @@ var img_addr = '{{ IMG_ADDR }}';
             </tr>
             <tr>
                <td class="top" colspan="2">
-                  <span class="postbody" author="{{ postrow.POSTER_NAME_ESCAPED }}">{{ postrow.MESSAGE }}{{ postrow.ATTACHMENTS }}</span>
+                  <span class="postbody" author="{{ _postrow.POSTER_NAME_ESCAPED }}">
+                     {{ _postrow.MESSAGE | raw }}
+                     {{ _postrow.ATTACHMENTS }}
+                  </span>
                </td>
             </tr>
 			{% for _post_edited in _postrow.post_edited %}
 			<tr>
 				<td colspan="2" align="right">
-               <small>{{ _postrow.EDITED_MESSAGE }} {{ _post_edited.VIEW_POST_HISTORY }}</small>
+               <small>{{ _postrow.EDITED_MESSAGE | raw }} {{ _post_edited.VIEW_POST_HISTORY }}</small>
             </td>
 			</tr>
 			{% endfor %}
@@ -131,29 +135,37 @@ var img_addr = '{{ IMG_ADDR }}';
    </tr>
    {% if _postrow.signature %}
    <tr>
-      <td class="{{ postrow.ROW_CLASS }} signature" height="1%">
-         <span class="postbody">{{ postrow.SIGNATURE }}{{ postrow.SIG_IMAGE }}</span>
+      <td class="{{ _postrow.ROW_CLASS }} signature" height="1%">
+         <span class="postbody">{{ _postrow.SIGNATURE }}{{ _postrow.SIG_IMAGE }}</span>
       </td>
    </tr>
    {% endif %}
 	<tr>
-		<td class="{{ _postrow.ROW_CLASS }} left">
+		<td class="{{ _postrow.ROW_CLASS }} left postactions">
 			{% for _top in _postrow.top %}
-			{{ _top.TOP_IMG }}
+			{{ _top.U_TOP | raw }}
 			{% endfor %}
 		</td>
 		<td class="{{ _postrow.ROW_CLASS }}" width="100%" valign="top" nowrap="nowrap">
 			<table cellspacing="0" cellpadding="0" border="0" width="100%">
 				<tr>
-					<td valign="top" nowrap="nowrap">
-                  {{ _postrow.HELPED_ME }}{{ _postrow.PROFILE_IMG }} {{ _postrow.PM_IMG }} {{ _postrow.EMAIL_IMG }} {{ _postrow.WWW_IMG }}
-                  {{ _postrow.IGNORE }}{{ _postrow.QUOTE_IMG }} {{ _postrow.EDIT_IMG }} {{ _postrow.DELETE_IMG }} {{ _postrow.IP_IMG }} {{ _postrow.REPORT_IMG }}
+					<td class="postactions">
+                  {{ _postrow.U_PROFILE | raw }}
+                  {{ _postrow.U_MESSAGE | raw }}
+                  {{ _postrow.U_EMAIL | raw }}
+                  {{ _postrow.U_WEBSITE | raw }}
+                  {{ _postrow.U_IGNORE | raw }}
+                  {{ _postrow.U_QUOTE | raw }}
+                  {{ _postrow.U_EDIT | raw }}
+                  {{ _postrow.U_DELETE | raw }}
+                  {{ _postrow.U_IP | raw }}
+                  {{ _postrow.U_REPORT | raw }}
                   {% if _postrow.POST_EXPIRE %}
                   <br /><small>{{ _postrow.POST_EXPIRE }}</small>
                   {% endif %}
                </td>
 					<td valign="top" align="left" width="177">
-						<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse">
+						<table>
 							<tr>
 								<td>&nbsp;</td>
 								<td nowrap="nowrap">
@@ -167,8 +179,8 @@ var img_addr = '{{ IMG_ADDR }}';
 					<td width="100%" align="right">
                   <span class="nav">
                      {% if _postrow.post_moderate %}
-                     {{ L_ACCEPT }} <input type="checkbox" name="accept_post[]" value="{{ postrow.U_POST_ID }}">
-                     {{ L_REJECT }} <input type="checkbox" name="reject_post[]" value="{{ postrow.U_POST_ID }}">
+                     {{ L_ACCEPT }} <input type="checkbox" name="accept_post[]" value="{{ _postrow.U_POST_ID }}">
+                     {{ L_REJECT }} <input type="checkbox" name="reject_post[]" value="{{ _postrow.U_POST_ID }}">
                      {% endif %}
                      {{ _postrow.NEW_POST }}
                      {{ _postrow.POST_REPLY_IMG }}
@@ -210,8 +222,8 @@ var img_addr = '{{ IMG_ADDR }}';
          <table cellspacing="0" cellpadding="0" align="center" border="0">
             <tr>
                <td class="center">
-                  {{ L_DISPLAY_POSTS }}: {{ S_SELECT_POST_DAYS }}
-                  {{ S_SELECT_POST_ORDER }}
+                  {{ L_DISPLAY_POSTS }}: {{ S_SELECT_POST_DAYS | raw }}
+                  {{ S_SELECT_POST_ORDER | raw }}
                   <input type="submit" value="{{ L_GO }}" name="submit" />
                </td>
             </tr>
@@ -227,7 +239,7 @@ var img_addr = '{{ IMG_ADDR }}';
    <tr>
       <td colspan="2" align="right" valign="middle" nowrap="nowrap">
          <span class="nav">
-            {{ PAGINATION }}
+            {{ PAGINATION | raw }}
 	  {% for _next_unread_posts in next_unread_posts %}
 	         <a href="{{ _next_unread_posts.U_TOPIC_NEXT_UNREAD_POSTS }}">{{ _next_unread_posts.L_TOPIC_NEXT_UNREAD_POSTS }}</a>
 	  {% endfor %}

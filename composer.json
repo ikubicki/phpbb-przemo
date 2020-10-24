@@ -7,7 +7,12 @@
         }
     ],
     "autoload": {
-        "psr-4": {"PhpBB\\": "src/"}
+        "psr-4": {
+            "PhpBB\\": "src/"
+        },
+        "files": [
+            "src/functions.php"
+        ]
     },
     "require": {
         "twig/twig": "^3.0"

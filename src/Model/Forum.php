@@ -48,11 +48,26 @@ class Forum extends ForumHierarchicalEntity
         return 'viewforum.php?f=' . $this->forum_id;
     }
 
+    public function getTopics($page = 1, $limit = 15)
+    {
+        $criteria = ['forum_id' => $this->forum_id];
+        $order = ['topic_id' => 'DESC'];
+        $offset = ($page - 1) * $limit;
+        return $this->getTopicsCollection()
+            ->leftjoin(new UsersCollection, 'user_id', 'topic_poster')
+            ->find($criteria, $order, $limit, $offset);
+    }
+
     public function getLatestTopic()
     {
         if (!$this->latest_topic && $this->forum_last_post_id) {
-            $this->latest_topic = (new TopicsCollection)->get($this->forum_last_post_id);
+            $this->latest_topic = $this->getTopicsCollection()->get($this->forum_last_post_id);
         }
         return $this->latest_topic;
+    }
+    
+    protected function getTopicsCollection()
+    {
+        return new TopicsCollection;
     }
 }

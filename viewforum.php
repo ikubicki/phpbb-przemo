@@ -31,6 +31,22 @@ $phpbb_root_path = './';
 include($phpbb_root_path . 'extension.inc');
 include($phpbb_root_path . 'common.'.$phpEx);
 
+/*
+
+use PhpBB\Data\Cache;
+$forums = (new PhpBB\Model\ForumsCollection);
+$cache = new PhpBB\Data\Cache($forums);
+$forum = cache($cache->get(1));
+$topics = $forum->getTopics();
+foreach($topics as $topic) {
+//	var_dump($topic->topic_title . ' by ' . $topic->getRef('topic_poster')->username);
+}
+
+
+
+//exit;
+// */
+
 //
 // Start initial var setup
 //

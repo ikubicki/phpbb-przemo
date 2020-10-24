@@ -1,10 +1,12 @@
 <?php
 
 namespace PhpBB\Model;
+use PhpBB\Data\Entity;
 
-class Topic extends ForumHierarchicalEntity
+class Topic extends Entity
 {
-
+    public $topic_id;
+    public $topic_title;
 
     public function getTitle()
     {

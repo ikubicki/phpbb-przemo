@@ -14,6 +14,7 @@ class Connection
 
     public function prepare($query)
     {
+        var_dump($query);
         return $this->connection->prepare($query);
     }
 
@@ -21,7 +22,7 @@ class Connection
     {
         $statement = $this->prepare($query);
         $statement->execute($values);
-        $results = $statement->fetchAll(\PDO::FETCH_OBJ);
+        $results = $statement->fetchAll(\PDO::FETCH_ASSOC);
         $statement->closeCursor();
         return $results;
     }
@@ -30,7 +31,7 @@ class Connection
     {
         $statement = $this->prepare($query);
         $statement->execute($values);
-        $result = $statement->fetchObject();
+        $result = $statement->fetch(\PDO::FETCH_ASSOC);
         $statement->closeCursor();
         return $result;
     }

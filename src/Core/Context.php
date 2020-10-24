@@ -68,9 +68,9 @@ class Context
         return (object) $services;
     }
 
-    public function getValue($name)
+    public function getValue($name, $alternative = false)
     {
-        return self::$values[$name] ?? false;
+        return self::$values[$name] ?? $alternative;
     }
 
     public function getValues(array $names)

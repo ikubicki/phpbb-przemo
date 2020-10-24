@@ -1,4 +1,6 @@
 <?php
+
+use PhpBB\Forum\Url;
 /***************************************************************************
  *                               viewtopic.php
  *                            -------------------
@@ -1208,7 +1210,15 @@ $ignore_status = '';
 
 if ( $board_config['ignore_topics'] && $session_logged_in && $userdata['view_ignore_topics'] )
 {
-	$ignore_status = ($ignore_this_topic) ? '<span class="gensmall">[<a href="' . append_sid("ignore_topics.$phpEx?mode=view&amp;topic_ignore=$topic_id") . '">' . $lang['current_topic_ignore'] . '</a>]</span>' : '<a href="' . append_sid("ignore_topics.$phpEx?topic_id=$topic_id&amp;sid=" . $session_id . "") . '"><img src="' . $images['icon_delpost'] . '" alt="' . $lang['ignore_topic'] . '" title="' . $lang['ignore_topic'] . '" border="0" align="top"/></a>';
+	$ignore_status  = new Url("ignore_topics.$phpEx?topic_id=$topic_id", '&nbsp;', ['class' => 'icon ignore']);
+	if ($ignore_this_topic) {
+		$ignore_status = new Url("ignore_topics.$phpEx?mode=view&topic_ignore=$topic_id", $lang['current_topic_ignore']);
+	}
+	/*
+	$ignore_status = ($ignore_this_topic) ? 
+		'<span class="gensmall">[<a href="' . append_sid("ignore_topics.$phpEx?mode=view&amp;topic_ignore=$topic_id") . '">' . $lang['current_topic_ignore'] . '</a>]</span>' : 
+		'<a href="' . append_sid("ignore_topics.$phpEx?topic_id=$topic_id&amp;sid=" . $session_id . "") . '"><img src="' . $images['icon_delpost'] . '" alt="' . $lang['ignore_topic'] . '" title="' . $lang['ignore_topic'] . '" border="0" align="top"/></a>';
+	*/
 }
 
 if ( $board_config['cignore'] && $userdata['cignore'] && $userdata['session_logged_in'] )
@@ -1314,7 +1324,7 @@ $template->vars(array(
 
 	'POST_IMG' => $post_img,
 	'REPLY_IMG' => $reply_img,
-	'IGNORE_STATUS' => $ignore_status,
+	'U_IGNORE_STATUS' => $ignore_status,
 	'COMMENT_POST_IMG' => $images['icon_latest_reply'],
 	'PAGE_NUMBER' => ($all_pages > 1) ? sprintf($lang['Page_of'], $current_page, $all_pages) : '',
 	'TELLFRIEND_BOX' => ($board_config['cfriend'] && $session_logged_in) ? '<a href="' . append_sid("tellafriend.$phpEx?topic_id=$topic_id") . '">' . $lang['s_email_friend'] . '</a><br />' : '',
@@ -1745,7 +1755,6 @@ for($i = 0; $i < $total_posts; $i++)
 		$icon = '';
 		$ignore = '';
 		$l_edited_by = '';
-		$helped_me_show = '';
 		$special_rank = '';
 		$level_hp = '';
 		$level_hp_percent = '';
@@ -1960,19 +1969,22 @@ for($i = 0; $i < $total_posts; $i++)
 			}
 			else if ( $session_logged_in )
 			{
-				$temp_url = append_sid("ignore.$phpEx?mode=add&amp;ignore_id=$poster_id&amp;topic=$topic_id&amp;sid=" . $session_id . "");
-				$ignore = ($board_config['graphic']) ? '<a href="' . $temp_url . '"><img src="' . $images['icon_ignore'] . '" alt="" title="' . $lang['Ignore_add'] . '" border="0" /></a> ' : '<a href="' . $temp_url . '" class="gen" title="' . $lang['Ignore_add'] . '">[<b>' . $lang['Ignore_mini'] . '</b>]</a> ';
+				$temp_url = append_sid("ignore.$phpEx?mode=add&ignore_id=$poster_id&topic=$topic_id");
+				// $ignore = ($board_config['graphic']) ? '<a href="' . $temp_url . '"><img src="' . $images['icon_ignore'] . '" alt="" title="' . $lang['Ignore_add'] . '" border="0" /></a> ' : '<a href="' . $temp_url . '" class="gen" title="' . $lang['Ignore_add'] . '">[<b>' . $lang['Ignore_mini'] . '</b>]</a> ';
+				$ignore = new Url($temp_url, '&nbsp;', ['class' => 'icon ignore']);
 			}
 
-			$temp_url = append_sid("profile.$phpEx?mode=viewprofile&amp;" . POST_USERS_URL . "=$poster_id");
+			$temp_url = append_sid("profile.$phpEx?mode=viewprofile&" . POST_USERS_URL . "=$poster_id");
 			if ( $board_config['post_footer'] )
 			{		
 				if ( $board_config['graphic'] )
 				{
-					$profile_img = '<a href="' . $temp_url . '"><img src="' . $images['icon_profile'] . '" alt="" title="' . $lang['Read_profile'] . '" border="0" /></a>';
-					$profile = '<a href="' . $temp_url . '">' . $lang['Read_profile'] . '</a>';
-					$temp_url = append_sid("privmsg.$phpEx?mode=post&amp;" . POST_USERS_URL . "=$poster_id");
-					$pm_img = '<a href="' . $temp_url . '"><img src="' . $images['icon_pm'] . '" alt="" title="' . $lang['Send_private_message'] . '" border="0" /></a>';
+					// $profile_img = '<a href="' . $temp_url . '"><img src="' . $images['icon_profile'] . '" alt="" title="' . $lang['Read_profile'] . '" border="0" /></a>';
+					$profile_img = new Url($temp_url, '&nbsp;', ['class' => 'icon user']);
+					//$profile = '<a href="' . $temp_url . '">' . $lang['Read_profile'] . '</a>';
+					$temp_url = append_sid("privmsg.$phpEx?mode=post&" . POST_USERS_URL . "=$poster_id");
+					// $pm_img = '<a href="' . $temp_url . '"><img src="' . $images['icon_pm'] . '" alt="" title="' . $lang['Send_private_message'] . '" border="0" /></a>';
+					$pm_img = new Url($temp_url, '&nbsp;', ['class' => 'icon message']);
 					if ( $board_config['gender'] )
 					{
 						switch ($postrow[$i]['user_gender'])
@@ -1994,47 +2006,59 @@ for($i = 0; $i < $total_posts; $i++)
 					{
 						$gender_image = '';
 					}
-					$temp_url = append_sid("privmsg.$phpEx?mode=post&amp;" . POST_USERS_URL . "=$poster_id");
-					$pm = '<a href="' . $temp_url . '">' . $lang['Send_private_message'] . '</a>';
+					$temp_url = append_sid("privmsg.$phpEx?mode=post&" . POST_USERS_URL . "=$poster_id");
+					// $pm = '<a href="' . $temp_url . '">' . $lang['Send_private_message'] . '</a>';
 					if ( !empty($postrow[$i]['user_viewemail']) || $is_auth['auth_mod'] )
 					{
 						$email_uri = ($board_config['board_email_form']) ? append_sid("profile.$phpEx?mode=email&amp;" . POST_USERS_URL .'=' . $poster_id) : 'mailto:' . $postrow[$i]['user_email'];
-						$email_img = '<a href="' . $email_uri . '"><img src="' . $images['icon_email'] . '" alt="" title="' . $lang['Send_email'] . '" border="0" /></a>';
-						$email = '<a href="' . $email_uri . '">' . $lang['Send_email'] . '</a>';
+						// $email_img = '<a href="' . $email_uri . '"><img src="' . $images['icon_email'] . '" alt="" title="' . $lang['Send_email'] . '" border="0" /></a>';
+						$email_img = new Url($email_uri, '&nbsp;', ['class' => 'icon email']);
+						//$email = '<a href="' . $email_uri . '">' . $lang['Send_email'] . '</a>';
 					}
 					else
 					{
 						$email_img = '';
-						$email = '';
+						//$email = '';
 					}
-					$www_img = ($postrow[$i]['user_website']) ? '<a href="' . $postrow[$i]['user_website'] . '" target="_userwww" rel="nofollow"><img src="' . $images['icon_www'] . '" alt="" title="' . $lang['Visit_website'] . '" border="0" /></a>' : '';
-					$www = ($postrow[$i]['user_website']) ? '<a href="' . $postrow[$i]['user_website'] . '" target="_userwww" rel="nofollow">' . $lang['Visit_website'] . '</a>' : '';
+					//$www_img = ($postrow[$i]['user_website']) ? '<a href="' . $postrow[$i]['user_website'] . '" target="_userwww" rel="nofollow"><img src="' . $images['icon_www'] . '" alt="" title="' . $lang['Visit_website'] . '" border="0" /></a>' : '';
+					$www_img = '';
+					if ($postrow[$i]['user_website']) {
+						$www_img = new Url($postrow[$i]['user_website'], '&nbsp;', ['class' => 'icon website']);
+					}
+					//$www = ($postrow[$i]['user_website']) ? '<a href="' . $postrow[$i]['user_website'] . '" target="_userwww" rel="nofollow">' . $lang['Visit_website'] . '</a>' : '';
 
-					$temp_url = append_sid("profile.$phpEx?mode=viewprofile&amp;" . POST_USERS_URL . "=$poster_id");
+					$temp_url = append_sid("profile.$phpEx?mode=viewprofile&" . POST_USERS_URL . "=$poster_id");
 				}
 				else
 				{
-					$profile_img = '<a href="' . $temp_url . '" class="gen" title="' . $lang['Read_profile'] . '">[<b>' . $lang['Profile'] . '</b>]</a>';
-					$profile = '<a href="' . $temp_url . '">' . $lang['Read_profile'] . '</a>';
-					$temp_url = append_sid("privmsg.$phpEx?mode=post&amp;" . POST_USERS_URL . "=$poster_id");
-					$pm_img = '<a href="' . $temp_url . '" class="gen" title="' . $lang['Send_private_message'] . '">[<b>' . $lang['pm_mini'] . '</b>]</a>';
-					$pm = '<a href="' . $temp_url . '">' . $lang['Send_private_message'] . '</a>';
+					// $profile_img = '<a href="' . $temp_url . '" class="gen" title="' . $lang['Read_profile'] . '">[<b>' . $lang['Profile'] . '</b>]</a>';
+					$profile_img = new Url($temp_url, '&nbsp;', ['class' => 'icon user']);
+					// $profile = '<a href="' . $temp_url . '">' . $lang['Read_profile'] . '</a>';
+					$temp_url = append_sid("privmsg.$phpEx?mode=post&" . POST_USERS_URL . "=$poster_id");
+					//$pm_img = '<a href="' . $temp_url . '" class="gen" title="' . $lang['Send_private_message'] . '">[<b>' . $lang['pm_mini'] . '</b>]</a>';
+					$pm_img = new Url($temp_url, '&nbsp;', ['class' => 'icon message']);
+					//$pm = '<a href="' . $temp_url . '">' . $lang['Send_private_message'] . '</a>';
 
 					if ( !empty($postrow[$i]['user_viewemail']) || $is_auth['auth_mod'] )
 					{
-						$email_uri = ($board_config['board_email_form']) ? append_sid("profile.$phpEx?mode=email&amp;" . POST_USERS_URL .'=' . $poster_id) : 'mailto:' . $postrow[$i]['user_email'];
-						$email_img = '<a href="' . $email_uri . '" class="gen" title="' . $lang['Send_email'] . '">[<b>' . $lang['Email'] . '</b>]</a>';
-						$email = '<a href="' . $email_uri . '">' . $lang['Send_email'] . '</a>';
+						$email_uri = ($board_config['board_email_form']) ? append_sid("profile.$phpEx?mode=email&" . POST_USERS_URL .'=' . $poster_id) : 'mailto:' . $postrow[$i]['user_email'];
+						//$email_img = '<a href="' . $email_uri . '" class="gen" title="' . $lang['Send_email'] . '">[<b>' . $lang['Email'] . '</b>]</a>';
+						$email_img = new Url($email_uri, '&nbsp;', ['class' => 'icon email']);
+						//$email = '<a href="' . $email_uri . '">' . $lang['Send_email'] . '</a>';
 					}
 					else
 					{
 						$email_img = '';
-						$email = '';
+						// $email = '';
 					}
-					$www_img = ($postrow[$i]['user_website']) ? '<a href="' . $postrow[$i]['user_website'] . '" target="_userwww" rel="nofollow" class="gen" title="' . $lang['Visit_website'] . '">[<b>WWW</b>]</a>' : '';
-					$www = ($postrow[$i]['user_website']) ? '<a href="' . $postrow[$i]['user_website'] . '" target="_userwww" rel="nofollow">' . $lang['Visit_website'] . '</a>' : '';
+					$www_img = '';
+					if ($postrow[$i]['user_website']) {
+						$www_img = new Url($postrow[$i]['user_website'], '&nbsp;', ['class' => 'icon website']);
+					}
+					//$www_img = ($postrow[$i]['user_website']) ? '<a href="' . $postrow[$i]['user_website'] . '" target="_userwww" rel="nofollow" class="gen" title="' . $lang['Visit_website'] . '">[<b>WWW</b>]</a>' : '';
+					//$www = ($postrow[$i]['user_website']) ? '<a href="' . $postrow[$i]['user_website'] . '" target="_userwww" rel="nofollow">' . $lang['Visit_website'] . '</a>' : '';
 
-					$temp_url = append_sid("profile.$phpEx?mode=viewprofile&amp;" . POST_USERS_URL . "=$poster_id");
+					$temp_url = append_sid("profile.$phpEx?mode=viewprofile&" . POST_USERS_URL . "=$poster_id");
 				}
 			}
 			else
@@ -2091,21 +2115,13 @@ for($i = 0; $i < $total_posts; $i++)
 			$email = '';
 			$www_img = '';
 			$www = '';
-			$icq_status_img = '';
-			$icq_img = '';
-			$icq = '';
-			$aim_img = '';
-			$aim_status_img = '';
-			$msn_img = '';
-			$msn = '';
-			$yim_img = '';
-			$yim = '';
 			$gender_image = '';
 		}
 
 		if ( ( $user_id == $poster_id && $is_auth['auth_edit'] && !$forum_topic_locked ) || $is_auth['auth_mod'] )
 		{
-			$temp_url = append_sid("posting.$phpEx?mode=editpost&amp;" . POST_POST_URL . "=" . $postrow_post_id);
+			$temp_url = append_sid("posting.$phpEx?mode=editpost&" . POST_POST_URL . "=" . $postrow_post_id);
+			/*
 			if ( $board_config['graphic'] )
 			{
 				$edit_img = '<a href="' . $temp_url . '"><img src="' . $images['icon_edit'] . '" alt="" title="' . $lang['Edit_delete_post'] . '" border="0" /></a>';
@@ -2115,36 +2131,34 @@ for($i = 0; $i < $total_posts; $i++)
 				$edit_img = '<a href="' . $temp_url . '" class="gen" title="' . $lang['Edit_delete_post'] . '">[<b>' . $lang['edit_mini'] . '</b>]</a>';
 			}
 			$edit = '<a href="' . $temp_url . '">' . $lang['Edit_delete_post'] . '</a>';
+			*/
+			$edit_img = new Url($temp_url, '&nbsp;', ['class' => 'icon edit']);
 		}
 		else
 		{
 			$edit_img = '';
-			$edit = '';
+			// $edit = '';
 		}
 
 		if ( $is_auth['auth_mod'] )
 		{
-			$temp_url = "modcp.$phpEx?mode=ip&amp;" . POST_POST_URL . "=" . $postrow_post_id . "&amp;" . POST_TOPIC_URL . "=" . $topic_id . "&amp;sid=" . $session_id;
+			$temp_url = "modcp.$phpEx?mode=ip&" . POST_POST_URL . "=" . $postrow_post_id . "&" . POST_TOPIC_URL . "=" . $topic_id;
+			/*
 			if ( $user_level == ADMIN | ($board_config['ipview']) )
 			{
-				if ( $board_config['graphic'] )
-				{
-					$ip_img = '<a href="' . $temp_url . '"><img src="' . $images['icon_ip'] . '" alt="" title="' . $lang['View_IP'] . '" border="0" /></a>';
-				}
-				else
-				{
-					$ip_img = '<a href="' . $temp_url . '" class="gen" title="' . $lang['View_IP'] . '">[<b>IP</b>]</a>';
-				}
+				$ip_img = new Url($temp_url, '&nbsp;', ['class' => 'icon ip']);
 			} 
 			else
 			{
 				$ip_img = '';
 			}
-			$ip = '<a href="' . $temp_url . '">' . $lang['View_IP'] . '</a>';
+			*/
+			$ip_img = new Url($temp_url, '&nbsp;', ['class' => 'icon ip']);
+			//$ip = '<a href="' . $temp_url . '">' . $lang['View_IP'] . '</a>';
 
-			$back_url = ($postrow_post_id != $forum_topic_data['topic_first_post_id'] && $postrow[$i-1]['post_id']) ? '&amp;back='. $postrow[$i-1]['post_id'] : '';
-			$back_url .= '&amp;sid='.$userdata['session_id'];
-			$temp_url = append_sid("posting.$phpEx?mode=delete&amp;" . POST_POST_URL . "=" . $postrow_post_id.$back_url);
+			$back_url = ($postrow_post_id != $forum_topic_data['topic_first_post_id'] && $postrow[$i-1]['post_id']) ? '&back='. $postrow[$i-1]['post_id'] : '';
+			$temp_url = append_sid("posting.$phpEx?mode=delete&" . POST_POST_URL . "=" . $postrow_post_id.$back_url);
+			/*
 			if ( $board_config['graphic'] )
 			{
 				$delpost_img = '<a href="' . $temp_url . '"><img src="' . $images['icon_delpost'] . '" alt="" title="' . $lang['Delete_post'] . '" border="0" /></a>';
@@ -2154,6 +2168,8 @@ for($i = 0; $i < $total_posts; $i++)
 				$delpost_img = '<a href="' . $temp_url . '" class="gen" title="' . $lang['Delete_post'] . '">[<b>X</b>]</a>';
 			}
 			$delpost = '<a href="' . $temp_url . '">' . $lang['Delete_post'] . '</a>';
+			*/
+			$delpost_img = new Url($temp_url, '&nbsp;', ['class' => 'icon delete']);
 		}
 		else
 		{
@@ -2162,9 +2178,9 @@ for($i = 0; $i < $total_posts; $i++)
 
 			if ( $user_id == $poster_id && $is_auth['auth_delete'] && $forum_topic_data['topic_last_post_id'] == $postrow_post_id )
 			{
-			$back_url = ($postrow_post_id != $forum_topic_data['topic_first_post_id'] && $postrow[$i-1]['post_id']) ? '&amp;back='. $postrow[$i-1]['post_id'] : '';
-			$back_url .= '&amp;sid='.$userdata['session_id'];
-			$temp_url = append_sid("posting.$phpEx?mode=delete&amp;" . POST_POST_URL . "=" . $postrow_post_id.$back_url);
+				$back_url = ($postrow_post_id != $forum_topic_data['topic_first_post_id'] && $postrow[$i-1]['post_id']) ? '&back='. $postrow[$i-1]['post_id'] : '';
+				$temp_url = append_sid("posting.$phpEx?mode=delete&" . POST_POST_URL . "=" . $postrow_post_id.$back_url);
+				/*
 				if ( $board_config['graphic'] )
 				{
 					$delpost_img = '<a href="' . $temp_url . '"><img src="' . $images['icon_delpost'] . '" alt="" title="' . $lang['Delete_post'] . '" border="0" /></a>';
@@ -2174,11 +2190,13 @@ for($i = 0; $i < $total_posts; $i++)
 					$delpost_img = '<a href="' . $temp_url . '" class="gen" title="' . $lang['Delete_post'] . '>[<b>X</b>]</a>';
 				}
 				$delpost = '<a href="' . $temp_url . '">' . $lang['Delete_post'] . '</a>';
+				*/
+				$delpost_img = new Url($temp_url, '&nbsp;', ['class' => 'icon delete']);
 			}
 			else
 			{
 				$delpost_img = '';
-				$delpost = '';
+				//$delpost = '';
 			}
 		}
 
@@ -2196,25 +2214,27 @@ for($i = 0; $i < $total_posts; $i++)
 			if ( empty($postrow[$i]['reporter_id']) && ( !$session_logged_in || $poster_id != $user_id ) && !$rp->report_disabled2($poster_id) && $rp->report_auth($user_id) )
 			{
 				$temp_url = append_sid("report.$phpEx?mode=report&amp;" . POST_POST_URL . "=" . $postrow_post_id);
-				$report_img = ($board_config['graphic']) ? '<a href="' . $temp_url . '"><img src="' . $images['icon_report'] . '" alt="" title="' . $lang['Report_post'] . '" border="0" /></a>' : '<a href="' . $temp_url . '" title="' . $lang['Report_post'] . '" class="gen">[ <b>!!!</b> ]</a>';
-				$report = '<a href="' . $temp_url . '">' . $lang['Report_post'] . '</a>';
+				//$report_img = ($board_config['graphic']) ? '<a href="' . $temp_url . '"><img src="' . $images['icon_report'] . '" alt="" title="' . $lang['Report_post'] . '" border="0" /></a>' : '<a href="' . $temp_url . '" title="' . $lang['Report_post'] . '" class="gen">[ <b>!!!</b> ]</a>';
+				$report_img = new Url($temp_url, '&nbsp;', ['class' => 'icon report']);
+				// $report = '<a href="' . $temp_url . '">' . $lang['Report_post'] . '</a>';
 			}
 			else if ( !empty($postrow[$i]['reporter_id']) && ( ( $session_logged_in && $postrow[$i]['reporter_id'] == $user_id ) || ( $is_auth['auth_mod'] && $rp->check_access() ) ) )
 			{
 				$temp_url = append_sid("report.$phpEx?mode=del_report&amp;" . POST_POST_URL . "=" . $postrow_post_id);
-				$report_img = ($board_config['graphic']) ? '<a href="' . $temp_url . '"><img src="' . $images['icon_del_report'] . '" alt="" title="' . $lang['Report_del'] . '" border="0" /></a>' : '<a href="' . $temp_url . '" title="' . $lang['Report_del'] . '" class="gen">[ <b>!X!</b> ]</a>';
-				$report = '<a href="' . $temp_url . '">' . $lang['Report_del'] . '</a>';
+				// $report_img = ($board_config['graphic']) ? '<a href="' . $temp_url . '"><img src="' . $images['icon_del_report'] . '" alt="" title="' . $lang['Report_del'] . '" border="0" /></a>' : '<a href="' . $temp_url . '" title="' . $lang['Report_del'] . '" class="gen">[ <b>!X!</b> ]</a>';
+				//$report = '<a href="' . $temp_url . '">' . $lang['Report_del'] . '</a>';
+				$report_img = new Url($temp_url, '&nbsp;', ['class' => 'icon report']);
 			}
 			else
 			{
 				$report_img = '';
-				$report = '';
+				//$report = '';
 			}
 		}
 		else
 		{
 			$report_img = '';
-			$report = '';
+			// $report = '';
 		}
 
 		$post_subject = ( $postrow[$i]['post_subject'] != '' ) ? $postrow[$i]['post_subject'] : '';
@@ -2360,8 +2380,8 @@ for($i = 0; $i < $total_posts; $i++)
 			if ( $postrow[$i]['post_edit_by'] )
 			{
 				$by_userdata_edit = get_userdata($postrow[$i]['post_edit_by'], false, 'username');
-				$edited_by_user = '<a href="' . append_sid("profile.$phpEx?mode=viewprofile&amp;" . POST_USERS_URL . "=" . $postrow[$i]['post_edit_by']) . '">' . $by_userdata_edit['username'] . '</a>';
-
+				// $edited_by_user = '<a href="' . append_sid("profile.$phpEx?mode=viewprofile&amp;" . POST_USERS_URL . "=" . $postrow[$i]['post_edit_by']) . '">' . $by_userdata_edit['username'] . '</a>';
+				$edited_by_user = new Url("profile.$phpEx?mode=viewprofile&" . POST_USERS_URL . "=" . $postrow[$i]['post_edit_by'], $by_userdata_edit['username']);
 				$l_edited_by = sprintf($l_edit_time_total, $edited_by_user, create_date($board_config['default_dateformat'], $postrow[$i]['post_edit_time'], $board_config['board_timezone']), $postrow[$i]['post_edit_count']);
 			}
 			else if ( $board_config['show_action_edited_self'] )
@@ -2370,7 +2390,8 @@ for($i = 0; $i < $total_posts; $i++)
 			}
 			if ( (($is_auth['auth_mod'] && $board_config['allow_mod_delete_actions']) || $user_level == ADMIN) && $board_config['show_action_edited_self'] )
 			{
-				$l_edited_by .= ' <a href="' . append_sid("viewtopic.$phpEx?" . POST_POST_URL . "=" . $postrow[$i]['post_id'] . "&amp;post_edit_by=delete", true) . "#" . $postrow[$i]['post_id'] . '" title="' . $lang['TA_Delete'] . '">X</a>';
+				//$l_edited_by .= ' <a href="' . append_sid("viewtopic.$phpEx?" . POST_POST_URL . "=" . $postrow[$i]['post_id'] . "&post_edit_by=delete", true) . "#" . $postrow[$i]['post_id'] . '" title="' . $lang['TA_Delete'] . '">X</a>';
+				$l_edited_by .= new Url("viewtopic.$phpEx?" . POST_POST_URL . "=" . $postrow[$i]['post_id'] . "&post_edit_by=delete", 'X');
 			}
 			$show_edited_block = true;
 		}
@@ -2391,33 +2412,6 @@ for($i = 0; $i < $total_posts; $i++)
 			}
 		}
 
-		// Helped
-		$helped_me_show = $special_rank = $icon_help = '';
-		if ( $board_config['helped'] && !$forum_topic_data['forum_no_helped'] )
-		{
-			$rank = ($postrow[$i]['special_rank']) ? intval($postrow[$i]['special_rank']) : 0;
-
-			$helped_how_much = ($rank < 2) ? $lang['help_1'] : $lang['help_more'];
-
-			$special_rank = ($rank > 0 && $poster_id != ANONYMOUS && $postrow[$i]['user_allow_helped']) ? (($postrow[$i]['user_gender'] == 2) ? $lang['postrow_help_she'] : $lang['postrow_help']) . $rank . $helped_how_much . '<br />' : '';
-
-			if ( $postrow[$i]['post_marked'] == 'y' )
-			{
-				$row_class = 'row_helped';
-			}
-			elseif ( $userdata['session_logged_in'] && $poster_id != ANONYMOUS && $poster_id != $userdata['user_id'] && $userdata['user_allow_helped'] && $userdata['user_id'] == $forum_topic_data['topic_poster'] )
-			{
-				$icon_help = ($postrow[$i]['user_gender'] == 2) ? $images['icon_help-a'] : $images['icon_help'];
-				$helped_me_show = '<a href="' . append_sid("viewtopic.php?t=$topic_id&amp;p_add=$postrow_post_id") . '"><img src="' . $icon_help . '" border="0" title="' . $lang['He_helped'] . '" alt=""></a> ';
-			}
-
-			if ( $postrow[$i]['post_marked'] == 'y' && $is_auth['auth_mod'] )
-			{
-				$icon_help = ($postrow[$i]['user_gender'] == 2) ? $images['icon_help-a'] : $images['icon_help'];
-				$helped_me_show = '<a href="' . append_sid("viewtopic.php?t=$topic_id&amp;p_del=$postrow_post_id") . '"><img src="' . $icon_help . '" border="0" title="' . $lang['He_helped_delete'] . '" alt=""></a> ';
-			}
-		}
-		// Helped end
 	}
 	// Again this will be handled by the templating
 	// code at some point
@@ -2471,7 +2465,6 @@ for($i = 0; $i < $total_posts; $i++)
 		'POSTER_AVATAR' => $poster_avatar,
 		'POST_DATE' => $post_date,
 		'POST_SUBJECT' => $post_subject,
-		'HELPED_ME' => $helped_me_show,
 		'SPECIAL_RANK' => $special_rank,
 		'VIEW_USER_AGENT' => (is_array($user_agent)) ? '&nbsp;&nbsp;<img src="' . $images['images'] . '/user_agent/' . $user_agent[0] . '" alt="" />&nbsp;<img src="' . $images['images'] . '/user_agent/' . $user_agent[1] . '" alt="" title="' . $user_agent[2] . '" />' : '',
 		'MESSAGE' => (!$show_post && (($userdata['user_id'] == $poster_id && $poster_id != ANONYMOUS) || (!$postrow[$i]['post_approve'] && $is_auth['auth_mod']))) ? '<i><b>' . $lang['Post_no_approved'] . '</b></i><br /><br />' . $message : $message,
@@ -2479,27 +2472,27 @@ for($i = 0; $i < $total_posts; $i++)
 		'SIG_IMAGE' => $user_sig_image,
 		'EDITED_MESSAGE' => $l_edited_by, 
 		'MINI_POST_IMG' => $mini_post_img,
-		'PROFILE_IMG' => $profile_img, 
-		'PROFILE' => $profile, 
+		'U_PROFILE' => $profile_img, 
+//		'PROFILE' => $profile, 
 		'IGNORE' => $ignore,
-		'PM_IMG' => $pm_img,
-		'PM' => $pm,
-		'EMAIL_IMG' => $email_img,
-		'EMAIL' => $email,
-		'WWW_IMG' => $www_img,
-		'WWW' => $www,
-		'EDIT_IMG' => $edit_img,
-		'EDIT' => $edit,
-		'QUOTE_IMG' => $quote_img,
-		'QUOTE' => $quote,
+		'U_MESSAGE' => $pm_img,
+//		'PM' => $pm,
+		'U_EMAIL' => $email_img,
+//		'EMAIL' => $email,
+		'U_WEBSITE' => $www_img,
+//		'WWW' => $www,
+		'U_EDIT' => $edit_img,
+//		'EDIT' => $edit,
+		'U_QUOTE' => $quote_img,
+//		'QUOTE' => $quote,
 		'QUOTE_USERNAME' => $quote_username,
 		'POST_REPLY_IMG' => $post_reply_img,
-		'IP_IMG' => $ip_img,
-		'IP' => $ip,
-		'DELETE_IMG' => $delpost_img,
-		'DELETE' => $delpost,
-		'REPORT_IMG' => $report_img,
-		'REPORT' => $report,
+		'U_IP' => $ip_img,
+//		'IP' => $ip,
+		'U_DELETE' => $delpost_img,
+//		'DELETE' => $delpost,
+		'U_REPORT' => $report_img,
+//		'REPORT' => $report,
 		'NEW_POST' => ($new_post) ? $lang['unread_post'] : '',
 		'U_MINI_POST' => $mini_post_url,
 		'U_POST_ID' => $postrow_post_id
@@ -2670,9 +2663,14 @@ for($i = 0; $i < $total_posts; $i++)
 
 	if ( $board_config['post_footer'] && $show_post && !$postrow[$i]['post_parent'] )
 	{
-		$template->block('postrow.top', array(
-			'TOP_IMG' => ($i == 0) ? '<a href="#' . $postrow[($total_posts-1)]['post_id']	 . '"><img src="' . $images['topic_mod_merge'] . '" alt="" border="0" /></a>' : '<a href="#top"><img src="' . $images['topic_mod_move'] . '" alt="" border="0" /></a>')
-		);
+		$top_img = new Url('#' . $postrow[($total_posts-1)]['post_id'], '&nbsp;', ['class' => 'icon bottom']);
+
+		if ($i) {
+			$top_img = new Url('#top', '&nbsp;', ['class' => 'icon top']);
+		}
+		$template->block('postrow.top', [
+			'U_TOP' => $top_img,
+		]);
 	}
 
 	if ( defined('ATTACHMENTS_ON') && $show_post )

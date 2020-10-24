@@ -348,7 +348,7 @@ function build_index($cur = 'Root', $cat_break = false, &$forum_moderators, $rea
 				}
 
 				// $last_post .= '<a href="' . append_sid("viewtopic.$phpEx?" . POST_POST_URL . '=' . $data['tree.topic_last_post_id']) . '#' . $data['tree.topic_last_post_id'] . '"><img src="' . $images['icon_latest_reply'] . '" border="0" alt="' . $lang['Last_Post'] . '" title="' . $lang['Last_Post'] . '" /></a>';
-				$u_last_post = new Url("viewtopic.$phpEx?" . POST_POST_URL . '=' . $data['tree.topic_last_post_id'] . '#' . $data['tree.topic_last_post_id'], '&nbsp;', ['class' => 'icon reply']);
+				$u_last_post = new Url("viewtopic.$phpEx?" . POST_POST_URL . '=' . $data['tree.topic_last_post_id'] . '#' . $data['tree.topic_last_post_id'], $lang['Last_Post'], ['class' => 'icon reply']);
 			}
 
 			// links to sub-levels
@@ -434,11 +434,13 @@ function build_index($cur = 'Root', $cat_break = false, &$forum_moderators, $rea
 						//$wfolder_image	= ( $wdata['tree.unread_topics'] ) ? $wi_new : $wi_norm;
 						//$wfolder_alt	= ( $wdata['tree.unread_topics'] ) ? $wa_new : $wa_norm;
 						$wfolder .= $wdata['tree.unread_topics'] ? ' new' : '';
+						$wfolder_text = $wdata['tree.unread_topics'] ? $lang['New_posts'] : $lang['No_new_posts'];
 						if ( $wdata['tree.locked'] )
 						{
 							//$wfolder_image	= $wi_locked;
 							//$wfolder_alt	= $wa_locked;
 							$wfolder .= ' locked';
+							$wfolder_text = $lang['Forum_locked'];
 						}
 						//$wlast_post = '<a href="' . append_sid("./viewtopic.$phpEx?" . POST_POST_URL . '=' . $wdata['tree.topic_last_post_id']) . '#' . $wdata['tree.topic_last_post_id'] . '">';
 						//$wlast_post .= '<img src="' . $wfolder_image . '" style="border: none" alt="' . $wfolder_alt . '" title="' . $wfolder_alt.'"/></a>';

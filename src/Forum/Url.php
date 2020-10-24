@@ -21,7 +21,7 @@ class Url
         return $this->render();
     }
 
-    public function render()
+    public function render($text = null)
     {
         if (isset($this->styles['class'])) {
             $class = $this->styles['class'];
@@ -35,6 +35,6 @@ class Url
             });
             $styles = ' style="' . implode(' ', $styles) . '"';
         }
-        return sprintf('<a href="%s"%s%s>%s</a>', $this->url, $styles, $class, $this->text);
+        return sprintf('<a href="%s"%s%s>%s</a>', $this->url, $styles, $class, $text ?: $this->text);
     }
 }
