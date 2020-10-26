@@ -5,7 +5,7 @@
   {{ META_DESC }}
   {{ META }}
   <title>{{ SITENAME }} :: {{ PAGE_TITLE }}</title>
-  <link rel="stylesheet" href="themes/subSilver2/subSilver2.css" type="text/css">
+  <link rel="stylesheet" href="themes/{{ theme }}/style.css" type="text/css">
 	<script language="Javascript" type="text/javascript">
 	<!--
 	var factive_color = '{{ T_ACTIVE_COLOR }}';

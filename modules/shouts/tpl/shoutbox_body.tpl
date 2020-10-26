@@ -1,6 +1,6 @@
 <style>
-@import url('/modules/bbcode/main.css');
-@import url('/modules/shouts/main.css');
+@import url('/modules/bbcode/style.css');
+@import url('/modules/shouts/style.css');
 </style>
 <div class="shoutbox" id="shouts" style="width:800px; margin: auto">
 	<h2>{{ L_SHOUTBOX }}</h2>

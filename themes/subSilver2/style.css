@@ -32,6 +32,18 @@ hr {
 	letter-spacing: -1px;
 }
 
+.bodyline h1 > small {
+	font-size: 14px;
+	color: #555;
+	margin-top : 10px;
+	display: block;
+	letter-spacing: 0;
+}
+
+table {
+	width: 100%;
+}
+
 /* This is the border line & background colour round the entire page */
 .bodyline {
 	background-color: #fff;
@@ -76,7 +88,150 @@ table.legend img {
 	top: 4px;
 }
 
+a.latest_reply {
+	background: transparent url(images/icon_latest_reply.gif) no-repeat center center;
+	padding: 0 10px;
+	text-decoration: none;
+}
+
+a.icon {
+	background: transparent no-repeat left center;
+	padding: 0 10px 0 0;
+	text-decoration: none;
+}
+
+a.reply {
+	background: transparent url(images/icon_latest_reply.gif) no-repeat center center;
+	padding: 0 10px;
+	text-decoration: none;
+}
+h1 a.icon {
+	background: transparent no-repeat left center;
+	padding: 0 10px 0;
+}
+
+.postactions a.icon {
+	font-size: 16px;
+}
+
+a.icon.link {
+	background-image:  url(images/icon_minilink.gif);
+}
+a.icon.forum {
+	background-image:  url(images/icon_minipost.gif);
+}
+a.icon.category {
+	background-image:  url(images/icon_minicat.gif);
+}
+a.icon.forum.locked {
+	background-image:  url(images/icon_minipost_lock.gif);
+}
+a.icon.category.locked {
+	background-image:  url(images/icon_minicat_lock.gif);
+}
+a.icon.forum.new {
+	background-image:  url(images/icon_minipost_new.gif);
+}
+a.icon.category.new {
+	background-image:  url(images/icon_minicat_new.gif);
+}
+a.icon.post {
+	background-image:  url(images/icon_minipost.gif);
+}
+a.icon.ignore {
+	background-image: url(images/icon_delete.gif);
+}
+a.icon.edit {
+	background-image:  url(images/lang_english/icon_edit.gif);
+	padding: 0 28px;
+}
+a.icon.website {
+	background-image:  url(images/lang_english/icon_www.gif);
+	padding: 0 28px;
+}
+a.icon.delete {
+	background-image:  url(images/icon_delete.gif);
+	padding: 0 7px;
+}
+a.icon.email {
+	background-image:  url(images/lang_english/icon_email.gif);
+	padding: 0 28px;
+}
+a.icon.message {
+	background-image:  url(images/lang_english/icon_pm.gif);
+	padding: 0 28px;
+}
+a.icon.user {
+	background-image:  url(images/lang_english/icon_profile.gif);
+	padding: 0 28px;
+}
+a.icon.quote {
+	background-image:  url(images/lang_english/icon_quote.gif);
+	padding: 0 28px;
+}
+.postactions a.icon.ignore {
+	background-image:  url(images/lang_english/icon_ignore.gif);
+	padding: 0 28px;
+}
+a.icon.ip {
+	background-image:  url(images/lang_english/icon_ip.gif);
+	padding: 0 7px;
+}
+a.icon.top {
+	background-image:  url(images/topic_move.gif);
+	padding: 0 7px;
+}
+a.icon.bottom {
+	background-image:  url(images/topic_merge.gif);
+	padding: 0 7px;
+}
+
+a.icon.newtopic {
+	background-image:  url(images/lang_polish/post.gif);
+	padding: 0 40px;
+	font-size: 22px;
+}
+
+a.icon.newtopic.locked {
+	background-image:  url(images/lang_polish/reply-locked.gif);
+	padding: 0 40px;
+	font-size: 22px;
+}
+
+tr.participated span.participated {
+	display: inline;
+}
+span.participated {
+	display: none;
+}
+
 /* Main table cell colours and backgrounds */
+
+td.nowrap {
+	white-space: nowrap;
+}
+
+td.left,
+tr.forum.row td.left,
+tr.topic.row td.left {
+	text-align: left;
+}
+td.right,
+tr.forum.row td.right,
+tr.topic.row td.right {
+	text-align: right;
+}
+
+tr.forum.row td,
+tr.topic.row td {
+	background-color: #EFEFEF;
+	padding: 10px;
+	border-bottom: 1px solid #c8d0d7;
+	border-top: 1px solid #fff;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 15px;
+}
 td.row1 {
 	background-color: #EFEFEF;
 	padding: 10px;

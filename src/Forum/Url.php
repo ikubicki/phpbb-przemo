@@ -8,6 +8,7 @@ class Url
     protected $url;
     protected $text;
     protected $styles;
+    protected $cache;
 
     public function __construct($url, $text = '', array $styles = [])
     {
@@ -18,22 +19,28 @@ class Url
 
     public function __toString()
     {
-        return $this->render();
+        if (!$this->cache) {
+            $this->cache = $this->render();
+        }
+        return $this->cache;
     }
 
-    public function render($text = null)
+    public function render($text = null, array $styles = [])
     {
-        if (isset($this->styles['class'])) {
-            $class = $this->styles['class'];
-            unset($this->styles['class']);
+        $styles = $this->styles + $styles;
+        if (isset($styles['class'])) {
+            $class = $styles['class'];
+            unset($styles['class']);
             $class = sprintf(' class="%s"', $class);
         }
-        if (count($this->styles)) {
-            $styles = $this->styles;
+        if (count($styles)) {
             array_walk($styles, function(&$v, $k){
                 $v = "$k: $v;";
             });
             $styles = ' style="' . implode(' ', $styles) . '"';
+        }
+        else {
+            $styles = '';
         }
         return sprintf('<a href="%s"%s%s>%s</a>', $this->url, $styles, $class, $text ?: $this->text);
     }

@@ -1,6 +1,8 @@
 <?php
 
 use PhpBB\Forum\Url;
+use PhpBB\Forum\Image;
+
 /***************************************************************************
  *                               viewtopic.php
  *                            -------------------
@@ -2442,6 +2444,11 @@ for($i = 0; $i < $total_posts; $i++)
 	}
 
 	$user_agent = ($board_config['cagent'] && $postrow[$i]['user_agent'] && !$ignore_this_post && $show_post && $userdata['cagent']) ? unserialize($postrow[$i]['user_agent']) : '';
+	$user_agents = [];
+	if (is_array($user_agent)) {
+		$user_agents[] = new Image('user_agent/' . $user_agent[0], ['class' => 'useragent', 'title' => $user_agent[2]]);
+		$user_agents[] = new Image('user_agent/' . $user_agent[1], ['class' => 'useragent', 'title' => $user_agent[2]]);
+	}
 	$template->block('postrow', [
 		'ICON' => $icon,
 		'POST_EXPIRE' => $post_expire_date,
@@ -2466,7 +2473,7 @@ for($i = 0; $i < $total_posts; $i++)
 		'POST_DATE' => $post_date,
 		'POST_SUBJECT' => $post_subject,
 		'SPECIAL_RANK' => $special_rank,
-		'VIEW_USER_AGENT' => (is_array($user_agent)) ? '&nbsp;&nbsp;<img src="' . $images['images'] . '/user_agent/' . $user_agent[0] . '" alt="" />&nbsp;<img src="' . $images['images'] . '/user_agent/' . $user_agent[1] . '" alt="" title="' . $user_agent[2] . '" />' : '',
+		'I_USER_AGENTS' => $user_agents,
 		'MESSAGE' => (!$show_post && (($userdata['user_id'] == $poster_id && $poster_id != ANONYMOUS) || (!$postrow[$i]['post_approve'] && $is_auth['auth_mod']))) ? '<i><b>' . $lang['Post_no_approved'] . '</b></i><br /><br />' . $message : $message,
 		'SIGNATURE' => $user_sig, 
 		'SIG_IMAGE' => $user_sig_image,

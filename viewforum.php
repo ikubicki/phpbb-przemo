@@ -493,13 +493,20 @@ $count_orig_word = (count($orig_word));
 if (empty($show_ignore_link)) {
 	$show_ignore_link = '';
 }
+
+if ($forum_row['forum_status'] == FORUM_LOCKED) {
+	$new_topic = new Url("javascript:void(0)", '&nbsp;', ['class' => 'icon newtopic locked']);
+}
+else {
+	$new_topic = new Url("posting.$phpEx?mode=newtopic&" . POST_FORUM_URL . "=$forum_id", '&nbsp;', ['class' => 'icon newtopic']);
+}
 // Post URL generation for templating vars
 $template->vars(array(
+	'FORUM_NAME' => $forum_row['forum_name'],
+	'FORUM_DESC' => $forum_row['forum_desc'],
 	'L_DISPLAY_TOPICS' => $lang['Display_topics'],
-
 	'LOGGED_IN_USER_LIST' => $online_userlist,
-	'U_POST_NEW_TOPIC' => append_sid("posting.$phpEx?mode=newtopic&amp;" . POST_FORUM_URL . "=$forum_id"),
-
+	'U_NEW_TOPIC' => $new_topic,
 	'S_SELECT_TOPIC_DAYS' => $select_topic_days,
 	'S_POST_DAYS_ACTION' => append_sid("viewforum.$phpEx?" . POST_FORUM_URL . "=" . $forum_id . "&amp;start=$start$show_ignore_link"))
 );
@@ -748,15 +755,15 @@ if( $total_topics )
 
 		if( $topic_type == POST_ANNOUNCE && $forum_row['forum_separate'] != 2 )
 		{
-			$topic_type = $lang['Topic_Announcement'] . ' ';
+			$topic_type = '📢 ';
 		}
 		else if( $topic_type == POST_GLOBAL_ANNOUNCE && $forum_row['forum_separate'] != 2 )
 		{
-			$topic_type = $lang['Topic_global_announcement'] . ' ';
+			$topic_type = '🌍 ';
 		}
 		else if( $topic_type == POST_STICKY && $forum_row['forum_separate'] != 2 )
 		{
-			$topic_type = $lang['Topic_Sticky'] . ' ';
+			$topic_type = '📌 ';
 		}
 		else
 		{
@@ -765,12 +772,12 @@ if( $total_topics )
 
 		if( $topic_rowset[$i]['topic_vote'] )
 		{
-			$topic_type .= $lang['Topic_Poll'] . ' ';
+			$topic_type .= '🗳️ ';
 		}
 		
 		if( $topic_rowset[$i]['topic_status'] == TOPIC_MOVED )
 		{
-			$topic_type = $lang['Topic_Moved'] . ' ';
+			$topic_type = '⚓ ';
 			$topic_id = $topic_rowset[$i]['topic_moved_id'];
 
 			$folder_image = $images['folder'];

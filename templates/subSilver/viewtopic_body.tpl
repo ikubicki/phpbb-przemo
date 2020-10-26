@@ -8,7 +8,7 @@ var img_addr = '{IMG_ADDR}';
 <script src="/js/lightbox/lightbox.js"></script>
 <style>@import url('/js/lightbox/lightbox.css')</style>
 <script src="/modules/votes/index.js"></script>
-<style>@import url('modules/votes/main.css')</style>
+<style>@import url('modules/votes/style.css')</style>
 <script src="/modules/avatars/index.js"></script>
 
 <br>
@@ -360,7 +360,7 @@ function bookmarkthis() {
 
 <script>forum.selection('.postbody')</script>
 <style>
-@import url('/modules/bbcode/main.css');
+@import url('/modules/bbcode/style.css');
 </style>
 <script src="/modules/bbcode/index.js"></script>
 <script src="/modules/markdown/index.js"></script>

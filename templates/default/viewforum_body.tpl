@@ -1,12 +1,21 @@
 {{ include('overall_header.tpl') }}
 
 {{ BOARD_INDEX | raw }}
+
+<h1>{{ FORUM_NAME }}
+	{% if FORUM_DESC %}
+	<small class="desc">{{ FORUM_DESC }}</small>
+	{% endif %}
+</h1>
+
 <table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
 	<tr>
-		<td align="left" valign="bottom" width="90"><a href="{{ U_POST_NEW_TOPIC }}"><img src="{{ POST_IMG }}" border="0" alt="{{ L_POST_NEW_TOPIC }}"></a>&nbsp;&nbsp;</td>
+		<td class="left nowrap" width="90">
+			{{ U_NEW_TOPIC | raw }}
+		</td>
 		<td align="left" valign="bottom"><span class="gensmall">{{ L_MODERATOR }}: {{ MODERATORS }}<br>{{ LOGGED_IN_USER_LIST }}</span></td>
 		<td align="right" valign="bottom" nowrap="nowrap">
-			<b>{{ PAGINATION }}</b>
+			<b>{{ PAGINATION | raw }}</b>
 			<a href="{{ U_MARK_READ }}">{{ L_MARK_TOPICS_READ }}</a>
 {% if U_SHOW_IGNORE %}
 			<br />{{ U_SHOW_IGNORE | raw }}
@@ -166,7 +175,8 @@ if(GetCookie('imp_topics3_{{ FORUM_ID }}') == '2') ShowHide('imp_topics_{{ FORUM
 		<td align="right" colspan="2" valign="middle" nowrap="nowrap"><span class="nav">{{ PAGE_NUMBER }}&nbsp;&nbsp;{{ PAGINATION | raw }}</span></td>
 	</tr>
 	<tr>
-		<td align="left" valign="middle"><a href="{{ U_POST_NEW_TOPIC }}"><img src="{{ POST_IMG }}" border="0" alt="{{ L_POST_NEW_TOPIC }}"></a></td>
+	
+		<td align="left" valign="middle">{{ U_NEW_TOPIC | raw }}</td>
 		<td align="right" nowrap="nowrap">&nbsp;
 		{% if switch_search_for %}
 		<form method="post" action="{{ SEARCH_ACTION }}" name="quicksearch">

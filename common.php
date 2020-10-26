@@ -153,7 +153,13 @@ PhpBB\Core\Context::register([
 		'encryption' => new PhpBB\Core\Encryption($encryption_key),
 		'db-connection' => new PhpBB\Data\MySQL\Connection($dbdsn, $dbuser, $dbpasswd),
 		'tree' => new PhpBB\Forum\Tree,
-		'templates' => new PhpBB\Forum\Templates($templates_directory, ['cache' => false, 'debug' => true]),
+		'templates' => new PhpBB\Forum\Templates($templates_directory, [
+			'cache' => false,
+			'debug' => true,
+			'vars' => [
+				'theme' => 'subSilver2'
+			],
+		]),
 	]
 ]);
 PhpBB\Core\Context::registerService('session', new PhpBB\Forum\Session(

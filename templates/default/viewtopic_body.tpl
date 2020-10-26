@@ -7,7 +7,7 @@ var img_addr = '{{ IMG_ADDR }}';
 <script src="/js/lightbox/lightbox.js"></script>
 <style>@import url('/js/lightbox/lightbox.css')</style>
 <script src="/modules/votes/index.js"></script>
-<style>@import url('modules/votes/main.css')</style>
+<style>@import url('modules/votes/style.css')</style>
 <script src="/modules/avatars/index.js"></script>
 
 <br>
@@ -184,7 +184,9 @@ var img_addr = '{{ IMG_ADDR }}';
                      {% endif %}
                      {{ _postrow.NEW_POST }}
                      {{ _postrow.POST_REPLY_IMG }}
-                     {{ _postrow.VIEW_USER_AGENT }}
+                     {% for I_USER_AGENT in _postrow.I_USER_AGENTS %}
+                        {{ I_USER_AGENT | raw }}
+                     {% endfor %}
                   </span>
 					</td>
 				</tr>
@@ -202,12 +204,6 @@ var img_addr = '{{ IMG_ADDR }}';
 	</tr>
 
 	  {% endfor %}
-
-   {% if footer %}
-   <tr>
-		<td class="spaceRow" colspan="2" height="1"><img src="{{ SPACER }}" alt="" width="1" height="1"></td>
-   </tr>
-   {% endif %}
 
 
    {% endfor %}
@@ -253,28 +249,27 @@ var img_addr = '{{ IMG_ADDR }}';
          </span>
       </td>
       <td align="right" valign="top" nowrap>
-         <span class="nav">{{ S_TOPIC_ADMIN }}</span>
+         <span class="nav">{{ S_TOPIC_ADMIN | raw }}</span>
       </td>
    </tr>
 </table>
 
-<script type="text/javascript">
-function bookmarkthis() {
-
-	if(window.external && window.external.AddFavorite) {
-		window.external.AddFavorite(location.href, document.title); 
-	}
-	else if(window.opera && window.print) {
-        this.title = document.title;
-		return true;
-	}
-};
-</script>
-
-<table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
+<table>
    <tr> 
-      <td align="left" valign="top" nowrap="nowrap"><span class="gensmall">{{ S_AUTH_LIST }}</span></td>
-      <td align="right" valign="top" nowrap="nowrap"><span class="gensmall">{{ TELLFRIEND_BOX }}<a href="{{ U_TOPIC_BOOKMARK }}" rel="sidebar" onclick="bookmarkthis();">{{ L_TOPIC_BOOKMARK }}</a><br><a href="{{ U_PRINT }}">{{ L_PRINT }}</a>{{ TOPIC_VIEW_IMG }}{{ S_WATCH_TOPIC }}{{ U_MARK_TOPIC_UNREAD }}{{ U_MARK_TOPIC_READ }}<br><br></span>{{ JUMPBOX | raw }}</td>
+      <td class="left">
+         {{ S_AUTH_LIST | raw }}
+      </td>
+      <td class="right">
+         {{ TELLFRIEND_BOX | raw }}
+         <a href="{{ U_PRINT }}">{{ L_PRINT }}</a>
+         {{ TOPIC_VIEW_IMG | raw }}
+         {{ S_WATCH_TOPIC | raw }}
+         {{ U_MARK_TOPIC_UNREAD | raw }}
+         {{ U_MARK_TOPIC_READ | raw }}
+         <br />
+         <br />
+         {{ JUMPBOX | raw }}
+      </td>
    </tr>
 </table>
 <div style="display:none" id="resizemod"></div>
@@ -282,7 +277,7 @@ function bookmarkthis() {
 
 <script>forum.selection('.postbody')</script>
 <style>
-@import url('/modules/bbcode/main.css');
+@import url('/modules/bbcode/style.css');
 </style>
 <script src="/modules/bbcode/index.js"></script>
 <script src="/modules/markdown/index.js"></script>

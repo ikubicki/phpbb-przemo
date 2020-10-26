@@ -1,5 +1,5 @@
 <style>
-@import url('/modules/auth-facebook/main.css');
+@import url('/modules/auth-facebook/style.css');
 </style>
 <form action="{S_LOGIN_ACTION}" method="post" target="_top">
 <table class="forumline posting nolength">

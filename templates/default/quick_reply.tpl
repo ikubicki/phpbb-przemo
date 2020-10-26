@@ -57,7 +57,7 @@
    </tr>
    <tr>
       <td class="submit" colspan="2">
-         {{ S_HIDDEN_FIELDS }}
+         {{ S_HIDDEN_FIELDS | raw }}
          <input type="hidden" name="mode" value="reply" />
          <input type="hidden" name="disable_html" value="1" />
          <input type="hidden" name="t" value="{{ _quick_reply.TOPIC_ID }}" />

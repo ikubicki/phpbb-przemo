@@ -22,6 +22,7 @@ class Templates
         if (isset($options['debug'])) {
             $this->twig->addExtension(new TwigDebugExt());
         }
+        $this->variables = (array) $options['vars'] ?? [];
     }
 
     public function addPath($path)

@@ -39,7 +39,7 @@
 {% if CUSTOM_FIELDS %}
 		<tr>
 			<td class="row1" valign="middle" colspan="6">
-				{{ CUSTOM_FIELDS }}
+				{{ CUSTOM_FIELDS | raw }}
 			</td>
 		</tr>
 {% endif %}
@@ -62,7 +62,7 @@
 {% endif %}
 		<tr>
 			<td colspan="6" class="submit">
-				{{ S_HIDDEN_FIELDS }}
+				{{ S_HIDDEN_FIELDS | raw }}
 				<input type="submit" name="submit" value="{{ L_RSSUBMIT }}" />
 			</td>
 		</tr>
