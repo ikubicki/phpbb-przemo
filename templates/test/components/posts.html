@@ -1,0 +1,9 @@
+{% for post in posts %}
+<div class="post" id="post_{{ post.post_id }}">
+    <div class="author">
+        {{ post.author.avatar | raw }}
+        {{ post.author.url | raw }}
+    </div>
+    <div class="body"><small>{{ l.added }} {{ post.url | raw }}</small>{{ post.text }}</div>
+</div>
+{% endfor %}

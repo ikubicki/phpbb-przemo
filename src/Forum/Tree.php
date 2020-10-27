@@ -63,6 +63,15 @@ class Tree
         }
     }
 
+    public function flat()
+    {
+        $entities = [];
+        $this->iterate(function($entity) use (&$entities) {
+            $entities[] = $entity;
+        });
+        return $entities;
+    }
+
     public function addChild($entity)
     {
         $this->children[$entity->getOrder()] = $entity;

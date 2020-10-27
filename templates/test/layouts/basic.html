@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ title }}</title>
+    </head>
+    <body>
+        <div class="head">
+            {% include('navigation.html') %}
+        </div>
+        <div class="body">
+            {% block content %}{% endblock %}
+        </div>
+        <div class="foot">
+            {% include('footer.html') %}
+        </div>
+    </body>
+</html>

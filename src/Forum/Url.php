@@ -42,6 +42,6 @@ class Url
         else {
             $styles = '';
         }
-        return sprintf('<a href="%s"%s%s>%s</a>', $this->url, $styles, $class, $text ?: $this->text);
+        return sprintf('<a href="%s"%s%s>%s</a>', $this->url, $styles, $class ?? '', $text ?: $this->text);
     }
 }

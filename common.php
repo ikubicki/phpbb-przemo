@@ -196,7 +196,7 @@ exit;
 
 // build forums tree
 $forums_tree = PhpBB\Core\Context::getService('tree');
-$forums_tree->cache($phpbb_root_path . '/cache/tree.data.php');
+$forums_tree->cache('/tmp/tree.php');
 if (!$forums_tree->isCached()) {
 	$forums_tree->import((new PhpBB\Model\CategoriesCollection)->all());
 	$forums_tree->import((new PhpBB\Model\ForumsCollection)->all());

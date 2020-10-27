@@ -1,14 +1,24 @@
 <?php
 
 namespace PhpBB\Model;
+use PhpBB\Forum\Url;
 
 class Category extends ForumHierarchicalEntity
 {
 
+    public function getType()
+    {
+        return 'category';
+    }
 
     public function getName()
     {
         return $this->cat_title;
+    }
+
+    public function getDescription()
+    {
+        return $this->cat_desc;
     }
 
     public function getIndex()
@@ -36,8 +46,18 @@ class Category extends ForumHierarchicalEntity
         return $entity;
     }
 
-    public function getUrl()
+    public function getUrl($class = null)
     {
-        return 'index.php?c=' . $this->cat_id;
+        return new Url('index.php?c=' . $this->cat_id, $this->getName(), ['class' => $class]);
+    }
+
+    public function getPostsCount()
+    {
+        return null;
+    }
+
+    public function getTopicsCount()
+    {
+        return null;
     }
 }

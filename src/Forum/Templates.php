@@ -11,6 +11,7 @@ class Templates
     protected $twig;
     protected $loader;
     protected $variables = [];
+    protected $components = [];
 
     public function __construct($directory, array $options = [])
     {
@@ -44,6 +45,12 @@ class Templates
         echo $this->render($filename);
     }
 
+    public function component($name, $filename)
+    {
+        $this->components[$name] = $this->render($filename);
+        $this->var('components', $this->components);
+    }
+
     public function vars($variables)
     {
         foreach($variables as $variable => $subvalue) {
@@ -55,35 +62,12 @@ class Templates
     {
         $this->variables[$variable] = $value;
     }
-    /*
-    /var1
-    /var2
-    /var3
-    /tablehead[]
-        /var1
-        /var2
-        /br[]
-            /var
-    /tablehead[]
-        /var1
-        /var2
-        /br[]
-            /var
-    /tablehead[]
-        /var1
-        /var2
-    /forumrow[]
-        /var1
-        /var2
-        /forum_link_no[]
-    /forumrow[]
-        /var1
-        /var2
-        /forum_link_no[]
-    */
 
     protected $blockPointers = [];
 
+    /**
+     * phpbb2 compatibility
+     */
     public function block($block, array $variables = [])
     {
         // print $block . '<br />';
@@ -100,25 +84,11 @@ class Templates
         $index = count($blockPointer[$block]);
         $blockPointer[$block][$index] = &$variables;
         $this->blockPointers[$blockPointerIndex . ($blockPointerIndex ? '.' : '') . $block] = &$variables;
-        //echo "-> $blockPointerIndex$block<br />";
-        //var_dump($this->blockPointers[$blockPointerIndex . $block]);
-/*
-        if (!isset($this->variables[$block])) {
-            $this->variables[$block] = [];
-        }
-        $container = &$this->variables[$block];
-        foreach($chunks as $_block) {
-            if (!isset($container[$_block])) {
-                $container[$_block] = [];
-            }
-            $container = &$container[$_block];
-        }
-        if (!empty($variables)) {
-            $container[] = $variables;
-        }
-*/
     }
 
+    /**
+     * phpbb2 compatibility
+     */
     public function set_filenames($filenames)
     {
         foreach($filenames as $filename) {
@@ -126,6 +96,9 @@ class Templates
         }
     }
 
+    /**
+     * phpbb2 compatibility
+     */
     public function pparse($name)
     {
 

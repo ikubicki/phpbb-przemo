@@ -1,6 +1,7 @@
 <?php
 
 namespace PhpBB\Model;
+use PhpBB\Forum\Url;
 
 class Forum extends ForumHierarchicalEntity
 {
@@ -8,11 +9,21 @@ class Forum extends ForumHierarchicalEntity
     //public $cat_id;
     //public $forum_name;
 
-    protected $latest_topic;
+    protected $latest_post;
+
+    public function getType()
+    {
+        return 'forum';
+    }
 
     public function getName()
     {
         return $this->forum_name;
+    }
+
+    public function getDescription()
+    {
+        return $this->forum_desc;
     }
 
     public function getIndex()
@@ -43,9 +54,9 @@ class Forum extends ForumHierarchicalEntity
         return $entity;
     }
 
-    public function getUrl()
+    public function getUrl($class = null)
     {
-        return 'viewforum.php?f=' . $this->forum_id;
+        return new Url('viewforum.php?f=' . $this->forum_id, $this->getName(), ['class' => $class]);
     }
 
     public function getTopics($page = 1, $limit = 15)
@@ -58,16 +69,31 @@ class Forum extends ForumHierarchicalEntity
             ->find($criteria, $order, $limit, $offset);
     }
 
-    public function getLatestTopic()
+    public function getLatestPost()
     {
-        if (!$this->latest_topic && $this->forum_last_post_id) {
-            $this->latest_topic = $this->getTopicsCollection()->get($this->forum_last_post_id);
+        if (!$this->latest_post && $this->forum_last_post_id) {
+            $this->latest_post = $this->getPostsCollection()->get($this->forum_last_post_id);
         }
-        return $this->latest_topic;
+        return $this->latest_post;
+    }
+
+    public function getPostsCount()
+    {
+        return $this->forum_posts;
+    }
+
+    public function getTopicsCount()
+    {
+        return $this->forum_topics;
     }
     
     protected function getTopicsCollection()
     {
         return new TopicsCollection;
+    }
+    
+    protected function getPostsCollection()
+    {
+        return new PostsCollection;
     }
 }

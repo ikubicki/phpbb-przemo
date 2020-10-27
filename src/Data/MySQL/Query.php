@@ -99,11 +99,16 @@ class Query
 
     protected function getFields()
     {
-        $fields = $this->prefixFields($this->from, $this->schema);
-        foreach($this->joins as $alias => $join) {
-            $fields = array_merge($fields, 
-                $this->prefixFields($alias, $join['schema'], $alias . ',')
-            );
+        if (count($this->schema)) {
+            $fields = $this->prefixFields($this->from, $this->schema);
+            foreach($this->joins as $alias => $join) {
+                $fields = array_merge($fields, 
+                    $this->prefixFields($alias, $join['schema'], $alias . ',')
+                );
+            }
+        }
+        else {
+            $fields = ['*'];
         }
         return $fields;
     }

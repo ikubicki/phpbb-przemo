@@ -3,11 +3,13 @@
 namespace PhpBB\Model;
 use PhpBB\Data\Entity;
 
-class ForumHierarchicalEntity extends Entity
+abstract class ForumHierarchicalEntity extends Entity
 {
 
     protected $children = [];
     protected $nesting = 0;
+
+    abstract public function getName();
 
     public function setNesting($nesting)
     {
@@ -34,12 +36,23 @@ class ForumHierarchicalEntity extends Entity
         return $this->children;
     }
 
-    public function iterate($callback)
+    public function iterate($callback, $skipself = false)
     {
-        $callback($this);
+        if (!$skipself) {
+            $callback($this);
+        }
         foreach ($this->getChildren() as $child) {
             $child->iterate($callback);
         }
+    }
+
+    public function flat($skipself = false)
+    {
+        $entities = [];
+        $this->iterate(function($entity) use (&$entities) {
+            $entities[] = $entity;
+        }, $skipself);
+        return $entities;
     }
 
     public function trace($entity, $path)

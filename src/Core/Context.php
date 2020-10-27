@@ -54,12 +54,12 @@ class Context
         }
     }
 
-    public function getService($name)
+    public static function getService($name)
     {
         return self::$registry[$name] ?? false;
     }
 
-    public function getServices(array $names)
+    public static function getServices(array $names)
     {
         $services = [];
         foreach($names as $name) {
@@ -68,12 +68,12 @@ class Context
         return (object) $services;
     }
 
-    public function getValue($name, $alternative = false)
+    public static function getValue($name, $alternative = false)
     {
         return self::$values[$name] ?? $alternative;
     }
 
-    public function getValues(array $names)
+    public static function getValues(array $names)
     {
         $values = [];
         foreach($names as $name) {
@@ -82,12 +82,12 @@ class Context
         return (object) $values;
     }
 
-    public function getEntity($namespace, $id)
+    public static function getEntity($namespace, $id)
     {
         return self::$entities[$namespace][$id] ?? false;
     }
 
-    public function getEntities($namespace, array $ids)
+    public static function getEntities($namespace, array $ids)
     {
         $entities = [];
         foreach($ids as $id) {

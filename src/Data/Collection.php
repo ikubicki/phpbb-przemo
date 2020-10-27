@@ -64,17 +64,22 @@ class Collection
         return $records;
     }
 
-    public function leftjoin($collection, $idx, $ref, array $on = [], $alias = null)
+    public function innerjoin($collection, $idx, $ref, array $on = [], $ref_alias = null)
     {
-        return $this->join('left join', $collection, $idx, $ref, $on, $alias);
+        return $this->join('inner join', $collection, $idx, $ref, $on, $ref_alias);
     }
 
-    public function rightjoin($collection, $idx, $ref, array $on = [], $alias = null)
+    public function leftjoin($collection, $idx, $ref, array $on = [], $ref_alias = null)
     {
-        return $this->join('right join', $collection, $idx, $ref, $on, $alias);
+        return $this->join('left join', $collection, $idx, $ref, $on, $ref_alias);
     }
 
-    public function join($type = 'join', $collection, $idx, $ref, array $on = [], $alias = null)
+    public function rightjoin($collection, $idx, $ref, array $on = [], $ref_alias = null)
+    {
+        return $this->join('right join', $collection, $idx, $ref, $on, $ref_alias);
+    }
+
+    public function join($type = 'join', $collection, $idx, $ref, array $on = [], $ref_alias = null)
     {
         if (!count($this->schema)) {
             throw new \Exception(
@@ -86,6 +91,7 @@ class Collection
                 sprintf('Dependent collection [%s] must have schema defined in order to use join()', $collection->name)
             );
         }
+        $alias = $ref_alias;
         if (!$alias) {
             $alias = $collection->name . '__' . strval(count($this->joins[$collection->name] ?? []));
         }
@@ -96,6 +102,7 @@ class Collection
             'schema' => $collection->schema,
             'join' => $type,
             'ref' => $ref,
+            'ref_alias' => $ref_alias,
             'on' => $on,
         ];
         return $this;
@@ -170,7 +177,7 @@ class Collection
         foreach ($this->joins as $alias => $join) {
             $_refs[$alias] = [
                 'data' => [],
-                'ref' => $join['ref'],
+                'ref' => $join['ref_alias'] ?: $join['ref'],
                 'collection' => $join['collection']
             ];
             foreach (array_keys($record) as $field) {
