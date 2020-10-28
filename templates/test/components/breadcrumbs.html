@@ -1,0 +1,4 @@
+{{ U_HOME | raw }}
+{% for item in A_ITEMS %} 
+    {{ item.url.render(null, {class: 'separator'}) | raw }}
+{% endfor %}

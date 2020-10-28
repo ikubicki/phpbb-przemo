@@ -1,0 +1,75 @@
+body > div.head {
+    color: #fff;
+    height: 200px;
+}
+
+body > div.head > div.logo {
+    height: 110px;
+    background-image: url(images/przemo.png);
+    background-size: auto 120px;
+    background-repeat: no-repeat;
+    background-position: left 20px;
+    padding: 20px;
+    text-align: right;
+}
+
+body > div.head > div.logo h1 {
+	font-weight: bold;
+    text-decoration: none;
+    line-height : 120%;
+	font-size: 2.2em;
+	color: #fff;
+	text-shadow: 0 1px 0 #084162;
+	margin: 20px 0 0;
+}
+
+body > div.head > div.logo h2 {
+	font-weight: normal;
+	color: #333;
+    text-shadow: 0 -1px 0px #777;
+    font-size: 0.9em;
+    margin: 0;
+}
+
+body > div.head > div.bar {
+    border-bottom: 5px solid #fff;
+    padding: 15px 0;
+    width: 100%;
+}
+body > div.head > div.bar :first-child {
+    padding-left: 10px;
+}
+body > div.head > div.bar :last-child {
+    padding-right: 20px;
+}
+
+body > div.head > div.bar.sticky {
+    position: fixed;
+    top: 0;
+	background: #0f82b3;
+    background: linear-gradient(#0f82b3, #02658f);
+    z-index: 999;
+}
+
+body > div.head > div.bar div.left {
+    float: left;
+}
+
+body > div.head > div.bar div.right {
+    float: right;
+}
+
+body > div.head > div.bar a.separator {
+    border-left: 1px solid #084162;
+    padding-left: 10px;
+}
+body > div.head > div.bar a:hover {
+    text-decoration: underline;
+}
+
+body > div.head a {
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #084162;
+    padding: 0 5px;
+}

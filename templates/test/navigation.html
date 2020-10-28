@@ -1,3 +1,18 @@
-<a href="?what=viewcategory">viewcategory</a>
-<a href="?what=viewforum">viewforum</a>
-<a href="?what=viewtopic">viewtopic</a>
+<div class="logo">
+    <h1>{{ c.sitename }}</h1>
+    <h2>{{ c.site_desc }}</h2>
+</div>
+<div class="bar">
+    <div class="left">
+        {{ components.BREADCRUMBS | raw }}
+    </div>
+    <div class="right">
+        <a href="?what=viewcategory">viewcategory</a>
+        <a href="?what=viewforum">viewforum</a>
+        <a href="?what=viewtopic">viewtopic</a>
+    </div>
+    <br />
+</div>
+<script>
+    forum.stickyMenu('body > div.head > div.bar')
+</script>

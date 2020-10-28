@@ -1,10 +1,13 @@
 {% extends 'layouts/basic.html' %}
 {% block content %}
-{{ components.FORUMS | raw }}
-<br />
-<h1>{{ forum.name }}</h1>
-{% if forum.description %}
-<small>{{ forum.description }}</small>
-{% endif %}
-{{ components.TOPICS | raw }}
+<div class="body">
+    <h1>{{ forum.name }}</h1>
+    {% if forum.description %}
+    <small>{{ forum.description }}</small>
+    {% endif %}
+    <br />
+    {{ components.FORUMS | raw }}
+    <br />
+    {{ components.TOPICS | raw }}
+</div>
 {% endblock %}

@@ -46,10 +46,11 @@ abstract class ForumHierarchicalEntity extends Entity
         }
     }
 
-    public function flat($skipself = false)
+    public function flat($skipself = false, $nestingModifier = 0)
     {
         $entities = [];
-        $this->iterate(function($entity) use (&$entities) {
+        $this->iterate(function($entity) use (&$entities, $nestingModifier) {
+            $entity->nesting += $nestingModifier;
             $entities[] = $entity;
         }, $skipself);
         return $entities;

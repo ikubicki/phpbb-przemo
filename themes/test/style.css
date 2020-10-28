@@ -1,3 +1,7 @@
+@import url('forums.css');
+@import url('posts.css');
+@import url('head.css');
+
 body { 
     background-color: #0f82b3;
 	font-size : 15px;
@@ -27,92 +31,28 @@ a:hover {
 
 body > div.body > h1 {
     color: #006699;
-    font-size: 2em;
+    font-size: 1.7em;
     font-weight: normal;
     letter-spacing: -1px;
     margin: 0;
 }
 
-body > div.body,
+body > div.body {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 -25px 25px #045780;
+}
 div.foot {
     background: #fff;
     padding: 20px;
+    box-shadow: 0 25px 25px #045780;
 }
 
-table {
-    border-spacing: 0;
-    width: 100%;
-}
-table tr th {
-    font-weight: normal;
-	vertical-align: middle;
-}
-table tr td {
-	vertical-align: middle;
-}
-table tr th small,
-table tr td small {
-    display: block;
-    font-size: 0.75em;
-}
-table tr .title {
-    text-align: left;
-}
-table tr .icon {
-    width: 25px;
-    text-align: right;
-}
-table tr .posts,
-table tr .topics,
-table tr .views,
-table tr .votes,
-table tr .author,
-table tr .latestpost {
-    text-align: center;
-    white-space: nowrap;
-}
-
-table tr .posts,
-table tr .topics,
-table tr .views,
-table tr .votes {
-    width: 25px;
-}
-table tr .author {
-    width: 100px;
-}
-table tr .latestpost {
-    width: 150px;
-}
-
-
-tr.row th.label,
-tr.row td.label {
-    font-size: 13px;
-    text-align: center;
-}
-
-tr.row.forum td,
-tr.row.topic td {
-	background-color: #EFEFEF;
-	padding: 10px;
-	border-bottom: 1px solid #c8d0d7;
-	border-top: 1px solid #fff;
-}
-
-tr.row.category th,
-tr.row.forum th {
-	padding: 10px;
-    border-bottom: 1px solid #c8d0d7;
-    color: #888;
-}
-
-tr.row.category th a,
-tr.row.forum th span.title {
-    text-decoration: none;
-    color: #006699;
-    font-size: 1.25em;
-    letter-spacing: -1px;
+input[type=submit],
+input[type=button],
+input[type=radio],
+input[type=checkbox] {
+    cursor: pointer;
 }
 
 div.foot p {
@@ -126,83 +66,4 @@ div.foot p:hover span.hidden {
 div.foot p span.hidden,
 div.foot p:hover span.visible {
     display: none;
-}
-
-tr.nesting_1 > :first-child {
-    border-left: 20px solid #fff;
-}
-tr.nesting_2 > :first-child {
-    border-left: 40px solid #fff;
-}
-tr.nesting_3 > :first-child {
-    border-left: 60px solid #fff;
-}
-tr.nesting_4 > :first-child {
-    border-left: 80px solid #fff;
-}
-tr.nesting_5 > :first-child {
-    border-left: 100px solid #fff;
-}
-
-table tr .icon > * {
-    visibility: hidden;
-}
-table tr:hover .icon > *,
-table tr .icon > input:checked {
-    visibility: visible;
-}
-
-div.post {
-    display: flex;
-    clear: both;
-	background-color: #efefef;
-	border-bottom: 1px solid #c8d0d7;
-	border-top: 1px solid #fff;
-}
-div.post > br {
-    clear: both;
-}
-
-div.post > div.avatar {
-    float: left;
-    padding: 10px;
-}
-
-div.post > div.avatar img {
-	width: 100px;
-	height: 100px;
-	border: 5px solid #fff;
-	border-radius: 100px;
-	display: block;
-    margin: 0 auto;
-}
-
-div.post > div.body {
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-div.post > div.body > small {
-    display: block;
-    display: flex;
-    clear: right;
-    padding: 0 0 10px 0;
-}
-
-div.post > div.body > small a {
-    padding: 0 5px;
-}
-
-div.post > div.body > div.text {
-    display: block;
-    clear: right;
-}
-
-div.text img {
-    max-height: 250px;
-    max-width: 500px;
-	border: 3px solid #fff;
-	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
 }

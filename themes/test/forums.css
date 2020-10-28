@@ -1,0 +1,143 @@
+
+table {
+    border-spacing: 0;
+    width: 100%;
+}
+table tr th {
+    font-weight: normal;
+	vertical-align: middle;
+}
+table tr td {
+	vertical-align: middle;
+}
+table tr th small,
+table tr td small {
+    display: block;
+    font-size: 0.75em;
+}
+table tr .title {
+    text-align: left;
+}
+table tr .icon {
+    width: 25px;
+    text-align: right;
+}
+table tr .posts,
+table tr .topics,
+table tr .views,
+table tr .votes,
+table tr .author,
+table tr .latestpost {
+    text-align: center;
+    white-space: nowrap;
+}
+
+table tr .posts,
+table tr .topics,
+table tr .views,
+table tr .votes {
+    width: 25px;
+}
+table tr .author {
+    width: 100px;
+}
+table tr .latestpost {
+    width: 150px;
+}
+
+
+tr.row th.label,
+tr.row td.label {
+    font-size: 13px;
+    text-align: center;
+}
+
+tr.row.forum td,
+tr.row.topic td {
+	background-color: #EFEFEF;
+	padding: 10px;
+	border-bottom: 1px solid #c8d0d7;
+	border-top: 1px solid #fff;
+}
+
+tr.row.category th,
+tr.row.forum th {
+	padding: 10px;
+    border-bottom: 1px solid #c8d0d7;
+    color: #888;
+}
+
+tr.row.category th a,
+tr.row.forum th span.title {
+    text-decoration: none;
+    color: #006699;
+    font-size: 1.25em;
+    letter-spacing: -1px;
+}
+
+
+tr.category.nesting_1 > :first-child,
+tr.nesting_2 > :first-child {
+    border-left: 10px solid #ddd;
+}
+tr.category.nesting_2 > :first-child,
+tr.forum.nesting_3 > :first-child {
+    border-left: 20px solid #ddd;
+}
+
+table tr.replied .title a::after {
+    content: " 💬";
+}
+table tr.expiring .title a::after {
+    content: " 🕒";
+}
+table tr.replied.expiring .title a::after {
+    content: " 🕒 💬";
+}
+table tr.announcement .title a::before {
+    content: "🗣 ";
+}
+table tr.announcement.poll .title a::before {
+    content: "🗣 🗳 ";
+}
+table tr.poll .title a::before {
+    content: "🗳 ";
+}
+table tr.poll.popular .title a::before {
+    content: "🗳 🔥 ";
+}
+table tr.popular .title a::before {
+    content: "🔥 ";
+}
+table tr.announcement.poll.popular .title a::before {
+    content: "🗣 🗳 🔥 ";
+}
+
+table tr .icon {
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+table tr .icon > * {
+    visibility: hidden;
+    margin-right: 7px;
+}
+
+div.body table tr:hover .icon,
+div.body table tr.checked .icon {
+    background: #efefef;
+}
+
+table tr:hover .icon > *,
+table tr .icon > input:checked {
+    visibility: visible;
+}
+
+table tr.forum .icon,
+table tr.topic .icon {
+    background-image: url(images/folder_big.gif);
+}
+
+table tr.category .icon {
+    background-image: url(images/cat_folder_big.gif);
+}

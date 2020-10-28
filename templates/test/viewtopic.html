@@ -1,17 +1,21 @@
 {% extends 'layouts/basic.html' %}
 {% block content %}
-<script src="/modules/bbcode/index.js"></script>
-<h1>{{ topic.title }}</h1>
-{% if topic.description %}
-<small>{{ topic.description }}</small>
-{% endif %}
-<br />
-<br />
-{{ components.POSTS | raw }}
+<div class="body">
+    <script src="/modules/bbcode/index.js"></script>
+    <script src="/js/lightbox/lightbox.js"></script>
+    <style>@import url('/js/lightbox/lightbox.css');</style>
+    <h1>{{ topic.title }}</h1>
+    {% if topic.description %}
+    <small>{{ topic.description }}</small>
+    {% endif %}
+    <br />
+    <br />
+    {{ components.POSTS | raw }}
 
-<script type="text/javascript">
-    $('div.post > div.body > div.text').each((i, el) => {
-        $(el).html(bbcode.parse($(el).html()))
-    })
-</script>
+    <script type="text/javascript">
+        $('div.post > div.body > div.text').each((i, el) => {
+            $(el).html(bbcode.parse($(el).html()))
+        })
+    </script>
+</div>
 {% endblock %}

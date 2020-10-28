@@ -1,0 +1,75 @@
+
+div.post {
+    display: flex;
+    clear: both;
+    background-color: #efefef;
+    border-bottom: 1px solid #c8d0d7;
+    border-top: 1px solid #fff;
+}
+div.post > br {
+    clear: both;
+}
+
+div.post > div.avatar {
+    float: left;
+    padding: 10px;
+    width: 100px;
+}
+
+div.post > div.avatar img {
+    width: 100px;
+    height: 100px;
+    border: 5px solid #fff;
+    border-radius: 100px;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+div.post > div.avatar small {
+    color: #888;
+    max-width: 100px;
+    overflow: hidden;
+    display: block;
+    text-overflow: ellipsis;
+}
+
+div.post > div.avatar div.posts {
+    background: #fff;
+    padding: 10px;
+    border-radius: 0 100px 100px;
+    position: absolute;
+    margin: 75px 0 0 65px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+    z-index: 1;
+}
+
+div.post > div.body {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+div.post > div.body > small {
+    display: block;
+    display: flex;
+    clear: right;
+    padding: 0 0 10px 0;
+}
+
+div.post > div.body > small a {
+    padding: 0 5px;
+}
+
+div.post > div.body > div.text {
+    display: block;
+    clear: right;
+    padding: 0 0 0 5px;
+}
+
+div.text img {
+    max-height: 250px;
+    max-width: 500px;
+    border: 3px solid #fff;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+}

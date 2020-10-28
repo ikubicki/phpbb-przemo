@@ -1,7 +1,7 @@
-<table>
+<table class="topics">
     <tbody>
         <tr class="row forum">
-            <th class="icon"></th>
+            <th></th>
             <th></th>
             <th class="label">{{ l.Votes }}</th>
             <th class="label">{{ l.Replies }}</th>
@@ -10,7 +10,7 @@
             <th class="label">{{ l.Last_Post }}</th>
         </tr>
 {% for topic in topics %}
-        <tr class="row topic {{ topic.type }}">
+        <tr class="row topic {{ topic.type }} replied announcement poll">
             <td class="icon">
                 <input type="checkbox" />
             </td>
@@ -32,3 +32,9 @@
 {% endfor %}
     </tbody>
 </table>
+<script>
+    $('td.icon > input').on('change', (el) => {
+        var tr = $($(el.target).parents('tr')[0]);
+        if (tr) { if (el.target.checked) tr.addClass('checked'); else tr.removeClass('checked')}
+    });
+</script>

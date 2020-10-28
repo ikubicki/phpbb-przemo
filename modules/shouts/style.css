@@ -1,103 +1,103 @@
-div.shoutbox h2 {
-    font-size: 18px;
+div.shouts h2 {
+    font-size: 1.5em;
     color: #fff;
     text-shadow: 0 1px 0 #aaa;
     text-align: center;
 }
-div.shoutbox .messages {
+div.shouts .messages {
     overflow-x: hidden;
     overflow-y: visible;
     border-bottom: 1px solid #ccc;
 }
-div.shoutbox .messages p {
-    font-size: 12px;
+div.shouts .messages p {
+    font-size: 0.8em;
     padding: 5px 10px;
     margin: 0;
 }
 
-div.shoutbox > a {
+div.shouts > a {
     text-decoration: none;
     margin: 0 5px 0 8px;
-    font-size: 18px;
+    font-size: 1.5em;
 }
 
-div.shoutbox .messages p:hover {
+div.shouts .messages p:hover {
     background-color: #ddd;
     cursor: pointer;
 }
 
-div.shoutbox .messages p.error {
+div.shouts .messages p.error {
     background-color: #fb8;
     padding: 10px;
 }
 
-div.shoutbox .messages p span.author {
+div.shouts .messages p span.author {
     margin-right: 5px;
 }
 
-div.shoutbox .messages p span.author .online {
+div.shouts .messages p span.author .online {
     color: #0a0;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 2em;
     line-height: 12px;
     margin-right: 3px;
 }
 
-div.shoutbox .messages p span.author .offline {
+div.shouts .messages p span.author .offline {
     color: #ccc;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 2em;
     line-height: 12px;
     margin-right: 3px;
 }
 
-div.shoutbox .messages p span.author a {
+div.shouts .messages p span.author a {
     text-decoration: none;
 }
 
-div.shoutbox .messages p span.time {
+div.shouts .messages p span.time {
     float: right;
     color: #aaa;
     clear: right;
     visibility: hidden;
 }
 
-div.shoutbox .messages p:hover span.time {
+div.shouts .messages p:hover span.time {
     visibility: visible;
 }
 
-div.shoutbox .messages p span.text input[type=text] {
+div.shouts .messages p span.text input[type=text] {
     width: 50%;
 }
-div.shoutbox input {
-    font-size: 13px;
+div.shouts input {
+    font-size: 0.8em;
     padding: 5px;
     margin: 10px 0;
     background-color: #fff;
     border: 0;
     box-shadow: 0 1px 1px #aaa;
 }
-div.shoutbox input[name=message] {
+div.shouts input[name=message] {
     width: 80%;
     margin-left: 5%;
 }
-div.shoutbox input[type=button] {
+div.shouts input[type=button] {
     cursor: pointer;
 }
-div.shoutbox div.smileys {
+div.shouts div.smileys {
     margin: 5px 5px 20px;
 }
 
-div.shoutbox div.smileys br {
+div.shouts div.smileys br {
     clear: both;
 }
 
-div.shoutbox div.smileys a {
+div.shouts div.smileys a {
     text-decoration: none;
     margin: 5px;
     float: left;
     width: 20px;
     text-align: center;
     line-height: 20px;
-    font-size: 18px;
+    font-size: 1.5em;
 }

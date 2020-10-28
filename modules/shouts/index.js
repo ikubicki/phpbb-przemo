@@ -1,6 +1,6 @@
 var shouts = {
     options: {
-        url: '/modules/shouts/shouts.php',
+        url: '/modules/shouts/',
         selector: '#shouts',
         refresh: 5,
         langs: {

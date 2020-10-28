@@ -523,7 +523,7 @@ if ( $shoutbox_config['shoutbox_on'] && $userdata['shoutbox'] )
 	]);
 
 	$template->addPath(__DIR__ . '/modules');
-	$template->var('MODULE_SHOUTBOX', $template->render('shouts/tpl/shoutbox_body.tpl'));
+	$template->var('MODULE_SHOUTBOX', $template->render('shouts/templates/shouts.html'));
 	$template->var('SHOUTBOX_DISPLAY', $template->render('shoutbox_body.tpl'));
 }
 

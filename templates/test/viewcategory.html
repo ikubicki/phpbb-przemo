@@ -1,4 +1,7 @@
 {% extends 'layouts/basic.html' %}
 {% block content %}
-{{ components.FORUMS | raw }}
+<div class="body">
+    {{ components.FORUMS | raw }}
+    {{ components.SHOUTS | raw }}
+</div>
 {% endblock %}

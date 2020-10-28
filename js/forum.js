@@ -555,27 +555,21 @@ forum = {
 		
 		$('body').append(overlay)
 	},
+	stickyItems: {},
 	stickyMenu: (selector) => {
-		var sourceBar = $(selector)
+		if (!forum.stickyItems[selector]) {
+			var stickyBar = $(selector)
+			forum.stickyItems[selector] = {
+				element: stickyBar,
+				top: stickyBar.position().top,
+			}
+		}
 		$(window).scroll(function(ev){
-			var floatingBar = $(selector+'.floating')
-			if ($(window).scrollTop() > sourceBar.position().top) {
-				if (floatingBar.length < 1) {
-					sourceBar.find('div.left.mainmenu').css({
-						'margin-left': 0
-					})
-					var floatingBarClasses = selector.split('.')
-					floatingBarClasses.shift()
-					var floatingBar = $('<div class="'+floatingBarClasses.join(' ')+' floating"></div>')
-					floatingBar.html(sourceBar.html())
-					sourceBar.after(floatingBar)
-				}
+			if ($(window).scrollTop() > forum.stickyItems[selector].top) {
+				forum.stickyItems[selector].element.addClass('sticky');
 			}
 			else {
-				sourceBar.find('div.left.mainmenu').css({
-					'margin-left': $(window).scrollTop() / sourceBar.position().top * 100
-				})
-				floatingBar.remove()
+				forum.stickyItems[selector].element.removeClass('sticky');
 			}
 		})
 	}

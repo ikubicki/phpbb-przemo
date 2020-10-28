@@ -1,5 +1,5 @@
 {% if forums %}
-<table>
+<table class="forums">
     <tbody>
 {% for forum in forums %}
 {% if forum.type == 'category' %}
@@ -40,4 +40,10 @@
 {% endfor %}
     </tbody>
 </table>
+<script>
+    $('td.icon > input').on('change', (el) => {
+        var tr = $($(el.target).parents('tr')[0]);
+        if (tr) { if (el.target.checked) tr.addClass('checked'); else tr.removeClass('checked')}
+    });
+</script>
 {% endif %}
