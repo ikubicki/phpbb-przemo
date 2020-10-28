@@ -1,39 +1,33 @@
 <table>
     <tbody>
-        <tr class="row forum nesting_{{ forum.nesting }}">
+        <tr class="row forum">
             <th class="icon"></th>
-            <th>
-                {{ forum.name | raw }}
-{% if forum.description %}
-                <small>{{ forum.description }}</small>
-{% endif %}
-            </th>
-            <th>{{ l.Votes }}</th>
-            <th>{{ l.Replies }}</th>
-            <th>{{ l.Author }}</th>
-            <th>{{ l.Views }}</th>
-            <th>{{ l.Last_Post }}</th>
+            <th></th>
+            <th class="label">{{ l.Votes }}</th>
+            <th class="label">{{ l.Replies }}</th>
+            <th class="label">{{ l.Author }}</th>
+            <th class="label">{{ l.Views }}</th>
+            <th class="label">{{ l.Last_Post }}</th>
         </tr>
 {% for topic in topics %}
         <tr class="row topic {{ topic.type }}">
             <td class="icon">
                 <input type="checkbox" />
             </td>
-            <td>
+            <td class="title">
                 {{ topic.url | raw }}
 {% if topic.description %}
                 <small>{{ topic.description }}</small>
 {% endif %}
             </td>
-            <td>{{ topic.votesCount }}</td>
-            <td>{{ topic.repliesCount }}</td>
-            <td>{{ topic.author.url | raw }}</td>
-            <td>{{ topic.viewsCount }}</td>
-            <td>
+            <td class="votes">{{ topic.votesCount }}</td>
+            <td class="posts">{{ topic.repliesCount }}</td>
+            <td class="author">{{ topic.author.url | raw }}</td>
+            <td class="views">{{ topic.viewsCount }}</td>
+            <td class="latestpost">
                 {{ topic.latestPost.url | raw }}<br />
                 {{ topic.latestPost.author.url | raw }}
             </td>
-            <td></td>
         </tr>
 {% endfor %}
     </tbody>

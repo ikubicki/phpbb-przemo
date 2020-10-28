@@ -1,5 +1,17 @@
 {% extends 'layouts/basic.html' %}
 {% block content %}
-<h1>{{ what }}.html</h1>
+<script src="/modules/bbcode/index.js"></script>
+<h1>{{ topic.title }}</h1>
+{% if topic.description %}
+<small>{{ topic.description }}</small>
+{% endif %}
+<br />
+<br />
 {{ components.POSTS | raw }}
+
+<script type="text/javascript">
+    $('div.post > div.body > div.text').each((i, el) => {
+        $(el).html(bbcode.parse($(el).html()))
+    })
+</script>
 {% endblock %}

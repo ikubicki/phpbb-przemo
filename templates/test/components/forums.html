@@ -4,31 +4,30 @@
 {% for forum in forums %}
 {% if forum.type == 'category' %}
         <tr class="row category nesting_{{ forum.nesting }}">
-            <th class="icon"></th>
-            <th>
+            <th class="title" colspan="2">
                 {{- forum.url | raw }}
 {% if forum.description %}
                 <small>{{ forum.description }}</small>
 {% endif %}
             </th>
-            <th>{{ l.Topics }}</th>
-            <th>{{ l.Posts }}</th>
-            <th>{{ l.Last_Post }}</th>
+            <th class="label">{{ l.Topics }}</th>
+            <th class="label">{{ l.Posts }}</th>
+            <th class="label">{{ l.Last_Post }}</th>
         </tr>
 {% else %}
         <tr class="row forum nesting_{{ forum.nesting }}">
             <td class="icon">
                 <input type="checkbox" />
             </td>
-            <td>
+            <td class="title">
                 {{ forum.url | raw }}
 {% if forum.description %}
                 <small>{{ forum.description }}</small>
 {% endif %}
             </td>
-            <td>{{ forum.topicsCount() }}</td>
-            <td>{{ forum.postsCount() }}</td>
-            <td>
+            <td class="topics">{{ forum.topicsCount() }}</td>
+            <td class="posts">{{ forum.postsCount() }}</td>
+            <td class="latestpost">
 {% if not forum.latestPost() %}
                 --
 {% else %}

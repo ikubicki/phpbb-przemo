@@ -1,6 +1,10 @@
 {% extends 'layouts/basic.html' %}
 {% block content %}
-<h1>{{ what }}.html</h1>
 {{ components.FORUMS | raw }}
+<br />
+<h1>{{ forum.name }}</h1>
+{% if forum.description %}
+<small>{{ forum.description }}</small>
+{% endif %}
 {{ components.TOPICS | raw }}
 {% endblock %}

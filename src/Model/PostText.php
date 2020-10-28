@@ -26,6 +26,7 @@ class PostText extends Entity
 
     protected function transcode($text)
     {
-        return preg_replace('#\[(\/?[a-zA-Z0-9]+)\:[a-f0-9]+\]#', '[$1]', $text);
+        $text = preg_replace('#\[(\/?[a-zA-Z0-9]+)\:[a-f0-9]+\]#', '[$1]', $text);
+        return $text;
     }
 }

@@ -40,6 +40,7 @@ $template->vars([
     'topics' => isset($forum) ? $forum->getTopics(1, 30) : null,
     'posts' => isset($topic) ? $topic->getPosts(1, 10) : null,
     'forum' => $forum ?? null,
+    'topic' => $topic ?? null,
 ]);
 $template->component('FORUMS', 'components/forums.html');
 $template->component('TOPICS', 'components/topics.html');

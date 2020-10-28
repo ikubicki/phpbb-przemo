@@ -9,6 +9,7 @@ class Topic extends Entity
     public $topic_id;
     public $forum_id;
     public $topic_title;
+    public $topic_title_e;
     public $topic_votes_sum;
     public $topic_views;
     public $topic_time;
@@ -23,7 +24,12 @@ class Topic extends Entity
 
     public function getTitle()
     {
-        return $this->topic_votes_sum;
+        return $this->topic_title;
+    }
+
+    public function getDescription()
+    {
+        return $this->topic_title_e;
     }
 
     public static function __set_state(array $properties)
