@@ -3,7 +3,9 @@
 <div class="body">
     <script src="/modules/bbcode/index.js"></script>
     <script src="/js/lightbox/lightbox.js"></script>
+    <script src="/modules/votes/index.js"></script>
     <style>@import url('/js/lightbox/lightbox.css');</style>
+    <style>@import url('modules/votes/style.css');</style>
     <h1>{{ topic.title }}</h1>
     {% if topic.description %}
     <small>{{ topic.description }}</small>
@@ -11,8 +13,11 @@
     <br />
     <br />
     {{ components.POSTS | raw }}
+    {{ components.QUICKREPLY | raw }}
 
     <script type="text/javascript">
+        votes.load({topic: '{{ topic.topic_id }}'})
+        forum.selection('.post .body .text')
         $('div.post > div.body > div.text').each((i, el) => {
             $(el).html(bbcode.parse($(el).html()))
         })

@@ -502,7 +502,7 @@ forum = {
 				if (author) {
 					author = '<b>'+author+':</b>'
 				}
-				CKEDITOR.instances.message.insertHtml(
+				CKEDITOR.instances.quickreply.insertHtml(
 					'<blockquote>'+author+'<br /><br />'+text+'</blockquote><p></p>'
 				);
 			}

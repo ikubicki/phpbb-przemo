@@ -1,0 +1,30 @@
+<script src="/js/ckeditor/ckeditor.js"></script>
+<form action="#" method="post">
+    <div class="post edit">
+        <div class="avatar">
+            <div class="posts">{{ s.user.postsCount }}</div>
+            {{ s.user.avatar | raw }}
+            <small>
+                {{ s.user.signature }}
+            </small>
+        </div>
+        <div class="body">
+            <small>
+                {{ s.user.url | raw }}
+            </small>
+            <div class="text">
+                <textarea id="quickreply" name="message"></textarea>
+            </div>
+            <div class="submit">
+                <input type="submit" value="{{ l.Submit }}" />
+            </div>
+        </div>
+        <br />
+    </div>
+</form>
+<script type="text/javascript">
+    $(() => {
+        CKEDITOR.config.height = 200
+        CKEDITOR.replace('quickreply');
+    })
+</script>

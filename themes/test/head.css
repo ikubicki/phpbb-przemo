@@ -1,10 +1,10 @@
 body > div.head {
     color: #fff;
-    height: 200px;
+    height: 210px;    
 }
 
 body > div.head > div.logo {
-    height: 110px;
+    height: 100px;
     background-image: url(images/przemo.png);
     background-size: auto 120px;
     background-repeat: no-repeat;
@@ -35,11 +35,13 @@ body > div.head > div.bar {
     border-bottom: 5px solid #fff;
     padding: 15px 0;
     width: 100%;
+    line-height: 40px;
+    height: 40px;
 }
-body > div.head > div.bar :first-child {
-    padding-left: 10px;
+body > div.head > div.bar > :first-child {
+    padding-left: 20px;
 }
-body > div.head > div.bar :last-child {
+body > div.head > div.bar > :last-child {
     padding-right: 20px;
 }
 
@@ -72,4 +74,76 @@ body > div.head a {
     text-decoration: none;
     text-shadow: 0 1px 0 #084162;
     padding: 0 5px;
+}
+
+body > div.head div.profile,
+body > div.head div.search {
+    position: relative;
+    top: -5px;
+}
+
+body > div.head div.profile a {
+    padding: 0 20px 0 5px;
+}
+
+body > div.head img.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+}
+
+body > div.head div.bar.sticky img.avatar {
+    border: 0;
+}
+
+body > div.head div.bar > div:hover div.menu,
+body > div.head div.bar div.menu:hover {
+    display: block;
+}
+
+body > div.head div.search input:focus {
+    width: 400px;
+    background: #fff;
+    color: #333;
+    text-align: left;
+}
+body > div.head div.search input {
+    width: 200px;
+    background: transparent no-repeat center right;
+    background-size: auto 20px;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+    color: #fff;
+    padding: 15px;
+    font-size: 1em;
+    text-align: right;
+}
+
+body > div.head div.profile div.menu {
+    right: 20px;
+}
+
+body > div.head div.menu {
+    display: none;
+    background: #fff;
+    position: absolute;
+    width: 200px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    line-height: normal;
+    font-size: 0.9em
+}
+
+body > div.head div.menu a {
+    display: block;
+    color: #02658f;
+    text-shadow: none;
+    padding: 15px 20px;
+}
+
+body > div.head div.menu hr {
+    margin: 0 10px;
+    border: 0;
+    border-bottom: #eee 1px solid;
 }

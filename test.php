@@ -52,10 +52,12 @@ switch($what) {
         $tree = $forum;
         break;
 }
+$session = PhpBB\Core\Context::getService('session');
 $template = PhpBB\Core\Context::getService('templates');
 $template->addPath($phpbb_root_path . '/templates/test');
 $template->var('c', $board_config);
 $template->var('l', $lang);
+$template->var('s', $session);
 
 $template->vars([
     'title' => $what . '.html',
@@ -71,6 +73,7 @@ $template->vars([
 $template->component('FORUMS', 'components/forums.html');
 $template->component('TOPICS', 'components/topics.html');
 $template->component('POSTS', 'components/posts.html');
+$template->component('QUICKREPLY', 'components/quickreply.html');
 
 $navigation = [];
 

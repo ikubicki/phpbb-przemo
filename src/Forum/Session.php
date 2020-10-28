@@ -3,6 +3,8 @@
 namespace PhpBB\Forum;
 
 use PhpBB\Core\Context;
+use PhpBB\Data\Cache;
+use PhpBB\Model\UsersCollection;
 
 class Session
 {
@@ -10,6 +12,7 @@ class Session
     protected $id;
     protected $data = [];
     protected $cookie;
+    protected $user;
 
     public function __construct($cookie = false)
     {
@@ -62,6 +65,29 @@ class Session
         return $this->data;
     }
 
+    public function isAuthenticated()
+    {
+        return $this->data['user_id'] > 0;
+    }
+
+    public function isAdministrator()
+    {
+        return $this->isAuthenticated() && ($this->getUser()->isAdministrator() || $this->getUser()->isJuniorAdministrator());
+    }
+
+    public function getUser()
+    {
+        if (!$this->user) {
+            $this->user = $this->getUsersCollection()->get($this->data['user_id'] ?? -1);
+        }
+        return $this->user;
+    }
+
+    public function getUrl()
+    {
+        return new Url('profile.php', $this->getUser()->getName());
+    }
+
     protected function salt()
     {
         $this->data['salt'] = base_convert(microtime(true) * 100000, 10, 36);
@@ -87,5 +113,11 @@ class Session
         $encryption = Context::getService('encryption');
         $this->id = $token;
         $this->data = json_decode($encryption->decrypt($token), true);
+    }
+
+    protected function getUsersCollection()
+    {
+        return new UsersCollection;
+        //return new Cache(new UsersCollection);
     }
 }

@@ -6,6 +6,16 @@ div.post {
     border-bottom: 1px solid #c8d0d7;
     border-top: 1px solid #fff;
 }
+
+div.post.edit {
+    background-color: #d0edff;
+}
+
+div.post.edit div.cke {
+    border: 5px solid #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+}
+
 div.post > br {
     clear: both;
 }
@@ -72,4 +82,11 @@ div.text img {
     max-width: 500px;
     border: 3px solid #fff;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+}
+
+div.post div.votes {
+    float: right;
+    display: block;
+    width: 100px;
+    padding: 10px;
 }

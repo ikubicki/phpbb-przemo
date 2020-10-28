@@ -6,10 +6,30 @@
     <div class="left">
         {{ components.BREADCRUMBS | raw }}
     </div>
-    <div class="right">
+    <div class="right profile">
+        {% if s.isAuthenticated %}
+        {{ s.url.render(s.user.avatar.render({class: 'avatar'})) | raw }}
+        <div class="menu">
+            <a href="">Ulubione</a>
+            <a href="">Powiadomienia (3)</a>
+            <a href="">Wiadomości</a>
+            <hr />
+            <a href="">Profil</a>
+            <a href="">Ustawienia</a>
+            <hr />
+        {% if s.isAdministrator %}
+            <a href=""><b>Ustawienia forum</b></a>
+            <hr />
+        {% endif %}
+            <a href="">Wyloguj</a>
+        </div>
+        {% else %}
         <a href="?what=viewforum">{{ l.Login }}</a>
+        {% endif %}
     </div>
-    <br />
+    <div class="right search">
+        <input type="text" placeholder="{{ l.Search_keywords }}" />
+    </div>
 </div>
 <script>
     forum.stickyMenu('body > div.head > div.bar')

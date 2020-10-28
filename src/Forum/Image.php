@@ -38,7 +38,7 @@ class Image
             $attributes[] = sprintf(' title="%s"', htmlentities($options['title']));
         }
         if (isset($options['class'])) {
-            $attributes[] = sprintf(' title="%s"', htmlentities($options['class']));
+            $attributes[] = sprintf(' class="%s"', htmlentities($options['class']));
         }
         return sprintf('<img src="%s"%s />', $this->url, implode($attributes));
     }

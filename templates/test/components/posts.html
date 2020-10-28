@@ -14,7 +14,10 @@
                 {{ l.added }}
                 {{ post.url | raw }}
             </small>
-            <div class="text">{{ post.text | nl2br }}</div>
+            <div class="text" author="{{ post.author.name }}">{{ post.text | nl2br }}</div>
+        </div>
+        <div class="votes" id="votes_{{ post.post_id }}">
+            <script>votes.show({selector: '#votes_{{ post.post_id }}', post: '{{ post.post_id }}'})</script>
         </div>
         <br />
     </div>

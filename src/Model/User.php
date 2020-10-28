@@ -11,6 +11,13 @@ class User extends Entity
     public $username;
     public $user_sig;
     public $user_posts;
+    public $user_level;
+    public $user_jr;
+
+    public function getName()
+    {
+        return $this->username;
+    }
 
     public function getUrl($class = '')
     {
@@ -30,5 +37,20 @@ class User extends Entity
     public function getSignature()
     {
         return $this->user_sig;
+    }
+
+    public function isAdministrator()
+    {
+        return $this->user_level == 1;
+    }
+
+    public function isJuniorAdministrator()
+    {
+        return $this->user_jr > 0;
+    }
+
+    public function isModerator()
+    {
+        return $this->user_level == 2;
     }
 }
