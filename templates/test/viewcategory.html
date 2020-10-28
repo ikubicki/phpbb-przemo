@@ -1,6 +1,14 @@
 {% extends 'layouts/basic.html' %}
 {% block content %}
 <div class="body">
+    {% if category %}
+    <h1>{{ category.name }}</h1>
+    {% if category.description %}
+    <small>{{ category.description }}</small>
+    {% endif %}
+    <br />
+    <br />
+    {% endif %}
     {{ components.FORUMS | raw }}
     {{ components.SHOUTS | raw }}
 </div>

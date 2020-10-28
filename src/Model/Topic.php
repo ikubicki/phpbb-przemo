@@ -41,7 +41,7 @@ class Topic extends Entity
 
     public function getUrl()
     {
-        return new Url('viewtopic.php?t=' . $this->topic_id, $this->topic_title);
+        return new Url('test.php?t=' . $this->topic_id, $this->topic_title);
     }
 
     public function getVotesCount()

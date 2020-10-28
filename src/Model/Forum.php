@@ -56,7 +56,7 @@ class Forum extends ForumHierarchicalEntity
 
     public function getUrl($class = null)
     {
-        return new Url('viewforum.php?f=' . $this->forum_id, $this->getName(), ['class' => $class]);
+        return new Url('test.php?f=' . $this->forum_id, $this->getName(), ['class' => $class]);
     }
 
     public function getTopics($page = 1, $limit = 15)

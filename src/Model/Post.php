@@ -39,7 +39,7 @@ class Post extends Entity
 
     public function getUrl($class = null)
     {
-        return new Url('viewtopic.php?t=' . $this->topic_id . '#' . $this->post_id, $this->getTime(), ['class' => $class]);
+        return new Url('test.php?t=' . $this->topic_id . '#' . $this->post_id, $this->getTime(), ['class' => $class]);
     }
 
     public function getTime($format = 'Y-m-d H:i')

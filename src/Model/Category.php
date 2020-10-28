@@ -48,7 +48,7 @@ class Category extends ForumHierarchicalEntity
 
     public function getUrl($class = null)
     {
-        return new Url('index.php?c=' . $this->cat_id, $this->getName(), ['class' => $class]);
+        return new Url('test.php?c=' . $this->cat_id, $this->getName(), ['class' => $class]);
     }
 
     public function getPostsCount()

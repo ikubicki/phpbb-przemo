@@ -14,21 +14,38 @@ ini_set('display_errors', 1);
 ini_set('error_reporting', E_ALL);
 
 $request = PhpBB\Core\Context::getService('request');
-$what = $request->get->get('what', 'viewcategory');
+$category_id = $request->get->get('c');
+$forum_id = $request->get->get('f');
+$topic_id = $request->get->get('t');
+
+if ($topic_id) {
+    $what = 'viewtopic';
+}
+else if ($forum_id) {
+    $what = 'viewforum';
+}
+else {
+    $what = 'viewcategory';
+}
 
 switch($what) {
     case 'viewcategory':
-        $tree = PhpBB\Core\Context::getService('tree');
-        $nesting = 0;
+        $category = (new PhpBB\Model\CategoriesCollection)->get($category_id);
+        if ($category) {
+            $tree = $category;
+            $nesting = - $category->getNesting() - 1;
+        }
+        else {
+            $tree = PhpBB\Core\Context::getService('tree');
+            $nesting = 0;
+        }
         break;
     case 'viewforum':
-        $forum_id = 2;
         $forum = (new PhpBB\Model\ForumsCollection)->get($forum_id);
         $nesting = - $forum->getNesting() - 1;
         $tree = $forum;
         break;
     case 'viewtopic':
-        $topic_id = 9;
         $topic = (new PhpBB\Model\TopicsCollection)->get($topic_id);
         $forum = $topic->getForum();
         $nesting = - $forum->getNesting() - 1;
@@ -47,6 +64,7 @@ $template->vars([
     'topics' => isset($forum) ? $forum->getTopics(1, 30) : null,
     'posts' => isset($topic) ? $topic->getPosts(1, 10) : null,
     'forum' => $forum ?? null,
+    'category' => $category ?? null,
     'topic' => $topic ?? null,
 ]);
 
@@ -65,6 +83,8 @@ $template->vars([
 ]);
 $template->component('BREADCRUMBS', 'components/breadcrumbs.html');
 
-include $phpbb_root_path . '/modules/shouts/shouts.php';
+if (empty($category)) {
+    include $phpbb_root_path . '/modules/shouts/shouts.php';
+}
 
 $template->display($what . '.html');
