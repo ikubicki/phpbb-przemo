@@ -3,18 +3,20 @@
     <head>
         <title>{{ title }}</title>
         <style>@import url('/themes/test/style.css');</style>
+        <style>@import url('/themes/test/shouts.css');</style>
         <script src="/js/jquery.js"></script>
         <script src="/js/forum.js"></script>
     </head>
     <body>
         <div class="head">
-{% include('navigation.html') %}
+            {% include('components/navigation.html') %}
         </div>
         {% block content %}
             <div class="body">No content</div>
         {% endblock %}
+        {{ components.SHOUTS | raw }}
         <div class="foot">
-            {% include('footer.html') %}
+            {% include('components/footer.html') %}
         </div>
     </body>
 </html>

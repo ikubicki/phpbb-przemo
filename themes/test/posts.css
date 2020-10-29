@@ -7,13 +7,20 @@ div.post {
     border-top: 1px solid #fff;
 }
 
+div.post.first {
+    background: #efefef;
+    background: linear-gradient(#fff, #efefef);
+}
+
 div.post.edit {
-    background-color: #d0edff;
+    background: #d0edff;
+    background: linear-gradient(#efefef, #d0edff);
 }
 
 div.post.edit div.cke {
     border: 5px solid #fff;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
 }
 
 div.post > br {
@@ -82,6 +89,7 @@ div.text img {
     max-width: 500px;
     border: 3px solid #fff;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
 }
 
 div.post div.votes {

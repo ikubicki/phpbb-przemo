@@ -1,0 +1,31 @@
+body div.shouts h2 {
+    text-shadow: 0 1px 0 #084162;
+}
+body div.shouts .messages p {
+    color: #fff;
+    font-size: 0.9em;
+    text-shadow: 0 1px 0 #084162;
+}
+body div.shouts .messages p:hover {
+    background: #00000020;
+}
+
+body div.shouts > a {
+    font-size: 1.8em;
+    position: relative;
+    top: 5px;
+}
+
+body div.shouts .messages p a {
+    color: #084162;
+    text-shadow: none;
+}
+
+body div.shouts input {
+    background: #fff;
+    background: linear-gradient(#efefef, #fff);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+    border: 2px solid #fff;
+    border-radius: 4px;
+    font-size: 0.9em;
+}

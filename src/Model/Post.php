@@ -15,8 +15,6 @@ class Post extends Entity
     public $poster_ip;
     public $post_username;
 
-    protected $author;
-
     public function getTitle()
     {
         return $this->post_title;
@@ -29,12 +27,36 @@ class Post extends Entity
         return $entity;
     }
 
+    public function getTypes()
+    {
+        $types = [];
+        if ($this->isFirst()) {
+            $types[] = 'first';
+        }
+        return $types;
+    }
+
+    public function isFirst()
+    {
+        return $this->post_id == $this->getTopic()->topic_first_post_id;
+    }
+
+    public function getTopic()
+    {
+        if (!$this->getRef('topic')) {
+            $topic = $this->getTopicsCollection()->get($this->topic_id);
+            $this->addRef('topic', $topic);
+        }
+        return $this->getRef('topic');
+    }
+
     public function getAuthor()
     {
-        if (!$this->author) {
-            $this->author = $this->getUsersCollection()->get($this->poster_id);
+        if (!$this->getRef('author')) {
+            $user = $this->getUsersCollection()->get($this->poster_id);
+            $this->addRef('author', $user);
         }
-        return $this->author;
+        return $this->getRef('author');
     }
 
     public function getUrl($class = null)
@@ -65,5 +87,10 @@ class Post extends Entity
     protected function getPostsTextCollection()
     {
         return new PostsTextCollection;
+    }
+
+    protected function getTopicsCollection()
+    {
+        return new TopicsCollection;
     }
 }

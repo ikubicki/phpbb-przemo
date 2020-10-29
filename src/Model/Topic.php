@@ -14,6 +14,7 @@ class Topic extends Entity
     public $topic_views;
     public $topic_time;
     public $topic_replies;
+    public $topic_first_post_id;
     public $topic_last_post_id;
     public $topic_status;
     public $topic_poster;
@@ -64,10 +65,14 @@ class Topic extends Entity
         $criteria = ['topic_id' => $this->topic_id];
         $order = ['post_id' => 'ASC'];
         $offset = ($page - 1) * $limit;
-        return $this->getPostsCollection()
+        $posts = $this->getPostsCollection()
             ->leftjoin(new PostsTextCollection, 'post_id', 'post_id', [], 'text')
             ->leftjoin(new UsersCollection, 'user_id', 'poster_id', [], 'poster')
             ->find($criteria, $order, $limit, $offset);
+        foreach($posts as $post) {
+            $post->addRef('topic', $this);
+        }
+        return $posts;
     }
 
     public function getLatestPost()
