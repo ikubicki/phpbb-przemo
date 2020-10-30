@@ -17,6 +17,11 @@ var bbcode = {
     parse: function(text) {
         text = text.split('&amp;').join('&')
         return this.loaded.reduce((txt, regex) => txt.replace(regex.in, regex.out), text)
+    },
+    youtube: function(el, video) {
+        var iframe = '<iframe data-lightbox="topic-set" src="https://www.youtube.com/embed/'+video+'" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="video"></iframe>'
+        $(el).after(iframe)
+        $(el).remove()
     }
 }
 bbcode.load([
@@ -35,6 +40,11 @@ bbcode.load([
     {
         in: '\\[url\\]'+url_expression+'\\[/url\\]',
         out: '<a rel="nofollow" href="$1" class="bbcode">$1</a>',
+    },
+    {
+        in: '\\[(youtube|yt)\\](.+?)((v|embed)(=|/)([a-zA-Z0-9_]+))(.+?)\\[/(youtube|yt)\\]',
+        out: '<a href="javascript:void(0)" onclick="bbcode.youtube(this, \'$6\')"  class="youtube"><img src="https://img.youtube.com/vi/$6/0.jpg" /></a>'
+//        out: '<iframe src="https://www.youtube.com/embed/$5" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="video"></iframe>',
     },
     {
         in: '\\[/?[a-z0-9_]+\\]',

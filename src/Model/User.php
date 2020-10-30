@@ -21,7 +21,7 @@ class User extends Entity
 
     public function getUrl($class = '')
     {
-        return new Url('test.php?p=' . $this->user_id, $this->username, ['class' => $class]);
+        return new Url('index.php?u=' . $this->user_id, $this->username, ['class' => $class]);
     }
 
     public function getPostsCount()

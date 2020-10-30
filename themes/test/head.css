@@ -3,6 +3,12 @@ body > div.head {
     height: 210px;    
 }
 
+body > div.head.topic {
+    background-size: cover;
+    background-position: center;
+    height: 310px;
+}
+
 body > div.head > div.logo {
     height: 100px;
     background-image: url(images/przemo.png);
@@ -11,6 +17,9 @@ body > div.head > div.logo {
     background-position: left 20px;
     padding: 20px;
     text-align: right;
+}
+body > div.head.topic > div.logo {
+    height: 200px;
 }
 
 body > div.head > div.logo h1 {

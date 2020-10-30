@@ -69,7 +69,7 @@ class Query
         if (is_array($this->where) && count($this->where)) {
             $values = array_values($this->where);
             return "WHERE " . implode(', ', array_map(function($v) {
-                return $v . ' = ?';
+                return "`$this->from`.`$v` = ?";
             }, array_keys($this->where)));
         }
     }

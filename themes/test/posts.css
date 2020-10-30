@@ -84,9 +84,33 @@ div.post > div.body > div.text {
     padding: 0 0 0 5px;
 }
 
+div.text iframe {
+    border: 3px solid #fff;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+    width: 640px;
+    height: 480px;
+
+}
+
+div.text a.youtube img {
+    width: 640px;
+    height: 480px;
+    max-height: none;
+    max-width: none;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    opacity: .5;
+}
+
+div.text a.youtube img:hover {
+    -webkit-filter: none;
+    filter: none;
+    opacity: 1;
+}
+
 div.text img {
-    max-height: 250px;
-    max-width: 500px;
+    max-height: 150px;
+    max-width: 300px;
     border: 3px solid #fff;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
     border-radius: 4px;

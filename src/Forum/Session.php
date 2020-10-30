@@ -67,7 +67,7 @@ class Session
 
     public function isAuthenticated()
     {
-        return $this->data['user_id'] > 0;
+        return $this->data['user_id'] ?? 0 > 0;
     }
 
     public function isAdministrator()
@@ -86,6 +86,11 @@ class Session
     public function getUrl()
     {
         return new Url('profile.php', $this->getUser()->getName());
+    }
+
+    public function getLogout()
+    {
+        return new Url('auth.php?logout', $this->phrase('Logout'));
     }
 
     protected function salt()
@@ -119,5 +124,10 @@ class Session
     {
         return new UsersCollection;
         //return new Cache(new UsersCollection);
+    }
+
+    protected function phrase($key)
+    {
+        return Context::getService('phrases')->get($key);
     }
 }

@@ -1059,6 +1059,7 @@ function init_userprefs($userdata, $get_user_tree=true)
 
 function setup_style($style)
 {
+	return false;
 	global $db, $board_config, $template, $images, $phpbb_root_path;
 
 	$sql = "SELECT *

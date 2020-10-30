@@ -63,6 +63,20 @@ class Templates
         $this->variables[$variable] = $value;
     }
 
+    public function defaults($variables)
+    {
+        foreach($variables as $variable => $subvalue) {
+            $this->default($variable, $subvalue);
+        }
+    }
+
+    public function default($variable, $value)
+    {
+        if (empty($this->variables[$variable])) {
+            $this->variables[$variable] = $value;
+        }
+    }
+
     protected $blockPointers = [];
 
     /**

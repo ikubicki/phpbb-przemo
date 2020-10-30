@@ -61,7 +61,7 @@ class Post extends Entity
 
     public function getUrl($class = null)
     {
-        return new Url('test.php?t=' . $this->topic_id . '#' . $this->post_id, $this->getTime(), ['class' => $class]);
+        return new Url('index.php?t=' . $this->topic_id . '#' . $this->post_id, $this->getTime(), ['class' => $class]);
     }
 
     public function getTime($format = 'Y-m-d H:i')
@@ -77,6 +77,11 @@ class Post extends Entity
             $this->addRef('text', $text);
         }
         return $text;
+    }
+
+    public function getImages()
+    {
+        return $this->getText()->getImages();
     }
 
     protected function getUsersCollection()

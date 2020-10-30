@@ -1,6 +1,6 @@
 <div class="logo">
-    <h1>{{ c.sitename }}</h1>
-    <h2>{{ c.site_desc }}</h2>
+    <h1>{{ SITE_NAME }}</h1>
+    <h2>{{ SITE_DESCRIPTION }}</h2>
 </div>
 <div class="bar">
     <div class="left">
@@ -14,14 +14,14 @@
             <a href="">Powiadomienia (3)</a>
             <a href="">Wiadomości</a>
             <hr />
-            <a href="">Profil</a>
+            {{ s.user.url.render(l.Profile) | raw }}
             <a href="">Ustawienia</a>
             <hr />
         {% if s.isAdministrator %}
             <a href=""><b>Ustawienia forum</b></a>
             <hr />
         {% endif %}
-            <a href="">Wyloguj</a>
+            {{ s.logout | raw }}
         </div>
         {% else %}
         <a href="?what=viewforum">{{ l.Login }}</a>

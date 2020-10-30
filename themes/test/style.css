@@ -38,6 +38,16 @@ body > div.body > h1 {
     margin: 0;
 }
 
+body > div.body > small {
+    font-size: 1em;
+    color: #888;
+}
+
+body > div.body.topic > h1,
+body > div.body.topic > small {
+    margin-left: 135px;
+}
+
 body > div.body {
     background: #fff;
     padding: 20px;

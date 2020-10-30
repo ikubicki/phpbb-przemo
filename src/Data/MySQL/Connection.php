@@ -14,7 +14,7 @@ class Connection
 
     public function prepare($query)
     {
-        //var_dump($query);
+        // var_dump($query);
         return $this->connection->prepare($query);
     }
 

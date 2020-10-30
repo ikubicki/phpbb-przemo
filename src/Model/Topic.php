@@ -42,7 +42,7 @@ class Topic extends Entity
 
     public function getUrl()
     {
-        return new Url('test.php?t=' . $this->topic_id, $this->topic_title);
+        return new Url('index.php?t=' . $this->topic_id, $this->topic_title);
     }
 
     public function getVotesCount()
@@ -58,6 +58,18 @@ class Topic extends Entity
     public function getViewsCount()
     {
         return $this->topic_views;
+    }
+
+    public function getFirstPost()
+    {
+        if (!$this->getRef('firstpost')) {
+            $criteria = ['post_id' => $this->topic_first_post_id];
+            $post = $this->getPostsCollection()
+                ->leftjoin(new PostsTextCollection, 'post_id', 'post_id', [], 'text')
+                ->one($criteria);
+            $this->addRef('firstpost', $post);
+        }
+        return $this->getRef('firstpost');
     }
 
     public function getPosts($page = 1, $limit = 15)

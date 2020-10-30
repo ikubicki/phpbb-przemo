@@ -78,11 +78,11 @@ tr.row.forum th span.title {
 
 tr.category.nesting_1 > :first-child,
 tr.nesting_2 > :first-child {
-    border-left: 10px solid #ddd;
+    border-left: 10px solid #fff;
 }
 tr.category.nesting_2 > :first-child,
 tr.forum.nesting_3 > :first-child {
-    border-left: 20px solid #ddd;
+    border-left: 20px solid #fff;
 }
 
 table tr.replied .title a::after {

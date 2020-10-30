@@ -8,7 +8,7 @@
         <script src="/js/forum.js"></script>
     </head>
     <body>
-        <div class="head">
+        <div class="head {{ head_classes | join(' ') }}" style="{{ head_style }}">
             {% include('components/navigation.html') %}
         </div>
         {% block content %}

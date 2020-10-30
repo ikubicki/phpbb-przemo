@@ -24,6 +24,13 @@ class PostText extends Entity
         return $entity;
     }
 
+    public function getImages()
+    {
+        $matches = [];
+        preg_match_all('#\[img(\:[a-f0-9]+)?\](.+?)\[\/img(\:[a-f0-9]+)?\]#i', $this->post_text, $matches);
+        return $matches[2];
+    }
+
     protected function transcode($text)
     {
         $text = preg_replace('#\[(\/?[a-zA-Z0-9]+)\:[a-f0-9]+\]#', '[$1]', $text);
