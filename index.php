@@ -118,7 +118,8 @@ $template->vars([
 $template->component('BREADCRUMBS', 'components/breadcrumbs.html');
 
 if ($what == 'viewcategory') {
-    include $phpbb_root_path . '/modules/shouts/shouts.php';
+    //include $phpbb_root_path . '/modules/Shouts/autoload.php';
+    (new PhpBB\Modules\Shouts\Module)->start();
 }
 
 $template->display($what . '.html');

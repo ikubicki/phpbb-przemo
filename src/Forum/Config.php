@@ -59,7 +59,7 @@ class Config
         if ($value[0] == '{' && !$this->context) {
             $value = $this->unserialize($value, true);
         }
-        if (is_array($value)) {
+        if (is_array($value) && !$this->context) {
             return new self($value, $property);
         }
         return $value;

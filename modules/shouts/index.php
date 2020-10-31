@@ -5,10 +5,31 @@ define('SHOUTBOX', true);
 $phpbb_root_path = '../../';
 $shoutbox_config = [];
 include($phpbb_root_path . 'extension.inc');
-include($phpbb_root_path . 'common.'.$phpEx);
-include(__DIR__ . '/src/Shouts.class.php');
+include($phpbb_root_path . 'common.php');
 
-$shouts = new phpBB\Modules\Shouts\Shouts($encryption_key);
+$config = (new PhpBB\Forum\Config)->module('shouts');
+$shouts = new PhpBB\Modules\Shouts\Shouts($encryption_key);
+
+if (!$config->enabled) {
+    $shouts->error('Module is disabled.');
+}
+
+if ($config->autopurge > 0) {
+// @todo autopurge
+}
+
+function permissions($map)
+{
+    $binmap = str_split(strrev(sprintf('%06d', base_convert($map, 36, 2))));
+    array_walk($binmap, function(&$v){
+        $v = $v > 0;
+    });
+    return array_combine(['list', 'create', 'edit', 'delete', 'mod', 'admin'], $binmap);
+}
+
+permissions('1r');
+
+
 $userdata = session_pagestart($user_ip, PAGE_INDEX);
 init_userprefs($userdata);
 

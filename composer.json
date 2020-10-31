@@ -8,7 +8,9 @@
     ],
     "autoload": {
         "psr-4": {
-            "PhpBB\\": "src/"
+            "PhpBB\\": "src/",
+            "PhpBB\\Model\\": "model/",
+            "PhpBB\\Modules\\": "modules/"
         },
         "files": [
             "src/functions.php"
