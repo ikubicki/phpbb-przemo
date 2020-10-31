@@ -86,6 +86,9 @@ $template->defaults([
     'SITE_DESCRIPTION' => $board_config['site_desc'],
 ]);
 
+$config = PhpBB\Core\Context::getService('config');
+$config->unset('x_5b72910d3c47fd1b5055a047f52d764a');
+
 $template->vars([
     'title' => $what . '.html',
     'what' => $what,
@@ -119,3 +122,6 @@ if ($what == 'viewcategory') {
 }
 
 $template->display($what . '.html');
+
+// var_dump(memory_get_peak_usage());
+// var_dump(memory_get_peak_usage(1));

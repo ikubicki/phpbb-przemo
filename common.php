@@ -152,7 +152,7 @@ PhpBB\Core\Context::register([
 		'request' => new PhpBB\Core\Request,
 		'phrases' => new PhpBB\Forum\Phrases,
 		'encryption' => new PhpBB\Core\Encryption($encryption_key),
-		'db-connection' => new PhpBB\Data\MySQL\Connection($dbdsn, $dbuser, $dbpasswd),
+		'db-connection' => new PhpBB\Data\MySQL\Connection($dbdsn, $dbuser, $dbpasswd, [\PDO::ATTR_ERRMODE => \PDO::ERRMODE_WARNING]),
 		'tree' => new PhpBB\Forum\Tree,
 		'templates' => new PhpBB\Forum\Templates($templates_directory, [
 			'cache' => false,
@@ -163,6 +163,8 @@ PhpBB\Core\Context::register([
 		]),
 	]
 ]);
+
+PhpBB\Core\Context::registerService('config', new PhpBB\Forum\Config);
 
 // initialize session
 PhpBB\Core\Context::registerService('session', new PhpBB\Forum\Session(

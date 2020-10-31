@@ -11,6 +11,7 @@ class Query
     protected $order;
     protected $offset;
     protected $joins;
+    protected $values;
 
     public function __construct($collection)
     {
@@ -21,11 +22,27 @@ class Query
         $this->offset = $collection->getOffset();
         $this->joins = $collection->getJoins();
         $this->schema = $collection->getSchema();
+        $this->values = $collection->getValues();
     }
 
     public function select(array $fields = [])
     {
         return $this->buildSelect($fields);
+    }
+
+    public function insert()
+    {
+        return $this->buildInsert();
+    }
+
+    public function update()
+    {
+        return $this->buildUpdate();
+    }
+
+    public function delete()
+    {
+        return $this->buildDelete();
     }
 
     protected function buildSelect(array $fields)
@@ -35,13 +52,64 @@ class Query
         }
         $values = [];
         $query = "SELECT " . implode(', ', $fields) . PHP_EOL .
-            "FROM $this->from" . PHP_EOL .
+            "FROM `$this->from`" . PHP_EOL .
             $this->buildJoins() . PHP_EOL . 
             $this->buildWhere($values) . PHP_EOL .
             $this->buildOrder() . PHP_EOL .
             $this->buildLimit() . PHP_EOL .
             $this->buildOffset();
         return [$query, $values];
+    }
+
+    protected function buildInsert()
+    {
+        $values = [];
+        $query = "INSERT INTO `$this->from` " . PHP_EOL .
+            '(' . implode(', ', $this->getFields()) . ')' . PHP_EOL . 
+            'VALUES ' . $this->buildValues($values);
+        return [$query, $values];
+    }
+
+    protected function buildUpdate()
+    {
+        $values = [];
+        $query = "UPDATE `$this->from` " . PHP_EOL .
+            'SET ' . implode(', ', $this->getValueSetters($values)) . PHP_EOL . 
+            $this->buildWhere($values) . PHP_EOL .
+            $this->buildOrder() . PHP_EOL .
+            $this->buildLimit() . PHP_EOL .
+            $this->buildOffset();
+        return [$query, $values];
+    }
+
+    protected function buildDelete()
+    {
+        $values = [];
+        $query = "DELETE FROM `$this->from` " . PHP_EOL .
+            $this->buildWhere($values) . PHP_EOL .
+            $this->buildOrder() . PHP_EOL .
+            $this->buildLimit() . PHP_EOL .
+            $this->buildOffset();
+        return [$query, $values];
+    }
+    
+    protected function buildValues(&$values)
+    {
+        foreach ($this->schema as $field) {
+            $values[] = $this->values[$field] ?? null;
+        }
+        $placeholders = array_fill(0, count($values), '?');
+        return sprintf('(%s)', implode(', ', $placeholders));
+    }
+
+    protected function getValueSetters(&$values)
+    {
+        $setters = [];
+        foreach ($this->values as $field => $value) {
+            $values[] = $value;
+            $setters[] = "`$this->from`.`$field` = ?";
+        }
+        return $setters;
     }
 
     protected function buildJoins()
@@ -67,10 +135,28 @@ class Query
             return 'WHERE ' . $this->where;
         }
         if (is_array($this->where) && count($this->where)) {
-            $values = array_values($this->where);
-            return "WHERE " . implode(', ', array_map(function($v) {
-                return "`$this->from`.`$v` = ?";
-            }, array_keys($this->where)));
+            $clause = null;
+            foreach($this->where as $field => $where) {
+                if ($clause) {
+                    $clause .= ' AND ';
+                }
+                if (strpos($field, '`') == false) {
+                    $field = "`$this->from`.`$field`";
+                }
+                $clause .= $field;
+                if (is_array($where)) {
+                    $clause .= sprintf(
+                        ' IN (%s)',
+                        implode(', ', array_fill(0, count($where), '?'))
+                    );
+                    $values = array_merge($values, array_values($where));
+                }
+                else {
+                    $clause .= ' = ?';
+                    $values[] = $where;
+                }
+            }
+            return "WHERE $clause";
         }
     }
 

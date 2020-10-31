@@ -6,6 +6,7 @@ class Connection
 {
 
     protected $connection;
+    protected static $queries = [];
 
     public function __construct($dsn, $user, $pass, $options = [])
     {
@@ -15,6 +16,7 @@ class Connection
     public function prepare($query)
     {
         // var_dump($query);
+        self::$queries[] = $query;
         return $this->connection->prepare($query);
     }
 
@@ -43,6 +45,30 @@ class Connection
         $column = $statement->fetchColumn($index);
         $statement->closeCursor();
         return $column;
+    }
+
+    public function lastId()
+    {
+        return $this->connection->lastInsertId();
+    }
+
+    public function insert($query, $values = [])
+    {
+        $statement = $this->prepare($query);
+        if ($statement->execute($values)) {
+            $lastId = $this->lastId();
+            $statement->closeCursor();
+            return $lastId;
+        }
+        return false;
+    }
+
+    public function execute($query, $values = [])
+    {
+        $statement = $this->prepare($query);
+        $result = $statement->execute($values);
+        $statement->closeCursor();
+        return $result;
     }
 
     public static function GetDSN($dbname, $host = 'localhost', $port = 3306, $charset = 'utf8mb4')
