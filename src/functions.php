@@ -51,7 +51,7 @@ function start($rootdir)
     ]);
     $templates->addPath("$rootdir/templates/default");
     $tree = new PhpBB\Forum\Tree;
-    $tree->cache('/tmp/tree.php');
+    $tree->cache('/tmp/tree.' . date('ymd') . '.php');
     if (!$tree->isCached()) {
         $tree->import((new PhpBB\Model\CategoriesCollection)->all());
         $tree->import((new PhpBB\Model\ForumsCollection)->all());

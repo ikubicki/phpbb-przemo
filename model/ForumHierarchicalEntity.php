@@ -6,34 +6,34 @@ use PhpBB\Data\Entity;
 abstract class ForumHierarchicalEntity extends Entity
 {
 
-    protected $children = [];
-    protected $nesting = 0;
+    protected $_children = [];
+    protected $_nesting = 0;
 
     abstract public function getName();
 
     public function setNesting($nesting)
     {
-        $this->nesting = $nesting;
+        $this->_nesting = $nesting;
         foreach ($this->getChildren() as $child) {
-            $child->setNesting($this->nesting + 1);
+            $child->setNesting($this->_nesting + 1);
         }
     }
 
     public function getNesting()
     {
-        return $this->nesting;
+        return $this->_nesting;
     }
 
     public function addChild($entity)
     {
-        $entity->setNesting($this->nesting + 1);
-        $this->children[$entity->getOrder()] = $entity;
+        $entity->setNesting($this->_nesting + 1);
+        $this->_children[$entity->getOrder()] = $entity;
     }
 
     public function getChildren()
     {
-        ksort($this->children);
-        return $this->children;
+        ksort($this->_children);
+        return $this->_children;
     }
 
     public function iterate($callback, $skipself = false)
@@ -50,7 +50,7 @@ abstract class ForumHierarchicalEntity extends Entity
     {
         $entities = [];
         $this->iterate(function($entity) use (&$entities, $nestingModifier) {
-            $entity->nesting += $nestingModifier;
+            $entity->_nesting += $nestingModifier;
             $entities[] = $entity;
         }, $skipself);
         return $entities;

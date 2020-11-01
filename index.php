@@ -37,9 +37,8 @@ $template = PhpBB\Core\Context::getService('templates');
 
 switch($what) {
     case 'viewcategory':
-        $category = (new PhpBB\Model\CategoriesCollection)->get($category_id);
-        if ($category) {
-            $tree = $category;
+        if ($category_id) {
+            $tree = $category = (new PhpBB\Model\CategoriesCollection)->get($category_id);
             $nesting = - $category->getNesting() - 1;
         }
         else {
