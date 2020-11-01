@@ -4,7 +4,7 @@
 </div>
 <div class="bar">
     <div class="left">
-        {{ components.BREADCRUMBS | raw }}
+        {% include('components/breadcrumbs.html') %}
     </div>
     <div class="right profile">
         {% if s.isAuthenticated %}
@@ -28,7 +28,10 @@
         {% endif %}
     </div>
     <div class="right search">
-        <input type="text" placeholder="{{ l.Search_keywords }}" />
+        <form action="" method="post" name="search">
+            <input type="text" name="phrase" placeholder="{{ l.Search_keywords }}" />
+            <script>forum.autoWidth('form[name=search] > input[name=phrase]')</script>
+        </form>
     </div>
 </div>
 <script>

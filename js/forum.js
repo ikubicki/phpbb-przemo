@@ -488,6 +488,27 @@ function chng(val)
 }
 
 forum = {
+	autoWidthCallback: (el) => {
+		el = $(el.target)
+		var size = el.val().length
+		if (size > 50) {
+			size = 50;
+		}
+		if (!size) {
+			size = el.attr('placeholder').length
+		}
+		if (size < 3) {
+			size = 3;
+		}
+		el.attr('size', size + 1)
+	},
+	autoWidth: (selector) => {
+		$(selector).css({'width': 'auto'})
+		$(selector)
+			.on('keyup', forum.autoWidthCallback)
+			.on('change', forum.autoWidthCallback)
+			.change()
+	},
 	setCookie: (name, data, exp) => {
 		SetCookie(name, data)
 	},

@@ -5,9 +5,9 @@ namespace PhpBB\Forum;
 class Url
 {
 
-    protected $url;
-    protected $text;
-    protected $styles;
+    public $url;
+    public $text;
+    public $styles;
     protected $cache;
 
     public function __construct($url, $text = '', array $styles = [])

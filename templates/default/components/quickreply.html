@@ -2,7 +2,9 @@
 <form action="#" method="post">
     <div class="post edit">
         <div class="avatar">
+{% if s.isAuthenticated %}
             <div class="posts">{{ s.user.postsCount }}</div>
+{% endif %}
             {{ s.user.avatar | raw }}
             <small>
                 {{ s.user.signature }}

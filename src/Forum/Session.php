@@ -65,20 +65,66 @@ class Session
         return $this->data;
     }
 
+    public function getUserId()
+    {
+        return 2;
+        return $this->data['user_id'] ?? -1;
+    }
+
     public function isAuthenticated()
     {
-        return $this->data['user_id'] ?? 0 > 0;
+        return $this->getUserId() > 0;
     }
 
     public function isAdministrator()
     {
-        return $this->isAuthenticated() && ($this->getUser()->isAdministrator() || $this->getUser()->isJuniorAdministrator());
+        return $this->isAuthenticated() && $this->getUser()->isAdministrator();
+    }
+
+    public function isJunior()
+    {
+        return $this->isAuthenticated() && $this->getUser()->isJuniorAdministrator();
+    }
+
+    public function isModerator()
+    {
+        return $this->isAuthenticated() && $this->getUser()->isModerator();
+    }
+
+    public function getPermissions($permissions)
+    {
+        if ($this->isAdministrator() && isset($permissions['admin'])) {
+            return $this->buildPermissions($permissions['admin']);
+        }
+        if ($this->isJunior() && isset($permissions['jr_admin'])) {
+            return $this->buildPermissions($permissions['jr_admin']);
+        }
+        if ($this->isModerator() && isset($permissions['mod'])) {
+            return $this->buildPermissions($permissions['mod']);
+        }
+        if ($this->isAuthenticated() && isset($permissions['user'])) {
+            return $this->buildPermissions($permissions['user']);
+        }
+        if (isset($permissions['anonymous'])) {
+            return $this->buildPermissions($permissions['anonymous']);
+        }
+        if (is_string($permissions)) {
+            return $this->buildPermissions($permissions);
+        }
+        return $this->buildPermissions(false);
+    }
+
+    protected function buildPermissions($map)
+    {
+        $binmap = str_split(strrev(sprintf('%06d', base_convert($map, 36, 2))));
+        array_walk($binmap, function(&$v){$v = $v > 0;});
+        return (object) array_combine(['list', 'create', 'edit', 'delete', 'mod', 'admin'], $binmap);
     }
 
     public function getUser()
     {
         if (!$this->user) {
-            $this->user = $this->getUsersCollection()->get($this->data['user_id'] ?? -1);
+            $this->user = $this->getUsersCollection()->get($this->getUserId());
         }
         return $this->user;
     }

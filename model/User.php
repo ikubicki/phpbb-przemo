@@ -13,6 +13,7 @@ class User extends Entity
     public $user_posts;
     public $user_level;
     public $user_jr;
+    public $user_session_time;
 
     public function getName()
     {
@@ -31,7 +32,7 @@ class User extends Entity
     
     public function getAvatar($class = '')
     {
-        return new Image('/modules/avatars/avatar.php?user=' . $this->user_id, ['class' => $class]);
+        return new Image('/modules/Avatars/index.php?user=' . $this->user_id, ['class' => $class]);
     }
 
     public function getSignature()
@@ -52,5 +53,10 @@ class User extends Entity
     public function isModerator()
     {
         return $this->user_level == 2;
+    }
+
+    public function isOnline()
+    {
+        return time() - $this->user_session_time < 300;
     }
 }

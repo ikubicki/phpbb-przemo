@@ -97,3 +97,9 @@ div.submit {
     text-align: center;
     padding: 10px 0 0;
 }
+
+::placeholder,
+:-ms-input-placeholder,
+::-ms-input-placeholder {
+    color: red;
+}

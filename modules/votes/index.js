@@ -1,6 +1,6 @@
 var votes = {
     options: {
-        url: '/modules/votes/votes.php'
+        url: '/modules/Votes/'
     },
     cache: false,
     topic: null,

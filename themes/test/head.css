@@ -34,8 +34,8 @@ body > div.head > div.logo h1 {
 
 body > div.head > div.logo h2 {
 	font-weight: normal;
-	color: #333;
-    text-shadow: 0 -1px 0px #777;
+	color: #fff4;
+    text-shadow: 0 1px 0px #000;
     font-size: 0.9em;
     margin: 0;
 }
@@ -85,7 +85,7 @@ body > div.head a {
     padding: 0 5px;
 }
 
-body > div.head div.profile,
+body > div.head div.profile img,
 body > div.head div.search {
     position: relative;
     top: -5px;
@@ -114,7 +114,6 @@ body > div.head div.search input:focus {
     width: 400px;
     background: #fff;
     color: #333;
-    text-align: left;
 }
 body > div.head div.search input {
     width: 200px;

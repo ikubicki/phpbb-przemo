@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
+{% block head %}
         <title>{{ title }}</title>
         <style>@import url('/themes/test/style.css');</style>
         <style>@import url('/themes/test/shouts.css');</style>
         <script src="/js/jquery.js"></script>
         <script src="/js/forum.js"></script>
+{% endblock %}
     </head>
     <body>
         <div class="head {{ head_classes | join(' ') }}" style="{{ head_style }}">

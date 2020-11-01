@@ -1,29 +1,26 @@
 <?php
 
-define('IN_PHPBB', true);
-define('SHOUTBOX', true);
-$phpbb_root_path = '../../';
-$shoutbox_config = [];
-include($phpbb_root_path . 'extension.inc');
-include($phpbb_root_path . 'common.'.$phpEx);
-$userdata = session_pagestart($user_ip);
-init_userprefs($userdata);
+
+$rootdir = __DIR__ . '/../..';
+include $rootdir . '/vendor/autoload.php';
+
+start($rootdir);
 
 $user_id = intval($_POST['user']);
 
 function url($path)
 {
-    global $board_config;
-    $server_protocol = ($board_config['cookie_secure']) ? 'https://' : 'http://';
-    $server_name = preg_replace('#^\/?(.*?)\/?$#', '\1', trim($board_config['server_name']));
-    $server_port = ($board_config['server_port'] <> 80) ? ':' . trim($board_config['server_port']) : '';
+    $config = PhpBB\Core\Context::getService('config');
+    $server_protocol = ($config->cookie_secure) ? 'https://' : 'http://';
+    $server_name = preg_replace('#^\/?(.*?)\/?$#', '\1', trim($config->server_name));
+    $server_port = $config->server_port == 80 || $config->server_port == 443 ? '' : ':' . trim($config->server_port);
     return $server_protocol . $server_name . $server_port . $path;
 }
 
 function pick_random_default_avatar()
 {
-    global $phpbb_root_path;
-    $path = $phpbb_root_path . '/images/avatars/default/';
+    global $rootdir;
+    $path = $rootdir . '/images/avatars/default/';
     $files = scandir($path);
     foreach($files as $i => $file) {
         if (!is_file($path . $file)) {
@@ -41,9 +38,9 @@ function getUrlContents($url)
     return file_get_contents($url, false, $context);
 }
 
-if (!$user_id || $userdata['user_id'] == $user_id) {
+// if (!$user_id || $userdata['user_id'] == $user_id) {
     $url = pick_random_default_avatar();
     header('Content-Type: image/png');
     print getUrlContents($url);
-}
+// }
 

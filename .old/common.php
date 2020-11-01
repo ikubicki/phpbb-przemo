@@ -24,6 +24,10 @@
 $sql_cache_enable = 1;
 $show_queries = 0;
 
+if (empty($phpEx)) {
+	$phpEx = 'php';
+}
+
 if ( !defined('IN_PHPBB') )
 {
 	die('Hacking attempt');

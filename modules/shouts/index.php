@@ -1,13 +1,16 @@
 <?php
 
-define('IN_PHPBB', true);
-define('SHOUTBOX', true);
-$phpbb_root_path = '../../';
-$shoutbox_config = [];
-include($phpbb_root_path . 'extension.inc');
-include($phpbb_root_path . 'common.php');
+use PhpBB\Core\Context;
+use PhpBB\Forum\Config;
+use PhpBB\Model\UsersCollection;
+use PhpBB\Modules\Shouts\model\ShoutsCollection;
 
-$config = (new PhpBB\Forum\Config)->module('shouts');
+$rootdir = __DIR__ . '/../..';
+include $rootdir . '/vendor/autoload.php';
+
+start($rootdir);
+
+$config = (new Config)->module('shouts');
 $shouts = new PhpBB\Modules\Shouts\Shouts($encryption_key);
 
 if (!$config->enabled) {
@@ -18,27 +21,18 @@ if ($config->autopurge > 0) {
 // @todo autopurge
 }
 
-function permissions($map)
-{
-    $binmap = str_split(strrev(sprintf('%06d', base_convert($map, 36, 2))));
-    array_walk($binmap, function(&$v){
-        $v = $v > 0;
-    });
-    return array_combine(['list', 'create', 'edit', 'delete', 'mod', 'admin'], $binmap);
-}
-
-permissions('1r');
-
-
+/*
 $userdata = session_pagestart($user_ip, PAGE_INDEX);
 init_userprefs($userdata);
+*/
 
+$session = Context::getService('session');
 $message = null; // pass through variable
 $token = $_POST['token'];
 $action = $_POST['action'];
 if ($token) {
     list($tokenUserId, $tokenAction) = $shouts->setToken($token);
-    $userId = $userdata['user_id'];
+    $userId = $session->getUserId();
     if (!$shouts->validateToken($userId > 0 ? $userId : 0, $action)) {
         $shouts->error('Invalid authentication token');
     }
@@ -47,17 +41,21 @@ $shouts->setAction($action);
 
 // -- PERMISSIONS CHECKING
 
-$is_user = $userdata['user_id'] != ANONYMOUS;
-$is_admin = $userdata['user_level'] == ADMIN;
-$is_jr_admin = ($userdata['user_jr']) ? true : false;
-$is_mod = ($userdata['user_level'] == MOD) ? true : false;
-$can_sb_edit = ($is_jr_admin || $is_mod) && $shoutbox_config['allow_edit_m'];
-$can_sb_delete = ($is_jr_admin || $is_mod) && $shoutbox_config['allow_delete_m'];
+$userdata = (array) $session->getUser();
+$permissions = $session->getPermissions($config->rbac);
+// var_dump($permissions);
+
+$is_user = $session->isAuthenticated();
+$is_admin = $session->isAdministrator();
+$is_jr_admin = $session->isJunior();
+$is_mod = $session->isModerator();
+$can_sb_edit = $permissions->edit;
+$can_sb_delete = $permissions->delete;
 $is_allowed_group = false;
 
 if ($is_user) {
     $shouts->setUserId($userdata['user_id']);
-    if ($shoutbox_config['sb_group_sel'] != 'all') {
+    if ($shoutbox_config['sb_group_sel'] ?? 'all' != 'all') {
         $sql = 'SELECT ug.group_id ' .
             'FROM (' . USER_GROUP_TABLE . ' ug, ' . GROUPS_TABLE . ' g) ' .
             'WHERE ug.user_id = ' . intval($userdata['user_id']) . ' ' .
@@ -87,15 +85,15 @@ if ($is_user) {
 
     $acl = [
         'type' => 'user',
-        'view' => $shoutbox_config['allow_users_view'],
-        'add' => $shoutbox_config['allow_users'] || $is_allowed_group || $is_admin || $is_mod || $is_jr_admin,
+        'view' => $permissions->list,
+        'add' => $permissions->create,
         'edit' => [
-            'own' => $shoutbox_config['allow_edit_all'],
-            'admin' => $shoutbox_config['allow_edit'] && ($can_sb_edit || $is_admin),
+            'own' => $permissions->edit,
+            'admin' => $permissions->mod,
         ],
         'delete' => [
-            'own' => $shoutbox_config['allow_delete_all'],
-            'admin' => $shoutbox_config['allow_delete'] && ($can_sb_delete || $is_admin),
+            'own' => $permissions->delete,
+            'admin' => $permissions->admin,
         ]
     ];
 }
@@ -103,15 +101,15 @@ else {
     $shouts->setUserId(0);
     $acl = [
         'type' => 'guest',
-        'view' => $shoutbox_config['allow_guest_view'],
-        'add' => $shoutbox_config['allow_guest'],
+        'view' => $permissions->list,
+        'add' => $permissions->create,
         'edit' => [
-            'own' => false,
-            'admin' => false,
+            'own' => $permissions->edit,
+            'admin' => $permissions->mod,
         ],
         'delete' => [
-            'own' => false,
-            'admin' => false,
+            'own' => $permissions->delete,
+            'admin' => $permissions->admin,
         ]
     ];
 }
@@ -280,6 +278,12 @@ switch($action) {
 
 $latestId = intval($_POST['latestId']);
 
+$messages = (new ShoutsCollection)
+    ->leftjoin(new UsersCollection, 'user_id', 'sb_user_id', [], 'poster')
+    ->find("phpbb_shoutbox.id > $latestId", ['id' => 'DESC'], 10);
+/*
+var_dump($m);
+// $criteria = [], array $order = [], $limit = null, $offset = 0
 $sql = 'SELECT s.timestamp, s.sb_user_id, s.id, s.msg, u.username, u.user_level, u.user_id, u.user_jr ' .
     'FROM ' . SHOUTBOX_TABLE . ' s, ' . USERS_TABLE . ' u ' .
     'WHERE u.user_id = s.sb_user_id ' . 
@@ -296,13 +300,13 @@ while ($row = $db->sql_fetchrow($resultset)) {
 }
 
 krsort($row_messages);
-
-foreach($row_messages as $row_message) {
-    $shouts->addMessage($row_message);
+*/
+foreach($messages as $record) {
+    $shouts->addMessage($record->row($permissions));
 }
 
 // -- HANDLING ONLINE USERS
-
+/*
 $sql = 'SELECT u.user_id, u.user_session_time ' .
     'FROM ' . SHOUTBOX_TABLE . ' s, ' . USERS_TABLE . ' u ' .
     'WHERE u.user_id = s.sb_user_id ' . 
@@ -316,7 +320,7 @@ if($resultset) {
         }
     }
 }
-
+*/
 $data = [];
 $data['latestId'] = $latestId;
 

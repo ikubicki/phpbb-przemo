@@ -140,6 +140,10 @@ class Query
                 if ($clause) {
                     $clause .= ' AND ';
                 }
+                if (is_numeric($field)) {
+                    $clause .= $where;
+                    continue;
+                }
                 if (strpos($field, '`') == false) {
                     $field = "`$this->from`.`$field`";
                 }

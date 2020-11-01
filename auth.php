@@ -1,19 +1,32 @@
 <?php
 
-use PhpBB\Forum\Url;
-
 $rootdir = __DIR__;
 include $rootdir . '/vendor/autoload.php';
 
 start($rootdir);
 
-// $userdata = session_pagestart($user_ip, PAGE_INDEX);
-// init_userprefs($userdata);
+$config = PhpBB\Core\Context::getService('config');
+$phrases = PhpBB\Core\Context::getService('phrases');
+$session = PhpBB\Core\Context::getService('session');
+$templates = PhpBB\Core\Context::getService('templates');
+// $template->addPath($phpbb_root_path . '/templates/test');
+
+
+
+$templates->display('auth.html');
+
+exit;
+
+define('IN_PHPBB', true);
+$phpbb_root_path = './';
+include($phpbb_root_path . 'common.php');
+
+$userdata = session_pagestart($user_ip, PAGE_INDEX);
+init_userprefs($userdata);
 
 ini_set('display_errors', 1);
 ini_set('error_reporting', E_ALL);
 
-$session = PhpBB\Core\Context::getService('session');
 $request = PhpBB\Core\Context::getService('request');
 $category_id = $request->get->get('c');
 $forum_id = $request->get->get('f');
@@ -77,6 +90,19 @@ switch($what) {
         ]);
         break;
 }
+$phrases = PhpBB\Core\Context::getService('phrases');
+$phrases->load($lang);
+$session = PhpBB\Core\Context::getService('session');
+$template->addPath($phpbb_root_path . '/templates/test');
+$template->var('c', $board_config);
+$template->var('l', $phrases);
+$template->var('s', $session);
+$template->defaults([
+    'SITE_NAME' => $board_config['sitename'],
+    'SITE_DESCRIPTION' => $board_config['site_desc'],
+]);
+
+$config = PhpBB\Core\Context::getService('config');
 
 $template->vars([
     'title' => $what . '.html',
@@ -92,19 +118,15 @@ $template->vars([
 $template->component('FORUMS', 'components/forums.html');
 $template->component('TOPICS', 'components/topics.html');
 $template->component('POSTS', 'components/posts.html');
-
-if ($session->isAuthenticated()) {
-    $template->component('QUICKREPLY', 'components/quickreply.html');
-}
+$template->component('QUICKREPLY', 'components/quickreply.html');
 
 $navigation = [];
 
 if (isset($forum)) {
     $navigation = PhpBB\Core\Context::getService('tree')->trace($forum);
 }
-$phrases = PhpBB\Core\Context::getService('phrases');
 $template->vars([
-    'U_HOME' => new Url('index.php', $phrases->Forum_index),
+    'U_HOME' => new Url('index.php', $lang['Forum_index']),
     'A_ITEMS' => $navigation,
 ]);
 
