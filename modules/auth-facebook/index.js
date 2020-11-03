@@ -1,10 +1,26 @@
-if (typeof auth == 'undefined') {
-    var auth = {}
+auth.facebook = {
+    init: () => {
+        var icon = $('<img name="facebook" />')
+        icon.attr('src', 'modules/auth-facebook/icon.png')
+        icon.on('click', () => auth.facebook.form())
+        $('div.auth div.providers').append(icon)
+    },
+    form: () => {
+        $(location).attr('hash', '#facebook');
+        var form = $('div.auth form')
+        form.html('')
+        $('div.auth div.providers img').each((i, el) => {
+            $(el).removeClass('current')
+        })
+        $('div.auth div.providers img[name=facebook]').addClass('current')
+        console.log('auth-facebook')
+    }
 }
 
-auth.facebook = {
+auth.facebook0 = {
     sdk: null,
-    init: (options) => {
+    init: () => {},
+    init2: (options) => {
         window.fbAsyncInit = function() {
             auth.facebook.sdk = FB
             FB.init({

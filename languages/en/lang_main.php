@@ -181,6 +181,10 @@ $lang['Forum_is_locked'] = 'Forum is locked';
 //
 $lang['Login'] = 'Log in';
 $lang['Logout'] = 'Log out';
+$lang['Signin'] = 'Zaloguj';
+$lang['Signin_facebook'] = 'Sign in with Facebook';
+$lang['Signin_google'] = 'Sign in with Google';
+$lang['Rememberme'] = 'Remember me';
 
 $lang['Forgotten_password'] = 'I forgot my password';
 

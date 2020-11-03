@@ -1,6 +1,31 @@
 {% extends 'layouts/basic.html' %}
 {% block content %}
-<div class="body">
+<style>@import url(themes/test/auth.css);</style>
+<div class="body auth">
     <h1>{{ l.Login }}</h1>
+    <div class="container">
+        <div class="providers">
+        </div>
+        <form name="auth" action="" method="post">
+        </form>
+    </div>
+    <div class="options">
+        <a href="">{{ l.Register }}</a>
+        <a href="">{{ l.Forgotten_password }}</a>
+    </div>
+    <br />
 </div>
+<script src="/modules/auth-default/index.js"></script>
+<script src="/modules/auth-facebook/index.js"></script>
+<script src="/modules/auth-google/index.js"></script>
+<script>
+auth.options.phrases = {
+    username: '{{ l.Username }}',
+    signin: '{{ l.Login }}',
+    signin_facebook: '{{ l.Signin_facebook }}',
+    signin_google: '{{ l.Signin_google }}',
+    rememberme: '{{ l.Rememberme }}',
+}
+forum.auth()
+</script>
 {% endblock %}

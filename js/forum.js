@@ -487,7 +487,28 @@ function chng(val)
     val.style.color = nval;
 }
 
+auth = {
+	options: {
+		phrases: {
+			username: 'Username',
+			signin: 'Sign in',
+			signin_facebook: 'Sign in with Facebook',
+			signin_google: 'Sign in with Google',
+			rememberme: 'Remember me',
+		}
+	}
+}
 forum = {
+	auth: () => {
+		var first = $(location).attr('hash').substring(1)
+		for (var name in auth) {
+			if (auth[name].init) {
+				if (!first) first = name
+				auth[name].init()
+			}
+		}
+		auth[first].form()
+	},
 	autoWidthCallback: (el) => {
 		el = $(el.target)
 		var size = el.val().length

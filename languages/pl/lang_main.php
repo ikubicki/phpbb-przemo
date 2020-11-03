@@ -183,6 +183,11 @@ $lang['Forum_is_locked'] = 'Forum Zablokowane';
 $lang['Login'] = 'Zaloguj';
 $lang['Logout'] = 'Wyloguj';
 
+$lang['Signin'] = 'Zaloguj';
+$lang['Signin_facebook'] = 'Zaloguj z Facebook';
+$lang['Signin_google'] = 'Zaloguj z Google';
+$lang['Rememberme'] = 'Zapamiętaj mnie';
+
 $lang['Forgotten_password'] = 'Zapomniałem hasła';
 
 $lang['Log_me_in'] = 'Zaloguj mnie automatycznie przy każdej wizycie';
