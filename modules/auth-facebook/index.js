@@ -1,19 +1,61 @@
 auth.facebook = {
+    sdk: null,
     init: () => {
-        var icon = $('<img name="facebook" />')
-        icon.attr('src', 'modules/auth-facebook/icon.png')
-        icon.on('click', () => auth.facebook.form())
-        $('div.auth div.providers').append(icon)
+        auth.facebook.fbInit()
+        auth.icon('facebook', 'modules/auth-facebook/icon.png', auth.facebook.form)
     },
     form: () => {
-        $(location).attr('hash', '#facebook');
-        var form = $('div.auth form')
-        form.html('')
-        $('div.auth div.providers img').each((i, el) => {
-            $(el).removeClass('current')
+        var fields = []
+        var submit = $('<input type="submit" value="'+auth.options.phrases.signin_facebook+'" />')
+        auth.facebook.onclick(submit)
+        auth.form('facebook', [submit])
+    },
+    fbInit: () => {
+        window.fbAsyncInit = function() {
+            auth.facebook.sdk = FB
+            FB.init({
+                appId: auth.options.fbappid, cookie: true, xfbml: true, version: 'v4.0'
+            });
+            FB.AppEvents.logPageView();
+        };
+
+        ( function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        } (document, 'script', 'facebook-jssdk') );
+    },
+    fbcallback: (object, response) => {
+        if (response.status == 'connected') {
+            var a = $('<input type="hidden" name="fb[a]" value="" />')
+            var r = $('<input type="hidden" name="fb[r]" value="" />')
+            var u = $('<input type="hidden" name="fb[u]" value="" />')
+            a.val(response.authResponse.accessToken)
+            r.val(response.authResponse.signedRequest)
+            u.val(response.authResponse.userID)
+            object.after(a)
+            object.after(r)
+            object.after(u)
+            
+            var form = object.parents('form')
+            // form.attr('action', '/modules/auth-facebook/auth-facebook.php');
+            if (form.length) {
+                form.submit()
+            }
+        }
+    },
+    onclick: (object) => {
+        object.on('click', (e) => {
+            
+            auth.facebook.sdk.getLoginStatus(function(response) {
+                auth.facebook.fbcallback(object, response)
+            })
+            e.preventDefault()
         })
-        $('div.auth div.providers img[name=facebook]').addClass('current')
-        console.log('auth-facebook')
     }
 }
 

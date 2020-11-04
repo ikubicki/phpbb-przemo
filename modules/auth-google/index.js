@@ -1,18 +1,54 @@
 auth.google = {
-    init: () => {
-        var icon = $('<img name="google" />')
-        icon.attr('src', 'modules/auth-google/icon.png')
-        icon.on('click', () => auth.google.form())
-        $('div.auth div.providers').append(icon)
+    sdk: null,
+    init: () => {  
+        auth.google.gInit()
+        auth.icon('google', 'modules/auth-google/icon.png', auth.google.form)
     },
     form: () => {
-        $(location).attr('hash', '#google');
-        var form = $('div.auth form')
-        form.html('')
-        $('div.auth div.providers img').each((i, el) => {
-            $(el).removeClass('current')
+        var fields = []
+        var submit = $('<input type="submit" value="'+auth.options.phrases.signin_google+'" />')
+        auth.google.onclick(submit)
+        auth.form('google', [submit])
+    },
+    gInit: () => {
+        console.log('-', gapi)
+        gapi.load('auth2', function() {
+            auth.google.sdk = gapi.auth2.init({
+                client_id: auth.options.gclient
+            });
         })
-        $('div.auth div.providers img[name=google]').addClass('current')
-        console.log('auth-google')
+    },
+    gcallback: (object, response) => {
+        if (response.error) {
+            auth.errors.push(response.error)
+            auth.google.form()
+            return
+        }
+        if (response.wc && response.wc.id_token) {
+            var a = $('<input type="hidden" name="g[a]" value="" />')
+            var t = $('<input type="hidden" name="g[t]" value="" />')
+            a.val(response.Ca)
+            t.val(response.wc.id_token)
+            object.after(a)
+            object.after(t)
+            
+            var form = object.parents('form')
+            // form.attr('action', '/modules/auth-google/index.php');
+            if (form.length) {
+                form.submit()
+            }
+        }
+    },
+    onclick: (object) => {
+        object.on('click', (e) => {
+            if (auth.google.sdk) {
+                auth.google.sdk.signIn({scope: 'profile email'}).then((response) => {
+                    auth.google.gcallback(object, response)
+                }).catch((response) => {
+                    // auth.google.gcallback(object, response)
+                })
+            }
+            e.preventDefault()
+        })
     }
 }

@@ -18,7 +18,14 @@
 <script src="/modules/auth-default/index.js"></script>
 <script src="/modules/auth-facebook/index.js"></script>
 <script src="/modules/auth-google/index.js"></script>
+<script src="https://apis.google.com/js/api.js"></script>
+
 <script>
+{% if error %}
+auth.errors.push('{{ error }}')
+{% endif %}
+auth.options.fbappid = '{{ c.get("facebook_appid") }}'
+auth.options.gclient = '{{ c.get("google_client_id") }}'
 auth.options.phrases = {
     username: '{{ l.Username }}',
     signin: '{{ l.Login }}',
@@ -26,6 +33,8 @@ auth.options.phrases = {
     signin_google: '{{ l.Signin_google }}',
     rememberme: '{{ l.Rememberme }}',
 }
-forum.auth()
+$(function(){
+    forum.auth()
+})
 </script>
 {% endblock %}

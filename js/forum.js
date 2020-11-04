@@ -488,6 +488,36 @@ function chng(val)
 }
 
 auth = {
+	icons: () => { return $('div.auth div.providers') },
+	icon: (name, iconUrl, callback) => {
+        var icon = $('<img />')
+		icon.attr('name', name)
+		icon.attr('src', iconUrl)
+		icon.on('click', () => callback())
+        auth.icons().append(icon)
+	},
+	form: (name, fields) => {
+        $(location).attr('hash', '#' + name);
+        var form = $('div.auth form')
+        form.attr('class', name)
+        form.html('')
+        auth.icons().find('img').each((i, el) => {
+            $(el).removeClass('current')
+        })
+		auth.icons().find('img[name='+name+']').addClass('current')
+        if (auth.errors.length) {
+            auth.errors.forEach((e) => {
+                form.append('<p class="error">'+e+'</p>')
+            })
+		}
+		auth.errors = []
+		fields.push($('<label><input type="checkbox" name="remember" value="1" /> '+auth.options.phrases.rememberme+'</label>'))
+		fields.push($('<input type="hidden" name="auth" value="'+name+'" />'))
+		fields.forEach((field) => {
+			form.append(field)
+		})
+	},
+	errors: [],
 	options: {
 		phrases: {
 			username: 'Username',

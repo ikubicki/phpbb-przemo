@@ -19,6 +19,14 @@ div.auth form input[type=submit] {
     color: #eee;
 }
 
+div.auth p.error {
+    color: red;
+    text-shadow: 0 0 1px #f005;
+    font-size: 0.8em;
+    padding: 10px;
+    margin: 0;
+}
+
 div.auth > div.options {
     margin: auto;
     width: 400px;
@@ -39,7 +47,11 @@ div.auth form input {
     padding: 10px;
 }
 div.auth form.default {
-    padding: 30px 20px 20px;
+    padding: 40px 20px 20px;
+}
+div.auth form.facebook,
+div.auth form.google {
+    padding: 70px 20px 20px;
 }
 div.auth form.default input[type=text] {
     display: block;
