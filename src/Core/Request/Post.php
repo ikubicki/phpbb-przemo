@@ -13,4 +13,9 @@ class Post
     {
         return $_POST[$parameter] ?? $alternative;
     }
+
+    public function dump()
+    {
+        return $_POST;
+    }
 }

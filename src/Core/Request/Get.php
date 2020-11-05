@@ -13,4 +13,9 @@ class Get
     {
         return $_GET[$parameter] ?? $alternative;
     }
+
+    public function dump()
+    {
+        return $_GET;
+    }
 }

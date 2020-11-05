@@ -522,7 +522,8 @@ auth = {
 	},
 	form: (name, fields) => {
         $(location).attr('hash', '#' + name);
-        var form = $('div.auth form')
+		var form = $('div.auth form')
+		form.attr('action', form.attr('action').split('#')[0] + '#' + name);
         form.attr('class', name)
         form.html('')
         auth.icons().find('img').each((i, el) => {

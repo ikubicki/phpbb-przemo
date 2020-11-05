@@ -1,11 +1,35 @@
 <?php
 
+use PhpBB\Core\Context;
 use PhpBB\Data\Cache;
+use PhpBB\Data\MySQL;
 use PhpBB\Forum\Url;
 
 function cache($object)
 {
     return new Cache($object);
+}
+
+function get_authenticator($authenticator)
+{
+    $class = sprintf('PhpBB\\Modules\\Auth\\%s\\Module', ucfirst($authenticator));
+    if (class_exists($class)) {
+        return new $class;
+    }
+    return false;
+}
+
+function recaptcha_check($verbose = false)
+{
+    $config = Context::getService('config');
+    $request = Context::getService('request');
+    if ($config->recaptcha_key && $config->recaptcha_secret) {
+        if ($request->post->recaptcha) {
+            return (new PhpBB\Modules\Recaptcha\Module($verbose))->verify($config->recaptcha_secret, $request->post->recaptcha);
+        }
+        return false;
+    }
+    return true;
 }
 
 function start($rootdir)
@@ -17,19 +41,18 @@ function start($rootdir)
         $encryption_key = md5_file($rootdir . '/config.php');
     }
 
-    $dbdsn = PhpBB\Data\MySQL\Connection::GetDSN($dbname, $dbhost, $dbport ?? 3306, $dbchars ?? 'utf8mb4');
+    $dbdsn = MySQL\Connection::GetDSN($dbname, $dbhost, $dbport ?? 3306, $dbchars ?? 'utf8mb4');
 
-    PhpBB\Core\Context::register([
+    Context::register([
         'values' => [
             'collection-prefix' => $table_prefix ?? 'phpbb_',
             'file-handler' => PhpBB\Core\File::class,
-            'cookie-handler' => PhpBB\Core\Cookie::class,
-            'query-builder' => PhpBB\Data\MySQL\Query::class,
+            'query-builder' => MySQL\Query::class,
         ],
         'services' => [
             'request' => new PhpBB\Core\Request,
             'encryption' => new PhpBB\Core\Encryption($encryption_key),
-            'db-connection' => new PhpBB\Data\MySQL\Connection($dbdsn, $dbuser, $dbpasswd, [\PDO::ATTR_ERRMODE => \PDO::ERRMODE_WARNING]),
+            'db-connection' => new MySQL\Connection($dbdsn, $dbuser, $dbpasswd, [\PDO::ATTR_ERRMODE => \PDO::ERRMODE_WARNING]),
         ]
     ]);
     
@@ -58,7 +81,7 @@ function start($rootdir)
         $tree->storeCache();
     }
 
-    PhpBB\Core\Context::registerServices([
+    Context::registerServices([
         'config' => $config,
         'session' => $session,
         'phrases' => $phrases,

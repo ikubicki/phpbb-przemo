@@ -13,4 +13,9 @@ class Cookies
     {
         return $_COOKIE[$parameter] ?? $alternative;
     }
+
+    public function dump()
+    {
+        return $_COOKIE;
+    }
 }

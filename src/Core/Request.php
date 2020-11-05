@@ -10,6 +10,7 @@ class Request
     public $files;
     public $cookies;
     public $headers;
+    public $method;
 
     public function __construct()
     {
@@ -18,6 +19,7 @@ class Request
         $this->files = new Request\Files;
         $this->cookies = new Request\Cookies;
         $this->headers = new Request\Headers;
+        $this->method = strtolower($_SERVER['REQUEST_METHOD'] ?? 'GET');
     }
 
     public function __get($parameter)
@@ -48,5 +50,10 @@ class Request
     public function headers()
     {
         return $this->headers;
+    }
+
+    public function isPost()
+    {
+        return $this->method == 'post';
     }
 }

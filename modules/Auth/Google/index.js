@@ -2,7 +2,7 @@ auth.google = {
     sdk: null,
     init: () => {  
         auth.google.gInit()
-        auth.icon('google', 'modules/auth-google/icon.png', auth.google.form)
+        auth.icon('google', 'modules/Auth/Google/icon.png', auth.google.form)
     },
     form: () => {
         var fields = []
@@ -33,7 +33,6 @@ auth.google = {
             object.after(t)
             
             var form = object.parents('form')
-            // form.attr('action', '/modules/auth-google/index.php');
             if (form.length) {
                 form.submit()
             }

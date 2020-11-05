@@ -6,7 +6,7 @@ class Connection
 {
 
     protected $connection;
-    protected static $queries = [];
+    public static $queries = [];
 
     public function __construct($dsn, $user, $pass, $options = [])
     {
@@ -15,7 +15,6 @@ class Connection
 
     public function prepare($query)
     {
-        // var_dump($query);
         self::$queries[] = $query;
         return $this->connection->prepare($query);
     }

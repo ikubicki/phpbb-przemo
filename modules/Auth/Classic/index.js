@@ -1,6 +1,6 @@
 auth.default = {
     init: () => {
-        auth.icon('default', 'modules/auth-default/icon.png', auth.default.form)
+        auth.icon('default', 'modules/Auth/Classic/icon.png', auth.default.form)
     },
     form: () => {
         var fields = []
