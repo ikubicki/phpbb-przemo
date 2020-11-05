@@ -1,8 +1,10 @@
 auth.facebook = {
     sdk: null,
     init: () => {
-        auth.facebook.fbInit()
-        auth.icon('facebook', 'modules/Auth/Facebook/icon.png', auth.facebook.form)
+        if (auth.options.fbappid) {
+            auth.facebook.fbInit()
+            auth.icon('facebook', 'modules/Auth/Facebook/icon.png', auth.facebook.form)
+        }
     },
     form: () => {
         var fields = []

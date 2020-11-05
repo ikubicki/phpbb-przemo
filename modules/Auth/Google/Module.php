@@ -10,19 +10,32 @@ class Module extends Authenticator
         $token = $this->g['t'] ?? null;
         $hash = $this->g['a'] ?? null;
 
-        $client = $this->getHttpClient('https://oauth2.googleapis.com/');
-
         try {
-            $response = $client->get('tokeninfo?id_token=' . $token);
-            $json = json_decode($response->getBody()->getContents(), false);
-            if ($json->sub != $hash) {
+            $user = $this->getGUser($token);
+            if (!$user) {
                 return false;
             }
-            return $this->findRecord('google', $json->email, $json->sub);
+            if ($user->sub != $hash) {
+                return false;
+            }
+            $result = $this->findRecord('google', $user->email, $user->sub);
+            if (!$result) {
+                return null;
+            }
+            return $result;
         }
         catch(\Throwable $t) {
             error_log($t->getMessage());
         }
         return false;
+    }
+
+    private function getGUser($token)
+    {
+        $client = $this->getHttpClient('https://oauth2.googleapis.com/');
+        $response = $client->get('tokeninfo?id_token=' . $token);
+        if ($response->getStatusCode() < 300) {
+            return json_decode($response->getBody()->getContents(), false);
+        }
     }
 }

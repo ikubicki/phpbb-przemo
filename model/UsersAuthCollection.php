@@ -8,7 +8,7 @@ class UsersAuthCollection extends Collection
 {
     public function __construct($name = null, $class = null)
     {
-        parent::__construct('users_auth', UserAuth::class, 'user_id');
+        parent::__construct('users_auth', UserAuth::class, ['type', 'index']);
     }
 
     public static function registerEntity($namespace, Entity $entity)

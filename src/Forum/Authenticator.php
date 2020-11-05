@@ -9,6 +9,13 @@ use PhpBB\Model\UsersAuthCollection;
 class Authenticator
 {
 
+    protected $config;
+
+    public function __construct()
+    {
+        $this->config = Context::getService('config');
+    }
+
     public function __get($property)
     {
         return Context::getService('request')->post->get($property);

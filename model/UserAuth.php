@@ -25,4 +25,19 @@ class UserAuth extends Entity
     {
         return new UsersCollection;
     }
+
+    public function save()
+    {
+        if ($this->active === null) {
+            $this->active = 1;
+        }
+        $collection = $this->getCollection(UsersAuthCollection::class);
+        $collection->store([$this]);
+    }
+
+    public function delete()
+    {
+        $collection = $this->getCollection(UsersAuthCollection::class);
+        $collection->dump([$this]);
+    }
 }

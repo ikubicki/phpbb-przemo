@@ -46,20 +46,20 @@ div.auth form label {
 div.auth form input {
     padding: 10px;
 }
-div.auth form.default {
+div.auth form.classic {
     padding: 40px 20px 20px;
 }
 div.auth form.facebook,
 div.auth form.google {
     padding: 70px 20px 20px;
 }
-div.auth form.default input[type=text] {
+div.auth form.classic input[type=text] {
     display: block;
     clear: left;
     width: 200px;
     margin: 5px 0;
 }
-div.auth form.default input[type=password] {
+div.auth form.classic input[type=password] {
     width: 200px;
     margin: 5px 10px 5px 0;
 }

@@ -90,8 +90,16 @@ class Entity
      */
     public function getKeyValue() 
     {
-        $key = $this->_key;
-        return $this->$key ?? false;
+        
+        if (is_string($this->_key)) {
+            $key = $this->_key;
+            return $this->$key ?? false;
+        }
+        $result = [];
+        foreach($this->_key as $key) {
+            $result[] = $this->$key;
+        }
+        return $result;
     }
 
     /**
@@ -110,7 +118,7 @@ class Entity
      * @author ikubicki
      * @return boolean
      */
-    public function isNew(): boolean
+    public function isNew(): bool
     {
         return $this->_new;
     }

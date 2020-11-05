@@ -43,6 +43,9 @@ class Context
     {
         $id = $entity->getKeyValue();
         if ($id !== false) {
+            if (is_array($id)) {
+                $id = implode(',', $id);
+            }
             self::$entities[$namespace][$id] = $entity;
         }
     }

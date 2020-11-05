@@ -1,8 +1,10 @@
 auth.google = {
     sdk: null,
     init: () => {  
-        auth.google.gInit()
-        auth.icon('google', 'modules/Auth/Google/icon.png', auth.google.form)
+        if (auth.options.gclient) {
+            auth.google.gInit()
+            auth.icon('google', 'modules/Auth/Google/icon.png', auth.google.form)
+        }
     },
     form: () => {
         var fields = []

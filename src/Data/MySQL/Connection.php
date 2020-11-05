@@ -16,6 +16,7 @@ class Connection
     public function prepare($query)
     {
         self::$queries[] = $query;
+        // var_dump($query);
         return $this->connection->prepare($query);
     }
 

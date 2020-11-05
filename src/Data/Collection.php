@@ -47,7 +47,13 @@ class Collection
         if ($entity) {
             return $entity;
         }
-        return $this->one([$this->key => $id]);
+        if (is_string($this->key)) {
+            return $this->one([$this->key => $id]);
+        }
+        if (is_string($id)) {
+            throw new \Exception(sprintf('%s::get() requires %d element array', get_called_class(), count($this->key)));
+        }
+        return $this->one(array_combine($this->key, $id));
     }
 
     /**
@@ -140,14 +146,24 @@ class Collection
             if ($entity->getKeyValue()) {
                 $keys[] = $entity->getKeyValue();
             }
-            if (count($keys)) {
+        }
+        if (count($keys)) {
+            if (is_string($this->key)) {
                 $this->criteria = [$this->key => $keys];
-                $query = $this->query($this);
-                list($statement, $values) = $query->delete();
-                if ($this->getConnection()->execute($statement, $values)) {
-                    foreach($entities as $entity) {
-                        $entity->setNew(true);
+            }
+            else {
+                $this->criteria = [];
+                foreach ($this->key as $i => $key) {
+                    foreach ($keys as $j => $values) {
+                        $this->criteria[$key][$j] = $values[$i];
                     }
+                }
+            }
+            $query = $this->query($this);
+            list($statement, $values) = $query->delete();
+            if ($this->getConnection()->execute($statement, $values)) {
+                foreach($entities as $entity) {
+                    $entity->setNew(true);
                 }
             }
         }
@@ -167,6 +183,7 @@ class Collection
         $this->values = get_object_vars($entity);
         $query = $this->query($this);
         list($statement, $values) = $query->insert();
+        var_dump($statement, $values);exit;
         $key = $this->getConnection()->insert($statement, $values);
         $entity->setNew(false);
         if ($key !== false) {
@@ -188,8 +205,17 @@ class Collection
             $entity->setKey($this->key);
         }
         $this->values = get_object_vars($entity);
-        $this->criteria = [$this->key => $this->values[$this->key]];
-        unset($this->values[$this->key]);
+        if (is_string($this->key)) {
+            $this->criteria = [$this->key => $this->values[$this->key]];
+            unset($this->values[$this->key]);
+        }
+        else {
+            $this->criteria = [];
+            foreach ($this->key as $key) {
+                $this->criteria[$key] = $this->values[$key];
+                unset($this->values[$key]);
+            }
+        }
         $query = $this->query($this);
         list($statement, $values) = $query->update();
         return $this->getConnection()->execute($statement, $values);
