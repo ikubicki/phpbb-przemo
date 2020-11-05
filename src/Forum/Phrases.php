@@ -60,6 +60,13 @@ class Phrases
         return self::$phrases[$key] ?? $key;
     }
 
+    public function format()
+    {
+        $arguments = func_get_args();
+        $arguments[0] = $this->get($arguments[0]);
+        return call_user_func_array('sprintf', $arguments);
+    }
+
     protected function filename($module)
     {
         return self::$directory . "/" . self::$language . '/lang_' . $module . '.php';

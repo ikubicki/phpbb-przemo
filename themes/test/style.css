@@ -87,10 +87,10 @@ div.foot p:hover span.visible {
     display: none;
 }
 
-form input[type=text],
-form input[type=password],
-form input[type=submit],
-form select {
+input[type=text],
+input[type=password],
+input[type=submit],
+select {
 	color: #333;
 	padding: 5px;
     background: #fff;

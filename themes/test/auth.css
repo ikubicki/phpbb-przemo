@@ -13,7 +13,7 @@ div.auth form {
     background: linear-gradient(90deg, #f5f5f5, #fff, #fff, #fff);
     width: 350px;
 }
-div.auth form input[type=submit] {
+div.auth input[type=submit] {
     border-color: #333;
     background: linear-gradient(#666, #333, #333);
     color: #eee;

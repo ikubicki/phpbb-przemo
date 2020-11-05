@@ -6,15 +6,16 @@ include $rootdir . '/vendor/autoload.php';
 start($rootdir);
 
 $config = PhpBB\Core\Context::getService('config');
-// $phrases = PhpBB\Core\Context::getService('phrases');
 $session = PhpBB\Core\Context::getService('session');
 $templates = PhpBB\Core\Context::getService('templates');
 $request = PhpBB\Core\Context::getService('request');
 // $template->addPath($phpbb_root_path . '/templates/test');
 
 if ($request->has('logout')) {
+    $username = $session->getUser()->username;
     $session->terminate();
-    message('logout.html');
+    $templates->var('username', $username);
+    $templates->display('auth-logout.html');
     exit;
 }
 if ($request->isPost()) {

@@ -38,7 +38,7 @@ function message($message, $title = null)
     $templates = Context::getService('templates');
     $templates->var('message', [
         'title' => $title ?? $phrases->get('Message'),
-        'text' => $message,
+        'text' => $phrases->get($message),
     ]);
     $templates->display('message.html');
     exit;
