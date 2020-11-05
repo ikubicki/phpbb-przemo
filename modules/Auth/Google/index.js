@@ -13,7 +13,6 @@ auth.google = {
         auth.form('google', [submit])
     },
     gInit: () => {
-        console.log('-', gapi)
         gapi.load('auth2', function() {
             auth.google.sdk = gapi.auth2.init({
                 client_id: auth.options.gclient
@@ -46,6 +45,7 @@ auth.google = {
                 auth.google.sdk.signIn({scope: 'profile email'}).then((response) => {
                     auth.google.gcallback(object, response)
                 }).catch((response) => {
+                    console.debug(response)
                     // auth.google.gcallback(object, response)
                 })
             }

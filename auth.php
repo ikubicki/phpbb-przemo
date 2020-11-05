@@ -12,16 +12,29 @@ $templates = PhpBB\Core\Context::getService('templates');
 $request = PhpBB\Core\Context::getService('request');
 // $template->addPath($phpbb_root_path . '/templates/test');
 
+if ($request->has('logout')) {
+    $session->terminate();
+    message('logout.html');
+    exit;
+}
 if ($request->isPost()) {
     if (recaptcha_check()) {
         $authenticator = get_authenticator($request->post->auth);
-        $response = $authenticator ? $authenticator->verify() : false;
-        if ($response) {
-            var_dump($response->getUser());
+        if ($authenticator) {
+            $response = $authenticator->verify();
+            if ($authenticator->getError()) {
+                $templates->var('error', $authenticator->getError());
+            }
+            else if ($response) {
+                $response->getUser()->authenticate($request->post->remember > 0);
+            }
         }
     }
     else {
         $templates->var('error', 'Recaptcha error');
     }
+}
+if ($session->isAuthenticated()) {
+    redirect('index.php');
 }
 $templates->display('auth.html');

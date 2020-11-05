@@ -15,11 +15,13 @@ class Module extends Authenticator
         if ($index) {
             $record = $this->findRecord('classic', $index);
             if (!$record) {
+                $this->setError('Invalid_login_or_password');
                 return (new Legacy)->verify();
             }
             if ($record->hash === $this->hash($password, $record->salt)) {
                 return $record;
             }
+            $this->setError('Invalid_login_or_password');
         }
         return false;
     }

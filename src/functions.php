@@ -32,8 +32,28 @@ function recaptcha_check($verbose = false)
     return true;
 }
 
+function message($message, $title = null)
+{
+    $phrases = Context::getService('phrases');
+    $templates = Context::getService('templates');
+    $templates->var('message', [
+        'title' => $title ?? $phrases->get('Message'),
+        'text' => $message,
+    ]);
+    $templates->display('message.html');
+    exit;
+}
+
+function redirect($url)
+{
+    header('Location: ' . $url);
+    exit;
+}
+
 function start($rootdir)
 {
+
+    ob_start();
 
     require $rootdir . '/config.php';
 

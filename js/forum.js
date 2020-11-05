@@ -498,6 +498,12 @@ $(() => {
 						form.append('<input type="hidden" name="recaptcha" value="'+token+'" />')
 						form.removeAttr('name')
 						form.submit()
+					}).catch((e) => {
+						var type = form.find('input[name=auth]').val()
+						if (auth[type]) {
+							auth.errors.push('Recaptcha is currently down.')
+							auth[type].form()
+						}
 					})
 				})
 			}

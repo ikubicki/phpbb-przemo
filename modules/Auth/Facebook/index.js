@@ -48,10 +48,14 @@ auth.facebook = {
                 form.submit()
             }
         }
+        else {
+            console.debug(response)
+            auth.errors.push('Unable to retrieve login details from Facebook')
+            auth.facebook.form()
+        }
     },
     onclick: (object) => {
         object.on('click', (e) => {
-            
             auth.facebook.sdk.getLoginStatus(function(response) {
                 auth.facebook.fbcallback(object, response)
             })

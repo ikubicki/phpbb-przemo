@@ -4,6 +4,7 @@ namespace PhpBB\Model;
 use PhpBB\Data\Entity;
 use PhpBB\Forum\Url;
 use PhpBB\Forum\Image;
+use PhpBB\Core\Context;
 
 class User extends Entity
 {
@@ -58,5 +59,13 @@ class User extends Entity
     public function isOnline()
     {
         return time() - $this->user_session_time < 300;
+    }
+
+    public function authenticate($remember)
+    {
+        Context::getService('session')->set([
+            'sub' => $this->user_id,
+            'exp' => $remember ? time() + 86400 * 30: false,
+        ]);
     }
 }

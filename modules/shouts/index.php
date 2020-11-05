@@ -155,7 +155,7 @@ function save_add($text)
     $resultset = $db->sql_query($sql);
     if ($db->sql_affectedrows() > 0) {
         $lastInsertId = $db->sql_nextid();
-        return message($lastInsertId);
+        return shout($lastInsertId);
     }
     return false;
 }
@@ -171,7 +171,7 @@ function save_edit($message, $text)
         'WHERE id = ' . intval($message['id']) . ' ';
     $statement = $db->sql_query($sql);
     if($db->sql_affectedrows() > 0) {
-        return message($message['id']);
+        return shout($message['id']);
     }
     return false;
 }
@@ -189,7 +189,7 @@ function delete($message)
     return $db->sql_affectedrows() > 0;
 }
 
-function message($id)
+function shout($id)
 {
     if ($id > 0) {
         global $db;
@@ -239,7 +239,7 @@ $message = (array) ($_POST['message'] ?? []);
 switch($action) {
     case 'message':
         if (!empty($message['id'])) {
-            $message = message($message['id']);
+            $message = shout($message['id']);
         }
         break;
     case 'edit':
@@ -248,7 +248,7 @@ switch($action) {
         $text = $text;
         if ($text) {
             if (!empty($message['id'])) {
-                $message = message($message['id']);
+                $message = shout($message['id']);
             }
             else {
                 $message = false;
@@ -264,7 +264,7 @@ switch($action) {
         break;
     case 'delete':
         if ($message['id']) {
-            $message = message($message['id']);
+            $message = shout($message['id']);
             $result = delete($message);
         }
         $shouts->setAction('refresh');
@@ -301,6 +301,7 @@ while ($row = $db->sql_fetchrow($resultset)) {
 
 krsort($row_messages);
 */
+krsort($messages);
 foreach($messages as $record) {
     $shouts->addMessage($record->row($permissions));
 }

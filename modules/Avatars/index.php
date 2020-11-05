@@ -41,6 +41,7 @@ function getUrlContents($url)
 // if (!$user_id || $userdata['user_id'] == $user_id) {
     $url = pick_random_default_avatar();
     header('Content-Type: image/png');
+    ob_clean();
     print getUrlContents($url);
 // }
 

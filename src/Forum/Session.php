@@ -18,17 +18,14 @@ class Session
     {
         $this->cookie = $cookie;
         if ($this->cookie) {
-            /* @todo make it configurable
-            if (time() - $this->unsalt() > 3600) {
-                $this->terminate();
-                return;
-            }
-            */
             $this->extractCookieData($this->cookie->read());
-            if (time() - $this->unsalt() > 1800) {
+            if (time() - $this->data['iat'] > 3600) {
+                $this->terminate();
+            }
+            else if (time() - $this->data['iat'] > 600) {
                 $this->generateId();
             }
-            
+            // var_dump($this->data);
         }
     }
 
@@ -67,8 +64,8 @@ class Session
 
     public function getUserId()
     {
-        return 2;
-        return $this->data['user_id'] ?? -1;
+        //return 2;
+        return $this->data['sub'] ?? -1;
     }
 
     public function isAuthenticated()
@@ -139,22 +136,14 @@ class Session
         return new Url('auth.php?logout', $this->phrase('Logout'));
     }
 
-    protected function salt()
-    {
-        $this->data['salt'] = base_convert(microtime(true) * 100000, 10, 36);
-    }
-
-    protected function unsalt()
-    {
-        return (int) (base_convert($this->data['salt'], 36, 10) / 1000000);
-    }
-
     protected function generateId()
     {
         $encryption = Context::getService('encryption');
-        $this->salt();
-        $this->id = $encryption->encrypt(json_encode($this->data));
+        $this->id = $encryption->encrypt(json_encode($this->data + ['iat' => time()]));
         if ($this->cookie) {
+            if (isset($this->data['exp'])) {
+                $this->cookie->expire = $this->data['exp'];
+            }
             $this->cookie->write($this->id);
         }
     }

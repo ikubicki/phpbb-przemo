@@ -32,6 +32,11 @@ class Request
         return $this->get;
     }
 
+    public function has($property)
+    {
+        return array_key_exists($property, $_REQUEST);
+    }
+
     public function post()
     {
         return $this->post;

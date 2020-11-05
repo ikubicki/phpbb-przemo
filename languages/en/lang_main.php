@@ -185,6 +185,7 @@ $lang['Signin'] = 'Zaloguj';
 $lang['Signin_facebook'] = 'Sign in with Facebook';
 $lang['Signin_google'] = 'Sign in with Google';
 $lang['Rememberme'] = 'Remember me';
+$lang['Invalid_login_or_password'] = 'Incorrect credentials';
 
 $lang['Forgotten_password'] = 'I forgot my password';
 

@@ -10,10 +10,21 @@ class Authenticator
 {
 
     protected $config;
+    protected $error;
 
     public function __construct()
     {
         $this->config = Context::getService('config');
+    }
+
+    public function setError($error)
+    {
+        $this->error = Context::getService('phrases')->get($error);
+    }
+
+    public function getError()
+    {
+        return $this->error;
     }
 
     public function __get($property)
