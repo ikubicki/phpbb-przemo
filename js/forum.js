@@ -486,7 +486,31 @@ function chng(val)
     var nval = '#' + val.value;
     val.style.color = nval;
 }
-
+$(() => {
+	if (recaptcha_key) {
+		$('form[name].recaptcha').on('submit', (e) => {
+			var form = $(e.target)
+			if (form.attr('name')) {
+				e.preventDefault()
+				var action = form.attr('name') || 'submit'
+				grecaptcha.ready(function() {
+					grecaptcha.execute(recaptcha_key, {action}).then(function(token) {
+						form.append('<input type="hidden" name="recaptcha" value="'+token+'" />')
+						form.removeAttr('name')
+						form.submit()
+					})
+				})
+			}
+		})
+		if ($('form[name].recaptcha').length) {
+			
+			$('div.foot').append($('<p class="recaptcha">This site is protected by reCAPTCHA and the Google ' +
+				'<a href="https://policies.google.com/privacy">Privacy Policy</a> and ' +
+				'<a href="https://policies.google.com/terms">Terms of Service</a> apply.</p>'));
+				
+		}
+	}
+})
 auth = {
 	icons: () => { return $('div.auth div.providers') },
 	icon: (name, iconUrl, callback) => {

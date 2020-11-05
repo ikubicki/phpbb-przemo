@@ -66,9 +66,17 @@ input[type=checkbox] {
     cursor: pointer;
 }
 
+div.foot :first-child {
+    border: 0;
+    padding: 0 5px 0 0;
+}
+
 div.foot p {
+    border-left: 1px solid #aaa;
     margin: 0;
+    padding: 0 11px 0 10px;
     font-size: 0.75em;
+    display: inline;
 }
 div.foot p span.visible,
 div.foot p:hover span.hidden {
@@ -102,4 +110,8 @@ div.submit {
 :-ms-input-placeholder,
 ::-ms-input-placeholder {
     color: red;
+}
+
+div.grecaptcha-badge {
+    visibility: hidden;
 }

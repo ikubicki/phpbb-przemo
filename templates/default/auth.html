@@ -6,7 +6,7 @@
     <div class="container">
         <div class="providers">
         </div>
-        <form name="auth" action="" method="post">
+        <form name="auth" action="auth.php" method="post" class="recaptcha">
         </form>
     </div>
     <div class="options">
@@ -19,7 +19,7 @@
 <script src="/modules/auth-facebook/index.js"></script>
 <script src="/modules/auth-google/index.js"></script>
 <script src="https://apis.google.com/js/api.js"></script>
-
+<form></form>
 <script>
 {% if error %}
 auth.errors.push('{{ error }}')

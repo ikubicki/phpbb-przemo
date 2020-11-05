@@ -8,5 +8,6 @@ auth.default = {
         fields.push($('<input type="password" name="password" placeholder="********" />'))
         fields.push($('<input type="submit" value="'+auth.options.phrases.signin+'" />'))
         auth.form('default', fields)
+    
     }
 }

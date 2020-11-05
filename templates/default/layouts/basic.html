@@ -7,6 +7,8 @@
         <style>@import url('/themes/test/shouts.css');</style>
         <script src="/js/jquery.js"></script>
         <script src="/js/forum.js"></script>
+        <script>recaptcha_key = '{{ c.get("recaptcha_key") }}'</script>
+        <script src="https://www.google.com/recaptcha/api.js?render={{ c.get("recaptcha_key") }}"></script>
 {% endblock %}
     </head>
     <body>
