@@ -16,7 +16,10 @@ auth.facebook = {
         window.fbAsyncInit = function() {
             auth.facebook.sdk = FB
             FB.init({
-                appId: auth.options.fbappid, cookie: true, xfbml: true, version: 'v4.0'
+                appId: auth.options.fbappid,
+                cookie: true,
+                xfbml: true,
+                version: 'v8.0'
             });
             FB.AppEvents.logPageView();
         };
