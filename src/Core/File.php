@@ -30,6 +30,13 @@ class File
         return $this->filename;
     }
 
+    public function delete()
+    {
+        if ($this->exists()) {
+            unlink($this->filename);
+        }
+    }
+
     public function clear()
     {
         file_put_contents($this->filename, null);

@@ -3,7 +3,7 @@
 namespace PhpBB\Forum;
 
 use PhpBB\Core\Context;
-use PhpBB\Data\Cache;
+use PhpBB\Data\Memoizer;
 use PhpBB\Model\UsersCollection;
 
 class Session
@@ -158,7 +158,7 @@ class Session
     protected function getUsersCollection()
     {
         return new UsersCollection;
-        //return new Cache(new UsersCollection);
+        //return new Memoizer(new UsersCollection);
     }
 
     protected function phrase($key)

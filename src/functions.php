@@ -1,13 +1,26 @@
 <?php
 
 use PhpBB\Core\Context;
-use PhpBB\Data\Cache;
+use PhpBB\Data\Memoizer;
 use PhpBB\Data\MySQL;
 use PhpBB\Forum\Url;
 
-function cache($object)
+function cache($name, $data = null)
 {
-    return new Cache($object);
+    static $cache = [];
+    if (empty($cache)) {
+        $cache = Context::getService('cache');
+    }
+    if ($data) {
+        $cache->store($name, $data);
+        return $cache;
+    }
+    return $cache->collect($name);
+}
+
+function memoize($object)
+{
+    return new Memoizer($object);
 }
 
 function get_authenticator($authenticator)
@@ -70,6 +83,7 @@ function start($rootdir)
             'query-builder' => MySQL\Query::class,
         ],
         'services' => [
+            'cache' => (new PhpBB\Data\Cache)->ttl(15)->directory('/tmp'),
             'request' => new PhpBB\Core\Request,
             'encryption' => new PhpBB\Core\Encryption($encryption_key),
             'db-connection' => new MySQL\Connection($dbdsn, $dbuser, $dbpasswd, [\PDO::ATTR_ERRMODE => \PDO::ERRMODE_WARNING]),
@@ -77,6 +91,10 @@ function start($rootdir)
     ]);
     
     $config = new PhpBB\Forum\Config;
+    if (!$config->isCached()) {
+        $config->load();
+        $config->storeCache();
+    }
     $cookie = new PhpBB\Core\Cookie([
         'name' => 'sess',
         'path' => '/',
@@ -94,13 +112,11 @@ function start($rootdir)
     ]);
     $templates->addPath("$rootdir/templates/default");
     $tree = new PhpBB\Forum\Tree;
-    $tree->cache('/tmp/tree.' . date('ymd') . '.php');
     if (!$tree->isCached()) {
-        $tree->import((new PhpBB\Model\CategoriesCollection)->all());
-        $tree->import((new PhpBB\Model\ForumsCollection)->all());
+        $tree->import((new PhpBB\Model\CategoriesCollection)->getAll());
+        $tree->import((new PhpBB\Model\ForumsCollection)->getAll());
         $tree->storeCache();
     }
-
     Context::registerServices([
         'config' => $config,
         'session' => $session,

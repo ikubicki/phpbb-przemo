@@ -15,4 +15,9 @@ class CategoriesCollection extends Collection
     {
         parent::registerEntity('categories', $entity);
     }
+
+    public function getAll()
+    {
+        return $this->all();
+    }
 }

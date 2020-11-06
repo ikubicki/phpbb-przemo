@@ -12,28 +12,22 @@ class Tree
     protected $orphans = [];
     protected $items = [];
 
-    public function cache($cache)
-    {
-        $this->cache = $cache;
-        if (file_exists($this->cache)) {
-            include $this->cache;
-        }
-    }
-
     public function storeCache()
     {
-        $file = $this->getFile($this->cache);
-        $file->clear();
-        $file->writeLine('<?php');
-        $file->write('$this->children = ');
-        $file->write(var_export($this->children, true));
-        $file->writeLine(';');
-        return $file;
+        if (!empty($this->children)) {
+            $cache = $this->getCache();
+            $cache->store('tree', $this->children, 300);
+        }
     }
 
     public function isCached()
     {
-        return $this->cache && count($this->children);
+        if (empty($this->children)) {
+            $cache = $this->getCache();
+            $this->children = $cache->collect('tree');
+            return $this->children && count($this->children);
+        }
+        return false;
     }
 
     public function import(array $entities)
@@ -101,9 +95,11 @@ class Tree
         return [];
     }
 
-    protected function getFile($filename)
+    protected function getCache()
     {
-        $class = Context::getValue('file-handler');
-        return new $class($filename);
+        if (!$this->cache) {
+            $this->cache = Context::getService('cache');
+        }
+        return $this->cache;
     }
 }

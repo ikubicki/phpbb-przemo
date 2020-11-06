@@ -15,4 +15,11 @@ class ForumsCollection extends Collection
     {
         parent::registerEntity('forums', $entity);
     }
+
+    public function getAll()
+    {
+        return $this
+            ->leftjoin(new PostsCollection, 'post_id', 'forum_last_post_id', [], 'latestpost')
+            ->all();
+    }
 }

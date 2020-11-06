@@ -52,11 +52,11 @@ class Post extends Entity
 
     public function getAuthor()
     {
-        if (!$this->getRef('author')) {
+        if (!$this->getRef('poster')) {
             $user = $this->getUsersCollection()->get($this->poster_id);
-            $this->addRef('author', $user);
+            $this->addRef('poster', $user);
         }
-        return $this->getRef('author');
+        return $this->getRef('poster');
     }
 
     public function getUrl($class = null)

@@ -181,17 +181,7 @@ $lang['Forum_is_locked'] = 'Forum is locked';
 //
 $lang['Login'] = 'Log in';
 $lang['Logout'] = 'Log out';
-
-$lang['Signin'] = 'Sign in';
-$lang['Signin_facebook'] = 'Sign in with Facebook';
-$lang['Signin_google'] = 'Sign in with Google';
-$lang['Rememberme'] = 'Remember me';
-$lang['Invalid_login_or_password'] = 'Incorrect credentials';
-$lang['Goodbye_user'] = 'Good bye %s';
-$lang['Signed_out'] = 'You have been logged out. See you soon!';
-
 $lang['Forgotten_password'] = 'I forgot my password';
-
 $lang['Log_me_in'] = 'Log me on automatically each visit';
 
 //

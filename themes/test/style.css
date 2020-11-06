@@ -99,6 +99,13 @@ select {
     border: 2px solid #fff;
     border-radius: 4px;
     font-size: 0.9em;
+    filter: none;
+    outline: none;
+}
+
+input[type=text]:focus,
+input[type=password]:focus {
+    box-shadow: 0 0 4px #ddaa33;
 }
 
 div.submit {

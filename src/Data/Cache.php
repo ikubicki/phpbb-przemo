@@ -1,107 +1,120 @@
 <?php
 
 namespace PhpBB\Data;
-
-use PhpBB\Core\Context;
 use PhpBB\Core\File;
 
 class Cache
 {
 
+    protected $ttl = 3600;
+    protected $directory = '/tmp';
+    protected static $files = [];
+    
     /**
-     * @var object $object
-     */
-    protected $object;
-
-    /**
-     * 
+     * Sets cache TTL
+     *
      * @author ikubicki
-     * @param object
+     * @param integer $ttl
+     * @return Cache
      */
-    public function __construct($object)
+    public function ttl($ttl): Cache
     {
-        $this->object = $object;
+        $this->ttl = $ttl;
+        return $this;
     }
-
+    
     /**
-     * 
+     * Sets cache directory
+     *
      * @author ikubicki
-     * @param string $method
-     * @param array $arguments
+     * @param string $directory
+     * @return Cache
+     */
+    public function directory($directory): Cache
+    {
+        $this->directory = $directory;
+        return $this;
+    }
+    
+    /**
+     * Returns cache data if not expired
+     *
+     * @author ikubicki
+     * @param string $name
      * @return mixed
      */
-    public function __call($method, array $arguments)
+    public function collect($name)
     {
-        $hash = $this->hash($method, $arguments);
-        $result = $this->load($hash);
-        if (!$result) {
-            $result = $this->save($hash, 
-                call_user_func_array([$this->object, $method], $arguments)
-            );
-        }
-        return $result;
-    }
-
-    /**
-     * 
-     * @author ikubicki
-     * @param string $method
-     * @param array $arguments
-     * @return string
-     */
-    protected function hash($method, array $arguments)
-    {
-        $class = str_replace('\\', '_', get_class($this->object));
-        return $class . '_' . $method . '_' . md5(json_encode($arguments)) . '.php';
-    }
-
-    /**
-     * 
-     * @author ikubicki
-     * @param string $hash
-     * @return mixed
-     */
-    protected function load($hash)
-    {
-        // var_dump('load(' . $hash . ')');
-        $file = $this->getFile($hash);
+        $file = $this->getFile($name);
         if ($file->exists()) {
+            $data = null;
+            $expires = 0;
             include $file->getFilename();
-            if ($result) {
-                return $result;
+            if ($expires > time()) {
+                return $data;
             }
         }
         return false;
     }
-
+    
     /**
-     * 
+     * Stores data in cache
+     *
      * @author ikubicki
-     * @param string $hash
-     * @param mixed $result
-     * @return mixed
+     * @param string $name
+     * @param mixed $data
+     * @return File
      */
-    protected function save($hash, $result)
+    public function store($name, $data, $ttl = null): File
     {
-        // var_dump('save', $result);
-        $file = $this->getFile($hash);
+        $ttl = $ttl ?: $this->ttl;
+        $file = $this->getFile($name);
         $file->clear();
         $file->writeLine('<?php');
-        $file->write('$result = ');
-        $file->write(var_export($result, true));
+        $file->write('$expires = ');
+        $file->write(var_export(time() + $ttl, true));
         $file->writeLine(';');
-        return $result;
+        $file->write('$data = ');
+        $file->write(var_export($data, true));
+        $file->writeLine(';');
+        return $file;
     }
-
+    
     /**
-     * 
+     * Deletes cache file
+     *
      * @author ikubicki
-     * @param string $filename
-     * @return 
+     * @param string $name
      */
-    protected function getFile($filename)
+    public function release($name)
     {
-        $path = Context::getValue('cache-path', '/tmp');
-        return new File("$path/$filename");
+        $this->getFile($name)->delete();
+    }
+    
+    /**
+     * Returns file object
+     *
+     * @author ikubicki
+     * @param string $name
+     * @return File
+     */
+    protected function getFile($name)
+    {
+        if (empty(self::$files[$name])) {
+            self::$files[$name] = new File($this->getFilename($name));
+        }
+        return self::$files[$name];
+    }
+    
+    /**
+     * Returns filename
+     *
+     * @author ikubicki
+     * @param string $name
+     * @return string
+     */
+    protected function getFilename($name)
+    {
+        return "$this->directory/$name.php";
     }
 }

@@ -82,7 +82,7 @@ $template->vars([
     'what' => $what,
     'forums' => $tree ? $tree->flat(true, $nesting) : null,
     'topics' => isset($forum) ? $forum->getTopics(1, 30) : null,
-    'posts' => isset($topic) ? $topic->getPosts(1, 10) : null,
+    'posts' => isset($topic) ? $topic->getReplies(1, 10) : null,
     'forum' => $forum ?? null,
     'category' => $category ?? null,
     'topic' => $topic ?? null,
@@ -115,6 +115,9 @@ if ($what == 'viewcategory') {
 }
 
 $template->display($what . '.html');
+
+
+foreach(PhpBB\Data\MySQL\Connection::$queries as $query) printf('<p>%s</p>', $query);
 
 // var_dump(memory_get_peak_usage());
 // var_dump(memory_get_peak_usage(1));

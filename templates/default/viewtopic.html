@@ -6,12 +6,7 @@
     <script src="/modules/votes/index.js"></script>
     <style>@import url('/js/lightbox/lightbox.css');</style>
     <style>@import url('modules/votes/style.css');</style>
-    <h1>{{ topic.title }} &bigstar; &star; &Cross; &otimes; &excl; &larr; &rarr; &plus; &num;</h1>
-    {% if topic.description %}
-    <small>{{ topic.description }}</small>
-    {% endif %}
-    <br />
-    <br />
+
     {{ components.POSTS | raw }}
     {{ components.QUICKREPLY | raw }}
 

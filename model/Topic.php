@@ -87,28 +87,48 @@ class Topic extends Entity
         return $posts;
     }
 
+    public function getReplies($page = 1, $limit = 15)
+    {
+        $criteria = ['topic_id' => $this->topic_id];
+        $order = ['post_id' => 'ASC'];
+        $offset = 1 + ($page - 1) * $limit;
+        $posts = $this->getPostsCollection()
+            ->leftjoin(new PostsTextCollection, 'post_id', 'post_id', [], 'text')
+            ->leftjoin(new UsersCollection, 'user_id', 'poster_id', [], 'poster')
+            ->find($criteria, $order, $limit, $offset);
+        foreach($posts as $post) {
+            $post->addRef('topic', $this);
+        }
+        return $posts;
+    }
+
     public function getLatestPost()
     {
-        if (!$this->latest_post && $this->topic_last_post_id) {
-            $this->latest_post = $this->getPostsCollection()->get($this->topic_last_post_id);
+        if ($this->topic_last_post_id) {
+            if (!$this->getRef('latestpost')) {
+                $post = $this->getPostsCollection()->get($this->topic_last_post_id);
+                $this->addRef('latestpost', $post);
+            }
+            return $this->getRef('latestpost');
         }
-        return $this->latest_post;
     }
 
     public function getAuthor()
     {
-        if (!$this->author) {
-            $this->author = $this->getUsersCollection()->get($this->topic_poster);
+        if (!$this->getRef('poster')) {
+            $user = $this->getUsersCollection()->get($this->topic_poster);
+            $this->addRef('poster', $user);
         }
-        return $this->author;
+        return $this->getRef('poster');
     }
 
     public function getForum()
     {
-        if (!$this->forum) {
-            $this->forum = $this->getForumsCollection()->get($this->forum_id);
+        if (!$this->getRef('forum')) {
+            $forum = $this->getForumsCollection()->get($this->forum_id);
+            $this->addRef('forum', $forum);
         }
-        return $this->forum;
+        return $this->getRef('forum');
     }
     
     protected function getForumsCollection()

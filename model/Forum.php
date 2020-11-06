@@ -5,11 +5,15 @@ use PhpBB\Forum\Url;
 
 class Forum extends ForumHierarchicalEntity
 {
-    //public $forum_id;
-    //public $cat_id;
-    //public $forum_name;
-
-    protected $latest_post;
+    public $forum_id;
+    public $cat_id;
+    public $forum_name;
+    public $forum_desc;
+    public $main_type;
+    public $forum_order;
+    public $forum_topics;
+    public $forum_posts;
+    public $forum_last_post_id;
 
     public function getType()
     {
@@ -65,16 +69,20 @@ class Forum extends ForumHierarchicalEntity
         $order = ['topic_id' => 'DESC'];
         $offset = ($page - 1) * $limit;
         return $this->getTopicsCollection()
-            ->leftjoin(new UsersCollection, 'user_id', 'topic_poster')
+            ->leftjoin(new UsersCollection, 'user_id', 'topic_poster', [], 'poster')
+            ->leftjoin(new PostsCollection, 'post_id', 'topic_last_post_id', [], 'latestpost')
             ->find($criteria, $order, $limit, $offset);
     }
 
     public function getLatestPost()
     {
-        if (!$this->latest_post && $this->forum_last_post_id) {
-            $this->latest_post = $this->getPostsCollection()->get($this->forum_last_post_id);
+        if ($this->forum_last_post_id) {
+            if (!$this->getRef('latestpost')) {
+                $post = $this->getPostsCollection()->get($this->forum_last_post_id);
+                $this->addRef('latestpost', $post);
+            }
+            return $this->getRef('latestpost');
         }
-        return $this->latest_post;
     }
 
     public function getPostsCount()

@@ -2,29 +2,75 @@
 
 namespace PhpBB\Forum;
 use PhpBB\Model;
+use PhpBB\Data\Cache;
+use PhpBB\Core\Context;
 
 class Config
 {
 
     protected $properties = [];
     protected $context;
+    protected $cache;
 
     /**
+     * Constructor
      * 
      * @author ikubicki
      * @param array $properties
      * @param string $context
      */
-    public function __construct(&$properties = null, $context = null)
+    public function __construct(&$properties = [], $context = null)
     {
-        if ($properties === null) {
-            $properties = $this->getConfigCollection()->export();
-        }
         $this->properties = $properties;
         $this->context = $context;
     }
 
     /**
+     * Stores cache
+     * 
+     * @author ikubicki
+     */
+    public function storeCache()
+    {
+        if (!empty($this->properties)) {
+            $cache = $this->getCache();
+            if (!$this->context) {
+                $cache->store('config', $this->properties, 86400);
+            }
+            else {
+                $cache->release('config');
+            }
+        }
+    }
+
+    /**
+     * Loads cache
+     * 
+     * @author ikubicki
+     * @return bool
+     */
+    public function isCached()
+    {
+        if (empty($this->properties)) {
+            $cache = $this->getCache();
+            $this->properties = $cache->collect('config');
+            return $this->properties && count($this->properties);
+        }
+        return false;
+    }
+
+    /**
+     * Loads configuration
+     * 
+     * @author ikubicki
+     */
+    public function load()
+    {
+        $this->properties = $this->getConfigCollection()->export();
+    }
+
+    /**
+     * Returns configuration property
      * 
      * @author ikubicki
      * @param string $property
@@ -36,6 +82,7 @@ class Config
     }
 
     /**
+     * Sets configuration property
      * 
      * @author ikubicki
      * @param string $property
@@ -47,6 +94,7 @@ class Config
     }
 
     /**
+     * Returns configuration property
      * 
      * @author ikubicki
      * @param string $property
@@ -66,6 +114,7 @@ class Config
     }
 
     /**
+     * Loads module configuration
      * 
      * @author ikubicki
      * @param string $module
@@ -84,6 +133,7 @@ class Config
     }
 
     /**
+     * Sets config property
      * 
      * @author ikubicki
      * @param string $property
@@ -106,6 +156,7 @@ class Config
     }
 
     /**
+     * Removes config property
      * 
      * @author ikubicki
      * @param string $property
@@ -120,12 +171,14 @@ class Config
             else {
                 $this->getConfig($this->context)->delete();
             }
+            $this->storeCache();
             return;
         }
         $this->getConfig($property)->delete();
     }
 
     /**
+     * Stores configuration change
      * 
      * @author ikubicki
      * @param string $property
@@ -142,10 +195,12 @@ class Config
             $value = $this->serialize($value);
         }
         $this->getConfig($property, $value, $new)->save();
+        $this->storeCache();
         return;
     }
 
     /**
+     * Unserializes data
      * 
      * @author ikubicki
      * @param string $string
@@ -158,6 +213,7 @@ class Config
 
 
     /**
+     * Serializes data
      * 
      * @author ikubicki
      * @param string|array $data
@@ -169,6 +225,7 @@ class Config
     }
 
     /**
+     * Return config entity
      * 
      * @author ikubicki
      * @param string $name
@@ -186,6 +243,7 @@ class Config
     }
 
     /**
+     * Returns config collection
      * 
      * @author ikubicki
      * @return Model\ConfigCollection
@@ -193,5 +251,19 @@ class Config
     protected function getConfigCollection()
     {
         return new Model\ConfigCollection;
+    }
+    
+    /**
+     * Returns cache object
+     *
+     * @author ikubicki
+     * @return Cache
+     */
+    protected function getCache()
+    {
+        if (!$this->cache) {
+            $this->cache = Context::getService('cache');
+        }
+        return $this->cache;
     }
 }

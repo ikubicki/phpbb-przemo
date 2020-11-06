@@ -10,9 +10,8 @@ include $rootdir . '/vendor/autoload.php';
 
 start($rootdir);
 
-$config = (new Config)->module('shouts');
+$config = Context::getService('config')->module('shouts');
 $shouts = new PhpBB\Modules\Shouts\Shouts($encryption_key);
-
 if (!$config->enabled) {
     $shouts->error('Module is disabled.');
 }

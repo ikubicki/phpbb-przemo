@@ -1,4 +1,32 @@
 <div class="posts">
+    <div class="post {{ topic.firstpost.types | join(' ') }}" id="post_{{ topic.firstpost.post_id }}">
+        <div class="avatar">
+            <div class="posts">{{ topic.firstpost.author.postsCount }}</div>
+            {{ topic.firstpost.author.avatar | raw }}
+            <small>
+                {{ topic.firstpost.author.signature }}
+            </small>
+        </div>
+        <div class="body">
+            <h1>{{ topic.title }} &bigstar; &star; &Cross; &otimes; &excl; &larr; &rarr; &plus; &num;</h1>
+            {% if topic.description %}
+            <h2>{{ topic.description }}</h2>
+            {% endif %}
+            <small>
+                {{ topic.firstpost.author.url | raw }}
+                {{ l.Post_added }}
+                {{ topic.firstpost.url | raw }}
+            </small>
+            <div class="text" author="{{ topic.firstpost.author.name }}">{{ topic.firstpost.text | nl2br }}</div>
+        </div>
+        <div class="votes" id="votes_{{ topic.firstpost.post_id }}">
+            <script>votes.show({selector: '#votes_{{ topic.firstpost.post_id }}', post: '{{ topic.firstpost.post_id }}'})</script>
+        </div>
+        <br />
+    </div>
+{% if posts %}
+    <small>{{ l.Replies }}</small>
+{% endif %}
 {% for post in posts %}
     <div class="post {{ post.types | join(' ') }}" id="post_{{ post.post_id }}">
         <div class="avatar">
@@ -11,7 +39,7 @@
         <div class="body">
             <small>
                 {{ post.author.url | raw }}
-                {{ l.added }}
+                {{ l.Post_replied }}
                 {{ post.url | raw }}
             </small>
             <div class="text" author="{{ post.author.name }}">{{ post.text | nl2br }}</div>
