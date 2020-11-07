@@ -15,7 +15,7 @@ if ($request->has('logout')) {
     $username = $session->getUser()->username;
     $session->terminate();
     $templates->var('username', $username);
-    $templates->display('auth-logout.html');
+    $templates->display('signout.html');
     exit;
 }
 if ($request->isPost()) {
@@ -38,4 +38,4 @@ if ($request->isPost()) {
 if ($session->isAuthenticated()) {
     redirect('index.php');
 }
-$templates->display('auth.html');
+$templates->display('signin.html');

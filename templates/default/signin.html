@@ -1,12 +1,12 @@
 {% extends 'layouts/basic.html' %}
 {% block content %}
-<style>@import url(themes/test/auth.css);</style>
-<div class="body auth">
+<style>@import url(themes/test/signin.css);</style>
+<div class="body signin">
     <h1>{{ l.Login }}</h1>
     <div class="container">
         <div class="providers">
         </div>
-        <form name="auth" action="auth.php" method="post" class="recaptcha">
+        <form name="auth" action="signin.php" method="post" class="recaptcha primary">
         </form>
     </div>
     <div class="options">
@@ -19,7 +19,6 @@
 <script src="/modules/Auth/Facebook/index.js"></script>
 <script src="/modules/Auth/Google/index.js"></script>
 <script src="https://apis.google.com/js/api.js"></script>
-<form></form>
 <script>
 {% if error %}
 auth.errors.push('{{ error }}')
@@ -34,7 +33,7 @@ auth.options.phrases = {
     rememberme: '{{ l.Rememberme }}',
 }
 $(function(){
-    forum.auth()
+    forum.auth('div.signin div.container')
 })
 </script>
 {% endblock %}

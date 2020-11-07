@@ -30,6 +30,7 @@ a:hover {
     text-align: center;
 }
 
+div.sideinfo > h1,
 body > div.body > h1 {
     color: #006699;
     font-size: 1.7em;
@@ -90,6 +91,7 @@ div.foot p:hover span.visible {
 input[type=text],
 input[type=password],
 input[type=submit],
+input[type=button],
 select {
 	color: #333;
 	padding: 5px;
@@ -108,6 +110,17 @@ input[type=password]:focus {
     box-shadow: 0 0 4px #ddaa33;
 }
 
+input[type=submit].primary,
+input[type=button].primary {
+    border-color: #333;
+    background: linear-gradient(#666, #333, #333);
+    color: #eee;
+}
+
+form.primary input {
+    padding: 10px;
+}
+
 div.submit {
     text-align: center;
     padding: 10px 0 0;
@@ -121,4 +134,25 @@ div.submit {
 
 div.grecaptcha-badge {
     visibility: hidden;
+}
+div.container {
+    display: flex;
+    flex-direction: row;
+}
+div.container > br {
+    clear: both;
+}
+div.container > div.sideinfo {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    font-size: 0.9em;
+    margin-right: 20px;
+    padding-top: 10px;
+}
+
+div.container > form {
+    padding-left: 20px;
+    border-left: 1px solid #ccc;
+    float: left;
 }

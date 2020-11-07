@@ -55,8 +55,6 @@ $lang['Views'] = 'Wyświetleń';
 $lang['Post'] = 'Post';
 $lang['Posts'] = 'Posty';
 $lang['Posted'] = 'Wysłany';
-$lang['Username'] = 'Użytkownik';
-$lang['Password'] = 'Hasło';
 $lang['Email'] = 'E-mail';
 $lang['Poster'] = 'Wysłał';
 $lang['Author'] = 'Autor';
@@ -504,8 +502,6 @@ $lang['Search_user_posts'] = 'Znajdź wszystkie posty %s';
 $lang['No_user_id_specified'] = 'Wybrany użytkownik nie istnieje';
 
 $lang['Date_format'] = 'Format Daty';
-
-$lang['Confirm_password'] = 'Potwierdź Hasło';
 
 $lang['Avatar'] = 'Avatar';
 

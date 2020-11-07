@@ -133,7 +133,7 @@ class Session
 
     public function getLogout()
     {
-        return new Url('auth.php?logout', $this->phrase('Logout'));
+        return new Url('signin.php?logout', $this->phrase('Logout'));
     }
 
     protected function generateId()

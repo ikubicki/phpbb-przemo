@@ -54,8 +54,6 @@ $lang['Views'] = 'Views';
 $lang['Post'] = 'Post';
 $lang['Posts'] = 'Posts';
 $lang['Posted'] = 'Posted';
-$lang['Username'] = 'Username';
-$lang['Password'] = 'Password';
 $lang['Email'] = 'Email';
 $lang['Poster'] = 'Poster';
 $lang['Author'] = 'Author';
@@ -502,8 +500,6 @@ $lang['Search_user_posts'] = 'Find all posts by %s';
 $lang['No_user_id_specified'] = 'That user does not exist.';
 
 $lang['Date_format'] = 'Date format';
-
-$lang['Confirm_password'] = 'Confirm password';
 
 $lang['Avatar'] = 'Avatar';
 

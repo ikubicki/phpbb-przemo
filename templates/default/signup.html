@@ -1,0 +1,28 @@
+{% extends 'layouts/basic.html' %}
+{% block content %}
+<style>@import url(themes/test/signup.css);</style>
+<div class="body signup">
+    <div class="container">
+        <div class="sideinfo">
+            <h1>{{ l.Join_discussion }}</h1>
+            <p>{{ l.Why_join | nl2br }}</p>
+        </div>
+        <form name="signup" action="signup.php" method="post" class="recaptcha primary">
+            <input type="text" name="aa" placeholder="{{ l.Username }}" />
+            <input type="password" name="bb" placeholder="{{ l.Password }}" />
+            <input type="password" name="cc" placeholder="{{ l.Confirm_password }}" />
+            <div class="submit">
+                <input type="submit" name="signup" class="primary" value="{{ l.Sign_up }}" />
+                <input type="submit" name="signin" value="{{ l.Or_sign_in }}" />
+            </div>
+            <div class="options">
+                <input type="submit" name="signup" value="{{ l.Sign_up_facebook }}" />
+            </div>
+            <div class="options">
+                <input type="submit" name="signup" value="{{ l.Sign_up_google }}" />
+            </div>
+        </form>
+        <br />
+    </div>
+</div>
+{% endblock %}

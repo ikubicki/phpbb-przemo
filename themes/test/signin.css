@@ -1,25 +1,20 @@
-div.auth div.container {
+div.signin div.container {
     margin: auto;
     width: 550px;
     display: flex;
 }
-div.auth div.providers {
+div.signin div.providers {
     width: 70px;
 }
-div.auth form {
+div.signin form {
     padding: 20px;
     border-left: 1px solid #ccc;
     background: #f5f5f5;
     background: linear-gradient(90deg, #f5f5f5, #fff, #fff, #fff);
     width: 350px;
 }
-div.auth input[type=submit] {
-    border-color: #333;
-    background: linear-gradient(#666, #333, #333);
-    color: #eee;
-}
 
-div.auth p.error {
+div.signin p.error {
     color: red;
     text-shadow: 0 0 1px #f005;
     font-size: 0.8em;
@@ -27,43 +22,40 @@ div.auth p.error {
     margin: 0;
 }
 
-div.auth > div.options {
+div.signin > div.options {
     margin: auto;
     width: 400px;
     display: block;
     padding: 20px 0;
     font-size: 0.8em;
 }
-div.auth > div.options a {
+div.signin > div.options a {
     margin-right: 5px;
 }
-div.auth form label {
+div.signin form label {
     display: block;
     margin: 10px 0;
     cursor: pointer;
     font-size: 0.9em;
 }
-div.auth form input {
-    padding: 10px;
-}
-div.auth form.classic {
+div.signin form.classic {
     padding: 40px 20px 20px;
 }
-div.auth form.facebook,
-div.auth form.google {
+div.signin form.facebook,
+div.signin form.google {
     padding: 70px 20px 20px;
 }
-div.auth form.classic input[type=text] {
+div.signin form.classic input[type=text] {
     display: block;
     clear: left;
     width: 200px;
     margin: 5px 0;
 }
-div.auth form.classic input[type=password] {
+div.signin form.classic input[type=password] {
     width: 200px;
     margin: 5px 10px 5px 0;
 }
-div.auth div.providers img {
+div.signin div.providers img {
     max-width: 50px;
     max-height: 50px;
     display: block;
@@ -74,14 +66,14 @@ div.auth div.providers img {
     filter: grayscale(100%);
     opacity: .5;
 }
-div.auth div.providers img.current {
+div.signin div.providers img.current {
     -webkit-filter: none;
     filter: none;
     opacity: .9;
 }
-div.auth div.providers img:hover {
+div.signin div.providers img:hover {
     opacity: 1;
 }
-div.auth br {
+div.signin br {
     clear: both;
 }

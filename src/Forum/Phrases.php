@@ -88,7 +88,7 @@ class Phrases
      */
     public function get($key)
     {
-        return self::$phrases[$key] ?? $key;
+        return self::$phrases[$key] ?? str_replace('_', ' ', $key);
     }
 
     /**

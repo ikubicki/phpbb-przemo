@@ -1,6 +1,6 @@
 auth.google = {
     sdk: null,
-    init: () => {  
+    init: (container) => {  
         if (auth.options.gclient) {
             auth.google.gInit()
             auth.icon('google', 'modules/Auth/Google/icon.png', auth.google.form)
@@ -8,7 +8,7 @@ auth.google = {
     },
     form: () => {
         var fields = []
-        var submit = $('<input type="submit" value="'+auth.options.phrases.signin_google+'" />')
+        var submit = $('<input type="submit" class="primary" value="'+auth.options.phrases.signin_google+'" />')
         auth.google.onclick(submit)
         auth.form('google', [submit])
     },

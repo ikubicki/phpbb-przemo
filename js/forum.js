@@ -518,19 +518,25 @@ $(() => {
 	}
 })
 auth = {
-	icons: () => { return $('div.auth div.providers') },
+	container: 'div.signin',
+	icons: () => { return $(auth.container + ' div.providers') },
 	icon: (name, iconUrl, callback) => {
+		auth.registered.push(name)
         var icon = $('<img />')
 		icon.attr('name', name)
 		icon.attr('src', iconUrl)
 		icon.on('click', () => callback())
         auth.icons().append(icon)
 	},
+	registered: [],
 	form: (name, fields) => {
         $(location).attr('hash', '#' + name);
-		var form = $('div.auth form')
+		var form = $(auth.container + ' form')
 		form.attr('action', form.attr('action').split('#')[0] + '#' + name);
-        form.attr('class', name)
+		auth.registered.forEach((el) => {
+			form.removeClass(el)
+		})
+        form.addClass(name)
         form.html('')
         auth.icons().find('img').each((i, el) => {
             $(el).removeClass('current')
@@ -560,12 +566,13 @@ auth = {
 	}
 }
 forum = {
-	auth: () => {
+	auth: (container) => {
+		auth.container = container;
 		var first = $(location).attr('hash').substring(1)
 		for (var name in auth) {
 			if (auth[name].init) {
 				if (!first) first = name
-				auth[name].init()
+				auth[name].init(container)
 			}
 		}
 		auth[first].form()

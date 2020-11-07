@@ -1,6 +1,6 @@
 auth.facebook = {
     sdk: null,
-    init: () => {
+    init: (container) => {
         if (auth.options.fbappid) {
             auth.facebook.fbInit()
             auth.icon('facebook', 'modules/Auth/Facebook/icon.png', auth.facebook.form)
@@ -8,7 +8,7 @@ auth.facebook = {
     },
     form: () => {
         var fields = []
-        var submit = $('<input type="submit" value="'+auth.options.phrases.signin_facebook+'" />')
+        var submit = $('<input type="submit" class="primary" value="'+auth.options.phrases.signin_facebook+'" />')
         auth.facebook.onclick(submit)
         auth.form('facebook', [submit])
     },
