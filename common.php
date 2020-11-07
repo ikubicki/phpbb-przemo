@@ -32,7 +32,7 @@ if ( !defined('IN_PHPBB') )
 $time_start = microtime(true);
 
 //
-error_reporting  (E_ERROR | E_WARNING | E_PARSE); // This will NOT report uninitialized variables
+error_reporting  (E_ERROR | E_PARSE); // This will NOT report uninitialized variables
 // ini_set('error_reporting', E_ALL);
 // ini_set('display_errors' , true);
 
