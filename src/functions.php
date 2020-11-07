@@ -99,7 +99,7 @@ function start($rootdir)
         'name' => 'sess',
         'path' => '/',
         'secure' => true,
-        'samesite' => true,
+        'samesite' => 'Strict',
     ]);
     $session = new PhpBB\Forum\Session($cookie);
     $phrases = new PhpBB\Forum\Phrases("$rootdir/languages");
@@ -129,6 +129,9 @@ function start($rootdir)
         'l' => $phrases,
         's' => $session,
         'U_HOME' => new Url('index.php', $phrases->Forum_index),
+        'U_SIGNIN' => new Url('signin.php', $phrases->Sign_in),
+        'U_SIGNOUT' => new Url('signin.php?signout', $phrases->Sign_out),
+        'U_SIGNUP' => new Url('signup.php', $phrases->Sign_up),
         'SITE_NAME' => $config->sitename,
         'SITE_DESCRIPTION' => $config->site_desc,
     ]);

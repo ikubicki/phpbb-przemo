@@ -8,9 +8,47 @@ auth.facebook = {
     },
     form: () => {
         var fields = []
-        var submit = $('<input type="submit" class="primary" value="'+auth.options.phrases.signin_facebook+'" />')
-        auth.facebook.onclick(submit)
+        var submit = $('<input type="submit" class="primary" value="'+(auth.options.phrases.signin_facebook || 'Sign in with Facebook')+'" />')
+        auth.facebook.onclick(submit, (response) => {
+            var form = object.parents('form')
+            if (form.length) {
+                form.submit()
+            }
+        })
         auth.form('facebook', [submit])
+    },
+    signup: (container) => {
+        if (!auth.options.fbappid) {
+            return
+        }
+        auth.facebook.fbInit()
+        var form = $(container)
+        var button = $('<input type="button" />')
+        button.val(auth.options.phrases.sign_up_facebook || 'Sign up with Facebook')
+        var options = $('<div class="options"></div>')
+        options.append(button)
+        form.append(options)
+        auth.facebook.onclick(button, (response) => {
+            // console.log(response)
+            button.val(auth.options.phrases.facebook_connected || 'Facebook account connected')
+            FB.api('/me', {fields: 'id,name,picture'}, function(response) {
+                if (response.name) {
+                    // console.log(response)
+                    var i = $('<input type="hidden" name="fb[i]" value="" />')
+                    i.val(response.picture.data.url)
+                    button.after(i)
+                    /*
+                    form.find('input[name*=password]')
+                        .attr('disabled', true)
+                        .val('')
+                    */
+                    var username = form.find('input[name*=username]')
+                    if (!username.val()) {
+                        username.val(response.name)
+                    }
+                }
+            });
+        })        
     },
     fbInit: () => {
         window.fbAsyncInit = function() {
@@ -23,7 +61,6 @@ auth.facebook = {
             });
             FB.AppEvents.logPageView();
         };
-
         ( function(d, s, id){
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) {
@@ -34,7 +71,7 @@ auth.facebook = {
             fjs.parentNode.insertBefore(js, fjs);
         } (document, 'script', 'facebook-jssdk') );
     },
-    fbcallback: (object, response) => {
+    fbcallback: (object, response, callback) => {
         if (response.status == 'connected') {
             var a = $('<input type="hidden" name="fb[a]" value="" />')
             var r = $('<input type="hidden" name="fb[r]" value="" />')
@@ -45,10 +82,9 @@ auth.facebook = {
             object.after(a)
             object.after(r)
             object.after(u)
-            
-            var form = object.parents('form')
-            if (form.length) {
-                form.submit()
+
+            if (callback) {
+                callback(response)
             }
         }
         else {
@@ -57,10 +93,10 @@ auth.facebook = {
             auth.facebook.form()
         }
     },
-    onclick: (object) => {
+    onclick: (object, callback) => {
         object.on('click', (e) => {
             auth.facebook.sdk.getLoginStatus(function(response) {
-                auth.facebook.fbcallback(object, response)
+                auth.facebook.fbcallback(object, response, callback)
             })
             e.preventDefault()
         })

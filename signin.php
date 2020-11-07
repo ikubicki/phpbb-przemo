@@ -5,18 +5,22 @@ include $rootdir . '/vendor/autoload.php';
 
 start($rootdir);
 
-$config = PhpBB\Core\Context::getService('config');
 $session = PhpBB\Core\Context::getService('session');
 $templates = PhpBB\Core\Context::getService('templates');
 $request = PhpBB\Core\Context::getService('request');
-// $template->addPath($phpbb_root_path . '/templates/test');
 
-if ($request->has('logout')) {
+if ($request->has('signout')) {
+    if (!$session->isAuthenticated()) {
+        redirect('signin.php');
+    }
     $username = $session->getUser()->username;
     $session->terminate();
     $templates->var('username', $username);
     $templates->display('signout.html');
     exit;
+}
+if ($session->isAuthenticated()) {
+    redirect('index.php');
 }
 if ($request->isPost()) {
     if (recaptcha_check()) {
@@ -34,8 +38,5 @@ if ($request->isPost()) {
     else {
         $templates->var('error', 'Recaptcha error');
     }
-}
-if ($session->isAuthenticated()) {
-    redirect('index.php');
 }
 $templates->display('signin.html');

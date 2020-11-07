@@ -13,4 +13,5 @@ $request = PhpBB\Core\Context::getService('request');
 if ($session->isAuthenticated()) {
     redirect('index.php');
 }
+var_dump($request->post->dump());
 $templates->display('signup.html');

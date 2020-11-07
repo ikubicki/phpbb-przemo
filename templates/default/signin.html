@@ -15,10 +15,10 @@
     </div>
     <br />
 </div>
+<script src="https://apis.google.com/js/api.js"></script>
 <script src="/modules/Auth/Classic/index.js"></script>
 <script src="/modules/Auth/Facebook/index.js"></script>
 <script src="/modules/Auth/Google/index.js"></script>
-<script src="https://apis.google.com/js/api.js"></script>
 <script>
 {% if error %}
 auth.errors.push('{{ error }}')
@@ -27,9 +27,9 @@ auth.options.fbappid = '{{ c.get("facebook_appid") }}'
 auth.options.gclient = '{{ c.get("google_client_id") }}'
 auth.options.phrases = {
     username: '{{ l.Username }}',
-    signin: '{{ l.Login }}',
-    signin_facebook: '{{ l.Sign_in_facebook }}',
-    signin_google: '{{ l.Sign_in_google }}',
+    sign_in: '{{ l.Login }}',
+    sign_in_facebook: '{{ l.Sign_in_facebook }}',
+    sign_in_google: '{{ l.Sign_in_google }}',
     rememberme: '{{ l.Rememberme }}',
 }
 $(function(){

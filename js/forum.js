@@ -558,14 +558,15 @@ auth = {
 	options: {
 		phrases: {
 			username: 'Username',
-			signin: 'Sign in',
-			signin_facebook: 'Sign in with Facebook',
-			signin_google: 'Sign in with Google',
+			sign_in: 'Sign in',
 			rememberme: 'Remember me',
 		}
 	}
 }
 forum = {
+	redirect: (url) => {
+		document.location = url
+	},
 	auth: (container) => {
 		auth.container = container;
 		var first = $(location).attr('hash').substring(1)
@@ -576,6 +577,15 @@ forum = {
 			}
 		}
 		auth[first].form()
+	},
+	signup: (container) => {
+		$(container).attr('autocomplete', 'off')
+		auth.container = container;
+		for (var name in auth) {
+			if (auth[name].signup) {
+				auth[name].signup(container)
+			}
+		}
 	},
 	autoWidthCallback: (el) => {
 		el = $(el.target)

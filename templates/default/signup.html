@@ -8,21 +8,33 @@
             <p>{{ l.Why_join | nl2br }}</p>
         </div>
         <form name="signup" action="signup.php" method="post" class="recaptcha primary">
-            <input type="text" name="aa" placeholder="{{ l.Username }}" />
-            <input type="password" name="bb" placeholder="{{ l.Password }}" />
-            <input type="password" name="cc" placeholder="{{ l.Confirm_password }}" />
+            <input type="text" style="display: none" />
+            <input type="password" style="display: none" />
+            <input type="text" name="username[0]" value="" placeholder="{{ l.Username }}" />
+            <input type="password" name="password[0]" value="" placeholder="{{ l.Password }}" />
+            <input type="password" name="password[1]" value="" placeholder="{{ l.Confirm_password }}" />
             <div class="submit">
                 <input type="submit" name="signup" class="primary" value="{{ l.Sign_up }}" />
-                <input type="submit" name="signin" value="{{ l.Or_sign_in }}" />
-            </div>
-            <div class="options">
-                <input type="submit" name="signup" value="{{ l.Sign_up_facebook }}" />
-            </div>
-            <div class="options">
-                <input type="submit" name="signup" value="{{ l.Sign_up_google }}" />
+                <input type="button" name="signin" value="{{ l.Or_sign_in }}" onclick="forum.redirect('{{ U_SIGNIN.url }}')" />
             </div>
         </form>
         <br />
     </div>
 </div>
+<script src="https://apis.google.com/js/api.js"></script>
+<script src="/modules/Auth/Facebook/index.js"></script>
+<script src="/modules/Auth/Google/index.js"></script>
+<script>
+auth.options.fbappid = '{{ c.get("facebook_appid") }}'
+auth.options.gclient = '{{ c.get("google_client_id") }}'
+auth.options.phrases = {
+    facebook_connected: '{{ l.Facebook_connected }}',
+    google_connected: '{{ l.Google_connected }}',
+    sign_up_facebook: '{{ l.Sign_up_facebook }}',
+    sign_up_google: '{{ l.Sign_up_google }}',
+}
+$(function(){
+    forum.signup('form[name=signup]')
+})
+</script>
 {% endblock %}

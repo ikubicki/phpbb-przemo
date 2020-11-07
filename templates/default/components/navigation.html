@@ -24,8 +24,8 @@
             {{ s.logout | raw }}
         </div>
         {% else %}
-        <a href="signup.php">{{ l.Sign_up }}</a>
-        <a href="signin.php">{{ l.Sign_in }}</a>
+        {{ U_SIGNUP | raw }}
+        {{ U_SIGNIN | raw }}
         {% endif %}
     </div>
     <div class="right search">
