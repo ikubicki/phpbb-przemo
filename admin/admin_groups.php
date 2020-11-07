@@ -299,9 +299,9 @@ else if ( isset($HTTP_POST_VARS['group_update']) )
 		$group_prefix = isset($HTTP_POST_VARS['group_prefix']) ? xhtmlspecialchars($HTTP_POST_VARS['group_prefix']) : '';
 		$group_style = isset($HTTP_POST_VARS['group_style']) ? xhtmlspecialchars($HTTP_POST_VARS['group_style']) : '';
 		$group_mail_enable = isset($HTTP_POST_VARS['group_mail_enable']) ? 1 : 0;
-		$group_no_unsub = isset($HTTP_POST_VARS['group_no_unsub']) ? true : false;
-		$group_count_update = isset($HTTP_POST_VARS['group_count_update']) ? true : false;
-		$group_count_delete = isset($HTTP_POST_VARS['group_count_delete']) ? true : false;
+		$group_no_unsub = isset($HTTP_POST_VARS['group_no_unsub']) ? 1 : 0;
+		$group_count_update = isset($HTTP_POST_VARS['group_count_update']) ? 1 : 0;
+		$group_count_delete = isset($HTTP_POST_VARS['group_count_delete']) ? 1 : 0;
 
 		if ( $group_name == '' )
 		{
