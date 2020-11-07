@@ -8,9 +8,9 @@ auth.facebook = {
     },
     form: () => {
         var fields = []
-        var submit = $('<input type="submit" class="primary" value="'+(auth.options.phrases.signin_facebook || 'Sign in with Facebook')+'" />')
+        var submit = $('<input type="submit" class="primary" value="'+(auth.options.phrases.sign_in_facebook || 'Sign in with Facebook')+'" />')
         auth.facebook.onclick(submit, (response) => {
-            var form = object.parents('form')
+            var form = submit.parents('form')
             if (form.length) {
                 form.submit()
             }

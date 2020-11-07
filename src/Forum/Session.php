@@ -131,11 +131,6 @@ class Session
         return new Url('profile.php', $this->getUser()->getName());
     }
 
-    public function getLogout()
-    {
-        return new Url('signin.php?logout', $this->phrase('Logout'));
-    }
-
     protected function generateId()
     {
         $encryption = Context::getService('encryption');

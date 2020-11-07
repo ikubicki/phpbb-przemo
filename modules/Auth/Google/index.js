@@ -8,9 +8,9 @@ auth.google = {
     },
     form: () => {
         var fields = []
-        var submit = $('<input type="submit" class="primary" value="'+(auth.options.phrases.signin_google || 'Sign in with Google')+'" />')
+        var submit = $('<input type="submit" class="primary" value="'+(auth.options.phrases.sign_in_google || 'Sign in with Google')+'" />')
         auth.google.onclick(submit, (response) => {
-            var form = object.parents('form')
+            var form = submit.parents('form')
             if (form.length) {
                 form.submit()
             }

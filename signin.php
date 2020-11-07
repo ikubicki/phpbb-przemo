@@ -32,6 +32,7 @@ if ($request->isPost()) {
             }
             else if ($response) {
                 $response->getUser()->authenticate($request->post->remember > 0);
+                redirect('index.php');
             }
         }
     }
