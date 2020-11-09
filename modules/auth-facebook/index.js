@@ -5,6 +5,9 @@ if (typeof auth == 'undefined') {
 auth.facebook = {
     sdk: null,
     init: (options) => {
+        if (!options.appid) {
+            return
+        }
         window.fbAsyncInit = function() {
             auth.facebook.sdk = FB
             FB.init({
@@ -36,7 +39,7 @@ auth.facebook = {
             reference.after(r)
             reference.after(u)
             var form = reference.parents('form')
-            form.attr('action', '/modules/auth-facebook/auth-facebook.php');
+            form.attr('action', basepath + '/modules/auth-facebook/auth-facebook.php');
             if (form.length) {
                 form.submit()
             }

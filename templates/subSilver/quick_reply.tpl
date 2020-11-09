@@ -1,5 +1,5 @@
 <!-- BEGIN quick_reply -->
-<script src="/js/ckeditor/ckeditor.js"></script>
+<script src="{PATH}/js/ckeditor/ckeditor.js"></script>
 <br />
 <form action="{quick_reply.POST_ACTION}" method="post" name="post">
 <table border="0" cellpadding="5" cellspacing="1" width="100%" class="forumline posting">

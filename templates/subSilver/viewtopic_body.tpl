@@ -5,11 +5,11 @@ var img_addr = '{IMG_ADDR}';
 //-->
 </script>
 
-<script src="/js/lightbox/lightbox.js"></script>
-<style>@import url('/js/lightbox/lightbox.css')</style>
-<script src="/modules/votes/index.js"></script>
-<style>@import url('modules/votes/main.css')</style>
-<script src="/modules/avatars/index.js"></script>
+<script src="{PATH}/js/lightbox/lightbox.js"></script>
+<style>@import url('{PATH}/js/lightbox/lightbox.css')</style>
+<script src="{PATH}/modules/votes/index.js"></script>
+<style>@import url('{PATH}/modules/votes/main.css')</style>
+<script src="{PATH}/modules/avatars/index.js"></script>
 
 <br>
 <table width="100%" cellspacing="2" cellpadding="2" border="0">
@@ -360,10 +360,10 @@ function bookmarkthis() {
 
 <script>forum.selection('.postbody')</script>
 <style>
-@import url('/modules/bbcode/main.css');
+@import url('{PATH}/modules/bbcode/main.css');
 </style>
-<script src="/modules/bbcode/index.js"></script>
-<script src="/modules/markdown/index.js"></script>
+<script src="{PATH}/modules/bbcode/index.js"></script>
+<script src="{PATH}/modules/markdown/index.js"></script>
 <script type="text/javascript">
    $('span.postbody').each((i, el) => {
 

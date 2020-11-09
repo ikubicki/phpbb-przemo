@@ -1,5 +1,5 @@
 <style>
-@import url('/modules/auth-facebook/main.css');
+@import url('{PATH}/modules/auth-facebook/main.css');
 </style>
 <form action="{S_LOGIN_ACTION}" method="post" target="_top">
 <table class="forumline posting nolength">
@@ -43,7 +43,7 @@
 	</tr>
 </table>
 </form>
-<script src="/modules/auth-facebook/index.js"></script>
+<script src="{PATH}/modules/auth-facebook/index.js"></script>
 <script>
 	auth.facebook.init({
 		appid: '257433195682871'

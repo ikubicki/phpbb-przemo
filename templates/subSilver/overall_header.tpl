@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="templates/subSilver/{T_HEAD_STYLESHEET}" type="text/css">
 	<script language="Javascript" type="text/javascript">
 	<!--
+	var basepath = '{PATH}';
 	var factive_color = '{T_ACTIVE_COLOR}';
 	var faonmouse_color = '{T_ONMOUSE_COLOR}';
 	var faonmouse2_color = '{T_ONMOUSE2_COLOR}';

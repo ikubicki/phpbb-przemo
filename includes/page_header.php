@@ -259,7 +259,12 @@ if (empty($unique_cookie_name)) {
 // The following assigns all _common_ variables that may be used at any point
 // in a template.
 //
+
+$path = trim($board_config['script_path'], '/ ');
+$path = $path ? "/$path" : '';
+
 $template->assign_vars(array(
+	'PATH' => $path,
 	'SITENAME' => replace_encoded($board_config['sitename']),
 	'SITENAME_COLOR' => replace_encoded($sitename),
 	'SITE_DESCRIPTION' => replace_encoded($site_description),

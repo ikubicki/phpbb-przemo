@@ -1,6 +1,6 @@
 var shouts = {
     options: {
-        url: '/modules/shouts/shouts.php',
+        url: basepath +'/modules/shouts/shouts.php',
         selector: '#shouts',
         refresh: 5,
         langs: {
@@ -35,7 +35,7 @@ var shouts = {
         this.refresh()
     },
     loadSmileys: function() {
-        $.getJSON('/js/ckeditor/plugins/emoji/emoji.json', (response) => {
+        $.getJSON(basepath + '/js/ckeditor/plugins/emoji/emoji.json', (response) => {
             shouts.smileys = []
             limit = 83
             response.forEach(smiley => {

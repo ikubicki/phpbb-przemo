@@ -25,6 +25,14 @@ bbcode.load([
         out: '<b class="bbcode">$1</b>',
     },
     {
+        in: '\\[u\\](.+?)\\[/u\\]',
+        out: '<u class="bbcode">$1</u>',
+    },
+    {
+        in: '\\[i\\](.+?)\\[/i\\]',
+        out: '<i class="bbcode">$1</i>',
+    },
+    {
         in: '\\[img\\]'+url_expression+'\\[/img\\]',
         out: '<a href="$1" rel="nofollow" data-lightbox="topic-set" target="_blank"><img src="$1" onerror="this.parentElement.replaceWith(\''+bbcode.options.langs.missing_image+'\')" /></a>',
     },
@@ -37,7 +45,15 @@ bbcode.load([
         out: '<a rel="nofollow" href="$1" class="bbcode">$1</a>',
     },
     {
+        in: '\\[colou?r=\\"?([^\\]]+)\\"?\\](.+?)\\[/colou?r\\]',
+        out: '<span style="color:$1" class="bbcode">$2</span>',
+    },
+    {
         in: '\\[/?[a-z0-9_]+\\]',
+        out: '',
+    },
+    {
+        in: '\\[/?[a-z0-9_]+=([^\\]]+)\\]',
         out: '',
     }
 ])

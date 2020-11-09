@@ -1,4 +1,4 @@
-<script src="/js/ckeditor/ckeditor.js"></script>
+<script src="{PATH}/js/ckeditor/ckeditor.js"></script>
 <!-- BEGIN privmsg_extensions -->
 <table border="0" cellspacing="0" cellpadding="0" align="center" width="100%">
 	<tr>
