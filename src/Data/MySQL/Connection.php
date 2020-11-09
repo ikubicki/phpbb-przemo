@@ -29,6 +29,15 @@ class Connection
         return $results;
     }
 
+    public function values($query, $values, $index = 0)
+    {
+        $statement = $this->prepare($query);
+        $statement->execute($values);
+        $results = $statement->fetchAll(\PDO::FETCH_COLUMN, $index);
+        $statement->closeCursor();
+        return $results;
+    }
+
     public function one($query, $values)
     {
         $statement = $this->prepare($query);

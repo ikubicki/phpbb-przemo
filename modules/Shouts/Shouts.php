@@ -212,6 +212,7 @@ class Shouts
             'online' => array_values($this->online),
             'messages' => $this->messages,
         ];
+        ob_clean();
         header('Content-Type: application/json');
         echo json_encode($data + $extras);
         exit;

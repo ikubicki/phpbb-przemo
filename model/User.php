@@ -61,11 +61,28 @@ class User extends Entity
         return time() - $this->user_session_time < 300;
     }
 
+    public function getGroups()
+    {
+        $query = "SELECT DISTINCT group_id " .
+            "FROM phpbb_user_group " . 
+            "WHERE user_id = ? " . 
+            "AND user_pending = 0";
+        $values = [$this->user_id];
+
+        $connection = Context::getService('db-connection');
+        $groups = $connection->values($query, $values);
+        return $groups;
+    }
+
     public function authenticate($remember)
     {
         Context::getService('session')->set([
             'sub' => $this->user_id,
             'exp' => $remember ? time() + 86400 * 30: false,
+            'adm' => $this->isAdministrator(),
+            'mod' => $this->isModerator(),
+            'ajr' => $this->isJuniorAdministrator(),
+            'mem' => $this->getGroups(),
         ]);
     }
 }

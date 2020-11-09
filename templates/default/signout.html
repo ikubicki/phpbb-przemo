@@ -1,9 +1,8 @@
 {% extends 'layouts/basic.html' %}
 {% block content %}
-<style>@import url(themes/test/auth.css);</style>
 <div class="body auth">
     <h1>{{ l.format('Goodbye_user', username) }}</h1>
     <p>{{ l.Signed_out }}</p>
-    <input type="submit" value="{{ l.Forum_index }}" onclick="location='{{ U_HOME.url }}'" />
+    <input type="submit" value="{{ l.Forum_index }}" class="primary" onclick="location='{{ U_HOME.url }}'" />
 </div>
 {% endblock %}
