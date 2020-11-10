@@ -2641,9 +2641,7 @@ LOCK TABLES `phpbb_users_auth` WRITE;
 INSERT INTO `phpbb_users_auth` (`user_id`, `type`, `index`, `hash`, `salt`, `active`)
 VALUES
 	(2,'legacy','admin','$H$9vuvV3Zp5F4pG.FP4jIIoiziLiT3Ml0','',1),
-	(2,'classic','admin','_zewtsqbKnEvkvaOJnL8IJKKg_e-McmFqD_RZ4qvO5LokrdY3Svbdut64fONQv12','47eb21030af1020d96f0d01964',1),
-	(2,'facebook','fb@ixdude.com','3802795893066422','',1),
-	(2,'google','irek.kubicki@gmail.com','110757595495896256506','',1);
+	(2,'classic','admin','_zewtsqbKnEvkvaOJnL8IJKKg_e-McmFqD_RZ4qvO5LokrdY3Svbdut64fONQv12','47eb21030af1020d96f0d01964',1); -- qwerty
 
 /*!40000 ALTER TABLE `phpbb_users_auth` ENABLE KEYS */;
 UNLOCK TABLES;
