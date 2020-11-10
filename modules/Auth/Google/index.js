@@ -21,13 +21,13 @@ auth.google = {
         if (auth.options.gclient) {
             auth.google.gInit()
         }
+        var form = $(container)
         var button = $('<input type="button" />')
         button.val(auth.options.phrases.sign_up_google || 'Sign up with Google')
         var options = $('<div class="options"></div>')
         options.append(button)
-        $(container).append(options)
+        form.append(options)
         auth.google.onclick(button, (response) => {
-            console.log(response)
             button.val(auth.options.phrases.google_connected || 'Google account connected')
             var username = form.find('input[name*=username]')
             if (!username.val()) {

@@ -156,3 +156,10 @@ div.container > form {
     border-left: 1px solid #ccc;
     float: left;
 }
+p.error {
+    color: red;
+    text-shadow: 0 0 1px #f005;
+    font-size: 0.8em;
+    padding: 10px;
+    margin: 0;
+}

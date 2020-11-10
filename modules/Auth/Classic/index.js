@@ -7,7 +7,7 @@ auth.classic = {
         var fields = []
         fields.push($('<input type="text" style="display: none" />'))
         fields.push($('<input type="password" style="display: none" />'))
-        fields.push($('<input type="text" name="login" placeholder="'+(auth.options.phrases.username || 'Username')+'" />'))
+        fields.push($('<input type="text" name="username" placeholder="'+(auth.options.phrases.username || 'Username')+'" />'))
         fields.push($('<input type="password" name="password" placeholder="'+(auth.options.phrases.password || 'Password')+'" />'))
         fields.push($('<input type="submit" class="primary" value="'+(auth.options.phrases.sign_in || 'Sign in')+'" />'))
         auth.form('classic', fields)

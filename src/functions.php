@@ -23,13 +23,10 @@ function memoize($object)
     return new Memoizer($object);
 }
 
-function get_authenticator($authenticator)
+function get_authenticator($name)
 {
-    $class = sprintf('PhpBB\\Modules\\Auth\\%s\\Module', ucfirst($authenticator));
-    if (class_exists($class)) {
-        return new $class;
-    }
-    return false;
+    $authenticator = Context::getModule('Auth', $name);
+    return $authenticator ?: false;
 }
 
 function recaptcha_check($verbose = false)
@@ -78,6 +75,7 @@ function start($rootdir)
 
     Context::register([
         'values' => [
+            'rootdir' => $rootdir,
             'collection-prefix' => $table_prefix ?? 'phpbb_',
             'file-handler' => PhpBB\Core\File::class,
             'query-builder' => MySQL\Query::class,
@@ -135,4 +133,8 @@ function start($rootdir)
         'SITE_NAME' => $config->sitename,
         'SITE_DESCRIPTION' => $config->site_desc,
     ]);
+
+    if (file_exists($rootdir . '/extensions.php')) {
+        require $rootdir . '/extensions.php';
+    }
 }

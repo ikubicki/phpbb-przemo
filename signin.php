@@ -26,7 +26,7 @@ if ($request->isPost()) {
     if (recaptcha_check()) {
         $authenticator = get_authenticator($request->post->auth);
         if ($authenticator) {
-            $response = $authenticator->verify();
+            $response = $authenticator->authenticate();
             if ($authenticator->getError()) {
                 $templates->var('error', $authenticator->getError());
             }

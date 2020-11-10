@@ -56,7 +56,6 @@ bbcode.load([
     {
         in: '\\[(youtube|yt)\\](.+?)((v|embed)(=|/)([a-zA-Z0-9_]+))(.+?)\\[/(youtube|yt)\\]',
         out: '<a href="javascript:void(0)" onclick="bbcode.youtube(this, \'$6\')"  class="youtube"><img src="https://img.youtube.com/vi/$6/0.jpg" /></a>'
-//        out: '<iframe src="https://www.youtube.com/embed/$5" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="video"></iframe>',
     },
     {
         in: '\\[/?[a-z0-9_]+\\]',

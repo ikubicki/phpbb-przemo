@@ -8,6 +8,7 @@ class Context
     private static $registry = [];
     private static $values = [];
     private static $entities = [];
+    private static $modules = [];
 
     public static function register(array $collection)
     {
@@ -97,5 +98,36 @@ class Context
             $entities[$id] = self::getEntity($namespace, $id);
         }
         return (object) $entities;
+    }
+
+    public static function registerModule($namespace, $module)
+    {
+        if (empty(self::$modules[$namespace])) {
+            self::$modules[$namespace] = [];
+        }
+        self::$modules[$namespace][$module] = self::getModuleClass($namespace, $module);
+    }
+
+    public static function getModules($namespace)
+    {
+        $modules = [];
+        foreach(self::$modules[$namespace] as $module => $class) {
+            $modules[$module] = new $class;
+        }
+        return $modules;
+    }
+
+    public static function getModule($namespace, $module)
+    {
+        if (!empty(self::$modules[$namespace][$module])) {
+            $class = self::$modules[$namespace][$module];
+            return new $class;
+        }
+        return false;
+    }
+
+    protected static function getModuleClass($namespace, $module)
+    {
+        return "\\PhpBB\\Modules\\$namespace\\$module\\Module";
     }
 }

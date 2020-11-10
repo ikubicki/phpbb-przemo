@@ -14,14 +14,6 @@ div.signin form {
     width: 350px;
 }
 
-div.signin p.error {
-    color: red;
-    text-shadow: 0 0 1px #f005;
-    font-size: 0.8em;
-    padding: 10px;
-    margin: 0;
-}
-
 div.signin > div.options {
     margin: auto;
     width: 400px;

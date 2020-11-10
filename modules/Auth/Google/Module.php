@@ -5,10 +5,26 @@ use PhpBB\Forum\Authenticator;
 
 class Module extends Authenticator
 {
-    public function verify()
+
+    public function check()
+    {
+        if ($this->g['t'] ?? false) {
+            if (!$this->authenticate()) {
+                return true;
+            }
+            $this->setError('Google_user_taken');
+        }
+        return false;
+    }
+
+    public function authenticate()
     {
         $token = $this->g['t'] ?? null;
         $hash = $this->g['a'] ?? null;
+
+        if (!$token) {
+            return false;
+        }
 
         try {
             $user = $this->getGUser($token);

@@ -8,9 +8,30 @@ use PhpBB\Model\UserAuth;
 class Module extends Authenticator
 {
 
-    public function verify()
+    public function check()
+    {
+        $index = $this->username[0] ?? null;
+        $passwords = $this->password ?? [null, null];;
+        if ($index && $passwords[0]) {
+            if ($this->findRecord('classic', $index)) {
+                $this->setError('Username_taken');
+                return false;
+            }
+            if ($passwords[0] != $passwords[1]) {
+                $this->setError('Passwords_doesnt_match');
+                return false;
+            }
+            if (!$this->verifyPassword($passwords[0])) {
+                $this->setError('Passwords_low_complexity');
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public function authenticate()
     {   
-        $index = $this->login ?? null;
+        $index = $this->username ?? null;
         $password = $this->password ?? null;
         if ($index) {
             $record = $this->findRecord('classic', $index);
@@ -49,5 +70,14 @@ class Module extends Authenticator
         $record->active = 1;
         $record->save();
         return $record;
+    }
+
+    protected function verifyPassword($password)
+    {
+        return strlen($password) > 5 &&
+            preg_match('#[a-z]+#', $password) &&
+            preg_match('#[A-Z]+#', $password) &&
+            preg_match('#[0-9]+#', $password) &&
+            preg_match('#[^0-9a-zA-Z]+#', $password);
     }
 }

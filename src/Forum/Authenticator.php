@@ -11,11 +11,6 @@ class Authenticator
 {
 
     /**
-     * @var Config $config
-     */
-    protected $config;
-
-    /**
      * @var string $error
      */
     protected $error;
@@ -28,7 +23,7 @@ class Authenticator
      */
     public function __construct()
     {
-        $this->config = Context::getService('config');
+        
     }
     
     /**

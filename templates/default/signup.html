@@ -8,6 +8,9 @@
             <p>{{ l.Why_join | nl2br }}</p>
         </div>
         <form name="signup" action="signup.php" method="post" class="recaptcha primary">
+            {% if error %}
+            <p class="error">{{ error }}</p>
+            {% endif %}
             <input type="text" style="display: none" />
             <input type="password" style="display: none" />
             <input type="text" name="username[0]" value="" placeholder="{{ l.Username }}" />

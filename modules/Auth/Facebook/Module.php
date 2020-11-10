@@ -2,16 +2,33 @@
 
 namespace PhpBB\Modules\Auth\Facebook;
 use PhpBB\Forum\Authenticator;
+use PhpBB\Core\Context;
+use PhpBB\Model\UserAuth;
 
 class Module extends Authenticator
 {
 
-    public function verify()
+    public function check()
     {
+        if ($this->fb['r'] ?? false) {
+            if (!$this->authenticate()) {
+                return true;
+            }
+            $this->setError('Facebook_user_taken');
+        }
+        return false;
+    }
+
+    public function authenticate()
+    {
+        $config = Context::getService('config');
+        if (!$config->facebook_secret) {
+            return false;
+        }
         $token = $this->fb['r'] ?? null;
         $hash = $this->fb['u'] ?? null;
         try {
-            $user = $this->getFBUser($this->parseSignedRequest($token, $this->config->facebook_secret));
+            $user = $this->getFBUser($this->parseSignedRequest($token, $config->facebook_secret));
             if (!$user) {
                 return false;
             }
