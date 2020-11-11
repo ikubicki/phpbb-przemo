@@ -101,7 +101,7 @@ class Memoizer
      */
     protected function getFile($filename)
     {
-        $path = Context::getValue('cache-path', '/tmp');
+        $path = Context::getValue('cache-path', sys_get_temp_dir());
         return new File("$path/$filename");
     }
 }

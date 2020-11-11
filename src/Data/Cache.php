@@ -6,9 +6,15 @@ use PhpBB\Core\File;
 class Cache
 {
 
-    protected $ttl = 3600;
-    protected $directory = '/tmp';
+    protected $ttl;
+    protected $directory;
     protected static $files = [];
+
+    public function __construct()
+    {
+        $this->ttl = 3600;
+        $this->directory = sys_get_temp_dir();
+    }
     
     /**
      * Sets cache TTL

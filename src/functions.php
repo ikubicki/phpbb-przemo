@@ -76,12 +76,13 @@ function start($rootdir)
     Context::register([
         'values' => [
             'rootdir' => $rootdir,
+            'cache-path' => sys_get_temp_dir(),
             'collection-prefix' => $table_prefix ?? 'phpbb_',
             'file-handler' => PhpBB\Core\File::class,
             'query-builder' => MySQL\Query::class,
         ],
         'services' => [
-            'cache' => (new PhpBB\Data\Cache)->ttl(15)->directory('/tmp'),
+            'cache' => (new PhpBB\Data\Cache)->ttl(15)->directory(sys_get_temp_dir()),
             'request' => new PhpBB\Core\Request,
             'encryption' => new PhpBB\Core\Encryption($encryption_key),
             'db-connection' => new MySQL\Connection($dbdsn, $dbuser, $dbpasswd, [\PDO::ATTR_ERRMODE => \PDO::ERRMODE_WARNING]),

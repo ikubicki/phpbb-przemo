@@ -16,7 +16,7 @@ class Templates
     public function __construct($directory, array $options = [])
     {
         if (!isset($options['cache'])) {
-            $options['cache'] = '/tmp/twig';
+            $options['cache'] = sys_get_temp_dir() . '/twig';
         }
         $this->loader = new TwigLoader($directory);
         $this->twig = new TwigEnvironment($this->loader, $options);
