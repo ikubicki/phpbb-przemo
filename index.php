@@ -1,3 +1,3 @@
 <?php
 
-include __DIR__ . '/browse.php';
+include __DIR__ . '/view.php';
