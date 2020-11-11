@@ -1,6 +1,7 @@
 <?php
 
 namespace PhpBB\Forum;
+use PhpBB\Core\Context;
 
 class Url
 {
@@ -12,7 +13,7 @@ class Url
 
     public function __construct($url, $text = '', array $styles = [])
     {
-        $this->url = $url;
+        $this->url = $this->fixPaths($url);
         $this->text = $text;
         $this->styles = array_filter($styles);
     }
@@ -43,5 +44,11 @@ class Url
             $styles = '';
         }
         return sprintf('<a href="%s"%s%s>%s</a>', $this->url, $styles, $class ?? '', $text ?: $this->text);
+    }
+
+    protected function fixPaths($url)
+    {
+        $config = Context::getService('config');
+        return rtrim($config->script_path, '/') . "/$url";
     }
 }
