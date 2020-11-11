@@ -321,8 +321,13 @@ if($resultset) {
     }
 }
 */
-$data = [];
-$data['latestId'] = $latestId;
+$data = [
+    'latestId' => $latestId,
+    'acl' => [
+        'view' => $acl['view'] ?? false,
+        'add' => $acl['add'] ?? false,
+    ],
+];
 
 if ($message) {
     $data['message'] = $message;

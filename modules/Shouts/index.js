@@ -10,7 +10,9 @@ var shouts = {
             confirm: 'Are you sure?'
         }
     },
+    context: null,
     inputField: null,
+    smileysButton: null,
     submitButton: null,
     tokenField: null,
     container: null,
@@ -25,12 +27,17 @@ var shouts = {
         this.run()
     },
     run: function() {
-        context = $(this.options.selector)
-        this.inputField = context.find('input[name=message]')
-        this.submitButton = context.find('input[name=submit]')
+        this.context = $(this.options.selector)
+        this.inputField = this.context.find('input[name=message]')
+        this.inputField.on('keypress', (event) => {
+            if (event.keyCode == 13) {
+                this.submit(event);
+            }
+        })
+        this.submitButton = this.context.find('input[name=submit]')
         this.submitButton.on('click', this.submit)
-        this.tokenField = context.find('input[name=token]')
-        this.container = context.find('div.messages')
+        this.tokenField = this.context.find('input[name=token]')
+        this.container = this.context.find('div.messages')
         this.loadSmileys()
         this.refresh()
     },
@@ -44,11 +51,11 @@ var shouts = {
                     limit--
                 }
             })
-            var link = $('<a href="javascript:void(0)">' + response[0].symbol + '</a>')
-            link.on('click', () => {
+            this.smileysButton = $('<a href="javascript:void(0)">' + response[0].symbol + '</a>')
+            this.smileysButton.on('click', () => {
                 shouts.listSmileys()
             })
-            this.inputField.after(link)
+            this.inputField.after(this.smileysButton)
         })
     },
     listSmileys: function() {
@@ -123,6 +130,15 @@ var shouts = {
         }
         var newMessages = 0
         if (response) {
+            if (response.acl && !response.acl.view) {
+                shouts.context.html('')
+            }
+            if (response.acl && !response.acl.add) {
+                shouts.inputField.after('<br />');
+                shouts.inputField.remove()
+                shouts.submitButton.remove()
+                shouts.smileysButton.remove()
+            }
             if (response.token) {
                 shouts.tokenField.val(response.token)
             }
