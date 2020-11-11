@@ -18,4 +18,14 @@ class Post
     {
         return $_POST;
     }
+
+    public function has($property)
+    {
+        return array_key_exists($property, $_POST);
+    }
+
+    public function int($property)
+    {
+        return intval($this->get($property));
+    }
 }

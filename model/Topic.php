@@ -130,6 +130,12 @@ class Topic extends Entity
         }
         return $this->getRef('forum');
     }
+
+    public function save()
+    {
+        $collection = $this->getCollection(TopicsCollection::class);
+        $collection->store([$this]);
+    }
     
     protected function getForumsCollection()
     {

@@ -13,14 +13,15 @@
     </head>
     <body>
         <div class="head {{ head_classes | join(' ') }}" style="{{ head_style }}">
-            {% include('components/navigation.html') %}
+            {% include('main/components/top.html') %}
+            {% include('main/components/navigation.html') %}
         </div>
         {% block content %}
             <div class="body">No content</div>
         {% endblock %}
         {{ components.SHOUTS | raw }}
         <div class="foot">
-            {% include('components/footer.html') %}
+            {% include('main/components/footer.html') %}
         </div>
     </body>
 </html>

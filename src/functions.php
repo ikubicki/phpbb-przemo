@@ -47,11 +47,16 @@ function message($message, $title = null)
     $phrases = Context::getService('phrases');
     $templates = Context::getService('templates');
     $templates->var('message', [
-        'title' => $title ?? $phrases->get('Message'),
+        'title' => empty($title) ? $phrases->get('Message') : $phrases->get($title),
         'text' => $phrases->get($message),
     ]);
-    $templates->display('message.html');
+    $templates->display('main/message.html');
     exit;
+}
+
+function error404($type)
+{
+    message('Missing_' . $type, 'Page_missing');
 }
 
 function redirect($url)

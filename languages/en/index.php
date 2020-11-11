@@ -30,3 +30,10 @@ $lang['Passwords_doesnt_match'] = 'Passwords doesn\'t match';
 $lang['Passwords_low_complexity'] = 'Password must be at least 5 chars long, contain lower and upper case characters, a digit and special character';
 $lang['Google_user_taken'] = 'Google account already connected';
 $lang['Facebook_user_taken'] = 'Facebook account already connected';
+
+// messages
+$lang['Message'] = 'Message';
+$lang['Page_missing'] = 'This page is missing';
+$lang['Missing_category'] = 'Category you\'re looking for is missing or you\'re no longer allowed to access this category. Please contact administrator to solve your problem.';
+$lang['Missing_forum'] = 'Forum you\'re looking for is missing or you\'re no longer allowed to access this forum. Please contact administrator to solve your problem.';
+$lang['Missing_topic'] = 'Topic you\'re looking for is missing or you\'re no longer allowed to access this topic. Please contact administrator to solve your problem.';

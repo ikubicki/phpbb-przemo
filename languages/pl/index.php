@@ -43,3 +43,10 @@ $lang['Passwords_doesnt_match'] = 'Podane hasła się nie zgadzają';
 $lang['Passwords_low_complexity'] = 'Hasło musi mieć co najmniej 5 znaków, zawierać małą oraz dużą literę, a także cyfrę oraz znak specjalny';
 $lang['Google_user_taken'] = 'Konto Google jest już przypisane do istniejącego użytkownika';
 $lang['Facebook_user_taken'] = 'Konto Facebook jest już przypisane do istniejącego użytkownika';
+
+// messages
+$lang['Message'] = 'Wiadomość';
+$lang['Page_missing'] = 'Nie można odnaleźć strony';
+$lang['Missing_category'] = 'Żądana kategoria nie istnieje lub nie jest dla ciebie dostępna. Skontaktuje się z administracją serwisu aby rozwiązać twój problem.';
+$lang['Missing_forum'] = 'Żądane forum nie istnieje lub nie jest dla ciebie dostępne. Skontaktuje się z administracją serwisu aby rozwiązać twój problem.';
+$lang['Missing_topic'] = 'Żądany temat nie istnieje lub nie jest dla ciebie dostępny. Skontaktuje się z administracją serwisu aby rozwiązać twój problem.';

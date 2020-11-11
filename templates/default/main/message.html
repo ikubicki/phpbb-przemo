@@ -1,0 +1,8 @@
+{% extends 'main/layouts/basic.html' %}
+{% block content %}
+<div class="body auth">
+    <h1>{{ message.title }}</h1>
+    <p>{{ message.text }}</p>
+    <input type="submit" value="{{ l.Forum_index }}" class="primary" onclick="location='{{ U_HOME.url }}'" />
+</div>
+{% endblock %}
