@@ -2,11 +2,6 @@
 
 use PhpBB\Core\Context;
 
-$rootdir = __DIR__;
-include $rootdir . '/vendor/autoload.php';
-
-start($rootdir);
-
 $config = Context::getService('config');
 $session = Context::getService('session');
 $templates = Context::getService('templates');
@@ -28,7 +23,4 @@ foreach (Context::getModules('Auth') as $authenticator) {
 if ($error) {
     $templates->var('error', $error);
 }
-
-
-
-$templates->display('signup.html');
+$templates->display('main/signup.html');

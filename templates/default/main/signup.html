@@ -7,7 +7,7 @@
             <h1>{{ l.Join_discussion }}</h1>
             <p>{{ l.Why_join | nl2br }}</p>
         </div>
-        <form name="signup" action="signup.php" method="post" class="recaptcha primary">
+        <form name="signup" action="{{ URI }}" method="post" class="recaptcha primary">
             {% if error %}
             <p class="error">{{ error }}</p>
             {% endif %}

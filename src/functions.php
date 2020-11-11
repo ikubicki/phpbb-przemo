@@ -31,6 +31,7 @@ function get_authenticator($name)
 
 function recaptcha_check($verbose = false)
 {
+// return true;
     $config = Context::getService('config');
     $request = Context::getService('request');
     if ($config->recaptcha_key && $config->recaptcha_secret) {
@@ -61,7 +62,7 @@ function error404($type)
 
 function redirect($url)
 {
-    header('Location: ' . $url);
+    header('Location: ' . (new Url($url))->url);
     exit;
 }
 
@@ -76,6 +77,7 @@ function start($rootdir)
         $encryption_key = md5_file($rootdir . '/config.php');
     }
 
+    $request = new PhpBB\Core\Request;
     $dbdsn = MySQL\Connection::GetDSN($dbname, $dbhost, $dbport ?? 3306, $dbchars ?? 'utf8mb4');
 
     Context::register([
@@ -88,7 +90,7 @@ function start($rootdir)
         ],
         'services' => [
             'cache' => (new PhpBB\Data\Cache)->ttl(15)->directory(sys_get_temp_dir()),
-            'request' => new PhpBB\Core\Request,
+            'request' => $request,
             'encryption' => new PhpBB\Core\Encryption($encryption_key),
             'db-connection' => new MySQL\Connection($dbdsn, $dbuser, $dbpasswd, [\PDO::ATTR_ERRMODE => \PDO::ERRMODE_WARNING]),
         ]
@@ -133,13 +135,13 @@ function start($rootdir)
         'l' => $phrases,
         's' => $session,
         'U_HOME' => new Url('index.php', $phrases->Forum_index),
-        'U_SIGNIN' => new Url('signin.php', $phrases->Sign_in),
-        'U_SIGNOUT' => new Url('signin.php?signout', $phrases->Sign_out),
-        'U_SIGNUP' => new Url('signup.php', $phrases->Sign_up),
+        'U_SIGNIN' => new Url('auth.php', $phrases->Sign_in),
+        'U_SIGNOUT' => new Url('auth.php?signout', $phrases->Sign_out),
+        'U_SIGNUP' => new Url('auth.php?signup', $phrases->Sign_up),
+        'URI' => $request->REQUEST_URI ?? (new Url('index.php'))->url,
         'SITE_NAME' => $config->sitename,
         'SITE_DESCRIPTION' => $config->site_desc,
     ]);
-
     if (file_exists($rootdir . '/extensions.php')) {
         require $rootdir . '/extensions.php';
     }

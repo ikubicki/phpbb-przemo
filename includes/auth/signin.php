@@ -1,32 +1,19 @@
 <?php
 
-$rootdir = __DIR__;
-include $rootdir . '/vendor/autoload.php';
-
-start($rootdir);
-
 $session = PhpBB\Core\Context::getService('session');
 $templates = PhpBB\Core\Context::getService('templates');
 $request = PhpBB\Core\Context::getService('request');
 
-if ($request->has('signout')) {
-    if (!$session->isAuthenticated()) {
-        redirect('signin.php');
-    }
-    $username = $session->getUser()->username;
-    $session->terminate();
-    $templates->var('username', $username);
-    $templates->display('signout.html');
-    exit;
-}
 if ($session->isAuthenticated()) {
     redirect('index.php');
 }
 if ($request->isPost()) {
     if (recaptcha_check()) {
         $authenticator = get_authenticator($request->post->auth);
+        var_dump($authenticator);
         if ($authenticator) {
             $response = $authenticator->authenticate();
+            var_dump($response, $authenticator->getError());
             if ($authenticator->getError()) {
                 $templates->var('error', $authenticator->getError());
             }
@@ -40,4 +27,4 @@ if ($request->isPost()) {
         $templates->var('error', 'Recaptcha error');
     }
 }
-$templates->display('signin.html');
+$templates->display('main/signin.html');

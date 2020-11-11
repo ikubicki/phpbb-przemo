@@ -1,25 +1,25 @@
-auth.google = {
+auth.Google = {
     sdk: null,
     init: (container) => {  
         if (auth.options.gclient) {
-            auth.google.gInit()
-            auth.icon('google', 'modules/Auth/Google/icon.png', auth.google.form)
+            auth.Google.gInit()
+            auth.icon('Google', 'modules/Auth/Google/icon.png', auth.Google.form)
         }
     },
     form: () => {
         var fields = []
         var submit = $('<input type="submit" class="primary" value="'+(auth.options.phrases.sign_in_google || 'Sign in with Google')+'" />')
-        auth.google.onclick(submit, (response) => {
+        auth.Google.onclick(submit, (response) => {
             var form = submit.parents('form')
             if (form.length) {
                 form.submit()
             }
         })
-        auth.form('google', [submit])
+        auth.form('Google', [submit])
     },
     signup: (container) => {
         if (auth.options.gclient) {
-            auth.google.gInit()
+            auth.Google.gInit()
         }
         var form = $(container)
         var button = $('<input type="button" />')
@@ -27,7 +27,7 @@ auth.google = {
         var options = $('<div class="options"></div>')
         options.append(button)
         form.append(options)
-        auth.google.onclick(button, (response) => {
+        auth.Google.onclick(button, (response) => {
             button.val(auth.options.phrases.google_connected || 'Google account connected')
             var username = form.find('input[name*=username]')
             if (!username.val()) {
@@ -37,7 +37,7 @@ auth.google = {
     },
     gInit: () => {
         gapi.load('auth2', function() {
-            auth.google.sdk = gapi.auth2.init({
+            auth.Google.sdk = gapi.auth2.init({
                 client_id: auth.options.gclient
             });
         })
@@ -45,7 +45,7 @@ auth.google = {
     gcallback: (object, response, callback) => {
         if (response.error) {
             auth.errors.push(response.error)
-            auth.google.form()
+            auth.Google.form()
             return
         }
         if (response.tt && response.tt.dK) {
@@ -68,12 +68,12 @@ auth.google = {
     },
     onclick: (object, callback) => {
         object.on('click', (e) => {
-            if (auth.google.sdk) {
-                auth.google.sdk.signIn({scope: 'profile email'}).then((response) => {
-                    auth.google.gcallback(object, response, callback)
+            if (auth.Google.sdk) {
+                auth.Google.sdk.signIn({scope: 'profile email'}).then((response) => {
+                    auth.Google.gcallback(object, response, callback)
                 }).catch((response) => {
                     console.debug(response)
-                    // auth.google.gcallback(object, response)
+                    // auth.Google.gcallback(object, response)
                 })
             }
             e.preventDefault()

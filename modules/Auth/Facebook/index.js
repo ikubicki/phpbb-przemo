@@ -1,34 +1,34 @@
-auth.facebook = {
+auth.Facebook = {
     sdk: null,
     init: (container) => {
         if (auth.options.fbappid) {
-            auth.facebook.fbInit()
-            auth.icon('facebook', 'modules/Auth/Facebook/icon.png', auth.facebook.form)
+            auth.Facebook.fbInit()
+            auth.icon('Facebook', 'modules/Auth/Facebook/icon.png', auth.Facebook.form)
         }
     },
     form: () => {
         var fields = []
         var submit = $('<input type="submit" class="primary" value="'+(auth.options.phrases.sign_in_facebook || 'Sign in with Facebook')+'" />')
-        auth.facebook.onclick(submit, (response) => {
+        auth.Facebook.onclick(submit, (response) => {
             var form = submit.parents('form')
             if (form.length) {
                 form.submit()
             }
         })
-        auth.form('facebook', [submit])
+        auth.form('Facebook', [submit])
     },
     signup: (container) => {
         if (!auth.options.fbappid) {
             return
         }
-        auth.facebook.fbInit()
+        auth.Facebook.fbInit()
         var form = $(container)
         var button = $('<input type="button" />')
         button.val(auth.options.phrases.sign_up_facebook || 'Sign up with Facebook')
         var options = $('<div class="options"></div>')
         options.append(button)
         form.append(options)
-        auth.facebook.onclick(button, (response) => {
+        auth.Facebook.onclick(button, (response) => {
             // console.log(response)
             button.val(auth.options.phrases.facebook_connected || 'Facebook account connected')
             FB.api('/me', {fields: 'id,name,picture'}, function(response) {
@@ -52,7 +52,7 @@ auth.facebook = {
     },
     fbInit: () => {
         window.fbAsyncInit = function() {
-            auth.facebook.sdk = FB
+            auth.Facebook.sdk = FB
             FB.init({
                 appId: auth.options.fbappid,
                 cookie: true,
@@ -90,13 +90,13 @@ auth.facebook = {
         else {
             console.debug(response)
             auth.errors.push('Unable to retrieve login details from Facebook')
-            auth.facebook.form()
+            auth.Facebook.form()
         }
     },
     onclick: (object, callback) => {
         object.on('click', (e) => {
-            auth.facebook.sdk.getLoginStatus(function(response) {
-                auth.facebook.fbcallback(object, response, callback)
+            auth.Facebook.sdk.getLoginStatus(function(response) {
+                auth.Facebook.fbcallback(object, response, callback)
             })
             e.preventDefault()
         })
