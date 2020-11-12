@@ -18,18 +18,18 @@ $topic_id = $request->get->get('t');
 $user_id = $request->get->get('u');
 
 if ($topic_id) {
-    require __DIR__ . '/includes/browse/viewtopic.php';
+    require __DIR__ . '/includes/view/viewtopic.php';
 }
 else if ($forum_id) {
-    require __DIR__ . '/includes/browse/viewforum.php';
+    require __DIR__ . '/includes/view/viewforum.php';
 }
 else if ($user_id) {
-    require __DIR__ . '/includes/browse/viewuser.php';
+    require __DIR__ . '/includes/view/viewuser.php';
 }
 else {
-    require __DIR__ . '/includes/browse/viewcategory.php';
+    require __DIR__ . '/includes/view/viewcategory.php';
 }
-var_dump(getenv('DEBUG'));
+
 if (getenv('DEBUG')) {
     foreach(PhpBB\Data\MySQL\Connection::$queries as $query) 
         printf('<p>%s</p>', $query);
