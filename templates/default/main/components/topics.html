@@ -25,8 +25,8 @@
             <td class="author">{{ topic.author.url | raw }}</td>
             <td class="views">{{ topic.viewsCount }}</td>
             <td class="latestpost">
-                {{ topic.latestPost.url | raw }}<br />
-                {{ topic.latestPost.author.url | raw }}
+                <small>{{ topic.latestPost.url | raw }}</small>
+                <small>{{ topic.latestPost.author.url | raw }}</small>
             </td>
         </tr>
 {% endfor %}

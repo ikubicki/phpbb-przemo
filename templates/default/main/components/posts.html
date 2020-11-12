@@ -28,7 +28,8 @@
     <small>{{ l.Replies }}</small>
 {% endif %}
 {% for post in posts %}
-    <div class="post {{ post.types | join(' ') }}" id="post_{{ post.post_id }}">
+    <div class="post {{ post.types | join(' ') }}">
+        <a id="post_{{ post.post_id }}" class="anchor"></a>
         <div class="avatar">
             <div class="posts">{{ post.author.postsCount }}</div>
             {{ post.author.avatar | raw }}

@@ -31,8 +31,8 @@
 {% if not forum.latestPost() %}
                 --
 {% else %}
-                {{ forum.latestPost().url | raw }}<br />
-                {{ forum.latestPost().author.url | raw }}
+                <small>{{ forum.latestPost().url | raw }}</small>
+                <small>{{ forum.latestPost().author.url | raw }}</small>
 {% endif %}
             </td>
         </tr>

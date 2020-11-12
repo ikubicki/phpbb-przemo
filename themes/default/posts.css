@@ -34,6 +34,11 @@ div.post > br {
     clear: both;
 }
 
+div.post > a.anchor {
+    position: relative;
+    top: -100px;
+}
+
 div.post > div.avatar {
     float: left;
     padding: 10px;
