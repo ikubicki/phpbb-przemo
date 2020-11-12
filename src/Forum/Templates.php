@@ -20,9 +20,9 @@ class Templates
         }
         $this->loader = new TwigLoader($directory);
         $this->twig = new TwigEnvironment($this->loader, $options);
+        $this->twig->addExtension(new Templates\PhpBBExtension);
         if (isset($options['debug'])) {
             $this->twig->addExtension(new TwigDebugExt);
-            $this->twig->addExtension(new Templates\PhpBBExtension);
         }
         $this->variables = (array) $options['vars'] ?? [];
     }
