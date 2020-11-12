@@ -19,11 +19,13 @@ class Session
         $this->cookie = $cookie;
         if ($this->cookie) {
             $this->extractCookieData($this->cookie->read());
-            if (time() - $this->data['iat'] > 3600) {
-                $this->terminate();
-            }
-            else if (time() - $this->data['iat'] > 600) {
-                $this->generateId();
+            if (!empty($this->data['iat'])) {
+                if (time() - $this->data['iat'] > 3600) {
+                    $this->terminate();
+                }
+                else if (time() - $this->data['iat'] > 600) {
+                    $this->generateId();
+                }
             }
             if (getenv('DEBUG')) var_dump($this->data);
         }

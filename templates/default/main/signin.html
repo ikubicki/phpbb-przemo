@@ -5,7 +5,8 @@
 {{ add(module_js('Auth/Classic'), module_js('Auth/Facebook'), module_js('Auth/Google')) }}
 {{ parent() }}
         <script>
-            {% if error %}auth.errors.push('{{ error }}'){% endif -%}
+            {% if error %}auth.errors.push('{{ error }}')
+{% endif %}
             auth.options.fbappid = '{{ c.get("facebook_appid") }}'
             auth.options.gclient = '{{ c.get("google_client_id") }}'
             auth.options.phrases = {
@@ -31,7 +32,7 @@
         </form>
     </div>
     <div class="options">
-        <a href="">{{ l.Register }}</a>
+        <a href="{{ U_SIGNUP.url }}">{{ l.Register }}</a>
         <a href="">{{ l.Forgotten_password }}</a>
     </div>
     <br />

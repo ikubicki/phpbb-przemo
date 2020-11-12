@@ -10,10 +10,8 @@ if ($session->isAuthenticated()) {
 if ($request->isPost()) {
     if (recaptcha_check()) {
         $authenticator = get_authenticator($request->post->auth);
-        var_dump($authenticator);
         if ($authenticator) {
             $response = $authenticator->authenticate();
-            var_dump($response, $authenticator->getError());
             if ($authenticator->getError()) {
                 $templates->var('error', $authenticator->getError());
             }

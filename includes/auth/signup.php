@@ -20,7 +20,7 @@ foreach (Context::getModules('Auth') as $authenticator) {
         }
     }
 }
-if ($error) {
+if (!empty($error)) {
     $templates->var('error', $error);
 }
 $templates->display('main/signup.html');

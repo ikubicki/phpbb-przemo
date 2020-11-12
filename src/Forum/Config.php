@@ -104,7 +104,7 @@ class Config
     public function get($property, $alternative = null)
     {
         $value = $this->properties[$property] ?? $alternative;
-        if ($value[0] == '{' && !$this->context) {
+        if (is_string($value) && $value[0] == '{' && !$this->context) {
             $value = $this->unserialize($value, true);
         }
         if (is_array($value) && !$this->context) {

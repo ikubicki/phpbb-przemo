@@ -130,6 +130,7 @@ class Phrases
     protected function load($module)
     {
         $lang = [];
+        $userdata = ['user_gender' => 0]; // @todo remove it
         $filename = $this->filename($module);
         if (file_exists($filename)) {
             include $filename;

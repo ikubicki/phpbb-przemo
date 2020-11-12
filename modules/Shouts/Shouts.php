@@ -17,7 +17,6 @@ class Shouts
     protected $token;
     protected $action = 'refresh';
     protected $online = [];
-    protected $encryption_key;
 
     /**
      * Constructor
@@ -26,9 +25,8 @@ class Shouts
      * @param string $encryption_key
      * @param string $token
      */
-    public function __construct($encryption_key, $token = null)
+    public function __construct($token = null)
     {
-        $this->encryption_key = $encryption_key;
         $this->token = $token ?: null;
     }
 
@@ -116,10 +114,8 @@ class Shouts
      */
     protected function encrypt($payload)
     {
-        $iv = substr(md5($this->encryption_key), 4, 16);
-        $token = openssl_encrypt($payload, 'AES-128-CBC', $this->encryption_key, 0, $iv);
-        $token = str_replace(['+', '/'], ['.', '_'], $token);
-        return trim($token, '=');
+        $encryption = Context::getService('encryption');
+        return $encryption->encrypt($payload);
     }
 
     /**
@@ -131,9 +127,8 @@ class Shouts
      */
     protected function decrypt($token)
     {
-        $iv = substr(md5($this->encryption_key), 4, 16);
-        $token = str_replace(['.', '_'], ['+', '/'], $token);
-        return openssl_decrypt($token, 'AES-128-CBC', $this->encryption_key, 0, $iv);
+        $encryption = Context::getService('encryption');
+        return $encryption->decrypt($token);
     }
 
     /**

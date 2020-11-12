@@ -5,6 +5,14 @@ use PhpBB\Data\Memoizer;
 use PhpBB\Data\MySQL;
 use PhpBB\Forum\Url;
 
+if (getenv('DEBUG')) {
+    ini_set('error_reporting', E_ALL);
+    ini_set('display_errors', true);
+}
+else {
+    ini_set('display_errors', false);
+}
+
 function cache($name, $data = null)
 {
     static $cache = [];

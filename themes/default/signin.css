@@ -30,20 +30,20 @@ div.signin form label {
     cursor: pointer;
     font-size: 0.9em;
 }
-div.signin form.classic {
+div.signin form.Classic {
     padding: 40px 20px 20px;
 }
-div.signin form.facebook,
-div.signin form.google {
+div.signin form.Facebook,
+div.signin form.Google {
     padding: 70px 20px 20px;
 }
-div.signin form.classic input[type=text] {
+div.signin form.Classic input[type=text] {
     display: block;
     clear: left;
     width: 200px;
     margin: 5px 0;
 }
-div.signin form.classic input[type=password] {
+div.signin form.Classic input[type=password] {
     width: 200px;
     margin: 5px 10px 5px 0;
 }

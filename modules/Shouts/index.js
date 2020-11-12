@@ -137,7 +137,9 @@ var shouts = {
                 shouts.inputField.after('<br />');
                 shouts.inputField.remove()
                 shouts.submitButton.remove()
-                shouts.smileysButton.remove()
+                if (shouts.smileysButton) {
+                    shouts.smileysButton.remove()
+                }
             }
             if (response.token) {
                 shouts.tokenField.val(response.token)

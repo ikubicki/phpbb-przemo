@@ -11,7 +11,7 @@ include $rootdir . '/vendor/autoload.php';
 start($rootdir);
 
 $config = Context::getService('config')->module('shouts');
-$shouts = new PhpBB\Modules\Shouts\Shouts($encryption_key);
+$shouts = new PhpBB\Modules\Shouts\Shouts;
 if (!$config->enabled) {
     $shouts->error('Module is disabled.');
 }
@@ -19,11 +19,6 @@ if (!$config->enabled) {
 if ($config->autopurge > 0) {
 // @todo autopurge
 }
-
-/*
-$userdata = session_pagestart($user_ip, PAGE_INDEX);
-init_userprefs($userdata);
-*/
 
 $session = Context::getService('session');
 $message = null; // pass through variable
