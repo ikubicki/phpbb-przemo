@@ -17,6 +17,7 @@ function url($path)
     $server_protocol = ($board_config['cookie_secure']) ? 'https://' : 'http://';
     $server_name = preg_replace('#^\/?(.*?)\/?$#', '\1', trim($board_config['server_name']));
     $server_port = ($board_config['server_port'] <> 80) ? ':' . trim($board_config['server_port']) : '';
+    $path = '/' . trim($board_config['script_path'], '/') . "/$path";
     return $server_protocol . $server_name . $server_port . $path;
 }
 
@@ -32,7 +33,7 @@ function pick_random_default_avatar()
     }
 
     $file = $files[array_rand($files)];
-    return url('/images/avatars/default/' . $file);
+    return url('images/avatars/default/' . $file);
 }
 
 function getUrlContents($url)

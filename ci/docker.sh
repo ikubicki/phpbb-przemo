@@ -5,11 +5,14 @@ if [ "$DIR" == "" ]; then
     DIR=$(pwd)
 fi
 CONFIG=''
+ENVS=''
 
 if [[ "$@" == *"-config"* ]]; then 
-    CONFIG="-v $DIR/ci/config.php:/var/www/html/config.php"
+    CONFIG="-v $DIR/ci/config.php:/var/www/html/forum/config.php"
 fi
-
+if [[ "$@" == *"-debug"* ]]; then 
+    ENVS="-e DEBUG=true"
+fi
 network_exists=$(docker network ls | grep przemo | xargs)
 if [ "$network_exists" == "" ]; then
     docker network create przemo
@@ -53,7 +56,8 @@ fi
 docker run -d \
     --network przemo \
     --name przemo_app \
-    -v $DIR:/var/www/html \
+    -v $DIR/ci/index.php:/var/www/html/index.php \
+    -v $DIR:/var/www/html/forum \
     $CONFIG \
     -v przemo_cache_volume:/var/www/html/cache \
     -p 80:80 \
@@ -65,6 +69,7 @@ docker run -d \
     -e DBNAME=przemo \
     -e DBUSER=przemodbuser \
     -e DBPASS=przemodbpass \
+    $ENVS \
     przemo/php:7.4-dev
 
 docker exec -it przemo_app chmod 0777 /var/www/html/cache
