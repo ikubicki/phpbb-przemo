@@ -1,21 +1,21 @@
 {% extends 'main/layouts/basic.html' %}
+{% block head %}
+{{ add(module_js('BBCode'), module_js('Votes'), module_css('Votes')) }}
+{{ add(js('lightbox/lightbox'), css('lightbox/lightbox')) }}
+{{ parent() }}
+        <script type="text/javascript">
+            $(() => {
+                votes.load({topic: '{{ topic.topic_id }}'})
+                forum.selection('.post .body .text')
+                $('div.post > div.body > div.text').each((i, el) => {
+                    $(el).html(bbcode.parse($(el).html()))
+                })
+            })
+        </script>
+{% endblock %}
 {% block content %}
 <div class="body topic">
-    <script src="{{ PATH }}/modules/BBCode/index.js"></script>
-    <script src="{{ PATH }}/js/lightbox/lightbox.js"></script>
-    <script src="{{ PATH }}/modules/votes/index.js"></script>
-    <style>@import url('{{ PATH }}/js/lightbox/lightbox.css');</style>
-    <style>@import url('{{ PATH }}/modules/votes/style.css');</style>
-
     {{ components.POSTS | raw }}
     {{ components.QUICKREPLY | raw }}
-
-    <script type="text/javascript">
-        votes.load({topic: '{{ topic.topic_id }}'})
-        forum.selection('.post .body .text')
-        $('div.post > div.body > div.text').each((i, el) => {
-            $(el).html(bbcode.parse($(el).html()))
-        })
-    </script>
 </div>
 {% endblock %}

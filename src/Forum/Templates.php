@@ -21,7 +21,8 @@ class Templates
         $this->loader = new TwigLoader($directory);
         $this->twig = new TwigEnvironment($this->loader, $options);
         if (isset($options['debug'])) {
-            $this->twig->addExtension(new TwigDebugExt());
+            $this->twig->addExtension(new TwigDebugExt);
+            $this->twig->addExtension(new Templates\PhpBBExtension);
         }
         $this->variables = (array) $options['vars'] ?? [];
     }
@@ -61,6 +62,11 @@ class Templates
     public function var($variable, $value)
     {
         $this->variables[$variable] = $value;
+    }
+
+    public function getVar($variable, $alternative = null)
+    {
+        return $this->variables[$variable] ?? $alternative;
     }
 
     public function defaults($variables)

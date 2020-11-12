@@ -113,7 +113,7 @@ function start($rootdir)
         'cache' => false,
         'debug' => true,
         'vars' => [
-            'theme' => 'test',
+            'theme' => 'default',
         ],
     ]);
     $templates->addPath("$rootdir/templates/default");
