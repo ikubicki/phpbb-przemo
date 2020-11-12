@@ -147,9 +147,14 @@ class Session
 
     protected function extractCookieData($token)
     {
-        $encryption = Context::getService('encryption');
-        $this->id = $token;
-        $this->data = json_decode($encryption->decrypt($token), true);
+        if ($token) {
+            $encryption = Context::getService('encryption');
+            $this->id = $token;
+            $this->data = json_decode($encryption->decrypt($token), true);
+            if (!$this->data) {
+                $this->data = [];
+            }
+        }
     }
 
     protected function getUsersCollection()

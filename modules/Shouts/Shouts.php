@@ -1,6 +1,7 @@
 <?php
 
 namespace PhpBB\Modules\Shouts;
+use PhpBB\Core\Context;
 
 /**
  * Shouts module
