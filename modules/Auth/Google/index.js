@@ -3,7 +3,7 @@ auth.Google = {
     init: (container) => {  
         if (auth.options.gclient) {
             auth.Google.gInit()
-            auth.icon('Google', 'modules/Auth/Google/icon.png', auth.Google.form)
+            auth.icon('Google', basepath + '/modules/Auth/Google/icon.png', auth.Google.form)
         }
     },
     form: () => {

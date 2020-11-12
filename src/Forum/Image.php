@@ -11,11 +11,7 @@ class Image
 
     public function __construct($url, array $options = [])
     {
-        $prefix = '/images/';
-        if ($url[0] == '/') {
-            $prefix = '';
-        }
-        $this->url = $prefix . $url;
+        $this->url = (new Url($url))->url;
         $this->options = array_filter($options);
     }
 

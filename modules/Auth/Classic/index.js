@@ -1,7 +1,7 @@
 auth.Classic = {
     container: null,
     init: (container) => {
-        auth.icon('Classic', 'modules/Auth/Classic/icon.png', auth.Classic.form)
+        auth.icon('Classic', basepath + '/modules/Auth/Classic/icon.png', auth.Classic.form)
     },
     form: () => {
         var fields = []

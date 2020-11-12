@@ -1,7 +1,7 @@
 
 <style>
-@import url('/modules/BBCode/style.css');
-@import url('/modules/shouts/style.css');
+@import url('{{ PATH }}/modules/BBCode/style.css');
+@import url('{{ PATH }}/modules/shouts/style.css');
 </style>
 <div class="shouts" id="shouts" style="width:800px; margin: auto">
 	<h2>Shouts</h2>
@@ -10,8 +10,8 @@
 	<input type="button" name="submit" value="{{ l.Submit }}" />
 	<input type="hidden" name="token" value="" />
 </div>
-<script src="/modules/BBCode/index.js"></script>
-<script src="/modules/shouts/index.js"></script>
+<script src="{{ PATH }}/modules/BBCode/index.js"></script>
+<script src="{{ PATH }}/modules/shouts/index.js"></script>
 <script type="text/javascript">
 	shouts.init({
 		langs: {

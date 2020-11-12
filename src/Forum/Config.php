@@ -53,7 +53,7 @@ class Config
     {
         if (empty($this->properties)) {
             $cache = $this->getCache();
-            $this->properties = $cache->collect('config');
+            // $this->properties = $cache->collect('config');
             return $this->properties && count($this->properties);
         }
         return false;

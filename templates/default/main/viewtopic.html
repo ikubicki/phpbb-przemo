@@ -1,11 +1,11 @@
 {% extends 'main/layouts/basic.html' %}
 {% block content %}
 <div class="body topic">
-    <script src="/modules/BBCode/index.js"></script>
-    <script src="/js/lightbox/lightbox.js"></script>
-    <script src="/modules/votes/index.js"></script>
-    <style>@import url('/js/lightbox/lightbox.css');</style>
-    <style>@import url('modules/votes/style.css');</style>
+    <script src="{{ PATH }}/modules/BBCode/index.js"></script>
+    <script src="{{ PATH }}/js/lightbox/lightbox.js"></script>
+    <script src="{{ PATH }}/modules/votes/index.js"></script>
+    <style>@import url('{{ PATH }}/js/lightbox/lightbox.css');</style>
+    <style>@import url('{{ PATH }}/modules/votes/style.css');</style>
 
     {{ components.POSTS | raw }}
     {{ components.QUICKREPLY | raw }}

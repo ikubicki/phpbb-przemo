@@ -3,12 +3,14 @@
     <head>
 {% block head %}
         <title>{{ title }}</title>
-        <style>@import url('/themes/test/style.css');</style>
-        <style>@import url('/themes/test/shouts.css');</style>
-        <script src="/js/jquery.js"></script>
-        <script src="/js/forum.js"></script>
+        <link rel="shortcut icon" href="{{ PATH }}/favicon.ico">
+        <style>@import url('{{ PATH }}/themes/test/style.css');</style>
+        <style>@import url('{{ PATH }}/themes/test/shouts.css');</style>
+        <script src="{{ PATH }}/js/jquery.js"></script>
+        <script src="{{ PATH }}/js/forum.js"></script>
         <script>recaptcha_key = '{{ c.get("recaptcha_key") }}'</script>
         <script src="https://www.google.com/recaptcha/api.js?render={{ c.get("recaptcha_key") }}"></script>
+        <script>basepath = '{{ PATH }}';</script>
 {% endblock %}
     </head>
     <body>

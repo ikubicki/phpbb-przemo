@@ -13,7 +13,10 @@ class Url
 
     public function __construct($url, $text = '', array $styles = [])
     {
-        $this->url = $this->fixPaths($url);
+        if ($url[0] != '/' && substr($url, 0, 4) != 'http') {
+            $url = $this->fixPaths($url);
+        }
+        $this->url = $url;
         $this->text = $text;
         $this->styles = array_filter($styles);
     }

@@ -1,6 +1,6 @@
 {% extends 'main/layouts/basic.html' %}
 {% block content %}
-<style>@import url(themes/test/signup.css);</style>
+<style>@import url({{ PATH }}/themes/test/signup.css);</style>
 <div class="body signup">
     <div class="container">
         <div class="sideinfo">
@@ -25,8 +25,8 @@
     </div>
 </div>
 <script src="https://apis.google.com/js/api.js"></script>
-<script src="/modules/Auth/Facebook/index.js"></script>
-<script src="/modules/Auth/Google/index.js"></script>
+<script src="{{ PATH }}/modules/Auth/Facebook/index.js"></script>
+<script src="{{ PATH }}/modules/Auth/Google/index.js"></script>
 <script>
 auth.options.fbappid = '{{ c.get("facebook_appid") }}'
 auth.options.gclient = '{{ c.get("google_client_id") }}'

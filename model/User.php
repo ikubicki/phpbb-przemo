@@ -33,7 +33,7 @@ class User extends Entity
     
     public function getAvatar($class = '')
     {
-        return new Image('/modules/Avatars/index.php?user=' . $this->user_id, ['class' => $class]);
+        return new Image('modules/Avatars/index.php?user=' . $this->user_id, ['class' => $class]);
     }
 
     public function getSignature()

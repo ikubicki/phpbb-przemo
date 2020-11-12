@@ -139,6 +139,7 @@ function start($rootdir)
         'U_SIGNOUT' => new Url('auth.php?signout', $phrases->Sign_out),
         'U_SIGNUP' => new Url('auth.php?signup', $phrases->Sign_up),
         'URI' => $request->REQUEST_URI ?? (new Url('index.php'))->url,
+        'PATH' => '/' . trim($config->script_path, '/'),
         'SITE_NAME' => $config->sitename,
         'SITE_DESCRIPTION' => $config->site_desc,
     ]);

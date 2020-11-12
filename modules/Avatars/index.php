@@ -1,5 +1,6 @@
 <?php
 
+use PhpBB\Forum\Url;
 
 $rootdir = __DIR__ . '/../..';
 include $rootdir . '/vendor/autoload.php';
@@ -29,7 +30,7 @@ function pick_random_default_avatar()
     }
 
     $file = $files[array_rand($files)];
-    return url('/images/avatars/default/' . $file);
+    return url((new Url('images/avatars/default/' . $file))->url);
 }
 
 function getUrlContents($url)

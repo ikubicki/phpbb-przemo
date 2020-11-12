@@ -3,7 +3,7 @@ auth.Facebook = {
     init: (container) => {
         if (auth.options.fbappid) {
             auth.Facebook.fbInit()
-            auth.icon('Facebook', 'modules/Auth/Facebook/icon.png', auth.Facebook.form)
+            auth.icon('Facebook', basepath + '/modules/Auth/Facebook/icon.png', auth.Facebook.form)
         }
     },
     form: () => {

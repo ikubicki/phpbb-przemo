@@ -1,6 +1,6 @@
 {% extends 'main/layouts/basic.html' %}
 {% block content %}
-<style>@import url(themes/test/signin.css);</style>
+<style>@import url({{ PATH }}/themes/test/signin.css);</style>
 <div class="body signin">
     <h1>{{ l.Login }}</h1>
     <div class="container">
@@ -16,9 +16,9 @@
     <br />
 </div>
 <script src="https://apis.google.com/js/api.js"></script>
-<script src="/modules/Auth/Classic/index.js"></script>
-<script src="/modules/Auth/Facebook/index.js"></script>
-<script src="/modules/Auth/Google/index.js"></script>
+<script src="{{ PATH }}/modules/Auth/Classic/index.js"></script>
+<script src="{{ PATH }}/modules/Auth/Facebook/index.js"></script>
+<script src="{{ PATH }}/modules/Auth/Google/index.js"></script>
 <script>
 {% if error %}
 auth.errors.push('{{ error }}')
