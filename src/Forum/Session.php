@@ -25,7 +25,7 @@ class Session
             else if (time() - $this->data['iat'] > 600) {
                 $this->generateId();
             }
-            var_dump($this->data);
+            if (getenv('DEBUG')) var_dump($this->data);
         }
     }
 

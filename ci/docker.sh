@@ -66,6 +66,7 @@ docker run -d \
     -e DBNAME=przemo \
     -e DBUSER=przemodbuser \
     -e DBPASS=przemodbpass \
+    -e DEBUG=true \
     przemo/php:7.4-dev
 
 docker exec -it przemo_app chmod 0777 /var/www/html/cache
