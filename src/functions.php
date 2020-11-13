@@ -81,10 +81,9 @@ function start($rootdir)
 
     require $rootdir . '/config.php';
 
-    if ($encryption_key) {
+    if (!$encryption_key) {
         $encryption_key = md5_file($rootdir . '/config.php');
     }
-
     $request = new PhpBB\Core\Request;
     $dbdsn = MySQL\Connection::GetDSN($dbname, $dbhost, $dbport ?? 3306, $dbchars ?? 'utf8mb4');
 
