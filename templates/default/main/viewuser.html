@@ -1,25 +1,38 @@
 {% extends 'main/layouts/basic.html' %}
+{% block head %}
+{{ add(css('user')) }}
+{{ parent() }}
+{% endblock %}
 {% block content %}
-<div class="body">
-    <h1>{{ user.name }}</h1>
+<div class="body user">
+    {{ user.avatar.render({class: 'avatar'}) | raw }}
+    <h1>{{ user.name }} <small>&commat;{{ user.name }}</small> &bigstar; &star; &Cross; &excl;</h1>
     <small>{{ user.signature }}</small>
-    <div class="profile">
-        <div class="info">
-            {{ user.avatar | raw }}
-        </div>
-        <div class="messages">
-            <p><span class="author"><span class="author-status author-status-2 online">•</span><a href="">admin</a></span><span class="time">2020-10-06 15:41:14</span><span class="text">😝😳😁😣😢</span></p>
-            <p><span class="author"><span class="author-status author-status-2 online">•</span><a href="">admin</a></span><span class="time">2020-10-09 18:39:55</span><span class="text">Hello world! 😀 </span></p>
-            <p><span class="author"><span class="author-status author-status-2 online">•</span><a href="">admin</a></span><span class="time">2020-10-09 18:47:31</span><span class="text">Hello world! 😀 </span></p>
-            <p><span class="author"><span class="author-status author-status-2 online">•</span><a href="">admin</a></span><span class="time">2020-10-09 18:54:59</span><span class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut molestie nisi sit amet eros bibendum dictum. Morbi luctus ex ornare eleifend auctor. Maecenas nec posuere dui, ut ornare magna. Nulla facilisi. Ut metus nunc, facilisis non aliquam sed, sagittis at enim. Nam aliquet sagittis est at bibendum. Nullam ornare interdum massa eget aliquam. Suspendisse potenti. Nunc id risus est. Nunc in massa at dui pulvinar placerat in sed erat. Nulla euismod id nulla eu consequat. Sed a nisl vitae nisi luctus placerat in sed ipsum. In hac habitasse platea dictumst. Pellentesque ultricies et nisi ut viverra.</span></p>
-            <p><span class="author"><span class="author-status author-status-2 online">•</span><a href="">admin</a></span><span class="time">2020-10-09 18:55:17</span><span class="text">&lt;b&gt;test&lt;/b&gt;  😒 </span></p>
-            <p><span class="author"><span class="author-status author-status-2 online">•</span><a href="">admin</a></span><span class="time">2020-10-09 18:55:37</span><span class="text">' is an apostrophe</span></p>
-            <p><span class="author"><span class="author-status author-status-2 online">•</span><a href="">admin</a></span><span class="time">2020-10-09 20:33:01</span><span class="text">&lt;b&gt;HTML&lt;/b&gt; <b class="bbcode">BBCODE</b> *markdown* :)  😀 </span></p>
-            <p><span class="author"><span class="author-status author-status-2 online">•</span><a href="">admin</a></span><span class="time">2020-10-12 15:02:22</span><span class="text">```code```</span></p>
-            <p><span class="author"><span class="author-status author-status-2 online">•</span><a href="">admin</a></span><span class="time">2020-10-12 16:09:07</span><span class="text">&lt;b&gt;test&lt;/b&gt; <b class="bbcode">test</b></span></p>
-            <p><span class="author"><span class="author-status author-status-2 online">•</span><a href="">admin</a></span><span class="time">2020-10-12 22:41:28</span><span class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut molestie nisi sit amet eros bibendum dictum. Morbi luctus ex ornare eleifend auctor. Maecenas nec posuere dui, ut ornare magna. Nulla facilisi. Ut metus nunc, facilisis non aliquam sed, sagittis at enim. Nam aliquet sagittis est at bibendum. Nullam ornare interdum massa eget aliquam. Suspendisse potenti. Nunc id risus est. Nunc in massa at dui pulvinar placerat in sed erat. Nulla euismod id nulla eu consequat. Sed a nisl vitae nisi luctus placerat in sed ipsum. In hac habitasse platea dictumst. Pellentesque ultricies et nisi ut viverra.</span></p>
-            <p><span class="author"><span class="author-status author-status-2 online">•</span><a href="">admin</a></span><span class="time">2020-10-14 11:25:59</span><span class="text"><a rel="nofollow" href="https://www.codebuilders.pl" class="bbcode">Codebuilders.pl</a></span></p>
-        </div>
+    <p>{{ l.Joined }} 5 months ago</p>
+    <p>
+        {{ l.Topics }} <a href="">2135</a>
+        {{ l.Posts }} <a href="">512452</a>
+        <a href="">{{ l.Send_message }}</a>
+        <a href="">{{ l.Observe }}</a>
+        <a href="">{{ l.Report }}</a>
+    </p>
+    <p>
+        {{ l.Location }} <a href="">Wrocław</a>
+        {{ l.Site }} <a href="">codebuilders.pl</a>
+    </p>
+    <div class="content">
+        <h2>{{ l.format('Your_messages_with_%s', user.name) }}</h2>
+        <p><span class="author"><span class="author-status author-status-2 online">•</span><a href="">admin</a></span><span class="time">2020-10-06 15:41:14</span><span class="text">😝😳😁😣😢</span></p>
+        <p><span class="author"><span class="author-status author-status-2 online">•</span><a href="">admin</a></span><span class="time">2020-10-09 18:39:55</span><span class="text">Hello world! 😀 </span></p>
+        <p><span class="author"><span class="author-status author-status-2 online">•</span><a href="">admin</a></span><span class="time">2020-10-09 18:47:31</span><span class="text">Hello world! 😀 </span></p>
+        <p><span class="author"><span class="author-status author-status-2 online">•</span><a href="">admin</a></span><span class="time">2020-10-09 18:54:59</span><span class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut molestie nisi sit amet eros bibendum dictum. Morbi luctus ex ornare eleifend auctor. Maecenas nec posuere dui, ut ornare magna. Nulla facilisi. Ut metus nunc, facilisis non aliquam sed, sagittis at enim. Nam aliquet sagittis est at bibendum. Nullam ornare interdum massa eget aliquam. Suspendisse potenti. Nunc id risus est. Nunc in massa at dui pulvinar placerat in sed erat. Nulla euismod id nulla eu consequat. Sed a nisl vitae nisi luctus placerat in sed ipsum. In hac habitasse platea dictumst. Pellentesque ultricies et nisi ut viverra.</span></p>
+        <p><span class="author"><span class="author-status author-status-2 online">•</span><a href="">admin</a></span><span class="time">2020-10-09 18:55:17</span><span class="text">&lt;b&gt;test&lt;/b&gt;  😒 </span></p>
+        <p><span class="author"><span class="author-status author-status-2 online">•</span><a href="">admin</a></span><span class="time">2020-10-09 18:55:37</span><span class="text">' is an apostrophe</span></p>
+        <p><span class="author"><span class="author-status author-status-2 online">•</span><a href="">admin</a></span><span class="time">2020-10-09 20:33:01</span><span class="text">&lt;b&gt;HTML&lt;/b&gt; <b class="bbcode">BBCODE</b> *markdown* :)  😀 </span></p>
+        <p><span class="author"><span class="author-status author-status-2 online">•</span><a href="">admin</a></span><span class="time">2020-10-12 15:02:22</span><span class="text">```code```</span></p>
+        <p><span class="author"><span class="author-status author-status-2 online">•</span><a href="">admin</a></span><span class="time">2020-10-12 16:09:07</span><span class="text">&lt;b&gt;test&lt;/b&gt; <b class="bbcode">test</b></span></p>
+        <p><span class="author"><span class="author-status author-status-2 online">•</span><a href="">admin</a></span><span class="time">2020-10-12 22:41:28</span><span class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut molestie nisi sit amet eros bibendum dictum. Morbi luctus ex ornare eleifend auctor. Maecenas nec posuere dui, ut ornare magna. Nulla facilisi. Ut metus nunc, facilisis non aliquam sed, sagittis at enim. Nam aliquet sagittis est at bibendum. Nullam ornare interdum massa eget aliquam. Suspendisse potenti. Nunc id risus est. Nunc in massa at dui pulvinar placerat in sed erat. Nulla euismod id nulla eu consequat. Sed a nisl vitae nisi luctus placerat in sed ipsum. In hac habitasse platea dictumst. Pellentesque ultricies et nisi ut viverra.</span></p>
+        <p><span class="author"><span class="author-status author-status-2 online">•</span><a href="">admin</a></span><span class="time">2020-10-14 11:25:59</span><span class="text"><a rel="nofollow" href="https://www.codebuilders.pl" class="bbcode">Codebuilders.pl</a></span></p>
     </div>
 </div>
 {% endblock %}
