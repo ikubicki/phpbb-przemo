@@ -109,8 +109,12 @@ class Entity
      */
     public function setKeyValue($value) 
     {
-        $key = $this->_key;
-        $this->$key = $value;
+        if ($value) {
+            $value = (array) $value;
+            foreach((array) $this->_key as $idx => $property) {
+                $this->$property = $value[$idx];
+            }
+        }
     }
 
     /**

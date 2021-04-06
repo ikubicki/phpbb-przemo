@@ -12,7 +12,8 @@ if ($session->isAuthenticated()) {
 }
 
 // verification
-foreach (Context::getModules('Auth') as $authenticator) {
+$authenticators = Context::getModules('Auth');
+foreach ($authenticators as $authenticator) {
     if (!$authenticator->check()) {
         if($authenticator->getError()) {
             $error = $authenticator->getError();
@@ -22,5 +23,10 @@ foreach (Context::getModules('Auth') as $authenticator) {
 }
 if (!empty($error)) {
     $templates->var('error', $error);
+}
+else {
+    foreach ($authenticators as $authenticator) {
+        $authenticator->create();
+    }
 }
 $templates->display('main/signup.html');

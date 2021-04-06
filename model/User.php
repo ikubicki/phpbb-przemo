@@ -11,10 +11,12 @@ class User extends Entity
     public $user_id;
     public $username;
     public $user_sig;
-    public $user_posts;
-    public $user_level;
-    public $user_jr;
-    public $user_session_time;
+    public $user_posts = 0;
+    public $user_level = 0;
+    public $user_jr = 0;
+    public $user_session_time = 0;
+    public $user_active;
+    public $user_regdate;
 
     public function getName()
     {
@@ -84,5 +86,17 @@ class User extends Entity
             'ajr' => $this->isJuniorAdministrator(),
             'mem' => $this->getGroups(),
         ]);
+    }
+
+    public function save()
+    {
+        $collection = $this->getCollection(UsersCollection::class);
+        $collection->store([$this]);
+    }
+
+    public function delete()
+    {
+        $collection = $this->getCollection(UsersCollection::class);
+        $collection->dump([$this]);
     }
 }

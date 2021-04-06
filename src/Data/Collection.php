@@ -183,10 +183,11 @@ class Collection
         $this->values = get_object_vars($entity);
         $query = $this->query($this);
         list($statement, $values) = $query->insert();
-        var_dump($statement, $values);exit;
+        // var_dump($statement, $values);exit;
         $key = $this->getConnection()->insert($statement, $values);
+        // var_dump($key);
         $entity->setNew(false);
-        if ($key !== false) {
+        if ($key === false) {
             $key = $entity->getKeyValue();
         }
         $entity->setKeyValue($key);

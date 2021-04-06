@@ -4,6 +4,7 @@ namespace PhpBB\Modules\Auth\Classic;
 use PhpBB\Forum\Authenticator;
 use PhpBB\Core\Context;
 use PhpBB\Model\UserAuth;
+use PhpBB\Model\UsersCollection;
 
 class Module extends Authenticator
 {
@@ -27,6 +28,20 @@ class Module extends Authenticator
             }
         }
         return true;
+    }
+
+    public function create()
+    {
+        $index = $this->username[0] ?? null;
+        $salt = md5(microtime());
+        $passwords = $this->password ?? [null, null];
+        $hash = $this->hash($passwords[0], $salt);
+
+        $user = $this->getUsersCollection()->create($index);
+        if ($user) {
+            $record = $this->add($user->user_id, $index, $hash, $salt);
+            return $record;
+        }
     }
 
     public function authenticate()
@@ -56,7 +71,7 @@ class Module extends Authenticator
         return $encryption->encrypt($text . $salt);
     }
 
-    public function add($userId, $index, $hash, $salt = null)
+    public function add($userId, $index, $hash, $salt)
     {
         $record = $this->findRecord('classic', $index);
         if (!$record) {
@@ -79,5 +94,10 @@ class Module extends Authenticator
             preg_match('#[A-Z]+#', $password) &&
             preg_match('#[0-9]+#', $password) &&
             preg_match('#[^0-9a-zA-Z]+#', $password);
+    }
+
+    protected function getUsersCollection()
+    {
+        return new UsersCollection;
     }
 }

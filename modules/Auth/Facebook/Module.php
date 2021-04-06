@@ -19,6 +19,20 @@ class Module extends Authenticator
         return false;
     }
 
+    public function create()
+    {
+        $index = $this->username[0] ?? null;
+        $salt = md5(microtime());
+        $passwords = $this->password ?? [null, null];
+        $hash = $this->hash($passwords[0], $salt);
+
+        $user = $this->getUsersCollection()->create($index);
+        if ($user) {
+            $record = $this->add($user->user_id, $index, $hash, $salt);
+            return $record;
+        }
+    }
+
     public function authenticate()
     {
         $config = Context::getService('config');
